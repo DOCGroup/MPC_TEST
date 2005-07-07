@@ -1,0 +1,11 @@
+Thu Jul  7 11:21:20 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * MPC test framework:
+
+          This test framework can be used to ensure that functional changes
+          to MPC will not break most use cases.  As more tests are added to
+          cover functionality not already covered in the current tests, we
+          can continue to keep MPC in a stable state.
+
+          Please see the README for running and adding new tests.
+

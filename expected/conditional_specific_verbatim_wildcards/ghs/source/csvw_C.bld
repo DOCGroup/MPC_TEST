@@ -1,0 +1,22 @@
+#!build
+default:
+	shared_library
+	:outputname=source/bin/libcsvw_C.so
+	:optimizestrategy=speed
+	:libdirs=source
+	:defines=ONLY_MAKE
+	:defines=ONLY_UNIX
+byion.cpp
+	C++
+conditional/unix.cpp
+	C++
+moop.cxx
+	C++
+ploor.cpp
+	C++
+qwaaa.c
+	C++
+byion.h
+	include_file
+qwaaa.h
+	include_file

@@ -1,0 +1,32 @@
+#!build
+default:
+	nobuild
+	:cx_option=exceptions
+	:cx_option=std_namespaces
+	:language=cxx
+	:config_setting=longlong
+	:cx_mode=ansi
+source/grouping_A.bld
+	program
+	:object_dir=source/.obj
+	:libdirs=source
+source/grouping_B.bld
+	program
+	:object_dir=source/.obj
+	:libdirs=source
+source/grouping_C.bld
+	program
+	:object_dir=source/.obj
+	:libdirs=source
+source/grouping_D.bld
+	program
+	:object_dir=source/.obj
+	:libdirs=source
+source/grouping_E.bld
+	program
+	:object_dir=source/.obj
+	:libdirs=source
+source/grouping_F.bld
+	program
+	:object_dir=source/.obj
+	:libdirs=source

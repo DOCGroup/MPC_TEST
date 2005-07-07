@@ -1,0 +1,5 @@
+project {
+  libout = $(TEST_ROOT)/lib
+  libpaths += $(TEST_ROOT)/lib
+  version = 1.0.0
+}

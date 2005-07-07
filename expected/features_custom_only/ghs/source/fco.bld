@@ -1,0 +1,17 @@
+#!build
+default:
+	subproject
+that.zar
+	custom
+	:custom_processor.name=echo
+	:depends=that.zar
+	:preexec=cd source; perl ../bin/exercise.pl -GA -Sc that.zar
+
+this.zar
+	custom
+	:custom_processor.name=echo
+	:depends=this.zar
+	:preexec=cd source; perl ../bin/exercise.pl -GA this.zar
+
+	:optimizestrategy=speed
+	:libdirs=source

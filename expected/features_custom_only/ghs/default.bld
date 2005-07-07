@@ -1,0 +1,18 @@
+#!build
+default:
+	nobuild
+	:cx_option=exceptions
+	:cx_option=std_namespaces
+	:language=cxx
+	:config_setting=longlong
+	:cx_mode=ansi
+source/fco.bld
+	subproject
+	:object_dir=source/.obj
+	:libdirs=source
+source/fco_use.bld
+	shared_library
+	:config_setting=pic
+	:object_dir=source/.shobj
+	:libdirs=source
+	:defines=THAT_THERE_MACRO

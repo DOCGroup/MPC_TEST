@@ -1,0 +1,85 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -DONLY_MAKE -DONLY_UNIX
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L.
+CCC           = $(CXX)
+MAKEFILE      = Makefile.csvw_B
+DEPENDENCIES  = .depend.$(MAKEFILE)
+LTARGETDIR    = lib/
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+EXEEXT        = 
+LIBPREFIX     = lib
+LDLIBS        = -ldl -lpthread
+OBJS          = conditional/unix$(OBJEXT) moop$(OBJEXT) ploor$(OBJEXT) qwaaa$(OBJEXT)
+AREXT         = .a
+LIB           = $(LTARGETDIR)$(LIBPREFIX)csvw_B$(AREXT)
+SOEXT         = .so
+SHTARGETDIR   = bin/
+SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)csvw_B$(SOEXT)
+SHFLAGS       = -shared
+GENFLAGS      = -g
+SRC           = conditional/unix.cpp moop.cxx ploor.cpp qwaaa.c
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = $(DYNAMICFLAGS)
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+$(LTARGETDIR):
+	@$(MKDIR) "$@"
+
+all: $(SHLIB)
+
+$(SHTARGETDIR):
+	@$(MKDIR) "$@"
+
+$(SHLIB): $(SHTARGETDIR) $(OBJS)
+	$(LINK.cc) $(SHFLAGS) $(OUTPUT_OPTION) $(OBJS) $(LDLIBS)
+
+$(LIB): $(LTARGETDIR) $(OBJS)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+conditional/unix$(OBJEXT): conditional/unix.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) conditional/unix.cpp $(OUTPUT_OPTION)
+
+moop$(OBJEXT): moop.cxx
+	$(COMPILE.cc) $(EXPORTFLAGS) moop.cxx $(OUTPUT_OPTION)
+
+ploor$(OBJEXT): ploor.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) ploor.cpp $(OUTPUT_OPTION)
+
+qwaaa$(OBJEXT): qwaaa.c
+	$(COMPILE.cc) $(EXPORTFLAGS) qwaaa.c $(OUTPUT_OPTION)
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(SHLIB) $(LIB)
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@touch $(DEPENDENCIES)
+
+depend:
+	-makedepend -Y $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

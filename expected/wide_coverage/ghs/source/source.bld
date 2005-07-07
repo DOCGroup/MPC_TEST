@@ -1,0 +1,20 @@
+#!build
+default:
+	program
+	:outputname=source/main_test
+	:optimizestrategy=speed
+	:sysincdirs=source
+	:libdirs=source/.
+	:libdirs=../lib
+	:libraries=-lsource_lib
+	:defines=MACRO_TEST
+exe/main.cpp
+	C++
+exe/use_more_names/use_more_names.cpp
+	C++
+exe/use_names/use_names.cpp
+	C++
+exe/use_more_names/use_more_names.h
+	include_file
+exe/use_names/use_names.h
+	include_file

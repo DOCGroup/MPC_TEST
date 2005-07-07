@@ -1,0 +1,35 @@
+#!build
+default:
+	nobuild
+	:cx_option=exceptions
+	:cx_option=std_namespaces
+	:language=cxx
+	:config_setting=longlong
+	:cx_mode=ansi
+generator/generator_be.bld
+	shared_library
+	:config_setting=pic
+	:object_dir=generator/.shobj
+	:libdirs=generator/.
+	:libdirs=../lib
+	:defines=GENERATOR_BE_BUILD_DLL
+generator/generator.bld
+	program
+	:object_dir=generator/.obj
+	:libdirs=generator/.
+	:libdirs=../lib
+	:libraries=-lgenerator_be
+source/source_lib.bld
+	library
+	:object_dir=source/.obj
+	:sysincdirs=source
+	:libdirs=source/.
+	:libdirs=../lib
+source/source.bld
+	program
+	:object_dir=source/.obj
+	:sysincdirs=source
+	:libdirs=source/.
+	:libdirs=../lib
+	:libraries=-lsource_lib
+	:defines=MACRO_TEST

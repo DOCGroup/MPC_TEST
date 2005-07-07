@@ -1,0 +1,16 @@
+project {
+  after += generator
+
+  Define_Custom(GEN) {
+    automatic = 1
+    command = $(TEST_ROOT)/bin/generator
+    dependent = $(TEST_ROOT)/bin/generator
+    libpath = $(TEST_ROOT)/lib
+    inputext = .key
+    keyword generator_flags = commandflags
+    pch_postrule = 1
+    postcommand = echo <%source_file%> and <%header_file%> have been generated.
+    source_outputext = .cpp, .cxx
+    header_outputext = .h, .hxx
+  }
+}

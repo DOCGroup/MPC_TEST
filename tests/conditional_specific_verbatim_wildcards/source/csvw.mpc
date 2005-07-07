@@ -1,0 +1,97 @@
+project(*A) {
+  dllout  = bin
+  libout  = lib
+
+  Source_Files {
+    *b*.c*
+    conditional(make) {
+      conditional/unix.cpp
+    }
+  }
+
+  specific(make) {
+    macros += ONLY_MAKE ONLY_UNIX
+  }
+
+  verbatim(automake, local) {
+    other:
+    "	echo This is a custom target"
+  }
+  verbatim(bmake, local) {
+    other:
+    "	echo This is a custom target"
+  }
+  verbatim(gnuace, local) {
+    other:
+    "	echo This is a custom target"
+  }
+  verbatim(make, local) {
+    other:
+    "	echo This is a custom target"
+  }
+  verbatim(nmake, local) {
+    other:
+    "	echo This is a custom target"
+  }
+}
+
+project(*B) {
+  dllout = bin
+  libout = lib
+
+  Source_Files {
+    !*b*.c*
+    conditional(bmake, cbx, em3, nmake, vc6, vc7, vc71, vc8) {
+      conditional/windows.cpp
+    } else {
+      conditional/unix.cpp
+    }
+  }
+
+  specific(bmake, cbx, em3, nmake, vc6, vc7, vc71, vc8) {
+    macros += ONLY_WINDOWS
+  } else {
+    macros += ONLY_MAKE ONLY_UNIX
+  }
+}
+
+project(*C) {
+  dllout = bin
+  libout = lib
+
+  Source_Files {
+    !bleer.cpp
+    conditional(!bmake, !cbx, !em3, !nmake, !vc6, !vc7, !vc71, !vc8) {
+      conditional/unix.cpp
+    }
+  }
+
+  specific(!bmake, !cbx, !em3, !nmake, !vc6, !vc7, !vc71, !vc8) {
+    macros += ONLY_MAKE ONLY_UNIX
+  }
+}
+
+project(*D) {
+  dllout = bin
+  libout = lib
+
+  Source_Files {
+    !*.cpp
+    conditional(!html) {
+      conditional/every.cpp
+    }
+  }
+
+  specific {
+    macros += FAIL_IF_NOT_DEFINED
+  }
+}
+
+project(*E) {
+  dllout = bin
+  libout = lib
+
+  Source_Files {
+    !closed/[Ss]*ing.cpp
+  }
+}
