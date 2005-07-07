@@ -1,0 +1,20 @@
+#!build
+default:
+	program
+	:outputname=source/D
+clown.r
+	custom
+	:custom_processor.name=echo
+	:depends=../bin/cppgen.pl clown.r
+	:preexec=cd source; perl ../bin/cppgen.pl  clown.r -o clown.cpp
+	:preexec=cd source; perl ../bin/cppgen.pl  clown.r -o clown.h
+
+
+	:optimizestrategy=speed
+	:libdirs=source
+clown.cpp
+	C++
+other.cpp
+	C++
+clown.h
+	include_file

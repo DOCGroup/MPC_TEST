@@ -1,0 +1,75 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L. -L../lib
+CCC           = $(CXX)
+MAKEFILE      = Makefile.generator_be
+DEPENDENCIES  = .depend.$(MAKEFILE)
+LTARGETDIR    = ../lib/
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+EXEEXT        = 
+LIBPREFIX     = lib
+LDLIBS        = -ldl -lpthread
+OBJS          = generator_be$(OBJEXT)
+AREXT         = .a
+LIB           = $(LTARGETDIR)$(LIBPREFIX)generator_be$(AREXT)
+SOEXT         = .so
+SHTARGETDIR   = ../lib/
+SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)generator_be$(SOEXT)
+SHFLAGS       = -shared
+GENFLAGS      = -g
+SRC           = generator_be.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+DYNAMICFLAGS  = -DGENERATOR_BE_BUILD_DLL
+STATICFLAGS   = -DGENERATOR_BE_AS_STATIC_LIBS
+EXPORTFLAGS   = $(DYNAMICFLAGS)
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+$(LTARGETDIR):
+	@$(MKDIR) "$@"
+
+all: $(SHLIB)
+
+$(SHLIB): $(SHTARGETDIR) $(OBJS)
+	$(LINK.cc) $(SHFLAGS) $(OUTPUT_OPTION) $(OBJS) $(LDLIBS)
+
+$(LIB): $(LTARGETDIR) $(OBJS)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+generator_be$(OBJEXT): generator_be.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) generator_be.cpp $(OUTPUT_OPTION)
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(SHLIB) $(LIB)
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@touch $(DEPENDENCIES)
+
+depend:
+	-makedepend -Y $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

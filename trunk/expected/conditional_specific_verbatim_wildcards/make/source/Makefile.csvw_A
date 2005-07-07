@@ -1,0 +1,85 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -DONLY_MAKE -DONLY_UNIX
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L.
+CCC           = $(CXX)
+MAKEFILE      = Makefile.csvw_A
+DEPENDENCIES  = .depend.$(MAKEFILE)
+LTARGETDIR    = lib/
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+EXEEXT        = 
+LIBPREFIX     = lib
+LDLIBS        = -ldl -lpthread
+OBJS          = bleer$(OBJEXT) byion$(OBJEXT) conditional/unix$(OBJEXT)
+AREXT         = .a
+LIB           = $(LTARGETDIR)$(LIBPREFIX)csvw_A$(AREXT)
+SOEXT         = .so
+SHTARGETDIR   = bin/
+SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)csvw_A$(SOEXT)
+SHFLAGS       = -shared
+GENFLAGS      = -g
+SRC           = bleer.cpp byion.cpp conditional/unix.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = $(DYNAMICFLAGS)
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+$(LTARGETDIR):
+	@$(MKDIR) "$@"
+
+all: $(SHLIB)
+
+$(SHTARGETDIR):
+	@$(MKDIR) "$@"
+
+$(SHLIB): $(SHTARGETDIR) $(OBJS)
+	$(LINK.cc) $(SHFLAGS) $(OUTPUT_OPTION) $(OBJS) $(LDLIBS)
+
+$(LIB): $(LTARGETDIR) $(OBJS)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+bleer$(OBJEXT): bleer.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) bleer.cpp $(OUTPUT_OPTION)
+
+byion$(OBJEXT): byion.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) byion.cpp $(OUTPUT_OPTION)
+
+conditional/unix$(OBJEXT): conditional/unix.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) conditional/unix.cpp $(OUTPUT_OPTION)
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(SHLIB) $(LIB)
+
+other:
+	echo This is a custom target
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@touch $(DEPENDENCIES)
+
+depend:
+	-makedepend -Y $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

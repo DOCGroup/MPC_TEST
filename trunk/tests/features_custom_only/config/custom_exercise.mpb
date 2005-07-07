@@ -1,0 +1,27 @@
+project {
+  Define_Custom(ZAR) {
+    command              = perl $(TEST_ROOT)/bin/exercise.pl
+    inputext             = .zar
+    pre_filename         = zar_
+    source_pre_extension = A, B
+    header_pre_extension = A, B
+    inline_pre_extension = A, B
+    source_outputext     = .cpp, .cxx
+    header_outputext     = .h, .hpp, .hxx, .hh
+    inline_outputext     = .inl, .i
+    keyword zarflags     = commandflags
+
+    optional(source_pre_extension) {
+      commandflags(-GA) += C
+    }
+    optional(template_outputext) {
+      commandflags(!-Sc) += B_T.cpp, B_T.cxx
+    }
+    optional(header_pre_extension) {
+      commandflags(!-Sc) += B_T
+    }
+    optional(inline_pre_extension) {
+      commandflags(!-Sc) += B_T
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<!DOCTYPE Workspace SYSTEM "http://www.slickedit.com/dtd/vse/8.1/vpw.dtd">
+<Workspace Version="8.1" VendorName="SlickEdit">
+	<Projects>
+		<Project File="source/fco.vpj"/>
+		<Project File="source/fco_use.vpj"/>
+	</Projects>
+</Workspace>

@@ -1,0 +1,12 @@
+#!build
+default:
+	shared_library
+	:outputname=source/bin/libcsvw_E.so
+	:optimizestrategy=speed
+	:libdirs=source
+closed/Apple.cpp
+	C++
+byion.h
+	include_file
+qwaaa.h
+	include_file

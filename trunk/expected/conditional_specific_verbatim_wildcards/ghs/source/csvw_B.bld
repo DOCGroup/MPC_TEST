@@ -1,0 +1,18 @@
+#!build
+default:
+	shared_library
+	:outputname=source/bin/libcsvw_B.so
+	:optimizestrategy=speed
+	:libdirs=source
+	:defines=ONLY_MAKE
+	:defines=ONLY_UNIX
+conditional/unix.cpp
+	C++
+moop.cxx
+	C++
+ploor.cpp
+	C++
+qwaaa.c
+	C++
+qwaaa.h
+	include_file

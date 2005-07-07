@@ -1,0 +1,36 @@
+project: generator_base, test_base, cppgen, mondo_base {
+  sharedname =
+  staticname = source_lib
+  includes  += .
+
+  GEN_Files {
+    commandflags += -n names
+    names.key   <<  something
+  }
+
+  GEN_Files {
+    gendir = creole
+    generator_flags += -o creole
+    more_names.key
+  }
+
+  MONDO_Files {
+    all.mondo  >>   bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl
+  }
+
+  Source_Files {
+    qwee.cxx
+  }
+  Template_Files {
+    qwee_T.C
+  }
+  Inline_Files {
+    weer.inl
+  }
+  Header_Files {
+    moop.hxx
+  }
+  Documentation_Files {
+    bar.txt
+  }
+}

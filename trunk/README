@@ -1,0 +1,33 @@
+Running the tests
+-----------------
+
+Before running the tests you should have the $MPC_ROOT environment variable
+set or have the $ACE_ROOT environment variable set with MPC checked out into
+$ACE_ROOT.  Run run_tests.pl to run all of the MPC tests.  The run_tests.pl
+script will generate all of the supported MPC project types and attempt to
+build at least one of the project types in order to ensure that things get
+generated correctly after the project has been built.  A warning will be
+printed if it is unable to build for at least one project type.
+
+Adding a new test
+-----------------
+
+1) Create a directory under the 'tests' directory containing the test.
+   a) A 'config' directory is automatically added via the -include option when
+      MPC is run.
+   b) The library path (for whatever platform you are testing on) is set to
+      contain the full path up to the name of your test with a /lib
+      appended if it is necessary for the particular project type.
+   c) If a workspace (.mwc file) of the same name as your test directory
+      exists in the test directory, it will be passed to MPC.
+   d) If the test needs to run anything, a run_test.pl should be
+      placed in the root of the test directory.  This perl script should
+      return zero when successful and non-zero when not.  A run_test.pl
+      script is optional.
+
+2) With the $ACE_ROOT environment set, run run_tests.pl with the --expected
+   option to create the expected results for all tests.
+
+3) Add the test and expected results to CVS.
+   NOTE: Anything added to the expected directory needs the -kb option to
+   cvs to ensure that carriage return/line feeds are preserved.

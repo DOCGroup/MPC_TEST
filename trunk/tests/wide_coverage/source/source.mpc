@@ -1,0 +1,29 @@
+project: test_base, zzip {
+  exename   = main_test
+  after    += source_lib
+  libs     += source_lib
+  macros   += MACRO_TEST
+  avoids   += mfc
+  includes += .
+  libpaths += .
+  postbuild = echo <%exename%> has been built
+  pch_header =
+  pch_source =
+
+  Source_Files {
+    recurse = 1
+    exe
+  }
+
+  Header_Files {
+    recurse = 1
+    exe
+  }
+
+  Template_Files {
+  }
+  Inline_Files {
+  }
+  Documentation_Files {
+  }
+}

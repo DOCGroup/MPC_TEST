@@ -1,0 +1,38 @@
+#!build
+default:
+	nobuild
+	:cx_option=exceptions
+	:cx_option=std_namespaces
+	:language=cxx
+	:config_setting=longlong
+	:cx_mode=ansi
+source/csvw_A.bld
+	shared_library
+	:config_setting=pic
+	:object_dir=source/.shobj
+	:libdirs=source
+source/csvw_B.bld
+	shared_library
+	:config_setting=pic
+	:object_dir=source/.shobj
+	:libdirs=source
+	:defines=ONLY_MAKE
+	:defines=ONLY_UNIX
+source/csvw_C.bld
+	shared_library
+	:config_setting=pic
+	:object_dir=source/.shobj
+	:libdirs=source
+	:defines=ONLY_MAKE
+	:defines=ONLY_UNIX
+source/csvw_D.bld
+	shared_library
+	:config_setting=pic
+	:object_dir=source/.shobj
+	:libdirs=source
+	:defines=FAIL_IF_NOT_DEFINED
+source/csvw_E.bld
+	shared_library
+	:config_setting=pic
+	:object_dir=source/.shobj
+	:libdirs=source

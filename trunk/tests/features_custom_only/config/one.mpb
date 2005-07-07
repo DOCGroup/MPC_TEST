@@ -1,0 +1,7 @@
+feature(one) {
+  specific(sle) {
+    macros += THIS_HERE_MACRO
+  } else {
+    macros += THAT_THERE_MACRO
+  }
+}

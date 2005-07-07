@@ -1,0 +1,39 @@
+project: custom_exercise {
+  custom_only = 1
+
+  specific(!html) {
+    zarflags += -GA
+  }
+
+  ZAR_Files {
+    this.zar
+  }
+
+  ZAR_Files {
+    commandflags += -Sc
+    that.zar
+  }
+}
+
+project(*use): one, two {
+  after += *
+
+  Source_Files {
+    zar_thisC.cpp
+    zar_thatB.cpp
+  }
+
+  Template_Files {
+    zar_thisB_T.cpp
+  }
+
+  Inline_Files {
+    zar_thisB_T.inl
+    zar_thatB.inl
+  }
+
+  Header_Files {
+    zar_thisB_T.h
+    zar_thatB.h
+  }
+}
