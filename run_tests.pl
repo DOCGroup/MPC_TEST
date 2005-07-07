@@ -357,22 +357,24 @@ sub compare_output {
 
   if (opendir($fh, $expect)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
-      my($tf) = "$test/$file";
-      my($ef) = "$expect/$file";
-      if (-d $ef) {
-        $status += compare_output($tf, $ef);
-      }
-      else {
-        if (!-r $tf) {
-          $status++;
-          print SAVEERR "ERROR: Unable read file: $tf\n";
+      if ($file ne 'CVS') {
+        my($tf) = "$test/$file";
+        my($ef) = "$expect/$file";
+        if (-d $ef) {
+          $status += compare_output($tf, $ef);
         }
-        elsif (!-r $ef) {
-          $status++;
-          print SAVEERR "ERROR: Unable read file: $ef\n";
-        }
-        elsif (compare($tf, $ef) != 0) {
-          $status++;
+        else {
+          if (!-r $tf) {
+            $status++;
+            print SAVEERR "ERROR: Unable read file: $tf\n";
+          }
+          elsif (!-r $ef) {
+            $status++;
+            print SAVEERR "ERROR: Unable read file: $ef\n";
+          }
+          elsif (compare($tf, $ef) != 0) {
+            $status++;
+          }
         }
       }
     }
@@ -441,16 +443,17 @@ sub move_expected {
 
   if (opendir($fh, $from)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
-      my($ffull) = "$from/$file";
-      my($tfull) = "$to/$file";
-      if (-d $ffull) {
-        mkdir($tfull);
-        move_expected($ffull, $tfull, $exist);
-      }
-      else {
-        if (!exists $$exist{$ffull}) {
-          mkpath(dirname($tfull));
-          move($ffull, $tfull);
+      if ($file ne 'CVS') {
+        my($ffull) = "$from/$file";
+        my($tfull) = "$to/$file";
+        if (-d $ffull) {
+          move_expected($ffull, $tfull, $exist);
+        }
+        else {
+          if (!exists $$exist{$ffull}) {
+            mkpath(dirname($tfull));
+            move($ffull, $tfull);
+          }
         }
       }
     }
@@ -629,42 +632,44 @@ else {
     if (opendir($fh, $testdir)) {
       my($columns) = (defined $ENV{COLUMNS} ? $ENV{COLUMNS} : 80);
       foreach my $dir (sort(grep(!/^\.\.?$/, readdir($fh)))) {
-        my($full) = "$testdir/$dir";
-        if (-d $full) {
-          my($amount) = $columns - 4 - length($dir);
-          if ($amount < 0) {
-            $amount = 1;
-          }
-          else {
-            $amount = int($amount / 2);
-          }
-
-          print SAVEOUT '', ('=' x $amount), " $dir ", ('=' x $amount), "\n";
-          my($mwc) = '';
-          if (-r "$full/$dir.mwc") {
-            $mwc = "$dir.mwc";
-          }
-          foreach my $type (@types) {
-            my($ret) = run_test($full, $mwc, 'config',
-                                "$expectdir/$dir", $type, 0);
-            $status += $ret;
-            if ($ret) {
-              print SAVEERR "MPC generation for $type $failed.\n";
-              if ($br_error) {
-                last;
-              }
+        if ($dir ne 'CVS') {
+          my($full) = "$testdir/$dir";
+          if (-d $full) {
+            my($amount) = $columns - 4 - length($dir);
+            if ($amount < 0) {
+              $amount = 1;
             }
             else {
-              print SAVEERR "MPC generation for $type $passed.\n";
+              $amount = int($amount / 2);
+            }
+
+            print SAVEOUT '', ('=' x $amount), " $dir ", ('=' x $amount), "\n";
+            my($mwc) = '';
+            if (-r "$full/$dir.mwc") {
+              $mwc = "$dir.mwc";
+            }
+            foreach my $type (@types) {
+              my($ret) = run_test($full, $mwc, 'config',
+                                  "$expectdir/$dir", $type, 0);
+              $status += $ret;
+              if ($ret) {
+                print SAVEERR "MPC generation for $type $failed.\n";
+                if ($br_error) {
+                  last;
+                }
+              }
+              else {
+                print SAVEERR "MPC generation for $type $passed.\n";
+              }
+            }
+            if (!$one_built && !$cr_expect) {
+              print SAVEERR "WARNING: This project did not ",
+                            "build on at least on platform.\n";
             }
           }
-          if (!$one_built && !$cr_expect) {
-            print SAVEERR "WARNING: This project did not ",
-                          "build on at least on platform.\n";
+          if ($br_error) {
+            last;
           }
-        }
-        if ($br_error) {
-          last;
         }
       }
       closedir($fh);
