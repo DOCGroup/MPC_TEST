@@ -15,8 +15,8 @@ DEPENDENCY_FILE  = .depend.source
 BIN_UNCHECKED    = main_test
 
 FILES = \
-  exe/use_more_names/use_more_names.cpp \
   exe/main.cpp \
+  exe/use_more_names/use_more_names.cpp \
   exe/use_names/use_names.cpp
 
 VPATH = .:exe:exe/use_names:exe/use_more_names

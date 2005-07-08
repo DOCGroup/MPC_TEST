@@ -157,7 +157,7 @@ sub compare {
 
 sub printBuildMessage {
   my($type) = shift;
-  print SAVEOUT "+++ Building for the $type type: ";
+  print SAVEERR "+++ Building for the $type type: ";
 }
 
 
@@ -168,10 +168,10 @@ sub checkBuildStatus {
   if (system($cmd) / 256 == 0) {
     $status = 1;
     $one_built++;
-    print SAVEOUT "$passed.\n";
+    print SAVEERR "$passed.\n";
   }
   else {
-    print SAVEOUT "$failed.\n";
+    print SAVEERR "$failed.\n";
   }
 
   return $status;
@@ -357,7 +357,11 @@ sub compare_output {
 
   if (opendir($fh, $expect)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
-      if ($file ne 'CVS') {
+      ## The order of the project dependencies are non-deterministic
+      ## within the GNUmakefile workspace (the file system has much
+      ## to do with it).  So, we are not going to compare them.  As long
+      ## as everything builds correctly we won't have a problem.
+      if ($file ne 'CVS' && $file ne 'GNUmakefile') {
         my($tf) = "$test/$file";
         my($ef) = "$expect/$file";
         if (-d $ef) {
@@ -579,14 +583,17 @@ sub determine_setup {
 # Main Section
 # ******************************************************************
 
+my($output)  = undef;
 my(%options) = ('expected' => \$cr_expect,
                 'break'    => \$br_error,
                 'nodiff'   => \$nodiff,
+                'output=s' => \$output,
                );
 my(%desc)    = ('expected' => 'Create expected results for all of the ' .
                               'tests',
                 'break'    => 'Break on the first test failure',
                 'nodiff'   => 'Do not show file differences',
+                'output'   => 'Send output to the specified file',
                );
 
 my($status)  = 0;
@@ -621,7 +628,10 @@ else {
     my($fh)        = new FileHandle();
 
     open(SAVEOUT, ">&STDOUT");
-    open(SAVEERR, ">&STDERR");
+    open(SAVEERR, (defined $output ? ">$output" : ">&STDERR"));
+
+    ## Avoid a perl warning
+    print SAVEOUT '';
 
     mkdir($logdir, 0777);
     open(STDOUT, ">$logfile");
@@ -643,7 +653,7 @@ else {
               $amount = int($amount / 2);
             }
 
-            print SAVEOUT '', ('=' x $amount), " $dir ", ('=' x $amount), "\n";
+            print SAVEERR '', ('=' x $amount), " $dir ", ('=' x $amount), "\n";
             my($mwc) = '';
             if (-r "$full/$dir.mwc") {
               $mwc = "$dir.mwc";
@@ -679,7 +689,12 @@ else {
     }
 
     open(STDOUT, ">&SAVEOUT");
-    open(STDERR, ">&SAVEERR");
+    if (defined $output) {
+      close(SAVEERR);
+    }
+    else {
+      open(STDERR, ">&SAVEERR");
+    }
   }
 }
 
