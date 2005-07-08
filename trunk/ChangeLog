@@ -1,3 +1,39 @@
+Fri Jul  8 09:53:04 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/conditional_specific_verbatim_wildcards/gnuace/GNUmakefile:
+        * expected/conditional_specific_verbatim_wildcards/gnuace/source/GNUmakefile:
+        * expected/conditional_specific_verbatim_wildcards/gnuace/source/GNUmakefile.csvw_A:
+        * expected/conditional_specific_verbatim_wildcards/gnuace/source/GNUmakefile.csvw_B:
+        * expected/conditional_specific_verbatim_wildcards/gnuace/source/GNUmakefile.csvw_C:
+        * expected/conditional_specific_verbatim_wildcards/gnuace/source/GNUmakefile.csvw_D:
+        * expected/conditional_specific_verbatim_wildcards/gnuace/source/GNUmakefile.csvw_E:
+        * expected/features_custom_only/gnuace/GNUmakefile:
+        * expected/features_custom_only/gnuace/source/GNUmakefile:
+        * expected/features_custom_only/gnuace/source/GNUmakefile.fco:
+        * expected/features_custom_only/gnuace/source/GNUmakefile.fco_use:
+        * expected/grouping/gnuace/GNUmakefile:
+        * expected/grouping/gnuace/source/GNUmakefile:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_A:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_B:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_C:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_D:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_E:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_F:
+        * expected/wide_coverage/gnuace/GNUmakefile:
+        * expected/wide_coverage/gnuace/generator/GNUmakefile:
+        * expected/wide_coverage/gnuace/generator/GNUmakefile.generator:
+        * expected/wide_coverage/gnuace/generator/GNUmakefile.generator_be:
+        * expected/wide_coverage/gnuace/source/GNUmakefile:
+        * expected/wide_coverage/gnuace/source/GNUmakefile.source:
+        * expected/wide_coverage/gnuace/source/GNUmakefile.source_lib:
+
+          Added new expected results for the gnuace project type.
+
+        * run_tests.pl:
+
+          Added a --output option to specify an output file.  Also, don't
+          compare gnuace workspaces.
+
 Thu Jul  7 13:35:00 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * README:

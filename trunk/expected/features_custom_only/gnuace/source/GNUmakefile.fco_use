@@ -22,8 +22,8 @@ SHLIB_UNCHECKED  = libfco_use.$(SOEXT)
 SHLIB            = $(SHLIB_UNCHECKED)
 
 FILES = \
-  zar_thisC.cpp \
-  zar_thatB.cpp
+  zar_thatB.cpp \
+  zar_thisC.cpp
 
 #----------------------------------------------------------------------------
 #       Include macros and targets
