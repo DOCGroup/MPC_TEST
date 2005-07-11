@@ -21,7 +21,7 @@
 			OutputDirectory="."
 			IntermediateDirectory="Debug\fco"
 			ConfigurationType="10"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -38,7 +38,7 @@
 			OutputDirectory="Release"
 			IntermediateDirectory="Release\fco"
 			ConfigurationType="10"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"

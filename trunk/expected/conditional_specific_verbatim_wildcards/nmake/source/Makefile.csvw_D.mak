@@ -68,7 +68,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /Fo"$(INTDIR)\\" /FD /c
+CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /Fo"$(INTDIR)\\" /FD /c
 
 RSC=rc.exe
 
@@ -109,7 +109,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /O2 /W3 /GX /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /Fo"$(INTDIR)\\" /FD /c
+CPP_PROJ=/nologo /O2 /W3 /EHs /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /Fo"$(INTDIR)\\" /FD /c
 
 RSC=rc.exe
 
@@ -151,7 +151,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /Ob0 /W3 /Gm /GX /Zi /GR /Gy /MDd /Fd"lib\csvw_Dsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /Fo"$(INTDIR)\\" /FD /c
+CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"lib\csvw_Dsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /Fo"$(INTDIR)\\" /FD /c
 
 
 LINK32=link.exe -lib
@@ -191,7 +191,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /O2 /W3 /GX /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /Fo"$(INTDIR)\\" /FD /c
+CPP_PROJ=/nologo /O2 /W3 /EHs /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /Fo"$(INTDIR)\\" /FD /c
 
 
 LINK32=link.exe -lib
@@ -257,28 +257,28 @@ SOURCE="conditional\every.cpp"
 "$(INTDIR)\conditional\every.obj" : $(SOURCE) "$(INTDIR)"
         @if not exist "$(INTDIR)\conditional\$(NULL)" mkdir "$(INTDIR)\conditional"
 	$(CPP) @<<
-	/nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /FD /c /Fo"$(INTDIR)\conditional\every.obj" $(SOURCE)
+	/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /FD /c /Fo"$(INTDIR)\conditional\every.obj" $(SOURCE)
 <<
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
 "$(INTDIR)\conditional\every.obj" : $(SOURCE) "$(INTDIR)"
         @if not exist "$(INTDIR)\conditional\$(NULL)" mkdir "$(INTDIR)\conditional"
 	$(CPP) @<<
-	/nologo /O2 /W3 /GX /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /FD /c /Fo"$(INTDIR)\conditional\every.obj" $(SOURCE)
+	/nologo /O2 /W3 /EHs /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /FD /c /Fo"$(INTDIR)\conditional\every.obj" $(SOURCE)
 <<
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
 "$(INTDIR)\conditional\every.obj" : $(SOURCE) "$(INTDIR)"
         @if not exist "$(INTDIR)\conditional\$(NULL)" mkdir "$(INTDIR)\conditional"
 	$(CPP) @<<
-	/nologo /Ob0 /W3 /Gm /GX /Zi /GR /Gy /MDd /Fd"lib\csvw_Dsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /FD /c /Fo"$(INTDIR)\conditional\every.obj" $(SOURCE)
+	/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"lib\csvw_Dsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /FD /c /Fo"$(INTDIR)\conditional\every.obj" $(SOURCE)
 <<
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
 "$(INTDIR)\conditional\every.obj" : $(SOURCE) "$(INTDIR)"
         @if not exist "$(INTDIR)\conditional\$(NULL)" mkdir "$(INTDIR)\conditional"
 	$(CPP) @<<
-	/nologo /O2 /W3 /GX /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /FD /c /Fo"$(INTDIR)\conditional\every.obj" $(SOURCE)
+	/nologo /O2 /W3 /EHs /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FAIL_IF_NOT_DEFINED /FD /c /Fo"$(INTDIR)\conditional\every.obj" $(SOURCE)
 <<
 !ENDIF
 

@@ -21,7 +21,7 @@
 			OutputDirectory="."
 			IntermediateDirectory="Debug\grouping_B"
 			ConfigurationType="1"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -94,7 +94,7 @@
 			OutputDirectory="Release"
 			IntermediateDirectory="Release\grouping_B"
 			ConfigurationType="1"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"

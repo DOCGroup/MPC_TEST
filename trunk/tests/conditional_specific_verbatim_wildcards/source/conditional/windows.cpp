@@ -1,12 +1,8 @@
-#if defined(__BORLANDC__)
-#include <dir.h>
-#elif defined(_MSC_VER) || defined(__DMC__)
-#include <direct.h>
-#endif
+#include <windows.h>
 
 void foo()
 {
-  mkdir(".");
+  CreateDirectory(".", 0);
 }
 
 #if defined(ONLY_MAKE)

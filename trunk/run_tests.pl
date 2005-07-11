@@ -97,6 +97,7 @@ sub getExecutePath {
 sub compare {
   my($left)      = shift;
   my($right)     = shift;
+  my($show)      = shift;
   my($lh)        = new FileHandle();
   my($rh)        = new FileHandle();
   my($different) = 1;
@@ -121,7 +122,7 @@ sub compare {
         if ($line !~ /mwc\.pl/ && $line !~ /\$Id[:\$]/ &&
             $line !~ /[\da-f]+\-[\da-f]+\-/i && $line !~ /a\s+href=/i) {
           if ($lines[$i] ne $line) {
-            if (!$nodiff) {
+            if (!$nodiff && $show) {
               if (defined $diff) {
                 my($txt) = 'diff.txt';
                 my($dh)  = new FileHandle();
@@ -376,7 +377,7 @@ sub compare_output {
             $status++;
             print SAVEERR "ERROR: Unable read file: $ef\n";
           }
-          elsif (compare($tf, $ef) != 0) {
+          elsif (compare($tf, $ef, 1) != 0) {
             $status++;
           }
         }
@@ -456,7 +457,12 @@ sub move_expected {
         else {
           if (!exists $$exist{$ffull}) {
             mkpath(dirname($tfull));
-            move($ffull, $tfull);
+            if (!-r $tfull || compare($ffull, $tfull) != 0) {
+              move($ffull, $tfull);
+            }
+            else {
+              unlink($ffull);
+            }
           }
         }
       }
