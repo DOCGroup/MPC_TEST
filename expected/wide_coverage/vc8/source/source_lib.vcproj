@@ -21,7 +21,7 @@
 			OutputDirectory="..\lib"
 			IntermediateDirectory="Debug\source_lib"
 			ConfigurationType="4"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -98,7 +98,7 @@
 			OutputDirectory="..\lib"
 			IntermediateDirectory="Release\source_lib"
 			ConfigurationType="4"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"

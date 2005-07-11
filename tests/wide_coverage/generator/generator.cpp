@@ -4,14 +4,9 @@
 #include <stdio.h>
 #include <string>
 
-#if defined(__BORLANDC__)
-#include <dir.h>
-#elif defined(_MSC_VER) || defined(__DMC__)
-#include <direct.h>
-#endif
-
 #if defined(WIN32)
-#define makedir(X,Y) mkdir(X)
+#include <windows.h>
+#define makedir(X,Y) CreateDirectory(X, 0)
 #else
 #define makedir(X,Y) mkdir(X,Y)
 #endif

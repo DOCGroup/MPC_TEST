@@ -21,7 +21,7 @@
 			OutputDirectory="bin"
 			IntermediateDirectory="Debug\csvw_D"
 			ConfigurationType="2"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -95,7 +95,7 @@
 			OutputDirectory="bin"
 			IntermediateDirectory="Release\csvw_D"
 			ConfigurationType="2"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
