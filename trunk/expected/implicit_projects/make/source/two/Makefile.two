@@ -1,0 +1,66 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I..
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L. -L../../lib
+CCC           = $(CXX)
+MAKEFILE      = Makefile.two
+DEPENDENCIES  = .depend.$(MAKEFILE)
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)two$(EXEEXT)
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+EXEEXT        = 
+LIBPREFIX     = lib
+LDLIBS        = -lone -ldl -lpthread
+OBJS          = two$(OBJEXT)
+GENFLAGS      = -g
+SRC           = two.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = 
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(BIN)
+
+$(BTARGETDIR):
+	@$(MKDIR) "$@"
+
+$(BIN): $(BTARGETDIR) $(OBJS)
+	$(LINK.cc) $(OUTPUT_OPTION) $(OBJS) $(LDLIBS)
+
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+two$(OBJEXT): two.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) two.cpp $(OUTPUT_OPTION)
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(BIN)
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@touch $(DEPENDENCIES)
+
+depend:
+	-makedepend -Y $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

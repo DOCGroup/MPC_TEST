@@ -125,7 +125,7 @@ LINK32_OBJS= \
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
-OUTDIR=Static_Debug
+OUTDIR=.
 INTDIR=Static_Debug\fco_use\I386
 
 ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\fco_usesd.lib"
@@ -165,7 +165,7 @@ LINK32_OBJS= \
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
-OUTDIR=Static_Release
+OUTDIR=.
 INTDIR=Static_Release\fco_use\I386
 
 ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\fco_uses.lib"

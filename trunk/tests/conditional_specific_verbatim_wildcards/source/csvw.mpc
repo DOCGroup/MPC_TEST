@@ -40,7 +40,7 @@ project(*B) {
   libout = lib
 
   Source_Files {
-    !*b*.c*
+    ! *b*.c*
     conditional(bmake, cbx, em3, nmake, vc6, vc7, vc71, vc8) {
       conditional/windows.cpp
     } else {
@@ -60,7 +60,7 @@ project(*C) {
   libout = lib
 
   Source_Files {
-    !bleer.cpp
+    !  bleer.cpp
     conditional(!bmake, !cbx, !em3, !nmake, !vc6, !vc7, !vc71, !vc8) {
       conditional/unix.cpp
     }

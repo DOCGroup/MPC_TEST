@@ -1,3 +1,37 @@
+Mon Jul 18 09:02:23 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_A.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_B.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_C.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_D.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_E.mak:
+        * expected/features_custom_only/nmake/source/Makefile.fco.mak:
+        * expected/features_custom_only/nmake/source/Makefile.fco_use.mak:
+
+          Updated the expected results for nmake.
+
+        * run_tests.pl:
+
+          Added ./ to run configure.  Dot isn't always in the path of the
+          tester.
+
+        * tests/conditional_specific_verbatim_wildcards/source/csvw.mpc:
+
+          Modified this test to exercise whitespace insensitivity for file
+          exclusions.
+
+        * expected/implicit_projects/*:
+        * tests/implicit_projects/config/implicit_base.mpb:
+        * tests/implicit_projects/config/test_base.mpb:
+        * tests/implicit_projects/implicit_projects.mwc:
+        * tests/implicit_projects/source/one/foo.h:
+        * tests/implicit_projects/source/one/foo.cpp:
+        * tests/implicit_projects/source/two/two.mpc:
+        * tests/implicit_projects/source/two/two.cpp:
+
+          Added a new test for implicit projects with a base project
+          provided in the workspace.
+
 Mon Jul 11 13:28:44 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/nmake/*:

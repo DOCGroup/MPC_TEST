@@ -1,0 +1,12 @@
+#!build
+default:
+	library
+	:outputname=source/one/../../lib/libone.so
+	:optimizestrategy=speed
+	:libdirs=source/one/.
+	:libdirs=../../lib
+	:defines=FAILURE_TRIGGER
+foo.cpp
+	C++
+foo.h
+	include_file

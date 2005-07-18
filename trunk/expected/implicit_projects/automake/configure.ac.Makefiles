@@ -1,0 +1,4 @@
+AC_CONFIG_FILES([ Makefile ])
+AC_CONFIG_FILES([ source/Makefile ])
+AC_CONFIG_FILES([ source/one/Makefile ])
+AC_CONFIG_FILES([ source/two/Makefile ])

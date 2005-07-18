@@ -325,7 +325,7 @@ sub buildit {
       $ENV{DYLD_LIBRARY_PATH} = $ENV{LD_LIBRARY_PATH};
       system("aclocal; libtoolize; autoconf; " .
              "touch NEWS README AUTHORS ChangeLog; mkdir -p m4; " .
-             "automake -a; configure");
+             "automake -a; ./configure");
       $status = checkBuildStatus('make');
     }
   }
