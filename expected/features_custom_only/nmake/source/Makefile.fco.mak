@@ -137,7 +137,7 @@ RSC=rc.exe
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
-OUTDIR=Static_Debug
+OUTDIR=.
 INTDIR=Static_Debug\fco\I386
 
 ALL : DEPENDCHECK $(GENERATED_DIRTY)
@@ -184,7 +184,7 @@ CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd".\sd.pdb" /D _DEBUG /D W
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
-OUTDIR=Static_Release
+OUTDIR=.
 INTDIR=Static_Release\fco\I386
 
 ALL : DEPENDCHECK $(GENERATED_DIRTY)

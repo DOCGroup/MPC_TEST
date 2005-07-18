@@ -1,0 +1,11 @@
+#!build
+default:
+	program
+	:outputname=source/two/two
+	:optimizestrategy=speed
+	:sysincdirs=source/two/..
+	:libdirs=source/two/.
+	:libdirs=../../lib
+	:libraries=-lone
+two.cpp
+	C++

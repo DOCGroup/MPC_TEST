@@ -123,7 +123,7 @@ LINK32_OBJS= \
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
-OUTDIR=Static_Debug
+OUTDIR=..\lib
 INTDIR=Static_Debug\generator_be\I386
 
 ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_besd.lib"
@@ -162,7 +162,7 @@ LINK32_OBJS= \
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
-OUTDIR=Static_Release
+OUTDIR=..\lib
 INTDIR=Static_Release\generator_be\I386
 
 ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_bes.lib"

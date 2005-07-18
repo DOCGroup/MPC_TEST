@@ -125,7 +125,7 @@ LINK32_OBJS= \
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
-OUTDIR=Static_Debug
+OUTDIR=lib
 INTDIR=Static_Debug\csvw_A\I386
 
 ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Asd.lib"
@@ -165,7 +165,7 @@ LINK32_OBJS= \
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
-OUTDIR=Static_Release
+OUTDIR=lib
 INTDIR=Static_Release\csvw_A\I386
 
 ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_As.lib"

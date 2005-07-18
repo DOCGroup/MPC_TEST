@@ -1,0 +1,4 @@
+workspace {
+  implicit = implicit_base
+  cmdline += -base test_base -relative TEST_ROOT=$PWD
+}
