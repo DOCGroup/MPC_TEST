@@ -94,6 +94,36 @@ sub getExecutePath {
 }
 
 
+sub diff_files {
+  my($left)  = shift;
+  my($right) = shift;
+  my($i)     = shift;
+  my($lline) = shift;
+  my($rline) = shift;
+  my($show)  = shift;
+
+  if (!$nodiff && $show) {
+    if (defined $diff) {
+      my($txt) = 'diff.txt';
+      my($dh)  = new FileHandle();
+      system("$diff $left $right > $txt");
+      if (open($dh, $txt)) {
+        while(<$dh>) {
+          print SAVEERR $_;
+        }
+        close($dh);
+      }
+      unlink($txt);
+    }
+    else {
+      print SAVEERR "Line $i of $left differs\n",
+                    "from $right\n",
+                    "< $lline",
+                    "> $rline";
+    }
+  }
+}
+
 sub compare {
   my($left)      = shift;
   my($right)     = shift;
@@ -122,26 +152,7 @@ sub compare {
         if ($line !~ /mwc\.pl/ && $line !~ /\$Id[:\$]/ &&
             $line !~ /[\da-f]+\-[\da-f]+\-/i && $line !~ /a\s+href=/i) {
           if ($lines[$i] ne $line) {
-            if (!$nodiff && $show) {
-              if (defined $diff) {
-                my($txt) = 'diff.txt';
-                my($dh)  = new FileHandle();
-                system("$diff $left $right > $txt");
-                if (open($dh, $txt)) {
-                  while(<$dh>) {
-                    print SAVEERR $_;
-                  }
-                  close($dh);
-                }
-                unlink($txt);
-              }
-              else {
-                print SAVEERR "Line $i of $left differs\n",
-                              "from $right\n",
-                              "< $lines[$i]",
-                              "> $line";
-              }
-            }
+            diff_files($left, $right, $i, $lines[$i], $line, $show);
             $different = 1;
             last;
           }
@@ -149,6 +160,15 @@ sub compare {
         ++$i;
       }
       close($rh);
+
+      while (defined $lines[$i]) {
+        if ($lines[$i] !~ /^\s+$/) {
+          diff_files($left, $right, $i, $lines[$i], "\n", $show);
+          $different = 1;
+          last;
+        }
+        ++$i;
+      }
     }
   }
 

@@ -118,7 +118,7 @@ main_test_SOURCES = \
   exe/use_names/use_names.h
 
 main_test_LDADD = \
-   libsource_lib.la
+  libsource_lib.la
 
 all: __postbuild__
 

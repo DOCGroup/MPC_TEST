@@ -1,3 +1,33 @@
+Thu Aug 11 06:31:08 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/conditional_specific_verbatim_wildcards/automake/Makefile.am:
+        * expected/features_custom_only/automake/Makefile.am:
+        * expected/grouping/automake/Makefile.am:
+        * expected/implicit_projects/automake/Makefile.am:
+        * expected/implicit_projects/automake/source/two/Makefile.am:
+        * expected/wide_coverage/automake/Makefile.am:
+        * expected/wide_coverage/automake/generator/Makefile.am:
+        * expected/wide_coverage/automake/source/Makefile.am:
+
+          Updated to match the cosmetic changes to automake.mpd.
+
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_A:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_B:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_C:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_D:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_E:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_F:
+        * expected/implicit_projects/gnuace/source/two/GNUmakefile.two:
+        * expected/wide_coverage/gnuace/generator/GNUmakefile.generator:
+        * expected/wide_coverage/gnuace/source/GNUmakefile.source:
+
+          Updated to match the static library dependency change in gnu.mpd.
+
+        * run_tests.pl:
+
+          Fixed a bug where added differences would not be recognized as
+          changes.
+
 Mon Jul 18 09:02:23 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_A.mak:

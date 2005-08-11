@@ -37,7 +37,7 @@ generator_SOURCES = \
   resource.h
 
 generator_LDADD = \
-   libgenerator_be.la
+  libgenerator_be.la
 
 all: __postbuild__
 

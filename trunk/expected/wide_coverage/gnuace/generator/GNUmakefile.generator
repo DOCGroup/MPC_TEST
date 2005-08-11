@@ -124,11 +124,14 @@ require_warning:
 
 
 ifneq ($(VXWORKSLINK),true)
+ifeq ($(static_libs_only), 1)
+  DEPLIBS = $(foreach lib, generator_be , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
+endif
+
+$(BIN): $(addprefix $(VDIR), $(OBJS)) $(DEPLIBS)
 ifndef kylix
-$(BIN): $(addprefix $(VDIR), $(OBJS))
 	$(LINK.cc) $(LDFLAGS) $(CC_OUTPUT_FLAG) $@ $^ $(VLDLIBS) $(POSTLINK)
 else
-$(BIN): $(addprefix $(VDIR), $(OBJS))
 	$(LINK.cc) $(LDFLAGS) $(CC_OUTPUT_FLAG) $(VLDLIBS) $(BORINITEXEOBJ) $(POSTLINK) $^, $@,,
 endif
 endif
