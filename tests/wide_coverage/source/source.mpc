@@ -1,4 +1,4 @@
-project: test_base, zzip {
+project: test_base, zzip, simple {
   exename   = main_test
   after    += source_lib
   libs     += source_lib
@@ -24,6 +24,11 @@ project: test_base, zzip {
   }
   Inline_Files {
   }
+
+  Simple_Files {
+    Foolish
+  }
   Documentation_Files {
+    Foolish
   }
 }

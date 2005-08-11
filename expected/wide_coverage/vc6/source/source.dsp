@@ -106,5 +106,42 @@ SOURCE="exe\use_more_names\use_more_names.h"
 SOURCE="exe\use_names\use_names.h"
 # End Source File
 # End Group
+# Begin Group "Simple Files"
+
+# PROP Default_Filter "simple"
+# Begin Source File
+
+SOURCE="Foolish/foolish.simple"
+
+!IF  "$(CFG)" == "source - Win32 Debug"
+
+# PROP Ignore_Default_Tool 1
+# Begin Custom Build - Invoking echo on $(InputPath)
+InputPath="Foolish/foolish.simple"
+
+BuildCmds= \
+	echo Generated from $(InputPath) > "Foolish/foolish.txt" \
+
+"Foolish/foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ELSEIF  "$(CFG)" == "source - Win32 Release"
+
+# PROP Ignore_Default_Tool 1
+# Begin Custom Build - Invoking echo on $(InputPath)
+InputPath="Foolish/foolish.simple"
+
+BuildCmds= \
+	echo Generated from $(InputPath) > "Foolish/foolish.txt" \
+
+"Foolish/foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ENDIF
+
+# End Source File
+# End Group
 # End Target
 # End Project

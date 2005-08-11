@@ -1,0 +1,10 @@
+project {
+  Define_Custom(Simple) {
+    automatic = 0
+    command = echo
+    commandflags = Generated from
+    output_option = <%gt%>
+    inputext = .simple
+    documentation_outputext = .txt
+  }
+}

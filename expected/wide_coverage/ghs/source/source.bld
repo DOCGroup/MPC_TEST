@@ -2,6 +2,13 @@
 default:
 	program
 	:outputname=source/main_test
+Foolish/foolish.simple
+	custom
+	:custom_processor.name=echo
+	:depends=Foolish/foolish.simple
+	:preexec=cd source; echo Generated from Foolish/foolish.simple > Foolish/foolish.txt
+
+
 	:optimizestrategy=speed
 	:sysincdirs=source
 	:libdirs=source/.
