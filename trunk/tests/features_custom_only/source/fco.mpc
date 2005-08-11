@@ -16,7 +16,7 @@ project: custom_exercise {
 }
 
 project(*use): one, two {
-  after += *
+  after += non_existent_project *
 
   Source_Files {
     zar_thisC.cpp

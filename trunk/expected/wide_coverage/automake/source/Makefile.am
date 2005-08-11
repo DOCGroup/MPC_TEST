@@ -104,6 +104,16 @@ noinst_HEADERS = \
 ## Makefile.source.am
 
 if !BUILD_MFC
+
+BUILT_SOURCES += \
+  Foolish/foolish.txt
+
+CLEANFILES += \
+  Foolish/foolish.txt
+
+Foolish/foolish.txt: $(srcdir)/Foolish/foolish.simple
+	echo Generated from $(srcdir)/Foolish/foolish.simple > Foolish/foolish.txt
+
 noinst_PROGRAMS = main_test
 
 main_test_CPPFLAGS = \

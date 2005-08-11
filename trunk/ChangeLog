@@ -1,3 +1,20 @@
+Thu Aug 11 12:31:34 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * tests/features_custom_only/source/fco.mpc:
+        * expected/features_custom_only/html/source/fco_use.html:
+
+          Added something to this test to exercise the
+          Creator::fill_type_name() method.
+
+        * expected/wide_coverage/*:
+        * tests/wide_coverage/config/simple.mpb:
+        * tests/wide_coverage/source/Foolish/foolish.simple:
+        * tests/wide_coverage/source/source.mpc:
+
+          Added something to this test to exercise the use of automatic = 0
+          in Define_Custom where directories are used to specify both input
+          and output.
+
 Thu Aug 11 06:31:08 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/conditional_specific_verbatim_wildcards/automake/Makefile.am:

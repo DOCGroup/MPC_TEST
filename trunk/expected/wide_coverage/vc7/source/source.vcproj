@@ -153,6 +153,31 @@
 				RelativePath="exe\use_names\use_names.h">
 			</File>
 		</Filter>
+		<Filter
+			Name="Simple Files"
+			Filter="simple">
+			<File
+				RelativePath="Foolish/foolish.simple">
+				<FileConfiguration
+					Name="Debug|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking echo on Foolish/foolish.simple"
+						CommandLine="echo Generated from &quot;Foolish/foolish.simple&quot; &gt; &quot;Foolish/foolish.txt&quot;"
+						Outputs="Foolish/foolish.txt"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking echo on Foolish/foolish.simple"
+						CommandLine="echo Generated from &quot;Foolish/foolish.simple&quot; &gt; &quot;Foolish/foolish.txt&quot;"
+						Outputs="Foolish/foolish.txt"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
 	</Files>
 	<Globals>
 	</Globals>
