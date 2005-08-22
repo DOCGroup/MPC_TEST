@@ -1,3 +1,10 @@
+Mon Aug 22 11:58:32 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/implicit_projects/vc8/source/one/one.vcproj:
+        * expected/wide_coverage/vc8/source/source_lib.vcproj:
+
+          Updated to reflect the bug fix for static libraries.
+
 Thu Aug 11 12:31:34 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * tests/features_custom_only/source/fco.mpc:
