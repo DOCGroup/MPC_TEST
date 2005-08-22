@@ -68,14 +68,6 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="..\lib\source_libd.lib"
-				OutputFile="$(OutDir)\.exe"
-				Version="1.000"
-				LinkIncremental="2"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".;..\lib"
-				GenerateDebugInformation="true"
-				SubSystem="2"
-				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -142,16 +134,6 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="..\lib\source_lib.lib"
-				OutputFile="$(OutDir)\.exe"
-				Version="1.000"
-				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".;..\lib"
-				GenerateDebugInformation="true"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"

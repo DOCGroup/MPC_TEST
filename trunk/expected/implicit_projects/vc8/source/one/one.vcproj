@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="one"
-	ProjectGUID="{79047202-FECA-1BAD-0000-000088068089}"
+	ProjectGUID="{79047202-FECA-1BAD-0000-0000ECF937D3}"
 	RootNamespace="one"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -65,13 +65,6 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="..\..\lib\oned.lib"
-				OutputFile="$(OutDir)\.exe"
-				LinkIncremental="2"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".;..\..\lib"
-				GenerateDebugInformation="true"
-				SubSystem="2"
-				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -135,15 +128,6 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="..\..\lib\one.lib"
-				OutputFile="$(OutDir)\.exe"
-				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".;..\..\lib"
-				GenerateDebugInformation="true"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
