@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="two"
-	ProjectGUID="{D90473AB-FECA-1BAD-731D-8A6388069A13}"
+	ProjectGUID="{D904739B-FECA-1BAD-731D-8A635E11D7C5}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -44,7 +44,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="oned.lib"
 				OutputFile="$(OutDir)\two.exe"
-				LinkIncremental="1"
+				LinkIncremental="2"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories=".;..\..\lib"
 				GenerateDebugInformation="TRUE"

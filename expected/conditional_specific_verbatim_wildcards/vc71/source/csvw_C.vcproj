@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="csvw_C"
-	ProjectGUID="{196035B1-FECA-1BAD-4415-8A65E3599C44}"
+	ProjectGUID="{19007591-FECA-1BAD-4415-8A656075DE39}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -44,7 +44,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
 				OutputFile="$(OutDir)\csvw_Cd.dll"
-				LinkIncremental="1"
+				LinkIncremental="2"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="TRUE"

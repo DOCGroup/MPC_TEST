@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="generator_be"
-	ProjectGUID="{5D669236-FECA-1BAD-62E1-B247E723A3AB}"
+	ProjectGUID="{7D0613AE-FECA-1BAD-6281-826774B6E8E5}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -45,7 +45,7 @@
 				AdditionalDependencies=""
 				OutputFile="$(OutDir)\generator_bed.dll"
 				Version="1.000"
-				LinkIncremental="1"
+				LinkIncremental="2"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories=".;..\lib"
 				GenerateDebugInformation="TRUE"
