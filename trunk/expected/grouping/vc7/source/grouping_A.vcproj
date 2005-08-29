@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="grouping_A"
-	ProjectGUID="{71228CD1-FECA-1BAD-6F83-8EE194A2DD4D}"
+	ProjectGUID="{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -44,7 +44,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
 				OutputFile="$(OutDir)\A.exe"
-				LinkIncremental="1"
+				LinkIncremental="2"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="TRUE"

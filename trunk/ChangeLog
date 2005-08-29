@@ -1,3 +1,10 @@
+Mon Aug 29 14:10:25 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/vc7/*.vcproj:
+        * expected/*/vc71/*.vcproj:
+
+          Updated to reflect the latest change for incremental linking.
+
 Mon Aug 22 11:58:32 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/implicit_projects/vc8/source/one/one.vcproj:
