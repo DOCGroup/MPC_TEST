@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="source_lib"
-	ProjectGUID="{8B417D40-FECA-1BAD-9DA8-AE3313D5D429}"
+	ProjectGUID="{0B017DE5-FECA-1BAD-9DF8-8E63A733F8D6}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -226,7 +226,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on TheCheat.r"
-						CommandLine="perl ..\bin\cppgen.pl  &quot;TheCheat.r&quot; -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;TheCheat.cpp&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;TheCheat.cpp&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="TheCheat.cpp;TheCheat.h"/>
 				</FileConfiguration>
@@ -236,7 +236,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on TheCheat.r"
-						CommandLine="perl ..\bin\cppgen.pl  &quot;TheCheat.r&quot; -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;TheCheat.cpp&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;TheCheat.cpp&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="TheCheat.cpp;TheCheat.h"/>
 				</FileConfiguration>

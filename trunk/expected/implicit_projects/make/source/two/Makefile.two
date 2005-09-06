@@ -45,7 +45,7 @@ generated: $(GENERATED_DIRTY)
 	@-:
 
 two$(OBJEXT): two.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) two.cpp $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) two.cpp
 
 clean:
 	-$(RM) $(OBJS)

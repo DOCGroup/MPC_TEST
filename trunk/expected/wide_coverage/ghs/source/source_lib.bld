@@ -27,8 +27,8 @@ TheCheat.r
 	custom
 	:custom_processor.name=echo
 	:depends=../bin/cppgen.pl TheCheat.r
-	:preexec=cd source; perl ../bin/cppgen.pl  TheCheat.r -o TheCheat.cpp
-	:preexec=cd source; perl ../bin/cppgen.pl  TheCheat.r -o TheCheat.h
+	:preexec=cd source; perl ../bin/cppgen.pl  -o TheCheat.cpp TheCheat.r
+	:preexec=cd source; perl ../bin/cppgen.pl  -o TheCheat.h TheCheat.r
 
 	:preexec=cd source; echo #include "source_lib_pch.h" > temporary.src
         :preexec=cd source; cat TheCheat.cpp >> temporary.src

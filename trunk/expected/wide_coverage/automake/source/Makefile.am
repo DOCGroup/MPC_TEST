@@ -57,7 +57,7 @@ CLEANFILES += \
 TheCheat.cpp TheCheat.h: TheCheat-stamp
 
 TheCheat-stamp: $(srcdir)/TheCheat.r
-	perl ../bin/cppgen.pl  $(srcdir)/TheCheat.r -o TheCheat.cpp TheCheat.h
+	perl ../bin/cppgen.pl  -o TheCheat.cpp TheCheat.h $(srcdir)/TheCheat.r
 	@touch "$@"
 
 BUILT_SOURCES += \
@@ -112,7 +112,7 @@ CLEANFILES += \
   Foolish/foolish.txt
 
 Foolish/foolish.txt: $(srcdir)/Foolish/foolish.simple
-	echo Generated from $(srcdir)/Foolish/foolish.simple > Foolish/foolish.txt
+	echo Generated from > Foolish/foolish.txt $(srcdir)/Foolish/foolish.simple
 
 noinst_PROGRAMS = main_test
 

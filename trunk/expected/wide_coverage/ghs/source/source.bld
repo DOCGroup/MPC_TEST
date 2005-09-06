@@ -6,7 +6,7 @@ Foolish/foolish.simple
 	custom
 	:custom_processor.name=echo
 	:depends=Foolish/foolish.simple
-	:preexec=cd source; echo Generated from Foolish/foolish.simple > Foolish/foolish.txt
+	:preexec=cd source; echo Generated from > Foolish/foolish.txt Foolish/foolish.simple
 
 
 	:optimizestrategy=speed

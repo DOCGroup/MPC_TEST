@@ -280,7 +280,7 @@ InputPath=clown.r
 "clown.cpp" "clown.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
-	perl ..\bin\cppgen.pl  "$(InputPath)" -o "clown.cpp" "clown.h"
+	perl ..\bin\cppgen.pl  -o "clown.cpp" "clown.h" "$(InputPath)"
 <<
 
 

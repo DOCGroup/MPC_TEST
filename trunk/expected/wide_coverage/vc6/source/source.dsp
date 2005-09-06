@@ -120,7 +120,7 @@ SOURCE="Foolish/foolish.simple"
 InputPath="Foolish/foolish.simple"
 
 BuildCmds= \
-	echo Generated from $(InputPath) > "Foolish/foolish.txt" \
+	echo Generated from > "Foolish/foolish.txt" $(InputPath) \
 
 "Foolish/foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -133,7 +133,7 @@ BuildCmds= \
 InputPath="Foolish/foolish.simple"
 
 BuildCmds= \
-	echo Generated from $(InputPath) > "Foolish/foolish.txt" \
+	echo Generated from > "Foolish/foolish.txt" $(InputPath) \
 
 "Foolish/foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)

@@ -55,13 +55,13 @@ generated: $(GENERATED_DIRTY)
 	@-:
 
 conditional/every$(OBJEXT): conditional/every.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) conditional/every.cpp $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) conditional/every.cpp
 
 moop$(OBJEXT): moop.cxx
-	$(COMPILE.cc) $(EXPORTFLAGS) moop.cxx $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) moop.cxx
 
 qwaaa$(OBJEXT): qwaaa.c
-	$(COMPILE.cc) $(EXPORTFLAGS) qwaaa.c $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) qwaaa.c
 
 clean:
 	-$(RM) $(OBJS)

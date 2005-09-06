@@ -43,7 +43,7 @@ $(BIN): $(BTARGETDIR) $(OBJS)
 
 GENERATED_DIRTY    = clown.cpp clown.h
 clown.cpp clown.h: clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  clown.r -o "$@"
+	perl ../bin/cppgen.pl  -o "$@" clown.r
 
 .PRECIOUS: $(GENERATED_DIRTY)
 $(OBJS): $(GENERATED_DIRTY)
@@ -52,10 +52,10 @@ generated: $(GENERATED_DIRTY)
 	@-:
 
 clown$(OBJEXT): clown.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) clown.cpp $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) clown.cpp
 
 other$(OBJEXT): other.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) other.cpp $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) other.cpp
 
 clean:
 	-$(RM) $(OBJS)

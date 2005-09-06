@@ -54,7 +54,7 @@ generated: $(GENERATED_DIRTY)
 	@-:
 
 generator_be$(OBJEXT): generator_be.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) generator_be.cpp $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) generator_be.cpp
 
 clean:
 	-$(RM) $(OBJS)

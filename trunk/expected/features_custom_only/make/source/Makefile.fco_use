@@ -52,10 +52,10 @@ generated: $(GENERATED_DIRTY)
 	@-:
 
 zar_thatB$(OBJEXT): zar_thatB.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) zar_thatB.cpp $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) zar_thatB.cpp
 
 zar_thisC$(OBJEXT): zar_thisC.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) zar_thisC.cpp $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) zar_thisC.cpp
 
 clean:
 	-$(RM) $(OBJS)
