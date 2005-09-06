@@ -6,8 +6,8 @@ clown.r
 	custom
 	:custom_processor.name=echo
 	:depends=../bin/cppgen.pl clown.r
-	:preexec=cd source; perl ../bin/cppgen.pl  clown.r -o clown.cpp
-	:preexec=cd source; perl ../bin/cppgen.pl  clown.r -o clown.h
+	:preexec=cd source; perl ../bin/cppgen.pl  -o clown.cpp clown.r
+	:preexec=cd source; perl ../bin/cppgen.pl  -o clown.h clown.r
 
 
 	:optimizestrategy=speed

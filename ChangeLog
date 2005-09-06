@@ -1,3 +1,26 @@
+Tue Sep  6 10:35:24 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_A:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_B:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_C:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_D:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_E:
+        * expected/features_custom_only/bmake/source/Makefile.fco.bmak:
+        * expected/features_custom_only/make/source/Makefile.fco_use:
+        * expected/implicit_projects/make/source/one/Makefile.one:
+        * expected/implicit_projects/make/source/two/Makefile.two:
+
+          Minor rearrangement of the make.mpd template.
+
+        * expected/grouping/*:
+        * expected/wide_coverage/*:
+
+          Regenerated the expected output to correspond with the following
+          MPC change:
+
+          Change the position of the use of custom 'output_option' setting.
+          Ensure that the input file is the last thing on the command line.
+
 Mon Aug 29 14:10:25 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc7/*.vcproj:

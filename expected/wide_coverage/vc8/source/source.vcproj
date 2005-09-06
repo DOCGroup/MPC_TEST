@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="source"
-	ProjectGUID="{7971F6DF-FECA-1BAD-2457-8D3B13D5D429}"
+	ProjectGUID="{7901769F-FECA-1BAD-2457-8D6BA733F8D6}"
 	RootNamespace="source"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -205,7 +205,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on Foolish/foolish.simple"
-						CommandLine="echo Generated from &quot;Foolish/foolish.simple&quot; &gt; &quot;Foolish/foolish.txt&quot;"
+						CommandLine="echo Generated from &gt; &quot;Foolish/foolish.txt&quot; &quot;Foolish/foolish.simple&quot;"
 						Outputs="Foolish/foolish.txt"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -214,7 +214,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on Foolish/foolish.simple"
-						CommandLine="echo Generated from &quot;Foolish/foolish.simple&quot; &gt; &quot;Foolish/foolish.txt&quot;"
+						CommandLine="echo Generated from &gt; &quot;Foolish/foolish.txt&quot; &quot;Foolish/foolish.simple&quot;"
 						Outputs="Foolish/foolish.txt"/>
 				</FileConfiguration>
 			</File>

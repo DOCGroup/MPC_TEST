@@ -269,7 +269,7 @@ USERDEP__TheCheat="..\bin\cppgen.pl"
 InputPath="TheCheat.r"
 
 BuildCmds= \
-	perl ..\bin\cppgen.pl  $(InputPath) -o "TheCheat.cpp" "TheCheat.h" \
+	perl ..\bin\cppgen.pl  -o "TheCheat.cpp" "TheCheat.h" $(InputPath) \
 	echo #include "source_lib_pch.h" > temporary.src \
 	type "TheCheat.cpp" >> temporary.src \
 	move /y temporary.src "TheCheat.cpp"
@@ -289,7 +289,7 @@ USERDEP__TheCheat="..\bin\cppgen.pl"
 InputPath="TheCheat.r"
 
 BuildCmds= \
-	perl ..\bin\cppgen.pl  $(InputPath) -o "TheCheat.cpp" "TheCheat.h" \
+	perl ..\bin\cppgen.pl  -o "TheCheat.cpp" "TheCheat.h" $(InputPath) \
 	echo #include "source_lib_pch.h" > temporary.src \
 	type "TheCheat.cpp" >> temporary.src \
 	move /y temporary.src "TheCheat.cpp"

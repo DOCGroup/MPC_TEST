@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="grouping_F"
-	ProjectGUID="{01228CD1-FECA-1BAD-6F83-8EE194A2DD4D}"
+	ProjectGUID="{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
 	RootNamespace="grouping_F"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -201,7 +201,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on clown.r"
-						CommandLine="perl ..\bin\cppgen.pl  &quot;clown.r&quot; -o &quot;clown.cpp&quot; &quot;clown.h&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  -o &quot;clown.cpp&quot; &quot;clown.h&quot; &quot;clown.r&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="clown.cpp;clown.h"/>
 				</FileConfiguration>
@@ -211,7 +211,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on clown.r"
-						CommandLine="perl ..\bin\cppgen.pl  &quot;clown.r&quot; -o &quot;clown.cpp&quot; &quot;clown.h&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  -o &quot;clown.cpp&quot; &quot;clown.h&quot; &quot;clown.r&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="clown.cpp;clown.h"/>
 				</FileConfiguration>

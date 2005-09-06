@@ -55,16 +55,16 @@ generated: $(GENERATED_DIRTY)
 	@-:
 
 conditional/unix$(OBJEXT): conditional/unix.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) conditional/unix.cpp $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) conditional/unix.cpp
 
 moop$(OBJEXT): moop.cxx
-	$(COMPILE.cc) $(EXPORTFLAGS) moop.cxx $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) moop.cxx
 
 ploor$(OBJEXT): ploor.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) ploor.cpp $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ploor.cpp
 
 qwaaa$(OBJEXT): qwaaa.c
-	$(COMPILE.cc) $(EXPORTFLAGS) qwaaa.c $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) qwaaa.c
 
 clean:
 	-$(RM) $(OBJS)

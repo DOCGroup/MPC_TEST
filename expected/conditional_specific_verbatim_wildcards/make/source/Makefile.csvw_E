@@ -55,7 +55,7 @@ generated: $(GENERATED_DIRTY)
 	@-:
 
 closed/Apple$(OBJEXT): closed/Apple.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) closed/Apple.cpp $(OUTPUT_OPTION)
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) closed/Apple.cpp
 
 clean:
 	-$(RM) $(OBJS)
