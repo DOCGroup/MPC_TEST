@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="csvw_C"
-	ProjectGUID="{196035B1-FECA-1BAD-4415-8A65E3599C44}"
+	ProjectGUID="{19007591-FECA-1BAD-4415-8A656075DE39}"
 	RootNamespace="csvw_C"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -37,6 +37,10 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -111,6 +115,10 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"

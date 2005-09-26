@@ -1,3 +1,11 @@
+Mon Sep 26 07:16:28 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/vc7/*.vcproj:
+        * expected/*/vc71/*.vcproj:
+        * expected/*/vc8/*.vcproj:
+
+          Added support for MIDL to the vc7 and vc8 templates.
+
 Tue Sep  6 10:35:24 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_A:

@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="fco_use"
-	ProjectGUID="{7F01DCBF-FECA-1BAD-605D-8A6317621818}"
+	ProjectGUID="{7F017C9F-FECA-1BAD-605D-8A630726A1C2}"
 	RootNamespace="fco_use"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -37,6 +37,10 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -111,6 +115,10 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"

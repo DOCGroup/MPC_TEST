@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="one"
-	ProjectGUID="{79047202-FECA-1BAD-0000-000088068089}"
+	ProjectGUID="{79047292-FECA-1BAD-0000-00005E11CD5F}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -44,6 +44,13 @@
 				Name="VCLibrarianTool"
 				OutputFile="..\..\lib\oned.lib"
 				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>
@@ -92,6 +99,13 @@
 				Name="VCLibrarianTool"
 				OutputFile="..\..\lib\one.lib"
 				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>

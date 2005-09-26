@@ -53,6 +53,13 @@
 				SubSystem="1"
 				TargetMachine="1"/>
 			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 			<Tool
@@ -109,6 +116,13 @@
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>

@@ -47,6 +47,13 @@
 				OutputFile="..\lib\source_libd.lib"
 				TargetMachine="1"/>
 			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 			<Tool
@@ -96,6 +103,13 @@
 				Name="VCLibrarianTool"
 				OutputFile="..\lib\source_lib.lib"
 				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>
