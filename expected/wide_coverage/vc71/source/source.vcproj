@@ -53,6 +53,13 @@
 				SubSystem="1"
 				TargetMachine="1"/>
 			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 				CommandLine="echo main_test has been built"
 			/>
@@ -110,6 +117,13 @@
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
 			<Tool
 				Name="VCPostBuildEventTool"
 				CommandLine="echo main_test has been built"

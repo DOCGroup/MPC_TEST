@@ -54,6 +54,13 @@
 				ImportLibrary="..\lib\generator_bed.lib"
 				TargetMachine="1"/>
 			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 			<Tool
@@ -111,6 +118,13 @@
 				EnableCOMDATFolding="2"
 				ImportLibrary="..\lib\generator_be.lib"
 				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>

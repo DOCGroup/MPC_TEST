@@ -53,6 +53,13 @@
 				ImportLibrary="lib\csvw_Ad.lib"
 				TargetMachine="1"/>
 			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 			<Tool
@@ -109,6 +116,13 @@
 				EnableCOMDATFolding="2"
 				ImportLibrary="lib\csvw_A.lib"
 				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>

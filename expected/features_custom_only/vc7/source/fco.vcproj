@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="fco"
-	ProjectGUID="{D904729F-FECA-1BAD-605D-8A6317621818}"
+	ProjectGUID="{D904729F-FECA-1BAD-605D-8A630726A1C2}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -22,6 +22,13 @@
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 			<Tool
@@ -37,6 +44,13 @@
 			CharacterSet="0">
 			<Tool
 				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCMIDLTool"
+				AdditionalOptions=""
+				AdditionalIncludeDirectories=""
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+			/>
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>
