@@ -1,3 +1,11 @@
+Tue Oct  4 06:36:44 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/vc7/*.vcproj:
+        * expected/*/vc71/*.vcproj:
+        * expected/*/vc8/*.vcproj:
+
+          Improved support for MIDL.
+
 Mon Sep 26 07:16:28 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc7/*.vcproj:
