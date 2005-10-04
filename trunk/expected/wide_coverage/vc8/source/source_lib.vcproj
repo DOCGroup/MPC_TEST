@@ -41,6 +41,8 @@
 				AdditionalIncludeDirectories=""
 				TypeLibraryName="$(InputName).tlb"
 				HeaderFileName="$(InputName).h"
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -114,6 +116,8 @@
 				AdditionalIncludeDirectories=""
 				TypeLibraryName="$(InputName).tlb"
 				HeaderFileName="$(InputName).h"
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"

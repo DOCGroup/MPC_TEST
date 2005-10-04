@@ -57,6 +57,8 @@
 				AdditionalIncludeDirectories=""
 				TypeLibraryName="$(InputName).tlb"
 				HeaderFileName="$(InputName).h"
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -120,6 +122,8 @@
 				AdditionalIncludeDirectories=""
 				TypeLibraryName="$(InputName).tlb"
 				HeaderFileName="$(InputName).h"
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
