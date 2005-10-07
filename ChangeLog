@@ -1,8 +1,16 @@
+Fri Oct  7 14:06:12 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/grouping/automake/source/Makefile.am:
+        * expected/wide_coverage/automake/source/Makefile.am:
+
+          Updated to reflect J.T's change from Fri Oct  7 09:33:41 2005.
+
 Fri Oct  7 09:33:50 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc8/*.vcproj:
 
-          Updated to reflect Steve Huston's changes.
+          Updated to reflect Steve Huston's changes from Thu Oct  6 17:52:41
+          2005.
 
 Tue Oct  4 06:36:44 2005  Chad Elliott  <elliott_c@ociweb.com>
 

@@ -22,7 +22,7 @@ CLEANFILES = \
 
 clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r
+clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
 	@touch "$@"
 
@@ -46,7 +46,7 @@ CLEANFILES += \
 
 clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r
+clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
 	@touch "$@"
 
@@ -70,7 +70,7 @@ CLEANFILES += \
 
 clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r
+clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
 	@touch "$@"
 
@@ -94,7 +94,7 @@ CLEANFILES += \
 
 clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r
+clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
 	@touch "$@"
 
@@ -118,7 +118,7 @@ CLEANFILES += \
 
 clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r
+clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
 	@touch "$@"
 
@@ -142,7 +142,7 @@ CLEANFILES += \
 
 clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r
+clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
 	@touch "$@"
 
