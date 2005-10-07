@@ -23,7 +23,7 @@ CLEANFILES = \
 
 creole/more_names.cpp creole/more_names.h: creole/more_names-stamp
 
-creole/more_names-stamp: $(srcdir)/more_names.key
+creole/more_names-stamp: $(srcdir)/more_names.key ../bin/generator
 	mkdir -p creole
 	../bin/generator -o creole $(srcdir)/more_names.key
 	echo creole/more_names.cpp and creole/more_names.h have been generated.
@@ -40,7 +40,7 @@ CLEANFILES += \
 
 names.cpp names.h: names-stamp
 
-names-stamp: $(srcdir)/names.key something
+names-stamp: $(srcdir)/names.key something ../bin/generator
 	../bin/generator -n names $(srcdir)/names.key
 	echo names.cpp and names.h have been generated.
 	@touch "$@"
@@ -56,7 +56,7 @@ CLEANFILES += \
 
 TheCheat.cpp TheCheat.h: TheCheat-stamp
 
-TheCheat-stamp: $(srcdir)/TheCheat.r
+TheCheat-stamp: $(srcdir)/TheCheat.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  -o TheCheat.cpp TheCheat.h $(srcdir)/TheCheat.r
 	@touch "$@"
 
@@ -77,7 +77,7 @@ CLEANFILES += \
 
 bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl: all-stamp
 
-all-stamp: $(srcdir)/all.mondo
+all-stamp: $(srcdir)/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
 	perl ../mondo/mondo.pl  $(srcdir)/all.mondo
 	@touch "$@"
 
