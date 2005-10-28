@@ -90,7 +90,6 @@ LIBFILES = \
 RESOURCE = \
            $(INTERMEDIATE)\generator.res
 
-
 CFLAGS = \
          $(PCH_CFLAGS) \
          -a8 \
@@ -143,7 +142,7 @@ generated: $(GENERATED_DIRTY)
 .path.rc = $(RESDIR)
 .rc.res:
 	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-	$(RC) -fo$@ $<
+        $(RC) $(RC_FLAGS) -fo$@ $<
 
 clean:
 	if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
