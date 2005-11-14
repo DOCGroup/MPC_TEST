@@ -101,6 +101,10 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q ".\fco_use.dll"
+        -@del /f/q "$(OUTDIR)\fco_use.lib"
+        -@del /f/q "$(OUTDIR)\fco_use.exp"
+        -@del /f/q "$(OUTDIR)\fco_use.ilk"
 
 "$(INTDIR)" :
     if not exist "Release\$(NULL)" mkdir "Release"
@@ -141,6 +145,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "$(OUTDIR)\fco_usesd.lib"
+        -@del /f/q "$(OUTDIR)\fco_usesd.exp"
+        -@del /f/q "$(OUTDIR)\fco_usesd.ilk"
 	-@del /f/q ".\fco_usesd.pdb"
 
 "$(INTDIR)" :
@@ -181,6 +188,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "$(OUTDIR)\fco_uses.lib"
+        -@del /f/q "$(OUTDIR)\fco_uses.exp"
+        -@del /f/q "$(OUTDIR)\fco_uses.ilk"
 
 "$(INTDIR)" :
     if not exist "Static_Release\$(NULL)" mkdir "Static_Release"

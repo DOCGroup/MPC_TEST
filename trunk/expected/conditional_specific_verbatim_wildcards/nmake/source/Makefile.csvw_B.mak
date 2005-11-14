@@ -103,6 +103,10 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "bin\csvw_B.dll"
+        -@del /f/q "$(OUTDIR)\csvw_B.lib"
+        -@del /f/q "$(OUTDIR)\csvw_B.exp"
+        -@del /f/q "$(OUTDIR)\csvw_B.ilk"
 
 "$(INTDIR)" :
     if not exist "Release\$(NULL)" mkdir "Release"
@@ -145,6 +149,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "$(OUTDIR)\csvw_Bsd.lib"
+        -@del /f/q "$(OUTDIR)\csvw_Bsd.exp"
+        -@del /f/q "$(OUTDIR)\csvw_Bsd.ilk"
 	-@del /f/q "lib\csvw_Bsd.pdb"
 
 "$(INTDIR)" :
@@ -187,6 +194,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "$(OUTDIR)\csvw_Bs.lib"
+        -@del /f/q "$(OUTDIR)\csvw_Bs.exp"
+        -@del /f/q "$(OUTDIR)\csvw_Bs.ilk"
 
 "$(INTDIR)" :
     if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
