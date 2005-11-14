@@ -106,6 +106,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "$(OUTDIR)\.lib"
+        -@del /f/q "$(OUTDIR)\.exp"
+        -@del /f/q "$(OUTDIR)\.ilk"
         -@del /f/q "zar_thatA.cpp"
         -@del /f/q "zar_thatA.h"
         -@del /f/q "zar_thatA.inl"

@@ -100,6 +100,10 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "..\lib\generator_be.dll"
+        -@del /f/q "$(OUTDIR)\generator_be.lib"
+        -@del /f/q "$(OUTDIR)\generator_be.exp"
+        -@del /f/q "$(OUTDIR)\generator_be.ilk"
 
 "$(INTDIR)" :
     if not exist "Release\$(NULL)" mkdir "Release"
@@ -139,6 +143,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "$(OUTDIR)\generator_besd.lib"
+        -@del /f/q "$(OUTDIR)\generator_besd.exp"
+        -@del /f/q "$(OUTDIR)\generator_besd.ilk"
 	-@del /f/q "..\lib\generator_besd.pdb"
 
 "$(INTDIR)" :
@@ -178,6 +185,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "$(OUTDIR)\generator_bes.lib"
+        -@del /f/q "$(OUTDIR)\generator_bes.exp"
+        -@del /f/q "$(OUTDIR)\generator_bes.ilk"
 
 "$(INTDIR)" :
     if not exist "Static_Release\$(NULL)" mkdir "Static_Release"

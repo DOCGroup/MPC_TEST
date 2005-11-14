@@ -98,6 +98,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "$(OUTDIR)\one.lib"
+        -@del /f/q "$(OUTDIR)\one.exp"
+        -@del /f/q "$(OUTDIR)\one.ilk"
 
 "$(INTDIR)" :
     if not exist "Release\$(NULL)" mkdir "Release"
@@ -136,6 +139,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "$(OUTDIR)\onesd.lib"
+        -@del /f/q "$(OUTDIR)\onesd.exp"
+        -@del /f/q "$(OUTDIR)\onesd.ilk"
 	-@del /f/q "..\..\lib\onesd.pdb"
 
 "$(INTDIR)" :
@@ -175,6 +181,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
+        -@del /f/q "$(OUTDIR)\ones.lib"
+        -@del /f/q "$(OUTDIR)\ones.exp"
+        -@del /f/q "$(OUTDIR)\ones.ilk"
 
 "$(INTDIR)" :
     if not exist "Static_Release\$(NULL)" mkdir "Static_Release"

@@ -1,3 +1,17 @@
+Mon Nov 14 12:14:41 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_A.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_B.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_C.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_D.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_E.mak:
+        * expected/features_custom_only/nmake/source/Makefile.fco.mak:
+        * expected/features_custom_only/nmake/source/Makefile.fco_use.mak:
+        * expected/implicit_projects/nmake/source/one/Makefile.one.mak:
+        * expected/wide_coverage/nmake/generator/Makefile.generator_be.mak:
+
+          Updated to reflect my change from Mon Nov 14 12:06:15 2005.
+
 Fri Oct 28 11:43:21 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wide_coverage/bmake/generator/Makefile.generator.bmak:
