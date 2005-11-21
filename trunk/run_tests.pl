@@ -469,7 +469,10 @@ sub move_expected {
         else {
           if (!exists $$exist{$ffull}) {
             mkpath(dirname($tfull));
-            if (!-r $tfull || compare($ffull, $tfull) != 0) {
+
+            ## See the comment about GNUmakefile in compare_output().
+            if (!-r $tfull ||
+                ($file ne 'GNUmakefile' && compare($ffull, $tfull) != 0)) {
               move($ffull, $tfull);
             }
             else {
