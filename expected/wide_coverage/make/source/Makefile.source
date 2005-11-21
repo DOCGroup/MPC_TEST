@@ -1,0 +1,83 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I"." -DMACRO_TEST
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"." -L"../lib"
+CCC           = $(CXX)
+MAKEFILE      = Makefile.source
+DEPENDENCIES  = .depend.$(MAKEFILE)
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)main_test$(EXEEXT)
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+EXEEXT        = 
+LIBPREFIX     = lib
+LDLIBS        = -l"source_lib" -ldl -lpthread
+OBJS          = exe/main$(OBJEXT) exe/use_more_names/use_more_names$(OBJEXT) exe/use_names/use_names$(OBJEXT)
+GENFLAGS      = -g
+SRC           = exe/main.cpp exe/use_more_names/use_more_names.cpp exe/use_names/use_names.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = 
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(BIN) __postbuild__
+
+$(BTARGETDIR):
+	@$(MKDIR) "$@"
+
+$(BIN): $(BTARGETDIR) $(OBJS)
+	$(LINK.cc) $(OUTPUT_OPTION) $(OBJS) $(LDLIBS)
+
+
+GENERATED_DIRTY    = Foolish/foolish.txt
+Foolish/foolish.txt: Foolish/foolish.simple
+	echo Generated from > "$@" Foolish/foolish.simple
+
+.PRECIOUS: $(GENERATED_DIRTY)
+$(OBJS): $(GENERATED_DIRTY)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+exe/main$(OBJEXT): exe/main.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/main.cpp
+
+exe/use_more_names/use_more_names$(OBJEXT): exe/use_more_names/use_more_names.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/use_more_names/use_more_names.cpp
+
+exe/use_names/use_names$(OBJEXT): exe/use_names/use_names.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/use_names/use_names.cpp
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(BIN)
+	-$(RM) $(GENERATED_DIRTY)
+
+__postbuild__:
+	@echo main_test has been built
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@touch $(DEPENDENCIES)
+
+depend:
+	-makedepend -Y $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

@@ -1,3 +1,19 @@
+Mon Nov 21 12:01:36 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/wide_coverage/bmake/source/Makefile.source.bmak:
+        * expected/wide_coverage/bmake/source/Makefile.source_lib.bmak:
+        * expected/wide_coverage/make/source/Makefile.source:
+        * expected/wide_coverage/make/source/Makefile.source_lib:
+        * expected/wide_coverage/nmake/source/Makefile.source.mak:
+        * expected/wide_coverage/nmake/source/Makefile.source_lib.mak:
+
+          Added files that were missed do to a global ignore of Makefile*.
+
+        * run_tests.pl:
+
+          Modified to not copy GNUmakefile unless it does not exist in the
+          expected output area.
+
 Mon Nov 21 09:27:55 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/make/Makefile.*:
