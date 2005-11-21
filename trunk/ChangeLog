@@ -1,3 +1,13 @@
+Mon Nov 21 09:27:55 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/make/Makefile.*:
+
+          Updated to reflect my change from Mon Nov 21 09:26:35 2005.
+
+        * run_tests.pl:
+
+          Added better support for OpenVMS.
+
 Mon Nov 14 12:14:41 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_A.mak:

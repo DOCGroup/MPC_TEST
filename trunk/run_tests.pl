@@ -15,13 +15,14 @@ eval '(exit $?0)' && eval 'exec perl -w -S $0 ${1+"$@"}'
 use strict;
 use Cwd;
 use Config;
+use FindBin;
 use FileHandle;
 use File::Copy;
 use File::Path;
 use File::Spec;
 use File::Basename;
 
-my($basePath) = getExecutePath($0);
+my($basePath) = $FindBin::Bin;
 unshift(@INC, $basePath . '/modules');
 
 require OptionProcessor;
@@ -52,7 +53,7 @@ sub which {
 
   if (defined $ENV{'PATH'}) {
     my($part)   = '';
-    my($envSep) = $Config{'path_sep'};
+    my($envSep) = ($^O eq 'VMS' ? ':' : $Config{'path_sep'});
     foreach $part (split(/$envSep/, $ENV{'PATH'})) {
       $part .= "/$prog";
       if (-x "$part$Config{'exe_ext'}") {
@@ -65,32 +66,14 @@ sub which {
 }
 
 
-sub getExecutePath {
-  my($prog) = shift;
-  my($loc)  = '';
-
-  if ($prog ne basename($prog)) {
-    if ($prog =~ /^[\/\\]/ ||
-        $prog =~ /^[A-Za-z]:[\/\\]?/) {
-      $loc = dirname($prog);
-    }
-    else {
-      $loc = getcwd() . '/' . dirname($prog);
+sub touch {
+  my(@files) = shift;
+  my($fh)    = new FileHandle();
+  foreach my $file (@files) {
+    if (open($fh, ">>$file")) {
+      close($fh);
     }
   }
-  else {
-    $loc = dirname(which($prog));
-  }
-
-  if ($loc eq '.') {
-    $loc = getcwd();
-  }
-
-  if ($loc ne '') {
-    $loc .= '/';
-  }
-
-  return $loc;
 }
 
 
@@ -343,9 +326,14 @@ sub buildit {
       $ENV{SHLIB_PATH}        = $ENV{LD_LIBRARY_PATH};
       $ENV{LIBPATH}           = $ENV{LD_LIBRARY_PATH};
       $ENV{DYLD_LIBRARY_PATH} = $ENV{LD_LIBRARY_PATH};
-      system("aclocal; libtoolize; autoconf; " .
-             "touch NEWS README AUTHORS ChangeLog; mkdir -p m4; " .
-             "automake -a; ./configure");
+
+      ## Create the necessary files and directories for automake
+      mkdir('m4');
+      touch('NEWS', 'README', 'AUTHORS', 'ChangeLog');
+
+      ## Run the automake setup and configure
+      system("aclocal && libtoolize && " .
+             "autoconf && automake -a && ./configure");
       $status = checkBuildStatus('make');
     }
   }
@@ -382,6 +370,7 @@ sub compare_output {
       ## within the GNUmakefile workspace (the file system has much
       ## to do with it).  So, we are not going to compare them.  As long
       ## as everything builds correctly we won't have a problem.
+      $file =~ s/\.dir$// if ($^O eq 'VMS');
       if ($file ne 'CVS' && $file ne 'GNUmakefile') {
         my($tf) = "$test/$file";
         my($ef) = "$expect/$file";
@@ -391,11 +380,11 @@ sub compare_output {
         else {
           if (!-r $tf) {
             $status++;
-            print SAVEERR "ERROR: Unable read file: $tf\n";
+            print SAVEERR "ERROR: Unable to read file: $tf\n";
           }
           elsif (!-r $ef) {
             $status++;
-            print SAVEERR "ERROR: Unable read file: $ef\n";
+            print SAVEERR "ERROR: Unable to read file: $ef\n";
           }
           elsif (compare($tf, $ef, 1) != 0) {
             $status++;
@@ -406,7 +395,7 @@ sub compare_output {
     closedir($fh);
   }
   else {
-    print SAVEERR "ERROR: Unable read directory: $expect\n";
+    print SAVEERR "ERROR: Unable to read directory: $expect\n";
     $status++;
   }
 
@@ -421,6 +410,7 @@ sub list_files {
 
   if (opendir($fh, $dir)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
+      $file =~ s/\.dir$// if ($^O eq 'VMS');
       my($full) = "$dir/$file";
       if (-d $full) {
         push(@files, list_files($full));
@@ -443,6 +433,7 @@ sub remove_files {
 
   if (opendir($fh, $dir)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
+      $file =~ s/\.dir$// if ($^O eq 'VMS');
       my($full) = "$dir/$file";
       if (-d $full) {
         remove_files($full, $exist);
@@ -468,6 +459,7 @@ sub move_expected {
 
   if (opendir($fh, $from)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
+      $file =~ s/\.dir$// if ($^O eq 'VMS');
       if ($file ne 'CVS') {
         my($ffull) = "$from/$file";
         my($tfull) = "$to/$file";
@@ -499,6 +491,7 @@ sub apply_patches {
 
   if (defined $patch && opendir($fh, $path)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
+      $file =~ s/\.dir$// if ($^O eq 'VMS');
       my($full) = "$path/$file";
       if (-d $full) {
         apply_patches($full, $reverse);
@@ -668,6 +661,7 @@ else {
     if (opendir($fh, $testdir)) {
       my($columns) = (defined $ENV{COLUMNS} ? $ENV{COLUMNS} : 80);
       foreach my $dir (sort(grep(!/^\.\.?$/, readdir($fh)))) {
+        $dir =~ s/\.dir$// if ($^O eq 'VMS');
         if ($dir ne 'CVS') {
           my($full) = "$testdir/$dir";
           if (-d $full) {
