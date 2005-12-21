@@ -1,0 +1,1 @@
+-base different -features fake=0 -genins -hierarchy -make_coexistence -name_modifier "*_Zargaflan" -apply_project -relative TEST_ROOT=$PWD -static -value_project "postbuild+=echo Hello There" -value_template targetoutdir=zeep/

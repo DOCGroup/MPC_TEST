@@ -1,0 +1,13 @@
+#!build
+default:
+	nobuild
+	:cx_option=exceptions
+	:cx_option=std_namespaces
+	:language=cxx
+	:config_setting=longlong
+	:cx_mode=ansi
+two/two.bld
+	shared_library
+	:config_setting=pic
+	:object_dir=two/.shobj
+	:libdirs=two

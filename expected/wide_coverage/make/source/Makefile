@@ -17,9 +17,11 @@ clean depend generated realclean $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.source_lib $(@)
 	@$(MAKE) -f Makefile.source $(@)
 
+.PHONY: source_lib
 source_lib:
 	@$(MAKE) -f Makefile.source_lib generated all
 
+.PHONY: source
 source: source_lib
 	@$(MAKE) -f Makefile.source generated all
 

@@ -21,21 +21,27 @@ clean depend generated realclean $(CUSTOM_TARGETS):
 	@cd source; $(MAKE) -f Makefile.grouping_E $(@)
 	@cd source; $(MAKE) -f Makefile.grouping_F $(@)
 
+.PHONY: grouping_A
 grouping_A:
 	@cd source; $(MAKE) -f Makefile.grouping_A generated all
 
+.PHONY: grouping_B
 grouping_B:
 	@cd source; $(MAKE) -f Makefile.grouping_B generated all
 
+.PHONY: grouping_C
 grouping_C:
 	@cd source; $(MAKE) -f Makefile.grouping_C generated all
 
+.PHONY: grouping_D
 grouping_D:
 	@cd source; $(MAKE) -f Makefile.grouping_D generated all
 
+.PHONY: grouping_E
 grouping_E:
 	@cd source; $(MAKE) -f Makefile.grouping_E generated all
 
+.PHONY: grouping_F
 grouping_F:
 	@cd source; $(MAKE) -f Makefile.grouping_F generated all
 

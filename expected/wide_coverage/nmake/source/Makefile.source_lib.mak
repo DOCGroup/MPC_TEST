@@ -41,7 +41,7 @@ GENERATED_DIRTY = "creole\more_names.cpp" "creole\more_names.h" "names.cpp" "nam
 !IF  "$(CFG)" == "Win32 Debug"
 
 OUTDIR=..\lib
-INTDIR=Debug\source_lib\I386
+INTDIR=Static_Debug\source_lib\I386
 
 ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_libd.lib"
 
@@ -73,8 +73,8 @@ REALCLEAN : CLEAN
         -@del /f/q "weer.inl"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\source_lib\$(NULL)" mkdir "Debug\source_lib"
+    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+    if not exist "Static_Debug\source_lib\$(NULL)" mkdir "Static_Debug\source_lib"
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
@@ -98,7 +98,7 @@ LINK32_OBJS= \
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
 OUTDIR=..\lib
-INTDIR=Release\source_lib\I386
+INTDIR=Static_Release\source_lib\I386
 
 ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
 
@@ -129,8 +129,8 @@ REALCLEAN : CLEAN
         -@del /f/q "weer.inl"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\source_lib\$(NULL)" mkdir "Release\source_lib"
+    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+    if not exist "Static_Release\source_lib\$(NULL)" mkdir "Static_Release\source_lib"
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe

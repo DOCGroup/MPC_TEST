@@ -21,7 +21,7 @@ NUL           = /dev/null
 MKDIR         = mkdir -p
 EXEEXT        = 
 LIBPREFIX     = lib
-LDLIBS        = -l"generator_be" -ldl -lpthread
+LDLIBS        = -l"generator_be" -ldl -lpthread $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so)))))
 OBJS          = generator$(OBJEXT)
 GENFLAGS      = -g
 SRC           = generator.cpp
@@ -39,8 +39,7 @@ $(BTARGETDIR):
 	@$(MKDIR) "$@"
 
 $(BIN): $(BTARGETDIR) $(OBJS)
-	$(LINK.cc) $(OUTPUT_OPTION) $(OBJS) $(LDLIBS)
-
+	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
 generated: $(GENERATED_DIRTY)
 	@-:

@@ -17,9 +17,11 @@ clean depend generated realclean $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.generator_be $(@)
 	@$(MAKE) -f Makefile.generator $(@)
 
+.PHONY: generator_be
 generator_be:
 	@$(MAKE) -f Makefile.generator_be generated all
 
+.PHONY: generator
 generator: generator_be
 	@$(MAKE) -f Makefile.generator generated all
 

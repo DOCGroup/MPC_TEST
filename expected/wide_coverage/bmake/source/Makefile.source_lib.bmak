@@ -7,7 +7,7 @@
 #----------------------------------------------------------------------------
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
-CFG_DIR      = Debug\\
+CFG_DIR      = Static_Debug\\
 ILIBMODIFIER = d
 OLIBMODIFIER = d
 EXEMODIFIER  = 
@@ -15,7 +15,7 @@ POSTLINKRM   = .tds
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
-CFG_DIR      = Release\\
+CFG_DIR      = Static_Release\\
 ILIBMODIFIER = 
 OLIBMODIFIER = 
 EXEMODIFIER  = 
@@ -50,7 +50,7 @@ DLLFLAGS     = -Tpd -Gi -x -Gn -w-dup
 LIBFLAGS     = cfrv
 EXEFLAGS     = -Tpe -x -Gn
 WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
-CCFLAGS      = -b -tWR -tWD
+CCFLAGS      = -b
 !else # BCC
 OBJ_EXT      = .obj
 DLL_EXT      = .dll
@@ -65,7 +65,7 @@ DLLFLAGS     = -Tpd -Gi -x -Gn -w-dup
 LIBFLAGS     = /C
 EXEFLAGS     = -Tpe -x -Gn
 WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
-CCFLAGS      = -q -tWR -tWD
+CCFLAGS      = -q
 !endif
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)source_lib

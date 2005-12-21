@@ -21,7 +21,7 @@ NUL           = /dev/null
 MKDIR         = mkdir -p
 EXEEXT        = 
 LIBPREFIX     = lib
-LDLIBS        = -l"source_lib" -ldl -lpthread
+LDLIBS        = -l"source_lib" -ldl -lpthread $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so)))))
 OBJS          = exe/main$(OBJEXT) exe/use_more_names/use_more_names$(OBJEXT) exe/use_names/use_names$(OBJEXT)
 GENFLAGS      = -g
 SRC           = exe/main.cpp exe/use_more_names/use_more_names.cpp exe/use_names/use_names.cpp
@@ -38,8 +38,7 @@ $(BTARGETDIR):
 	@$(MKDIR) "$@"
 
 $(BIN): $(BTARGETDIR) $(OBJS)
-	$(LINK.cc) $(OUTPUT_OPTION) $(OBJS) $(LDLIBS)
-
+	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
 GENERATED_DIRTY    = Foolish/foolish.txt
 Foolish/foolish.txt: Foolish/foolish.simple

@@ -3,6 +3,13 @@ project: generator_base, test_base, cppgen, mondo_base {
   staticname = source_lib
   includes  += .
 
+  // Just to test scoped template variable settings, we will
+  // override the defaults.
+  specific {
+    Release::intermediate_dir = Static_Release
+    Debug::intermediate_dir = Static_Debug
+  }
+
   GEN_Files {
     commandflags += -n names
     names.key   <<  something

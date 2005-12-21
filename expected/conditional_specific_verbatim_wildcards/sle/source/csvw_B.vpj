@@ -198,7 +198,7 @@
 		<Folder
 			Name="Source Files"
 			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl">
-                        <F N="conditional\unix.cpp"/>
+                        <F N="conditional/unix.cpp"/>
                         <F N="moop.cxx"/>
                         <F N="ploor.cpp"/>
                         <F N="qwaaa.c"/>

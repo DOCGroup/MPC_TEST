@@ -50,7 +50,7 @@ DLLFLAGS     = -Tpd -Gi -x -Gn -w-dup
 LIBFLAGS     = cfrv
 EXEFLAGS     = -Tpe -x -Gn
 WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
-CCFLAGS      = -b -tWR -tWD
+CCFLAGS      = -b
 !else # BCC
 OBJ_EXT      = .obj
 DLL_EXT      = .dll
@@ -65,7 +65,7 @@ DLLFLAGS     = -Tpd -Gi -x -Gn -w-dup
 LIBFLAGS     = /C
 EXEFLAGS     = -Tpe -x -Gn
 WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
-CCFLAGS      = -q -tWR -tWD
+CCFLAGS      = -q
 !endif
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)fco
@@ -78,7 +78,6 @@ LFLAGS   = \
 
 LIBFILES = \
            $(CG_LIB) import32$(LIB_EXT) cw32mti.lib ws2_32.lib
-
 
 CFLAGS = \
          $(PCH_CFLAGS) \
