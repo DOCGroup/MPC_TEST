@@ -20,7 +20,7 @@ NUL           = /dev/null
 MKDIR         = mkdir -p
 EXEEXT        = 
 LIBPREFIX     = lib
-LDLIBS        = -ldl -lpthread
+LDLIBS        = -ldl -lpthread $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so)))))
 OBJS          = foo$(OBJEXT)
 AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)one$(AREXT)
@@ -33,10 +33,10 @@ EXPORTFLAGS   = $(STATICFLAGS)
 #       Local targets
 #----------------------------------------------------------------------------
 
+all: $(LIB)
+
 $(LTARGETDIR):
 	@$(MKDIR) "$@"
-
-all: $(LIB)
 
 $(LIB): $(LTARGETDIR) $(OBJS)
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)

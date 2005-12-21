@@ -1,0 +1,14 @@
+#!build
+default:
+	nobuild
+	:cx_option=exceptions
+	:cx_option=std_namespaces
+	:language=cxx
+	:config_setting=longlong
+	:cx_mode=ansi
+basic_Zargaflan.bld
+	program
+	:object_dir=./.obj
+	:staticlink=true
+	:sysincdirs=source/..
+	:libdirs=source

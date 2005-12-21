@@ -19,15 +19,19 @@ clean depend generated realclean $(CUSTOM_TARGETS):
 	@cd source; $(MAKE) -f Makefile.source_lib $(@)
 	@cd source; $(MAKE) -f Makefile.source $(@)
 
+.PHONY: generator_be
 generator_be:
 	@cd generator; $(MAKE) -f Makefile.generator_be generated all
 
+.PHONY: generator-target
 generator-target: generator_be
 	@cd generator; $(MAKE) -f Makefile.generator generated all
 
+.PHONY: source_lib
 source_lib: generator-target
 	@cd source; $(MAKE) -f Makefile.source_lib generated all
 
+.PHONY: source-target
 source-target: source_lib
 	@cd source; $(MAKE) -f Makefile.source generated all
 

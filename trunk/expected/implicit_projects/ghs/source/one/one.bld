@@ -1,7 +1,7 @@
 #!build
 default:
 	library
-	:outputname=source/one/../../lib/libone.so
+	:outputname=source/one/../../lib/libone.a
 	:optimizestrategy=speed
 	:libdirs=source/one/.
 	:libdirs=../../lib

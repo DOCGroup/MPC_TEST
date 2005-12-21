@@ -37,6 +37,7 @@ my($one_built) = 0;
 my($cr_expect) = undef;
 my($br_error)  = undef;
 my($nodiff)    = undef;
+my($nobuild)   = undef;
 my($test_scr)  = 'run_test.pl';
 my($diff)      = which('diff');
 my($patch)     = which('patch');
@@ -57,7 +58,7 @@ sub which {
     foreach $part (split(/$envSep/, $ENV{'PATH'})) {
       $part .= "/$prog";
       if (-x "$part$Config{'exe_ext'}") {
-        return File::Spec->canonpath($part);
+        return '"' . File::Spec->canonpath($part) . '"';
       }
     }
   }
@@ -182,16 +183,73 @@ sub checkBuildStatus {
 }
 
 
+sub validateHTML {
+  my($cmd)    = shift;
+  my($dir)    = shift;
+  my($status) = 0;
+  my($fh)     = new FileHandle();
+
+  if (opendir($fh, $dir)) {
+    foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
+      my($full) = "$dir/$file";
+      if (-d $full) {
+        $status += validateHTML($cmd, $full);
+      }
+      elsif ($file =~ /\.html$/) {
+        my($ph) = new FileHandle();
+
+        if (open($ph, "$cmd -q -e $full |")) {
+          my($first) = 1;
+          while(<$ph>) {
+            if ($first) {
+              print $full, ":\n";
+              $first = undef;
+            }
+            print;
+            if (/error:/i) {
+              ++$status;
+            }
+          }
+          close($ph);
+        }
+        else {
+          ++$status;
+        }
+      }
+    }
+    closedir($fh);
+  }
+  else {
+    ++$status;
+  }
+
+  return $status;
+}
+
+
 sub buildit {
   my($type)   = shift;
   my($path)   = shift;
+  my($entry)  = shift;
   my($status) = 0;
   my($orig)   = getcwd();
   my($ob)     = $one_built;
 
   chdir($path);
 
-  if ($^O eq 'MSWin32') {
+  if ($type eq 'html') {
+    my($cmd) = which('tidy');
+    if (defined $cmd) {
+      print SAVEERR "+++ Validation for the $type type: ";
+      if (validateHTML($cmd, '.')) {
+        print SAVEERR "$failed.\n";
+      }
+      else {
+        print SAVEERR "$passed.\n";
+      }
+    }
+  }
+  elsif ($^O eq 'MSWin32') {
     if ($type eq 'bmake') {
       my($cmd) = which('bcc32');
       if (!defined $cmd) {
@@ -199,11 +257,12 @@ sub buildit {
         $ENV{CBX} = 1;
       }
       if (defined $cmd) {
-        printBuildMessage($type);
         $cmd = which('make');
         $ENV{DEBUG} = 1;
         $ENV{PATH} .= ';' . File::Spec->canonpath(getcwd() . '/lib');
         if (defined $cmd) {
+          printBuildMessage($type);
+          $cmd .= ' -f ' . $entry if (defined $entry);
           $status = checkBuildStatus($cmd);
         }
       }
@@ -212,6 +271,7 @@ sub buildit {
       my($cmd) = which('nmake');
       if (defined $cmd) {
         printBuildMessage($type);
+        $cmd .= ' -f ' . $entry if (defined $entry);
         $status = checkBuildStatus($cmd);
       }
     }
@@ -219,8 +279,9 @@ sub buildit {
       my($cmd) = which('msdev');
       if (defined $cmd) {
         printBuildMessage($type);
-        $status = checkBuildStatus("\"$cmd\" " . basename($path) .
-                                   ".dsw /make \"all - win32 debug\"");
+        $entry = basename($path) . '.dsw' if (!defined $entry);
+        $status = checkBuildStatus("$cmd " .
+                                   "$entry /make \"all - win32 debug\"");
       }
     }
     elsif ($type eq 'vc7') {
@@ -229,7 +290,7 @@ sub buildit {
         my($fh) = new FileHandle();
         my($cl) = which('cl');
         if (defined $cl) {
-          if (open($fh, "\"$cl\" /? 2>&1 |")) {
+          if (open($fh, "$cl /? 2>&1 |")) {
             while(<$fh>) {
               if (/Version\s+(\d+\.\d+)/) {
                 if ($1 ne '13.00') {
@@ -245,8 +306,9 @@ sub buildit {
         }
         if (defined $cmd) {
           printBuildMessage($type);
-          $status = checkBuildStatus("\"$cmd\" " . basename($path) .
-                                     ".sln /build debug");
+          $entry = basename($path) . '.sln' if (!defined $entry);
+          $status = checkBuildStatus("$cmd " .
+                                     "$entry /build debug");
         }
       }
     }
@@ -256,7 +318,7 @@ sub buildit {
         my($fh) = new FileHandle();
         my($cl) = which('cl');
         if (defined $cl) {
-          if (open($fh, "\"$cl\" /? 2>&1 |")) {
+          if (open($fh, "$cl /? 2>&1 |")) {
             while(<$fh>) {
               if (/Version\s+(\d+\.\d+)/) {
                 if ($1 ne '13.10') {
@@ -272,8 +334,9 @@ sub buildit {
         }
         if (defined $cmd) {
           printBuildMessage($type);
-          $status = checkBuildStatus("\"$cmd\" " . basename($path) .
-                                     ".sln /build debug");
+          $entry = basename($path) . '.sln' if (!defined $entry);
+          $status = checkBuildStatus("$cmd " .
+                                     "$entry /build debug");
         }
       }
     }
@@ -283,7 +346,7 @@ sub buildit {
         my($fh) = new FileHandle();
         my($cl) = which('cl');
         if (defined $cl) {
-          if (open($fh, "\"$cl\" /? 2>&1 |")) {
+          if (open($fh, "$cl /? 2>&1 |")) {
             while(<$fh>) {
               if (/Version\s+(\d+\.\d+)/) {
                 if ($1 ne '14.00') {
@@ -299,8 +362,9 @@ sub buildit {
         }
         if (defined $cmd) {
           printBuildMessage($type);
-          $status = checkBuildStatus("\"$cmd\" " . basename($path) .
-                                     ".sln /build debug");
+          $entry = basename($path) . '.sln' if (!defined $entry);
+          $status = checkBuildStatus("$cmd " .
+                                     "$entry /build debug");
         }
       }
     }
@@ -332,19 +396,20 @@ sub buildit {
       touch('NEWS', 'README', 'AUTHORS', 'ChangeLog');
 
       ## Run the automake setup and configure
+      $entry = '' if (!defined $entry);
       system("aclocal && libtoolize && " .
-             "autoconf && automake -a && ./configure");
+             "autoconf && automake -a $entry && ./configure");
       $status = checkBuildStatus('make');
     }
   }
   elsif ($type eq 'make' && $^O eq 'linux') {
     printBuildMessage($type);
     $ENV{LD_LIBRARY_PATH} = getcwd() . '/lib';
-    $status = checkBuildStatus('make');
+    $status = checkBuildStatus('make' . (defined $entry ? " -f $entry" : ''));
   }
   elsif ($type eq 'gnuace') {
     printBuildMessage($type);
-    $status = checkBuildStatus('gmake');
+    $status = checkBuildStatus('gmake' . (defined $entry ? " -f $entry" : ''));
   }
 
   ## If $one_built has changed then we built the test.
@@ -531,7 +596,14 @@ sub run_test {
   }
 
   chdir($path);
-  my($ret) = system("$^X $MWC -include $cfg -type $type $mwc") / 256;
+  my($add) = '';
+  my($fh)  = new FileHandle("additional_options.txt");
+  if (defined $fh) {
+    $add = <$fh>;
+    $add =~ s/\s+$//;
+    close($fh);
+  }
+  my($ret) = system("$^X $MWC -include $cfg -type $type $add $mwc") / 256;
   chdir($orig);
 
   if ($ret != 0) {
@@ -542,7 +614,25 @@ sub run_test {
       $status += compare_output($path, "$expect/$type");
       if ($pass < 1) {
         apply_patches($path);
-        if (buildit($type, $path)) {
+        my($entry) = undef;
+        $fh = new FileHandle("$path/build_entry.txt");
+        if (defined $fh) {
+          while(<$fh>) {
+            if (/(.*):\s*(.*)/) {
+              if ($type eq $1) {
+                $entry = $2;
+                last;
+              }
+            }
+          }
+          close($fh);
+        }
+        ## If there was no entry, then build it.
+        ## If there was an entry, but it was empty the user does
+        ## not want to attempt to build for this type.
+        if (!$nobuild &&
+            (!defined $entry || $entry ne '') &&
+            buildit($type, $path, $entry)) {
           apply_patches($path, 1);
           $status += run_test($path, $mwc, $cfg, $expect, $type, $pass + 1);
         }
@@ -608,12 +698,14 @@ sub determine_setup {
 my($output)  = undef;
 my(%options) = ('expected' => \$cr_expect,
                 'break'    => \$br_error,
+                'nobuild'  => \$nobuild,
                 'nodiff'   => \$nodiff,
                 'output=s' => \$output,
                );
 my(%desc)    = ('expected' => 'Create expected results for all of the ' .
                               'tests',
                 'break'    => 'Break on the first test failure',
+                'nobuild'  => 'Do not build any of the tests',
                 'nodiff'   => 'Do not show file differences',
                 'output'   => 'Send output to the specified file',
                );
@@ -695,7 +787,7 @@ else {
                 print SAVEERR "MPC generation for $type $passed.\n";
               }
             }
-            if (!$one_built && !$cr_expect) {
+            if (!$nobuild && !$one_built && !$cr_expect) {
               print SAVEERR "WARNING: This project did not ",
                             "build on at least on platform.\n";
             }

@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/taoadmin/1.4a/ACE_wrappers/build/gcc3.4.2_d1o0/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type make implicit_projects.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type make implicit_projects.mwc
 #----------------------------------------------------------------------------
 
 
@@ -16,6 +16,7 @@ all: two
 clean depend generated realclean $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.two $(@)
 
+.PHONY: two
 two:
 	@$(MAKE) -f Makefile.two generated all
 

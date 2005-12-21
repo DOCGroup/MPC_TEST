@@ -20,7 +20,7 @@ NUL           = /dev/null
 MKDIR         = mkdir -p
 EXEEXT        = 
 LIBPREFIX     = lib
-LDLIBS        = -ldl -lpthread
+LDLIBS        = -ldl -lpthread $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so)))))
 OBJS          = conditional/every$(OBJEXT) moop$(OBJEXT) qwaaa$(OBJEXT)
 AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)csvw_D$(AREXT)
@@ -37,16 +37,16 @@ EXPORTFLAGS   = $(DYNAMICFLAGS)
 #       Local targets
 #----------------------------------------------------------------------------
 
-$(LTARGETDIR):
-	@$(MKDIR) "$@"
-
 all: $(SHLIB)
 
 $(SHTARGETDIR):
 	@$(MKDIR) "$@"
 
 $(SHLIB): $(SHTARGETDIR) $(OBJS)
-	$(LINK.cc) $(SHFLAGS) $(OUTPUT_OPTION) $(OBJS) $(LDLIBS)
+	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
+
+$(LTARGETDIR):
+	@$(MKDIR) "$@"
 
 $(LIB): $(LTARGETDIR) $(OBJS)
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)

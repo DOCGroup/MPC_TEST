@@ -17,9 +17,11 @@ clean depend generated realclean $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.fco $(@)
 	@$(MAKE) -f Makefile.fco_use $(@)
 
+.PHONY: fco
 fco:
 	@$(MAKE) -f Makefile.fco generated all
 
+.PHONY: fco_use
 fco_use: fco
 	@$(MAKE) -f Makefile.fco_use generated all
 

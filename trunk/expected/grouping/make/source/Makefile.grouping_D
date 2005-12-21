@@ -21,7 +21,7 @@ NUL           = /dev/null
 MKDIR         = mkdir -p
 EXEEXT        = 
 LIBPREFIX     = lib
-LDLIBS        = -ldl -lpthread
+LDLIBS        = -ldl -lpthread $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so)))))
 OBJS          = clown$(OBJEXT) other$(OBJEXT)
 GENFLAGS      = -g
 SRC           = clown.cpp other.cpp
@@ -38,8 +38,7 @@ $(BTARGETDIR):
 	@$(MKDIR) "$@"
 
 $(BIN): $(BTARGETDIR) $(OBJS)
-	$(LINK.cc) $(OUTPUT_OPTION) $(OBJS) $(LDLIBS)
-
+	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
 GENERATED_DIRTY    = clown.cpp clown.h
 clown.cpp clown.h: clown.r ../bin/cppgen.pl

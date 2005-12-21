@@ -20,18 +20,23 @@ clean depend generated realclean $(CUSTOM_TARGETS):
 	@cd source; $(MAKE) -f Makefile.csvw_D $(@)
 	@cd source; $(MAKE) -f Makefile.csvw_E $(@)
 
+.PHONY: csvw_A
 csvw_A:
 	@cd source; $(MAKE) -f Makefile.csvw_A generated all
 
+.PHONY: csvw_B
 csvw_B:
 	@cd source; $(MAKE) -f Makefile.csvw_B generated all
 
+.PHONY: csvw_C
 csvw_C:
 	@cd source; $(MAKE) -f Makefile.csvw_C generated all
 
+.PHONY: csvw_D
 csvw_D:
 	@cd source; $(MAKE) -f Makefile.csvw_D generated all
 
+.PHONY: csvw_E
 csvw_E:
 	@cd source; $(MAKE) -f Makefile.csvw_E generated all
 

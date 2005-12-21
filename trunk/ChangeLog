@@ -1,3 +1,119 @@
+Wed Dec 21 06:29:49 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/conditional_specific_verbatim_wildcards/html/conditional_specific_verbatim_wildcards_workspace.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_A.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_B.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_C.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_D.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_E.html:
+        * expected/conditional_specific_verbatim_wildcards/make/Makefile:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_A:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_B:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_C:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_D:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_E:
+        * expected/conditional_specific_verbatim_wildcards/sle/source/csvw_B.vpj:
+        * expected/conditional_specific_verbatim_wildcards/sle/source/csvw_C.vpj:
+        * expected/conditional_specific_verbatim_wildcards/sle/source/csvw_D.vpj:
+        * expected/conditional_specific_verbatim_wildcards/sle/source/csvw_E.vpj:
+        * expected/features_custom_only/bmake/source/Makefile.fco.bmak:
+        * expected/features_custom_only/html/features_custom_only_workspace.html:
+        * expected/features_custom_only/html/source/fco.html:
+        * expected/features_custom_only/html/source/fco_use.html:
+        * expected/features_custom_only/make/Makefile:
+        * expected/features_custom_only/make/source/Makefile:
+        * expected/features_custom_only/make/source/Makefile.fco:
+        * expected/features_custom_only/make/source/Makefile.fco_use:
+        * expected/grouping/html/grouping_workspace.html:
+        * expected/grouping/html/source/grouping_A.html:
+        * expected/grouping/html/source/grouping_B.html:
+        * expected/grouping/html/source/grouping_C.html:
+        * expected/grouping/html/source/grouping_D.html:
+        * expected/grouping/html/source/grouping_E.html:
+        * expected/grouping/html/source/grouping_F.html:
+        * expected/grouping/make/Makefile:
+        * expected/grouping/make/source/Makefile:
+        * expected/grouping/make/source/Makefile.grouping_A:
+        * expected/grouping/make/source/Makefile.grouping_B:
+        * expected/grouping/make/source/Makefile.grouping_C:
+        * expected/grouping/make/source/Makefile.grouping_D:
+        * expected/grouping/make/source/Makefile.grouping_E:
+        * expected/grouping/make/source/Makefile.grouping_F:
+        * expected/implicit_projects/bmake/source/one/Makefile.one.bmak:
+        * expected/implicit_projects/ghs/source/one/one.bld:
+        * expected/implicit_projects/html/implicit_projects_workspace.html:
+        * expected/implicit_projects/html/source/one/one.html:
+        * expected/implicit_projects/html/source/two/two.html:
+        * expected/implicit_projects/make/Makefile:
+        * expected/implicit_projects/make/source/Makefile:
+        * expected/implicit_projects/make/source/one/Makefile:
+        * expected/implicit_projects/make/source/one/Makefile.one:
+        * expected/implicit_projects/make/source/two/Makefile:
+        * expected/implicit_projects/make/source/two/Makefile.two:
+        * expected/implicit_projects/sle/source/one/one.vpj:
+        * expected/implicit_projects/sle/source/two/two.vpj:
+        * expected/implicit_projects/vc7/source/one/one.vcproj:
+        * expected/implicit_projects/vc71/source/one/one.vcproj:
+        * expected/implicit_projects/vc8/source/one/one.vcproj:
+        * expected/wide_coverage/bmake/source/Makefile.source_lib.bmak:
+        * expected/wide_coverage/em3/source/source_lib.vcp:
+        * expected/wide_coverage/ghs/source/source_lib.bld:
+        * expected/wide_coverage/html/generator/generator.html:
+        * expected/wide_coverage/html/generator/generator_be.html:
+        * expected/wide_coverage/html/source/source.html:
+        * expected/wide_coverage/html/source/source_lib.html:
+        * expected/wide_coverage/html/wide_coverage_workspace.html:
+        * expected/wide_coverage/make/Makefile:
+        * expected/wide_coverage/make/generator/Makefile:
+        * expected/wide_coverage/make/generator/Makefile.generator:
+        * expected/wide_coverage/make/generator/Makefile.generator_be:
+        * expected/wide_coverage/make/source/Makefile:
+        * expected/wide_coverage/make/source/Makefile.source:
+        * expected/wide_coverage/make/source/Makefile.source_lib:
+        * expected/wide_coverage/nmake/source/Makefile.source_lib.mak:
+        * expected/wide_coverage/sle/generator/generator.vpj:
+        * expected/wide_coverage/sle/generator/generator_be.vpj:
+        * expected/wide_coverage/sle/source/source.vpj:
+        * expected/wide_coverage/sle/source/source_lib.vpj:
+        * expected/wide_coverage/vc6/source/source_lib.dsp:
+        * expected/wide_coverage/vc7/source/source_lib.vcproj:
+        * expected/wide_coverage/vc71/source/source_lib.vcproj:
+        * expected/wide_coverage/vc8/source/source_lib.vcproj:
+
+          Updated to reflect my changes from Wed Dec 21 06:28:04 2005.
+
+        * run_tests.pl:
+
+          Added a no build option, html validation and support for a build
+          entry list.
+
+        * tests/exclude/additional_options.txt:
+        * tests/exclude/exclude.mwc:
+        * tests/exclude/one/foo.cpp:
+        * tests/exclude/one/one.mpc:
+        * tests/exclude/one/one.mwc:
+        * tests/exclude/one/three/foo.cpp:
+        * tests/exclude/two/foo.cpp:
+        * tests/exclude/two/two.mpc:
+        * expected/exclude/*:
+
+          Added a new test to exercise workspace file exclusion.
+
+        * tests/options/additional_options.txt:
+        * tests/options/build_entry.txt:
+        * tests/options/config/different.mpb:
+        * tests/options/source/basic.cpp:
+        * tests/options/source/basic.mpc:
+        * expected/options/*:
+
+          Added a new test to exercise the MPC options.
+
+        * tests/wide_coverage/source/source_lib.mpc:
+
+          Added a specific section to test scoped template variable
+          assignment.
+
 Mon Nov 21 12:01:36 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wide_coverage/bmake/source/Makefile.source.bmak:

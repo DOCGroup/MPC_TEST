@@ -1,7 +1,7 @@
 #!build
 default:
 	library
-	:outputname=source/../lib/libsource_lib.so
+	:outputname=source/../lib/libsource_lib.a
 more_names.key
 	custom
 	:custom_processor.name=echo
