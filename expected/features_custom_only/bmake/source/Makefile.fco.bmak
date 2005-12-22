@@ -92,10 +92,10 @@ all:
 
 GENERATED_DIRTY = zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp
 zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp: that.zar
-	perl ..\bin\exercise.pl -GA -Sc that.zar
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc that.zar
 
 zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp: this.zar
-	perl ..\bin\exercise.pl -GA this.zar
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA this.zar
 
 all: $(GENERATED_DIRTY)
 

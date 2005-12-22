@@ -84,9 +84,8 @@ sub diff_files {
   my($i)     = shift;
   my($lline) = shift;
   my($rline) = shift;
-  my($show)  = shift;
 
-  if (!$nodiff && $show) {
+  if (!$nodiff) {
     if (defined $diff) {
       my($txt) = 'diff.txt';
       my($dh)  = new FileHandle();
@@ -133,10 +132,13 @@ sub compare {
           ++$i;
         }
 
+        ## Don't compare things that are likely to change.  This
+        ## currently includes MPC command line, CVS Id tags, GUID's
+        ## and html references.
         if ($line !~ /mwc\.pl/ && $line !~ /\$Id[:\$]/ &&
             $line !~ /[\da-f]+\-[\da-f]+\-/i && $line !~ /a\s+href=/i) {
           if ($lines[$i] ne $line) {
-            diff_files($left, $right, $i, $lines[$i], $line, $show);
+            diff_files($left, $right, $i, $lines[$i], $line) if ($show);
             $different = 1;
             last;
           }
@@ -147,7 +149,7 @@ sub compare {
 
       while (defined $lines[$i]) {
         if ($lines[$i] !~ /^\s+$/) {
-          diff_files($left, $right, $i, $lines[$i], "\n", $show);
+          diff_files($left, $right, $i, $lines[$i], "\n") if ($show);
           $different = 1;
           last;
         }
@@ -460,7 +462,7 @@ sub compare_output {
     closedir($fh);
   }
   else {
-    print SAVEERR "ERROR: Unable to read directory: $expect\n";
+    print SAVEERR "[No expected results] ";
     $status++;
   }
 

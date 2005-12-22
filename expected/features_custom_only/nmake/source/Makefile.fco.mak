@@ -283,7 +283,7 @@ InputPath=that.zar
 "zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
-	perl ..\bin\exercise.pl -GA -Sc "$(InputPath)"
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc "$(InputPath)"
 <<
 
 SOURCE="this.zar"
@@ -293,7 +293,7 @@ InputPath=this.zar
 "zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
-	perl ..\bin\exercise.pl -GA "$(InputPath)"
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA "$(InputPath)"
 <<
 
 

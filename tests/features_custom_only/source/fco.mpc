@@ -1,5 +1,7 @@
 project: custom_exercise {
   custom_only = 1
+  zarflags += "Zarp"
+  zarflags -= Zarp
 
   specific(!html) {
     zarflags += -GA
