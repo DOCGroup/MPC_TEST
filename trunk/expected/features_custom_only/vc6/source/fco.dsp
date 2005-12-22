@@ -78,7 +78,7 @@ SOURCE="that.zar"
 InputPath="that.zar"
 
 BuildCmds= \
-	perl ..\bin\exercise.pl -GA -Sc $(InputPath) \
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc $(InputPath) \
 
 "zar_thatA.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -109,7 +109,7 @@ BuildCmds= \
 InputPath="that.zar"
 
 BuildCmds= \
-	perl ..\bin\exercise.pl -GA -Sc $(InputPath) \
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc $(InputPath) \
 
 "zar_thatA.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -147,7 +147,7 @@ SOURCE="this.zar"
 InputPath="this.zar"
 
 BuildCmds= \
-	perl ..\bin\exercise.pl -GA $(InputPath) \
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA $(InputPath) \
 
 "zar_thisA.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -187,7 +187,7 @@ BuildCmds= \
 InputPath="this.zar"
 
 BuildCmds= \
-	perl ..\bin\exercise.pl -GA $(InputPath) \
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA $(InputPath) \
 
 "zar_thisA.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)

@@ -74,7 +74,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\exercise.pl on that.zar"
-						CommandLine="perl ..\bin\exercise.pl -GA -Sc &quot;that.zar&quot;"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc &quot;that.zar&quot;"
 						Outputs="zar_thatA.cpp;zar_thatA.h;zar_thatA.inl;zar_thatB.cpp;zar_thatB.h;zar_thatB.inl;zar_thatC.cpp"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -83,7 +83,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\exercise.pl on that.zar"
-						CommandLine="perl ..\bin\exercise.pl -GA -Sc &quot;that.zar&quot;"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc &quot;that.zar&quot;"
 						Outputs="zar_thatA.cpp;zar_thatA.h;zar_thatA.inl;zar_thatB.cpp;zar_thatB.h;zar_thatB.inl;zar_thatC.cpp"/>
 				</FileConfiguration>
 			</File>
@@ -95,7 +95,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\exercise.pl on this.zar"
-						CommandLine="perl ..\bin\exercise.pl -GA &quot;this.zar&quot;"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA &quot;this.zar&quot;"
 						Outputs="zar_thisA.cpp;zar_thisA.h;zar_thisA.inl;zar_thisB.cpp;zar_thisB.h;zar_thisB.inl;zar_thisB_T.cpp;zar_thisB_T.h;zar_thisB_T.inl;zar_thisC.cpp"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -104,7 +104,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\exercise.pl on this.zar"
-						CommandLine="perl ..\bin\exercise.pl -GA &quot;this.zar&quot;"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA &quot;this.zar&quot;"
 						Outputs="zar_thisA.cpp;zar_thisA.h;zar_thisA.inl;zar_thisB.cpp;zar_thisB.h;zar_thisB.inl;zar_thisB_T.cpp;zar_thisB_T.h;zar_thisB_T.inl;zar_thisC.cpp"/>
 				</FileConfiguration>
 			</File>

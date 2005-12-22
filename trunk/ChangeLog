@@ -1,3 +1,28 @@
+Thu Dec 22 08:35:38 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * run_tests.pl:
+
+          Minor aesthetic changes.
+
+        * expected/features_custom_only/automake/source/Makefile.am:
+        * expected/features_custom_only/bmake/source/Makefile.fco.bmak:
+        * expected/features_custom_only/em3/source/fco.vcp:
+        * expected/features_custom_only/ghs/source/fco.bld:
+        * expected/features_custom_only/gnuace/source/GNUmakefile.fco:
+        * expected/features_custom_only/make/source/Makefile.fco:
+        * expected/features_custom_only/nmake/source/Makefile.fco.mak:
+        * expected/features_custom_only/vc6/source/fco.dsp:
+        * expected/features_custom_only/vc7/source/fco.vcproj:
+        * expected/features_custom_only/vc71/source/fco.vcproj:
+        * expected/features_custom_only/vc8/source/fco.vcproj:
+
+          Updated for the change below.
+
+        * tests/features_custom_only/config/custom_exercise.mpb:
+        * tests/features_custom_only/source/fco.mpc:
+
+          Modified this test to contain a subtraction of a mapped keyword.
+
 Wed Dec 21 06:29:49 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/conditional_specific_verbatim_wildcards/html/conditional_specific_verbatim_wildcards_workspace.html:

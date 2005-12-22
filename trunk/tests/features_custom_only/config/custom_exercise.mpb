@@ -24,4 +24,5 @@ project {
       commandflags(!-Sc) += B_T
     }
   }
+  zarflags += $(CLO_ZARFLAGS)
 }

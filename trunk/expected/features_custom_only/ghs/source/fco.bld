@@ -5,13 +5,13 @@ that.zar
 	custom
 	:custom_processor.name=echo
 	:depends=that.zar
-	:preexec=cd source; perl ../bin/exercise.pl -GA -Sc that.zar
+	:preexec=cd source; perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA -Sc that.zar
 
 this.zar
 	custom
 	:custom_processor.name=echo
 	:depends=this.zar
-	:preexec=cd source; perl ../bin/exercise.pl -GA this.zar
+	:preexec=cd source; perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA this.zar
 
 	:optimizestrategy=speed
 	:libdirs=source
