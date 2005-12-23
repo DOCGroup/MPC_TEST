@@ -1,3 +1,11 @@
+Fri Dec 23 09:14:50 2005  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/implicit_projects/automake/source/two/Makefile.am:
+        * expected/options/automake/source/Makefile_Zargaflan.am:
+        * expected/wide_coverage/automake/source/Makefile.am:
+
+          Updated to reflect JTC's changes from Thu Dec 22 13:56:14 2005.
+
 Thu Dec 22 08:35:38 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:
