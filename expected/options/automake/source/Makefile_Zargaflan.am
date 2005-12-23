@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type automake -base different -features fake=0 -genins -hierarchy -make_coexistence -name_modifier *_Zargaflan -apply_project -relative TEST_ROOT=/home/elliottc/current/MPC/test/tests/options -static -value_project postbuild+=echo Hello There -value_template targetoutdir=zeep/
+## /tao_builds/chad/doc/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type automake -base different -features fake=0 -genins -hierarchy -make_coexistence -name_modifier *_Zargaflan -apply_project -relative TEST_ROOT=/home/elliottc/current/MPC/test/tests/options -static -value_project postbuild+=echo Hello There -value_template targetoutdir=zeep/
 
 
 
@@ -16,7 +16,7 @@ if !BUILD_FAKE
 noinst_PROGRAMS = basic
 
 basic_CPPFLAGS = \
-  -I$(srcdir)/.. \
+  -I.. \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
 basic_SOURCES = \
