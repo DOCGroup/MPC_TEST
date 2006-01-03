@@ -88,11 +88,12 @@
 			CharacterSet="0">
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="3"
+				Optimization="0"
 				AdditionalIncludeDirectories=""
 				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
+				BasicRuntimeChecks="3"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="TRUE"
 				EnableFunctionLevelLinking="TRUE"
@@ -115,8 +116,6 @@
 				AdditionalLibraryDirectories=".;..\lib"
 				GenerateDebugInformation="TRUE"
 				SubSystem="1"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"

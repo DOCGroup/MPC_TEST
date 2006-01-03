@@ -15,7 +15,7 @@ POSTLINKRM   = .tds
 EXEOUTPUTDIR = .\\
 !else
 !ifdef RELEASE
-OCFLAGS      = -O2 -DNDEBUG
+OCFLAGS      = -v -y -Od -vi- -k -DNDEBUG
 CFG_DIR      = Release\\
 ILIBMODIFIER = 
 OLIBMODIFIER = 

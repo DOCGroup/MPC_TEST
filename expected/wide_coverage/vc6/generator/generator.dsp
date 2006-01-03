@@ -54,7 +54,7 @@ LINK32=link.exe
 # PROP Output_Dir "Release"
 # PROP Intermediate_Dir "Release\generator"
 # PROP Target_Dir ""
-# ADD CPP /nologo /O2 /W3 /GX /MD /GR /D NDEBUG /D WIN32 /D _CONSOLE /FD /c
+# ADD CPP /nologo /Ob0 /W3 /GX /MD /GR /D NDEBUG /D WIN32 /D _CONSOLE /FD /c
 # SUBTRACT CPP /YX
 
 # ADD MTL /D "NDEBUG" /nologo /mktyplib203 /win32

@@ -2,7 +2,6 @@
 default:
 	program
 	:outputname=generator/../bin/generator
-	:optimizestrategy=speed
 	:libdirs=generator/.
 	:libdirs=../lib
 	:libraries=-lgenerator_be

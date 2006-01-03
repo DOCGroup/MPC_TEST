@@ -1,3 +1,31 @@
+Tue Jan  3 08:27:44 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/make/Makefile.*:
+
+          Updated to reflect my change from Tue Jan  3 08:26:34 2006.
+
+        * expected/options/vc7/source/basic_Zargaflan.vcproj:
+        * expected/options/vc71/source/basic_Zargaflan.vcproj:
+        * expected/options/vc8/source/basic_Zargaflan.vcproj:
+
+          Updated to reflect my change from Mon Dec 26 21:02:36 2005.
+
+        * expected/wide_coverage/bmake/generator/Makefile.generator.bmak:
+        * expected/wide_coverage/em3/generator/generator.vcp:
+        * expected/wide_coverage/ghs/generator/generator.bld:
+        * expected/wide_coverage/make/generator/Makefile.generator_be:
+        * expected/wide_coverage/make/source/Makefile.source:
+        * expected/wide_coverage/make/source/Makefile.source_lib:
+        * expected/wide_coverage/nmake/generator/Makefile.generator.mak:
+        * expected/wide_coverage/vc6/generator/generator.dsp:
+        * expected/wide_coverage/vc7/generator/generator.vcproj:
+        * expected/wide_coverage/vc71/generator/generator.vcproj:
+        * expected/wide_coverage/vc8/generator/generator.vcproj:
+        * tests/wide_coverage/generator/generator.mpc:
+
+          Turned 'optimize' off in the generator exe to exercise this for
+          Visual C++.
+
 Fri Dec 23 09:14:50 2005  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/implicit_projects/automake/source/two/Makefile.am:
