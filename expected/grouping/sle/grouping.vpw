@@ -7,5 +7,6 @@
 		<Project File="source/grouping_D.vpj"/>
 		<Project File="source/grouping_E.vpj"/>
 		<Project File="source/grouping_F.vpj"/>
+		<Project File="source/grouping_G.vpj"/>
 	</Projects>
 </Workspace>

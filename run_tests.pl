@@ -697,12 +697,14 @@ sub determine_setup {
 # Main Section
 # ******************************************************************
 
+my(@dirs)    = ();
 my($output)  = undef;
 my(%options) = ('expected' => \$cr_expect,
                 'break'    => \$br_error,
                 'nobuild'  => \$nobuild,
                 'nodiff'   => \$nodiff,
                 'output=s' => \$output,
+                'test=s'   => \@dirs,
                );
 my(%desc)    = ('expected' => 'Create expected results for all of the ' .
                               'tests',
@@ -710,6 +712,7 @@ my(%desc)    = ('expected' => 'Create expected results for all of the ' .
                 'nobuild'  => 'Do not build any of the tests',
                 'nodiff'   => 'Do not show file differences',
                 'output'   => 'Send output to the specified file',
+                'test'     => 'Run the specified test or tests',
                );
 
 my($status)  = 0;
@@ -756,10 +759,12 @@ else {
     $ENV{MPC_ALWAYS_SORT} = 1;
 
     if (opendir($fh, $testdir)) {
+      my(%dirs)    = ();
       my($columns) = (defined $ENV{COLUMNS} ? $ENV{COLUMNS} : 80);
+      @dirs{@dirs} = ();
       foreach my $dir (sort(grep(!/^\.\.?$/, readdir($fh)))) {
         $dir =~ s/\.dir$// if ($^O eq 'VMS');
-        if ($dir ne 'CVS') {
+        if ($dir ne 'CVS' && (!defined $dirs[0] || exists $dirs{$dir})) {
           my($full) = "$testdir/$dir";
           if (-d $full) {
             my($amount) = $columns - 4 - length($dir);

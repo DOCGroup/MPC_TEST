@@ -7,27 +7,31 @@ Microsoft Visual Studio Solution File, Format Version 8.00
 #
 # MPC Command:
 # /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type vc71 grouping.mwc
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_A", "source\grouping_A.vcproj", "{71228CD1-FECA-1BAD-6F83-8EE194A2DD4D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_A", "source\grouping_A.vcproj", "{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_B", "source\grouping_B.vcproj", "{41228CD1-FECA-1BAD-6F83-8EE194A2DD4D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_B", "source\grouping_B.vcproj", "{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_C", "source\grouping_C.vcproj", "{51228CD1-FECA-1BAD-6F83-8EE194A2DD4D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_C", "source\grouping_C.vcproj", "{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_D", "source\grouping_D.vcproj", "{21228CD1-FECA-1BAD-6F83-8EE194A2DD4D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_D", "source\grouping_D.vcproj", "{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_E", "source\grouping_E.vcproj", "{31228CD1-FECA-1BAD-6F83-8EE194A2DD4D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_E", "source\grouping_E.vcproj", "{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_F", "source\grouping_F.vcproj", "{01228CD1-FECA-1BAD-6F83-8EE194A2DD4D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_F", "source\grouping_F.vcproj", "{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_G", "source\grouping_G.vcproj", "{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
@@ -37,30 +41,34 @@ Global
 		Release = Release
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{71228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.ActiveCfg = Debug|Win32
-		{71228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.Build.0 = Debug|Win32
-		{71228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.ActiveCfg = Release|Win32
-		{71228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.Build.0 = Release|Win32
-		{41228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.ActiveCfg = Debug|Win32
-		{41228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.Build.0 = Debug|Win32
-		{41228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.ActiveCfg = Release|Win32
-		{41228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.Build.0 = Release|Win32
-		{51228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.ActiveCfg = Debug|Win32
-		{51228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.Build.0 = Debug|Win32
-		{51228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.ActiveCfg = Release|Win32
-		{51228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.Build.0 = Release|Win32
-		{21228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.ActiveCfg = Debug|Win32
-		{21228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.Build.0 = Debug|Win32
-		{21228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.ActiveCfg = Release|Win32
-		{21228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.Build.0 = Release|Win32
-		{31228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.ActiveCfg = Debug|Win32
-		{31228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.Build.0 = Debug|Win32
-		{31228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.ActiveCfg = Release|Win32
-		{31228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.Build.0 = Release|Win32
-		{01228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.ActiveCfg = Debug|Win32
-		{01228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Debug.Build.0 = Debug|Win32
-		{01228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.ActiveCfg = Release|Win32
-		{01228CD1-FECA-1BAD-6F83-8EE194A2DD4D}.Release.Build.0 = Release|Win32
+		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.ActiveCfg = Debug|Win32
+		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.Build.0 = Debug|Win32
+		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.ActiveCfg = Release|Win32
+		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.Build.0 = Release|Win32
+		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.ActiveCfg = Debug|Win32
+		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.Build.0 = Debug|Win32
+		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.ActiveCfg = Release|Win32
+		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.Build.0 = Release|Win32
+		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.ActiveCfg = Debug|Win32
+		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.Build.0 = Debug|Win32
+		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.ActiveCfg = Release|Win32
+		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.Build.0 = Release|Win32
+		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.ActiveCfg = Debug|Win32
+		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.Build.0 = Debug|Win32
+		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.ActiveCfg = Release|Win32
+		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.Build.0 = Release|Win32
+		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.ActiveCfg = Debug|Win32
+		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.Build.0 = Debug|Win32
+		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.ActiveCfg = Release|Win32
+		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.Build.0 = Release|Win32
+		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.ActiveCfg = Debug|Win32
+		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.Build.0 = Debug|Win32
+		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.ActiveCfg = Release|Win32
+		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.Build.0 = Release|Win32
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.ActiveCfg = Debug|Win32
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug.Build.0 = Debug|Win32
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.ActiveCfg = Release|Win32
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

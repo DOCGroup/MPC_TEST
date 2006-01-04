@@ -20,6 +20,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_E", "source\groupi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_F", "source\grouping_F.vcproj", "{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_G", "source\grouping_G.vcproj", "{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -50,6 +52,10 @@ Global
 		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.Build.0 = Debug|Win32
 		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.ActiveCfg = Release|Win32
 		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.Build.0 = Release|Win32
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.Build.0 = Debug|Win32
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.ActiveCfg = Release|Win32
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

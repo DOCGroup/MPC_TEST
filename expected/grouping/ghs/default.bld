@@ -30,3 +30,7 @@ source/grouping_F.bld
 	program
 	:object_dir=source/.obj
 	:libdirs=source
+source/grouping_G.bld
+	program
+	:object_dir=source/.obj
+	:libdirs=source
