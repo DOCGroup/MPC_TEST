@@ -59,3 +59,21 @@ project(*F): cppgen {
   }
 }
 
+project(*G): cppgen {
+  exename = G
+  CPPGEN_Files {
+    carnival {
+      clown.r
+    }
+  }
+  Source_Files {
+    other.cpp
+    carnival {
+      c*.cpp
+    }
+    fake {
+      alternate/*.cpp
+    }
+  }
+}
+
