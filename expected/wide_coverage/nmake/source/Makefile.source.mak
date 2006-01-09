@@ -68,7 +68,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
@@ -116,7 +117,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
@@ -165,7 +167,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
@@ -213,7 +216,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
@@ -235,6 +239,7 @@ __postbuild__:
 !ENDIF
 
 CLEAN :
+	-@del /f/q $(LINK32_OBJS)
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
@@ -278,97 +283,22 @@ CLEAN :
 
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="exe\main.cpp"
-!IF  "$(CFG)" == "Win32 Debug"
 
 "$(INTDIR)\exe\main.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\$(NULL)" mkdir "$(INTDIR)\exe"
-	$(CPP) @<<
-	/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\main.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Release"
-
-"$(INTDIR)\exe\main.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\$(NULL)" mkdir "$(INTDIR)\exe"
-	$(CPP) @<<
-	/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\main.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Static Debug"
-
-"$(INTDIR)\exe\main.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\$(NULL)" mkdir "$(INTDIR)\exe"
-	$(CPP) @<<
-	/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\main.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Static Release"
-
-"$(INTDIR)\exe\main.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\$(NULL)" mkdir "$(INTDIR)\exe"
-	$(CPP) @<<
-	/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\main.obj" $(SOURCE)
-<<
-!ENDIF
+	@if not exist "$(INTDIR)\exe\$(NULL)" mkdir "$(INTDIR)\exe"
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\exe\main.obj" $(SOURCE)
 
 SOURCE="exe\use_more_names\use_more_names.cpp"
-!IF  "$(CFG)" == "Win32 Debug"
 
 "$(INTDIR)\exe\use_more_names\use_more_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\use_more_names\$(NULL)" mkdir "$(INTDIR)\exe\use_more_names"
-	$(CPP) @<<
-	/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\use_more_names\use_more_names.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Release"
-
-"$(INTDIR)\exe\use_more_names\use_more_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\use_more_names\$(NULL)" mkdir "$(INTDIR)\exe\use_more_names"
-	$(CPP) @<<
-	/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\use_more_names\use_more_names.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Static Debug"
-
-"$(INTDIR)\exe\use_more_names\use_more_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\use_more_names\$(NULL)" mkdir "$(INTDIR)\exe\use_more_names"
-	$(CPP) @<<
-	/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\use_more_names\use_more_names.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Static Release"
-
-"$(INTDIR)\exe\use_more_names\use_more_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\use_more_names\$(NULL)" mkdir "$(INTDIR)\exe\use_more_names"
-	$(CPP) @<<
-	/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\use_more_names\use_more_names.obj" $(SOURCE)
-<<
-!ENDIF
+	@if not exist "$(INTDIR)\exe\use_more_names\$(NULL)" mkdir "$(INTDIR)\exe\use_more_names"
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\exe\use_more_names\use_more_names.obj" $(SOURCE)
 
 SOURCE="exe\use_names\use_names.cpp"
-!IF  "$(CFG)" == "Win32 Debug"
 
 "$(INTDIR)\exe\use_names\use_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\use_names\$(NULL)" mkdir "$(INTDIR)\exe\use_names"
-	$(CPP) @<<
-	/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\use_names\use_names.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Release"
-
-"$(INTDIR)\exe\use_names\use_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\use_names\$(NULL)" mkdir "$(INTDIR)\exe\use_names"
-	$(CPP) @<<
-	/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\use_names\use_names.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Static Debug"
-
-"$(INTDIR)\exe\use_names\use_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\use_names\$(NULL)" mkdir "$(INTDIR)\exe\use_names"
-	$(CPP) @<<
-	/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\use_names\use_names.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Static Release"
-
-"$(INTDIR)\exe\use_names\use_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\exe\use_names\$(NULL)" mkdir "$(INTDIR)\exe\use_names"
-	$(CPP) @<<
-	/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c /Fo"$(INTDIR)\exe\use_names\use_names.obj" $(SOURCE)
-<<
-!ENDIF
+	@if not exist "$(INTDIR)\exe\use_names\$(NULL)" mkdir "$(INTDIR)\exe\use_names"
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\exe\use_names\use_names.obj" $(SOURCE)
 
 SOURCE="Foolish/foolish.simple"
 

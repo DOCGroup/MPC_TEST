@@ -83,7 +83,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
@@ -133,7 +134,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /O2 /W3 /EHs /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
@@ -181,7 +183,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd".\sd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd".\sd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 
@@ -227,13 +230,15 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /O2 /W3 /EHs /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 
 !ENDIF
 
 CLEAN :
+	-@del /f/q $(LINK32_OBJS)
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :

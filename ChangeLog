@@ -1,3 +1,13 @@
+Mon Jan  9 08:35:45 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/nmake/*:
+
+          Updated to reflect my change from Mon Jan  9 08:30:14 2006.
+
+        * run_tests.pl:
+
+          Allow the user to specify a specific set of project types.
+
 Wed Jan  4 08:18:54 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:
