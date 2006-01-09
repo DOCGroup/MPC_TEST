@@ -67,7 +67,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I ".." /D _DEBUG /D WIN32 /D _CONSOLE /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I ".." /D _DEBUG /D WIN32 /D _CONSOLE /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
@@ -109,7 +110,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /O2 /W3 /EHs /MD /GR /I ".." /D NDEBUG /D WIN32 /D _CONSOLE /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I ".." /D NDEBUG /D WIN32 /D _CONSOLE /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
@@ -152,7 +154,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I ".." /D _DEBUG /D WIN32 /D _CONSOLE /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I ".." /D _DEBUG /D WIN32 /D _CONSOLE /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
@@ -194,7 +197,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /O2 /W3 /EHs /MD /GR /I ".." /D NDEBUG /D WIN32 /D _CONSOLE /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I ".." /D NDEBUG /D WIN32 /D _CONSOLE /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
@@ -211,6 +215,7 @@ LINK32_OBJS= \
 !ENDIF
 
 CLEAN :
+	-@del /f/q $(LINK32_OBJS)
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
@@ -254,8 +259,9 @@ CLEAN :
 
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="two.cpp"
+
 "$(INTDIR)\two.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) $(CPP_PROJ) $(SOURCE)
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\two.obj" $(SOURCE)
 
 
 !ENDIF

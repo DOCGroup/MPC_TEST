@@ -78,7 +78,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
@@ -134,7 +135,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
@@ -191,7 +193,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
@@ -247,7 +250,8 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /Fo"$(INTDIR)\\" /FD /c
+CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
+CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
@@ -267,6 +271,7 @@ LINK32_OBJS= \
 !ENDIF
 
 CLEAN :
+	-@del /f/q $(LINK32_OBJS)
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
@@ -317,7 +322,7 @@ CPP_SWITCHES=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.p
 
 "$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
 	$(CPP) @<<
-  $(CPP_SWITCHES) /Fo"$(INTDIR)\\" $(SOURCE)
+  $(CPP_SWITCHES) /Fo"$(INTDIR)\source_lib_pch.obj" $(SOURCE)
 <<
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
@@ -326,7 +331,7 @@ CPP_SWITCHES=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS 
 
 "$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
 	$(CPP) @<<
-  $(CPP_SWITCHES) /Fo"$(INTDIR)\\" $(SOURCE)
+  $(CPP_SWITCHES) /Fo"$(INTDIR)\source_lib_pch.obj" $(SOURCE)
 <<
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
@@ -335,7 +340,7 @@ CPP_SWITCHES=/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.
 
 "$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
 	$(CPP) @<<
-  $(CPP_SWITCHES) /Fo"$(INTDIR)\\" $(SOURCE)
+  $(CPP_SWITCHES) /Fo"$(INTDIR)\source_lib_pch.obj" $(SOURCE)
 <<
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
@@ -344,53 +349,31 @@ CPP_SWITCHES=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS 
 
 "$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
 	$(CPP) @<<
-  $(CPP_SWITCHES) /Fo"$(INTDIR)\\" $(SOURCE)
+  $(CPP_SWITCHES) /Fo"$(INTDIR)\source_lib_pch.obj" $(SOURCE)
 <<
 
 !ENDIF
 
 SOURCE="creole\more_names.cpp"
-!IF  "$(CFG)" == "Win32 Debug"
 
 "$(INTDIR)\creole\more_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\creole\$(NULL)" mkdir "$(INTDIR)\creole"
-	$(CPP) @<<
-	/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c /Fo"$(INTDIR)\creole\more_names.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Release"
-
-"$(INTDIR)\creole\more_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\creole\$(NULL)" mkdir "$(INTDIR)\creole"
-	$(CPP) @<<
-	/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c /Fo"$(INTDIR)\creole\more_names.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Static Debug"
-
-"$(INTDIR)\creole\more_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\creole\$(NULL)" mkdir "$(INTDIR)\creole"
-	$(CPP) @<<
-	/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c /Fo"$(INTDIR)\creole\more_names.obj" $(SOURCE)
-<<
-!ELSEIF  "$(CFG)" == "Win32 Static Release"
-
-"$(INTDIR)\creole\more_names.obj" : $(SOURCE) "$(INTDIR)"
-        @if not exist "$(INTDIR)\creole\$(NULL)" mkdir "$(INTDIR)\creole"
-	$(CPP) @<<
-	/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c /Fo"$(INTDIR)\creole\more_names.obj" $(SOURCE)
-<<
-!ENDIF
+	@if not exist "$(INTDIR)\creole\$(NULL)" mkdir "$(INTDIR)\creole"
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\creole\more_names.obj" $(SOURCE)
 
 SOURCE="names.cpp"
+
 "$(INTDIR)\names.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) $(CPP_PROJ) $(SOURCE)
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\names.obj" $(SOURCE)
 
 SOURCE="qwee.cxx"
+
 "$(INTDIR)\qwee.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) $(CPP_PROJ) $(SOURCE)
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\qwee.obj" $(SOURCE)
 
 SOURCE="TheCheat.cpp"
+
 "$(INTDIR)\TheCheat.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) $(CPP_PROJ) $(SOURCE)
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\TheCheat.obj" $(SOURCE)
 
 SOURCE="more_names.key"
 

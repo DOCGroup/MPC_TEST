@@ -128,7 +128,7 @@ sub compare {
         my($line) = $_;
         next if ($line =~ /^\s*$/);
 
-        while($lines[$i] =~ /^\s*$/) {
+        while(defined $lines[$i] && $lines[$i] =~ /^\s*$/) {
           ++$i;
         }
 
@@ -137,7 +137,11 @@ sub compare {
         ## and html references.
         if ($line !~ /mwc\.pl/ && $line !~ /\$Id[:\$]/ &&
             $line !~ /[\da-f]+\-[\da-f]+\-/i && $line !~ /a\s+href=/i) {
-          if ($lines[$i] ne $line) {
+          if (!defined $lines[$i]) {
+            $different = 1;
+            last;
+          }
+          elsif ($lines[$i] ne $line) {
             diff_files($left, $right, $i, $lines[$i], $line) if ($show);
             $different = 1;
             last;
@@ -698,6 +702,7 @@ sub determine_setup {
 # ******************************************************************
 
 my(@dirs)    = ();
+my(@tonly)   = ();
 my($output)  = undef;
 my(%options) = ('expected' => \$cr_expect,
                 'break'    => \$br_error,
@@ -705,6 +710,7 @@ my(%options) = ('expected' => \$cr_expect,
                 'nodiff'   => \$nodiff,
                 'output=s' => \$output,
                 'test=s'   => \@dirs,
+                'type=s'   => \@tonly,
                );
 my(%desc)    = ('expected' => 'Create expected results for all of the ' .
                               'tests',
@@ -713,6 +719,7 @@ my(%desc)    = ('expected' => 'Create expected results for all of the ' .
                 'nodiff'   => 'Do not show file differences',
                 'output'   => 'Send output to the specified file',
                 'test'     => 'Run the specified test or tests',
+                'type'     => 'Use only the specified type or types',
                );
 
 my($status)  = 0;
@@ -760,8 +767,10 @@ else {
 
     if (opendir($fh, $testdir)) {
       my(%dirs)    = ();
+      my(%tonly)   = ();
       my($columns) = (defined $ENV{COLUMNS} ? $ENV{COLUMNS} : 80);
       @dirs{@dirs} = ();
+      @tonly{@tonly} = ();
       foreach my $dir (sort(grep(!/^\.\.?$/, readdir($fh)))) {
         $dir =~ s/\.dir$// if ($^O eq 'VMS');
         if ($dir ne 'CVS' && (!defined $dirs[0] || exists $dirs{$dir})) {
@@ -781,17 +790,19 @@ else {
               $mwc = "$dir.mwc";
             }
             foreach my $type (@types) {
-              my($ret) = run_test($full, $mwc, 'config',
-                                  "$expectdir/$dir", $type, 0);
-              $status += $ret;
-              if ($ret) {
-                print SAVEERR "MPC generation for $type $failed.\n";
-                if ($br_error) {
-                  last;
+              if (!defined $tonly[0] || exists $tonly{$type}) {
+                my($ret) = run_test($full, $mwc, 'config',
+                                    "$expectdir/$dir", $type, 0);
+                $status += $ret;
+                if ($ret) {
+                  print SAVEERR "MPC generation for $type $failed.\n";
+                  if ($br_error) {
+                    last;
+                  }
                 }
-              }
-              else {
-                print SAVEERR "MPC generation for $type $passed.\n";
+                else {
+                  print SAVEERR "MPC generation for $type $passed.\n";
+                }
               }
             }
             if (!$nobuild && !$one_built && !$cr_expect) {
