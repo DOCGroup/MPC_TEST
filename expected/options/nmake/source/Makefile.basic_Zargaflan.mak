@@ -81,6 +81,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo Hello There
@@ -127,6 +128,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo Hello There
@@ -174,6 +176,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo Hello There
@@ -220,6 +223,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo Hello There

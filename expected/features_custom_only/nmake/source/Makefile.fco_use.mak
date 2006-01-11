@@ -83,6 +83,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist ".\fco_used.dll.manifest" mt.exe -manifest ".\fco_used.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -128,6 +129,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist ".\fco_use.dll.manifest" mt.exe -manifest ".\fco_use.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -172,6 +174,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(OUTDIR)\fco_usesd.lib.manifest" mt.exe -manifest "$(OUTDIR)\fco_usesd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -215,6 +218,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(OUTDIR)\fco_uses.lib.manifest" mt.exe -manifest "$(OUTDIR)\fco_uses.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 

@@ -82,6 +82,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -126,6 +127,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -171,6 +173,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -215,6 +218,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
 !ENDIF
 
