@@ -82,6 +82,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "..\lib\generator_bed.dll.manifest" mt.exe -manifest "..\lib\generator_bed.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -126,6 +127,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "..\lib\generator_be.dll.manifest" mt.exe -manifest "..\lib\generator_be.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -169,6 +171,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(OUTDIR)\generator_besd.lib.manifest" mt.exe -manifest "$(OUTDIR)\generator_besd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -211,6 +214,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(OUTDIR)\generator_bes.lib.manifest" mt.exe -manifest "$(OUTDIR)\generator_bes.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 

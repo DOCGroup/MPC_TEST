@@ -80,6 +80,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(OUTDIR)\oned.lib.manifest" mt.exe -manifest "$(OUTDIR)\oned.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -122,6 +123,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(OUTDIR)\one.lib.manifest" mt.exe -manifest "$(OUTDIR)\one.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -165,6 +167,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(OUTDIR)\onesd.lib.manifest" mt.exe -manifest "$(OUTDIR)\onesd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -207,6 +210,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(OUTDIR)\ones.lib.manifest" mt.exe -manifest "$(OUTDIR)\ones.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 

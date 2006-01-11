@@ -85,6 +85,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "bin\csvw_Bd.dll.manifest" mt.exe -manifest "bin\csvw_Bd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -132,6 +133,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "bin\csvw_B.dll.manifest" mt.exe -manifest "bin\csvw_B.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -178,6 +180,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(OUTDIR)\csvw_Bsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\csvw_Bsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -223,6 +226,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(OUTDIR)\csvw_Bs.lib.manifest" mt.exe -manifest "$(OUTDIR)\csvw_Bs.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 

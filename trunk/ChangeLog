@@ -1,3 +1,10 @@
+Wed Jan 11 07:39:46 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/nmake/*.mak:
+
+          Updated to reflect Ossama Othman's changes from Tue Jan 10
+          16:30:32 2006.
+
 Mon Jan  9 08:35:45 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/nmake/*:

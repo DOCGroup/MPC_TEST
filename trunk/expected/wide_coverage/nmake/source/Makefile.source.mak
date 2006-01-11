@@ -84,6 +84,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\main_test.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_test.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
@@ -133,6 +134,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\main_test.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_test.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
@@ -183,6 +185,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\main_test.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_test.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
@@ -232,6 +235,7 @@ LINK32_OBJS= \
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
+    if exist "$(INSTALLDIR)\main_test.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_test.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
