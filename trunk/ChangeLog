@@ -1,3 +1,10 @@
+Mon Jan 16 12:13:34 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/html/*:
+        * expected/*/nmake/*:
+
+          Updated to reflect my change from Mon Jan 16 11:17:45 2006.
+
 Wed Jan 11 07:39:46 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/nmake/*.mak:
