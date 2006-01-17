@@ -1,3 +1,10 @@
+Tue Jan 17 07:45:24 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * tests/options/additional_options.txt:
+
+          Modified a feature setting to test case-insensitivity of features.
+          This comes just a little too late, but better late than never.
+
 Mon Jan 16 12:13:34 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/html/*:
