@@ -1,0 +1,8 @@
+#!build
+default:
+	library
+	:outputname=TargetManager/libTMClient.a
+	:optimizestrategy=speed
+	:libdirs=TargetManager
+foo.cpp
+	C++

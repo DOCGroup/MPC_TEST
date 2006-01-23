@@ -1,0 +1,17 @@
+project(CIAO_TargetManager_stub) {
+  sharedname =
+  staticname = TargetManager_stub
+}
+
+project(CIAO_TargetManager_svnt) {
+  sharedname =
+  staticname = TargetManager_svnt
+  after += CIAO_TargetManager_stub
+}
+
+
+project(CIAO_TargetManager_exec) {
+  after   += CIAO_TargetManager_svnt DomainApplicationManager
+  sharedname =
+  staticname = TargetManager_exec
+}

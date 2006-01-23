@@ -1,3 +1,15 @@
+Mon Jan 23 12:25:09 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * run_tests.pl:
+
+          Fixed a mispelled word in a warning message.
+
+        * expected/circular_dependencies/*:
+        * tests/circular_dependencies/*:
+
+          Added a new test based on a recent bug report to test circular
+          directory dependencies.  Previously, MPC would run infinitely.
+
 Mon Jan 23 09:24:47 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/nmake/*:

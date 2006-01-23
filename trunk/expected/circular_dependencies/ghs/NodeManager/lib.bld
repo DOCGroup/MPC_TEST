@@ -1,0 +1,8 @@
+#!build
+default:
+	library
+	:outputname=NodeManager/libNodeManager.a
+	:optimizestrategy=speed
+	:libdirs=NodeManager
+two.cpp
+	C++

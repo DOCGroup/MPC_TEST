@@ -1,0 +1,6 @@
+project (DomainApplicationManager)  {
+  after += NodeManager_stub
+  sharedname =
+  staticname = DomainApplicationManager
+}
+

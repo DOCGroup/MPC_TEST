@@ -1,0 +1,8 @@
+#!build
+default:
+	library
+	:outputname=NodeApplication/libCIAO_RTNA_Configurator.a
+	:optimizestrategy=speed
+	:libdirs=NodeApplication
+foo.cpp
+	C++

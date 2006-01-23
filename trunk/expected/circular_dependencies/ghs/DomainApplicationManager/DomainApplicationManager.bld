@@ -1,0 +1,8 @@
+#!build
+default:
+	library
+	:outputname=DomainApplicationManager/libDomainApplicationManager.a
+	:optimizestrategy=speed
+	:libdirs=DomainApplicationManager
+foo.cpp
+	C++
