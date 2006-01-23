@@ -238,7 +238,6 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 !ENDIF
 
 CLEAN :
-	-@del /f/q $(LINK32_OBJS)
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :

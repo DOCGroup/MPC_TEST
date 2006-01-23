@@ -1,3 +1,9 @@
+Mon Jan 23 09:24:47 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/nmake/*:
+
+          Updated to reflect my change from Wed Jan 18 15:12:40 2006.
+
 Tue Jan 17 07:45:24 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * tests/options/additional_options.txt:
