@@ -1,0 +1,8 @@
+#!build
+default:
+	program
+	:outputname=NodeApplication/NodeApplication
+	:optimizestrategy=speed
+	:libdirs=NodeApplication
+foo.cpp
+	C++

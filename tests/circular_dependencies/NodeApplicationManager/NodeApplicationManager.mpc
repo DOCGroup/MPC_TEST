@@ -1,0 +1,4 @@
+project(NodeApplicationManager) {
+  sharedname =
+  staticname = NodeApplicationManager
+}

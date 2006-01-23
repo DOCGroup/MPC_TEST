@@ -807,7 +807,7 @@ else {
             }
             if (!$nobuild && !$one_built && !$cr_expect) {
               print SAVEERR "WARNING: This project did not ",
-                            "build on at least on platform.\n";
+                            "build on at least one platform.\n";
             }
           }
           if ($br_error) {
