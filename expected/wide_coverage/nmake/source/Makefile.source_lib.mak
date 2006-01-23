@@ -275,7 +275,6 @@ LINK32_OBJS= \
 !ENDIF
 
 CLEAN :
-	-@del /f/q $(LINK32_OBJS)
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
