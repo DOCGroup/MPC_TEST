@@ -280,7 +280,7 @@ CLEAN :
 SOURCE="alternate\foo.cpp"
 
 "$(INTDIR)\alternate\foo.obj" : $(SOURCE) "$(INTDIR)"
-	@if not exist "$(INTDIR)\alternate\$(NULL)" mkdir "$(INTDIR)\alternate"
+	@if not exist "$(INTDIR)\alternate\$(NULL)" mkdir "$(INTDIR)\alternate\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\alternate\foo.obj" $(SOURCE)
 
 SOURCE="clown.cpp"

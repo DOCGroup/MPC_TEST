@@ -276,7 +276,7 @@ CLEAN :
 SOURCE="conditional\windows.cpp"
 
 "$(INTDIR)\conditional\windows.obj" : $(SOURCE) "$(INTDIR)"
-	@if not exist "$(INTDIR)\conditional\$(NULL)" mkdir "$(INTDIR)\conditional"
+	@if not exist "$(INTDIR)\conditional\$(NULL)" mkdir "$(INTDIR)\conditional\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\conditional\windows.obj" $(SOURCE)
 
 SOURCE="moop.cxx"

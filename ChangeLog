@@ -1,3 +1,21 @@
+Thu Jan 26 06:28:34 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/circular_dependencies/vc8/circular_dependencies.sln:
+
+          My change from Wed Jan 25 11:40:37 2006 corrected a bug that
+          allowed an empty dependency in the vc8 solution file.
+
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_B.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_D.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_E.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_G.mak:
+        * expected/wide_coverage/nmake/source/Makefile.source.mak:
+        * expected/wide_coverage/nmake/source/Makefile.source_lib.mak:
+
+          Updated from my change from Wed Jan 25 09:02:34 2006.  In each of
+          these, there is just an additional \ at the end of a mkdir
+          command.
+
 Mon Jan 23 12:25:09 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:

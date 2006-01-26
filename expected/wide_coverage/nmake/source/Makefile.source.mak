@@ -288,19 +288,19 @@ CLEAN :
 SOURCE="exe\main.cpp"
 
 "$(INTDIR)\exe\main.obj" : $(SOURCE) "$(INTDIR)"
-	@if not exist "$(INTDIR)\exe\$(NULL)" mkdir "$(INTDIR)\exe"
+	@if not exist "$(INTDIR)\exe\$(NULL)" mkdir "$(INTDIR)\exe\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\exe\main.obj" $(SOURCE)
 
 SOURCE="exe\use_more_names\use_more_names.cpp"
 
 "$(INTDIR)\exe\use_more_names\use_more_names.obj" : $(SOURCE) "$(INTDIR)"
-	@if not exist "$(INTDIR)\exe\use_more_names\$(NULL)" mkdir "$(INTDIR)\exe\use_more_names"
+	@if not exist "$(INTDIR)\exe\use_more_names\$(NULL)" mkdir "$(INTDIR)\exe\use_more_names\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\exe\use_more_names\use_more_names.obj" $(SOURCE)
 
 SOURCE="exe\use_names\use_names.cpp"
 
 "$(INTDIR)\exe\use_names\use_names.obj" : $(SOURCE) "$(INTDIR)"
-	@if not exist "$(INTDIR)\exe\use_names\$(NULL)" mkdir "$(INTDIR)\exe\use_names"
+	@if not exist "$(INTDIR)\exe\use_names\$(NULL)" mkdir "$(INTDIR)\exe\use_names\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\exe\use_names\use_names.obj" $(SOURCE)
 
 SOURCE="Foolish/foolish.simple"
