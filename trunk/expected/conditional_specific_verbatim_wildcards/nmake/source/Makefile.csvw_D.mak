@@ -272,7 +272,7 @@ CLEAN :
 SOURCE="conditional\every.cpp"
 
 "$(INTDIR)\conditional\every.obj" : $(SOURCE) "$(INTDIR)"
-	@if not exist "$(INTDIR)\conditional\$(NULL)" mkdir "$(INTDIR)\conditional"
+	@if not exist "$(INTDIR)\conditional\$(NULL)" mkdir "$(INTDIR)\conditional\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\conditional\every.obj" $(SOURCE)
 
 SOURCE="moop.cxx"

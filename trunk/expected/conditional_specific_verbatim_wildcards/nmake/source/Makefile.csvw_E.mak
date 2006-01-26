@@ -264,7 +264,7 @@ CLEAN :
 SOURCE="closed\Apple.cpp"
 
 "$(INTDIR)\closed\Apple.obj" : $(SOURCE) "$(INTDIR)"
-	@if not exist "$(INTDIR)\closed\$(NULL)" mkdir "$(INTDIR)\closed"
+	@if not exist "$(INTDIR)\closed\$(NULL)" mkdir "$(INTDIR)\closed\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\closed\Apple.obj" $(SOURCE)
 
 

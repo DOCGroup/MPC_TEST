@@ -360,7 +360,7 @@ CPP_SWITCHES=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS 
 SOURCE="creole\more_names.cpp"
 
 "$(INTDIR)\creole\more_names.obj" : $(SOURCE) "$(INTDIR)"
-	@if not exist "$(INTDIR)\creole\$(NULL)" mkdir "$(INTDIR)\creole"
+	@if not exist "$(INTDIR)\creole\$(NULL)" mkdir "$(INTDIR)\creole\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\creole\more_names.obj" $(SOURCE)
 
 SOURCE="names.cpp"

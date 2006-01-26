@@ -7,7 +7,7 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/MPC/config -include /home/elliottc/MPC/templates -include config -type vc8
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type vc8
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DomainApplicationManager", "DomainApplicationManager\DomainApplicationManager.vcproj", "{31385C1E-FECA-1BAD-834D-C82CCED295E1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{489360E9-FECA-1BAD-7922-816B3AF2F5DE} = {489360E9-FECA-1BAD-7922-816B3AF2F5DE}
@@ -20,8 +20,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NodeApplicationManager", "NodeApplicationManager\NodeApplicationManager.vcproj", "{73EBB1AE-FECA-1BAD-5349-E51259B24C5D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Monitor_Monitorlib", "NodeManager\Monitor_Monitorlib.vcproj", "{91E6F06E-FECA-1BAD-E280-816B3AF2F5DE}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NodeManager", "NodeManager\NodeManager.vcproj", "{08037318-FECA-1BAD-7922-816B3AF2F5DE}"
 	ProjectSection(ProjectDependencies) = postProject
