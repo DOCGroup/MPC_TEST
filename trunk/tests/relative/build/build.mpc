@@ -1,0 +1,39 @@
+project(*lib) {
+  includes += .
+  pch_header = ../src/zzz_pch.h
+  pch_source = ../src/zzz_pch.cpp
+
+  verbatim(gnuace, macros) {
+    VSHDIR=.other/
+  }
+
+  Source_Files {
+    ../src/foo.cpp
+    bar.cpp
+    conditional(!automake) {
+      lower/bar.cpp
+    }
+  }
+  Resource_Files {
+    ../src/bar.rc
+  }
+}
+
+project(*exe) {
+  includes += .
+  verbatim(gnuace, macros) {
+    VDIR=.exe/
+  }
+
+  Source_Files {
+    ../src/foo.cpp
+    bar.cpp
+    conditional(!automake) {
+      lower/bar.cpp
+    }
+    other.cpp
+  }
+  Resource_Files {
+    ../src/bar.rc
+  }
+}
