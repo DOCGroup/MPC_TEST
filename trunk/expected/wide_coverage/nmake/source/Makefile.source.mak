@@ -53,7 +53,7 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
+	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -68,7 +68,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c
+CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST="a_string_with_no_spaces" /FD /c
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
@@ -104,7 +104,7 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
+	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -118,7 +118,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c
+CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST="a_string_with_no_spaces" /FD /c
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
@@ -154,7 +154,7 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
+	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -169,7 +169,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c
+CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST="a_string_with_no_spaces" /FD /c
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
@@ -205,7 +205,7 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
+	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -219,7 +219,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST /FD /c
+CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST="a_string_with_no_spaces" /FD /c
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe

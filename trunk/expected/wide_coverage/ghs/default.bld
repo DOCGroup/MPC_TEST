@@ -32,4 +32,4 @@ source/source.bld
 	:libdirs=source/.
 	:libdirs=../lib
 	:libraries=-lsource_lib
-	:defines=MACRO_TEST
+	:defines=MACRO_TEST="a_string_with_no_spaces"

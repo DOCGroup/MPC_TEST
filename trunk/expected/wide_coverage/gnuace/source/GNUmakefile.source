@@ -106,7 +106,7 @@ else
 LDFLAGS      += -L. -L../lib
 endif
 CPPFLAGS     += -I.
-CPPFLAGS     += -DMACRO_TEST
+CPPFLAGS     += -DMACRO_TEST="a_string_with_no_spaces"
 
 #----------------------------------------------------------------------------
 #       Local targets

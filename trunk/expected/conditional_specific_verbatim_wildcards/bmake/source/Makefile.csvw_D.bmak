@@ -85,7 +85,6 @@ LFLAGS   = \
 LIBFILES = \
            $(CG_LIB) import32$(LIB_EXT) cw32mti.lib ws2_32.lib
 
-
 CFLAGS = \
          $(PCH_CFLAGS) \
          -a8 \
@@ -135,7 +134,7 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 "$(INTERMEDIATE)\conditional\every$(OBJ_EXT)":
-	@if not exist "$(INTERMEDIATE)\conditional" mkdir "$(INTERMEDIATE)\conditional"
+	@if not exist "$(INTERMEDIATE)\conditional\" mkdir "$(INTERMEDIATE)\conditional\"
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) conditional\every.cpp
 
 clean:

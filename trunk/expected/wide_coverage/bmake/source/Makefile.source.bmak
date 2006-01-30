@@ -89,11 +89,10 @@ LIBFILES = \
            source_lib$(ILIBMODIFIER)$(LIB_EXT) \
            $(CG_LIB) import32$(LIB_EXT) cw32mti.lib ws2_32.lib
 
-
 CFLAGS = \
          $(PCH_CFLAGS) \
          -a8 \
-         -DMACRO_TEST \
+         -DMACRO_TEST="a_string_with_no_spaces" \
          -DWIN32 \
          -D_WINDOWS \
          -D_NO_VCL \
@@ -146,15 +145,15 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 "$(INTERMEDIATE)\exe\main$(OBJ_EXT)":
-	@if not exist "$(INTERMEDIATE)\exe" mkdir "$(INTERMEDIATE)\exe"
+	@if not exist "$(INTERMEDIATE)\exe\" mkdir "$(INTERMEDIATE)\exe\"
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) exe\main.cpp
 
 "$(INTERMEDIATE)\exe\use_more_names\use_more_names$(OBJ_EXT)":
-	@if not exist "$(INTERMEDIATE)\exe\use_more_names" mkdir "$(INTERMEDIATE)\exe\use_more_names"
+	@if not exist "$(INTERMEDIATE)\exe\use_more_names\" mkdir "$(INTERMEDIATE)\exe\use_more_names\"
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) exe\use_more_names\use_more_names.cpp
 
 "$(INTERMEDIATE)\exe\use_names\use_names$(OBJ_EXT)":
-	@if not exist "$(INTERMEDIATE)\exe\use_names" mkdir "$(INTERMEDIATE)\exe\use_names"
+	@if not exist "$(INTERMEDIATE)\exe\use_names\" mkdir "$(INTERMEDIATE)\exe\use_names\"
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) exe\use_names\use_names.cpp
 
 clean:

@@ -6,6 +6,10 @@ default:
 	:language=cxx
 	:config_setting=longlong
 	:cx_mode=ansi
+NodeManager/NodeManager_stub.bld
+	library
+	:object_dir=NodeManager/.obj
+	:libdirs=NodeManager
 DomainApplicationManager/DomainApplicationManager.bld
 	library
 	:object_dir=DomainApplicationManager/.obj
@@ -26,10 +30,10 @@ NodeManager/Monitor_Monitorlib.bld
 	library
 	:object_dir=NodeManager/.obj
 	:libdirs=NodeManager
-NodeManager/NodeManager_stub.bld
+TargetManager/CIAO_TargetManager_stub.bld
 	library
-	:object_dir=NodeManager/.obj
-	:libdirs=NodeManager
+	:object_dir=TargetManager/.obj
+	:libdirs=TargetManager
 NodeManager/NodeManager.bld
 	program
 	:object_dir=NodeManager/.obj
@@ -38,10 +42,6 @@ NodeManager/lib.bld
 	library
 	:object_dir=NodeManager/.obj
 	:libdirs=NodeManager
-TargetManager/CIAO_TargetManager_stub.bld
-	library
-	:object_dir=TargetManager/.obj
-	:libdirs=TargetManager
 TargetManager/CIAO_TargetManager_svnt.bld
 	library
 	:object_dir=TargetManager/.obj
