@@ -175,7 +175,7 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 "$(INTERMEDIATE)\creole\more_names$(OBJ_EXT)":
-	@if not exist "$(INTERMEDIATE)\creole" mkdir "$(INTERMEDIATE)\creole"
+	@if not exist "$(INTERMEDIATE)\creole\" mkdir "$(INTERMEDIATE)\creole\"
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) creole\more_names.cpp
 
 clean:

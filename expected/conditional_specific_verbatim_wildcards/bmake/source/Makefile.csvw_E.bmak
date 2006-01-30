@@ -83,7 +83,6 @@ LFLAGS   = \
 LIBFILES = \
            $(CG_LIB) import32$(LIB_EXT) cw32mti.lib ws2_32.lib
 
-
 CFLAGS = \
          $(PCH_CFLAGS) \
          -a8 \
@@ -132,7 +131,7 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 "$(INTERMEDIATE)\closed\Apple$(OBJ_EXT)":
-	@if not exist "$(INTERMEDIATE)\closed" mkdir "$(INTERMEDIATE)\closed"
+	@if not exist "$(INTERMEDIATE)\closed\" mkdir "$(INTERMEDIATE)\closed\"
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) closed\Apple.cpp
 
 clean:

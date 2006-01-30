@@ -141,7 +141,7 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 "$(INTERMEDIATE)\alternate\foo$(OBJ_EXT)":
-	@if not exist "$(INTERMEDIATE)\alternate" mkdir "$(INTERMEDIATE)\alternate"
+	@if not exist "$(INTERMEDIATE)\alternate\" mkdir "$(INTERMEDIATE)\alternate\"
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) alternate\foo.cpp
 
 clean:

@@ -601,6 +601,12 @@ sub run_test {
     @existing{@files} = ();
   }
 
+  my($defsigint) = $SIG{INT};
+  $SIG{INT} = sub { chdir($orig);
+                    remove_files($path, \%existing);
+                    exit(1);
+                  };
+
   chdir($path);
   my($add) = '';
   my($fh)  = new FileHandle("additional_options.txt");
@@ -609,8 +615,16 @@ sub run_test {
     $add =~ s/\s+$//;
     close($fh);
   }
-  my($ret) = system("$^X $MWC -include $cfg -type $type $add $mwc") / 256;
+  my($ret) = system("$^X $MWC -include $cfg -type $type $add $mwc");
   chdir($orig);
+
+  ## A signal killed the diffing process
+  if ($ret > 0 && $ret < 256) {
+    &{$SIG{INT}}();
+  }
+  else {
+    $ret /= 256;
+  }
 
   if ($ret != 0) {
     $status++;
@@ -654,6 +668,8 @@ sub run_test {
       remove_files($path, \%existing);
     }
   }
+
+  $SIG{INT} = $defsigint;
 
   return $status;
 }

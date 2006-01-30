@@ -1,3 +1,43 @@
+Mon Jan 30 12:09:37 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/circular_dependencies/cbx/circular_dependencies.bpgr:
+        * expected/circular_dependencies/ghs/default.bld:
+        * expected/circular_dependencies/sle/circular_dependencies.vpw:
+
+          Updated to reflect my change from Mon Jan 30 12:07:35 2006.
+
+        * expected/conditional_specific_verbatim_wildcards/bmake/source/Makefile.csvw_B.bmak:
+        * expected/conditional_specific_verbatim_wildcards/bmake/source/Makefile.csvw_D.bmak:
+        * expected/conditional_specific_verbatim_wildcards/bmake/source/Makefile.csvw_E.bmak:
+        * expected/grouping/bmake/source/Makefile.grouping_G.bmak:
+
+          Updated to reflect my change from Mon Jan 30 12:07:35 2006.
+
+        * tests/wide_coverage/source/source.mpc:
+        * expected/wide_coverage/automake/source/Makefile.am:
+        * expected/wide_coverage/bmake/source/Makefile.source.bmak:
+        * expected/wide_coverage/bmake/source/Makefile.source_lib.bmak:
+        * expected/wide_coverage/cbx/source/source.cbx:
+        * expected/wide_coverage/em3/source/source.vcp:
+        * expected/wide_coverage/ghs/default.bld:
+        * expected/wide_coverage/ghs/source/source.bld:
+        * expected/wide_coverage/gnuace/source/GNUmakefile.source:
+        * expected/wide_coverage/html/source/source.html:
+        * expected/wide_coverage/make/source/Makefile.source:
+        * expected/wide_coverage/nmake/source/Makefile.source.mak:
+        * expected/wide_coverage/sle/source/source.vpj:
+        * expected/wide_coverage/vc6/source/source.dsp:
+        * expected/wide_coverage/vc7/source/source.vcproj:
+        * expected/wide_coverage/vc71/source/source.vcproj:
+        * expected/wide_coverage/vc8/source/source.vcproj:
+
+          Modified this test to include a <% %> variable in the macros
+          setting.
+
+        * run_tests.pl:
+
+          Added a SIGINT handler to clean up generated files.
+
 Thu Jan 26 06:28:34 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/circular_dependencies/vc8/circular_dependencies.sln:
