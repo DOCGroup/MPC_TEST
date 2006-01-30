@@ -1,3 +1,17 @@
+Mon Jan 30 13:33:59 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * tests/relative/build/bar.cpp:
+        * tests/relative/build/build.mpc:
+        * tests/relative/build/lower/bar.cpp:
+        * tests/relative/build/other.cpp:
+        * tests/relative/src/bar.rc:
+        * tests/relative/src/foo.cpp:
+        * tests/relative/src/zzz_pch.h:
+        * tests/relative/src/zzz_pch.cpp:
+        * expected/relative/*:
+
+          Added a test to exercise the use of relative paths.
+
 Mon Jan 30 12:09:37 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/circular_dependencies/cbx/circular_dependencies.bpgr:

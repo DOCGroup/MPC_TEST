@@ -1,0 +1,17 @@
+#!build
+default:
+	program
+	:outputname=build/other
+	:optimizestrategy=speed
+	:sysincdirs=build
+	:libdirs=build
+../src/foo.cpp
+	C++
+bar.cpp
+	C++
+lower/bar.cpp
+	C++
+other.cpp
+	C++
+../src/bar.rc
+	script
