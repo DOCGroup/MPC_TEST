@@ -298,26 +298,26 @@
 			Name="Mondo Files"
 			Filter="mondo">
 			<File
-				RelativePath="all.mondo">
+				RelativePath="mondo\all.mondo">
 				<FileConfiguration
 					Name="Debug|Win32"
 				>
 					<Tool
 						Name="VCCustomBuildTool"
-						Description="Invoking perl ..\mondo\mondo.pl on all.mondo"
-						CommandLine="perl ..\mondo\mondo.pl  &quot;all.mondo&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;qwee.cxx&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;qwee.cxx&quot;"
+						Description="Invoking perl ..\mondo\mondo.pl on mondo\all.mondo"
+						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;.\qwee.cxx&quot;"
 						AdditionalDependencies="..\mondo\mondo.pl;..\mondo\modules\ReaderGen.pm"
-						Outputs="bar.txt;moop.hxx;qwee.cxx;qwee_T.C;weer.inl"/>
+						Outputs=".\bar.txt;.\moop.hxx;.\qwee.cxx;.\qwee_T.C;.\weer.inl"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32"
 				>
 					<Tool
 						Name="VCCustomBuildTool"
-						Description="Invoking perl ..\mondo\mondo.pl on all.mondo"
-						CommandLine="perl ..\mondo\mondo.pl  &quot;all.mondo&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;qwee.cxx&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;qwee.cxx&quot;"
+						Description="Invoking perl ..\mondo\mondo.pl on mondo\all.mondo"
+						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;.\qwee.cxx&quot;"
 						AdditionalDependencies="..\mondo\mondo.pl;..\mondo\modules\ReaderGen.pm"
-						Outputs="bar.txt;moop.hxx;qwee.cxx;qwee_T.C;weer.inl"/>
+						Outputs=".\bar.txt;.\moop.hxx;.\qwee.cxx;.\qwee_T.C;.\weer.inl"/>
 				</FileConfiguration>
 			</File>
 		</Filter>

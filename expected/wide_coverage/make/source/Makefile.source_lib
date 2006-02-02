@@ -41,7 +41,7 @@ $(LTARGETDIR):
 $(LIB): $(LTARGETDIR) $(OBJS)
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
-GENERATED_DIRTY    = creole/more_names.cpp creole/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl
+GENERATED_DIRTY    = creole/more_names.cpp creole/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl
 # These may be needed, but some versions of make do not accept this syntax
 #DYLD_LIBRARY_PATH := $(DYLD_LIBRARY_PATH):../lib
 #LD_LIBRARY_PATH   := $(LD_LIBRARY_PATH):../lib
@@ -64,9 +64,10 @@ TheCheat.cpp TheCheat.h: TheCheat.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  -o "$@" TheCheat.r
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && cat TheCheat.cpp >> temp.$$$$ && mv temp.$$$$ TheCheat.cpp
 
-bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl: all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
-	perl ../mondo/mondo.pl  all.mondo
-	@echo '#include "source_lib_pch.h"' > temp.$$$$ && cat qwee.cxx >> temp.$$$$ && mv temp.$$$$ qwee.cxx
+./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl: mondo/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
+	@$(MKDIR) .
+	perl ../mondo/mondo.pl  mondo/all.mondo
+	@echo '#include "source_lib_pch.h"' > temp.$$$$ && cat ./qwee.cxx >> temp.$$$$ && mv temp.$$$$ ./qwee.cxx
 
 .PRECIOUS: $(GENERATED_DIRTY)
 $(OBJS): $(GENERATED_DIRTY)

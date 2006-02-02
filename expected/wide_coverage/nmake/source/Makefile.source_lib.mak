@@ -36,7 +36,7 @@ DEPGEN=perl $(ACE_ROOT)/bin/depgen.pl -i -t nmake
 !ENDIF
 !ENDIF
 
-GENERATED_DIRTY = "creole\more_names.cpp" "creole\more_names.h" "names.cpp" "names.h" "TheCheat.cpp" "TheCheat.h" "bar.txt" "moop.hxx" "qwee.cxx" "qwee_T.C" "weer.inl"
+GENERATED_DIRTY = "creole\more_names.cpp" "creole\more_names.h" "names.cpp" "names.h" "TheCheat.cpp" "TheCheat.h" ".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl"
 
 !IF  "$(CFG)" == "Win32 Debug"
 
@@ -66,11 +66,11 @@ REALCLEAN : CLEAN
         -@del /f/q "names.h"
         -@del /f/q "TheCheat.cpp"
         -@del /f/q "TheCheat.h"
-        -@del /f/q "bar.txt"
-        -@del /f/q "moop.hxx"
-        -@del /f/q "qwee.cxx"
-        -@del /f/q "qwee_T.C"
-        -@del /f/q "weer.inl"
+        -@del /f/q ".\bar.txt"
+        -@del /f/q ".\moop.hxx"
+        -@del /f/q ".\qwee.cxx"
+        -@del /f/q ".\qwee_T.C"
+        -@del /f/q ".\weer.inl"
 
 "$(INTDIR)" :
     if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
@@ -124,11 +124,11 @@ REALCLEAN : CLEAN
         -@del /f/q "names.h"
         -@del /f/q "TheCheat.cpp"
         -@del /f/q "TheCheat.h"
-        -@del /f/q "bar.txt"
-        -@del /f/q "moop.hxx"
-        -@del /f/q "qwee.cxx"
-        -@del /f/q "qwee_T.C"
-        -@del /f/q "weer.inl"
+        -@del /f/q ".\bar.txt"
+        -@del /f/q ".\moop.hxx"
+        -@del /f/q ".\qwee.cxx"
+        -@del /f/q ".\qwee_T.C"
+        -@del /f/q ".\weer.inl"
 
 "$(INTDIR)" :
     if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
@@ -183,11 +183,11 @@ REALCLEAN : CLEAN
         -@del /f/q "names.h"
         -@del /f/q "TheCheat.cpp"
         -@del /f/q "TheCheat.h"
-        -@del /f/q "bar.txt"
-        -@del /f/q "moop.hxx"
-        -@del /f/q "qwee.cxx"
-        -@del /f/q "qwee_T.C"
-        -@del /f/q "weer.inl"
+        -@del /f/q ".\bar.txt"
+        -@del /f/q ".\moop.hxx"
+        -@del /f/q ".\qwee.cxx"
+        -@del /f/q ".\qwee_T.C"
+        -@del /f/q ".\weer.inl"
 
 "$(INTDIR)" :
     if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
@@ -241,11 +241,11 @@ REALCLEAN : CLEAN
         -@del /f/q "names.h"
         -@del /f/q "TheCheat.cpp"
         -@del /f/q "TheCheat.h"
-        -@del /f/q "bar.txt"
-        -@del /f/q "moop.hxx"
-        -@del /f/q "qwee.cxx"
-        -@del /f/q "qwee_T.C"
-        -@del /f/q "weer.inl"
+        -@del /f/q ".\bar.txt"
+        -@del /f/q ".\moop.hxx"
+        -@del /f/q ".\qwee.cxx"
+        -@del /f/q ".\qwee_T.C"
+        -@del /f/q ".\weer.inl"
 
 "$(INTDIR)" :
     if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
@@ -422,17 +422,18 @@ InputPath=TheCheat.r
         move /y temporary.src "TheCheat.cpp"
 <<
 
-SOURCE="all.mondo"
+SOURCE="mondo\all.mondo"
 
-InputPath=all.mondo
+InputPath=mondo\all.mondo
 
-"bar.txt" "moop.hxx" "qwee.cxx" "qwee_T.C" "weer.inl" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
+        if not exist . mkdir .
 	perl ..\mondo\mondo.pl  "$(InputPath)"
 	echo #include "source_lib_pch.h" > temporary.src
-	type "qwee.cxx" >> temporary.src
-        move /y temporary.src "qwee.cxx"
+	type ".\qwee.cxx" >> temporary.src
+        move /y temporary.src ".\qwee.cxx"
 <<
 
 

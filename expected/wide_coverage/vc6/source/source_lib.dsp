@@ -310,34 +310,35 @@ BuildCmds= \
 # PROP Default_Filter "mondo"
 # Begin Source File
 
-SOURCE="all.mondo"
+SOURCE="mondo\all.mondo"
 
 !IF  "$(CFG)" == "source_lib - Win32 Debug"
 
 USERDEP__all="..\mondo\mondo.pl" "..\mondo\modules\ReaderGen.pm"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl ..\mondo\mondo.pl on $(InputPath)
-InputPath="all.mondo"
+InputPath="mondo\all.mondo"
 
 BuildCmds= \
+	mkdir . 2> nul \
 	perl ..\mondo\mondo.pl  $(InputPath) \
 	echo #include "source_lib_pch.h" > temporary.src \
-	type "qwee.cxx" >> temporary.src \
-	move /y temporary.src "qwee.cxx"
+	type ".\qwee.cxx" >> temporary.src \
+	move /y temporary.src ".\qwee.cxx"
 
-"bar.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\bar.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
-"moop.hxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\moop.hxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
-"qwee.cxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\qwee.cxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
-"qwee_T.C" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\qwee_T.C" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
-"weer.inl" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\weer.inl" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 # End Custom Build
 
@@ -346,27 +347,28 @@ BuildCmds= \
 USERDEP__all="..\mondo\mondo.pl" "..\mondo\modules\ReaderGen.pm"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl ..\mondo\mondo.pl on $(InputPath)
-InputPath="all.mondo"
+InputPath="mondo\all.mondo"
 
 BuildCmds= \
+	mkdir . 2> nul \
 	perl ..\mondo\mondo.pl  $(InputPath) \
 	echo #include "source_lib_pch.h" > temporary.src \
-	type "qwee.cxx" >> temporary.src \
-	move /y temporary.src "qwee.cxx"
+	type ".\qwee.cxx" >> temporary.src \
+	move /y temporary.src ".\qwee.cxx"
 
-"bar.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\bar.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
-"moop.hxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\moop.hxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
-"qwee.cxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\qwee.cxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
-"qwee_T.C" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\qwee_T.C" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
-"weer.inl" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\weer.inl" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 # End Custom Build
 

@@ -42,7 +42,7 @@ my($test_scr)  = 'run_test.pl';
 my($diff)      = which('diff');
 my($patch)     = which('patch');
 my($passed)    = 'succeeded';
-my($failed)    = '**failed**';
+my($failed)    = '****failed****';
 
 # ******************************************************************
 # Subroutine Section
@@ -87,7 +87,7 @@ sub diff_files {
 
   if (!$nodiff) {
     if (defined $diff) {
-      my($txt) = 'diff.txt';
+      my($txt) = 'diff.' . $$ . '.txt';
       my($dh)  = new FileHandle();
       system("$diff $left $right > $txt");
       if (open($dh, $txt)) {

@@ -22,7 +22,8 @@ project: generator_base, test_base, cppgen, mondo_base {
   }
 
   MONDO_Files {
-    all.mondo  >>   bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl
+    gendir = .
+    mondo/all.mondo  >>   bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl
   }
 
   Source_Files {
