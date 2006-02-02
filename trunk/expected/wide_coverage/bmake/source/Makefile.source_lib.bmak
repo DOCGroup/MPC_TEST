@@ -114,7 +114,7 @@ $(OUTPUTDIR)$(NAME)$(LIB_EXT): $(OBJFILES)
 + )
 !
 
-GENERATED_DIRTY = creole\more_names.cpp creole\more_names.h names.cpp names.h TheCheat.cpp TheCheat.h bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl
+GENERATED_DIRTY = creole\more_names.cpp creole\more_names.h names.cpp names.h TheCheat.cpp TheCheat.h .\bar.txt .\moop.hxx .\qwee.cxx .\qwee_T.C .\weer.inl
 creole\more_names.cpp creole\more_names.h: more_names.key
         @if not exist creole mkdir creole
 	..\bin\generator -o creole more_names.key
@@ -136,11 +136,12 @@ TheCheat.cpp TheCheat.h: TheCheat.r
 	@type TheCheat.cpp >> temporary.src
 	@move /y temporary.src TheCheat.cpp
 
-bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl: all.mondo
-	perl ..\mondo\mondo.pl  all.mondo
+.\bar.txt .\moop.hxx .\qwee.cxx .\qwee_T.C .\weer.inl: mondo\all.mondo
+        @if not exist . mkdir .
+	perl ..\mondo\mondo.pl  mondo\all.mondo
 	@echo \#include "source_lib_pch.h" > temporary.src
-	@type qwee.cxx >> temporary.src
-	@move /y temporary.src qwee.cxx
+	@type .\qwee.cxx >> temporary.src
+	@move /y temporary.src .\qwee.cxx
 
 $(OBJFILES): $(GENERATED_DIRTY)
 
@@ -188,11 +189,11 @@ realclean: clean
 	if exist "names.h" del names.h
 	if exist "TheCheat.cpp" del TheCheat.cpp
 	if exist "TheCheat.h" del TheCheat.h
-	if exist "bar.txt" del bar.txt
-	if exist "moop.hxx" del moop.hxx
-	if exist "qwee.cxx" del qwee.cxx
-	if exist "qwee_T.C" del qwee_T.C
-	if exist "weer.inl" del weer.inl
+	if exist ".\bar.txt" del .\bar.txt
+	if exist ".\moop.hxx" del .\moop.hxx
+	if exist ".\qwee.cxx" del .\qwee.cxx
+	if exist ".\qwee_T.C" del .\qwee_T.C
+	if exist ".\weer.inl" del .\weer.inl
 	if exist "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del $(OUTPUTDIR)$(NAME)$(LIB_EXT)
         if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del $(OUTPUTDIR)$(NAME)$(POSTLINKRM)
 

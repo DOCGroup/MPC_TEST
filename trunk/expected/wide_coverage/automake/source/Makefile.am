@@ -61,24 +61,25 @@ TheCheat-stamp: $(srcdir)/TheCheat.r ../bin/cppgen.pl
 	@touch "$@"
 
 BUILT_SOURCES += \
-  bar.txt \
-  moop.hxx \
-  qwee.cxx \
-  qwee_T.C \
-  weer.inl
+  ./bar.txt \
+  ./moop.hxx \
+  ./qwee.cxx \
+  ./qwee_T.C \
+  ./weer.inl
 
 CLEANFILES += \
-  all-stamp \
-  bar.txt \
-  moop.hxx \
-  qwee.cxx \
-  qwee_T.C \
-  weer.inl
+  ./all-stamp \
+  ./bar.txt \
+  ./moop.hxx \
+  ./qwee.cxx \
+  ./qwee_T.C \
+  ./weer.inl
 
-bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl: all-stamp
+./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl: ./all-stamp
 
-all-stamp: $(srcdir)/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
-	perl ../mondo/mondo.pl  $(srcdir)/all.mondo
+./all-stamp: $(srcdir)/mondo/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
+	mkdir -p .
+	perl ../mondo/mondo.pl  $(srcdir)/mondo/all.mondo
 	@touch "$@"
 
 noinst_LTLIBRARIES = libsource_lib.la

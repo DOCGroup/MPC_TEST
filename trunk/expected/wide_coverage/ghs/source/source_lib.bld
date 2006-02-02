@@ -34,14 +34,15 @@ TheCheat.r
         :preexec=cd source; cat TheCheat.cpp >> temporary.src
         :preexec=cd source; mv -f temporary.src TheCheat.cpp
 
-all.mondo
+mondo/all.mondo
 	custom
 	:custom_processor.name=echo
-	:depends=../mondo/mondo.pl ../mondo/modules/ReaderGen.pm all.mondo
-	:preexec=cd source; perl ../mondo/mondo.pl  all.mondo
+	:depends=../mondo/mondo.pl ../mondo/modules/ReaderGen.pm mondo/all.mondo
+	:preexec=cd source; mkdir -p .
+	:preexec=cd source; perl ../mondo/mondo.pl  mondo/all.mondo
 	:preexec=cd source; echo #include "source_lib_pch.h" > temporary.src
-        :preexec=cd source; cat qwee.cxx >> temporary.src
-        :preexec=cd source; mv -f temporary.src qwee.cxx
+        :preexec=cd source; cat ./qwee.cxx >> temporary.src
+        :preexec=cd source; mv -f temporary.src ./qwee.cxx
 
 	:optimizestrategy=speed
 	:cx_pch_option=automatic
