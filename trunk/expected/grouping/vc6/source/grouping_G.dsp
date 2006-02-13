@@ -73,12 +73,12 @@ LINK32=link.exe
 # Begin Group "Source Files"
 
 # PROP Default_Filter "cpp;cxx;c"
-# Begin Group "fake"
+# Begin Group "carnival"
 
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="alternate\foo.cpp"
+SOURCE="clown.cpp"
 # End Source File
 # End Group
 # Begin Group "default_group"
@@ -89,12 +89,12 @@ SOURCE="alternate\foo.cpp"
 SOURCE="other.cpp"
 # End Source File
 # End Group
-# Begin Group "carnival"
+# Begin Group "fake"
 
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="clown.cpp"
+SOURCE="alternate\foo.cpp"
 # End Source File
 # End Group
 # End Group

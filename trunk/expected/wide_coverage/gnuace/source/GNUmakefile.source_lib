@@ -19,10 +19,10 @@ LIB              = $(LIB_UNCHECKED)
 static_libs_only = 1
 
 FILES = \
+  ./qwee.cxx \
   TheCheat.cpp \
   creole/more_names.cpp \
-  names.cpp \
-  qwee.cxx
+  names.cpp
 
 VPATH = .:creole
 

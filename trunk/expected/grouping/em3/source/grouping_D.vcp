@@ -132,7 +132,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\D.pdb"  /debug /machine:IX86 /out:".\IX86\D.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\D.pdb"  /debug /machine:IX86 /out:".\IX86\D.exe"
 
 !ELSEIF  "$(CFG)" == "grouping_D - Win32 (WCE emulator) Release"
 
@@ -151,7 +151,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Release\IX86\D.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Release\IX86\D.exe"
 
 !ENDIF
 !IF  "$(CFG)" == "grouping_D - Win32 (WCE x86) Debug"
@@ -171,7 +171,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\D.pdb"  /debug /machine:IX86 /out:".\IX86\D.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\D.pdb"  /debug /machine:IX86 /out:".\IX86\D.exe"
 
 !ELSEIF  "$(CFG)" == "grouping_D - Win32 (WCE x86) Release"
 
@@ -190,7 +190,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Release\IX86\D.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Release\IX86\D.exe"
 
 !ENDIF
 
@@ -208,20 +208,20 @@ LINK32=link.exe
 # Begin Group "Source Files"
 
 # PROP Default_Filter "cpp;cxx;c"
-# Begin Group "located"
-
-# PROP Default_Filter ""
-# Begin Source File
-
-SOURCE="other.cpp"
-# End Source File
-# End Group
 # Begin Group "carnival"
 
 # PROP Default_Filter ""
 # Begin Source File
 
 SOURCE="clown.cpp"
+# End Source File
+# End Group
+# Begin Group "located"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="other.cpp"
 # End Source File
 # End Group
 # End Group

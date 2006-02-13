@@ -3,6 +3,7 @@ bmake: options_Zargaflan.bmake
 make: Makefile_Zargaflan
 gnuace: GNUmakefile_Zargaflan
 nmake: options_Zargaflan.nmake
+em3: options_Zargaflan.vcw
 vc6: options_Zargaflan.dsw
 vc7: options_Zargaflan.sln
 vc71: options_Zargaflan.sln

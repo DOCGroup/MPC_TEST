@@ -208,5 +208,10 @@
                         <F N="exe/use_more_names/use_more_names.h"/>
                         <F N="exe/use_names/use_names.h"/>
                 </Folder>
+                <Folder
+                        Name="Documentation Files"
+                        Filters="*.txt;*.doc">
+                        <F N="Foolish/foolish.txt"/>
+                </Folder>
 	</Files>
 </Project>

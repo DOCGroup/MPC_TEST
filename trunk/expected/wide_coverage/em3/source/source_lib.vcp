@@ -223,15 +223,15 @@ SOURCE="source_lib_pch.cpp"
 # End Source File
 # Begin Source File
 
+SOURCE=".\qwee.cxx"
+# End Source File
+# Begin Source File
+
 SOURCE="creole\more_names.cpp"
 # End Source File
 # Begin Source File
 
 SOURCE="names.cpp"
-# End Source File
-# Begin Source File
-
-SOURCE="qwee.cxx"
 # End Source File
 # Begin Source File
 
@@ -275,7 +275,7 @@ SOURCE="weer.inl"
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="qwee_T.C"
+SOURCE=".\qwee_T.C"
 # PROP Exclude_From_Build 1
 # End Source File
 # End Group
@@ -284,7 +284,7 @@ SOURCE="qwee_T.C"
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="bar.txt"
+SOURCE=".\bar.txt"
 # End Source File
 # End Group
 # Begin Group "Gen Files"

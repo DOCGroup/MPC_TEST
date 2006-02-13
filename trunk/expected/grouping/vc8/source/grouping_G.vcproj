@@ -181,20 +181,20 @@
 			Name="Source Files"
 			Filter="cpp;cxx;cc;C;c">
 			<Filter
-				Name="fake"
+				Name="carnival"
 				Filter="">
 				<File
-					RelativePath="alternate\foo.cpp">
+					RelativePath="clown.cpp">
 				</File>
 			</Filter>
 			<File
 				RelativePath="other.cpp">
 			</File>
 			<Filter
-				Name="carnival"
+				Name="fake"
 				Filter="">
 				<File
-					RelativePath="clown.cpp">
+					RelativePath="alternate\foo.cpp">
 				</File>
 			</Filter>
 		</Filter>

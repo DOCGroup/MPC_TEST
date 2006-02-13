@@ -91,6 +91,10 @@ project(*E) {
   dllout = bin
   libout = lib
 
+  specific(bmake) {
+    debug_macros += E_NO_INLINE=1
+  }
+
   Source_Files {
     !closed/[Ss]*ing.cpp
   }

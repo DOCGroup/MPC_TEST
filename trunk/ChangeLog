@@ -1,3 +1,38 @@
+Mon Feb 13 11:20:49 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*:
+
+          Modified to reflect the changes up to Mon Feb 13 11:15:04 2006.
+
+        * run_tests.pl:
+
+          Support building for the em3 project type and cleaning the build
+          directory before generating the first MPC pass.  Also added a
+          --diffcmd option to specify an alternate diff command.
+
+        * tests/circular_dependencies/NodeApplication/foo.cpp:
+        * tests/circular_dependencies/NodeManager/one.cpp:
+        * tests/conditional_specific_verbatim_wildcards/source/conditional/windows.cpp:
+        * tests/grouping/source/other.cpp:
+        * tests/implicit_projects/source/two/two.cpp:
+        * tests/options/source/basic.cpp:
+        * tests/relative/build/other.cpp:
+        * tests/options/build_entry.txt:
+        * tests/wide_coverage/build_entry.txt:
+
+          Modified to support building with the em3 project type.
+
+        * tests/conditional_specific_verbatim_wildcards/source/csvw.mpc:
+
+          Modified to test debug_flags with the bmake project type.
+
+        * tests/wide_coverage/config/mondo_base.mpb:
+        * tests/wide_coverage/source/source.mpc:
+        * tests/wide_coverage/source/source_lib.mpc:
+
+          Modified to test automatic addition of explicitly listed output
+          files (>> operator).
+
 Thu Feb  2 07:11:54 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wide_coverage/automake/source/Makefile.am:

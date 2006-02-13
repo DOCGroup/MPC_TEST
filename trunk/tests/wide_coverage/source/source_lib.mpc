@@ -26,19 +26,12 @@ project: generator_base, test_base, cppgen, mondo_base {
     mondo/all.mondo  >>   bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl
   }
 
-  Source_Files {
-    qwee.cxx
-  }
-  Template_Files {
-    qwee_T.C
-  }
+  // Only add a few of the generated files to test
+  // automatic addition of explicitly listed output files
   Inline_Files {
     weer.inl
   }
   Header_Files {
     moop.hxx
-  }
-  Documentation_Files {
-    bar.txt
   }
 }

@@ -52,7 +52,7 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" "creole\more_names.cpp" "names.cpp" "qwee.cxx" "TheCheat.cpp" "source_lib_pch.cpp"
+	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "creole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -86,9 +86,9 @@ LINK32=link.exe -lib
 LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_libd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
+	"$(INTDIR)\.\qwee.obj" \
 	"$(INTDIR)\creole\more_names.obj" \
 	"$(INTDIR)\names.obj" \
-	"$(INTDIR)\qwee.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
 "$(OUTDIR)\source_libd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
@@ -111,7 +111,7 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" "creole\more_names.cpp" "names.cpp" "qwee.cxx" "TheCheat.cpp" "source_lib_pch.cpp"
+	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "creole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -144,9 +144,9 @@ LINK32=link.exe -lib
 LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_lib.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
+	"$(INTDIR)\.\qwee.obj" \
 	"$(INTDIR)\creole\more_names.obj" \
 	"$(INTDIR)\names.obj" \
-	"$(INTDIR)\qwee.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
 "$(OUTDIR)\source_lib.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
@@ -169,7 +169,7 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" "creole\more_names.cpp" "names.cpp" "qwee.cxx" "TheCheat.cpp" "source_lib_pch.cpp"
+	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "creole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -203,9 +203,9 @@ LINK32=link.exe -lib
 LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_libsd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
+	"$(INTDIR)\.\qwee.obj" \
 	"$(INTDIR)\creole\more_names.obj" \
 	"$(INTDIR)\names.obj" \
-	"$(INTDIR)\qwee.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
 "$(OUTDIR)\source_libsd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
@@ -228,7 +228,7 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" "creole\more_names.cpp" "names.cpp" "qwee.cxx" "TheCheat.cpp" "source_lib_pch.cpp"
+	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "creole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -261,9 +261,9 @@ LINK32=link.exe -lib
 LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_libs.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
+	"$(INTDIR)\.\qwee.obj" \
 	"$(INTDIR)\creole\more_names.obj" \
 	"$(INTDIR)\names.obj" \
-	"$(INTDIR)\qwee.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
 "$(OUTDIR)\source_libs.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
@@ -357,6 +357,12 @@ CPP_SWITCHES=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS 
 
 !ENDIF
 
+SOURCE=".\qwee.cxx"
+
+"$(INTDIR)\.\qwee.obj" : $(SOURCE) "$(INTDIR)"
+	@if not exist "$(INTDIR)\.\$(NULL)" mkdir "$(INTDIR)\.\"
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\.\qwee.obj" $(SOURCE)
+
 SOURCE="creole\more_names.cpp"
 
 "$(INTDIR)\creole\more_names.obj" : $(SOURCE) "$(INTDIR)"
@@ -367,11 +373,6 @@ SOURCE="names.cpp"
 
 "$(INTDIR)\names.obj" : $(SOURCE) "$(INTDIR)"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\names.obj" $(SOURCE)
-
-SOURCE="qwee.cxx"
-
-"$(INTDIR)\qwee.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\qwee.obj" $(SOURCE)
 
 SOURCE="TheCheat.cpp"
 

@@ -20,12 +20,13 @@ NUL           = /dev/null
 MKDIR         = mkdir -p
 EXEEXT        = 
 LIBPREFIX     = lib
-LDLIBS        = -ldl -lpthread $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so)))))
-OBJS          = source_lib_pch$(OBJEXT) TheCheat$(OBJEXT) creole/more_names$(OBJEXT) names$(OBJEXT) qwee$(OBJEXT)
-AREXT         = .a
-LIB           = $(LTARGETDIR)$(LIBPREFIX)source_lib$(AREXT)
+LIBSUFFIX     = 
 GENFLAGS      = -O
-SRC           = source_lib_pch.cpp TheCheat.cpp creole/more_names.cpp names.cpp qwee.cxx
+LDLIBS        = -ldl -lpthread $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so)))))
+OBJS          = source_lib_pch$(OBJEXT) ./qwee$(OBJEXT) TheCheat$(OBJEXT) creole/more_names$(OBJEXT) names$(OBJEXT)
+AREXT         = .a
+LIB           = $(LTARGETDIR)$(LIBPREFIX)source_lib$(LIBSUFFIX)$(AREXT)
+SRC           = source_lib_pch.cpp ./qwee.cxx TheCheat.cpp creole/more_names.cpp names.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(STATICFLAGS)
 
@@ -79,6 +80,9 @@ source_lib_pch$(OBJEXT): source_lib_pch.cpp
 	$(COMPILE.cc) -o source_lib_pch.h.gch $(EXPORTFLAGS) source_lib_pch.cpp
 	@$(CP) source_lib_pch.h.gch source_lib_pch$(OBJEXT)
 
+./qwee$(OBJEXT): ./qwee.cxx
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ./qwee.cxx
+
 TheCheat$(OBJEXT): TheCheat.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) TheCheat.cpp
 
@@ -87,9 +91,6 @@ creole/more_names$(OBJEXT): creole/more_names.cpp
 
 names$(OBJEXT): names.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) names.cpp
-
-qwee$(OBJEXT): qwee.cxx
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) qwee.cxx
 
 clean:
 	-$(RM) $(OBJS)

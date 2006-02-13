@@ -148,17 +148,17 @@
 			Name="Source Files"
 			Filter="cpp;cxx;cc;C;c">
 			<Filter
-				Name="located"
-				Filter="">
-				<File
-					RelativePath="other.cpp">
-				</File>
-			</Filter>
-			<Filter
 				Name="carnival"
 				Filter="">
 				<File
 					RelativePath="clown.cpp">
+				</File>
+			</Filter>
+			<Filter
+				Name="located"
+				Filter="">
+				<File
+					RelativePath="other.cpp">
 				</File>
 			</Filter>
 		</Filter>

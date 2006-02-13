@@ -106,6 +106,14 @@ SOURCE="exe\use_more_names\use_more_names.h"
 SOURCE="exe\use_names\use_names.h"
 # End Source File
 # End Group
+# Begin Group "Documentation"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="Foolish\foolish.txt"
+# End Source File
+# End Group
 # Begin Group "Simple Files"
 
 # PROP Default_Filter "simple"
