@@ -147,9 +147,6 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;cxx;cc;C;c">
-			<File
-				RelativePath="other.cpp">
-			</File>
 			<Filter
 				Name="carnival"
 				Filter="">
@@ -157,6 +154,9 @@
 					RelativePath="clown.cpp">
 				</File>
 			</Filter>
+			<File
+				RelativePath="other.cpp">
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"

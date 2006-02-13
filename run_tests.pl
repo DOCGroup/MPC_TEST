@@ -21,6 +21,7 @@ use File::Copy;
 use File::Path;
 use File::Spec;
 use File::Basename;
+use File::Find;
 
 my($basePath) = $FindBin::Bin;
 unshift(@INC, $basePath . '/modules');
@@ -240,6 +241,7 @@ sub buildit {
   my($status) = 0;
   my($orig)   = getcwd();
   my($ob)     = $one_built;
+  my($cross)  = undef;
 
   chdir($path);
 
@@ -279,6 +281,17 @@ sub buildit {
         printBuildMessage($type);
         $cmd .= ' -f ' . $entry if (defined $entry);
         $status = checkBuildStatus($cmd);
+      }
+    }
+    elsif ($type eq 'em3') {
+      my($cmd) = which('evc');
+      if (defined $cmd && defined $ENV{TARGETCPU}) {
+        printBuildMessage($type);
+        $entry = basename($path) . '.vcw' if (!defined $entry);
+        $status = checkBuildStatus("$cmd " .
+                                   "$entry /make \"all - win32 " .
+                                   "(WCE $ENV{TARGETCPU}) Debug\"");
+        $cross = 1;
       }
     }
     elsif ($type eq 'vc6') {
@@ -370,7 +383,7 @@ sub buildit {
           printBuildMessage($type);
           $entry = basename($path) . '.sln' if (!defined $entry);
           $status = checkBuildStatus("$cmd " .
-                                     "$entry /build debug");
+                                     "$entry /build release");
         }
       }
     }
@@ -419,8 +432,9 @@ sub buildit {
   }
 
   ## If $one_built has changed then we built the test.
-  ## We can run the test (if there is a test script).
-  if ($status && $ob != $one_built && -r $test_scr) {
+  ## We can run the test (if there is a test script and we're not
+  ## cross-compiling).
+  if ($status && !$cross && $ob != $one_built && -r $test_scr) {
     $status = system("$^X $test_scr");
   }
 
@@ -585,6 +599,108 @@ sub apply_patches {
 }
 
 
+sub clean_dir {
+  my($file) = shift;
+  if (-d $file) {
+    my($fh) = new FileHandle();
+    if (opendir($fh, $file)) {
+      foreach my $name (grep(!/^\.\.?$/, readdir($fh))) {
+        my($full) = "$file/$name";
+        clean_dir($full);
+        rmdir($full);
+      }
+      closedir($fh);
+    }
+  }
+  else {
+    unlink($file);
+  }
+}
+
+sub to_be_cleaned {
+  (/^\.depend\..*\z/s ||
+   /^Makefile.*\z/s ||
+   /^GNUmakefile.*\z/s ||
+   /^.*\.sln\z/s ||
+   /^.*\.vcproj\z/s ||
+   /^.*\.ds.?\z/s ||
+   /^.*\.ncb\z/s ||
+   /^.*\.suo\z/s ||
+   /^.*\.bor\z/s ||
+   /^.*\.opt\z/s ||
+   /^.*\.plg\z/s ||
+   /^.*\.pdb\z/s ||
+   /^.*\.lib\z/s ||
+   /^.*\.dll\z/s ||
+   /^\.shobj\z/s ||
+   /^.*\.ins\z/s ||
+   /^.*\.mak\z/s ||
+   /^.*\.dep\z/s ||
+   /^Debug\z/s ||
+   /^Release\z/s ||
+   /^Static_Debug\z/s ||
+   /^Static_Release\z/s ||
+   /^.*\.vcw\z/s ||
+   /^.*\.vcp\z/s ||
+   /^.*\.o\z/s ||
+   /^.*\.bmak\z/s ||
+   /^.*\.bpgr\z/s ||
+   /^.*\.cbx\z/s ||
+   /^.*_workspace\.html\z/s ||
+   /^.*\.csproj\z/s ||
+   /^.*\.bld\z/s ||
+   /^.*\.bmake\z/s ||
+   /^.*\.nmake\z/s ||
+   /^.*\.icc\z/s ||
+   /^.*\.vpj\z/s ||
+   /^.*\.tds\z/s ||
+   /^configure\.ac\.Makefiles\z/s ||
+   /^.*\.icp\z/s ||
+   /^.*\.vpw\z/s ||
+   /^.*\.vbproj\z/s ||
+   /^.*\.RES\z/s ||
+   /^.*\.aps\z/s ||
+   /^.*\.idb\z/s ||
+   /^.*\.sbr\z/s ||
+   /^.*\.exp\z/s ||
+   /^.*\.vcl\z/s ||
+   /^.*\.vco\z/s ||
+   /^.*\.vcb\z/s ||
+   /^configure\.ac\z/s ||
+   /^.*\.obj\z/s ||
+   /^autom4te\.cache\z/s ||
+   /^AUTHORS\z/s ||
+   /^ChangeLog\z/s ||
+   /^NEWS\z/s ||
+   /^README\z/s ||
+   /^aclocal\.m4\z/s ||
+   /^config\..*\z/s ||
+   /^configure\z/s ||
+   /^libtool\z/s ||
+   /^m4\z/s ||
+   /^\.deps\z/s ||
+   /^COPYING\z/s ||
+   /^depcomp\z/s ||
+   /^INSTALL\z/s ||
+   /^install-sh\z/s ||
+   /^ltmain\.sh\z/s ||
+   /^missing\z/s ||
+   /^mkinstalldirs\z/s ||
+   /^\.libs\z/s ||
+   /^.*\.lo\z/s ||
+   /^.*\.la\z/s ||
+   /^.*\.loT\z/s ||
+   /^.*\.user\z/s ||
+   /^core\z/s ||
+   /^core\..*\z/s ||
+   /^.*\.bdsgroup\z/s ||
+   /^.*\.bdsproj\z/s ||
+   /^.*\.gch\z/s) &&
+  ($File::Find::prune = 1) &&
+  clean_dir($_);
+}
+
+
 sub run_test {
   my($path)     = shift;
   my($mwc)      = shift;
@@ -669,7 +785,7 @@ sub run_test {
     }
   }
 
-  $SIG{INT} = $defsigint;
+  $SIG{INT} = $defsigint if (defined $defsigint);
 
   return $status;
 }
@@ -720,17 +836,20 @@ sub determine_setup {
 my(@dirs)    = ();
 my(@tonly)   = ();
 my($output)  = undef;
-my(%options) = ('expected' => \$cr_expect,
-                'break'    => \$br_error,
-                'nobuild'  => \$nobuild,
-                'nodiff'   => \$nodiff,
-                'output=s' => \$output,
-                'test=s'   => \@dirs,
-                'type=s'   => \@tonly,
+my(%options) = ('expected'  => \$cr_expect,
+                'break'     => \$br_error,
+                'nobuild'   => \$nobuild,
+                'nodiff'    => \$nodiff,
+                'output=s'  => \$output,
+                'test=s'    => \@dirs,
+                'type=s'    => \@tonly,
+                'diffcmd=s' => \$diff,
                );
 my(%desc)    = ('expected' => 'Create expected results for all of the ' .
                               'tests',
                 'break'    => 'Break on the first test failure',
+                'diffcmd'  => 'Provide the full path to an alternate ' .
+                              'diff command',
                 'nobuild'  => 'Do not build any of the tests',
                 'nodiff'   => 'Do not show file differences',
                 'output'   => 'Send output to the specified file',
@@ -807,6 +926,7 @@ else {
             }
             foreach my $type (@types) {
               if (!defined $tonly[0] || exists $tonly{$type}) {
+                File::Find::find({wanted => \&to_be_cleaned}, $full);
                 my($ret) = run_test($full, $mwc, 'config',
                                     "$expectdir/$dir", $type, 0);
                 $status += $ret;

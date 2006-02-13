@@ -73,20 +73,20 @@ LINK32=link.exe
 # Begin Group "Source Files"
 
 # PROP Default_Filter "cpp;cxx;c"
-# Begin Group "located"
-
-# PROP Default_Filter ""
-# Begin Source File
-
-SOURCE="other.cpp"
-# End Source File
-# End Group
 # Begin Group "carnival"
 
 # PROP Default_Filter ""
 # Begin Source File
 
 SOURCE="clown.cpp"
+# End Source File
+# End Group
+# Begin Group "located"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="other.cpp"
 # End Source File
 # End Group
 # End Group

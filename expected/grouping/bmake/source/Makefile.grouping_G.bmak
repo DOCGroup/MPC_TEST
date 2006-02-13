@@ -145,11 +145,11 @@ generated: $(GENERATED_DIRTY)
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) alternate\foo.cpp
 
 clean:
-	if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	if exist "clown.cpp" del clown.cpp
-	if exist "clown.h" del clown.h
-	if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del $(OUTPUTDIR)$(NAME)$(EXE_EXT)
-        if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del $(OUTPUTDIR)$(NAME)$(POSTLINKRM)
+	-if exist "clown.cpp" del "clown.cpp"
+	-if exist "clown.h" del "clown.h"
+	-if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)"
+        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
 

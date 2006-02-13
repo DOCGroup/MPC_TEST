@@ -25,3 +25,5 @@ exe/use_more_names/use_more_names.h
 	include_file
 exe/use_names/use_names.h
 	include_file
+Foolish/foolish.txt
+	documentation

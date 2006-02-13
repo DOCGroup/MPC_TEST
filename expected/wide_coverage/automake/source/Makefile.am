@@ -89,17 +89,17 @@ libsource_lib_la_CPPFLAGS = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
 libsource_lib_la_SOURCES = \
+  ./qwee.cxx \
   TheCheat.cpp \
   creole/more_names.cpp \
-  names.cpp \
-  qwee.cxx
+  names.cpp
 
 noinst_HEADERS = \
+  ./qwee_T.C \
   TheCheat.h \
   creole/more_names.h \
   moop.hxx \
   names.h \
-  qwee_T.C \
   weer.inl
 
 ## Makefile.source.am

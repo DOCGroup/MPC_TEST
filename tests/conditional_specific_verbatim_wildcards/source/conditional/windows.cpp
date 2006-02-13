@@ -2,7 +2,7 @@
 
 void foo()
 {
-  CreateDirectory(".", 0);
+  CreateDirectoryW(L".", 0);
 }
 
 #if defined(ONLY_MAKE)

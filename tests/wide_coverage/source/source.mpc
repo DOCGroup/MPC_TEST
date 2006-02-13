@@ -29,6 +29,8 @@ project: test_base, zzip, simple {
     Foolish
   }
   Documentation_Files {
-    Foolish
+    // We must specify it explicitly because automatic
+    // is set to 0 in simple.mpb.
+    Foolish/foolish.txt
   }
 }

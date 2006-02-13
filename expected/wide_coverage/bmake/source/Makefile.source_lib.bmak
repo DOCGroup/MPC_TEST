@@ -74,9 +74,9 @@ CPPDIR       = .;creole
 RESDIR       = .
 
 OBJFILES = \
+           "$(INTERMEDIATE)\.\qwee$(OBJ_EXT)" \
            "$(INTERMEDIATE)\creole\more_names$(OBJ_EXT)" \
            "$(INTERMEDIATE)\names$(OBJ_EXT)" \
-           "$(INTERMEDIATE)\qwee$(OBJ_EXT)" \
            "$(INTERMEDIATE)\TheCheat$(OBJ_EXT)"
 
 LFLAGS   = \
@@ -116,7 +116,7 @@ $(OUTPUTDIR)$(NAME)$(LIB_EXT): $(OBJFILES)
 
 GENERATED_DIRTY = creole\more_names.cpp creole\more_names.h names.cpp names.h TheCheat.cpp TheCheat.h .\bar.txt .\moop.hxx .\qwee.cxx .\qwee_T.C .\weer.inl
 creole\more_names.cpp creole\more_names.h: more_names.key
-        @if not exist creole mkdir creole
+        @if not exist "creole" mkdir "creole"
 	..\bin\generator -o creole more_names.key
 	echo creole\more_names.cpp and creole\more_names.h have been generated.
 	@echo \#include "source_lib_pch.h" > temporary.src
@@ -137,7 +137,7 @@ TheCheat.cpp TheCheat.h: TheCheat.r
 	@move /y temporary.src TheCheat.cpp
 
 .\bar.txt .\moop.hxx .\qwee.cxx .\qwee_T.C .\weer.inl: mondo\all.mondo
-        @if not exist . mkdir .
+        @if not exist "." mkdir "."
 	perl ..\mondo\mondo.pl  mondo\all.mondo
 	@echo \#include "source_lib_pch.h" > temporary.src
 	@type .\qwee.cxx >> temporary.src
@@ -175,25 +175,29 @@ generated: $(GENERATED_DIRTY)
 	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
+"$(INTERMEDIATE)\.\qwee$(OBJ_EXT)":
+	@if not exist "$(INTERMEDIATE)\.\" mkdir "$(INTERMEDIATE)\.\"
+	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) .\qwee.cxx
+
 "$(INTERMEDIATE)\creole\more_names$(OBJ_EXT)":
 	@if not exist "$(INTERMEDIATE)\creole\" mkdir "$(INTERMEDIATE)\creole\"
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) creole\more_names.cpp
 
 clean:
-	if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	if exist "creole\more_names.cpp" del creole\more_names.cpp
-	if exist "creole\more_names.h" del creole\more_names.h
-	if exist "names.cpp" del names.cpp
-	if exist "names.h" del names.h
-	if exist "TheCheat.cpp" del TheCheat.cpp
-	if exist "TheCheat.h" del TheCheat.h
-	if exist ".\bar.txt" del .\bar.txt
-	if exist ".\moop.hxx" del .\moop.hxx
-	if exist ".\qwee.cxx" del .\qwee.cxx
-	if exist ".\qwee_T.C" del .\qwee_T.C
-	if exist ".\weer.inl" del .\weer.inl
-	if exist "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del $(OUTPUTDIR)$(NAME)$(LIB_EXT)
-        if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del $(OUTPUTDIR)$(NAME)$(POSTLINKRM)
+	-if exist "creole\more_names.cpp" del "creole\more_names.cpp"
+	-if exist "creole\more_names.h" del "creole\more_names.h"
+	-if exist "names.cpp" del "names.cpp"
+	-if exist "names.h" del "names.h"
+	-if exist "TheCheat.cpp" del "TheCheat.cpp"
+	-if exist "TheCheat.h" del "TheCheat.h"
+	-if exist ".\bar.txt" del ".\bar.txt"
+	-if exist ".\moop.hxx" del ".\moop.hxx"
+	-if exist ".\qwee.cxx" del ".\qwee.cxx"
+	-if exist ".\qwee_T.C" del ".\qwee_T.C"
+	-if exist ".\weer.inl" del ".\weer.inl"
+	-if exist "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)"
+        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
 

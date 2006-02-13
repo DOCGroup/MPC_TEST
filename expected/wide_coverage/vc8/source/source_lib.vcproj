@@ -186,13 +186,13 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\qwee.cxx">
+			</File>
+			<File
 				RelativePath="creole\more_names.cpp">
 			</File>
 			<File
 				RelativePath="names.cpp">
-			</File>
-			<File
-				RelativePath="qwee.cxx">
 			</File>
 			<File
 				RelativePath="TheCheat.cpp">
@@ -332,7 +332,7 @@
 			Name="Template Files"
 			Filter="">
 			<File
-				RelativePath="qwee_T.C">
+				RelativePath=".\qwee_T.C">
 				<FileConfiguration
 					Name="Debug|Win32"
 					ExcludedFromBuild="true">
@@ -351,7 +351,7 @@
 			Name="Documentation"
 			Filter="">
 			<File
-				RelativePath="bar.txt">
+				RelativePath=".\bar.txt">
 				<FileConfiguration
 					Name="Debug|Win32"
 					ExcludedFromBuild="TRUE">

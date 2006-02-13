@@ -157,12 +157,12 @@ generated: $(GENERATED_DIRTY)
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) exe\use_names\use_names.cpp
 
 clean:
-	if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	if exist "Foolish/foolish.txt" del Foolish/foolish.txt
-	if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del $(OUTPUTDIR)$(NAME)$(EXE_EXT)
-        if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del $(OUTPUTDIR)$(NAME)$(POSTLINKRM)
+	-if exist "Foolish/foolish.txt" del "Foolish/foolish.txt"
+	-if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)"
+        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
 
 __postbuild__:
 	@echo main_test has been built

@@ -134,9 +134,9 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 clean:
-	if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	if exist "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del $(OUTPUTDIR)$(NAME)$(LIB_EXT)
-        if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del $(OUTPUTDIR)$(NAME)$(POSTLINKRM)
+	-if exist "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)"
+        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
 

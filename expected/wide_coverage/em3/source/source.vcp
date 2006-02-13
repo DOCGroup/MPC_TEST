@@ -148,7 +148,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO source_libd.lib /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\main_test.pdb"  /debug /machine:IX86 /out:".\IX86\main_test.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO source_libd.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\main_test.pdb"  /debug /machine:IX86 /out:".\IX86\main_test.exe"
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
 PostBuild_Cmds=echo main_test has been built
@@ -171,7 +171,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO source_lib.lib /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Release\IX86\main_test.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO source_lib.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Release\IX86\main_test.exe"
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
 PostBuild_Cmds=echo main_test has been built
@@ -195,7 +195,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO source_libd.lib /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\main_test.pdb"  /debug /machine:IX86 /out:".\IX86\main_test.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO source_libd.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\main_test.pdb"  /debug /machine:IX86 /out:".\IX86\main_test.exe"
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
 PostBuild_Cmds=echo main_test has been built
@@ -218,7 +218,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO source_lib.lib /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Release\IX86\main_test.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO source_lib.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Release\IX86\main_test.exe"
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
 PostBuild_Cmds=echo main_test has been built
@@ -263,6 +263,14 @@ SOURCE="exe\use_more_names\use_more_names.h"
 # Begin Source File
 
 SOURCE="exe\use_names\use_names.h"
+# End Source File
+# End Group
+# Begin Group "Documentation"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="Foolish\foolish.txt"
 # End Source File
 # End Group
 # Begin Group "Simple Files"

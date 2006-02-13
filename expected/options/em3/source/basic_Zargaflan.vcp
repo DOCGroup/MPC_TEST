@@ -148,7 +148,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Static_Debug\IX86\basic.pdb"  /debug /machine:IX86 /out:"Static_Debug\IX86\basic.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Static_Debug\IX86\basic.pdb"  /debug /machine:IX86 /out:"Static_Debug\IX86\basic.exe"
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
 PostBuild_Cmds=echo Hello There
@@ -171,7 +171,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Static_Release\IX86\basic.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Static_Release\IX86\basic.exe"
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
 PostBuild_Cmds=echo Hello There
@@ -195,7 +195,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Static_Debug\IX86\basic.pdb"  /debug /machine:IX86 /out:"Static_Debug\IX86\basic.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Static_Debug\IX86\basic.pdb"  /debug /machine:IX86 /out:"Static_Debug\IX86\basic.exe"
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
 PostBuild_Cmds=echo Hello There
@@ -218,7 +218,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Static_Release\IX86\basic.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Static_Release\IX86\basic.exe"
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
 PostBuild_Cmds=echo Hello There
