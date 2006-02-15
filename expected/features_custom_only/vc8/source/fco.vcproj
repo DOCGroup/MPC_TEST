@@ -12,6 +12,9 @@
 		<Platform
 			Name="Win32"
 		/>
+		<Platform
+			Name="x64"
+		/>
 	</Platforms>
 	<ToolFiles>
 	</ToolFiles>
@@ -37,6 +40,40 @@
 			Name="Release|Win32"
 			OutputDirectory="Release"
 			IntermediateDirectory="Release\fco"
+			ConfigurationType="10"
+			CharacterSet="0"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|x64"
+			OutputDirectory=".\Win64"
+			IntermediateDirectory="Debug\fco\Win64"
+			ConfigurationType="10"
+			CharacterSet="0"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|x64"
+			OutputDirectory="Release\Win64"
+			IntermediateDirectory="Release\fco\Win64"
 			ConfigurationType="10"
 			CharacterSet="0"
 			>
@@ -77,6 +114,24 @@
 						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc &quot;that.zar&quot;"
 						Outputs="zar_thatA.cpp;zar_thatA.h;zar_thatA.inl;zar_thatB.cpp;zar_thatB.h;zar_thatB.inl;zar_thatC.cpp"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking perl ..\bin\exercise.pl on that.zar"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc &quot;that.zar&quot;"
+						Outputs="zar_thatA.cpp;zar_thatA.h;zar_thatA.inl;zar_thatB.cpp;zar_thatB.h;zar_thatB.inl;zar_thatC.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking perl ..\bin\exercise.pl on that.zar"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc &quot;that.zar&quot;"
+						Outputs="zar_thatA.cpp;zar_thatA.h;zar_thatA.inl;zar_thatB.cpp;zar_thatB.h;zar_thatB.inl;zar_thatC.cpp"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="this.zar">
@@ -91,6 +146,24 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking perl ..\bin\exercise.pl on this.zar"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA &quot;this.zar&quot;"
+						Outputs="zar_thisA.cpp;zar_thisA.h;zar_thisA.inl;zar_thisB.cpp;zar_thisB.h;zar_thisB.inl;zar_thisB_T.cpp;zar_thisB_T.h;zar_thisB_T.inl;zar_thisC.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking perl ..\bin\exercise.pl on this.zar"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA &quot;this.zar&quot;"
+						Outputs="zar_thisA.cpp;zar_thisA.h;zar_thisA.inl;zar_thisB.cpp;zar_thisB.h;zar_thisB.inl;zar_thisB_T.cpp;zar_thisB_T.h;zar_thisB_T.inl;zar_thisC.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
 				>
 					<Tool
 						Name="VCCustomBuildTool"

@@ -1,3 +1,19 @@
+Wed Feb 15 16:17:48 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/make/*:
+
+          Updated to reflect my changes from Wed Feb 15 16:03:06 UTC 2006.
+
+        * expected/*/vc8/*:
+
+          Updated to reflect Steve Huston's changes from Tue Feb 14 17:06:40
+          2006.
+
+        * run_tests.pl:
+
+          Only require ACE_ROOT if we are generating expected values for the
+          gnuace type.
+
 Mon Feb 13 11:20:49 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*:

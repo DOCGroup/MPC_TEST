@@ -14,6 +14,8 @@ CCC           = $(CXX)
 MAKEFILE      = Makefile.generator_be
 DEPENDENCIES  = .depend.$(MAKEFILE)
 LTARGETDIR    = ../lib/
+CAT           = cat
+MV            = mv -f
 RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
@@ -28,6 +30,7 @@ AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)generator_be$(LIBSUFFIX)$(AREXT)
 SOEXT         = .so
 SHTARGETDIR   = ../lib/
+SHLIB_BASE    = $(LIBPREFIX)generator_be$(LIBSUFFIX)$(SOEXT)
 SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)generator_be$(LIBSUFFIX)$(SOEXT)
 SHFLAGS       = -shared
 SRC           = generator_be.cpp
@@ -40,9 +43,12 @@ EXPORTFLAGS   = $(DYNAMICFLAGS)
 #       Local targets
 #----------------------------------------------------------------------------
 
-all: $(SHLIB)
+all: $(SHLIB).1.0.0 $(SHLIB)
 
-$(SHLIB): $(SHTARGETDIR) $(OBJS)
+$(SHLIB):
+	cd $(SHTARGETDIR) && ln -s $(SHLIB_BASE).1.0.0 $(SHLIB_BASE)
+
+$(SHLIB).1.0.0: $(SHTARGETDIR) $(OBJS)
 	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
 $(LTARGETDIR):
@@ -61,7 +67,7 @@ clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
-	-$(RM) $(SHLIB) $(LIB)
+	-$(RM) $(SHLIB).1.0.0 $(SHLIB) $(LIB)
 
 #----------------------------------------------------------------------------
 #       Dependencies

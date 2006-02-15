@@ -14,6 +14,8 @@ CCC           = $(CXX)
 MAKEFILE      = Makefile.source_lib
 DEPENDENCIES  = .depend.$(MAKEFILE)
 LTARGETDIR    = ../lib/
+CAT           = cat
+MV            = mv -f
 RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
@@ -54,21 +56,21 @@ creole/more_names.cpp creole/more_names.h: more_names.key ../bin/generator
 	@$(MKDIR) creole
 	../bin/generator -o creole more_names.key
 	echo creole/more_names.cpp and creole/more_names.h have been generated.
-	@echo '#include "source_lib_pch.h"' > temp.$$$$ && cat creole/more_names.cpp >> temp.$$$$ && mv temp.$$$$ creole/more_names.cpp
+	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) creole/more_names.cpp >> temp.$$$$ && $(MV) temp.$$$$ creole/more_names.cpp
 
 names.cpp names.h: names.key something ../bin/generator
 	../bin/generator -n names names.key
 	echo names.cpp and names.h have been generated.
-	@echo '#include "source_lib_pch.h"' > temp.$$$$ && cat names.cpp >> temp.$$$$ && mv temp.$$$$ names.cpp
+	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) names.cpp >> temp.$$$$ && $(MV) temp.$$$$ names.cpp
 
 TheCheat.cpp TheCheat.h: TheCheat.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  -o "$@" TheCheat.r
-	@echo '#include "source_lib_pch.h"' > temp.$$$$ && cat TheCheat.cpp >> temp.$$$$ && mv temp.$$$$ TheCheat.cpp
+	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) TheCheat.cpp >> temp.$$$$ && $(MV) temp.$$$$ TheCheat.cpp
 
 ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl: mondo/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
 	@$(MKDIR) .
 	perl ../mondo/mondo.pl  mondo/all.mondo
-	@echo '#include "source_lib_pch.h"' > temp.$$$$ && cat ./qwee.cxx >> temp.$$$$ && mv temp.$$$$ ./qwee.cxx
+	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) ./qwee.cxx >> temp.$$$$ && $(MV) temp.$$$$ ./qwee.cxx
 
 .PRECIOUS: $(GENERATED_DIRTY)
 $(OBJS): $(GENERATED_DIRTY)
@@ -97,7 +99,7 @@ clean:
 	-$(RM) source_lib_pch.h.gch
 
 realclean: clean
-	-$(RM) $(SHLIB) $(LIB)
+	-$(RM) $(SHLIB).1.0.0 $(SHLIB) $(LIB)
 	-$(RM) $(GENERATED_DIRTY)
 
 #----------------------------------------------------------------------------
