@@ -7,7 +7,7 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type vc8 grouping.mwc
+# /home/elliottc/current/MPC/mwc.pl -include config -type vc8 grouping.mwc
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_A", "source\grouping_A.vcproj", "{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grouping_B", "source\grouping_B.vcproj", "{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
@@ -25,37 +25,67 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
 		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.ActiveCfg = Debug|Win32
 		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.Build.0 = Debug|Win32
+		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.ActiveCfg = Debug|x64
+		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.Build.0 = Debug|x64
 		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.ActiveCfg = Release|Win32
 		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.Build.0 = Release|Win32
+		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.ActiveCfg = Release|x64
+		{31027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.Build.0 = Release|x64
 		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.ActiveCfg = Debug|Win32
 		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.Build.0 = Debug|Win32
+		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.ActiveCfg = Debug|x64
+		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.Build.0 = Debug|x64
 		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.ActiveCfg = Release|Win32
 		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.Build.0 = Release|Win32
+		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.ActiveCfg = Release|x64
+		{01027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.Build.0 = Release|x64
 		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.ActiveCfg = Debug|Win32
 		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.Build.0 = Debug|Win32
+		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.ActiveCfg = Debug|x64
+		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.Build.0 = Debug|x64
 		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.ActiveCfg = Release|Win32
 		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.Build.0 = Release|Win32
+		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.ActiveCfg = Release|x64
+		{11027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.Build.0 = Release|x64
 		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.ActiveCfg = Debug|Win32
 		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.Build.0 = Debug|Win32
+		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.ActiveCfg = Debug|x64
+		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.Build.0 = Debug|x64
 		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.ActiveCfg = Release|Win32
 		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.Build.0 = Release|Win32
+		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.ActiveCfg = Release|x64
+		{61027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.Build.0 = Release|x64
 		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.ActiveCfg = Debug|Win32
 		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.Build.0 = Debug|Win32
+		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.ActiveCfg = Debug|x64
+		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.Build.0 = Debug|x64
 		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.ActiveCfg = Release|Win32
 		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.Build.0 = Release|Win32
+		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.ActiveCfg = Release|x64
+		{71027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.Build.0 = Release|x64
 		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.ActiveCfg = Debug|Win32
 		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.Build.0 = Debug|Win32
+		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.ActiveCfg = Debug|x64
+		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.Build.0 = Debug|x64
 		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.ActiveCfg = Release|Win32
 		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.Build.0 = Release|Win32
+		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.ActiveCfg = Release|x64
+		{41027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.Build.0 = Release|x64
 		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.ActiveCfg = Debug|Win32
 		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|Win32.Build.0 = Debug|Win32
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.ActiveCfg = Debug|x64
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Debug|x64.Build.0 = Debug|x64
 		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.ActiveCfg = Release|Win32
 		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|Win32.Build.0 = Release|Win32
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.ActiveCfg = Release|x64
+		{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -861,7 +861,7 @@ my($status)  = 0;
 my($options) = new OptionProcessor($0, \%options, \%desc);
 $options->process();
 
-if ($cr_expect && !defined $ENV{ACE_ROOT}) {
+if ($cr_expect && "@types" =~ /gnuace/ && !defined $ENV{ACE_ROOT}) {
   print STDERR "ERROR: You can not generate expected results without ",
                "the ACE_ROOT\n       environment variable set.\n";
   exit(1);

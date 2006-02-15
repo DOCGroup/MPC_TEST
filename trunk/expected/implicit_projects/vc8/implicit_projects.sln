@@ -7,7 +7,7 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type vc8 implicit_projects.mwc
+# /home/elliottc/current/MPC/mwc.pl -include config -type vc8 implicit_projects.mwc
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "one", "source\one\one.vcproj", "{79047292-FECA-1BAD-0000-00005E11CD5F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "two", "source\two\two.vcproj", "{D904739B-FECA-1BAD-731D-8A635E11D7C5}"
@@ -18,17 +18,27 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
 		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{79047292-FECA-1BAD-0000-00005E11CD5F}.Debug|Win32.ActiveCfg = Debug|Win32
 		{79047292-FECA-1BAD-0000-00005E11CD5F}.Debug|Win32.Build.0 = Debug|Win32
+		{79047292-FECA-1BAD-0000-00005E11CD5F}.Debug|x64.ActiveCfg = Debug|x64
+		{79047292-FECA-1BAD-0000-00005E11CD5F}.Debug|x64.Build.0 = Debug|x64
 		{79047292-FECA-1BAD-0000-00005E11CD5F}.Release|Win32.ActiveCfg = Release|Win32
 		{79047292-FECA-1BAD-0000-00005E11CD5F}.Release|Win32.Build.0 = Release|Win32
+		{79047292-FECA-1BAD-0000-00005E11CD5F}.Release|x64.ActiveCfg = Release|x64
+		{79047292-FECA-1BAD-0000-00005E11CD5F}.Release|x64.Build.0 = Release|x64
 		{D904739B-FECA-1BAD-731D-8A635E11D7C5}.Debug|Win32.ActiveCfg = Debug|Win32
 		{D904739B-FECA-1BAD-731D-8A635E11D7C5}.Debug|Win32.Build.0 = Debug|Win32
+		{D904739B-FECA-1BAD-731D-8A635E11D7C5}.Debug|x64.ActiveCfg = Debug|x64
+		{D904739B-FECA-1BAD-731D-8A635E11D7C5}.Debug|x64.Build.0 = Debug|x64
 		{D904739B-FECA-1BAD-731D-8A635E11D7C5}.Release|Win32.ActiveCfg = Release|Win32
 		{D904739B-FECA-1BAD-731D-8A635E11D7C5}.Release|Win32.Build.0 = Release|Win32
+		{D904739B-FECA-1BAD-731D-8A635E11D7C5}.Release|x64.ActiveCfg = Release|x64
+		{D904739B-FECA-1BAD-731D-8A635E11D7C5}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
