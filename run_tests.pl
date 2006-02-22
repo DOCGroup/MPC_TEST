@@ -267,7 +267,6 @@ sub buildit {
       if (defined $cmd) {
         $cmd = which('make');
         $ENV{DEBUG} = 1;
-        $ENV{PATH} .= ';' . File::Spec->canonpath(getcwd() . '/lib');
         if (defined $cmd) {
           printBuildMessage($type);
           $cmd .= ' -f ' . $entry if (defined $entry);

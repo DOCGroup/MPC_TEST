@@ -81,7 +81,7 @@
 				AdditionalLibraryDirectories=".;..\lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary="..\lib\generator_bed.lib"
+				ImportLibrary="$(OutDir)\generator_bed.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -161,7 +161,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="..\lib\generator_be.lib"
+				ImportLibrary="$(OutDir)\generator_be.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -240,10 +240,10 @@
 				Version="1.000"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".;..\lib"
+				AdditionalLibraryDirectories=".\Win64;.;..\lib\Win64;..\lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary="..\lib\generator_bed.lib"
+				ImportLibrary="$(OutDir)\generator_bed.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -319,12 +319,12 @@
 				Version="1.000"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".;..\lib"
+				AdditionalLibraryDirectories=".\Win64;.;..\lib\Win64;..\lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="..\lib\generator_be.lib"
+				ImportLibrary="$(OutDir)\generator_be.lib"
 				TargetMachine="17"
 			/>
 			<Tool

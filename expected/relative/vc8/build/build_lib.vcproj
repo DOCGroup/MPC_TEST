@@ -83,7 +83,7 @@
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\build_libd.lib"
+				ImportLibrary="$(OutDir)\build_libd.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -165,7 +165,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\build_lib.lib"
+				ImportLibrary="$(OutDir)\build_lib.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -246,10 +246,10 @@
 				OutputFile="$(OutDir)\build_libd.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="."
+				AdditionalLibraryDirectories=".\Win64;."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\build_libd.lib"
+				ImportLibrary="$(OutDir)\build_libd.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -327,12 +327,12 @@
 				OutputFile="$(OutDir)\build_lib.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="."
+				AdditionalLibraryDirectories=".\Win64;."
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\build_lib.lib"
+				ImportLibrary="$(OutDir)\build_lib.lib"
 				TargetMachine="17"
 			/>
 			<Tool

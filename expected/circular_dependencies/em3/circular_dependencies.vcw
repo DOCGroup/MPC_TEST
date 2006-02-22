@@ -6,11 +6,11 @@ Microsoft eMbedded Visual Tools Workspace File, Format Version 3.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/MPC/config -include /home/elliottc/MPC/templates -include config -type em3
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type em3
 
 ###############################################################################
 
-Project: "TMClient"=TargetManager\TMClient.vcp - Package Owner=<4>
+Project: "DomainApplicationManager"=DomainApplicationManager\DomainApplicationManager.vcp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -19,65 +19,8 @@ Package=<5>
 Package=<4>
 {{{
     Begin Project Dependency
-    Project_Dep_Name CIAO_TargetManager_stub
+    Project_Dep_Name NodeManager_stub
     End Project Dependency
-}}}
-
-###############################################################################
-
-Project: "CIAO_TargetManager_stub"=TargetManager\CIAO_TargetManager_stub.vcp - Package Owner=<4>
-
-Package=<5>
-{{{
-}}}
-
-Package=<4>
-{{{
-}}}
-
-###############################################################################
-
-Project: "CIAO_TargetManager_svnt"=TargetManager\CIAO_TargetManager_svnt.vcp - Package Owner=<4>
-
-Package=<5>
-{{{
-}}}
-
-Package=<4>
-{{{
-    Begin Project Dependency
-    Project_Dep_Name CIAO_TargetManager_stub
-    End Project Dependency
-}}}
-
-###############################################################################
-
-Project: "CIAO_TargetManager_exec"=TargetManager\CIAO_TargetManager_exec.vcp - Package Owner=<4>
-
-Package=<5>
-{{{
-}}}
-
-Package=<4>
-{{{
-    Begin Project Dependency
-    Project_Dep_Name CIAO_TargetManager_svnt
-    End Project Dependency
-    Begin Project Dependency
-    Project_Dep_Name DomainApplicationManager
-    End Project Dependency
-}}}
-
-###############################################################################
-
-Project: "NodeApplicationManager"=NodeApplicationManager\NodeApplicationManager.vcp - Package Owner=<4>
-
-Package=<5>
-{{{
-}}}
-
-Package=<4>
-{{{
 }}}
 
 ###############################################################################
@@ -106,7 +49,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "NodeManager_stub"=NodeManager\NodeManager_stub.vcp - Package Owner=<4>
+Project: "NodeApplicationManager"=NodeApplicationManager\NodeApplicationManager.vcp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -114,27 +57,6 @@ Package=<5>
 
 Package=<4>
 {{{
-}}}
-
-###############################################################################
-
-Project: "NodeManager"=NodeManager\NodeManager.vcp - Package Owner=<4>
-
-Package=<5>
-{{{
-}}}
-
-Package=<4>
-{{{
-    Begin Project Dependency
-    Project_Dep_Name NodeApplicationManager
-    End Project Dependency
-    Begin Project Dependency
-    Project_Dep_Name NodeManager_stub
-    End Project Dependency
-    Begin Project Dependency
-    Project_Dep_Name CIAO_TargetManager_stub
-    End Project Dependency
 }}}
 
 ###############################################################################
@@ -172,7 +94,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "DomainApplicationManager"=DomainApplicationManager\DomainApplicationManager.vcp - Package Owner=<4>
+Project: "NodeManager"=NodeManager\NodeManager.vcp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -181,7 +103,85 @@ Package=<5>
 Package=<4>
 {{{
     Begin Project Dependency
+    Project_Dep_Name NodeApplicationManager
+    End Project Dependency
+    Begin Project Dependency
     Project_Dep_Name NodeManager_stub
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name CIAO_TargetManager_stub
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "NodeManager_stub"=NodeManager\NodeManager_stub.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "CIAO_TargetManager_exec"=TargetManager\CIAO_TargetManager_exec.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name CIAO_TargetManager_svnt
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DomainApplicationManager
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "CIAO_TargetManager_stub"=TargetManager\CIAO_TargetManager_stub.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "CIAO_TargetManager_svnt"=TargetManager\CIAO_TargetManager_svnt.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name CIAO_TargetManager_stub
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "TMClient"=TargetManager\TMClient.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name CIAO_TargetManager_stub
     End Project Dependency
 }}}
 
