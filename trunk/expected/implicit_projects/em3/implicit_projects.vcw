@@ -6,7 +6,19 @@ Microsoft eMbedded Visual Tools Workspace File, Format Version 3.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/taoadmin/1.4a/ACE_wrappers/build/gcc3.4.2_d1o0/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type em3 implicit_projects.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type em3 implicit_projects.mwc
+
+###############################################################################
+
+Project: "one"=source\one\one.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
 
 ###############################################################################
 
@@ -21,18 +33,6 @@ Package=<4>
     Begin Project Dependency
     Project_Dep_Name one
     End Project Dependency
-}}}
-
-###############################################################################
-
-Project: "one"=source\one\one.vcp - Package Owner=<4>
-
-Package=<5>
-{{{
-}}}
-
-Package=<4>
-{{{
 }}}
 
 ###############################################################################

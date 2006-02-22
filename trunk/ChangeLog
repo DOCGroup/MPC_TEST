@@ -1,3 +1,29 @@
+Wed Feb 22 20:12:16 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/bmake/*:
+        * expected/*/em3/*:
+        * expected/*/vc6/*:
+
+          Updated to reflect my changes from Wed Feb 22 20:06:00 UTC 2006.
+
+        * expected/*/html/*:
+
+          Updated to reflect my changes from Thu Feb 16 19:53:13 UTC 2006.
+
+        * expected/*/vc8/*:
+
+          Updated to reflect Steve Huston's change from Tue Feb 21 18:14:21
+          2006.
+
+        * run_tests.pl:
+
+          Removed the PATH setting when building with Borland Make.  This is
+          no longer necessary.
+
+        * tests/wide_coverage/generator/generator_be_export.h:
+
+          Updated to work with more than just WIN32 compilers.
+
 Wed Feb 15 16:17:48 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/make/*:

@@ -99,7 +99,7 @@ clean:
 	-$(RM) source_lib_pch.h.gch
 
 realclean: clean
-	-$(RM) $(SHLIB).1.0.0 $(SHLIB) $(LIB)
+	-$(RM) $(SHLIB) $(LIB)
 	-$(RM) $(GENERATED_DIRTY)
 
 #----------------------------------------------------------------------------

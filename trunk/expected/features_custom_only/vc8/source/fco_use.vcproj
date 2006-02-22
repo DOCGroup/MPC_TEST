@@ -80,7 +80,7 @@
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\fco_used.lib"
+				ImportLibrary="$(OutDir)\fco_used.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -159,7 +159,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\fco_use.lib"
+				ImportLibrary="$(OutDir)\fco_use.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -237,10 +237,10 @@
 				OutputFile="$(OutDir)\fco_used.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="."
+				AdditionalLibraryDirectories=".\Win64;."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\fco_used.lib"
+				ImportLibrary="$(OutDir)\fco_used.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -315,12 +315,12 @@
 				OutputFile="$(OutDir)\fco_use.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="."
+				AdditionalLibraryDirectories=".\Win64;."
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\fco_use.lib"
+				ImportLibrary="$(OutDir)\fco_use.lib"
 				TargetMachine="17"
 			/>
 			<Tool
