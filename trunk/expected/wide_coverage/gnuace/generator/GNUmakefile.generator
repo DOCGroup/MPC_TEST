@@ -22,6 +22,8 @@ FILES = \
 #----------------------------------------------------------------------------
 LDLIBS = -lgenerator_be
 
+PRJ_TYPE = rtp
+
 INSBIN ?= ../bin
 ifeq ($(INSBIN),.)
   ifeq ($(PWD),)
@@ -125,7 +127,9 @@ require_warning:
 
 ifneq ($(VXWORKSLINK),true)
 ifeq ($(static_libs_only), 1)
-  DEPLIBS = $(foreach lib, generator_be , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
+  ifeq ($(use_dep_libs), 1)
+    DEPLIBS = $(foreach lib, generator_be , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
+  endif
 endif
 
 $(BIN): $(addprefix $(VDIR), $(OBJS)) $(DEPLIBS)

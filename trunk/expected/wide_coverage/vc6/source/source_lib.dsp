@@ -86,7 +86,7 @@ SOURCE=".\qwee.cxx"
 # End Source File
 # Begin Source File
 
-SOURCE="creole\more_names.cpp"
+SOURCE="cre\ole\more_names.cpp"
 # End Source File
 # Begin Source File
 
@@ -106,7 +106,7 @@ SOURCE="source_lib_pch.h"
 # End Source File
 # Begin Source File
 
-SOURCE="creole\more_names.h"
+SOURCE="cre\ole\more_names.h"
 # End Source File
 # Begin Source File
 
@@ -162,17 +162,17 @@ InputPath="more_names.key"
 
 BuildCmds= \
 	PATH=%PATH%;..\lib \
-	mkdir creole 2> nul \
-	..\bin\generator -o creole $(InputPath) \
-	echo creole\more_names.cpp and creole\more_names.h have been generated. \
+	mkdir cre\ole 2> nul \
+	..\bin\generator -o cre/ole $(InputPath) \
+	echo cre\ole\more_names.cpp and cre\ole\more_names.h have been generated. \
 	echo #include "source_lib_pch.h" > temporary.src \
-	type "creole\more_names.cpp" >> temporary.src \
-	move /y temporary.src "creole\more_names.cpp"
+	type "cre\ole\more_names.cpp" >> temporary.src \
+	move /y temporary.src "cre\ole\more_names.cpp"
 
-"creole\more_names.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"cre\ole\more_names.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
-"creole\more_names.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"cre\ole\more_names.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 # End Custom Build
 
@@ -185,17 +185,17 @@ InputPath="more_names.key"
 
 BuildCmds= \
 	PATH=%PATH%;..\lib \
-	mkdir creole 2> nul \
-	..\bin\generator -o creole $(InputPath) \
-	echo creole\more_names.cpp and creole\more_names.h have been generated. \
+	mkdir cre\ole 2> nul \
+	..\bin\generator -o cre/ole $(InputPath) \
+	echo cre\ole\more_names.cpp and cre\ole\more_names.h have been generated. \
 	echo #include "source_lib_pch.h" > temporary.src \
-	type "creole\more_names.cpp" >> temporary.src \
-	move /y temporary.src "creole\more_names.cpp"
+	type "cre\ole\more_names.cpp" >> temporary.src \
+	move /y temporary.src "cre\ole\more_names.cpp"
 
-"creole\more_names.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"cre\ole\more_names.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
-"creole\more_names.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"cre\ole\more_names.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 # End Custom Build
 

@@ -6,12 +6,12 @@ more_names.key
 	custom
 	:custom_processor.name=echo
 	:depends=../bin/generator more_names.key
-	:preexec=cd source; mkdir -p creole
-	:preexec=cd source; ../bin/generator -o creole more_names.key
-	:preexec=cd source; echo creole/more_names.cpp and creole/more_names.h have been generated.
+	:preexec=cd source; mkdir -p cre/ole
+	:preexec=cd source; ../bin/generator -o cre/ole more_names.key
+	:preexec=cd source; echo cre/ole/more_names.cpp and cre/ole/more_names.h have been generated.
 	:preexec=cd source; echo #include "source_lib_pch.h" > temporary.src
-        :preexec=cd source; cat creole/more_names.cpp >> temporary.src
-        :preexec=cd source; mv -f temporary.src creole/more_names.cpp
+        :preexec=cd source; cat cre/ole/more_names.cpp >> temporary.src
+        :preexec=cd source; mv -f temporary.src cre/ole/more_names.cpp
 
 names.key
 	custom
@@ -54,13 +54,13 @@ mondo/all.mondo
 	C++
 TheCheat.cpp
 	C++
-creole/more_names.cpp
+cre/ole/more_names.cpp
 	C++
 names.cpp
 	C++
 TheCheat.h
 	include_file
-creole/more_names.h
+cre/ole/more_names.h
 	include_file
 moop.hxx
 	include_file

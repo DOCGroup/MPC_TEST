@@ -25,10 +25,10 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl -lpthread $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so)))))
-OBJS          = source_lib_pch$(OBJEXT) ./qwee$(OBJEXT) TheCheat$(OBJEXT) creole/more_names$(OBJEXT) names$(OBJEXT)
+OBJS          = source_lib_pch$(OBJEXT) ./qwee$(OBJEXT) TheCheat$(OBJEXT) cre/ole/more_names$(OBJEXT) names$(OBJEXT)
 AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)source_lib$(LIBSUFFIX)$(AREXT)
-SRC           = source_lib_pch.cpp ./qwee.cxx TheCheat.cpp creole/more_names.cpp names.cpp
+SRC           = source_lib_pch.cpp ./qwee.cxx TheCheat.cpp cre/ole/more_names.cpp names.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(STATICFLAGS)
 
@@ -44,7 +44,7 @@ $(LTARGETDIR):
 $(LIB): $(LTARGETDIR) $(OBJS)
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
-GENERATED_DIRTY    = creole/more_names.cpp creole/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl
+GENERATED_DIRTY    = cre/ole/more_names.cpp cre/ole/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl
 # These may be needed, but some versions of make do not accept this syntax
 #DYLD_LIBRARY_PATH := $(DYLD_LIBRARY_PATH):../lib
 #LD_LIBRARY_PATH   := $(LD_LIBRARY_PATH):../lib
@@ -52,11 +52,11 @@ GENERATED_DIRTY    = creole/more_names.cpp creole/more_names.h names.cpp names.h
 #LIBPATH           := $(LIBPATH):../lib
 #PATH              := $(PATH):../lib
 
-creole/more_names.cpp creole/more_names.h: more_names.key ../bin/generator
-	@$(MKDIR) creole
-	../bin/generator -o creole more_names.key
-	echo creole/more_names.cpp and creole/more_names.h have been generated.
-	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) creole/more_names.cpp >> temp.$$$$ && $(MV) temp.$$$$ creole/more_names.cpp
+cre/ole/more_names.cpp cre/ole/more_names.h: more_names.key ../bin/generator
+	@$(MKDIR) cre/ole
+	../bin/generator -o cre/ole more_names.key
+	echo cre/ole/more_names.cpp and cre/ole/more_names.h have been generated.
+	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) cre/ole/more_names.cpp >> temp.$$$$ && $(MV) temp.$$$$ cre/ole/more_names.cpp
 
 names.cpp names.h: names.key something ../bin/generator
 	../bin/generator -n names names.key
@@ -88,8 +88,8 @@ source_lib_pch$(OBJEXT): source_lib_pch.cpp
 TheCheat$(OBJEXT): TheCheat.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) TheCheat.cpp
 
-creole/more_names$(OBJEXT): creole/more_names.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) creole/more_names.cpp
+cre/ole/more_names$(OBJEXT): cre/ole/more_names.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) cre/ole/more_names.cpp
 
 names$(OBJEXT): names.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) names.cpp

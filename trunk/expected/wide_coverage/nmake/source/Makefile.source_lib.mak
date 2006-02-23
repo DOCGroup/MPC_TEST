@@ -36,7 +36,7 @@ DEPGEN=perl $(ACE_ROOT)/bin/depgen.pl -i -t nmake
 !ENDIF
 !ENDIF
 
-GENERATED_DIRTY = "creole\more_names.cpp" "creole\more_names.h" "names.cpp" "names.h" "TheCheat.cpp" "TheCheat.h" ".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl"
+GENERATED_DIRTY = "cre\ole\more_names.cpp" "cre\ole\more_names.h" "names.cpp" "names.h" "TheCheat.cpp" "TheCheat.h" ".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl"
 
 !IF  "$(CFG)" == "Win32 Debug"
 
@@ -52,7 +52,7 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "creole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
+	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "cre\ole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -60,8 +60,8 @@ REALCLEAN : CLEAN
         -@del /f/q "$(OUTDIR)\source_libd.exp"
         -@del /f/q "$(OUTDIR)\source_libd.ilk"
 	-@del /f/q "..\lib\source_libd.pdb"
-        -@del /f/q "creole\more_names.cpp"
-        -@del /f/q "creole\more_names.h"
+        -@del /f/q "cre\ole\more_names.cpp"
+        -@del /f/q "cre\ole\more_names.h"
         -@del /f/q "names.cpp"
         -@del /f/q "names.h"
         -@del /f/q "TheCheat.cpp"
@@ -87,7 +87,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_libd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
 	"$(INTDIR)\.\qwee.obj" \
-	"$(INTDIR)\creole\more_names.obj" \
+	"$(INTDIR)\cre\ole\more_names.obj" \
 	"$(INTDIR)\names.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
@@ -111,15 +111,15 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "creole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
+	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "cre\ole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
         -@del /f/q "$(OUTDIR)\source_lib.lib"
         -@del /f/q "$(OUTDIR)\source_lib.exp"
         -@del /f/q "$(OUTDIR)\source_lib.ilk"
-        -@del /f/q "creole\more_names.cpp"
-        -@del /f/q "creole\more_names.h"
+        -@del /f/q "cre\ole\more_names.cpp"
+        -@del /f/q "cre\ole\more_names.h"
         -@del /f/q "names.cpp"
         -@del /f/q "names.h"
         -@del /f/q "TheCheat.cpp"
@@ -145,7 +145,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_lib.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
 	"$(INTDIR)\.\qwee.obj" \
-	"$(INTDIR)\creole\more_names.obj" \
+	"$(INTDIR)\cre\ole\more_names.obj" \
 	"$(INTDIR)\names.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
@@ -169,7 +169,7 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "creole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
+	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "cre\ole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -177,8 +177,8 @@ REALCLEAN : CLEAN
         -@del /f/q "$(OUTDIR)\source_libsd.exp"
         -@del /f/q "$(OUTDIR)\source_libsd.ilk"
 	-@del /f/q "..\lib\source_libsd.pdb"
-        -@del /f/q "creole\more_names.cpp"
-        -@del /f/q "creole\more_names.h"
+        -@del /f/q "cre\ole\more_names.cpp"
+        -@del /f/q "cre\ole\more_names.h"
         -@del /f/q "names.cpp"
         -@del /f/q "names.h"
         -@del /f/q "TheCheat.cpp"
@@ -204,7 +204,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_libsd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
 	"$(INTDIR)\.\qwee.obj" \
-	"$(INTDIR)\creole\more_names.obj" \
+	"$(INTDIR)\cre\ole\more_names.obj" \
 	"$(INTDIR)\names.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
@@ -228,15 +228,15 @@ DEPEND :
 	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
 	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
 !ELSE
-	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "creole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
+	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "cre\ole\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
         -@del /f/q "$(OUTDIR)\source_libs.lib"
         -@del /f/q "$(OUTDIR)\source_libs.exp"
         -@del /f/q "$(OUTDIR)\source_libs.ilk"
-        -@del /f/q "creole\more_names.cpp"
-        -@del /f/q "creole\more_names.h"
+        -@del /f/q "cre\ole\more_names.cpp"
+        -@del /f/q "cre\ole\more_names.h"
         -@del /f/q "names.cpp"
         -@del /f/q "names.h"
         -@del /f/q "TheCheat.cpp"
@@ -262,7 +262,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_libs.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
 	"$(INTDIR)\.\qwee.obj" \
-	"$(INTDIR)\creole\more_names.obj" \
+	"$(INTDIR)\cre\ole\more_names.obj" \
 	"$(INTDIR)\names.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
@@ -363,11 +363,11 @@ SOURCE=".\qwee.cxx"
 	@if not exist "$(INTDIR)\.\$(NULL)" mkdir "$(INTDIR)\.\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\.\qwee.obj" $(SOURCE)
 
-SOURCE="creole\more_names.cpp"
+SOURCE="cre\ole\more_names.cpp"
 
-"$(INTDIR)\creole\more_names.obj" : $(SOURCE) "$(INTDIR)"
-	@if not exist "$(INTDIR)\creole\$(NULL)" mkdir "$(INTDIR)\creole\"
-	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\creole\more_names.obj" $(SOURCE)
+"$(INTDIR)\cre\ole\more_names.obj" : $(SOURCE) "$(INTDIR)"
+	@if not exist "$(INTDIR)\cre\ole\$(NULL)" mkdir "$(INTDIR)\cre\ole\"
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\cre\ole\more_names.obj" $(SOURCE)
 
 SOURCE="names.cpp"
 
@@ -383,16 +383,16 @@ SOURCE="more_names.key"
 
 InputPath=more_names.key
 
-"creole\more_names.cpp" "creole\more_names.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"cre\ole\more_names.cpp" "cre\ole\more_names.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
 	PATH=%PATH%;..\lib
-        if not exist creole mkdir creole
-	..\bin\generator -o creole "$(InputPath)"
-	echo creole\more_names.cpp and creole\more_names.h have been generated.
+        if not exist cre\ole mkdir cre\ole
+	..\bin\generator -o cre/ole "$(InputPath)"
+	echo cre\ole\more_names.cpp and cre\ole\more_names.h have been generated.
 	echo #include "source_lib_pch.h" > temporary.src
-	type "creole\more_names.cpp" >> temporary.src
-        move /y temporary.src "creole\more_names.cpp"
+	type "cre\ole\more_names.cpp" >> temporary.src
+        move /y temporary.src "cre\ole\more_names.cpp"
 <<
 
 SOURCE="names.key"

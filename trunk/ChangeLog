@@ -1,3 +1,11 @@
+Thu Feb 23 17:02:33 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/wide_coverage/*:
+        * tests/wide_coverage/source/source_lib.mpc:
+
+          Modified this test to exercise the use of a slash with the gendir
+          setting.
+
 Wed Feb 22 20:12:16 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/bmake/*:

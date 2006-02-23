@@ -351,7 +351,7 @@
 				RelativePath=".\qwee.cxx">
 			</File>
 			<File
-				RelativePath="creole\more_names.cpp">
+				RelativePath="cre\ole\more_names.cpp">
 			</File>
 			<File
 				RelativePath="names.cpp">
@@ -367,7 +367,7 @@
 				 RelativePath="source_lib_pch.h">
 			</File>
 			<File
-				RelativePath="creole\more_names.h">
+				RelativePath="cre\ole\more_names.h">
 			</File>
 			<File
 				RelativePath="moop.hxx">
@@ -390,9 +390,9 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on more_names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist creole mkdir creole&#x0D;&#x0A;..\bin\generator -o creole &quot;more_names.key&quot;&#x0D;&#x0A;echo creole\more_names.cpp and creole\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;creole\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;creole\more_names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\ole mkdir cre\ole&#x0D;&#x0A;..\bin\generator -o cre/ole &quot;more_names.key&quot;&#x0D;&#x0A;echo cre\ole\more_names.cpp and cre\ole\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;cre\ole\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;cre\ole\more_names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe"
-						Outputs="creole\more_names.cpp;creole\more_names.h"/>
+						Outputs="cre\ole\more_names.cpp;cre\ole\more_names.h"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32"
@@ -400,9 +400,9 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on more_names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist creole mkdir creole&#x0D;&#x0A;..\bin\generator -o creole &quot;more_names.key&quot;&#x0D;&#x0A;echo creole\more_names.cpp and creole\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;creole\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;creole\more_names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\ole mkdir cre\ole&#x0D;&#x0A;..\bin\generator -o cre/ole &quot;more_names.key&quot;&#x0D;&#x0A;echo cre\ole\more_names.cpp and cre\ole\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;cre\ole\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;cre\ole\more_names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe"
-						Outputs="creole\more_names.cpp;creole\more_names.h"/>
+						Outputs="cre\ole\more_names.cpp;cre\ole\more_names.h"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|x64"
@@ -410,9 +410,9 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on more_names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist creole mkdir creole&#x0D;&#x0A;..\bin\generator -o creole &quot;more_names.key&quot;&#x0D;&#x0A;echo creole\more_names.cpp and creole\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;creole\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;creole\more_names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\ole mkdir cre\ole&#x0D;&#x0A;..\bin\generator -o cre/ole &quot;more_names.key&quot;&#x0D;&#x0A;echo cre\ole\more_names.cpp and cre\ole\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;cre\ole\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;cre\ole\more_names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe"
-						Outputs="creole\more_names.cpp;creole\more_names.h"/>
+						Outputs="cre\ole\more_names.cpp;cre\ole\more_names.h"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|x64"
@@ -420,9 +420,9 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on more_names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist creole mkdir creole&#x0D;&#x0A;..\bin\generator -o creole &quot;more_names.key&quot;&#x0D;&#x0A;echo creole\more_names.cpp and creole\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;creole\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;creole\more_names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\ole mkdir cre\ole&#x0D;&#x0A;..\bin\generator -o cre/ole &quot;more_names.key&quot;&#x0D;&#x0A;echo cre\ole\more_names.cpp and cre\ole\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;cre\ole\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;cre\ole\more_names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe"
-						Outputs="creole\more_names.cpp;creole\more_names.h"/>
+						Outputs="cre\ole\more_names.cpp;cre\ole\more_names.h"/>
 				</FileConfiguration>
 			</File>
 			<File
