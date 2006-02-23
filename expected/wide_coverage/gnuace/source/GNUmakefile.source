@@ -26,8 +26,6 @@ VPATH = .:exe:exe/use_names:exe/use_more_names
 #----------------------------------------------------------------------------
 LDLIBS = -lsource_lib
 
-PRJ_TYPE = rtp
-
 ifeq ($(INSBIN),.)
   ifeq ($(PWD),)
     PWD=$(shell pwd)
@@ -149,9 +147,7 @@ endif
 
 ifneq ($(VXWORKSLINK),true)
 ifeq ($(static_libs_only), 1)
-  ifeq ($(use_dep_libs), 1)
-    DEPLIBS = $(foreach lib, source_lib , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
-  endif
+  DEPLIBS = $(foreach lib, source_lib , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
 endif
 
 $(BIN): $(addprefix $(VDIR), $(OBJS)) $(DEPLIBS)
