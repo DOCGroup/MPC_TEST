@@ -16,8 +16,8 @@ project: generator_base, test_base, cppgen, mondo_base {
   }
 
   GEN_Files {
-    gendir = cre/ole
-    generator_flags += -o cre/ole
+    gendir = cre/o.le
+    generator_flags += -o cre/o.le
     more_names.key
   }
 
