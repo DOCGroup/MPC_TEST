@@ -74,12 +74,12 @@ CCFLAGS      = -q
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)source_lib
 NAME         = source_lib$(OLIBMODIFIER)
-CPPDIR       = .;cre\ole
+CPPDIR       = .;cre\o.le
 RESDIR       = .
 
 OBJFILES = \
            "$(INTERMEDIATE)\.\qwee$(OBJ_EXT)" \
-           "$(INTERMEDIATE)\cre\ole\more_names$(OBJ_EXT)" \
+           "$(INTERMEDIATE)\cre\o.le\more_names$(OBJ_EXT)" \
            "$(INTERMEDIATE)\names$(OBJ_EXT)" \
            "$(INTERMEDIATE)\TheCheat$(OBJ_EXT)"
 
@@ -117,15 +117,15 @@ $(OUTPUTDIR)$(NAME)$(LIB_EXT): $(OBJFILES)
 + )
 !
 
-GENERATED_DIRTY = cre\ole\more_names.cpp cre\ole\more_names.h names.cpp names.h TheCheat.cpp TheCheat.h .\bar.txt .\moop.hxx .\qwee.cxx .\qwee_T.C .\weer.inl
+GENERATED_DIRTY = cre\o.le\more_names.cpp cre\o.le\more_names.h names.cpp names.h TheCheat.cpp TheCheat.h .\bar.txt .\moop.hxx .\qwee.cxx .\qwee_T.C .\weer.inl
 PATH = $(PATH);..\lib
-cre\ole\more_names.cpp cre\ole\more_names.h: more_names.key
-        @if not exist "cre\ole" mkdir "cre\ole"
-	..\bin\generator -o cre/ole more_names.key
-	echo cre\ole\more_names.cpp and cre\ole\more_names.h have been generated.
+cre\o.le\more_names.cpp cre\o.le\more_names.h: more_names.key
+        @if not exist "cre\o.le" mkdir "cre\o.le"
+	..\bin\generator -o cre/o.le more_names.key
+	echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated.
 	@echo \#include "source_lib_pch.h" > temporary.src
-	@type cre\ole\more_names.cpp >> temporary.src
-	@move /y temporary.src cre\ole\more_names.cpp
+	@type cre\o.le\more_names.cpp >> temporary.src
+	@move /y temporary.src cre\o.le\more_names.cpp
 
 names.cpp names.h: names.key something
 	..\bin\generator -n names names.key
@@ -183,16 +183,16 @@ generated: $(GENERATED_DIRTY)
 	@if not exist "$(INTERMEDIATE)\.\" mkdir "$(INTERMEDIATE)\.\"
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) .\qwee.cxx
 
-"$(INTERMEDIATE)\cre\ole\more_names$(OBJ_EXT)":
-	@if not exist "$(INTERMEDIATE)\cre\ole\" mkdir "$(INTERMEDIATE)\cre\ole\"
-	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) cre\ole\more_names.cpp
+"$(INTERMEDIATE)\cre\o.le\more_names$(OBJ_EXT)":
+	@if not exist "$(INTERMEDIATE)\cre\o.le\" mkdir "$(INTERMEDIATE)\cre\o.le\"
+	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) cre\o.le\more_names.cpp
 
 clean:
 	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "cre\ole\more_names.cpp" del "cre\ole\more_names.cpp"
-	-if exist "cre\ole\more_names.h" del "cre\ole\more_names.h"
+	-if exist "cre\o.le\more_names.cpp" del "cre\o.le\more_names.cpp"
+	-if exist "cre\o.le\more_names.h" del "cre\o.le\more_names.h"
 	-if exist "names.cpp" del "names.cpp"
 	-if exist "names.h" del "names.h"
 	-if exist "TheCheat.cpp" del "TheCheat.cpp"

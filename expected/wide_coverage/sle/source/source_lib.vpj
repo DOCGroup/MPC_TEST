@@ -200,7 +200,7 @@
 			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl">
                         <F N="./qwee.cxx"/>
                         <F N="TheCheat.cpp"/>
-                        <F N="cre/ole/more_names.cpp"/>
+                        <F N="cre/o.le/more_names.cpp"/>
                         <F N="names.cpp"/>
 		</Folder>
 		<Folder
@@ -208,7 +208,7 @@
                         Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
                         <F N="source_lib_pch.h"/>
                         <F N="TheCheat.h"/>
-                        <F N="cre/ole/more_names.h"/>
+                        <F N="cre/o.le/more_names.h"/>
                         <F N="moop.hxx"/>
                         <F N="names.h"/>
                 </Folder>

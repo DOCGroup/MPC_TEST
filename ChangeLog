@@ -1,3 +1,25 @@
+Fri Feb 24 13:09:52 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/wide_coverage/automake/source/Makefile.am:
+        * expected/wide_coverage/bmake/source/Makefile.source_lib.bmak:
+        * expected/wide_coverage/cbx/source/source_lib.cbx:
+        * expected/wide_coverage/em3/source/source_lib.vcp:
+        * expected/wide_coverage/ghs/source/source_lib.bld:
+        * expected/wide_coverage/gnuace/source/GNUmakefile.source_lib:
+        * expected/wide_coverage/html/source/source_lib.html:
+        * expected/wide_coverage/make/source/Makefile.source_lib:
+        * expected/wide_coverage/nmake/source/Makefile.source_lib.mak:
+        * expected/wide_coverage/sle/source/source_lib.vpj:
+        * expected/wide_coverage/vc6/source/source_lib.dsp:
+        * expected/wide_coverage/vc7/source/source_lib.vcproj:
+        * expected/wide_coverage/vc71/source/source_lib.vcproj:
+        * expected/wide_coverage/vc8/source/source_lib.vcproj:
+        * tests/wide_coverage/source/exe/use_more_names/use_more_names.cpp:
+        * tests/wide_coverage/source/source_lib.mpc:
+
+          Changed this test again to test situations where regular
+          expression special characters are used in the 'gendir' setting.
+
 Thu Feb 23 17:02:33 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wide_coverage/*:

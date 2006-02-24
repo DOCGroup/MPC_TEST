@@ -6,27 +6,27 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake wide_coverage.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake wide_coverage.mwc
 
 
 
 ## Makefile.source_lib.am
 
 BUILT_SOURCES = \
-  cre/ole/more_names.cpp \
-  cre/ole/more_names.h
+  cre/o.le/more_names.cpp \
+  cre/o.le/more_names.h
 
 CLEANFILES = \
-  cre/ole/more_names-stamp \
-  cre/ole/more_names.cpp \
-  cre/ole/more_names.h
+  cre/o.le/more_names-stamp \
+  cre/o.le/more_names.cpp \
+  cre/o.le/more_names.h
 
-cre/ole/more_names.cpp cre/ole/more_names.h: cre/ole/more_names-stamp
+cre/o.le/more_names.cpp cre/o.le/more_names.h: cre/o.le/more_names-stamp
 
-cre/ole/more_names-stamp: $(srcdir)/more_names.key ../bin/generator
-	mkdir -p cre/ole
-	../bin/generator -o cre/ole $(srcdir)/more_names.key
-	echo cre/ole/more_names.cpp and cre/ole/more_names.h have been generated.
+cre/o.le/more_names-stamp: $(srcdir)/more_names.key ../bin/generator
+	mkdir -p cre/o.le
+	../bin/generator -o cre/o.le $(srcdir)/more_names.key
+	echo cre/o.le/more_names.cpp and cre/o.le/more_names.h have been generated.
 	@touch "$@"
 
 BUILT_SOURCES += \
@@ -91,13 +91,13 @@ libsource_lib_la_CPPFLAGS = \
 libsource_lib_la_SOURCES = \
   ./qwee.cxx \
   TheCheat.cpp \
-  cre/ole/more_names.cpp \
+  cre/o.le/more_names.cpp \
   names.cpp
 
 noinst_HEADERS = \
   ./qwee_T.C \
   TheCheat.h \
-  cre/ole/more_names.h \
+  cre/o.le/more_names.h \
   moop.hxx \
   names.h \
   weer.inl
