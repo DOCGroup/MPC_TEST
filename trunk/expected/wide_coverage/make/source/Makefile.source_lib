@@ -45,13 +45,6 @@ $(LIB): $(LTARGETDIR) $(OBJS)
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
 GENERATED_DIRTY    = cre/o.le/more_names.cpp cre/o.le/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl
-# These may be needed, but some versions of make do not accept this syntax
-#DYLD_LIBRARY_PATH := $(DYLD_LIBRARY_PATH):../lib
-#LD_LIBRARY_PATH   := $(LD_LIBRARY_PATH):../lib
-#SHLIB_PATH        := $(SHLIB_PATH):../lib
-#LIBPATH           := $(LIBPATH):../lib
-#PATH              := $(PATH):../lib
-
 cre/o.le/more_names.cpp cre/o.le/more_names.h: more_names.key ../bin/generator
 	@$(MKDIR) cre/o.le
 	../bin/generator -o cre/o.le more_names.key

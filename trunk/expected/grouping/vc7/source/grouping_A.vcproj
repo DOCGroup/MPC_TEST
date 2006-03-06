@@ -188,6 +188,16 @@
 				</FileConfiguration>
 			</File>
 		</Filter>
+		<Filter
+			Name="Inline Files"
+			Filter="i;inl">
+			<File
+				RelativePath="other.inl">
+			</File>
+			<File
+				RelativePath="zzz.inl">
+			</File>
+		</Filter>
 	</Files>
 	<Globals>
 	</Globals>

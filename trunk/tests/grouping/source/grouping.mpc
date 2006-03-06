@@ -75,5 +75,10 @@ project(*G): cppgen {
       alternate/*.cpp
     }
   }
+  Inline_Files {
+    carnival {
+      zzz.inl
+    }
+  }
 }
 

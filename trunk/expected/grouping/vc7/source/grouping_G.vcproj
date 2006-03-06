@@ -203,6 +203,20 @@
 				</FileConfiguration>
 			</File>
 		</Filter>
+		<Filter
+			Name="Inline Files"
+			Filter="i;inl">
+			<Filter
+				Name="carnival"
+				Filter="">
+				<File
+					RelativePath="zzz.inl">
+				</File>
+			</Filter>
+			<File
+				RelativePath="other.inl">
+			</File>
+		</Filter>
 	</Files>
 	<Globals>
 	</Globals>

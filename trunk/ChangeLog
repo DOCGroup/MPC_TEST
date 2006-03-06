@@ -1,3 +1,20 @@
+Mon Mar  6 18:40:38 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/grouping/*/source/*:
+        * tests/grouping/source/grouping.mpc:
+
+          Modified this test to exercise yet another problem area for file
+          grouping.
+
+        * expected/wide_coverage/make/source/Makefile.source_lib:
+
+          Updated to reflect my change from Mon Mar  6 18:09:36 UTC 2006.
+
+        * run_tests.pl:
+
+          Fixed the diff ordering so that the expected is on the left and
+          the newly generated is on the right.
+
 Fri Feb 24 13:09:52 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wide_coverage/automake/source/Makefile.am:

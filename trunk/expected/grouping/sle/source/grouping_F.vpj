@@ -206,5 +206,10 @@
                         Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
                         <F N="clown.h"/>
                 </Folder>
+                <Folder
+                        Name="Inline Files"
+                        Filters="*.i;*.inl">
+                        <F N="other.inl"/>
+                </Folder>
 	</Files>
 </Project>
