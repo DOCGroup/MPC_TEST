@@ -98,6 +98,18 @@ SOURCE="clown.h"
 # End Source File
 # End Group
 # End Group
+# Begin Group "Inline Files"
+
+# PROP Default_Filter "i;inl"
+# Begin Group "located"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="other.inl"
+# End Source File
+# End Group
+# End Group
 # Begin Group "Cppgen Files"
 
 # PROP Default_Filter "r"

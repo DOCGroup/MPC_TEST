@@ -470,7 +470,7 @@ sub compare_output {
             $status++;
             print SAVEERR "ERROR: Unable to read file: $ef\n";
           }
-          elsif (compare($tf, $ef, 1) != 0) {
+          elsif (compare($ef, $tf, 1) != 0) {
             $status++;
           }
         }

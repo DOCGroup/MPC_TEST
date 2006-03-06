@@ -415,6 +415,17 @@
 				</FileConfiguration>
 			</File>
 		</Filter>
+		<Filter
+			Name="Inline Files"
+			Filter="i;inl">
+			<Filter
+				Name="located"
+				Filter="">
+				<File
+					RelativePath="other.inl">
+				</File>
+			</Filter>
+		</Filter>
 	</Files>
 	<Globals>
 	</Globals>

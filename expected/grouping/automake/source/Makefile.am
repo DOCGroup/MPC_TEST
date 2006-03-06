@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type automake grouping.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake grouping.mwc
 
 
 ## Makefile.grouping_A.am
@@ -31,7 +31,9 @@ noinst_PROGRAMS = A
 A_SOURCES = \
   clown.cpp \
   other.cpp \
-  clown.h
+  clown.h \
+  other.inl \
+  zzz.inl
 
 ## Makefile.grouping_B.am
 
@@ -55,7 +57,9 @@ noinst_PROGRAMS += B
 B_SOURCES = \
   clown.cpp \
   other.cpp \
-  clown.h
+  clown.h \
+  other.inl \
+  zzz.inl
 
 ## Makefile.grouping_C.am
 
@@ -79,7 +83,8 @@ noinst_PROGRAMS += C
 C_SOURCES = \
   clown.cpp \
   other.cpp \
-  clown.h
+  clown.h \
+  other.inl
 
 ## Makefile.grouping_D.am
 
@@ -103,7 +108,8 @@ noinst_PROGRAMS += D
 D_SOURCES = \
   clown.cpp \
   other.cpp \
-  clown.h
+  clown.h \
+  other.inl
 
 ## Makefile.grouping_E.am
 
@@ -127,7 +133,8 @@ noinst_PROGRAMS += E
 E_SOURCES = \
   clown.cpp \
   other.cpp \
-  clown.h
+  clown.h \
+  other.inl
 
 ## Makefile.grouping_F.am
 
@@ -151,7 +158,8 @@ noinst_PROGRAMS += F
 F_SOURCES = \
   clown.cpp \
   other.cpp \
-  clown.h
+  clown.h \
+  other.inl
 
 ## Makefile.grouping_G.am
 
@@ -176,7 +184,9 @@ G_SOURCES = \
   alternate/foo.cpp \
   clown.cpp \
   other.cpp \
-  clown.h
+  clown.h \
+  other.inl \
+  zzz.inl
 
 ## Clean up template repositories, etc.
 clean-local:

@@ -18,3 +18,7 @@ other.cpp
 	C++
 clown.h
 	include_file
+other.inl
+	include_file
+zzz.inl
+	include_file
