@@ -43,7 +43,7 @@ EXPORTFLAGS   = $(DYNAMICFLAGS)
 #       Local targets
 #----------------------------------------------------------------------------
 
-all: $(SHLIB).1.0.0 $(SHLIB)
+all: __prebuild__ $(SHLIB).1.0.0 $(SHLIB)
 
 $(SHLIB):
 	cd $(SHTARGETDIR) && ln -s $(SHLIB_BASE).1.0.0 $(SHLIB_BASE)
@@ -68,6 +68,9 @@ clean:
 
 realclean: clean
 	-$(RM) $(SHLIB).1.0.0 $(SHLIB) $(LIB)
+
+__prebuild__:
+	@echo Building generator_be
 
 #----------------------------------------------------------------------------
 #       Dependencies

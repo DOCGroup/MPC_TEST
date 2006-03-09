@@ -44,7 +44,7 @@ OUTDIR=.
 INSTALLDIR=..\bin
 INTDIR=Debug\generator\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
+ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -84,13 +84,16 @@ LINK32_OBJS= \
 <<
     if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
+__prebuild__:
+	@echo Building generator
+
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
 OUTDIR=Release
 INSTALLDIR=..\bin
 INTDIR=Release\generator\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
+ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -129,13 +132,16 @@ LINK32_OBJS= \
 <<
     if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
+__prebuild__:
+	@echo Building generator
+
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
 OUTDIR=Static_Debug
 INSTALLDIR=..\bin
 INTDIR=Static_Debug\generator\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
+ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -175,13 +181,16 @@ LINK32_OBJS= \
 <<
     if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
+__prebuild__:
+	@echo Building generator
+
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
 OUTDIR=Static_Release
 INSTALLDIR=..\bin
 INTDIR=Static_Release\generator\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
+ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -219,6 +228,9 @@ LINK32_OBJS= \
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
     if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
+
+__prebuild__:
+	@echo Building generator
 
 !ENDIF
 

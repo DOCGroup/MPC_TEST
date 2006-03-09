@@ -34,7 +34,8 @@
 				Name="VCPostBuildEventTool"
 			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
@@ -59,7 +60,8 @@
 				Name="VCPostBuildEventTool"
 			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
 	<Files>

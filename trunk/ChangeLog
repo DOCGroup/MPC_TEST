@@ -1,3 +1,21 @@
+Thu Mar  9 16:45:34 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/html/*.html:
+        * expected/*/vc7/*.vcproj:
+        * expected/*/vc71/*.vcproj:
+
+          Modified to reflect my change from Thu Mar  9 16:20:24 UTC 2006.
+
+        * expected/wide_coverage/*/generator/*:
+        * tests/wide_coverage/generator/generator.mpc:
+
+          Modified this test to utilize the new 'prebuild' keyword.
+
+        * tests/grouping/source/other.inl:
+        * tests/grouping/source/zzz.inl:
+
+          I forgot to add these files in the previous commit.
+
 Mon Mar  6 18:40:38 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/grouping/*/source/*:
