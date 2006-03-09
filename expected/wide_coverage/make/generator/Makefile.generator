@@ -36,7 +36,7 @@ EXPORTFLAGS   =
 #       Local targets
 #----------------------------------------------------------------------------
 
-all: $(BIN)
+all: __prebuild__ $(BIN)
 
 $(BTARGETDIR):
 	@$(MKDIR) "$@"
@@ -55,6 +55,9 @@ clean:
 
 realclean: clean
 	-$(RM) $(BIN)
+
+__prebuild__:
+	@echo Building generator
 
 #----------------------------------------------------------------------------
 #       Dependencies

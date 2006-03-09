@@ -65,7 +65,9 @@
 				Name="VCPostBuildEventTool"
 			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+				CommandLine="echo Building generator"
+			/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -130,7 +132,9 @@
 				Name="VCPostBuildEventTool"
 			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+				CommandLine="echo Building generator"
+			/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool

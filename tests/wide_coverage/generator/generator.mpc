@@ -11,6 +11,8 @@ project(*be): test_base {
   }
   Resource_Files {
   }
+
+  prebuild = echo Building <%staticname%>
 }
 
 
@@ -32,6 +34,7 @@ project: test_base {
     resource.h
   }
 
+  prebuild = echo Building <%exename%>
   specific(automake) {
     postbuild = <%cp%> <%exename%> $(TEST_ROOT)/bin
   }

@@ -43,7 +43,7 @@ GENERATED_DIRTY =
 OUTDIR=..\lib
 INTDIR=Debug\generator_be\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "..\lib\generator_bed.dll"
+ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "..\lib\generator_bed.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -84,12 +84,15 @@ LINK32_OBJS= \
 <<
     if exist "..\lib\generator_bed.dll.manifest" mt.exe -manifest "..\lib\generator_bed.dll.manifest" -outputresource:$@;2
 
+__prebuild__:
+	@echo Building generator_be
+
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
 OUTDIR=..\lib
 INTDIR=Release\generator_be\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "..\lib\generator_be.dll"
+ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "..\lib\generator_be.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -129,12 +132,15 @@ LINK32_OBJS= \
 <<
     if exist "..\lib\generator_be.dll.manifest" mt.exe -manifest "..\lib\generator_be.dll.manifest" -outputresource:$@;2
 
+__prebuild__:
+	@echo Building generator_be
+
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
 OUTDIR=..\lib
 INTDIR=Static_Debug\generator_be\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_besd.lib"
+ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_besd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -173,12 +179,15 @@ LINK32_OBJS= \
 <<
     if exist "$(OUTDIR)\generator_besd.lib.manifest" mt.exe -manifest "$(OUTDIR)\generator_besd.lib.manifest" -outputresource:$@;2
 
+__prebuild__:
+	@echo Building generator_be
+
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
 OUTDIR=..\lib
 INTDIR=Static_Release\generator_be\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_bes.lib"
+ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_bes.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -215,6 +224,9 @@ LINK32_OBJS= \
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
     if exist "$(OUTDIR)\generator_bes.lib.manifest" mt.exe -manifest "$(OUTDIR)\generator_bes.lib.manifest" -outputresource:$@;2
+
+__prebuild__:
+	@echo Building generator_be
 
 !ENDIF
 

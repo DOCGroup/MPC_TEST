@@ -66,7 +66,8 @@
 				CommandLine="echo main_test has been built"
 			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -133,7 +134,8 @@
 				CommandLine="echo main_test has been built"
 			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool

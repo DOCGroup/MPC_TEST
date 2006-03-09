@@ -102,7 +102,7 @@ CFLAGS = \
          $(VCL_CFLAGS)
 
 OUTPUTDIR = ..\bin\\
-all: $(OUTPUTDIR)$(NAME)$(EXE_EXT)
+all: __prebuild__ $(OUTPUTDIR)$(NAME)$(EXE_EXT)
 
 $(OUTPUTDIR)$(NAME)$(EXE_EXT): $(OBJFILES) $(RESOURCE)
 	@if not exist "$(OUTPUTDIR)" mkdir "$(OUTPUTDIR)"
@@ -153,4 +153,7 @@ clean:
 realclean: clean
 	-if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)"
         -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
+
+__prebuild__:
+	@echo Building generator
 

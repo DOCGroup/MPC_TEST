@@ -65,7 +65,8 @@
 				CommandLine="echo Hello There"
 			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -131,7 +132,8 @@
 				CommandLine="echo Hello There"
 			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
