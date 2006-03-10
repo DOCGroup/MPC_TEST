@@ -26,6 +26,8 @@ VPATH = .:exe:exe/use_names:exe/use_more_names
 #----------------------------------------------------------------------------
 LDLIBS = -lsource_lib
 
+PRJ_TYPE = rtp
+
 ifeq ($(INSBIN),.)
   ifeq ($(PWD),)
     PWD=$(shell pwd)

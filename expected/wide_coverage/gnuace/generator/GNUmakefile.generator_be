@@ -16,6 +16,7 @@ DEPENDENCY_FILE  = .depend.generator_be
 ## LIB may be set to empty later on in this file
 LIB_UNCHECKED    = libgenerator_be.a
 LIB              = $(LIB_UNCHECKED)
+LIB_NAME         = libgenerator_be
 
 ## SHLIB may be set to empty later on in this file
 SHLIB_UNCHECKED  = libgenerator_be.$(SOEXT)
@@ -28,6 +29,8 @@ FILES = \
 #       Include macros and targets
 #----------------------------------------------------------------------------
 ACE_SHLIBS =
+
+PRJ_TYPE = library
 
 INSLIB ?= ../lib
 ifeq ($(INSLIB),.)

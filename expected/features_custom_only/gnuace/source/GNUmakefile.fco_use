@@ -16,6 +16,7 @@ DEPENDENCY_FILE  = .depend.fco_use
 ## LIB may be set to empty later on in this file
 LIB_UNCHECKED    = libfco_use.a
 LIB              = $(LIB_UNCHECKED)
+LIB_NAME         = libfco_use
 
 ## SHLIB may be set to empty later on in this file
 SHLIB_UNCHECKED  = libfco_use.$(SOEXT)
@@ -29,6 +30,8 @@ FILES = \
 #       Include macros and targets
 #----------------------------------------------------------------------------
 ACE_SHLIBS =
+
+PRJ_TYPE = library
 
 INSLIB ?= .
 ifeq ($(INSLIB),.)

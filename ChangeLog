@@ -1,3 +1,16 @@
+Fri Mar 10 13:08:40 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/gnuace/*/GNUmakefile.*:
+
+          Updated to reflect my change to the TAO 1.4a gnu.mpd from
+          Thu Mar  9 13:09:38 UTC 2006.
+
+        * tests/grouping/run_test.pl:
+        * tests/wide_coverage/run_test.pl:
+
+          Modified these tests to take into account that the executable
+          could be in the Release directory.
+
 Thu Mar  9 16:45:34 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/html/*.html:

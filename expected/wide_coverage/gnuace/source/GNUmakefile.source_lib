@@ -16,6 +16,7 @@ DEPENDENCY_FILE  = .depend.source_lib
 ## LIB may be set to empty later on in this file
 LIB_UNCHECKED    = libsource_lib.a
 LIB              = $(LIB_UNCHECKED)
+LIB_NAME         = libsource_lib
 static_libs_only = 1
 
 FILES = \
@@ -29,6 +30,8 @@ VPATH = .:cre/o.le
 #----------------------------------------------------------------------------
 #       Include macros and targets
 #----------------------------------------------------------------------------
+
+PRJ_TYPE = library
 
 INSLIB ?= ../lib
 ifeq ($(INSLIB),.)
