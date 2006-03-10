@@ -16,6 +16,7 @@ DEPENDENCY_FILE  = .depend.one
 ## LIB may be set to empty later on in this file
 LIB_UNCHECKED    = libone.a
 LIB              = $(LIB_UNCHECKED)
+LIB_NAME         = libone
 static_libs_only = 1
 
 FILES = \
@@ -24,6 +25,8 @@ FILES = \
 #----------------------------------------------------------------------------
 #       Include macros and targets
 #----------------------------------------------------------------------------
+
+PRJ_TYPE = library
 
 INSLIB ?= ../../lib
 ifeq ($(INSLIB),.)

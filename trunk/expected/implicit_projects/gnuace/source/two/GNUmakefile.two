@@ -22,6 +22,8 @@ FILES = \
 #----------------------------------------------------------------------------
 LDLIBS = -lone
 
+PRJ_TYPE = rtp
+
 ifeq ($(INSBIN),.)
   ifeq ($(PWD),)
     PWD=$(shell pwd)

@@ -16,6 +16,7 @@ DEPENDENCY_FILE  = .depend.csvw_D
 ## LIB may be set to empty later on in this file
 LIB_UNCHECKED    = libcsvw_D.a
 LIB              = $(LIB_UNCHECKED)
+LIB_NAME         = libcsvw_D
 
 ## SHLIB may be set to empty later on in this file
 SHLIB_UNCHECKED  = libcsvw_D.$(SOEXT)
@@ -32,6 +33,8 @@ VPATH = .:conditional
 #       Include macros and targets
 #----------------------------------------------------------------------------
 ACE_SHLIBS =
+
+PRJ_TYPE = library
 
 INSLIB ?= bin
 ifeq ($(INSLIB),.)

@@ -22,6 +22,8 @@ FILES = \
 #----------------------------------------------------------------------------
 LDLIBS = -lgenerator_be
 
+PRJ_TYPE = rtp
+
 INSBIN ?= ../bin
 ifeq ($(INSBIN),.)
   ifeq ($(PWD),)

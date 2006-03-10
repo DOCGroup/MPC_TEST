@@ -35,6 +35,8 @@ VPATH = .:alternate
 #----------------------------------------------------------------------------
 LDLIBS =
 
+PRJ_TYPE = rtp
+
 ifeq ($(INSBIN),.)
   ifeq ($(PWD),)
     PWD=$(shell pwd)

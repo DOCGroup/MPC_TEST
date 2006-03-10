@@ -19,6 +19,8 @@ FILES = \
 #       Include macros and targets
 #----------------------------------------------------------------------------
 
+PRJ_TYPE = library
+
 INSLIB ?= .
 ifeq ($(INSLIB),.)
   ifeq ($(PWD),)
