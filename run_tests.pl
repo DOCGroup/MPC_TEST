@@ -480,7 +480,6 @@ sub compare_output {
   }
   else {
     print SAVEERR "[No expected results] ";
-    $status++;
   }
 
   return $status;
