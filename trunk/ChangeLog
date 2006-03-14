@@ -1,3 +1,10 @@
+Tue Mar 14 13:11:47 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * run_tests.pl:
+
+          Do not count it as a failure if there are no expected results to
+          compare.
+
 Fri Mar 10 13:08:40 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/gnuace/*/GNUmakefile.*:
