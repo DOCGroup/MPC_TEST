@@ -1,3 +1,24 @@
+Wed Mar 15 19:05:18 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/relative/vc8/build/build_exe.vcproj:
+        * expected/relative/vc8/build/build_lib.vcproj:
+
+          Spacing was fixed in the grouped source section.
+
+        * expected/buildflags/*:
+        * tests/buildflags/source/bfs.mpc:
+        * tests/buildflags/source/directory/gets_flags.cpp:
+        * tests/buildflags/source/five.cpp:
+        * tests/buildflags/source/fooza.cpp:
+        * tests/buildflags/source/foozb.cpp:
+        * tests/buildflags/source/four.cpp:
+        * tests/buildflags/source/one.cpp:
+        * tests/buildflags/source/three.cpp:
+        * tests/buildflags/source/two.cpp:
+
+          Added a new test to exercise the buildflags keyword added by my
+          Wed Mar 15 18:44:03 UTC 2006 change.
+
 Tue Mar 14 13:11:47 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:

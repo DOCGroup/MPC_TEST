@@ -397,25 +397,25 @@
 						Name="Debug|Win32">
 						<Tool
 							Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)\$(InputName)2.obj"/>
+							ObjectFile="$(IntDir)\$(InputName)2.obj"/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|Win32">
 						<Tool
 							Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)\$(InputName)2.obj"/>
+							ObjectFile="$(IntDir)\$(InputName)2.obj"/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|x64">
 						<Tool
 							Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)\$(InputName)2.obj"/>
+							ObjectFile="$(IntDir)\$(InputName)2.obj"/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|x64">
 						<Tool
 							Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)\$(InputName)2.obj"/>
+							ObjectFile="$(IntDir)\$(InputName)2.obj"/>
 					</FileConfiguration>
 			</File>
 		</Filter>
