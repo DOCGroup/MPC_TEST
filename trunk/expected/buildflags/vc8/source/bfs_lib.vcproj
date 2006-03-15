@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="build_exe"
-	ProjectGUID="{7A0E7D94-FECA-1BAD-3FA6-8A66C8786370}"
-	RootNamespace="build_exe"
+	Name="bfs_lib"
+	ProjectGUID="{0F057D95-FECA-1BAD-6411-8A63987FB20B}"
+	RootNamespace="bfs_lib"
 	Keyword="Win32Proj"
 	SignManifests="true"
 	>
@@ -22,8 +22,8 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\build_exe"
-			ConfigurationType="1"
+			IntermediateDirectory="Debug\bfs_lib"
+			ConfigurationType="2"
 			CharacterSet="0"
 			>
 			<Tool
@@ -50,8 +50,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="."
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_M_IX86"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_M_IX86"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -67,7 +66,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="."
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -75,12 +74,13 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\other.exe"
+				OutputFile="$(OutDir)\bfsd.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
-				SubSystem="1"
+				SubSystem="2"
+				ImportLibrary="$(OutDir)\bfsd.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -101,9 +101,9 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="Release"
-			IntermediateDirectory="Release\build_exe"
-			ConfigurationType="1"
+			OutputDirectory="."
+			IntermediateDirectory="Release\bfs_lib"
+			ConfigurationType="2"
 			CharacterSet="0"
 			>
 			<Tool
@@ -130,8 +130,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				AdditionalIncludeDirectories="."
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_M_IX86"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_M_IX86"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -144,7 +143,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="."
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -152,14 +151,15 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\other.exe"
+				OutputFile="$(OutDir)\bfs.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
-				SubSystem="1"
+				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				ImportLibrary="$(OutDir)\bfs.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -181,8 +181,8 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory=".\Win64"
-			IntermediateDirectory="Debug\build_exe\Win64"
-			ConfigurationType="1"
+			IntermediateDirectory="Debug\bfs_lib\Win64"
+			ConfigurationType="2"
 			CharacterSet="0"
 			>
 			<Tool
@@ -209,8 +209,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="."
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_AMD64_;_WIN64"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_AMD64_;_WIN64"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -226,7 +225,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="."
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -235,12 +234,13 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/machine:AMD64"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\other.exe"
+				OutputFile="$(OutDir)\bfsd.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=".\Win64;."
 				GenerateDebugInformation="true"
-				SubSystem="1"
+				SubSystem="2"
+				ImportLibrary="$(OutDir)\bfsd.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -261,9 +261,9 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="Release\Win64"
-			IntermediateDirectory="Release\build_exe\Win64"
-			ConfigurationType="1"
+			OutputDirectory=".\Win64"
+			IntermediateDirectory="Release\bfs_lib\Win64"
+			ConfigurationType="2"
 			CharacterSet="0"
 			>
 			<Tool
@@ -290,8 +290,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				AdditionalIncludeDirectories="."
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_AMD64_;_WIN64"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_AMD64_;_WIN64"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -304,7 +303,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="."
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -313,14 +312,15 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/machine:AMD64"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\other.exe"
+				OutputFile="$(OutDir)\bfs.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=".\Win64;."
 				GenerateDebugInformation="true"
-				SubSystem="1"
+				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				ImportLibrary="$(OutDir)\bfs.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -346,48 +346,127 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;cxx;cc;C;c">
-			<File
-				RelativePath="..\src\foo.cpp">
-			</File>
-			<File
-				RelativePath="bar.cpp">
-			</File>
-			<File
-				RelativePath="lower\bar.cpp">
+			<Filter
+				Name="Inside"
+				Filter="">
+				<File
+					RelativePath="four.cpp">
 					<FileConfiguration
 						Name="Debug|Win32">
 						<Tool
 							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)2.obj"/>
+							AdditionalOptions="-Trogdor"/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|Win32">
 						<Tool
 							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)2.obj"/>
+							AdditionalOptions="-Trogdor"/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|x64">
 						<Tool
 							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)2.obj"/>
+							AdditionalOptions="-Trogdor"/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|x64">
 						<Tool
 							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)2.obj"/>
+							AdditionalOptions="-Trogdor"/>
 					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="two.cpp">
+				</File>
+			</Filter>
+			<Filter
+				Name="Outside"
+				Filter="">
+				<File
+					RelativePath="five.cpp">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalOptions="-Trogdor"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalOptions="-Trogdor"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64">
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalOptions="-Trogdor"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64">
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalOptions="-Trogdor"/>
+					</FileConfiguration>
+				</File>
+			</Filter>
+			<File
+				RelativePath="directory\gets_flags.cpp">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalOptions="-Trogdor"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalOptions="-Trogdor"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64">
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalOptions="-Trogdor"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64">
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalOptions="-Trogdor"/>
+				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="other.cpp">
+				RelativePath="one.cpp">
 			</File>
-		</Filter>
-		<Filter
-			Name="Resource Files"
-			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe">
 			<File
-				RelativePath="..\src\bar.rc">
+				RelativePath="three.cpp">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalOptions="-Trogdor"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalOptions="-Trogdor"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64">
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalOptions="-Trogdor"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64">
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalOptions="-Trogdor"/>
+				</FileConfiguration>
 			</File>
 		</Filter>
 	</Files>
