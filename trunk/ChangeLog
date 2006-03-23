@@ -1,3 +1,12 @@
+Thu Mar 23 14:33:13 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/relative/vc7/build/build_lib.vcproj:
+        * expected/relative/vc71/build/build_lib.vcproj:
+        * expected/wide_coverage/vc7/source/source_lib.vcproj:
+        * expected/wide_coverage/vc71/source/source_lib.vcproj:
+
+          Updated to reflect my change from Thu Mar 23 14:30:00 UTC 2006.
+
 Wed Mar 15 19:05:18 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/relative/vc8/build/build_exe.vcproj:
