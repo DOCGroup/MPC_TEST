@@ -73,7 +73,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO generator_be.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:ARM /out:"..\bin\ARM\generator.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO generator_be.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:ARM /out:"..\bin\ARM\generator.exe"
 
 !ENDIF
 !IF  "$(CFG)" == "generator - Win32 (WCE ARMV4) Debug"
@@ -112,7 +112,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO generator_be.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:ARM /out:"..\bin\ARM\generator.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO generator_be.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:ARM /out:"..\bin\ARM\generator.exe"
 
 !ENDIF
 !IF  "$(CFG)" == "generator - Win32 (WCE emulator) Debug"
@@ -151,7 +151,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO generator_be.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"..\bin\IX86\generator.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO generator_be.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:IX86 /out:"..\bin\IX86\generator.exe"
 
 !ENDIF
 !IF  "$(CFG)" == "generator - Win32 (WCE x86) Debug"
@@ -190,7 +190,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO generator_be.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"..\bin\IX86\generator.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO generator_be.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /version:1.000 /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:IX86 /out:"..\bin\IX86\generator.exe"
 
 !ENDIF
 

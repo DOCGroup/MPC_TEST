@@ -73,7 +73,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:ARM /out:"Release\ARM\fooz.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:ARM /out:"Release\ARM\fooz.exe"
 
 !ENDIF
 !IF  "$(CFG)" == "bfs_exe - Win32 (WCE ARMV4) Debug"
@@ -112,7 +112,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:ARM /out:"Release\ARM\fooz.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:ARM /out:"Release\ARM\fooz.exe"
 
 !ENDIF
 !IF  "$(CFG)" == "bfs_exe - Win32 (WCE emulator) Debug"
@@ -151,7 +151,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Release\IX86\fooz.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:IX86 /out:"Release\IX86\fooz.exe"
 
 !ENDIF
 !IF  "$(CFG)" == "bfs_exe - Win32 (WCE x86) Debug"
@@ -190,7 +190,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /debug /machine:IX86 /out:"Release\IX86\fooz.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:IX86 /out:"Release\IX86\fooz.exe"
 
 !ENDIF
 

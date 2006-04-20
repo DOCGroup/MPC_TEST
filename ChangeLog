@@ -1,3 +1,9 @@
+Thu Apr 20 13:29:57 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/em3/*.vcp:
+
+          Updated to reflect my change from Thu Apr 20 13:29:13 UTC 2006.
+
 Thu Mar 23 14:33:13 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/relative/vc7/build/build_lib.vcproj:
