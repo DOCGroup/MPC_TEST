@@ -1,3 +1,10 @@
+Wed May  3 01:46:47 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/make/*:
+        * expected/*/nmake/*:
+
+          Updated to reflect my changes from Wed May  3 01:43:46 UTC 2006.
+
 Thu Apr 20 13:29:57 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/em3/*.vcp:

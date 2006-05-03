@@ -78,7 +78,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
@@ -136,7 +136,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
@@ -195,7 +195,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
@@ -253,7 +253,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
@@ -321,7 +321,7 @@ SOURCE="source_lib_pch.cpp"
 
 !IF  "$(CFG)" == "Win32 Debug"
 
-CPP_SWITCHES=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
 
 "$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
 	$(CPP) @<<
@@ -330,7 +330,7 @@ CPP_SWITCHES=/nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.p
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
-CPP_SWITCHES=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
 
 "$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
 	$(CPP) @<<
@@ -339,7 +339,7 @@ CPP_SWITCHES=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS 
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
-CPP_SWITCHES=/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
 
 "$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
 	$(CPP) @<<
@@ -348,7 +348,7 @@ CPP_SWITCHES=/nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
-CPP_SWITCHES=/nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
 
 "$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
 	$(CPP) @<<
