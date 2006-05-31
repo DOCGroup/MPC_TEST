@@ -1,3 +1,13 @@
+Wed May 31 11:49:43 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/implicit_projects/automake/source/two/Makefile.am:
+        * expected/options/automake/source/Makefile_Zargaflan.am:
+        * expected/wide_coverage/automake/generator/Makefile.am:
+        * expected/wide_coverage/automake/source/Makefile.am:
+
+          Updated to reflect Steve Huston's changes from Tue May 23 16:49:22
+          2006.
+
 Wed May  3 01:46:47 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/make/*:
