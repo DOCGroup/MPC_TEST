@@ -6,14 +6,14 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type automake implicit_projects.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake implicit_projects.mwc
 
 
 ## Makefile.two.am
 noinst_PROGRAMS = two
 
 two_CPPFLAGS = \
-  -I..
+  -I$(srcdir)/..
 
 two_SOURCES = \
   two.cpp
