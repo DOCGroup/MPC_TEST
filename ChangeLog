@@ -1,3 +1,11 @@
+Fri Jun  9 17:54:28 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/wide_coverage/automake/generator/Makefile.am:
+        * expected/wide_coverage/automake/source/Makefile.am:
+
+          Updated to reflect J.T. Conklin's change from Fri Jun  9 07:00:13
+          2006.
+
 Fri Jun  9 15:59:27 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc8/*.vcproj:
