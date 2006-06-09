@@ -80,7 +80,7 @@
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary="$(OutDir)\csvw_Cd.lib"
+				ImportLibrary="lib\csvw_Cd.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -159,7 +159,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="$(OutDir)\csvw_C.lib"
+				ImportLibrary="lib\csvw_C.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -240,7 +240,7 @@
 				AdditionalLibraryDirectories=".\Win64;."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary="$(OutDir)\csvw_Cd.lib"
+				ImportLibrary="lib\Win64\csvw_Cd.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -320,7 +320,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="$(OutDir)\csvw_C.lib"
+				ImportLibrary="lib\Win64\csvw_C.lib"
 				TargetMachine="17"
 			/>
 			<Tool
