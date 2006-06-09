@@ -21,8 +21,6 @@ libgenerator_be_la_CPPFLAGS = \
 libgenerator_be_la_SOURCES = \
   generator_be.cpp
 
-libgenerator_be_la_LDFLAGS =
-
 noinst_HEADERS = \
   generator_be.h \
   generator_be_export.h

@@ -94,8 +94,6 @@ libsource_lib_la_SOURCES = \
   cre/o.le/more_names.cpp \
   names.cpp
 
-libsource_lib_la_LDFLAGS =
-
 noinst_HEADERS = \
   ./qwee_T.C \
   TheCheat.h \
