@@ -82,7 +82,7 @@
 				AdditionalLibraryDirectories=".;..\lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary="$(OutDir)\generator_bed.lib"
+				ImportLibrary="..\lib\generator_bed.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -163,7 +163,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="$(OutDir)\generator_be.lib"
+				ImportLibrary="..\lib\generator_be.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -246,7 +246,7 @@
 				AdditionalLibraryDirectories=".\Win64;.;..\lib\Win64;..\lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary="$(OutDir)\generator_bed.lib"
+				ImportLibrary="..\lib\Win64\generator_bed.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -328,7 +328,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="$(OutDir)\generator_be.lib"
+				ImportLibrary="..\lib\Win64\generator_be.lib"
 				TargetMachine="17"
 			/>
 			<Tool
