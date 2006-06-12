@@ -13,7 +13,7 @@
 noinst_PROGRAMS = two
 
 two_CPPFLAGS = \
-  -I$(srcdir)/..
+  -I..
 
 two_SOURCES = \
   two.cpp

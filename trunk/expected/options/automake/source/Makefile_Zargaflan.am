@@ -16,7 +16,7 @@ if !BUILD_FAKE
 noinst_PROGRAMS = basic
 
 basic_CPPFLAGS = \
-  -I$(srcdir)/.. \
+  -I.. \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
 basic_SOURCES = \
