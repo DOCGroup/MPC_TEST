@@ -1,3 +1,20 @@
+Wed Jun 21 17:56:55 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/mixed_languages/*:
+        * tests/mixed_languages/base/base.mpc:
+        * tests/mixed_languages/base/foo.cpp:
+        * tests/mixed_languages/basic/arch.cpp:
+        * tests/mixed_languages/basic/bar.h:
+        * tests/mixed_languages/basic/basic_export.h:
+        * tests/mixed_languages/basic/foo.cpp:
+        * tests/mixed_languages/basic/foo.mpc:
+        * tests/mixed_languages/csharp/csharp.mpc:
+        * tests/mixed_languages/csharp/floop.cs:
+        * tests/mixed_languages/mixed_languages.mwc:
+
+          Added a new test to ensure that MPC continues to be functional
+          when using mixed languages.
+
 Mon Jun 12 11:20:15 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/implicit_projects/automake/source/two/Makefile.am:
