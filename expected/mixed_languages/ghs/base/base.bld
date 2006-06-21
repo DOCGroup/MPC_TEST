@@ -1,0 +1,8 @@
+#!build
+default:
+	program
+	:outputname=base/foo
+	:optimizestrategy=speed
+	:libdirs=base
+foo.cpp
+	C++

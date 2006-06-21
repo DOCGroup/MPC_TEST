@@ -1,0 +1,15 @@
+#!build
+default:
+	shared_library
+	:outputname=basic/libbasic.so
+	:optimizestrategy=speed
+	:libdirs=basic
+	:defines=BASIC_BUILD_DLL
+arch.cpp
+	C++
+foo.cpp
+	C++
+bar.h
+	include_file
+basic_export.h
+	include_file
