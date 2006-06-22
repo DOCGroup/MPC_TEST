@@ -1,3 +1,15 @@
+Thu Jun 22 12:32:18 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/mixed_languages/vc8/mixed_languages.sln:
+        * expected/mixed_languages/vc8web/mixed_languages.sln:
+
+          Updated to reflect my change from Thu Jun 22 12:24:51 UTC 2006.
+
+        * run_tests.pl:
+
+          Delete the MPC_GNUACE_NAMED_TARGETS environment variable if we are
+          using MPC from ACE_wrappers/bin.
+
 Wed Jun 21 17:56:55 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/mixed_languages/*:

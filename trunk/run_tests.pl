@@ -792,6 +792,7 @@ sub run_test {
 sub determine_setup {
   if (defined $ENV{ACE_ROOT}) {
     $MWC = "$ENV{ACE_ROOT}/bin/mwc.pl";
+    delete $ENV{MPC_GNUACE_NAMED_TARGETS};
   }
   elsif (defined $ENV{MPC_ROOT}) {
     $MWC = "$ENV{MPC_ROOT}/mwc.pl"
