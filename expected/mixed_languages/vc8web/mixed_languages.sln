@@ -7,7 +7,7 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/static_with_clone/bin/mwc.pl -include config -type vc8web mixed_languages.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type vc8web mixed_languages.mwc
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = ".", ".", "{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}"
 	ProjectSection(WebsiteProperties) = preProject
 		Debug.AspNetCompiler.VirtualPath = "/mixed_languages"
@@ -47,28 +47,32 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Debug|Win32.ActiveCfg = Debug|Any CPU
 		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Debug|Win32.Build.0 = Debug|Any CPU
 		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Debug|x64.Build.0 = Debug|Any CPU
+		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Release|Win32.ActiveCfg = Release|Any CPU
 		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Release|Win32.Build.0 = Release|Any CPU
 		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Release|x64.ActiveCfg = Release|Any CPU
 		{702BFD4D-FECA-1BAD-702B-E2F0C18255B5}.Release|x64.Build.0 = Release|Any CPU
+		{7904709F-FECA-1BAD-4657-8A65C1753E10}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{7904709F-FECA-1BAD-4657-8A65C1753E10}.Debug|Win32.ActiveCfg = Debug|Win32
 		{7904709F-FECA-1BAD-4657-8A65C1753E10}.Debug|Win32.Build.0 = Debug|Win32
 		{7904709F-FECA-1BAD-4657-8A65C1753E10}.Debug|x64.ActiveCfg = Debug|x64
 		{7904709F-FECA-1BAD-4657-8A65C1753E10}.Debug|x64.Build.0 = Debug|x64
+		{7904709F-FECA-1BAD-4657-8A65C1753E10}.Release|Any CPU.ActiveCfg = Debug|Win32
 		{7904709F-FECA-1BAD-4657-8A65C1753E10}.Release|Win32.ActiveCfg = Release|Win32
 		{7904709F-FECA-1BAD-4657-8A65C1753E10}.Release|Win32.Build.0 = Release|Win32
 		{7904709F-FECA-1BAD-4657-8A65C1753E10}.Release|x64.ActiveCfg = Release|x64
 		{7904709F-FECA-1BAD-4657-8A65C1753E10}.Release|x64.Build.0 = Release|x64
+		{19027295-FECA-1BAD-609D-8A63B7C2E34F}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{19027295-FECA-1BAD-609D-8A63B7C2E34F}.Debug|Win32.ActiveCfg = Debug|Win32
 		{19027295-FECA-1BAD-609D-8A63B7C2E34F}.Debug|Win32.Build.0 = Debug|Win32
 		{19027295-FECA-1BAD-609D-8A63B7C2E34F}.Debug|x64.ActiveCfg = Debug|x64
 		{19027295-FECA-1BAD-609D-8A63B7C2E34F}.Debug|x64.Build.0 = Debug|x64
+		{19027295-FECA-1BAD-609D-8A63B7C2E34F}.Release|Any CPU.ActiveCfg = Debug|Win32
 		{19027295-FECA-1BAD-609D-8A63B7C2E34F}.Release|Win32.ActiveCfg = Release|Win32
 		{19027295-FECA-1BAD-609D-8A63B7C2E34F}.Release|Win32.Build.0 = Release|Win32
 		{19027295-FECA-1BAD-609D-8A63B7C2E34F}.Release|x64.ActiveCfg = Release|x64
