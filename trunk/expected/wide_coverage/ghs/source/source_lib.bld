@@ -50,13 +50,13 @@ mondo/all.mondo
 	:sysincdirs=source
 	:libdirs=source/.
 	:libdirs=../lib
-./qwee.cxx
-	C++
 TheCheat.cpp
 	C++
 cre/o.le/more_names.cpp
 	C++
 names.cpp
+	C++
+qwee.cxx
 	C++
 TheCheat.h
 	include_file
@@ -68,5 +68,5 @@ names.h
 	include_file
 weer.inl
 	include_file
-./bar.txt
+bar.txt
 	documentation
