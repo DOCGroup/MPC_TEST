@@ -1,3 +1,9 @@
+Thu Jun 29 16:35:30 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * tests/wide_coverage/source/source.mpc:
+
+          Changed to use the <%equote%> instead of <%quote%>.
+
 Thu Jun 29 14:03:40 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wide_coverage/automake/source/Makefile.am:

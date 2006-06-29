@@ -2,7 +2,7 @@ project: test_base, zzip, simple {
   exename   = main_test
   after    += source_lib
   libs     += source_lib
-  macros   += "MACRO_TEST=<%quote%>a_string_with_no_spaces<%quote%>"
+  macros   += "MACRO_TEST=<%equote%>a_string_with_no_spaces<%equote%>"
   avoids   += mfc
   includes += .
   libpaths += .
