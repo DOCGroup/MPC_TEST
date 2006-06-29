@@ -1,3 +1,21 @@
+Thu Jun 29 14:03:40 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/wide_coverage/automake/source/Makefile.am:
+        * expected/wide_coverage/bmake/source/Makefile.source_lib.bmak:
+        * expected/wide_coverage/em3/source/source_lib.vcp:
+        * expected/wide_coverage/ghs/source/source_lib.bld:
+        * expected/wide_coverage/gnuace/source/GNUmakefile.source_lib:
+        * expected/wide_coverage/html/source/source_lib.html:
+        * expected/wide_coverage/make/source/Makefile.source_lib:
+        * expected/wide_coverage/nmake/source/Makefile.source_lib.mak:
+        * expected/wide_coverage/sle/source/source_lib.vpj:
+        * expected/wide_coverage/vc6/source/source_lib.dsp:
+        * expected/wide_coverage/vc7/source/source_lib.vcproj:
+        * expected/wide_coverage/vc71/source/source_lib.vcproj:
+        * expected/wide_coverage/vc8/source/source_lib.vcproj:
+
+          Updated to reflect my change from Tue Jun 27 17:33:59 UTC 2006.
+
 Thu Jun 22 12:32:18 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/mixed_languages/vc8/mixed_languages.sln:
