@@ -78,9 +78,9 @@ CPPDIR       = .;cre\o.le
 RESDIR       = .
 
 OBJFILES = \
+           "$(INTERMEDIATE)\.\qwee$(OBJ_EXT)" \
            "$(INTERMEDIATE)\cre\o.le\more_names$(OBJ_EXT)" \
            "$(INTERMEDIATE)\names$(OBJ_EXT)" \
-           "$(INTERMEDIATE)\qwee$(OBJ_EXT)" \
            "$(INTERMEDIATE)\TheCheat$(OBJ_EXT)"
 
 LFLAGS   = \
@@ -178,6 +178,10 @@ generated: $(GENERATED_DIRTY)
 .c$(OBJ_EXT):
 	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+
+"$(INTERMEDIATE)\.\qwee$(OBJ_EXT)":
+	@if not exist "$(INTERMEDIATE)\.\" mkdir "$(INTERMEDIATE)\.\"
+	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) .\qwee.cxx
 
 "$(INTERMEDIATE)\cre\o.le\more_names$(OBJ_EXT)":
 	@if not exist "$(INTERMEDIATE)\cre\o.le\" mkdir "$(INTERMEDIATE)\cre\o.le\"
