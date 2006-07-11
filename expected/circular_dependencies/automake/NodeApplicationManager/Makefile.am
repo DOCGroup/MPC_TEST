@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/MPC/config -include /home/elliottc/MPC/templates -include config -type automake
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.NodeApplicationManager.am
@@ -17,6 +17,9 @@ libNodeApplicationManager_la_CPPFLAGS = \
 
 libNodeApplicationManager_la_SOURCES = \
   foo.cpp
+
+libNodeApplicationManager_la_LDFLAGS = \
+ -L.
 
 ## Clean up template repositories, etc.
 clean-local:

@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/static_with_clone/bin/mwc.pl -include config -type automake mixed_languages.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake mixed_languages.mwc
 
 
 ## Makefile.base.am
@@ -14,6 +14,9 @@ noinst_PROGRAMS = foo
 
 foo_SOURCES = \
   foo.cpp
+
+foo_LDFLAGS = \
+  -L.
 
 ## Clean up template repositories, etc.
 clean-local:

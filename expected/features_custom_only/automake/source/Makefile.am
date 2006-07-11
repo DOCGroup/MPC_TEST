@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type automake features_custom_only.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake features_custom_only.mwc
 
 
 ## Makefile.fco.am
@@ -77,6 +77,9 @@ libfco_use_la_CPPFLAGS = \
 libfco_use_la_SOURCES = \
   zar_thatB.cpp \
   zar_thisC.cpp
+
+libfco_use_la_LDFLAGS = \
+ -L.
 
 noinst_HEADERS = \
   zar_thatB.h \

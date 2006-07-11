@@ -94,6 +94,15 @@ libsource_lib_la_SOURCES = \
   cre/o.le/more_names.cpp \
   names.cpp
 
+../lib:
+	mkdir -p ../lib
+
+libsource_lib_la_DEPENDENCIES = \
+  ../lib
+
+libsource_lib_la_LDFLAGS = \
+ -L. -L../lib
+
 noinst_HEADERS = \
   ./qwee_T.C \
   TheCheat.h \
@@ -127,6 +136,15 @@ main_test_SOURCES = \
   exe/use_names/use_names.cpp \
   exe/use_more_names/use_more_names.h \
   exe/use_names/use_names.h
+
+../lib:
+	mkdir -p ../lib
+
+main_test_DEPENDENCIES = \
+  ../lib
+
+main_test_LDFLAGS = \
+  -L. -L../lib
 
 main_test_LDADD = \
   libsource_lib.la

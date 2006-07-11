@@ -18,6 +18,15 @@ two_CPPFLAGS = \
 two_SOURCES = \
   two.cpp
 
+../../lib:
+	mkdir -p ../../lib
+
+two_DEPENDENCIES = \
+  ../../lib
+
+two_LDFLAGS = \
+  -L. -L../../lib
+
 two_LDADD = \
   $(top_builddir)/source/one/libone.la
 

@@ -13,23 +13,35 @@ Adding a new test
 -----------------
 
 1) Create a directory under the 'tests' directory containing the test.
-   a) A 'config' directory is automatically added via the -include option when
+   a) Any additional options that need to be passed to MPC should be placed
+      in a file named additional_options.txt in the root directory of the
+      test.
+   b) A 'config' directory is automatically added via the -include option when
       MPC is run.
-   b) The library path (for whatever platform you are testing on) is set to
+   c) The library path (for whatever platform you are testing on) is set to
       contain the full path up to the name of your test with a /lib
       appended if it is necessary for the particular project type.
-   c) If a workspace (.mwc file) of the same name as your test directory
+   d) If a workspace (.mwc file) of the same name as your test directory
       exists in the test directory, it will be passed to MPC.
-   d) If the test needs to run anything, a run_test.pl should be
+   e) If the test has non-default build file names (due to options passed to
+      MPC) or the test should not be built, it should be specified by
+      placing a file named build_entry.txt in the root directory of the
+      test.  The file has the format of <mpc type>: [build file name].  If
+      [build file name] is empty, the test will not be built for the
+      specified mpc type.
+   f) If any files in the test need modification after MPC genertation there
+      should be one or more files ending in .patch containing patch
+      information.  The patch utility is run with the -p0 option.
+   g) If the test needs to run anything, a run_test.pl should be
       placed in the root of the test directory.  This perl script should
       return zero when successful and non-zero when not.  A run_test.pl
       script is optional.
 
-2) With the $ACE_ROOT environment set, run run_tests.pl with the --expected
-   option to create the expected results for all tests.
+2) With the $ACE_ROOT environment varialbe set, run run_tests.pl with the
+   --expected option to create the expected results for all tests.
 
 3) Add the test and expected results to CVS.
-   NOTE: Anything added to the expected directory needs the -kb option to
-   cvs to ensure that carriage return/line feeds are preserved.
+   NOTE: Anything added to the expected directory needs the -kb option
+   passed to cvs to ensure that carriage return/line feeds are preserved.
    NOTE: GNUmakefile's may not show up as unknown files which may cause
    problems when adding a test.
