@@ -390,7 +390,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on more_names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\o.le mkdir cre\o.le&#x0D;&#x0A;..\bin\generator -o cre/o.le &quot;more_names.key&quot;&#x0D;&#x0A;echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;cre\o.le\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;cre\o.le\more_names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\o.le mkdir cre\o.le&#x0D;&#x0A;..\bin\generator -o cre/o.le &quot;more_names.key&quot; &amp;&amp; echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated. &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;cre\o.le\more_names.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;cre\o.le\more_names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe"
 						Outputs="cre\o.le\more_names.cpp;cre\o.le\more_names.h"/>
 				</FileConfiguration>
@@ -400,7 +400,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on more_names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\o.le mkdir cre\o.le&#x0D;&#x0A;..\bin\generator -o cre/o.le &quot;more_names.key&quot;&#x0D;&#x0A;echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;cre\o.le\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;cre\o.le\more_names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\o.le mkdir cre\o.le&#x0D;&#x0A;..\bin\generator -o cre/o.le &quot;more_names.key&quot; &amp;&amp; echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated. &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;cre\o.le\more_names.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;cre\o.le\more_names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe"
 						Outputs="cre\o.le\more_names.cpp;cre\o.le\more_names.h"/>
 				</FileConfiguration>
@@ -410,7 +410,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on more_names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\o.le mkdir cre\o.le&#x0D;&#x0A;..\bin\generator -o cre/o.le &quot;more_names.key&quot;&#x0D;&#x0A;echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;cre\o.le\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;cre\o.le\more_names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\o.le mkdir cre\o.le&#x0D;&#x0A;..\bin\generator -o cre/o.le &quot;more_names.key&quot; &amp;&amp; echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated. &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;cre\o.le\more_names.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;cre\o.le\more_names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe"
 						Outputs="cre\o.le\more_names.cpp;cre\o.le\more_names.h"/>
 				</FileConfiguration>
@@ -420,7 +420,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on more_names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\o.le mkdir cre\o.le&#x0D;&#x0A;..\bin\generator -o cre/o.le &quot;more_names.key&quot;&#x0D;&#x0A;echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;cre\o.le\more_names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;cre\o.le\more_names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;if not exist cre\o.le mkdir cre\o.le&#x0D;&#x0A;..\bin\generator -o cre/o.le &quot;more_names.key&quot; &amp;&amp; echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated. &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;cre\o.le\more_names.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;cre\o.le\more_names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe"
 						Outputs="cre\o.le\more_names.cpp;cre\o.le\more_names.h"/>
 				</FileConfiguration>
@@ -433,7 +433,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;..\bin\generator -n names &quot;names.key&quot;&#x0D;&#x0A;echo names.cpp and names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;..\bin\generator -n names &quot;names.key&quot; &amp;&amp; echo names.cpp and names.h have been generated. &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;names.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe;something"
 						Outputs="names.cpp;names.h"/>
 				</FileConfiguration>
@@ -443,7 +443,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;..\bin\generator -n names &quot;names.key&quot;&#x0D;&#x0A;echo names.cpp and names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;..\bin\generator -n names &quot;names.key&quot; &amp;&amp; echo names.cpp and names.h have been generated. &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;names.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe;something"
 						Outputs="names.cpp;names.h"/>
 				</FileConfiguration>
@@ -453,7 +453,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;..\bin\generator -n names &quot;names.key&quot;&#x0D;&#x0A;echo names.cpp and names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;..\bin\generator -n names &quot;names.key&quot; &amp;&amp; echo names.cpp and names.h have been generated. &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;names.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe;something"
 						Outputs="names.cpp;names.h"/>
 				</FileConfiguration>
@@ -463,7 +463,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking ..\bin\generator on names.key"
-						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;..\bin\generator -n names &quot;names.key&quot;&#x0D;&#x0A;echo names.cpp and names.h have been generated.&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;names.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;names.cpp&quot;"
+						CommandLine="PATH=%PATH%;..\lib&#x0D;&#x0A;..\bin\generator -n names &quot;names.key&quot; &amp;&amp; echo names.cpp and names.h have been generated. &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;names.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;names.cpp&quot;"
 						AdditionalDependencies="..\bin\generator.exe;something"
 						Outputs="names.cpp;names.h"/>
 				</FileConfiguration>
@@ -480,7 +480,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on TheCheat.r"
-						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;TheCheat.cpp&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="TheCheat.cpp;TheCheat.h"/>
 				</FileConfiguration>
@@ -490,7 +490,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on TheCheat.r"
-						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;TheCheat.cpp&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="TheCheat.cpp;TheCheat.h"/>
 				</FileConfiguration>
@@ -500,7 +500,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on TheCheat.r"
-						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;TheCheat.cpp&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="TheCheat.cpp;TheCheat.h"/>
 				</FileConfiguration>
@@ -510,7 +510,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on TheCheat.r"
-						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;TheCheat.cpp&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="TheCheat.cpp;TheCheat.h"/>
 				</FileConfiguration>
@@ -527,7 +527,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\mondo\mondo.pl on mondo\all.mondo"
-						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;.\qwee.cxx&quot;"
+						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
 						AdditionalDependencies="..\mondo\mondo.pl;..\mondo\modules\ReaderGen.pm"
 						Outputs=".\bar.txt;.\moop.hxx;.\qwee.cxx;.\qwee_T.C;.\weer.inl"/>
 				</FileConfiguration>
@@ -537,7 +537,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\mondo\mondo.pl on mondo\all.mondo"
-						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;.\qwee.cxx&quot;"
+						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
 						AdditionalDependencies="..\mondo\mondo.pl;..\mondo\modules\ReaderGen.pm"
 						Outputs=".\bar.txt;.\moop.hxx;.\qwee.cxx;.\qwee_T.C;.\weer.inl"/>
 				</FileConfiguration>
@@ -547,7 +547,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\mondo\mondo.pl on mondo\all.mondo"
-						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;.\qwee.cxx&quot;"
+						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
 						AdditionalDependencies="..\mondo\mondo.pl;..\mondo\modules\ReaderGen.pm"
 						Outputs=".\bar.txt;.\moop.hxx;.\qwee.cxx;.\qwee_T.C;.\weer.inl"/>
 				</FileConfiguration>
@@ -557,7 +557,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\mondo\mondo.pl on mondo\all.mondo"
-						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot;&#x0D;&#x0A;echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src&#x0D;&#x0A;type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src&#x0D;&#x0A;move /y temporary.src &quot;.\qwee.cxx&quot;"
+						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
 						AdditionalDependencies="..\mondo\mondo.pl;..\mondo\modules\ReaderGen.pm"
 						Outputs=".\bar.txt;.\moop.hxx;.\qwee.cxx;.\qwee_T.C;.\weer.inl"/>
 				</FileConfiguration>

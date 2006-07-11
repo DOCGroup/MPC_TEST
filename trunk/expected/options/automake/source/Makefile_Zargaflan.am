@@ -22,6 +22,9 @@ basic_CPPFLAGS = \
 basic_SOURCES = \
   basic.cpp
 
+basic_LDFLAGS = \
+  -L.
+
 all: __postbuild__
 
 __postbuild__:

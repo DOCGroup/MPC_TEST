@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/MPC/config -include /home/elliottc/MPC/templates -include config -type automake
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.Monitor_Monitorlib.am
@@ -18,6 +18,9 @@ libciaomonlib_la_CPPFLAGS = \
 libciaomonlib_la_SOURCES = \
   foo.cpp
 
+libciaomonlib_la_LDFLAGS = \
+ -L.
+
 ## Makefile.NodeManager_stub.am
 noinst_LTLIBRARIES += libNodeManager_stub.la
 
@@ -27,11 +30,17 @@ libNodeManager_stub_la_CPPFLAGS = \
 libNodeManager_stub_la_SOURCES = \
   bar.cpp
 
+libNodeManager_stub_la_LDFLAGS = \
+ -L.
+
 ## Makefile.NodeManager.am
 noinst_PROGRAMS = one
 
 one_SOURCES = \
   one.cpp
+
+one_LDFLAGS = \
+  -L.
 
 ## Makefile.lib.am
 noinst_LTLIBRARIES += libNodeManager.la
@@ -41,6 +50,9 @@ libNodeManager_la_CPPFLAGS = \
 
 libNodeManager_la_SOURCES = \
   two.cpp
+
+libNodeManager_la_LDFLAGS = \
+ -L.
 
 ## Clean up template repositories, etc.
 clean-local:

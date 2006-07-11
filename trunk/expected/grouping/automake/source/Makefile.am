@@ -35,6 +35,9 @@ A_SOURCES = \
   other.inl \
   zzz.inl
 
+A_LDFLAGS = \
+  -L.
+
 ## Makefile.grouping_B.am
 
 BUILT_SOURCES += \
@@ -61,6 +64,9 @@ B_SOURCES = \
   other.inl \
   zzz.inl
 
+B_LDFLAGS = \
+  -L.
+
 ## Makefile.grouping_C.am
 
 BUILT_SOURCES += \
@@ -85,6 +91,9 @@ C_SOURCES = \
   other.cpp \
   clown.h \
   other.inl
+
+C_LDFLAGS = \
+  -L.
 
 ## Makefile.grouping_D.am
 
@@ -111,6 +120,9 @@ D_SOURCES = \
   clown.h \
   other.inl
 
+D_LDFLAGS = \
+  -L.
+
 ## Makefile.grouping_E.am
 
 BUILT_SOURCES += \
@@ -136,6 +148,9 @@ E_SOURCES = \
   clown.h \
   other.inl
 
+E_LDFLAGS = \
+  -L.
+
 ## Makefile.grouping_F.am
 
 BUILT_SOURCES += \
@@ -160,6 +175,9 @@ F_SOURCES = \
   other.cpp \
   clown.h \
   other.inl
+
+F_LDFLAGS = \
+  -L.
 
 ## Makefile.grouping_G.am
 
@@ -187,6 +205,9 @@ G_SOURCES = \
   clown.h \
   other.inl \
   zzz.inl
+
+G_LDFLAGS = \
+  -L.
 
 ## Clean up template repositories, etc.
 clean-local:

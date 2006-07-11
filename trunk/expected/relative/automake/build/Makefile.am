@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type automake
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.build_exe.am
@@ -19,6 +19,9 @@ other_SOURCES = \
   ../src/foo.cpp \
   bar.cpp \
   other.cpp
+
+other_LDFLAGS = \
+  -L.
 
 EXTRA_DIST = \
   ../src/bar.rc
@@ -33,6 +36,9 @@ libbuild_lib_la_CPPFLAGS = \
 libbuild_lib_la_SOURCES = \
   ../src/foo.cpp \
   bar.cpp
+
+libbuild_lib_la_LDFLAGS = \
+ -L.
 
 EXTRA_DIST += \
   ../src/bar.rc

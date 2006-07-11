@@ -587,7 +587,7 @@ sub apply_patches {
         if (-r "$path/$real") {
           my($orig) = getcwd();
           chdir($path);
-          system("$patch " . ($reverse ? '-R ' : '') . "< $file");
+          system("$patch -p0 " . ($reverse ? '-R ' : '') . "< $file");
           chdir($orig);
         }
       }

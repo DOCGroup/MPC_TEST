@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/static_with_clone/bin/mwc.pl -include config -type automake mixed_languages.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake mixed_languages.mwc
 
 
 ## Makefile.basic.am
@@ -20,7 +20,7 @@ libbasic_la_SOURCES = \
   foo.cpp
 
 libbasic_la_LDFLAGS = \
- -version-number 5:3:15
+ -version-number 5:3:15 -L.
 
 noinst_HEADERS = \
   bar.h \

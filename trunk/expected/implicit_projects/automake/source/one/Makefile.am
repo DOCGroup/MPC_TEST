@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/taoadmin/1.4a/ACE_wrappers/build/gcc3.4.2_d1o0/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type automake implicit_projects.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake implicit_projects.mwc
 
 
 ## Makefile.one.am
@@ -18,6 +18,15 @@ libone_la_CPPFLAGS = \
 
 libone_la_SOURCES = \
   foo.cpp
+
+../../lib:
+	mkdir -p ../../lib
+
+libone_la_DEPENDENCIES = \
+  ../../lib
+
+libone_la_LDFLAGS = \
+ -L. -L../../lib
 
 noinst_HEADERS = \
   foo.h

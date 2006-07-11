@@ -1,3 +1,38 @@
+Tue Jul 11 12:33:39 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * README:
+
+          Updated the documentation to make it easier to add new tests.
+
+        * run_tests.pl:
+
+          When running patch, pass the -p0 option.
+
+        * expected/buildflags/automake/source/Makefile.am:
+        * expected/circular_dependencies/automake/DomainApplicationManager/Makefile.am:
+        * expected/circular_dependencies/automake/NodeApplication/Makefile.am:
+        * expected/circular_dependencies/automake/NodeApplicationManager/Makefile.am:
+        * expected/circular_dependencies/automake/NodeManager/Makefile.am:
+        * expected/circular_dependencies/automake/TargetManager/Makefile.am:
+        * expected/conditional_specific_verbatim_wildcards/automake/source/Makefile.am:
+        * expected/exclude/automake/one/three/Makefile.am:
+        * expected/exclude/automake/two/Makefile.am:
+        * expected/features_custom_only/automake/source/Makefile.am:
+        * expected/grouping/automake/source/Makefile.am:
+        * expected/implicit_projects/automake/source/one/Makefile.am:
+        * expected/implicit_projects/automake/source/two/Makefile.am:
+        * expected/mixed_languages/automake/base/Makefile.am:
+        * expected/mixed_languages/automake/basic/Makefile.am:
+        * expected/options/automake/source/Makefile_Zargaflan.am:
+        * expected/relative/automake/build/Makefile.am:
+        * expected/wide_coverage/automake/generator/Makefile.am:
+        * expected/wide_coverage/automake/source/Makefile.am:
+        * expected/wide_coverage/vc7/source/source_lib.vcproj:
+        * expected/wide_coverage/vc71/source/source_lib.vcproj:
+        * expected/wide_coverage/vc8/source/source_lib.vcproj:
+
+          Updated to reflect my change from Tue Jul 11 11:42:25 UTC 2006.
+
 Fri Jun 30 15:35:24 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wide_coverage/automake/source/Makefile.am:
