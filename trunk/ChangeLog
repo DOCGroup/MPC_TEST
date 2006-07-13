@@ -1,3 +1,22 @@
+Thu Jul 13 16:43:50 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/wide_coverage/bmake/generator/Makefile.generator.bmak:
+
+          Updated to reflect my change from Thu Jul 13 16:29:33 UTC 2006.
+
+        * expected/windows_style/*:
+        * tests/windows_style/arch.cpp:
+        * tests/windows_style/bar.h:
+        * tests/windows_style/basic_export.h:
+        * tests/windows_style/config/base.mpb:
+        * tests/windows_style/foo.cpp:
+        * tests/windows_style/sub/sub.mpc:
+        * tests/windows_style/sub/sub.cpp:
+        * tests/windows_style/support_lib.mpc:
+
+          Added a new test to exercise the 'windows_style' template
+          variable.
+
 Tue Jul 11 12:33:39 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * README:
