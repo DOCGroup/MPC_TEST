@@ -1,0 +1,11 @@
+#!build
+default:
+	program
+	:outputname=sub/sub
+	:optimizestrategy=speed
+	:sysincdirs=sub/..
+	:libdirs=sub/.
+	:libdirs=../lib
+	:libraries=-lsupport_lib
+sub.cpp
+	C++

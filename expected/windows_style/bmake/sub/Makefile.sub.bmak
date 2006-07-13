@@ -12,16 +12,16 @@ ILIBMODIFIER = d
 OLIBMODIFIER = 
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
-EXEOUTPUTDIR = ..\bin\\
+EXEOUTPUTDIR = Debug\\
 !else
 !ifdef RELEASE
-OCFLAGS      =  -DNDEBUG
+OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
 ILIBMODIFIER = 
 OLIBMODIFIER = 
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
-EXEOUTPUTDIR = ..\bin\\
+EXEOUTPUTDIR = Release\\
 !else
 !error You must define one of these valid configurations: Debug Release
 !endif
@@ -74,13 +74,13 @@ WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
 CCFLAGS      = -q -tWR -tWD
 !endif
 
-INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)generator
-NAME         = generator$(EXEMODIFIER)
+INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)sub
+NAME         = sub$(EXEMODIFIER)
 CPPDIR       = .
 RESDIR       = .
 
 OBJFILES = \
-           "$(INTERMEDIATE)\generator$(OBJ_EXT)"
+           "$(INTERMEDIATE)\sub$(OBJ_EXT)"
 
 LFLAGS   = \
            -v \
@@ -88,21 +88,19 @@ LFLAGS   = \
            -L"..\lib" -j"..\lib"
 
 LIBFILES = \
-           generator_be$(ILIBMODIFIER)$(LIB_EXT) \
+           support_lib$(ILIBMODIFIER)$(LIB_EXT) \
            $(CG_LIB) import32$(LIB_EXT) cw32mti.lib ws2_32.lib
-
-RESOURCE = \
-           $(INTERMEDIATE)\generator.res
 
 CFLAGS = \
          -a8 \
          -DWIN32 \
          -D_WINDOWS \
+         -I".." \
          $(PCH_CFLAGS) \
          $(VCL_CFLAGS)
 
 OUTPUTDIR = $(EXEOUTPUTDIR)
-all: __prebuild__ $(OUTPUTDIR)$(NAME)$(EXE_EXT)
+all: $(OUTPUTDIR)$(NAME)$(EXE_EXT)
 
 $(OUTPUTDIR)$(NAME)$(EXE_EXT): $(OBJFILES) $(RESOURCE)
 	@if not exist "$(OUTPUTDIR)" mkdir "$(OUTPUTDIR)"
@@ -140,20 +138,10 @@ generated: $(GENERATED_DIRTY)
 	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
-.path.res = $(INTERMEDIATE)
-
-.path.rc = $(RESDIR)
-.rc.res:
-	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(RC) $(RC_FLAGS) -fo$@ $<
-
 clean:
 	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
 	-if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)"
         -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
-
-__prebuild__:
-	@echo Building generator
 

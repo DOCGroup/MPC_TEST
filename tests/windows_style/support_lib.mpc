@@ -1,0 +1,9 @@
+project: base {
+  dynamicflags += BASIC_BUILD_DLL
+  staticflags  += BASIC_AS_STATIC_LIBS
+  libout        = lib
+
+  specific(automake) {
+    Install_this_target = 1
+  }
+}
