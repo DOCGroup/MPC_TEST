@@ -1,0 +1,88 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I"$(QTDIR)/include" -DQT_THREAD_SUPPORT
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"." -L"$(QTDIR)/lib"
+CCC           = $(CXX)
+MAKEFILE      = Makefile.qt_uic_moc
+DEPENDENCIES  = .depend.$(MAKEFILE)
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)main$(EXESUFFIX)$(EXEEXT)
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+EXEEXT        = 
+LIBPREFIX     = lib
+LIBSUFFIX     = 
+GENFLAGS      = -O
+LDLIBS        = -l"qt-mt$(QT_VERSION)" -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
+OBJS          = demo$(OBJEXT) demo_moc$(OBJEXT) main$(OBJEXT)
+SRC           = demo.cpp demo_moc.cpp main.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = 
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(BIN)
+
+$(BTARGETDIR):
+	@$(MKDIR) "$@"
+
+$(BIN): $(BTARGETDIR) $(OBJS)
+	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
+
+GENERATED_DIRTY    = demo.h demo.cpp demo_moc.cpp
+demo.h: demo.ui
+	$(QTDIR)/bin/uic  -o "$@" demo.ui
+
+demo.cpp: demo.ui demo.h
+	$(QTDIR)/bin/uic -impl "demo.h" -o "$@" demo.ui
+
+demo_moc.cpp: demo.h
+	$(QTDIR)/bin/moc  -o "$@" demo.h
+
+.PRECIOUS: $(GENERATED_DIRTY)
+$(OBJS): $(GENERATED_DIRTY)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+demo$(OBJEXT): demo.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) demo.cpp
+
+demo_moc$(OBJEXT): demo_moc.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) demo_moc.cpp
+
+main$(OBJEXT): main.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) main.cpp
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(BIN)
+	-$(RM) $(GENERATED_DIRTY)
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@touch $(DEPENDENCIES)
+
+depend:
+	-makedepend -Y $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

@@ -1,0 +1,12 @@
+bds:
+bmake:
+em3:
+ghs:
+gnuace: GNUmakefile qt=1
+nmake:
+sle:
+vc6:
+vc7:
+vc71:
+vc8:
+vc8web:
