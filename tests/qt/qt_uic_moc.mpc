@@ -1,0 +1,10 @@
+project: qt {
+  MOC_Files {
+    demo.h
+  }
+  Source_Files {
+    demo_moc.cpp
+    demo.cpp
+    main.cpp
+  }
+}
