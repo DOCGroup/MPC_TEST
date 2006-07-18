@@ -36,6 +36,6 @@ project: test_base {
 
   prebuild = echo Building <%exename%>
   specific(automake) {
-    postbuild = <%cp%> <%exename%> $(TEST_ROOT)/bin
+    postbuild = <%cp%> <%exename%> <%install%>
   }
 }
