@@ -1,3 +1,10 @@
+Tue Jul 18 18:24:58 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * tests/wide_coverage/generator/generator.mpc:
+
+          Changed to use <%install%> instead of duplicating the value of
+          'install'.
+
 Tue Jul 18 14:39:04 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/windows_style/automake/sub/Makefile.am:
