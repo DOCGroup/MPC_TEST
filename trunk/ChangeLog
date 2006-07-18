@@ -1,3 +1,14 @@
+Tue Jul 18 14:39:04 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/windows_style/automake/sub/Makefile.am:
+
+          Updated to reflect my change from Tue Jul 18 14:38:01 UTC 2006.
+
+        * run_tests.pl:
+
+          Added a --quiet option to have the script print out less
+          information.
+
 Fri Jul 14 01:17:40 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/qt/*:

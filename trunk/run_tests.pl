@@ -44,6 +44,7 @@ my($diff)      = which('diff');
 my($patch)     = which('patch');
 my($passed)    = 'succeeded';
 my($failed)    = '****failed****';
+my($quiet)     = undef;
 
 # ******************************************************************
 # Subroutine Section
@@ -479,7 +480,9 @@ sub compare_output {
     closedir($fh);
   }
   else {
-    print SAVEERR "[No expected results] ";
+    if (!$quiet) {
+      print SAVEERR "[No expected results] ";
+    }
   }
 
   return $status;
@@ -843,6 +846,7 @@ my(%options) = ('expected'  => \$cr_expect,
                 'test=s'    => \@dirs,
                 'type=s'    => \@tonly,
                 'diffcmd=s' => \$diff,
+                'quiet'     => \$quiet,
                );
 my(%desc)    = ('expected' => 'Create expected results for all of the ' .
                               'tests',
@@ -854,6 +858,7 @@ my(%desc)    = ('expected' => 'Create expected results for all of the ' .
                 'output'   => 'Send output to the specified file',
                 'test'     => 'Run the specified test or tests',
                 'type'     => 'Use only the specified type or types',
+                'quiet'    => 'Only print the test name and errors',
                );
 
 my($status)  = 0;
@@ -936,7 +941,9 @@ else {
                   }
                 }
                 else {
-                  print SAVEERR "MPC generation for $type $passed.\n";
+                  if (!$quiet) {
+                    print SAVEERR "MPC generation for $type $passed.\n";
+                  }
                 }
               }
             }

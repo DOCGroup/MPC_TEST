@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/1.4a_base/p9/ACE_wrappers/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.sub.am
@@ -28,7 +28,7 @@ sub_LDFLAGS = \
   -L. -L../lib
 
 sub_LDADD = \
-  libsupport_lib.la
+  $(top_builddir)/libsupport_lib.la
 
 ## Clean up template repositories, etc.
 clean-local:
