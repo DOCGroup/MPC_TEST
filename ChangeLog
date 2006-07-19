@@ -1,3 +1,9 @@
+Wed Jul 19 15:31:09 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/mixed_languages/vc8/csharp/csharp.csproj:
+
+          Updated to reflect my change from Tue Jul 18 19:07:02 UTC 2006.
+
 Tue Jul 18 18:24:58 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * tests/wide_coverage/generator/generator.mpc:
