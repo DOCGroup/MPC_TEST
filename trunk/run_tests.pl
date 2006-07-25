@@ -456,7 +456,7 @@ sub compare_output {
       ## to do with it).  So, we are not going to compare them.  As long
       ## as everything builds correctly we won't have a problem.
       $file =~ s/\.dir$// if ($^O eq 'VMS');
-      if ($file ne 'CVS' && $file ne 'GNUmakefile') {
+      if ($file ne '.svn' && $file ne 'CVS' && $file ne 'GNUmakefile') {
         my($tf) = "$test/$file";
         my($ef) = "$expect/$file";
         if (-d $ef) {
@@ -546,7 +546,7 @@ sub move_expected {
   if (opendir($fh, $from)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
       $file =~ s/\.dir$// if ($^O eq 'VMS');
-      if ($file ne 'CVS') {
+      if ($file ne '.svn' && $file ne 'CVS') {
         my($ffull) = "$from/$file";
         my($tfull) = "$to/$file";
         if (-d $ffull) {
@@ -912,7 +912,8 @@ else {
       @tonly{@tonly} = ();
       foreach my $dir (sort(grep(!/^\.\.?$/, readdir($fh)))) {
         $dir =~ s/\.dir$// if ($^O eq 'VMS');
-        if ($dir ne 'CVS' && (!defined $dirs[0] || exists $dirs{$dir})) {
+        if ($dir ne '.svn' && $dir ne 'CVS' &&
+            (!defined $dirs[0] || exists $dirs{$dir})) {
           my($full) = "$testdir/$dir";
           if (-d $full) {
             my($amount) = $columns - 4 - length($dir);
