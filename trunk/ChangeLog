@@ -1,3 +1,11 @@
+Wed Jul 26 15:10:48 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/grouping/bmake/source/Makefile.grouping_G.bmak:
+        * expected/implicit_projects/bmake/source/one/Makefile.one.bmak:
+        * expected/implicit_projects/bmake/source/two/Makefile.two.bmak:
+
+          Set the eol-style property to be CRLF.
+
 Tue Jul 25 15:13:59 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/implicit_projects/bmake/Makefile:
@@ -11,7 +19,7 @@ Tue Jul 25 15:13:59 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
           During the conversion from CVS to SVN, the conversion script
           converted all Makefile's from CRLF to LF (which isn't right in
-          this case).                                                   
+          this case).
 
         * run_tests.pl:
 
