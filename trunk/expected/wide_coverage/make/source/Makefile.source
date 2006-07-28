@@ -5,7 +5,7 @@ CXX           = g++
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
 PICFLAGS      = -fPIC
-CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I"." -DMACRO_TEST="a_string_with_no_spaces"
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I"." -I"/this/path" -I"Z:\that\path" -I"Here" -I"There" -DMACRO_TEST="a_string_with_no_spaces"
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c

@@ -22,7 +22,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="."
+				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
 				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
@@ -74,7 +74,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
 				Culture="1033"
-				AdditionalIncludeDirectories="."/>
+				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"/>
 			<Tool
 				Name="VCWebServiceProxyGeneratorTool"/>
 			<Tool
@@ -91,7 +91,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="3"
-				AdditionalIncludeDirectories="."
+				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
 				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
@@ -142,7 +142,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
 				Culture="1033"
-				AdditionalIncludeDirectories="."/>
+				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"/>
 			<Tool
 				Name="VCWebServiceProxyGeneratorTool"/>
 			<Tool

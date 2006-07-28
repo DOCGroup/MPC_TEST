@@ -732,6 +732,19 @@ sub run_test {
     $add =~ s/\s+$//;
     close($fh);
   }
+  $fh = new FileHandle("environment.txt");
+  if (defined $fh) {
+     while(<$fh>) {
+      if ($_ =~ /(\w+)\s*=\s*(.*)$/) {
+        my($name) = $1;
+        my($val)  = $2;
+        $val =~ s/^\s+//;
+        $val =~ s/\s+$//;
+        $ENV{$name} = $val;
+      }
+    }
+    close($fh);
+  }
   my($ret) = system("$^X $MWC -include $cfg -type $type $add $mwc");
   chdir($orig);
 

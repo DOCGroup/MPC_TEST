@@ -128,6 +128,10 @@ noinst_PROGRAMS = main_test
 
 main_test_CPPFLAGS = \
   -I. \
+  -I/this/path \
+  -IZ:\that\path \
+  -IHere \
+  -IThere \
   -DMACRO_TEST="a_string_with_no_spaces"
 
 main_test_SOURCES = \

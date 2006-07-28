@@ -99,6 +99,10 @@ CFLAGS = \
          -DWIN32 \
          -D_WINDOWS \
          -I"." \
+         -I"\this\path" \
+         -I"Z:\that\path" \
+         -I"Here" \
+         -I"There" \
          $(PCH_CFLAGS) \
          $(VCL_CFLAGS)
 
