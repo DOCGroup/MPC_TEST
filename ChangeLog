@@ -1,3 +1,30 @@
+Fri Jul 28 16:04:46 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * README:
+        * run_tests.pl:
+
+          Added the ability to set environment variables before running MPC.
+
+        * expected/wide_coverage/automake/source/Makefile.am:
+        * expected/wide_coverage/bmake/source/Makefile.source.bmak:
+        * expected/wide_coverage/em3/source/source.vcp:
+        * expected/wide_coverage/ghs/default.bld:
+        * expected/wide_coverage/ghs/source/source.bld:
+        * expected/wide_coverage/gnuace/source/GNUmakefile.source:
+        * expected/wide_coverage/html/source/source.html:
+        * expected/wide_coverage/make/source/Makefile.source:
+        * expected/wide_coverage/nmake/source/Makefile.source.mak:
+        * expected/wide_coverage/sle/source/source.vpj:
+        * expected/wide_coverage/vc6/source/source.dsp:
+        * expected/wide_coverage/vc7/source/source.vcproj:
+        * expected/wide_coverage/vc71/source/source.vcproj:
+        * expected/wide_coverage/vc8/source/source.vcproj:
+        * tests/wide_coverage/environment.txt:
+        * tests/wide_coverage/source/source.mpc:
+
+          Modified this test to use 'expand' with various environment
+          variable values.
+
 Wed Jul 26 15:10:48 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/grouping/bmake/source/Makefile.grouping_G.bmak:

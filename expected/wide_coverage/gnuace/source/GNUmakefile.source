@@ -107,7 +107,7 @@ LDLIBPATH     = -L. -L../lib
 else
 LDFLAGS      += -L. -L../lib
 endif
-CPPFLAGS     += -I.
+CPPFLAGS     += -I. -I/this/path -IZ:\that\path -IHere -IThere
 CPPFLAGS     += -DMACRO_TEST="a_string_with_no_spaces"
 
 #----------------------------------------------------------------------------

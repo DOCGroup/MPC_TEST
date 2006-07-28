@@ -1,0 +1,5 @@
+EMPTY1 =
+EMPTY2 = ""
+ARRAY  = "Here" "There"
+UPATH  = /this/path
+WPATH  = Z:\that\path

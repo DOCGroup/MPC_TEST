@@ -10,7 +10,11 @@ Foolish/foolish.simple
 
 
 	:optimizestrategy=speed
-	:sysincdirs=source
+	:sysincdirs=source/.
+	:sysincdirs=/this/path
+	:sysincdirs=Z:\that\path
+	:sysincdirs=Here
+	:sysincdirs=There
 	:libdirs=source/.
 	:libdirs=../lib
 	:libraries=-lsource_lib
