@@ -501,9 +501,7 @@ sub list_files {
       if (-d $full) {
         push(@files, list_files($full));
       }
-      else {
-        push(@files, $full);
-      }
+      push(@files, $full);
     }
     closedir($fh);
   }

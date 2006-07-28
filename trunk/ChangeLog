@@ -1,3 +1,10 @@
+Fri Jul 28 16:31:48 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * run_tests.pl:
+
+          Fixed a bug where empty subdirectories under .svn would
+          accidentally be removed.
+
 Fri Jul 28 16:04:46 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * README:
