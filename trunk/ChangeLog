@@ -1,3 +1,11 @@
+Mon Jul 31 11:21:49 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * run_tests.pl:
+
+          Even in Perl on Windows, if the environment variable is
+          empty, it will not show up as a set variable during a system()
+          call.
+
 Fri Jul 28 16:31:48 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:
