@@ -738,6 +738,11 @@ sub run_test {
         my($val)  = $2;
         $val =~ s/^\s+//;
         $val =~ s/\s+$//;
+
+        ## Even in Perl on Windows, if the environment variable is
+        ## empty, it will not show up as a set variable.
+        $val = '""' if ($^O eq 'MSWin32' && $val eq '');
+
         $ENV{$name} = $val;
       }
     }
