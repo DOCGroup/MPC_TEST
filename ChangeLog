@@ -1,3 +1,59 @@
+Wed Aug  9 01:33:26 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/bmake/Makefile:
+        * expected/*/nmake/*:
+        * expected/wide_coverage/*:
+
+          Updated to reflect my changes from Wed Aug  9 01:14:54 UTC 2006.
+
+        * run_tests.pl:
+
+          Fixed another bug where a .svn related directory would be removed
+          after the test would run.
+
+        * tests/options/additional_options.txt:
+
+          Test new command line assignment changes.
+
+        * tests/wide_coverage/additional_options.txt:
+
+          Turned on a feature needed for automake.
+
+        * tests/wide_coverage/config/mondo_base.mpb:
+        * tests/wide_coverage/mondo/mondo.pl:
+        * tests/wide_coverage/source/source_lib.mpc:
+
+          Added the use of a mapped keyword at the project level scope.
+
+        * utils/nightly.sh:
+        * utils/pick_up_nightly.sh:
+
+          Make these scripts more parameterized.
+
+        * utils/nightly_vc71_bmake.bat:
+
+          Turn on quiet mode.
+
+        * expected/buildflags/automake/configure.ac:
+        * expected/circular_dependencies/automake/configure.ac:
+        * expected/conditional_specific_verbatim_wildcards/automake/configure.ac:
+        * expected/exclude/automake/configure.ac:
+        * expected/exclude/automake/one/configure.ac:
+        * expected/features_custom_only/automake/configure.ac:
+        * expected/grouping/automake/configure.ac:
+        * expected/implicit_projects/automake/configure.ac:
+        * expected/mixed_languages/automake/configure.ac:
+        * expected/options/automake/configure.ac:
+        * expected/qt/automake/configure.ac:
+        * expected/relative/automake/configure.ac:
+        * expected/wide_coverage/automake/configure.ac:
+        * expected/windows_style/automake/configure.ac:
+        * tests/qt/configure.ac.patch:
+        * tests/wide_coverage/configure.ac.patch:
+
+          Removed these files.  They can change depending on whether or not
+          $ACE_ROOT is set.
+
 Mon Jul 31 11:21:49 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:

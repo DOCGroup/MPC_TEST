@@ -321,7 +321,7 @@ InputPath="mondo\all.mondo"
 
 BuildCmds= \
 	mkdir . 2> nul \
-	perl ..\mondo\mondo.pl  $(InputPath) \
+	perl ..\mondo\mondo.pl -fake $(InputPath) \
 	echo #include "source_lib_pch.h" > temporary.src \
 	type ".\qwee.cxx" >> temporary.src \
 	move /y temporary.src ".\qwee.cxx"
@@ -351,7 +351,7 @@ InputPath="mondo\all.mondo"
 
 BuildCmds= \
 	mkdir . 2> nul \
-	perl ..\mondo\mondo.pl  $(InputPath) \
+	perl ..\mondo\mondo.pl -fake $(InputPath) \
 	echo #include "source_lib_pch.h" > temporary.src \
 	type ".\qwee.cxx" >> temporary.src \
 	move /y temporary.src ".\qwee.cxx"

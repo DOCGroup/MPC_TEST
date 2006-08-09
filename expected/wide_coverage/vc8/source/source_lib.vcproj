@@ -527,7 +527,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\mondo\mondo.pl on mondo\all.mondo"
-						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
+						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl -fake &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
 						AdditionalDependencies="..\mondo\mondo.pl;..\mondo\modules\ReaderGen.pm"
 						Outputs=".\bar.txt;.\moop.hxx;.\qwee.cxx;.\qwee_T.C;.\weer.inl"/>
 				</FileConfiguration>
@@ -537,7 +537,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\mondo\mondo.pl on mondo\all.mondo"
-						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
+						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl -fake &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
 						AdditionalDependencies="..\mondo\mondo.pl;..\mondo\modules\ReaderGen.pm"
 						Outputs=".\bar.txt;.\moop.hxx;.\qwee.cxx;.\qwee_T.C;.\weer.inl"/>
 				</FileConfiguration>
@@ -547,7 +547,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\mondo\mondo.pl on mondo\all.mondo"
-						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
+						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl -fake &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
 						AdditionalDependencies="..\mondo\mondo.pl;..\mondo\modules\ReaderGen.pm"
 						Outputs=".\bar.txt;.\moop.hxx;.\qwee.cxx;.\qwee_T.C;.\weer.inl"/>
 				</FileConfiguration>
@@ -557,7 +557,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\mondo\mondo.pl on mondo\all.mondo"
-						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl  &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
+						CommandLine="if not exist . mkdir .&#x0D;&#x0A;perl ..\mondo\mondo.pl -fake &quot;mondo\all.mondo&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;.\qwee.cxx&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;.\qwee.cxx&quot;"
 						AdditionalDependencies="..\mondo\mondo.pl;..\mondo\modules\ReaderGen.pm"
 						Outputs=".\bar.txt;.\moop.hxx;.\qwee.cxx;.\qwee_T.C;.\weer.inl"/>
 				</FileConfiguration>

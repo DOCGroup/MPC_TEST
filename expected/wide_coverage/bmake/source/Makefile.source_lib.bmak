@@ -142,7 +142,7 @@ TheCheat.cpp TheCheat.h: TheCheat.r
 
 .\bar.txt .\moop.hxx .\qwee.cxx .\qwee_T.C .\weer.inl: mondo\all.mondo
         @if not exist "." mkdir "."
-	perl ..\mondo\mondo.pl  mondo\all.mondo
+	perl ..\mondo\mondo.pl -fake mondo\all.mondo
 	@echo \#include "source_lib_pch.h" > temporary.src
 	@type .\qwee.cxx >> temporary.src
 	@move /y temporary.src .\qwee.cxx

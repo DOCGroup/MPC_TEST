@@ -8,4 +8,4 @@ set MPC_COMMANDLINE=
 set MPC_ROOT=u:\current\MPC
 cd /d %MPC_ROOT%\test
 
-run_tests.pl --output pick_me_up_vc71_bmake
+run_tests.pl --quiet --output pick_me_up_vc71_bmake

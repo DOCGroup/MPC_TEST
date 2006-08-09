@@ -62,7 +62,7 @@ TheCheat.cpp TheCheat.h: TheCheat.r ../bin/cppgen.pl
 
 ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl: mondo/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
 	@$(MKDIR) .
-	perl ../mondo/mondo.pl  mondo/all.mondo
+	perl ../mondo/mondo.pl -fake mondo/all.mondo
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) ./qwee.cxx >> temp.$$$$ && $(MV) temp.$$$$ ./qwee.cxx
 
 .PRECIOUS: $(GENERATED_DIRTY)

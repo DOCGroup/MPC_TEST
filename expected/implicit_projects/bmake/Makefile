@@ -18,46 +18,26 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: one two
 
 clean:
-	@cd source/one
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak clean
-	@cd ../../
-	@cd source/two
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak clean
-	@cd ../../
+	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak clean"
+	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak clean"
 
 generated:
-	@cd source/one
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak generated
-	@cd ../../
-	@cd source/two
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak generated
-	@cd ../../
+	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak generated"
+	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak generated"
 
 realclean:
-	@cd source/one
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak realclean
-	@cd ../../
-	@cd source/two
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak realclean
-	@cd ../../
+	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak realclean"
+	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak realclean"
 
 $(CUSTOM_TARGETS):
-	@cd source/one
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak $(CUSTOM_TARGETS)
-	@cd ../../
-	@cd source/two
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak $(CUSTOM_TARGETS)
-	@cd ../../
+	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak $(CUSTOM_TARGETS)"
+	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak $(CUSTOM_TARGETS)"
 
 one:
-	@cd source/one
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak all
-	@cd ../../
+	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak all"
 
 two: one
-	@cd source/two
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak all
-	@cd ../../
+	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak all"
 
 project_name_list:
 	@echo one

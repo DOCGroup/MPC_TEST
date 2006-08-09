@@ -49,9 +49,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_test.exe" __postbuild__
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -D_DEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
@@ -100,9 +100,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_test.exe" __postbuild__
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -DNDEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
@@ -150,9 +150,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_test.exe" __postbuild__
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -D_DEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
@@ -201,9 +201,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_test.exe" __postbuild__
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -DNDEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF

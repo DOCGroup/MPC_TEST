@@ -258,7 +258,7 @@ else
 endif
 ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl: mondo/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
 	$(MKDIR) .
-	perl ../mondo/mondo.pl  mondo/all.mondo
+	perl ../mondo/mondo.pl -fake mondo/all.mondo
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && cat ./qwee.cxx >> temp.$$$$ && mv temp.$$$$ ./qwee.cxx
 
 ifneq ($(GENERATED_DIRTY),)
