@@ -48,9 +48,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManager_stubd.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.NodeManager_stub.dep" "bar.cpp"
 !ENDIF
@@ -92,9 +92,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManager_stub.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.NodeManager_stub.dep" "bar.cpp"
 !ENDIF
@@ -135,9 +135,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManager_stubsd.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.NodeManager_stub.dep" "bar.cpp"
 !ENDIF
@@ -179,9 +179,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManager_stubs.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.NodeManager_stub.dep" "bar.cpp"
 !ENDIF

@@ -48,9 +48,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_libd.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "cre\o.le\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
@@ -107,9 +107,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "cre\o.le\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
@@ -165,9 +165,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_libsd.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "cre\o.le\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
@@ -224,9 +224,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_libs.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.source_lib.dep" ".\qwee.cxx" "cre\o.le\more_names.cpp" "names.cpp" "TheCheat.cpp" "source_lib_pch.cpp"
 !ENDIF
@@ -431,7 +431,7 @@ InputPath=mondo\all.mondo
 	<<tempfile.bat
 	@echo off
         if not exist . mkdir .
-	perl ..\mondo\mondo.pl  "$(InputPath)"
+	perl ..\mondo\mondo.pl -fake "$(InputPath)"
 	echo #include "source_lib_pch.h" > temporary.src
 	type ".\qwee.cxx" >> temporary.src
         move /y temporary.src ".\qwee.cxx"

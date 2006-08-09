@@ -48,9 +48,9 @@ ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "..\lib\generator_bed.dll"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -DGENERATOR_BE_BUILD_DLL -f "Makefile.generator_be.dep" "generator_be.cpp"
 !ENDIF
@@ -97,9 +97,9 @@ ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "..\lib\generator_be.dll"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -DGENERATOR_BE_BUILD_DLL -f "Makefile.generator_be.dep" "generator_be.cpp"
 !ENDIF
@@ -145,9 +145,9 @@ ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_besd.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -DGENERATOR_BE_AS_STATIC_LIBS -f "Makefile.generator_be.dep" "generator_be.cpp"
 !ENDIF
@@ -192,9 +192,9 @@ ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_bes.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -DGENERATOR_BE_AS_STATIC_LIBS -f "Makefile.generator_be.dep" "generator_be.cpp"
 !ENDIF

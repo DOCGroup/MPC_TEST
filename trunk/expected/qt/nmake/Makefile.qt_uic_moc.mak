@@ -49,9 +49,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"$(QTDIR)\include" -D_DEBUG -DWIN32 -D_CONSOLE -DQT_THREAD_SUPPORT -f "Makefile.qt_uic_moc.dep" "demo.cpp" "demo_moc.cpp" "main.cpp"
 !ENDIF
@@ -99,9 +99,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"$(QTDIR)\include" -DNDEBUG -DWIN32 -D_CONSOLE -DQT_THREAD_SUPPORT -f "Makefile.qt_uic_moc.dep" "demo.cpp" "demo_moc.cpp" "main.cpp"
 !ENDIF
@@ -148,9 +148,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"$(QTDIR)\include" -D_DEBUG -DWIN32 -D_CONSOLE -DQT_THREAD_SUPPORT -f "Makefile.qt_uic_moc.dep" "demo.cpp" "demo_moc.cpp" "main.cpp"
 !ENDIF
@@ -198,9 +198,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -I"$(QTDIR)\include" -DNDEBUG -DWIN32 -D_CONSOLE -DQT_THREAD_SUPPORT -f "Makefile.qt_uic_moc.dep" "demo.cpp" "demo_moc.cpp" "main.cpp"
 !ENDIF

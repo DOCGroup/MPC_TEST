@@ -39,7 +39,7 @@ mondo/all.mondo
 	:custom_processor.name=echo
 	:depends=../mondo/mondo.pl ../mondo/modules/ReaderGen.pm mondo/all.mondo
 	:preexec=cd source; mkdir -p .
-	:preexec=cd source; perl ../mondo/mondo.pl  mondo/all.mondo
+	:preexec=cd source; perl ../mondo/mondo.pl -fake mondo/all.mondo
 	:preexec=cd source; echo #include "source_lib_pch.h" > temporary.src
         :preexec=cd source; cat ./qwee.cxx >> temporary.src
         :preexec=cd source; mv -f temporary.src ./qwee.cxx

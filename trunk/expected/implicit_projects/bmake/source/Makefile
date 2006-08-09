@@ -18,46 +18,26 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: one two
 
 clean:
-	@cd one
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak clean
-	@cd ../
-	@cd two
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak clean
-	@cd ../
+	$(COMSPEC) /c "cd one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak clean"
+	$(COMSPEC) /c "cd two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak clean"
 
 generated:
-	@cd one
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak generated
-	@cd ../
-	@cd two
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak generated
-	@cd ../
+	$(COMSPEC) /c "cd one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak generated"
+	$(COMSPEC) /c "cd two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak generated"
 
 realclean:
-	@cd one
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak realclean
-	@cd ../
-	@cd two
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak realclean
-	@cd ../
+	$(COMSPEC) /c "cd one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak realclean"
+	$(COMSPEC) /c "cd two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak realclean"
 
 $(CUSTOM_TARGETS):
-	@cd one
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak $(CUSTOM_TARGETS)
-	@cd ../
-	@cd two
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak $(CUSTOM_TARGETS)
-	@cd ../
+	$(COMSPEC) /c "cd one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak $(CUSTOM_TARGETS)"
+	$(COMSPEC) /c "cd two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak $(CUSTOM_TARGETS)"
 
 one:
-	@cd one
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak all
-	@cd ../
+	$(COMSPEC) /c "cd one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak all"
 
 two: one
-	@cd two
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak all
-	@cd ../
+	$(COMSPEC) /c "cd two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak all"
 
 project_name_list:
 	@echo one

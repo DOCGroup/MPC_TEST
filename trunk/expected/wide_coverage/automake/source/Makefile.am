@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake wide_coverage.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -features rtti=1 wide_coverage.mwc
 
 
 
@@ -79,7 +79,7 @@ CLEANFILES += \
 
 ./all-stamp: $(srcdir)/mondo/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
 	mkdir -p .
-	perl ../mondo/mondo.pl  $(srcdir)/mondo/all.mondo
+	perl ../mondo/mondo.pl -fake $(srcdir)/mondo/all.mondo
 	@touch "$@"
 
 noinst_LTLIBRARIES = libsource_lib.la

@@ -521,7 +521,9 @@ sub remove_files {
       my($full) = "$dir/$file";
       if (-d $full) {
         remove_files($full, $exist);
-        rmdir($full);
+        if (!exists $$exist{$full}) {
+          rmdir($full);
+        }
       }
       else {
         if (!exists $$exist{$full}) {

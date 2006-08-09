@@ -1,14 +1,19 @@
 #!/bin/sh
 
-testdir=/home/elliottc/current/MPC/test
+if [ -z "$TESTDIR" ]; then
+  TESTDIR=$HOME/current/MPC/test
+fi
+if [ -z "$RECIPIENTS" ]; then
+  RECIPIENTS=elliott_c@ociweb.com
+fi
 
-if [ -d $testdir ]; then
-  cd $testdir
+if [ -d $TESTDIR ]; then
+  cd $TESTDIR
 
   for i in pick_me_up*; do
     title=`echo $i | sed 's/pick_me_up_//'`
     if [ -r $i ]; then
-      cat $i | mail -s "MPC Tests: $title" elliott_c@ociweb.com
+      cat $i | mail -s "MPC Tests: $title" $RECIPIENTS
       rm -f $i
     fi
   done

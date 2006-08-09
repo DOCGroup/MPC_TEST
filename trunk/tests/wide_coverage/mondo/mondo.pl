@@ -73,8 +73,12 @@ sub getExecutePath {
 # ************************************************************
 
 if (!defined $ARGV[0]) {
-  print "Usage: ", basename($0), " [input file]\n";
+  print "Usage: ", basename($0), " [-fake] [input file]\n";
   exit(1);
+}
+
+if (defined $ARGV[0] && $ARGV[0] eq '-fake') {
+  shift(@ARGV);
 }
 
 my($reader) = new ReaderGen();

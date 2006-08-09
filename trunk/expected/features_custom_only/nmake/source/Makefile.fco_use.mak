@@ -48,9 +48,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\fco_used.dll"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -DTHAT_THERE_MACRO -f "Makefile.fco_use.dep" "zar_thatB.cpp" "zar_thisC.cpp"
 !ENDIF
@@ -95,9 +95,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\fco_use.dll"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -DTHAT_THERE_MACRO -f "Makefile.fco_use.dep" "zar_thatB.cpp" "zar_thisC.cpp"
 !ENDIF
@@ -141,9 +141,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\fco_usesd.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -DTHAT_THERE_MACRO -f "Makefile.fco_use.dep" "zar_thatB.cpp" "zar_thisC.cpp"
 !ENDIF
@@ -186,9 +186,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\fco_uses.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from OCI using the following cvs command:
-	@echo cvs -d :pserver:anonymous@anoncvs.ociweb.com:/cvs co Depgen
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Depgen.
+	@echo You can check one out from the DOC Group using the following svn command:
+	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
+	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
 !ELSE
 	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -DTHAT_THERE_MACRO -f "Makefile.fco_use.dep" "zar_thatB.cpp" "zar_thisC.cpp"
 !ENDIF
