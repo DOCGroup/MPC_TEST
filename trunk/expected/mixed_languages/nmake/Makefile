@@ -20,54 +20,54 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: base-target basic-target
 
 CLEAN:
-	cd base
+	@cd base
 	$(MAKE) /f Makefile.base.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd basic
+	@cd $(MAKEDIR)
+	@cd basic
 	$(MAKE) /f Makefile.basic.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd base
+	@cd base
 	$(MAKE) /f Makefile.base.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd basic
+	@cd $(MAKEDIR)
+	@cd basic
 	$(MAKE) /f Makefile.basic.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd base
+	@cd base
 	$(MAKE) /f Makefile.base.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd basic
+	@cd $(MAKEDIR)
+	@cd basic
 	$(MAKE) /f Makefile.basic.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd base
+	@cd base
 	$(MAKE) /f Makefile.base.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd basic
+	@cd $(MAKEDIR)
+	@cd basic
 	$(MAKE) /f Makefile.basic.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd base
+	@cd base
 	$(MAKE) /f Makefile.base.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd basic
+	@cd $(MAKEDIR)
+	@cd basic
 	$(MAKE) /f Makefile.basic.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 base-target:
-	cd base
+	@cd base
 	$(MAKE) /f Makefile.base.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 basic-target: base-target
-	cd basic
+	@cd basic
 	$(MAKE) /f Makefile.basic.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo base-target

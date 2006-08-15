@@ -1,3 +1,10 @@
+Tue Aug 15 23:54:35 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/html/*.html:
+        * expected/*/nmake/Makefile:
+
+          Updated to reflect my changes from Tue Aug 15 23:50:48 UTC 2006.
+
 Wed Aug  9 01:33:26 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/bmake/Makefile:

@@ -20,154 +20,154 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: grouping_A grouping_B grouping_C grouping_D grouping_E grouping_F grouping_G
 
 CLEAN:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_A.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_B.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_C.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_D.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_E.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_F.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_G.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_A.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_B.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_C.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_D.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_E.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_F.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_G.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_A.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_B.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_C.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_D.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_E.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_F.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_G.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_A.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_B.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_C.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_D.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_E.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_F.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_G.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_A.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_B.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_C.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_D.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_E.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_F.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.grouping_G.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 grouping_A:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_A.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 grouping_B:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_B.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 grouping_C:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_C.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 grouping_D:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_D.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 grouping_E:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_E.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 grouping_F:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_F.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 grouping_G:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.grouping_G.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo grouping_A

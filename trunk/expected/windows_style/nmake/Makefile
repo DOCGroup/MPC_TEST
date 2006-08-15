@@ -21,41 +21,41 @@ ALL: support_lib sub-target
 
 CLEAN:
 	$(MAKE) /f Makefile.support_lib.mak CFG="$(CFG)" CLEAN
-	cd sub
+	@cd sub
 	$(MAKE) /f Makefile.sub.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
 	$(MAKE) /f Makefile.support_lib.mak CFG="$(CFG)" DEPEND
-	cd sub
+	@cd sub
 	$(MAKE) /f Makefile.sub.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
 	$(MAKE) /f Makefile.support_lib.mak CFG="$(CFG)" GENERATED
-	cd sub
+	@cd sub
 	$(MAKE) /f Makefile.sub.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
 	$(MAKE) /f Makefile.support_lib.mak CFG="$(CFG)" REALCLEAN
-	cd sub
+	@cd sub
 	$(MAKE) /f Makefile.sub.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
 	$(MAKE) /f Makefile.support_lib.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd sub
+	@cd sub
 	$(MAKE) /f Makefile.sub.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 support_lib:
 	$(MAKE) /f Makefile.support_lib.mak CFG="$(CFG)" ALL
 
 sub-target: support_lib
-	cd sub
+	@cd sub
 	$(MAKE) /f Makefile.sub.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo support_lib
