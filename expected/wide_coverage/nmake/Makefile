@@ -20,94 +20,94 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: generator_be generator-target source_lib source-target
 
 CLEAN:
-	cd generator
+	@cd generator
 	$(MAKE) /f Makefile.generator_be.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd generator
+	@cd $(MAKEDIR)
+	@cd generator
 	$(MAKE) /f Makefile.generator.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.source_lib.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.source.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd generator
+	@cd generator
 	$(MAKE) /f Makefile.generator_be.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd generator
+	@cd $(MAKEDIR)
+	@cd generator
 	$(MAKE) /f Makefile.generator.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.source_lib.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.source.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd generator
+	@cd generator
 	$(MAKE) /f Makefile.generator_be.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd generator
+	@cd $(MAKEDIR)
+	@cd generator
 	$(MAKE) /f Makefile.generator.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.source_lib.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.source.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd generator
+	@cd generator
 	$(MAKE) /f Makefile.generator_be.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd generator
+	@cd $(MAKEDIR)
+	@cd generator
 	$(MAKE) /f Makefile.generator.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.source_lib.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.source.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd generator
+	@cd generator
 	$(MAKE) /f Makefile.generator_be.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd generator
+	@cd $(MAKEDIR)
+	@cd generator
 	$(MAKE) /f Makefile.generator.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.source_lib.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.source.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 generator_be:
-	cd generator
+	@cd generator
 	$(MAKE) /f Makefile.generator_be.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 generator-target: generator_be
-	cd generator
+	@cd generator
 	$(MAKE) /f Makefile.generator.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 source_lib: generator-target
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.source_lib.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 source-target: source_lib
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.source.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo generator-target

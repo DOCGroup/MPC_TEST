@@ -20,34 +20,34 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: three-target
 
 CLEAN:
-	cd three
+	@cd three
 	$(MAKE) /f Makefile.three.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd three
+	@cd three
 	$(MAKE) /f Makefile.three.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd three
+	@cd three
 	$(MAKE) /f Makefile.three.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd three
+	@cd three
 	$(MAKE) /f Makefile.three.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd three
+	@cd three
 	$(MAKE) /f Makefile.three.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 three-target:
-	cd three
+	@cd three
 	$(MAKE) /f Makefile.three.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo three-target

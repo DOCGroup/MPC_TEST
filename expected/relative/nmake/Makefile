@@ -20,54 +20,54 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: build_exe build_lib
 
 CLEAN:
-	cd build
+	@cd build
 	$(MAKE) /f Makefile.build_exe.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd build
+	@cd $(MAKEDIR)
+	@cd build
 	$(MAKE) /f Makefile.build_lib.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd build
+	@cd build
 	$(MAKE) /f Makefile.build_exe.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd build
+	@cd $(MAKEDIR)
+	@cd build
 	$(MAKE) /f Makefile.build_lib.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd build
+	@cd build
 	$(MAKE) /f Makefile.build_exe.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd build
+	@cd $(MAKEDIR)
+	@cd build
 	$(MAKE) /f Makefile.build_lib.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd build
+	@cd build
 	$(MAKE) /f Makefile.build_exe.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd build
+	@cd $(MAKEDIR)
+	@cd build
 	$(MAKE) /f Makefile.build_lib.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd build
+	@cd build
 	$(MAKE) /f Makefile.build_exe.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd build
+	@cd $(MAKEDIR)
+	@cd build
 	$(MAKE) /f Makefile.build_lib.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 build_exe:
-	cd build
+	@cd build
 	$(MAKE) /f Makefile.build_exe.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 build_lib:
-	cd build
+	@cd build
 	$(MAKE) /f Makefile.build_lib.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo build_exe

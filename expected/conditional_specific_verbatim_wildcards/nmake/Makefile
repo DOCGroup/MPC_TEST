@@ -20,114 +20,114 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: csvw_A csvw_B csvw_C csvw_D csvw_E
 
 CLEAN:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.csvw_A.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_B.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_C.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_D.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_E.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.csvw_A.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_B.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_C.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_D.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_E.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.csvw_A.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_B.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_C.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_D.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_E.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.csvw_A.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_B.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_C.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_D.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_E.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.csvw_A.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_B.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_C.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_D.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.csvw_E.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 csvw_A:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.csvw_A.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 csvw_B:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.csvw_B.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 csvw_C:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.csvw_C.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 csvw_D:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.csvw_D.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 csvw_E:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.csvw_E.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo csvw_A

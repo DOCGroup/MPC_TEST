@@ -20,54 +20,54 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: one two
 
 CLEAN:
-	cd source/one
+	@cd source/one
 	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source/two
+	@cd $(MAKEDIR)
+	@cd source/two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd source/one
+	@cd source/one
 	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source/two
+	@cd $(MAKEDIR)
+	@cd source/two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd source/one
+	@cd source/one
 	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source/two
+	@cd $(MAKEDIR)
+	@cd source/two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd source/one
+	@cd source/one
 	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source/two
+	@cd $(MAKEDIR)
+	@cd source/two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd source/one
+	@cd source/one
 	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source/two
+	@cd $(MAKEDIR)
+	@cd source/two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 one:
-	cd source/one
+	@cd source/one
 	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 two: one
-	cd source/two
+	@cd source/two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo one

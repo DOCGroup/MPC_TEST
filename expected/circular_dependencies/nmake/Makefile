@@ -20,254 +20,254 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: NodeManager_stub DomainApplicationManager-target NodeApplication-target RTNA_Configurator NodeApplicationManager-target Monitor_Monitorlib CIAO_TargetManager_stub NodeManager-target lib CIAO_TargetManager_svnt CIAO_TargetManager_exec TMClient
 
 CLEAN:
-	cd NodeManager
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager_stub.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd DomainApplicationManager
+	@cd $(MAKEDIR)
+	@cd DomainApplicationManager
 	$(MAKE) /f Makefile.DomainApplicationManager.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd NodeApplication
+	@cd $(MAKEDIR)
+	@cd NodeApplication
 	$(MAKE) /f Makefile.NodeApplication.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd NodeApplication
+	@cd $(MAKEDIR)
+	@cd NodeApplication
 	$(MAKE) /f Makefile.RTNA_Configurator.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd NodeApplicationManager
+	@cd $(MAKEDIR)
+	@cd NodeApplicationManager
 	$(MAKE) /f Makefile.NodeApplicationManager.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.Monitor_Monitorlib.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_stub.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.lib.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_svnt.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_exec.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.TMClient.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd NodeManager
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager_stub.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd DomainApplicationManager
+	@cd $(MAKEDIR)
+	@cd DomainApplicationManager
 	$(MAKE) /f Makefile.DomainApplicationManager.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd NodeApplication
+	@cd $(MAKEDIR)
+	@cd NodeApplication
 	$(MAKE) /f Makefile.NodeApplication.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd NodeApplication
+	@cd $(MAKEDIR)
+	@cd NodeApplication
 	$(MAKE) /f Makefile.RTNA_Configurator.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd NodeApplicationManager
+	@cd $(MAKEDIR)
+	@cd NodeApplicationManager
 	$(MAKE) /f Makefile.NodeApplicationManager.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.Monitor_Monitorlib.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_stub.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.lib.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_svnt.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_exec.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.TMClient.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd NodeManager
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager_stub.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd DomainApplicationManager
+	@cd $(MAKEDIR)
+	@cd DomainApplicationManager
 	$(MAKE) /f Makefile.DomainApplicationManager.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd NodeApplication
+	@cd $(MAKEDIR)
+	@cd NodeApplication
 	$(MAKE) /f Makefile.NodeApplication.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd NodeApplication
+	@cd $(MAKEDIR)
+	@cd NodeApplication
 	$(MAKE) /f Makefile.RTNA_Configurator.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd NodeApplicationManager
+	@cd $(MAKEDIR)
+	@cd NodeApplicationManager
 	$(MAKE) /f Makefile.NodeApplicationManager.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.Monitor_Monitorlib.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_stub.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.lib.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_svnt.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_exec.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.TMClient.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd NodeManager
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager_stub.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd DomainApplicationManager
+	@cd $(MAKEDIR)
+	@cd DomainApplicationManager
 	$(MAKE) /f Makefile.DomainApplicationManager.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd NodeApplication
+	@cd $(MAKEDIR)
+	@cd NodeApplication
 	$(MAKE) /f Makefile.NodeApplication.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd NodeApplication
+	@cd $(MAKEDIR)
+	@cd NodeApplication
 	$(MAKE) /f Makefile.RTNA_Configurator.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd NodeApplicationManager
+	@cd $(MAKEDIR)
+	@cd NodeApplicationManager
 	$(MAKE) /f Makefile.NodeApplicationManager.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.Monitor_Monitorlib.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_stub.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.lib.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_svnt.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_exec.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.TMClient.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd NodeManager
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager_stub.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd DomainApplicationManager
+	@cd $(MAKEDIR)
+	@cd DomainApplicationManager
 	$(MAKE) /f Makefile.DomainApplicationManager.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd NodeApplication
+	@cd $(MAKEDIR)
+	@cd NodeApplication
 	$(MAKE) /f Makefile.NodeApplication.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd NodeApplication
+	@cd $(MAKEDIR)
+	@cd NodeApplication
 	$(MAKE) /f Makefile.RTNA_Configurator.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd NodeApplicationManager
+	@cd $(MAKEDIR)
+	@cd NodeApplicationManager
 	$(MAKE) /f Makefile.NodeApplicationManager.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.Monitor_Monitorlib.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_stub.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd NodeManager
+	@cd $(MAKEDIR)
+	@cd NodeManager
 	$(MAKE) /f Makefile.lib.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_svnt.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_exec.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd TargetManager
+	@cd $(MAKEDIR)
+	@cd TargetManager
 	$(MAKE) /f Makefile.TMClient.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 NodeManager_stub:
-	cd NodeManager
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager_stub.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DomainApplicationManager-target: NodeManager_stub
-	cd DomainApplicationManager
+	@cd DomainApplicationManager
 	$(MAKE) /f Makefile.DomainApplicationManager.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 NodeApplication-target:
-	cd NodeApplication
+	@cd NodeApplication
 	$(MAKE) /f Makefile.NodeApplication.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 RTNA_Configurator:
-	cd NodeApplication
+	@cd NodeApplication
 	$(MAKE) /f Makefile.RTNA_Configurator.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 NodeApplicationManager-target:
-	cd NodeApplicationManager
+	@cd NodeApplicationManager
 	$(MAKE) /f Makefile.NodeApplicationManager.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 Monitor_Monitorlib:
-	cd NodeManager
+	@cd NodeManager
 	$(MAKE) /f Makefile.Monitor_Monitorlib.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 CIAO_TargetManager_stub:
-	cd TargetManager
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_stub.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 NodeManager-target: NodeManager_stub NodeApplicationManager-target CIAO_TargetManager_stub
-	cd NodeManager
+	@cd NodeManager
 	$(MAKE) /f Makefile.NodeManager.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 lib: NodeManager_stub NodeApplicationManager-target CIAO_TargetManager_stub
-	cd NodeManager
+	@cd NodeManager
 	$(MAKE) /f Makefile.lib.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 CIAO_TargetManager_svnt: CIAO_TargetManager_stub
-	cd TargetManager
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_svnt.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 CIAO_TargetManager_exec: DomainApplicationManager-target CIAO_TargetManager_svnt
-	cd TargetManager
+	@cd TargetManager
 	$(MAKE) /f Makefile.CIAO_TargetManager_exec.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 TMClient: CIAO_TargetManager_stub
-	cd TargetManager
+	@cd TargetManager
 	$(MAKE) /f Makefile.TMClient.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo DomainApplicationManager-target

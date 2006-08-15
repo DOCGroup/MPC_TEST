@@ -20,54 +20,54 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: bfs_exe bfs_lib
 
 CLEAN:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.bfs_exe.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.bfs_lib.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.bfs_exe.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.bfs_lib.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.bfs_exe.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.bfs_lib.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.bfs_exe.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.bfs_lib.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.bfs_exe.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.bfs_lib.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 bfs_exe:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.bfs_exe.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 bfs_lib:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.bfs_lib.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo bfs_exe

@@ -20,34 +20,34 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: two-target
 
 CLEAN:
-	cd two
+	@cd two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd two
+	@cd two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd two
+	@cd two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd two
+	@cd two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd two
+	@cd two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 two-target:
-	cd two
+	@cd two
 	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo two-target

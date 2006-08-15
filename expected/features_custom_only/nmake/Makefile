@@ -20,54 +20,54 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 ALL: fco fco_use
 
 CLEAN:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" CLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 DEPEND:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" DEPEND
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 GENERATED:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" GENERATED
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 REALCLEAN:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" REALCLEAN
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 $(CUSTOM_TARGETS):
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
-	cd source
+	@cd $(MAKEDIR)
+	@cd source
 	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 fco:
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 fco_use: fco
-	cd source
+	@cd source
 	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" ALL
-	cd $(MAKEDIR)
+	@cd $(MAKEDIR)
 
 project_name_list:
 	@echo fco
