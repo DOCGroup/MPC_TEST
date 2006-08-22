@@ -69,7 +69,8 @@
 				Name="VCPreBuildEventTool"
 			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
@@ -137,7 +138,8 @@
 				Name="VCPreBuildEventTool"
 			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"

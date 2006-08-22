@@ -556,9 +556,11 @@ sub move_expected {
           if (!exists $$exist{$ffull}) {
             mkpath(dirname($tfull));
 
+            ## configure.ac is not something that gets compared.
             ## See the comment about GNUmakefile in compare_output().
-            if (!-r $tfull ||
-                ($file ne 'GNUmakefile' && compare($ffull, $tfull) != 0)) {
+            if ($file ne 'configure.ac' &&
+                (!-r $tfull ||
+                 ($file ne 'GNUmakefile' && compare($ffull, $tfull) != 0))) {
               move($ffull, $tfull);
             }
             else {
