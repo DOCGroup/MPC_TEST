@@ -1,3 +1,16 @@
+Tue Aug 22 11:35:16 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/vc7/*.vcproj:
+        * expected/*/vc71/*.vcproj:
+
+          Updated to reflect Johnny Willemsen's change from Sat Aug 19
+          17:50:12 UTC 2006.
+
+        * run_tests.pl:
+
+          Don't move configure.ac when generating the expected results.
+          This file isn't currently being compared.
+
 Tue Aug 15 23:54:35 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/html/*.html:

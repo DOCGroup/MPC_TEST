@@ -68,7 +68,8 @@
 				Name="VCPreBuildEventTool"
 			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG;THAT_THERE_MACRO"
@@ -135,7 +136,8 @@
 				Name="VCPreBuildEventTool"
 			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG;THAT_THERE_MACRO"
