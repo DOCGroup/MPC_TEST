@@ -22,10 +22,9 @@ NUL           = /dev/null
 MKDIR         = mkdir -p
 EXEEXT        = 
 LIBPREFIX     = lib
-LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = source_lib_pch$(OBJEXT) ./qwee$(OBJEXT) TheCheat$(OBJEXT) cre/o.le/more_names$(OBJEXT) names$(OBJEXT)
+OBJS          = .obj/source_lib_pch$(OBJEXT) .obj/./qwee$(OBJEXT) .obj/TheCheat$(OBJEXT) .obj/cre/o.le/more_names$(OBJEXT) .obj/names$(OBJEXT)
 AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)source_lib$(LIBSUFFIX)$(AREXT)
 SRC           = source_lib_pch.cpp ./qwee.cxx TheCheat.cpp cre/o.le/more_names.cpp names.cpp
@@ -71,29 +70,35 @@ $(OBJS): $(GENERATED_DIRTY)
 generated: $(GENERATED_DIRTY)
 	@-:
 
-source_lib_pch$(OBJEXT): source_lib_pch.cpp
-	$(COMPILE.cc) -o source_lib_pch.h.gch $(EXPORTFLAGS) source_lib_pch.cpp
-	@$(CP) source_lib_pch.h.gch source_lib_pch$(OBJEXT)
+.obj/source_lib_pch$(OBJEXT): source_lib_pch.cpp
+	@$(MKDIR) .obj/.
+	$(COMPILE.cc) -o .obj/source_lib_pch.h.gch $(EXPORTFLAGS) source_lib_pch.cpp
+	@$(CP) .obj/source_lib_pch.h.gch .obj/source_lib_pch$(OBJEXT)
 
-./qwee$(OBJEXT): ./qwee.cxx
+.obj/./qwee$(OBJEXT): ./qwee.cxx
+	@$(MKDIR) .obj/.
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ./qwee.cxx
 
-TheCheat$(OBJEXT): TheCheat.cpp
+.obj/TheCheat$(OBJEXT): TheCheat.cpp
+	@$(MKDIR) .obj/.
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) TheCheat.cpp
 
-cre/o.le/more_names$(OBJEXT): cre/o.le/more_names.cpp
+.obj/cre/o.le/more_names$(OBJEXT): cre/o.le/more_names.cpp
+	@$(MKDIR) .obj/cre/o.le
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) cre/o.le/more_names.cpp
 
-names$(OBJEXT): names.cpp
+.obj/names$(OBJEXT): names.cpp
+	@$(MKDIR) .obj/.
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) names.cpp
 
 clean:
 	-$(RM) $(OBJS)
-	-$(RM) source_lib_pch.h.gch
+	-$(RM) .obj/source_lib_pch.h.gch
 
 realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
 	-$(RM) $(GENERATED_DIRTY)
+	-$(RM) .obj/
 
 #----------------------------------------------------------------------------
 #       Dependencies

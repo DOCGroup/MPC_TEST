@@ -8,16 +8,14 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Static_Debug\\
-ILIBMODIFIER = d
-OLIBMODIFIER = d
+LIBMODIFIER  = 
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Static_Release\\
-ILIBMODIFIER = 
-OLIBMODIFIER = 
+LIBMODIFIER  = 
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
@@ -73,7 +71,7 @@ CCFLAGS      = -q
 !endif
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)source_lib
-NAME         = source_lib$(OLIBMODIFIER)
+NAME         = source_lib$(LIBMODIFIER)
 CPPDIR       = .;cre\o.le
 RESDIR       = .
 

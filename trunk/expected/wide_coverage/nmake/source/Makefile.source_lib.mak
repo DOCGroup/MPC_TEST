@@ -43,7 +43,7 @@ GENERATED_DIRTY = "cre\o.le\more_names.cpp" "cre\o.le\more_names.h" "names.cpp" 
 OUTDIR=..\lib
 INTDIR=Static_Debug\source_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_libd.lib"
+ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -56,10 +56,10 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\source_libd.lib"
-        -@del /f/q "$(OUTDIR)\source_libd.exp"
-        -@del /f/q "$(OUTDIR)\source_libd.ilk"
-	-@del /f/q "..\lib\source_libd.pdb"
+        -@del /f/q "$(OUTDIR)\source_lib.lib"
+        -@del /f/q "$(OUTDIR)\source_lib.exp"
+        -@del /f/q "$(OUTDIR)\source_lib.ilk"
+	-@del /f/q "..\lib\source_lib.pdb"
         -@del /f/q "cre\o.le\more_names.cpp"
         -@del /f/q "cre\o.le\more_names.h"
         -@del /f/q "names.cpp"
@@ -78,12 +78,12 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_libd.lib"
+LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_lib.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
 	"$(INTDIR)\.\qwee.obj" \
@@ -91,11 +91,11 @@ LINK32_OBJS= \
 	"$(INTDIR)\names.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
-"$(OUTDIR)\source_libd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\source_lib.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\source_libd.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_libd.lib.manifest" -outputresource:$@;2
+    if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -160,7 +160,7 @@ LINK32_OBJS= \
 OUTDIR=..\lib
 INTDIR=Static_Debug\source_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_libsd.lib"
+ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -173,10 +173,10 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\source_libsd.lib"
-        -@del /f/q "$(OUTDIR)\source_libsd.exp"
-        -@del /f/q "$(OUTDIR)\source_libsd.ilk"
-	-@del /f/q "..\lib\source_libsd.pdb"
+        -@del /f/q "$(OUTDIR)\source_lib.lib"
+        -@del /f/q "$(OUTDIR)\source_lib.exp"
+        -@del /f/q "$(OUTDIR)\source_lib.ilk"
+	-@del /f/q "..\lib\source_lib.pdb"
         -@del /f/q "cre\o.le\more_names.cpp"
         -@del /f/q "cre\o.le\more_names.h"
         -@del /f/q "names.cpp"
@@ -195,12 +195,12 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_libsd.lib"
+LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_lib.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
 	"$(INTDIR)\.\qwee.obj" \
@@ -208,18 +208,18 @@ LINK32_OBJS= \
 	"$(INTDIR)\names.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
-"$(OUTDIR)\source_libsd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\source_lib.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\source_libsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_libsd.lib.manifest" -outputresource:$@;2
+    if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
 OUTDIR=..\lib
 INTDIR=Static_Release\source_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_libs.lib"
+ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -232,9 +232,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\source_libs.lib"
-        -@del /f/q "$(OUTDIR)\source_libs.exp"
-        -@del /f/q "$(OUTDIR)\source_libs.ilk"
+        -@del /f/q "$(OUTDIR)\source_lib.lib"
+        -@del /f/q "$(OUTDIR)\source_lib.exp"
+        -@del /f/q "$(OUTDIR)\source_lib.ilk"
         -@del /f/q "cre\o.le\more_names.cpp"
         -@del /f/q "cre\o.le\more_names.h"
         -@del /f/q "names.cpp"
@@ -258,7 +258,7 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_libs.lib"
+LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\source_lib.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\source_lib_pch.obj" \
 	"$(INTDIR)\.\qwee.obj" \
@@ -266,11 +266,11 @@ LINK32_OBJS= \
 	"$(INTDIR)\names.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
-"$(OUTDIR)\source_libs.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\source_lib.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\source_libs.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_libs.lib.manifest" -outputresource:$@;2
+    if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -321,7 +321,7 @@ SOURCE="source_lib_pch.cpp"
 
 !IF  "$(CFG)" == "Win32 Debug"
 
-CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
 
 "$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
 	$(CPP) @<<
@@ -339,7 +339,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
-CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
 
 "$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
 	$(CPP) @<<

@@ -8,16 +8,14 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
-ILIBMODIFIER = d
-OLIBMODIFIER = d
+LIBMODIFIER  = d
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
-ILIBMODIFIER = 
-OLIBMODIFIER = 
+LIBMODIFIER  = 
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
@@ -73,7 +71,7 @@ CCFLAGS      = -q
 !endif
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)RTNA_Configurator
-NAME         = CIAO_RTNA_Configurator$(OLIBMODIFIER)
+NAME         = CIAO_RTNA_Configurator$(LIBMODIFIER)
 CPPDIR       = .
 RESDIR       = .
 

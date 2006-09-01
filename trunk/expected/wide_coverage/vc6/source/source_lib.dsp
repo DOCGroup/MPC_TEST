@@ -38,7 +38,7 @@ RSC=rc.exe
 # PROP Intermediate_Dir "Static_Debug\source_lib"
 # PROP Target_Dir ""
 LINK32=link.exe -lib
-# ADD CPP /nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"..\lib\source_libd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"Static_Debug\source_lib\source_lib_pch.pch" /FD /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"Static_Debug\source_lib\source_lib_pch.pch" /FD /c
 # SUBTRACT CPP /Fr /YX
 
 # ADD MTL /D "_DEBUG" /nologo /mktyplib203 /win32
@@ -46,7 +46,7 @@ LINK32=link.exe -lib
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"..\lib\source_lib.bsc"
 LIB32=link.exe -lib
-# ADD LIB32 /nologo /out:"..\lib\source_libd.lib"
+# ADD LIB32 /nologo /out:"..\lib\source_lib.lib"
 
 !ELSEIF  "$(CFG)" == "source_lib - Win32 Release"
 

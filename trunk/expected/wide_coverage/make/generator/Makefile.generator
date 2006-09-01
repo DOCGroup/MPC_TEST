@@ -26,7 +26,7 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -g
 LDLIBS        = -l"generator_be$(LIBSUFFIX)" -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = generator$(OBJEXT)
+OBJS          = .obj/generator$(OBJEXT)
 SRC           = generator.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 STATICFLAGS   = -DGENERATOR_BE_AS_STATIC_LIBS
@@ -47,7 +47,8 @@ $(BIN): $(BTARGETDIR) $(OBJS)
 generated: $(GENERATED_DIRTY)
 	@-:
 
-generator$(OBJEXT): generator.cpp
+.obj/generator$(OBJEXT): generator.cpp
+	@$(MKDIR) .obj/.
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) generator.cpp
 
 clean:
@@ -55,6 +56,7 @@ clean:
 
 realclean: clean
 	-$(RM) $(BIN)
+	-$(RM) .obj/
 
 __prebuild__:
 	@echo Building generator

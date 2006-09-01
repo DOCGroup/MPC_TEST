@@ -25,7 +25,7 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = generator_be$(OBJEXT)
+OBJS          = .obj/generator_be$(OBJEXT)
 AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)generator_be$(LIBSUFFIX)$(AREXT)
 SOEXT         = .so
@@ -60,7 +60,8 @@ $(LIB): $(LTARGETDIR) $(OBJS)
 generated: $(GENERATED_DIRTY)
 	@-:
 
-generator_be$(OBJEXT): generator_be.cpp
+.obj/generator_be$(OBJEXT): generator_be.cpp
+	@$(MKDIR) .obj/.
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) generator_be.cpp
 
 clean:
@@ -68,6 +69,7 @@ clean:
 
 realclean: clean
 	-$(RM) $(SHLIB).1.0.0 $(SHLIB) $(LIB)
+	-$(RM) .obj/
 
 __prebuild__:
 	@echo Building generator_be

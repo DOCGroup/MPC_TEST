@@ -74,8 +74,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="source_libd.lib"
-				OutputFile="$(OutDir)\main_test.exe"
+				AdditionalDependencies="source_lib.lib"
+				OutputFile="$(OutDir)\main_testd.exe"
 				Version="1.000"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -238,8 +238,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/machine:AMD64"
-				AdditionalDependencies="source_libd.lib"
-				OutputFile="$(OutDir)\main_test.exe"
+				AdditionalDependencies="source_lib.lib"
+				OutputFile="$(OutDir)\main_testd.exe"
 				Version="1.000"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"

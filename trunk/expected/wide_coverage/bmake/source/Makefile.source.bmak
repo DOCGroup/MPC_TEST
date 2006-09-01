@@ -8,17 +8,15 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
-ILIBMODIFIER = d
-OLIBMODIFIER = 
-EXEMODIFIER  = 
+LIBMODIFIER  = 
+EXEMODIFIER  = d
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = .\\
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
-ILIBMODIFIER = 
-OLIBMODIFIER = 
+LIBMODIFIER  = 
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = Release\\
@@ -90,7 +88,7 @@ LFLAGS   = \
            -L"..\lib" -j"..\lib"
 
 LIBFILES = \
-           source_lib$(ILIBMODIFIER)$(LIB_EXT) \
+           source_lib$(LIBMODIFIER)$(LIB_EXT) \
            $(CG_LIB) import32$(LIB_EXT) cw32mti.lib ws2_32.lib
 
 CFLAGS = \

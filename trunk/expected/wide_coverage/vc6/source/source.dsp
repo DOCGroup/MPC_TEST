@@ -45,7 +45,7 @@ RSC=rc.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 advapi32.lib user32.lib /INCREMENTAL:NO source_libd.lib /libpath:"." /libpath:"..\lib" /nologo /version:1.000 /subsystem:console /pdb:".\main_test.pdb" /debug /machine:I386 /out:".\main_test.exe"
+# ADD LINK32 advapi32.lib user32.lib /INCREMENTAL:NO source_lib.lib /libpath:"." /libpath:"..\lib" /nologo /version:1.000 /subsystem:console /pdb:".\main_testd.pdb" /debug /machine:I386 /out:".\main_testd.exe"
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
 PostBuild_Cmds=echo main_test has been built
