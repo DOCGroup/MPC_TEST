@@ -8,8 +8,7 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Static_Debug\\
-ILIBMODIFIER = sd
-OLIBMODIFIER = 
+LIBMODIFIER  = sd
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = Static_Debug\\
@@ -17,8 +16,7 @@ EXEOUTPUTDIR = Static_Debug\\
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Static_Release\\
-ILIBMODIFIER = s
-OLIBMODIFIER = 
+LIBMODIFIER  = s
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = Static_Release\\

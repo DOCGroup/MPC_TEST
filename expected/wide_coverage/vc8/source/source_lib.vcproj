@@ -76,7 +76,7 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\lib\source_libd.lib"
+				OutputFile="..\lib\source_lib.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -223,7 +223,7 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\lib\source_libd.lib"
+				OutputFile="..\lib\source_lib.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"

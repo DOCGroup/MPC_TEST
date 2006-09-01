@@ -50,12 +50,12 @@ LINK32=link.exe -lib
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /i "." /r
 CPP=clarm.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"..\lib\source_libd.pdb"  /I "." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D USING_PCH /Yu"source_lib_pch.h" /Fp"Static_Debug\source_lib\ARM\source_lib_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"..\lib\source_lib.pdb"  /I "." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D USING_PCH /Yu"source_lib_pch.h" /Fp"Static_Debug\source_lib\ARM\source_lib_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"..\lib\source_lib.bsc"
 LIB32=link.exe -lib
-# ADD LIB32 /nologo /out:"..\lib\ARM\source_libd.lib"
+# ADD LIB32 /nologo /out:"..\lib\ARM\source_lib.lib"
 
 !ELSEIF  "$(CFG)" == "source_lib - Win32 (WCE ARM) Release"
 
@@ -91,12 +91,12 @@ LINK32=link.exe -lib
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /i "." /r
 CPP=clarm.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"..\lib\source_libd.pdb" /QRxscale /I "." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4 /D USING_PCH /Yu"source_lib_pch.h" /Fp"Static_Debug\source_lib\ARM\source_lib_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"..\lib\source_lib.pdb" /QRxscale /I "." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4 /D USING_PCH /Yu"source_lib_pch.h" /Fp"Static_Debug\source_lib\ARM\source_lib_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"..\lib\source_lib.bsc"
 LIB32=link.exe -lib
-# ADD LIB32 /nologo /out:"..\lib\ARM\source_libd.lib"
+# ADD LIB32 /nologo /out:"..\lib\ARM\source_lib.lib"
 
 !ELSEIF  "$(CFG)" == "source_lib - Win32 (WCE ARMV4) Release"
 
@@ -132,12 +132,12 @@ LINK32=link.exe -lib
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /i "." /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"..\lib\source_libd.pdb"  /I "." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"source_lib_pch.h" /Fp"Static_Debug\source_lib\IX86\source_lib_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"..\lib\source_lib.pdb"  /I "." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"source_lib_pch.h" /Fp"Static_Debug\source_lib\IX86\source_lib_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"..\lib\source_lib.bsc"
 LIB32=link.exe -lib
-# ADD LIB32 /nologo /out:"..\lib\IX86\source_libd.lib"
+# ADD LIB32 /nologo /out:"..\lib\IX86\source_lib.lib"
 
 !ELSEIF  "$(CFG)" == "source_lib - Win32 (WCE emulator) Release"
 
@@ -173,12 +173,12 @@ LINK32=link.exe -lib
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /i "." /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"..\lib\source_libd.pdb"  /I "." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"source_lib_pch.h" /Fp"Static_Debug\source_lib\IX86\source_lib_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"..\lib\source_lib.pdb"  /I "." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"source_lib_pch.h" /Fp"Static_Debug\source_lib\IX86\source_lib_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"..\lib\source_lib.bsc"
 LIB32=link.exe -lib
-# ADD LIB32 /nologo /out:"..\lib\IX86\source_libd.lib"
+# ADD LIB32 /nologo /out:"..\lib\IX86\source_lib.lib"
 
 !ELSEIF  "$(CFG)" == "source_lib - Win32 (WCE x86) Release"
 

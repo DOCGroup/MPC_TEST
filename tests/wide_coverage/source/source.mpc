@@ -15,6 +15,11 @@ project: test_base, zzip, simple {
     $WPATH
   }
 
+  specific {
+    use_lib_modifier =
+    use_exe_modifier = 1
+  }
+
   exename   = $(EMPTY1)main_test
   after    += source_lib
   libs     += source_lib

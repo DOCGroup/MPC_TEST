@@ -9,6 +9,7 @@ project: generator_base, test_base, cppgen, mondo_base {
   specific {
     Release::intermediate_dir = Static_Release
     Debug::intermediate_dir = Static_Debug
+    use_lib_modifier =
   }
 
   GEN_Files {

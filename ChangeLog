@@ -1,3 +1,23 @@
+Fri Sep  1 12:46:48 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/bmake/*.bmak:
+
+          Updated to reflect my change from Thu Aug 31 23:18:57 UTC 2006.
+
+        * tests/wide_coverage/config/test_base.mpb:
+        * tests/wide_coverage/run_test.pl:
+        * tests/wide_coverage/source/source.mpc:
+        * tests/wide_coverage/source/source_lib.mpc:
+
+          Test the use_lib_modifier, use_exe_modifier and obj_dir template
+          variables.
+
+        * expected/wide_coverage/bmake/generator/Makefile.generator.bmak:
+        * expected/wide_coverage/bmake/generator/Makefile.generator_be.bmak:
+        * expected/wide_coverage/bmake/source/*:
+
+          Updated to reflect the test change above.
+
 Tue Aug 22 11:35:16 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc7/*.vcproj:

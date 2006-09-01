@@ -44,7 +44,7 @@ OUTDIR=.
 INSTALLDIR=.
 INTDIR=Debug\source\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_test.exe" __postbuild__
+ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_testd.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -57,9 +57,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-	-@del /f/q "$(INSTALLDIR)\main_test.pdb"
-        -@del /f/q "$(INSTALLDIR)\main_test.exe"
-        -@del /f/q "$(INSTALLDIR)\main_test.ilk"
+	-@del /f/q "$(INSTALLDIR)\main_testd.pdb"
+        -@del /f/q "$(INSTALLDIR)\main_testd.exe"
+        -@del /f/q "$(INSTALLDIR)\main_testd.ilk"
         -@del /f/q "Foolish/foolish.txt"
 
 "$(INTDIR)" :
@@ -74,17 +74,17 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO source_libd.lib /libpath:"." /libpath:"..\lib" /nologo /version:1.000 /subsystem:console /debug /pdb:"$(INSTALLDIR)\main_test.pdb" /machine:I386 /out:"$(INSTALLDIR)\main_test.exe"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO source_lib.lib /libpath:"." /libpath:"..\lib" /nologo /version:1.000 /subsystem:console /debug /pdb:"$(INSTALLDIR)\main_testd.pdb" /machine:I386 /out:"$(INSTALLDIR)\main_testd.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\exe\main.obj" \
 	"$(INTDIR)\exe\use_more_names\use_more_names.obj" \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
-"$(INSTALLDIR)\main_test.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main_testd.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main_test.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_test.exe.manifest" -outputresource:$@;1
+    if exist "$(INSTALLDIR)\main_testd.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_testd.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
@@ -145,7 +145,7 @@ OUTDIR=Static_Debug
 INSTALLDIR=Static_Debug
 INTDIR=Static_Debug\source\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_test.exe" __postbuild__
+ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_testsd.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -158,9 +158,9 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-	-@del /f/q "$(INSTALLDIR)\main_test.pdb"
-        -@del /f/q "$(INSTALLDIR)\main_test.exe"
-        -@del /f/q "$(INSTALLDIR)\main_test.ilk"
+	-@del /f/q "$(INSTALLDIR)\main_testsd.pdb"
+        -@del /f/q "$(INSTALLDIR)\main_testsd.exe"
+        -@del /f/q "$(INSTALLDIR)\main_testsd.ilk"
         -@del /f/q "Foolish/foolish.txt"
 
 "$(INTDIR)" :
@@ -175,17 +175,17 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO source_libsd.lib /libpath:"." /libpath:"..\lib" /nologo /version:1.000 /subsystem:console /debug /pdb:"$(INSTALLDIR)\main_test.pdb" /machine:I386 /out:"$(INSTALLDIR)\main_test.exe"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO source_lib.lib /libpath:"." /libpath:"..\lib" /nologo /version:1.000 /subsystem:console /debug /pdb:"$(INSTALLDIR)\main_testsd.pdb" /machine:I386 /out:"$(INSTALLDIR)\main_testsd.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\exe\main.obj" \
 	"$(INTDIR)\exe\use_more_names\use_more_names.obj" \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
-"$(INSTALLDIR)\main_test.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main_testsd.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main_test.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_test.exe.manifest" -outputresource:$@;1
+    if exist "$(INSTALLDIR)\main_testsd.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_testsd.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
@@ -196,7 +196,7 @@ OUTDIR=Static_Release
 INSTALLDIR=Static_Release
 INTDIR=Static_Release\source\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_test.exe" __postbuild__
+ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_tests.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -209,8 +209,8 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\main_test.exe"
-        -@del /f/q "$(INSTALLDIR)\main_test.ilk"
+        -@del /f/q "$(INSTALLDIR)\main_tests.exe"
+        -@del /f/q "$(INSTALLDIR)\main_tests.ilk"
         -@del /f/q "Foolish/foolish.txt"
 
 "$(INTDIR)" :
@@ -225,17 +225,17 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO source_libs.lib /libpath:"." /libpath:"..\lib" /nologo /version:1.000 /subsystem:console  /machine:I386 /out:"$(INSTALLDIR)\main_test.exe"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO source_lib.lib /libpath:"." /libpath:"..\lib" /nologo /version:1.000 /subsystem:console  /machine:I386 /out:"$(INSTALLDIR)\main_tests.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\exe\main.obj" \
 	"$(INTDIR)\exe\use_more_names\use_more_names.obj" \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
-"$(INSTALLDIR)\main_test.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main_tests.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main_test.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_test.exe.manifest" -outputresource:$@;1
+    if exist "$(INSTALLDIR)\main_tests.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_tests.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
