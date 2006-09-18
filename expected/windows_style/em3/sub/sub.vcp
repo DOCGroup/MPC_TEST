@@ -54,7 +54,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_libd.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Debug\ARM\sub.pdb"  /debug /machine:ARM /out:"Debug\ARM\sub.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_libd.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Debug\ARM\sub.pdb"  /debug /machine:ARM /out:"Debug\ARM\sub.exe"
 
 !ELSEIF  "$(CFG)" == "sub - Win32 (WCE ARM) Release"
 
@@ -73,7 +73,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_lib.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:ARM /out:"Release\ARM\sub.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_lib.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:ARM /out:"Release\ARM\sub.exe"
 
 !ENDIF
 !IF  "$(CFG)" == "sub - Win32 (WCE ARMV4) Debug"
@@ -93,7 +93,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_libd.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Debug\ARM\sub.pdb"  /debug /machine:ARM /out:"Debug\ARM\sub.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_libd.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Debug\ARM\sub.pdb"  /debug /machine:ARM /out:"Debug\ARM\sub.exe"
 
 !ELSEIF  "$(CFG)" == "sub - Win32 (WCE ARMV4) Release"
 
@@ -112,7 +112,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_lib.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:ARM /out:"Release\ARM\sub.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_lib.lib /libpath:".\ARM" /libpath:"..\lib\ARM" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:ARM /out:"Release\ARM\sub.exe"
 
 !ENDIF
 !IF  "$(CFG)" == "sub - Win32 (WCE emulator) Debug"
@@ -132,7 +132,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_libd.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Debug\IX86\sub.pdb"  /debug /machine:IX86 /out:"Debug\IX86\sub.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_libd.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Debug\IX86\sub.pdb"  /debug /machine:IX86 /out:"Debug\IX86\sub.exe"
 
 !ELSEIF  "$(CFG)" == "sub - Win32 (WCE emulator) Release"
 
@@ -151,7 +151,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_lib.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:IX86 /out:"Release\IX86\sub.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_lib.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:IX86 /out:"Release\IX86\sub.exe"
 
 !ENDIF
 !IF  "$(CFG)" == "sub - Win32 (WCE x86) Debug"
@@ -171,7 +171,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_libd.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Debug\IX86\sub.pdb"  /debug /machine:IX86 /out:"Debug\IX86\sub.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_libd.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:"Debug\IX86\sub.pdb"  /debug /machine:IX86 /out:"Debug\IX86\sub.exe"
 
 !ELSEIF  "$(CFG)" == "sub - Win32 (WCE x86) Release"
 
@@ -190,7 +190,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_lib.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00100000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:IX86 /out:"Release\IX86\sub.exe"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO support_lib.lib $(CEx86Corelibc) /libpath:".\IX86" /libpath:"..\lib\IX86" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine:IX86 /out:"Release\IX86\sub.exe"
 
 !ENDIF
 

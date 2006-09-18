@@ -55,7 +55,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"lib\csvw_E.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00100000"  /implib:"lib\ARM\csvw_Ed.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:"bin\ARM\csvw_Ed.pdb"  /dll /debug /machine:ARM /out:"bin\ARM\csvw_Ed.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:"lib\ARM\csvw_Ed.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:"bin\ARM\csvw_Ed.pdb"  /dll /debug /machine:ARM /out:"bin\ARM\csvw_Ed.dll"
 
 !ELSEIF  "$(CFG)" == "csvw_E - Win32 (WCE ARM) Release"
 
@@ -75,7 +75,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"lib\csvw_E.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00100000"  /implib:"lib\ARM\csvw_E.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:ARM /out:"bin\ARM\csvw_E.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:"lib\ARM\csvw_E.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:ARM /out:"bin\ARM\csvw_E.dll"
 
 !ENDIF
 !IF  "$(CFG)" == "csvw_E - Win32 (WCE ARMV4) Debug"
@@ -96,7 +96,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"lib\csvw_E.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00100000"  /implib:"lib\ARM\csvw_Ed.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:"bin\ARM\csvw_Ed.pdb"  /dll /debug /machine:ARM /out:"bin\ARM\csvw_Ed.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:"lib\ARM\csvw_Ed.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:"bin\ARM\csvw_Ed.pdb"  /dll /debug /machine:ARM /out:"bin\ARM\csvw_Ed.dll"
 
 !ELSEIF  "$(CFG)" == "csvw_E - Win32 (WCE ARMV4) Release"
 
@@ -116,7 +116,7 @@ CPP=clarm.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"lib\csvw_E.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00100000"  /implib:"lib\ARM\csvw_E.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:ARM /out:"bin\ARM\csvw_E.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:"lib\ARM\csvw_E.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:ARM /out:"bin\ARM\csvw_E.dll"
 
 !ENDIF
 !IF  "$(CFG)" == "csvw_E - Win32 (WCE emulator) Debug"
@@ -137,7 +137,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"lib\csvw_E.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /implib:"lib\IX86\csvw_Ed.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:"bin\IX86\csvw_Ed.pdb"  /dll /debug /machine:IX86 /out:"bin\IX86\csvw_Ed.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:"lib\IX86\csvw_Ed.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:"bin\IX86\csvw_Ed.pdb"  /dll /debug /machine:IX86 /out:"bin\IX86\csvw_Ed.dll"
 
 !ELSEIF  "$(CFG)" == "csvw_E - Win32 (WCE emulator) Release"
 
@@ -157,7 +157,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"lib\csvw_E.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /implib:"lib\IX86\csvw_E.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:IX86 /out:"bin\IX86\csvw_E.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:"lib\IX86\csvw_E.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:IX86 /out:"bin\IX86\csvw_E.dll"
 
 !ENDIF
 !IF  "$(CFG)" == "csvw_E - Win32 (WCE x86) Debug"
@@ -178,7 +178,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"lib\csvw_E.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /implib:"lib\IX86\csvw_Ed.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:"bin\IX86\csvw_Ed.pdb"  /dll /debug /machine:IX86 /out:"bin\IX86\csvw_Ed.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:"lib\IX86\csvw_Ed.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:"bin\IX86\csvw_Ed.pdb"  /dll /debug /machine:IX86 /out:"bin\IX86\csvw_Ed.dll"
 
 !ELSEIF  "$(CFG)" == "csvw_E - Win32 (WCE x86) Release"
 
@@ -198,7 +198,7 @@ CPP=cl.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o"lib\csvw_E.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00100000"  /implib:"lib\IX86\csvw_E.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:IX86 /out:"bin\IX86\csvw_E.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:"lib\IX86\csvw_E.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:IX86 /out:"bin\IX86\csvw_E.dll"
 
 !ENDIF
 
