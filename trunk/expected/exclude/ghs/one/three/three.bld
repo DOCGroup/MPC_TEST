@@ -1,8 +1,0 @@
-#!build
-default:
-	shared_library
-	:outputname=one/three/libthree.so
-	:optimizestrategy=speed
-	:libdirs=one/three
-foo.cpp
-	C++

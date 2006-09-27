@@ -310,7 +310,7 @@ InputPath=Foolish/foolish.simple
 "Foolish/foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
-	echo Generated from > "Foolish/foolish.txt" "$(InputPath)"
+	echo Generated from "$(InputPath)" > "Foolish/foolish.txt"
 <<
 
 

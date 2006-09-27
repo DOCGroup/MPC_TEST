@@ -1,0 +1,20 @@
+#!gbuild
+primaryTarget=ppc_integrity.tgt
+[Project]
+	-I.
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+support_lib.gpj		[Shared Object]
+	-pic
+	-object_dir=./.shobj
+	-L.
+	-DBASIC_BUILD_DLL
+sub/sub_int.gpj		[INTEGRITY Application]
+	-object_dir=sub/.obj
+	-Isub/..
+	-Lsub/.
+	-L..\lib
+	-lsupport_lib

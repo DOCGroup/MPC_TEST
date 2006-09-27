@@ -43,9 +43,10 @@ $(BTARGETDIR):
 $(BIN): $(BTARGETDIR) $(OBJS)
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
-GENERATED_DIRTY    = Foolish/foolish.txt
+GENERATED_DIRTY = Foolish/foolish.txt
+
 Foolish/foolish.txt: Foolish/foolish.simple
-	echo Generated from > "$@" Foolish/foolish.simple
+	echo Generated from Foolish/foolish.simple > "$@"
 
 .PRECIOUS: $(GENERATED_DIRTY)
 $(OBJS): $(GENERATED_DIRTY)

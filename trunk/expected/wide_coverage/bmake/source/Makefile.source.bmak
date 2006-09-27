@@ -115,7 +115,7 @@ $(OUTPUTDIR)$(NAME)$(EXE_EXT): $(OBJFILES) $(RESOURCE)
 
 GENERATED_DIRTY = Foolish/foolish.txt
 Foolish/foolish.txt: Foolish/foolish.simple
-	echo Generated from > $@ Foolish/foolish.simple
+	echo Generated from Foolish/foolish.simple > $@
 
 $(OBJFILES): $(GENERATED_DIRTY)
 

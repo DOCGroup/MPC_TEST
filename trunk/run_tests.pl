@@ -558,7 +558,8 @@ sub move_expected {
 
             ## configure.ac is not something that gets compared.
             ## See the comment about GNUmakefile in compare_output().
-            if ($file ne 'configure.ac' &&
+            if ($file ne 'configure.ac' && $file ne '.custom_build_rule' &&
+                $file ne '.empty_html_file' &&
                 (!-r $tfull ||
                  ($file ne 'GNUmakefile' && compare($ffull, $tfull) != 0))) {
               move($ffull, $tfull);

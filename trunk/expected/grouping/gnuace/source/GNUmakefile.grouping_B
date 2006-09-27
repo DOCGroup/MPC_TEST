@@ -137,7 +137,7 @@ else
 .NOTPARALLEL:
 endif
 clown.cpp clown.h: clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o $@ clown.r
+	perl ../bin/cppgen.pl  clown.r -o $@
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)

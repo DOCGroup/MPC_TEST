@@ -114,15 +114,15 @@ endif
 GENERATED_DIRTY += demo.h
 OBJS_DEPEND_ON_GENERATED = 1
 demo.h: demo.ui
-	$(QTDIR)/bin/uic  -o $@ demo.ui
+	$(QTDIR)/bin/uic  demo.ui -o $@
 
 GENERATED_DIRTY += demo.cpp
 demo.cpp: demo.ui demo.h
-	$(QTDIR)/bin/uic -impl "demo.h" -o $@ demo.ui
+	$(QTDIR)/bin/uic -impl "demo.h" demo.ui -o $@
 
 GENERATED_DIRTY += demo_moc.cpp
 demo_moc.cpp: demo.h
-	$(QTDIR)/bin/moc  -o $@ demo.h
+	$(QTDIR)/bin/moc  demo.h -o $@
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)

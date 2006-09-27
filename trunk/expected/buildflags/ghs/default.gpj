@@ -1,0 +1,16 @@
+#!gbuild
+primaryTarget=ppc_integrity.tgt
+[Project]
+	-I.
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+source/bfs_exe_int.gpj		[INTEGRITY Application]
+	-object_dir=source/.obj
+	-Lsource
+source/bfs_lib.gpj		[Shared Object]
+	-pic
+	-object_dir=source/.shobj
+	-Lsource

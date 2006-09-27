@@ -133,7 +133,7 @@ names.cpp names.h: names.key something
 	@move /y temporary.src names.cpp
 
 TheCheat.cpp TheCheat.h: TheCheat.r
-	perl ..\bin\cppgen.pl  -o $@ TheCheat.r
+	perl ..\bin\cppgen.pl  TheCheat.r -o $@
 	@echo \#include "source_lib_pch.h" > temporary.src
 	@type TheCheat.cpp >> temporary.src
 	@move /y temporary.src TheCheat.cpp

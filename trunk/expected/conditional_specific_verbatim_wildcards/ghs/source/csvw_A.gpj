@@ -1,0 +1,11 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o source/bin/libcsvw_A.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsource
+bleer.cpp
+byion.cpp
+byion.h

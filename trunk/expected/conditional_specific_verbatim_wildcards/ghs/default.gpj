@@ -1,0 +1,34 @@
+#!gbuild
+primaryTarget=ppc_integrity.tgt
+[Project]
+	-I.
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+source/csvw_A.gpj		[Shared Object]
+	-pic
+	-object_dir=source/.shobj
+	-Lsource
+source/csvw_B.gpj		[Shared Object]
+	-pic
+	-object_dir=source/.shobj
+	-Lsource
+	-DONLY_MAKE
+	-DONLY_UNIX
+source/csvw_C.gpj		[Shared Object]
+	-pic
+	-object_dir=source/.shobj
+	-Lsource
+	-DONLY_MAKE
+	-DONLY_UNIX
+source/csvw_D.gpj		[Shared Object]
+	-pic
+	-object_dir=source/.shobj
+	-Lsource
+	-DFAIL_IF_NOT_DEFINED
+source/csvw_E.gpj		[Shared Object]
+	-pic
+	-object_dir=source/.shobj
+	-Lsource

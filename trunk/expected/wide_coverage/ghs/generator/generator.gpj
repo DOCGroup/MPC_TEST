@@ -1,0 +1,13 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o generator/..\bin/generator
+	-G
+	--exceptions
+	-Lgenerator/.
+	-L..\lib
+	-lgenerator_be
+generator.cpp
+resource.h
+generator.rc
+readme.txt		[Documentation]

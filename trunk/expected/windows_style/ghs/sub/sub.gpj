@@ -1,0 +1,12 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o sub/sub
+	-Ospeed
+	-OI
+	--exceptions
+	-Isub/..
+	-Lsub/.
+	-L..\lib
+	-lsupport_lib
+sub.cpp

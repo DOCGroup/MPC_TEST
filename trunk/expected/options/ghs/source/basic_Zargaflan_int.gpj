@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+	-dynamic
+source/basic_Zargaflan.gpj		[Program]

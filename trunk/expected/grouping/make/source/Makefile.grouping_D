@@ -43,9 +43,10 @@ $(BTARGETDIR):
 $(BIN): $(BTARGETDIR) $(OBJS)
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
-GENERATED_DIRTY    = clown.cpp clown.h
+GENERATED_DIRTY = clown.cpp clown.h
+
 clown.cpp clown.h: clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o "$@" clown.r
+	perl ../bin/cppgen.pl  clown.r -o "$@"
 
 .PRECIOUS: $(GENERATED_DIRTY)
 $(OBJS): $(GENERATED_DIRTY)

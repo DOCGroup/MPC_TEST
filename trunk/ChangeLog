@@ -1,3 +1,40 @@
+Wed Sep 27 12:21:08 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/ghs/*.gpj:
+
+          Updated the GHS projects based on my changes from Tue Sep 19
+          13:04:15 UTC 2006 and Fri Sep 22 14:00:10 UTC 2006.
+
+        * expected/*/make/Makefile.*:
+        * expected/*/automake/Makefile.am:
+        * expected/*/bmake/Makefile.*.bmak:
+        * expected/*/em3/*.vcp:
+        * expected/*/gnuace/GNUmakefile.*:
+        * expected/*/nmake/Makefile.*.mak:
+        * expected/*/vc6/*.dsp:
+        * expected/*/vc7/*.vcproj:
+        * expected/*/vc71/*.vcproj:
+        * expected/*/vc8/*.vcproj:
+
+          Updated for my changes from Tue Sep 26 21:02:46 UTC 2006.
+
+        * run_tests.pl:
+
+          Don't copy the .custom_build_rule and .empty_html_file from the
+          ghs project type.
+
+        * tests/circular_dependencies/NodeManager/one.cpp:
+
+          Added a new line at the end of the file.
+
+        * utils/add_expected_directories.sh:
+
+          Set the required properties when adding new files.
+
+        * expected/*/ghs/*.bld:
+
+          Removed these files as part of the ghs type change.
+
 Mon Sep 18 12:10:13 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*.vcp:

@@ -133,7 +133,7 @@ endif
 GENERATED_DIRTY += Foolish/foolish.txt
 OBJS_DEPEND_ON_GENERATED = 1
 Foolish/foolish.txt: Foolish/foolish.simple
-	echo Generated from > $@ Foolish/foolish.simple
+	echo Generated from Foolish/foolish.simple > $@
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)

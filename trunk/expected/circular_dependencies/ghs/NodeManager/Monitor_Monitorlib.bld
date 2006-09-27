@@ -1,8 +1,0 @@
-#!build
-default:
-	library
-	:outputname=NodeManager/libciaomonlib.a
-	:optimizestrategy=speed
-	:libdirs=NodeManager
-foo.cpp
-	C++

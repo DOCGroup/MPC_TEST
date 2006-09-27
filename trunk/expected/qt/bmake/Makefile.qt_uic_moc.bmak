@@ -111,13 +111,13 @@ $(OUTPUTDIR)$(NAME)$(EXE_EXT): $(OBJFILES) $(RESOURCE)
 
 GENERATED_DIRTY = demo.h demo.cpp demo_moc.cpp
 demo.h: demo.ui
-	$(QTDIR)\bin\uic  -o $@ demo.ui
+	$(QTDIR)\bin\uic  demo.ui -o $@
 
 demo.cpp: demo.ui
-	$(QTDIR)\bin\uic -impl "demo.h" -o $@ demo.ui
+	$(QTDIR)\bin\uic -impl "demo.h" demo.ui -o $@
 
 demo_moc.cpp: demo.h
-	$(QTDIR)\bin\moc  -o $@ demo.h
+	$(QTDIR)\bin\moc  demo.h -o $@
 
 $(OBJFILES): $(GENERATED_DIRTY)
 

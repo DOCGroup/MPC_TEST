@@ -1,0 +1,13 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o basic/libbasic.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lbasic
+	-DBASIC_BUILD_DLL
+arch.cpp
+foo.cpp
+bar.h
+basic_export.h

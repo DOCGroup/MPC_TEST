@@ -1,8 +1,0 @@
-#!build
-default:
-	shared_library
-	:outputname=two/libtwo.so
-	:optimizestrategy=speed
-	:libdirs=two
-foo.cpp
-	C++
