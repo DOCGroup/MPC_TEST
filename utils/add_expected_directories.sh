@@ -14,5 +14,7 @@ for i in *; do
   else
     echo "Adding file: $i"
     svn add $i
+    svn propset svn:mime-type application/octet-stream $i
+    svn propset svn:keywords "Author Date Id Revision" $i
   fi
 done

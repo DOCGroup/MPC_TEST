@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+	-dynamic
+NodeApplication/NodeApplication.gpj		[Program]

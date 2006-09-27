@@ -1,0 +1,15 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o build/libbuild_lib.so
+	-Ospeed
+	-OI
+	--exceptions
+	--pch
+	-DUSING_PCH
+	-Ibuild
+	-Lbuild
+..\src\foo.cpp
+bar.cpp
+lower\bar.cpp
+..\src\bar.rc

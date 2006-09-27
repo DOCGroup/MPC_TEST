@@ -1,8 +1,0 @@
-#!build
-default:
-	library
-	:outputname=NodeManager/libNodeManager_stub.a
-	:optimizestrategy=speed
-	:libdirs=NodeManager
-bar.cpp
-	C++

@@ -23,7 +23,7 @@ CLEANFILES = \
 clown.cpp clown.h: clown-stamp
 
 clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
+	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
 	@touch "$@"
 
 noinst_PROGRAMS = A
@@ -52,7 +52,7 @@ CLEANFILES += \
 clown.cpp clown.h: clown-stamp
 
 clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
+	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
 	@touch "$@"
 
 noinst_PROGRAMS += B
@@ -81,7 +81,7 @@ CLEANFILES += \
 clown.cpp clown.h: clown-stamp
 
 clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
+	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
 	@touch "$@"
 
 noinst_PROGRAMS += C
@@ -109,7 +109,7 @@ CLEANFILES += \
 clown.cpp clown.h: clown-stamp
 
 clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
+	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
 	@touch "$@"
 
 noinst_PROGRAMS += D
@@ -137,7 +137,7 @@ CLEANFILES += \
 clown.cpp clown.h: clown-stamp
 
 clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
+	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
 	@touch "$@"
 
 noinst_PROGRAMS += E
@@ -165,7 +165,7 @@ CLEANFILES += \
 clown.cpp clown.h: clown-stamp
 
 clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
+	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
 	@touch "$@"
 
 noinst_PROGRAMS += F
@@ -193,7 +193,7 @@ CLEANFILES += \
 clown.cpp clown.h: clown-stamp
 
 clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o clown.cpp clown.h $(srcdir)/clown.r
+	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
 	@touch "$@"
 
 noinst_PROGRAMS += G

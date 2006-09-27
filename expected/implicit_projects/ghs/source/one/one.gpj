@@ -1,0 +1,12 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Library]
+	-o source/one/..\..\lib/libone.a
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsource/one/.
+	-L..\..\lib
+	-DFAILURE_TRIGGER
+foo.cpp
+foo.h

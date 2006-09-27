@@ -1,0 +1,9 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Library]
+	-o NodeManager/libciaomonlib.a
+	-Ospeed
+	-OI
+	--exceptions
+	-LNodeManager
+foo.cpp

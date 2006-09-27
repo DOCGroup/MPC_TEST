@@ -480,7 +480,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on TheCheat.r"
-						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  &quot;TheCheat.r&quot; -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="TheCheat.cpp;TheCheat.h"/>
 				</FileConfiguration>
@@ -490,7 +490,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on TheCheat.r"
-						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  &quot;TheCheat.r&quot; -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="TheCheat.cpp;TheCheat.h"/>
 				</FileConfiguration>
@@ -500,7 +500,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on TheCheat.r"
-						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  &quot;TheCheat.r&quot; -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="TheCheat.cpp;TheCheat.h"/>
 				</FileConfiguration>
@@ -510,7 +510,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on TheCheat.r"
-						CommandLine="perl ..\bin\cppgen.pl  -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &quot;TheCheat.r&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  &quot;TheCheat.r&quot; -o &quot;TheCheat.cpp&quot; &quot;TheCheat.h&quot; &amp;&amp; echo #include &quot;source_lib_pch.h&quot; &gt; temporary.src &amp;&amp; type &quot;TheCheat.cpp&quot; &gt;&gt; temporary.src &amp;&amp; move /y temporary.src &quot;TheCheat.cpp&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="TheCheat.cpp;TheCheat.h"/>
 				</FileConfiguration>

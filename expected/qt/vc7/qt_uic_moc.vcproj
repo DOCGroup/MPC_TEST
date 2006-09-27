@@ -179,7 +179,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking $(QTDIR)\bin\uic on demo.ui"
-						CommandLine="$(QTDIR)\bin\uic  -o &quot;demo.h&quot; &quot;demo.ui&quot;"
+						CommandLine="$(QTDIR)\bin\uic  &quot;demo.ui&quot; -o &quot;demo.h&quot;"
 						Outputs="demo.h"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -188,7 +188,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking $(QTDIR)\bin\uic on demo.ui"
-						CommandLine="$(QTDIR)\bin\uic  -o &quot;demo.h&quot; &quot;demo.ui&quot;"
+						CommandLine="$(QTDIR)\bin\uic  &quot;demo.ui&quot; -o &quot;demo.h&quot;"
 						Outputs="demo.h"/>
 				</FileConfiguration>
 			</File>
@@ -204,7 +204,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking $(QTDIR)\bin\uic on demo.ui"
-						CommandLine="$(QTDIR)\bin\uic -impl &quot;demo.h&quot; -o &quot;demo.cpp&quot; &quot;demo.ui&quot;"
+						CommandLine="$(QTDIR)\bin\uic -impl &quot;demo.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot;"
 						AdditionalDependencies="demo.h"
 						Outputs="demo.cpp"/>
 				</FileConfiguration>
@@ -214,7 +214,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking $(QTDIR)\bin\uic on demo.ui"
-						CommandLine="$(QTDIR)\bin\uic -impl &quot;demo.h&quot; -o &quot;demo.cpp&quot; &quot;demo.ui&quot;"
+						CommandLine="$(QTDIR)\bin\uic -impl &quot;demo.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot;"
 						AdditionalDependencies="demo.h"
 						Outputs="demo.cpp"/>
 				</FileConfiguration>
@@ -231,7 +231,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking $(QTDIR)\bin\moc on demo.h"
-						CommandLine="$(QTDIR)\bin\moc  -o &quot;demo_moc.cpp&quot; &quot;demo.h&quot;"
+						CommandLine="$(QTDIR)\bin\moc  &quot;demo.h&quot; -o &quot;demo_moc.cpp&quot;"
 						Outputs="demo_moc.cpp"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -240,7 +240,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking $(QTDIR)\bin\moc on demo.h"
-						CommandLine="$(QTDIR)\bin\moc  -o &quot;demo_moc.cpp&quot; &quot;demo.h&quot;"
+						CommandLine="$(QTDIR)\bin\moc  &quot;demo.h&quot; -o &quot;demo_moc.cpp&quot;"
 						Outputs="demo_moc.cpp"/>
 				</FileConfiguration>
 			</File>

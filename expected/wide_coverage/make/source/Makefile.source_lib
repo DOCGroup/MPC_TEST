@@ -43,7 +43,8 @@ $(LTARGETDIR):
 $(LIB): $(LTARGETDIR) $(OBJS)
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
-GENERATED_DIRTY    = cre/o.le/more_names.cpp cre/o.le/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl
+GENERATED_DIRTY = cre/o.le/more_names.cpp cre/o.le/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl
+
 cre/o.le/more_names.cpp cre/o.le/more_names.h: more_names.key ../bin/generator
 	@$(MKDIR) cre/o.le
 	../bin/generator -o cre/o.le more_names.key
@@ -56,7 +57,7 @@ names.cpp names.h: names.key something ../bin/generator
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) names.cpp >> temp.$$$$ && $(MV) temp.$$$$ names.cpp
 
 TheCheat.cpp TheCheat.h: TheCheat.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o "$@" TheCheat.r
+	perl ../bin/cppgen.pl  TheCheat.r -o "$@"
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) TheCheat.cpp >> temp.$$$$ && $(MV) temp.$$$$ TheCheat.cpp
 
 ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl: mondo/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm

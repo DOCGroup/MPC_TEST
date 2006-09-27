@@ -385,7 +385,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on Foolish/foolish.simple"
-						CommandLine="echo Generated from &gt; &quot;Foolish/foolish.txt&quot; &quot;Foolish/foolish.simple&quot;"
+						CommandLine="echo Generated from &quot;Foolish/foolish.simple&quot; &gt; &quot;Foolish/foolish.txt&quot;"
 						Outputs="Foolish/foolish.txt"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -394,7 +394,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on Foolish/foolish.simple"
-						CommandLine="echo Generated from &gt; &quot;Foolish/foolish.txt&quot; &quot;Foolish/foolish.simple&quot;"
+						CommandLine="echo Generated from &quot;Foolish/foolish.simple&quot; &gt; &quot;Foolish/foolish.txt&quot;"
 						Outputs="Foolish/foolish.txt"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -403,7 +403,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on Foolish/foolish.simple"
-						CommandLine="echo Generated from &gt; &quot;Foolish/foolish.txt&quot; &quot;Foolish/foolish.simple&quot;"
+						CommandLine="echo Generated from &quot;Foolish/foolish.simple&quot; &gt; &quot;Foolish/foolish.txt&quot;"
 						Outputs="Foolish/foolish.txt"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -412,7 +412,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on Foolish/foolish.simple"
-						CommandLine="echo Generated from &gt; &quot;Foolish/foolish.txt&quot; &quot;Foolish/foolish.simple&quot;"
+						CommandLine="echo Generated from &quot;Foolish/foolish.simple&quot; &gt; &quot;Foolish/foolish.txt&quot;"
 						Outputs="Foolish/foolish.txt"/>
 				</FileConfiguration>
 			</File>

@@ -1,8 +1,0 @@
-#!build
-default:
-	library
-	:outputname=TargetManager/libTargetManager_stub.a
-	:optimizestrategy=speed
-	:libdirs=TargetManager
-foo.cpp
-	C++

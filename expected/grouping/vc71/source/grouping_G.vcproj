@@ -191,7 +191,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on clown.r"
-						CommandLine="perl ..\bin\cppgen.pl  -o &quot;clown.cpp&quot; &quot;clown.h&quot; &quot;clown.r&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  &quot;clown.r&quot; -o &quot;clown.cpp&quot; &quot;clown.h&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="clown.cpp;clown.h"/>
 				</FileConfiguration>
@@ -201,7 +201,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Invoking perl ..\bin\cppgen.pl on clown.r"
-						CommandLine="perl ..\bin\cppgen.pl  -o &quot;clown.cpp&quot; &quot;clown.h&quot; &quot;clown.r&quot;"
+						CommandLine="perl ..\bin\cppgen.pl  &quot;clown.r&quot; -o &quot;clown.cpp&quot; &quot;clown.h&quot;"
 						AdditionalDependencies="..\bin\cppgen.pl"
 						Outputs="clown.cpp;clown.h"/>
 				</FileConfiguration>

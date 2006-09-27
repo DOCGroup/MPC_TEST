@@ -1,0 +1,13 @@
+#!gbuild
+primaryTarget=ppc_integrity.tgt
+[Project]
+	-I.
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+three/three.gpj		[Shared Object]
+	-pic
+	-object_dir=three/.shobj
+	-Lone/three

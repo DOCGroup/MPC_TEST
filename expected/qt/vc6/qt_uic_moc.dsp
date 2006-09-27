@@ -120,7 +120,7 @@ SOURCE="demo.ui"
 InputPath="demo.ui"
 
 BuildCmds= \
-	$(QTDIR)\bin\uic  -o "demo.h" $(InputPath) \
+	$(QTDIR)\bin\uic  $(InputPath) -o "demo.h" \
 
 "demo.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -133,7 +133,7 @@ BuildCmds= \
 InputPath="demo.ui"
 
 BuildCmds= \
-	$(QTDIR)\bin\uic  -o "demo.h" $(InputPath) \
+	$(QTDIR)\bin\uic  $(InputPath) -o "demo.h" \
 
 "demo.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -158,7 +158,7 @@ USERDEP__demo="demo.h"
 InputPath="demo.ui"
 
 BuildCmds= \
-	$(QTDIR)\bin\uic -impl "demo.h" -o "demo.cpp" $(InputPath) \
+	$(QTDIR)\bin\uic -impl "demo.h" $(InputPath) -o "demo.cpp" \
 
 "demo.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -172,7 +172,7 @@ USERDEP__demo="demo.h"
 InputPath="demo.ui"
 
 BuildCmds= \
-	$(QTDIR)\bin\uic -impl "demo.h" -o "demo.cpp" $(InputPath) \
+	$(QTDIR)\bin\uic -impl "demo.h" $(InputPath) -o "demo.cpp" \
 
 "demo.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -196,7 +196,7 @@ SOURCE="demo.h"
 InputPath="demo.h"
 
 BuildCmds= \
-	$(QTDIR)\bin\moc  -o "demo_moc.cpp" $(InputPath) \
+	$(QTDIR)\bin\moc  $(InputPath) -o "demo_moc.cpp" \
 
 "demo_moc.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -209,7 +209,7 @@ BuildCmds= \
 InputPath="demo.h"
 
 BuildCmds= \
-	$(QTDIR)\bin\moc  -o "demo_moc.cpp" $(InputPath) \
+	$(QTDIR)\bin\moc  $(InputPath) -o "demo_moc.cpp" \
 
 "demo_moc.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)

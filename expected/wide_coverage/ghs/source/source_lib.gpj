@@ -1,0 +1,72 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Library]
+	-o source/..\lib/libsource_lib.a
+	-Ospeed
+	-OI
+	--exceptions
+	--pch
+	-DUSING_PCH
+	-Isource
+	-Lsource/.
+	-L..\lib
+more_names.key		[Text]
+cre\\o.le/more_names.cpp
+	:dependsRelative=..\\bin\\generator
+	:dependsRelative=more_names.key
+	:preexecShell='cd source && mkdir cre\\o.le || type nul'
+	:preexecShell='cd source && ..\\bin\\generator -o cre/o.le more_names.key'
+	:preexecShell='cd source && echo cre\\o.le\\more_names.cpp and cre\\o.le\\more_names.h have been generated.'
+	:preexecShell='cd source && echo #include "source_lib_pch.h" > temporary.src'
+        :preexecShell='cd source && type cre\\o.le\\more_names.cpp >> temporary.src'
+        :preexecShell='cd source && move /y temporary.src cre\\o.le\\more_names.cpp'
+	:extraOutputFile=cre\\o.le/more_names.cpp
+	:extraOutputFile=cre\\o.le/more_names.h
+names.key		[Text]
+names.cpp
+	:dependsRelative=..\\bin\\generator
+	:dependsRelative=names.key
+	:dependsRelative=something
+	:preexecShell='cd source && ..\\bin\\generator -n names names.key'
+	:preexecShell='cd source && echo names.cpp and names.h have been generated.'
+	:preexecShell='cd source && echo #include "source_lib_pch.h" > temporary.src'
+        :preexecShell='cd source && type names.cpp >> temporary.src'
+        :preexecShell='cd source && move /y temporary.src names.cpp'
+	:extraOutputFile=names.cpp
+	:extraOutputFile=names.h
+TheCheat.r		[Text]
+TheCheat.cpp
+	:dependsRelative=..\\bin\\cppgen.pl
+	:dependsRelative=TheCheat.r
+	:preexecShell='cd source && perl ..\\bin\\cppgen.pl  TheCheat.r -o TheCheat.cpp'
+TheCheat.h
+	:dependsRelative=..\\bin\\cppgen.pl
+	:dependsRelative=TheCheat.r
+	:preexecShell='cd source && perl ..\\bin\\cppgen.pl  TheCheat.r -o TheCheat.h'
+	:extraOutputFile=TheCheat.cpp
+	:extraOutputFile=TheCheat.h
+mondo\\all.mondo		[Text]
+qwee.cxx
+	:dependsRelative=..\\mondo\\mondo.pl
+	:dependsRelative=..\\mondo\\modules\\ReaderGen.pm
+	:dependsRelative=mondo\\all.mondo
+	:preexecShell='cd source && mkdir . || type nul'
+	:preexecShell='cd source && perl ..\\mondo\\mondo.pl -fake mondo\\all.mondo'
+	:preexecShell='cd source && echo #include "source_lib_pch.h" > temporary.src'
+        :preexecShell='cd source && type .\\qwee.cxx >> temporary.src'
+        :preexecShell='cd source && move /y temporary.src .\\qwee.cxx'
+	:extraOutputFile=bar.txt
+	:extraOutputFile=moop.hxx
+	:extraOutputFile=qwee.cxx
+	:extraOutputFile=qwee_T.C
+	:extraOutputFile=weer.inl
+.\qwee.cxx
+TheCheat.cpp
+cre\o.le\more_names.cpp
+names.cpp
+TheCheat.h
+cre\o.le\more_names.h
+moop.hxx
+names.h
+weer.inl
+.\bar.txt		[Documentation]

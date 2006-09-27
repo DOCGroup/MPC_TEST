@@ -1,0 +1,9 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o two/libtwo.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Ltwo
+foo.cpp

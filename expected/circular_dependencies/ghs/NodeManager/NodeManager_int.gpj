@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+	-dynamic
+NodeManager/NodeManager.gpj		[Program]

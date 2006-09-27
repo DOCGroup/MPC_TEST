@@ -1,0 +1,11 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o source/basic
+	{optional} -non_shared
+	-Ospeed
+	-OI
+	--exceptions
+	-Isource/..
+	-Lsource
+basic.cpp

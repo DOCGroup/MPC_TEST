@@ -303,7 +303,7 @@ InputPath=demo.ui
 "demo.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
-	$(QTDIR)\bin\uic  -o "demo.h" "$(InputPath)"
+	$(QTDIR)\bin\uic  "$(InputPath)" -o "demo.h"
 <<
 
 SOURCE="demo.ui"
@@ -313,7 +313,7 @@ InputPath=demo.ui
 "demo.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
-	$(QTDIR)\bin\uic -impl "demo.h" -o "demo.cpp" "$(InputPath)"
+	$(QTDIR)\bin\uic -impl "demo.h" "$(InputPath)" -o "demo.cpp"
 <<
 
 SOURCE="demo.h"
@@ -323,7 +323,7 @@ InputPath=demo.h
 "demo_moc.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
-	$(QTDIR)\bin\moc  -o "demo_moc.cpp" "$(InputPath)"
+	$(QTDIR)\bin\moc  "$(InputPath)" -o "demo_moc.cpp"
 <<
 
 

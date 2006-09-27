@@ -417,7 +417,7 @@ InputPath=TheCheat.r
 "TheCheat.cpp" "TheCheat.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
-	perl ..\bin\cppgen.pl  -o "TheCheat.cpp" "TheCheat.h" "$(InputPath)"
+	perl ..\bin\cppgen.pl  "$(InputPath)" -o "TheCheat.cpp" "TheCheat.h"
 	echo #include "source_lib_pch.h" > temporary.src
 	type "TheCheat.cpp" >> temporary.src
         move /y temporary.src "TheCheat.cpp"

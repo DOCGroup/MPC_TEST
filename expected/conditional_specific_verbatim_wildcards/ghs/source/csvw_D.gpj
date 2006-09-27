@@ -1,0 +1,13 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o source/bin/libcsvw_D.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsource
+	-DFAIL_IF_NOT_DEFINED
+conditional\every.cpp
+moop.cxx
+qwaaa.c
+qwaaa.h

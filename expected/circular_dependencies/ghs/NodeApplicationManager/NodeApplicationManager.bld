@@ -1,8 +1,0 @@
-#!build
-default:
-	library
-	:outputname=NodeApplicationManager/libNodeApplicationManager.a
-	:optimizestrategy=speed
-	:libdirs=NodeApplicationManager
-foo.cpp
-	C++

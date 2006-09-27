@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+	-dynamic
+build/build_exe.gpj		[Program]

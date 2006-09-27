@@ -23,7 +23,7 @@ CLEANFILES += \
   demo.h
 
 demo.h: $(srcdir)/demo.ui
-	$(QTDIR)/bin/uic  -o demo.h $(srcdir)/demo.ui
+	$(QTDIR)/bin/uic  $(srcdir)/demo.ui -o demo.h
 
 BUILT_SOURCES += \
   demo.cpp
@@ -32,7 +32,7 @@ CLEANFILES += \
   demo.cpp
 
 demo.cpp: $(srcdir)/demo.ui demo.h
-	$(QTDIR)/bin/uic -impl "demo.h" -o demo.cpp $(srcdir)/demo.ui
+	$(QTDIR)/bin/uic -impl "demo.h" $(srcdir)/demo.ui -o demo.cpp
 
 BUILT_SOURCES += \
   demo_moc.cpp
@@ -41,7 +41,7 @@ CLEANFILES += \
   demo_moc.cpp
 
 demo_moc.cpp: $(srcdir)/demo.h
-	$(QTDIR)/bin/moc  -o demo_moc.cpp $(srcdir)/demo.h
+	$(QTDIR)/bin/moc  $(srcdir)/demo.h -o demo_moc.cpp
 
 noinst_PROGRAMS = main
 

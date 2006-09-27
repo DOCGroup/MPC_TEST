@@ -1,0 +1,15 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o source/bin/libcsvw_B.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsource
+	-DONLY_MAKE
+	-DONLY_UNIX
+conditional\unix.cpp
+moop.cxx
+ploor.cpp
+qwaaa.c
+qwaaa.h

@@ -1,8 +1,0 @@
-#!build
-default:
-	program
-	:outputname=NodeManager/one
-	:optimizestrategy=speed
-	:libdirs=NodeManager
-one.cpp
-	C++

@@ -117,7 +117,7 @@ USERDEP__clown="..\bin\cppgen.pl"
 InputPath="clown.r"
 
 BuildCmds= \
-	perl ..\bin\cppgen.pl  -o "clown.cpp" "clown.h" $(InputPath) \
+	perl ..\bin\cppgen.pl  $(InputPath) -o "clown.cpp" "clown.h" \
 
 "clown.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -134,7 +134,7 @@ USERDEP__clown="..\bin\cppgen.pl"
 InputPath="clown.r"
 
 BuildCmds= \
-	perl ..\bin\cppgen.pl  -o "clown.cpp" "clown.h" $(InputPath) \
+	perl ..\bin\cppgen.pl  $(InputPath) -o "clown.cpp" "clown.h" \
 
 "clown.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)

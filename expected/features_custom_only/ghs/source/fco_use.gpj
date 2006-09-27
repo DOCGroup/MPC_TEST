@@ -1,0 +1,15 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o source/libfco_use.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsource
+	-DTHAT_THERE_MACRO
+zar_thatB.cpp
+zar_thisC.cpp
+zar_thatB.h
+zar_thisB_T.h
+zar_thatB.inl
+zar_thisB_T.inl

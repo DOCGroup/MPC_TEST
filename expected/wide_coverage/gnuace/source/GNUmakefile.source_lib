@@ -223,7 +223,7 @@ else
 .NOTPARALLEL:
 endif
 TheCheat.cpp TheCheat.h: TheCheat.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  -o $@ TheCheat.r
+	perl ../bin/cppgen.pl  TheCheat.r -o $@
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && cat TheCheat.cpp >> temp.$$$$ && mv temp.$$$$ TheCheat.cpp
 
 GENERATED_DIRTY += ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl

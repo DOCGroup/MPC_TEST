@@ -1,0 +1,27 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o source/main_test
+	-Ospeed
+	-OI
+	--exceptions
+	-Isource/.
+	-I\this\path
+	-IZ:\that\path
+	-IHere
+	-IThere
+	-Lsource/.
+	-L..\lib
+	-lsource_lib
+	-DMACRO_TEST="a_string_with_no_spaces"
+Foolish/foolish.simple		[Text]
+Foolish/foolish.txt
+	:dependsRelative=Foolish/foolish.simple
+	:preexecShell='cd source && echo Generated from Foolish/foolish.simple > Foolish/foolish.txt'
+	:extraOutputFile=Foolish/foolish.txt
+exe\main.cpp
+exe\use_more_names\use_more_names.cpp
+exe\use_names\use_names.cpp
+exe\use_more_names\use_more_names.h
+exe\use_names\use_names.h
+Foolish\foolish.txt		[Documentation]
