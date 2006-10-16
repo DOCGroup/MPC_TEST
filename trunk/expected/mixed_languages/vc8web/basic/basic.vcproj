@@ -182,7 +182,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Debug\basic\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -240,10 +240,10 @@
 				Version="5.3015"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;."
+				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\Win64\basicd.lib"
+				ImportLibrary=".\basicd.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -264,7 +264,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Release\basic\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -319,12 +319,12 @@
 				Version="5.3015"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;."
+				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\Win64\basic.lib"
+				ImportLibrary=".\basic.lib"
 				TargetMachine="17"
 			/>
 			<Tool

@@ -23,9 +23,11 @@ sub new {
   my($name)    = shift;
   my($options) = shift;
   my($desc)    = shift;
+  my($info)    = shift;
   my($self)    = bless {'name'        => $name,
                         'options'     => $options,
                         'description' => $desc,
+                        'info'        => $info,
                        }, $class;
 
   if (!exists $$options{'help'}) {
@@ -138,6 +140,33 @@ sub usageAndExit {
       else {
         print "$$desc{$key}.\n";
       }
+    }
+  }
+
+  my($geninfo) = $self->{'info'};
+  if (defined $geninfo) {
+    print "\n";
+    $length = 0;
+    if (length($geninfo) + $length > $maxLine) {
+      my($part) = $geninfo;
+      while(length($part) + $length > $maxLine) {
+        my(@words) = split(/\s+/, $part);
+        $part = '';
+        foreach my $word (@words) {
+          if (length($word) + length($part) + $length > $maxLine) {
+            $part =~ s/\s+$//;
+            print "$part\n";
+            $part = '';
+            $length = 0;
+          }
+          $part .= "$word ";
+        }
+      }
+     $part =~ s/\s+$//;
+      print "$part\n";
+    }
+    else {
+      print "$geninfo\n";
     }
   }
   exit($status);

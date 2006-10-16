@@ -168,7 +168,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="..\lib\Win64"
+			OutputDirectory="..\lib"
 			IntermediateDirectory="Static_Debug\source_lib\Win64"
 			ConfigurationType="4"
 			CharacterSet="0"
@@ -243,7 +243,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="..\lib\Win64"
+			OutputDirectory="..\lib"
 			IntermediateDirectory="Static_Release\source_lib\Win64"
 			ConfigurationType="4"
 			CharacterSet="0"

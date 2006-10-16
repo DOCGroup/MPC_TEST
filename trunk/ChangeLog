@@ -1,3 +1,21 @@
+Mon Oct 16 13:48:42 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/vc8/*.vcproj:
+        * expected/mixed_languages/vc8web/*.vcproj:
+
+          Updated to reflect my change from Mon Oct 16 13:33:46 UTC 2006.
+
+        * expected/relative/nmake/build/Makefile.build_exe.mak:
+        * expected/relative/nmake/build/Makefile.build_lib.mak:
+        * expected/wide_coverage/nmake/generator/Makefile.generator.mak:
+
+          Updated to reflect my MPC bug fix from Tue Oct  3 11:38:34 UTC
+          2006.
+
+        * modules/OptionProcessor.pm:
+
+          Modified to be able to accept generic information to be placed in
+          the usage message.
 Wed Sep 27 12:21:08 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/ghs/*.gpj:

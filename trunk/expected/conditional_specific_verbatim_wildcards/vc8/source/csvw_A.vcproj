@@ -180,7 +180,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="bin\Win64"
+			OutputDirectory="bin"
 			IntermediateDirectory="Debug\csvw_A\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -237,10 +237,10 @@
 				OutputFile="$(OutDir)\csvw_Ad.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;."
+				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary="lib\Win64\csvw_Ad.lib"
+				ImportLibrary="lib\csvw_Ad.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -261,7 +261,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="bin\Win64"
+			OutputDirectory="bin"
 			IntermediateDirectory="Release\csvw_A\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -315,12 +315,12 @@
 				OutputFile="$(OutDir)\csvw_A.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;."
+				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="lib\Win64\csvw_A.lib"
+				ImportLibrary="lib\csvw_A.lib"
 				TargetMachine="17"
 			/>
 			<Tool

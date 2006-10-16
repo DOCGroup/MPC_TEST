@@ -186,7 +186,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Debug\build_lib\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -246,10 +246,10 @@
 				OutputFile="$(OutDir)\build_libd.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;."
+				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\Win64\build_libd.lib"
+				ImportLibrary=".\build_libd.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -270,7 +270,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Release\build_lib\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -327,12 +327,12 @@
 				OutputFile="$(OutDir)\build_lib.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;."
+				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\Win64\build_lib.lib"
+				ImportLibrary=".\build_lib.lib"
 				TargetMachine="17"
 			/>
 			<Tool

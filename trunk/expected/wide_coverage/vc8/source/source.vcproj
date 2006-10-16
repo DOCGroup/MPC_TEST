@@ -184,7 +184,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Debug\source\Win64"
 			ConfigurationType="1"
 			CharacterSet="0"
@@ -243,7 +243,7 @@
 				Version="1.000"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;.;..\lib\Win64;..\lib"
+				AdditionalLibraryDirectories=".;..\lib"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="17"
@@ -267,7 +267,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="Release\Win64"
+			OutputDirectory="Release"
 			IntermediateDirectory="Release\source\Win64"
 			ConfigurationType="1"
 			CharacterSet="0"
@@ -323,7 +323,7 @@
 				Version="1.000"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;.;..\lib\Win64;..\lib"
+				AdditionalLibraryDirectories=".;..\lib"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"

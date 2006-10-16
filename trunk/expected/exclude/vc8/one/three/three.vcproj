@@ -180,7 +180,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Debug\three\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -237,10 +237,10 @@
 				OutputFile="$(OutDir)\threed.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;."
+				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\Win64\threed.lib"
+				ImportLibrary=".\threed.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -261,7 +261,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Release\three\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -315,12 +315,12 @@
 				OutputFile="$(OutDir)\three.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;."
+				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\Win64\three.lib"
+				ImportLibrary=".\three.lib"
 				TargetMachine="17"
 			/>
 			<Tool

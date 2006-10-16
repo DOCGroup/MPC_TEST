@@ -184,7 +184,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="..\lib\Win64"
+			OutputDirectory="..\lib"
 			IntermediateDirectory="Debug\generator_be\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -243,10 +243,10 @@
 				Version="1.000"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;.;..\lib\Win64;..\lib"
+				AdditionalLibraryDirectories=".;..\lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary="..\lib\Win64\generator_bed.lib"
+				ImportLibrary="..\lib\generator_bed.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -267,7 +267,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="..\lib\Win64"
+			OutputDirectory="..\lib"
 			IntermediateDirectory="Release\generator_be\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -323,12 +323,12 @@
 				Version="1.000"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;.;..\lib\Win64;..\lib"
+				AdditionalLibraryDirectories=".;..\lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="..\lib\Win64\generator_be.lib"
+				ImportLibrary="..\lib\generator_be.lib"
 				TargetMachine="17"
 			/>
 			<Tool

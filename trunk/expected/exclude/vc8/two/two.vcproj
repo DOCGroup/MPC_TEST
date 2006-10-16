@@ -180,7 +180,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Debug\two\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -237,10 +237,10 @@
 				OutputFile="$(OutDir)\twod.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;."
+				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\Win64\twod.lib"
+				ImportLibrary=".\twod.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -261,7 +261,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Release\two\Win64"
 			ConfigurationType="2"
 			CharacterSet="0"
@@ -315,12 +315,12 @@
 				OutputFile="$(OutDir)\two.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".\Win64;."
+				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\Win64\two.lib"
+				ImportLibrary=".\two.lib"
 				TargetMachine="17"
 			/>
 			<Tool
