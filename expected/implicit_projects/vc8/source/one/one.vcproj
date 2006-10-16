@@ -162,7 +162,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="..\..\lib\Win64"
+			OutputDirectory="..\..\lib"
 			IntermediateDirectory="Debug\one\Win64"
 			ConfigurationType="4"
 			CharacterSet="0"
@@ -234,7 +234,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="..\..\lib\Win64"
+			OutputDirectory="..\..\lib"
 			IntermediateDirectory="Release\one\Win64"
 			ConfigurationType="4"
 			CharacterSet="0"

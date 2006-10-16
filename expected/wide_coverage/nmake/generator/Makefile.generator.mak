@@ -288,7 +288,7 @@ SOURCE="generator.cpp"
 SOURCE="generator.rc"
 
 "$(INTDIR)\generator.res" : $(SOURCE) "$(INTDIR)"
-	$(RSC) /l 0x409 /fo"$(INTDIR)\generator.res" /d NDEBUG $(SOURCE)
+	$(RSC) /l 0x409 /fo"$(INTDIR)\generator.res" $(SOURCE)
 
 
 

@@ -303,7 +303,7 @@ SOURCE="..\src\bar.rc"
 
 "$(INTDIR)\dotdot\src\bar.res" : $(SOURCE) "$(INTDIR)"
 	@if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
-	$(RSC) /l 0x409 /fo"$(INTDIR)\dotdot\src\bar.res" /d NDEBUG /i "." $(SOURCE)
+	$(RSC) /l 0x409 /fo"$(INTDIR)\dotdot\src\bar.res" /i "." $(SOURCE)
 
 
 

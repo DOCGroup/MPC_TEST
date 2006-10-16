@@ -162,7 +162,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Debug\DomainApplicationManager\Win64"
 			ConfigurationType="4"
 			CharacterSet="0"
@@ -234,7 +234,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Release\DomainApplicationManager\Win64"
 			ConfigurationType="4"
 			CharacterSet="0"

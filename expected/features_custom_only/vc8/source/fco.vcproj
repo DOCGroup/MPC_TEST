@@ -55,7 +55,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory=".\Win64"
+			OutputDirectory="."
 			IntermediateDirectory="Debug\fco\Win64"
 			ConfigurationType="10"
 			CharacterSet="0"
@@ -72,7 +72,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="Release\Win64"
+			OutputDirectory="Release"
 			IntermediateDirectory="Release\fco\Win64"
 			ConfigurationType="10"
 			CharacterSet="0"
