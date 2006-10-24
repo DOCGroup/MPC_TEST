@@ -1,4 +1,4 @@
 #!gbuild
 	[INTEGRITY Application]
-	-dynamic
 qt_uic_moc.gpj		[Program]
+qt_uic_moc_int.int

@@ -1,3 +1,10 @@
+Tue Oct 24 11:38:07 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/ghs/*.gpj:
+        * expected/*/ghs/*.int:
+
+          Updated to reflect my changes from Thu Oct 19 17:29:08 UTC 2006.
+
 Mon Oct 16 13:48:42 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc8/*.vcproj:
