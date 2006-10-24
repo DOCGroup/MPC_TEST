@@ -1,4 +1,4 @@
 #!gbuild
 	[INTEGRITY Application]
-	-dynamic
 source/grouping_E.gpj		[Program]
+source/grouping_E_int.int

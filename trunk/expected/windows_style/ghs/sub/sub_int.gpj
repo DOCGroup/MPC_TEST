@@ -1,4 +1,4 @@
 #!gbuild
 	[INTEGRITY Application]
-	-dynamic
 sub/sub.gpj		[Program]
+sub/sub_int.int

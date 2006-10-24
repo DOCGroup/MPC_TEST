@@ -1,4 +1,4 @@
 #!gbuild
 	[INTEGRITY Application]
-	-dynamic
 source/two/two.gpj		[Program]
+source/two/two_int.int

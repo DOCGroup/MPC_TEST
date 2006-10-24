@@ -1,4 +1,4 @@
 #!gbuild
 	[INTEGRITY Application]
-	-dynamic
 generator/generator.gpj		[Program]
+generator/generator_int.int

@@ -1,4 +1,4 @@
 #!gbuild
 	[INTEGRITY Application]
-	-dynamic
 source/basic_Zargaflan.gpj		[Program]
+source/basic_Zargaflan_int.int
