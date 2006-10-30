@@ -23,8 +23,6 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCMIDLTool"
-				AdditionalOptions=""
-				AdditionalIncludeDirectories=""
 				TypeLibraryName="$(InputName).tlb"
 				HeaderFileName="$(InputName).h"
 				InterfaceIdentifierFileName="$(InputName)_i.c"
@@ -49,8 +47,6 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCMIDLTool"
-				AdditionalOptions=""
-				AdditionalIncludeDirectories=""
 				TypeLibraryName="$(InputName).tlb"
 				HeaderFileName="$(InputName).h"
 				InterfaceIdentifierFileName="$(InputName)_i.c"

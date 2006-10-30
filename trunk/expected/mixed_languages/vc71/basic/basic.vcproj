@@ -55,8 +55,6 @@
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"
-				AdditionalOptions=""
-				AdditionalIncludeDirectories=""
 				TypeLibraryName="$(InputName).tlb"
 				HeaderFileName="$(InputName).h"
 				InterfaceIdentifierFileName="$(InputName)_i.c"
@@ -124,8 +122,6 @@
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"
-				AdditionalOptions=""
-				AdditionalIncludeDirectories=""
 				TypeLibraryName="$(InputName).tlb"
 				HeaderFileName="$(InputName).h"
 				InterfaceIdentifierFileName="$(InputName)_i.c"

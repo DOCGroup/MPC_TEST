@@ -17,7 +17,7 @@ cd $MPC_ROOT
 svn update | grep -v '^[\?GA]' | grep -v 'Update to' | grep -v 'At revision'
 
 if [ -z "$QTDIR" ]; then
-  QTDIR=/usr/lib64/qt-3.3; export QTDIR
+  QTDIR=/usr/lib/qt3; export QTDIR
 fi
 
 cd test

@@ -310,8 +310,6 @@ DEPENDCHECK :
 !IF "$(NO_EXTERNAL_DEPS)" != "1"
 !IF EXISTS("Makefile.fco.dep")
 	@echo Using "Makefile.fco.dep"
-!ELSE
-	@echo Warning: cannot find "Makefile.fco.dep"
 !ENDIF
 !ENDIF
 
