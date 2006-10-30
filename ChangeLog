@@ -1,3 +1,19 @@
+Mon Oct 30 17:34:51 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/vc7/*.vcproj:
+        * expected/*/vc71/*.vcproj:
+        * expected/features_custom_only/nmake/source/Makefile.fco.mak:
+
+          Updated to reflect my change from Thu Oct 26 15:45:18 UTC 2006.
+
+        * expected/options/gnuace/source/GNUmakefile.basic_Zargaflan:
+
+          Updated to reflect my ACE change from Mon Oct 30 16:33:41 UTC 2006.
+
+        * utils/nightly.sh:
+
+          Change the default QTDIR.
+
 Tue Oct 24 11:38:07 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/ghs/*.gpj:
