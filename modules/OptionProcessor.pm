@@ -86,7 +86,11 @@ sub usageAndExit {
 
   foreach my $key (sort keys %{$self->{'options'}}) {
     my($opt, $type) = split(/=/, $key);
-    my($str) = " [--$opt" . (defined $type ? " <$opt>" : '') . ']';
+    my($param) = (defined $type ? " <$opt>" : '');
+    if (UNIVERSAL::isa($self->{'options'}->{$key}, 'HASH')) {
+      $param = ' <name=value>';
+    }
+    my($str) = " [--$opt$param]";
     my($len) = length($str);
     if ($length + $len > $maxLine) {
       print "\n" . (' ' x $initial);
@@ -133,8 +137,8 @@ sub usageAndExit {
             }
             $part .= "$word ";
           }
+          $part =~ s/\s+$//;
         }
-       $part =~ s/\s+$//;
         print "$part.\n";
       }
       else {

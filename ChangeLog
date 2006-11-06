@@ -1,3 +1,26 @@
+Mon Nov  6 15:27:36 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/options/make/source/Makefile.basic_Zargaflan:
+
+          Updated to reflect my change from Mon Nov  6 15:11:47 UTC 2006.
+
+        * modules/OptionProcessor.pm:
+
+          Added support for HASH variables and fixed a bug where the usage
+          would go into an infinite loop when the string is exactly the
+          length of the maximum width.
+
+        * utils/nightly.sh:
+
+          Change the default QTDIR back to the original value and make the
+          output of the tests go to a file like the other nightly (.bat)
+          scripts.
+
+        * utils/pick_up_nightly.sh:
+
+          When picking up test output, remove carriage returns so the email
+          comes in as text instead of an application mime type.
+
 Mon Oct 30 17:34:51 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc7/*.vcproj:
