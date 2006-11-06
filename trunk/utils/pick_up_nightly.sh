@@ -13,7 +13,7 @@ if [ -d $TESTDIR ]; then
   for i in pick_me_up*; do
     title=`echo $i | sed 's/pick_me_up_//'`
     if [ -r $i ]; then
-      cat $i | mail -s "MPC Tests: $title" $RECIPIENTS
+      cat $i | tr -d '\015' | mail -s "MPC Tests: $title" $RECIPIENTS
       rm -f $i
     fi
   done
