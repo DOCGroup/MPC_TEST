@@ -35,6 +35,7 @@ project(*use): one, two {
   }
 
   Header_Files {
+    zar_thisC.h
     zar_thisB_T.h
     zar_thatB.h
   }

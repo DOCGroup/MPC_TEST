@@ -31,6 +31,10 @@ my(@files)  = ();
 for(my $i = 0; $i <= $#ARGV; $i++) {
   if ($ARGV[$i] eq '-GA') {
     $types{'source'}->{'pre_extension'}->{'C'} = 1;
+    $types{'header'}->{'pre_extension'}->{'C'} = 1;
+  }
+  elsif ($ARGV[$i] eq '-GX') {
+    $types{'header'}->{'pre_extension'}->{'C'} = 1;
   }
   elsif ($ARGV[$i] eq '-Sc') {
     delete $types{'header'}->{'pre_extension'}->{'B_T'};

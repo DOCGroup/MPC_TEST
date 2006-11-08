@@ -15,3 +15,7 @@ source/fco_use.gpj		[Shared Object]
 	-object_dir=source/.shobj
 	-Lsource
 	-DTHAT_THERE_MACRO
+source/other.gpj		[Shared Object]
+	-pic
+	-object_dir=source/.shobj
+	-Lsource

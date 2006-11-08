@@ -23,6 +23,9 @@ project {
     optional(inline_pre_extension) {
       commandflags(!-Sc) += B_T
     }
+    optional(header_pre_extension) {
+      commandflags(-GA || -GX) += C
+    }
   }
   zarflags += $(CLO_ZARFLAGS)
 }

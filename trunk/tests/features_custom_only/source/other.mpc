@@ -1,0 +1,18 @@
+project: custom_exercise {
+  ZAR_Files {
+    commandflags += -GX -Sc
+    other/other.poo
+  }
+  Source_Files {
+    other
+  }
+  Template_Files {
+    other
+  }
+  Inline_Files {
+    other
+  }
+  Header_Files {
+    other
+  }
+}

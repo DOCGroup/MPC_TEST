@@ -18,7 +18,8 @@ BUILT_SOURCES = \
   zar_thatB.cpp \
   zar_thatB.h \
   zar_thatB.inl \
-  zar_thatC.cpp
+  zar_thatC.cpp \
+  zar_thatC.h
 
 CLEANFILES = \
   that-stamp \
@@ -28,9 +29,10 @@ CLEANFILES = \
   zar_thatB.cpp \
   zar_thatB.h \
   zar_thatB.inl \
-  zar_thatC.cpp
+  zar_thatC.cpp \
+  zar_thatC.h
 
-zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp: that-stamp
+zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thatC.h: that-stamp
 
 that-stamp: $(srcdir)/that.zar
 	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA -Sc $(srcdir)/that.zar
@@ -46,7 +48,8 @@ BUILT_SOURCES += \
   zar_thisB_T.cpp \
   zar_thisB_T.h \
   zar_thisB_T.inl \
-  zar_thisC.cpp
+  zar_thisC.cpp \
+  zar_thisC.h
 
 CLEANFILES += \
   this-stamp \
@@ -59,9 +62,10 @@ CLEANFILES += \
   zar_thisB_T.cpp \
   zar_thisB_T.h \
   zar_thisB_T.inl \
-  zar_thisC.cpp
+  zar_thisC.cpp \
+  zar_thisC.h
 
-zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp: this-stamp
+zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h: this-stamp
 
 this-stamp: $(srcdir)/this.zar
 	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA $(srcdir)/this.zar
@@ -86,7 +90,51 @@ noinst_HEADERS = \
   zar_thatB.inl \
   zar_thisB_T.cpp \
   zar_thisB_T.h \
-  zar_thisB_T.inl
+  zar_thisB_T.inl \
+  zar_thisC.h
+
+## Makefile.other.am
+
+BUILT_SOURCES += \
+  other/zar_otherA.cpp \
+  other/zar_otherA.h \
+  other/zar_otherA.inl \
+  other/zar_otherB.cpp \
+  other/zar_otherB.h \
+  other/zar_otherB.inl \
+  other/zar_otherC.h
+
+CLEANFILES += \
+  other/other-stamp \
+  other/zar_otherA.cpp \
+  other/zar_otherA.h \
+  other/zar_otherA.inl \
+  other/zar_otherB.cpp \
+  other/zar_otherB.h \
+  other/zar_otherB.inl \
+  other/zar_otherC.h
+
+other/zar_otherA.cpp other/zar_otherA.h other/zar_otherA.inl other/zar_otherB.cpp other/zar_otherB.h other/zar_otherB.inl other/zar_otherC.h: other/other-stamp
+
+other/other-stamp: $(srcdir)/other/other.poo
+	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GX -Sc $(srcdir)/other/other.poo
+	@touch "$@"
+
+noinst_LTLIBRARIES += libother.la
+
+libother_la_SOURCES = \
+  other/zar_otherA.cpp \
+  other/zar_otherB.cpp
+
+libother_la_LDFLAGS = \
+ -L.
+
+noinst_HEADERS += \
+  other/zar_otherA.h \
+  other/zar_otherA.inl \
+  other/zar_otherB.h \
+  other/zar_otherB.inl \
+  other/zar_otherC.h
 
 ## Clean up template repositories, etc.
 clean-local:
