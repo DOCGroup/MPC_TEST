@@ -1,3 +1,19 @@
+Wed Nov  8 15:48:28 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/features_custom_only/*:
+        * tests/features_custom_only/bin/exercise.pl:
+        * tests/features_custom_only/config/custom_exercise.mpb:
+        * tests/features_custom_only/source/crap.h:
+        * tests/features_custom_only/source/crap.inl:
+        * tests/features_custom_only/source/crap_T.cpp:
+        * tests/features_custom_only/source/fco.mpc:
+        * tests/features_custom_only/source/other:
+        * tests/features_custom_only/source/other.mpc:
+        * tests/features_custom_only/source/other/other.poo:
+
+          Modified this test to exercise my change from Mon Nov  6 19:27:44
+          UTC 2006.
+
 Mon Nov  6 15:27:36 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/options/make/source/Makefile.basic_Zargaflan:

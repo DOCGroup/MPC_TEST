@@ -36,7 +36,7 @@ DEPGEN=perl $(ACE_ROOT)/bin/depgen.pl -i -t nmake
 !ENDIF
 !ENDIF
 
-GENERATED_DIRTY = "zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" "zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp"
+GENERATED_DIRTY = "zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" "zar_thatC.h" "zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp" "zar_thisC.h"
 
 !IF  "$(CFG)" == "Win32 Debug"
 
@@ -66,6 +66,7 @@ REALCLEAN : CLEAN
         -@del /f/q "zar_thatB.h"
         -@del /f/q "zar_thatB.inl"
         -@del /f/q "zar_thatC.cpp"
+        -@del /f/q "zar_thatC.h"
         -@del /f/q "zar_thisA.cpp"
         -@del /f/q "zar_thisA.h"
         -@del /f/q "zar_thisA.inl"
@@ -76,6 +77,7 @@ REALCLEAN : CLEAN
         -@del /f/q "zar_thisB_T.h"
         -@del /f/q "zar_thisB_T.inl"
         -@del /f/q "zar_thisC.cpp"
+        -@del /f/q "zar_thisC.h"
 
 "$(INTDIR)" :
     if not exist "Debug\$(NULL)" mkdir "Debug"
@@ -117,6 +119,7 @@ REALCLEAN : CLEAN
         -@del /f/q "zar_thatB.h"
         -@del /f/q "zar_thatB.inl"
         -@del /f/q "zar_thatC.cpp"
+        -@del /f/q "zar_thatC.h"
         -@del /f/q "zar_thisA.cpp"
         -@del /f/q "zar_thisA.h"
         -@del /f/q "zar_thisA.inl"
@@ -127,6 +130,7 @@ REALCLEAN : CLEAN
         -@del /f/q "zar_thisB_T.h"
         -@del /f/q "zar_thisB_T.inl"
         -@del /f/q "zar_thisC.cpp"
+        -@del /f/q "zar_thisC.h"
 
 "$(INTDIR)" :
     if not exist "Release\$(NULL)" mkdir "Release"
@@ -166,6 +170,7 @@ REALCLEAN : CLEAN
         -@del /f/q "zar_thatB.h"
         -@del /f/q "zar_thatB.inl"
         -@del /f/q "zar_thatC.cpp"
+        -@del /f/q "zar_thatC.h"
         -@del /f/q "zar_thisA.cpp"
         -@del /f/q "zar_thisA.h"
         -@del /f/q "zar_thisA.inl"
@@ -176,6 +181,7 @@ REALCLEAN : CLEAN
         -@del /f/q "zar_thisB_T.h"
         -@del /f/q "zar_thisB_T.inl"
         -@del /f/q "zar_thisC.cpp"
+        -@del /f/q "zar_thisC.h"
 
 "$(INTDIR)" :
     if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
@@ -213,6 +219,7 @@ REALCLEAN : CLEAN
         -@del /f/q "zar_thatB.h"
         -@del /f/q "zar_thatB.inl"
         -@del /f/q "zar_thatC.cpp"
+        -@del /f/q "zar_thatC.h"
         -@del /f/q "zar_thisA.cpp"
         -@del /f/q "zar_thisA.h"
         -@del /f/q "zar_thisA.inl"
@@ -223,6 +230,7 @@ REALCLEAN : CLEAN
         -@del /f/q "zar_thisB_T.h"
         -@del /f/q "zar_thisB_T.inl"
         -@del /f/q "zar_thisC.cpp"
+        -@del /f/q "zar_thisC.h"
 
 "$(INTDIR)" :
     if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
@@ -284,7 +292,7 @@ SOURCE="that.zar"
 
 InputPath=that.zar
 
-"zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" "zar_thatC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc "$(InputPath)"
@@ -294,7 +302,7 @@ SOURCE="this.zar"
 
 InputPath=this.zar
 
-"zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp" "zar_thisC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA "$(InputPath)"

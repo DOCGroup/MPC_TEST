@@ -100,6 +100,9 @@ BuildCmds= \
 
 "zar_thatC.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
+
+"zar_thatC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
 # End Custom Build
 
 !ELSEIF  "$(CFG)" == "fco - Win32 Release"
@@ -130,6 +133,9 @@ BuildCmds= \
    $(BuildCmds)
 
 "zar_thatC.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"zar_thatC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 # End Custom Build
 
@@ -178,6 +184,9 @@ BuildCmds= \
 
 "zar_thisC.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
+
+"zar_thisC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
 # End Custom Build
 
 !ELSEIF  "$(CFG)" == "fco - Win32 Release"
@@ -217,6 +226,9 @@ BuildCmds= \
    $(BuildCmds)
 
 "zar_thisC.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"zar_thisC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 # End Custom Build
 

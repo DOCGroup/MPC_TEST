@@ -15,6 +15,7 @@
 	:extraOutputFile=zar_thatB.h
 	:extraOutputFile=zar_thatB.inl
 	:extraOutputFile=zar_thatC.cpp
+	:extraOutputFile=zar_thatC.h
 	-c
 	:postexecShell='del /f/s/q .c && del /f/s/q .h'
 	:dependsRelative=this.zar
@@ -29,5 +30,6 @@
 	:extraOutputFile=zar_thisB_T.h
 	:extraOutputFile=zar_thisB_T.inl
 	:extraOutputFile=zar_thisC.cpp
+	:extraOutputFile=zar_thisC.h
 	-c
 	:postexecShell='del /f/s/q .c && del /f/s/q .h'

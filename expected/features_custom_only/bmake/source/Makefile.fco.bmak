@@ -91,11 +91,11 @@ CFLAGS = \
 all:
 	@-rem
 
-GENERATED_DIRTY = zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp
-zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp: that.zar
+GENERATED_DIRTY = zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thatC.h zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h
+zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thatC.h: that.zar
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc that.zar
 
-zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp: this.zar
+zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h: this.zar
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA this.zar
 
 all: $(GENERATED_DIRTY)
@@ -141,6 +141,7 @@ realclean: clean
 	-if exist "zar_thatB.h" del "zar_thatB.h"
 	-if exist "zar_thatB.inl" del "zar_thatB.inl"
 	-if exist "zar_thatC.cpp" del "zar_thatC.cpp"
+	-if exist "zar_thatC.h" del "zar_thatC.h"
 	-if exist "zar_thisA.cpp" del "zar_thisA.cpp"
 	-if exist "zar_thisA.h" del "zar_thisA.h"
 	-if exist "zar_thisA.inl" del "zar_thisA.inl"
@@ -151,4 +152,5 @@ realclean: clean
 	-if exist "zar_thisB_T.h" del "zar_thisB_T.h"
 	-if exist "zar_thisB_T.inl" del "zar_thisB_T.inl"
 	-if exist "zar_thisC.cpp" del "zar_thisC.cpp"
+	-if exist "zar_thisC.h" del "zar_thisC.h"
 

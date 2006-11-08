@@ -11,5 +11,6 @@ zar_thatB.cpp
 zar_thisC.cpp
 zar_thatB.h
 zar_thisB_T.h
+zar_thisC.h
 zar_thatB.inl
 zar_thisB_T.inl

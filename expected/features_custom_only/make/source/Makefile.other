@@ -11,7 +11,7 @@ OUTPUT_OPTION = -o "$@"
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
-MAKEFILE      = Makefile.fco
+MAKEFILE      = Makefile.other
 DEPENDENCIES  = .depend.$(MAKEFILE)
 LTARGETDIR    = ./
 CAT           = cat
@@ -25,31 +25,48 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          =
-SRC           = 
+OBJS          = other/zar_otherA$(OBJEXT) other/zar_otherB$(OBJEXT)
+AREXT         = .a
+LIB           = $(LTARGETDIR)$(LIBPREFIX)other$(LIBSUFFIX)$(AREXT)
+SOEXT         = .so
+SHTARGETDIR   = ./
+SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)other$(LIBSUFFIX)$(SOEXT)
+SHFLAGS       = -shared
+SRC           = other/zar_otherA.cpp other/zar_otherB.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
-EXPORTFLAGS   = $(STATICFLAGS)
+EXPORTFLAGS   = $(DYNAMICFLAGS)
 
 #----------------------------------------------------------------------------
 #       Local targets
 #----------------------------------------------------------------------------
 
+all: $(SHLIB)
+
+$(SHLIB): $(SHTARGETDIR) $(OBJS)
+	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
+
 $(LTARGETDIR):
 	@$(MKDIR) "$@"
 
-GENERATED_DIRTY = zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thatC.h zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h
+$(LIB): $(LTARGETDIR) $(OBJS)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
-zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thatC.h: that.zar
-	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA -Sc that.zar
+GENERATED_DIRTY = other/zar_otherA.cpp other/zar_otherA.h other/zar_otherA.inl other/zar_otherB.cpp other/zar_otherB.h other/zar_otherB.inl other/zar_otherC.h
 
-zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h: this.zar
-	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA this.zar
+other/zar_otherA.cpp other/zar_otherA.h other/zar_otherA.inl other/zar_otherB.cpp other/zar_otherB.h other/zar_otherB.inl other/zar_otherC.h: other/other.poo
+	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GX -Sc other/other.poo
 
 .PRECIOUS: $(GENERATED_DIRTY)
-all: $(GENERATED_DIRTY)
+$(OBJS): $(GENERATED_DIRTY)
 
 generated: $(GENERATED_DIRTY)
 	@-:
+
+other/zar_otherA$(OBJEXT): other/zar_otherA.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) other/zar_otherA.cpp
+
+other/zar_otherB$(OBJEXT): other/zar_otherB.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) other/zar_otherB.cpp
 
 clean:
 	-$(RM) $(OBJS)
@@ -66,6 +83,6 @@ $(DEPENDENCIES):
 	@touch $(DEPENDENCIES)
 
 depend:
-	@-:
+	-makedepend -Y $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
 include $(DEPENDENCIES)

@@ -3,5 +3,6 @@
 	<Projects>
 		<Project File="source/fco.vpj"/>
 		<Project File="source/fco_use.vpj"/>
+		<Project File="source/other.vpj"/>
 	</Projects>
 </Workspace>

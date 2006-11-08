@@ -95,6 +95,10 @@ SOURCE="zar_thatB.h"
 
 SOURCE="zar_thisB_T.h"
 # End Source File
+# Begin Source File
+
+SOURCE="zar_thisC.h"
+# End Source File
 # End Group
 # Begin Group "Inline Files"
 
