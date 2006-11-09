@@ -1,7 +1,7 @@
 #!gbuild
 primaryTarget=ppc_integrity.tgt
 [Project]
-	-I.
+	--one_instantiation_per_object
 	:sourceDir=.
 	--std
 	-language=cxx
