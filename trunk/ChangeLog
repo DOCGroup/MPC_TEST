@@ -1,3 +1,23 @@
+Thu Nov  9 13:31:52 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/buildflags/ghs/default.gpj:
+        * expected/circular_dependencies/ghs/default.gpj:
+        * expected/conditional_specific_verbatim_wildcards/ghs/default.gpj:
+        * expected/exclude/ghs/default.gpj:
+        * expected/exclude/ghs/one/default.gpj:
+        * expected/features_custom_only/ghs/default.gpj:
+        * expected/grouping/ghs/default.gpj:
+        * expected/implicit_projects/ghs/default.gpj:
+        * expected/mixed_languages/ghs/default.gpj:
+        * expected/options/ghs/default_Zargaflan.gpj:
+        * expected/options/ghs/source/default_Zargaflan.gpj:
+        * expected/qt/ghs/default.gpj:
+        * expected/relative/ghs/default.gpj:
+        * expected/wide_coverage/ghs/default.gpj:
+        * expected/windows_style/ghs/default.gpj:
+
+          Updated to reflect my change from Thu Nov  9 13:25:05 UTC 2006.
+
 Wed Nov  8 15:48:28 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/features_custom_only/*:
