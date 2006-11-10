@@ -1,3 +1,15 @@
+Fri Nov 10 16:48:53 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/features_custom_only/bmake/source/Makefile.other.bmak:
+        * expected/features_custom_only/em3/source/other.vcp:
+        * expected/features_custom_only/nmake/source/Makefile.other.mak:
+        * expected/features_custom_only/vc6/source/other.dsp:
+        * expected/features_custom_only/vc7/source/other.vcproj:
+        * expected/features_custom_only/vc71/source/other.vcproj:
+        * expected/features_custom_only/vc8/source/other.vcproj:
+
+          Setting the binary property on these files.
+
 Thu Nov  9 13:31:52 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/buildflags/ghs/default.gpj:
