@@ -38,22 +38,6 @@ VCL_CFLAGS     = -D_NO_VCL
 STARTUP_LETTER = d
 STARTUP_OBJ    = c0$(STARTUP_LETTER)32$(UC_MAIN)$(OBJ_EXT)
 
-!ifdef CBX
-OBJ_EXT      = .o
-DLL_EXT      = .dll
-LIB_EXT      = .a
-EXE_EXT      = .exe
-CC           = bccx
-RC           = brcc32
-LINK         = ilink
-TLIB         = ar
-THREADFLAGS  = -tWM
-DLLFLAGS     = -Tpd -Gi -x -Gn -w-dup
-LIBFLAGS     = cfrv
-EXEFLAGS     = -Tpe -x -Gn
-WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
-CCFLAGS      = -b
-!else # BCC
 OBJ_EXT      = .obj
 DLL_EXT      = .dll
 LIB_EXT      = .lib
@@ -68,7 +52,6 @@ LIBFLAGS     = /C
 EXEFLAGS     = -Tpe -x -Gn
 WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
 CCFLAGS      = -q
-!endif
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)one
 NAME         = one$(LIBMODIFIER)
@@ -84,7 +67,7 @@ LFLAGS   = \
            -L"..\..\lib" -j"..\..\lib"
 
 LIBFILES = \
-           $(CG_LIB) import32$(LIB_EXT) cw32mti.lib ws2_32.lib
+           $(CG_LIB) import32.lib cw32mti.lib ws2_32.lib
 
 CFLAGS = \
          -a8 \

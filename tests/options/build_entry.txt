@@ -1,5 +1,5 @@
 automake:
-bmake: options_Zargaflan.bmake
+bmake: Makefile_Zargaflan.bmak
 make: Makefile_Zargaflan
 gnuace: GNUmakefile_Zargaflan
 nmake: options_Zargaflan.nmake

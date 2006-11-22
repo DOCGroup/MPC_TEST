@@ -1,3 +1,28 @@
+Wed Nov 22 13:45:46 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/bmake/Makefile.bmak:
+        * expected/*/bmake/Makefile.*.bmak:
+        * tests/options/build_entry.txt:
+
+          Updated to reflect Johnny's change from Wed Nov 22 10:34:12 2006.
+
+        * expected/mixed_languages/vc8/csharp/csharp.csproj:
+        * expected/mixed_languages/vc8/mixed_languages.sln:
+        * expected/mixed_languages/vc8web/csharp:
+        * expected/mixed_languages/vc8web/csharp/csharp.csproj:
+        * expected/mixed_languages/vc8web/mixed_languages.sln:
+
+          Updated to reflect my change from Wed Nov 22 13:44:33 UTC 2006.
+
+        * tests/mixed_languages/csharp/csharp.mpc:
+
+          Allow the csharp project to be build under vc8web.
+
+        * expected/options/bmake/options_Zargaflan.bmake:
+        * expected/options/bmake/source/source_Zargaflan.bmake:
+
+          Removed these files.
+
 Fri Nov 10 16:48:53 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/features_custom_only/bmake/source/Makefile.other.bmak:
