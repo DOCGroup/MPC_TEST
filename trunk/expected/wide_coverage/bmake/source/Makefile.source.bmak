@@ -96,8 +96,8 @@ $(OUTPUTDIR)$(NAME)$(EXE_EXT): $(OBJFILES) $(RESOURCE)
 	$(EXEFLAGS) $(LFLAGS) $(STARTUP_OBJ) $(OBJFILES), $(OUTPUTDIR)$(NAME)$(EXE_EXT),, $(LIBFILES),, $(RESOURCE)
 !
 
-GENERATED_DIRTY = Foolish/foolish.txt
-Foolish/foolish.txt: Foolish/foolish.simple
+GENERATED_DIRTY = Foolish\foolish.txt
+Foolish\foolish.txt: Foolish/foolish.simple
 	echo Generated from Foolish/foolish.simple > $@
 
 $(OBJFILES): $(GENERATED_DIRTY)
@@ -148,7 +148,7 @@ clean:
 	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "Foolish/foolish.txt" del "Foolish/foolish.txt"
+	-if exist "Foolish\foolish.txt" del "Foolish\foolish.txt"
 	-if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)"
         -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
 

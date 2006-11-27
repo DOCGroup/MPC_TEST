@@ -15,10 +15,10 @@
 	-lsource_lib
 	-DMACRO_TEST="a_string_with_no_spaces"
 Foolish/foolish.simple		[Text]
-Foolish/foolish.txt
+Foolish\\foolish.txt
 	:dependsRelative=Foolish/foolish.simple
-	:preexecShell='cd source && echo Generated from Foolish/foolish.simple > Foolish/foolish.txt'
-	:extraOutputFile=Foolish/foolish.txt
+	:preexecShell='cd source && echo Generated from Foolish/foolish.simple > Foolish\\foolish.txt'
+	:extraOutputFile=Foolish\\foolish.txt
 exe\main.cpp
 exe\use_more_names\use_more_names.cpp
 exe\use_names\use_names.cpp

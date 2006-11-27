@@ -1,3 +1,20 @@
+Mon Nov 27 17:00:35 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/features_custom_only/vc7/source/other.vcproj:
+        * expected/features_custom_only/vc71/source/other.vcproj:
+        * expected/features_custom_only/vc8/source/other.vcproj:
+        * expected/wide_coverage/bmake/source/Makefile.source.bmak:
+        * expected/wide_coverage/em3/source/source.vcp:
+        * expected/wide_coverage/ghs/source/source.gpj:
+        * expected/wide_coverage/ghs/source/source_lib.gpj:
+        * expected/wide_coverage/nmake/source/Makefile.source.mak:
+        * expected/wide_coverage/vc6/source/source.dsp:
+        * expected/wide_coverage/vc7/source/source.vcproj:
+        * expected/wide_coverage/vc71/source/source.vcproj:
+        * expected/wide_coverage/vc8/source/source.vcproj:
+
+          Updated to reflect my change from Mon Nov 27 16:58:31 UTC 2006.
+
 Wed Nov 22 13:45:46 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/bmake/Makefile.bmak:

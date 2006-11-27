@@ -11,7 +11,7 @@
 	-Lsource/.
 	-L..\lib
 more_names.key		[Text]
-cre\\o.le/more_names.cpp
+cre\\o.le\\more_names.cpp
 	:dependsRelative=..\\bin\\generator
 	:dependsRelative=more_names.key
 	:preexecShell='cd source && mkdir cre\\o.le || type nul'
@@ -20,8 +20,8 @@ cre\\o.le/more_names.cpp
 	:preexecShell='cd source && echo #include "source_lib_pch.h" > temporary.src'
         :preexecShell='cd source && type cre\\o.le\\more_names.cpp >> temporary.src'
         :preexecShell='cd source && move /y temporary.src cre\\o.le\\more_names.cpp'
-	:extraOutputFile=cre\\o.le/more_names.cpp
-	:extraOutputFile=cre\\o.le/more_names.h
+	:extraOutputFile=cre\\o.le\\more_names.cpp
+	:extraOutputFile=cre\\o.le\\more_names.h
 names.key		[Text]
 names.cpp
 	:dependsRelative=..\\bin\\generator
