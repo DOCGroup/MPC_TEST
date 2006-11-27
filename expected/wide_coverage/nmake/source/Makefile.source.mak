@@ -36,7 +36,7 @@ DEPGEN=perl $(ACE_ROOT)/bin/depgen.pl -i -t nmake
 !ENDIF
 !ENDIF
 
-GENERATED_DIRTY = "Foolish/foolish.txt"
+GENERATED_DIRTY = "Foolish\foolish.txt"
 
 !IF  "$(CFG)" == "Win32 Debug"
 
@@ -60,7 +60,7 @@ REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\main_testd.pdb"
         -@del /f/q "$(INSTALLDIR)\main_testd.exe"
         -@del /f/q "$(INSTALLDIR)\main_testd.ilk"
-        -@del /f/q "Foolish/foolish.txt"
+        -@del /f/q "Foolish\foolish.txt"
 
 "$(INTDIR)" :
     if not exist "Debug\$(NULL)" mkdir "Debug"
@@ -110,7 +110,7 @@ DEPEND :
 REALCLEAN : CLEAN
         -@del /f/q "$(INSTALLDIR)\main_test.exe"
         -@del /f/q "$(INSTALLDIR)\main_test.ilk"
-        -@del /f/q "Foolish/foolish.txt"
+        -@del /f/q "Foolish\foolish.txt"
 
 "$(INTDIR)" :
     if not exist "Release\$(NULL)" mkdir "Release"
@@ -161,7 +161,7 @@ REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\main_testsd.pdb"
         -@del /f/q "$(INSTALLDIR)\main_testsd.exe"
         -@del /f/q "$(INSTALLDIR)\main_testsd.ilk"
-        -@del /f/q "Foolish/foolish.txt"
+        -@del /f/q "Foolish\foolish.txt"
 
 "$(INTDIR)" :
     if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
@@ -211,7 +211,7 @@ DEPEND :
 REALCLEAN : CLEAN
         -@del /f/q "$(INSTALLDIR)\main_tests.exe"
         -@del /f/q "$(INSTALLDIR)\main_tests.ilk"
-        -@del /f/q "Foolish/foolish.txt"
+        -@del /f/q "Foolish\foolish.txt"
 
 "$(INTDIR)" :
     if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
@@ -307,10 +307,10 @@ SOURCE="Foolish/foolish.simple"
 
 InputPath=Foolish/foolish.simple
 
-"Foolish/foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"Foolish\foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	<<tempfile.bat
 	@echo off
-	echo Generated from "$(InputPath)" > "Foolish/foolish.txt"
+	echo Generated from "$(InputPath)" > "Foolish\foolish.txt"
 <<
 
 

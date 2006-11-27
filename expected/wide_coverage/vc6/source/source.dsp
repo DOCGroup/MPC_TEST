@@ -128,9 +128,9 @@ SOURCE="Foolish/foolish.simple"
 InputPath="Foolish/foolish.simple"
 
 BuildCmds= \
-	echo Generated from $(InputPath) > "Foolish/foolish.txt" \
+	echo Generated from $(InputPath) > "Foolish\foolish.txt" \
 
-"Foolish/foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"Foolish\foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 # End Custom Build
 
@@ -141,9 +141,9 @@ BuildCmds= \
 InputPath="Foolish/foolish.simple"
 
 BuildCmds= \
-	echo Generated from $(InputPath) > "Foolish/foolish.txt" \
+	echo Generated from $(InputPath) > "Foolish\foolish.txt" \
 
-"Foolish/foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"Foolish\foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 # End Custom Build
 
