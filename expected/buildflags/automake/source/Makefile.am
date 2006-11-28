@@ -6,17 +6,23 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.bfs_exe.am
 noinst_PROGRAMS = fooz
 
-fooz_SOURCES = \
+fooz_SOURCES_COMMON = \
   fooza.cpp
 
-fooz_LDFLAGS = \
+fooz_LDFLAGS_COMMON = \
   -L.
+
+fooz_CPPFLAGS = $(fooz_CPPFLAGS_COMMON)
+
+fooz_SOURCES = $(fooz_SOURCES_COMMON)
+
+fooz_LDFLAGS = $(fooz_LDFLAGS_COMMON)
 
 fooz_LDADD = libfoozb_cpp_convenience2.la
 noinst_LTLIBRARIES = libfoozb_cpp_convenience2.la
@@ -26,12 +32,18 @@ libfoozb_cpp_convenience2_la_CPPFLAGS = $(fooz_CPPFLAGS) -Trogdor
 ## Makefile.bfs_lib.am
 lib_LTLIBRARIES = libbfs.la
 
-libbfs_la_SOURCES = \
+libbfs_SOURCES_COMMON = \
   one.cpp \
   two.cpp
 
-libbfs_la_LDFLAGS = \
+libbfs_LDFLAGS_COMMON = \
  -L.
+
+libbfs_la_CPPFLAGS = $(libbfs_CPPFLAGS_COMMON)
+
+libbfs_la_SOURCES = $(libbfs_SOURCES_COMMON)
+
+libbfs_la_LDFLAGS = $(libbfs_LDFLAGS_COMMON)
 
 libbfs_la_LIBADD = libdirectory_gets_flags_cpp_convenience1.la
 noinst_LTLIBRARIES += libdirectory_gets_flags_cpp_convenience1.la

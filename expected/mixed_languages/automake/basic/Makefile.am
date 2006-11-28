@@ -6,21 +6,27 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake mixed_languages.mwc
+## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake mixed_languages.mwc
 
 
 ## Makefile.basic.am
 lib_LTLIBRARIES = libbasic.la
 
-libbasic_la_CPPFLAGS = \
+libbasic_CPPFLAGS_COMMON = \
   -DBASIC_BUILD_DLL
 
-libbasic_la_SOURCES = \
+libbasic_SOURCES_COMMON = \
   arch.cpp \
   foo.cpp
 
-libbasic_la_LDFLAGS = \
+libbasic_LDFLAGS_COMMON = \
  -version-number 5:3:15 -L.
+
+libbasic_la_CPPFLAGS = $(libbasic_CPPFLAGS_COMMON)
+
+libbasic_la_SOURCES = $(libbasic_SOURCES_COMMON)
+
+libbasic_la_LDFLAGS = $(libbasic_LDFLAGS_COMMON)
 
 noinst_HEADERS = \
   bar.h \

@@ -138,7 +138,8 @@ sub compare {
         ## currently includes MPC command line, CVS Id tags, GUID's
         ## and html references.
         if ($line !~ /mwc\.pl/ && $line !~ /\$Id[:\$]/ &&
-            $line !~ /[\da-f]+\-[\da-f]+\-/i && $line !~ /a\s+href=/i) {
+            $line !~ /[\da-f]+\-[\da-f]+\-/i && $line !~ /a\s+href=/i &&
+            $line !~ /^ProjectDir=/) {
           if (!defined $lines[$i]) {
             $different = 1;
             last;

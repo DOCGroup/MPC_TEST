@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -features rtti=1 wide_coverage.mwc
+## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake -features rtti=1 wide_coverage.mwc
 
 
 
@@ -84,24 +84,33 @@ CLEANFILES += \
 
 noinst_LTLIBRARIES = libsource_lib.la
 
-libsource_lib_la_CPPFLAGS = \
+libsource_lib_CPPFLAGS_COMMON = \
   -I. \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libsource_lib_la_SOURCES = \
+libsource_lib_SOURCES_COMMON = \
   ./qwee.cxx \
   TheCheat.cpp \
   cre/o.le/more_names.cpp \
   names.cpp
 
+libsource_lib_DEPENDENCIES_COMMON = \
+ ../lib
+
+libsource_lib_LDFLAGS_COMMON = \
+ -L. -L../lib
+
+libsource_lib_la_CPPFLAGS = $(libsource_lib_CPPFLAGS_COMMON)
+
+libsource_lib_la_SOURCES = $(libsource_lib_SOURCES_COMMON)
+
 ../lib:
 	mkdir -p ../lib
 
 libsource_lib_la_DEPENDENCIES = \
-  ../lib
+ $(libsource_lib_DEPENDENCIES_COMMON)
 
-libsource_lib_la_LDFLAGS = \
- -L. -L../lib
+libsource_lib_la_LDFLAGS = $(libsource_lib_LDFLAGS_COMMON)
 
 noinst_HEADERS = \
   ./qwee_T.C \
@@ -126,7 +135,7 @@ Foolish/foolish.txt: $(srcdir)/Foolish/foolish.simple
 
 noinst_PROGRAMS = main_test
 
-main_test_CPPFLAGS = \
+main_test_CPPFLAGS_COMMON = \
   -I. \
   -I/this/path \
   -IZ:\that\path \
@@ -134,21 +143,29 @@ main_test_CPPFLAGS = \
   -IThere \
   -DMACRO_TEST="a_string_with_no_spaces"
 
-main_test_SOURCES = \
+main_test_SOURCES_COMMON = \
   exe/main.cpp \
   exe/use_more_names/use_more_names.cpp \
   exe/use_names/use_names.cpp \
   exe/use_more_names/use_more_names.h \
   exe/use_names/use_names.h
 
+main_test_DEPENDENCIES_COMMON = \
+ ../lib
+
+main_test_LDFLAGS_COMMON = \
+  -L. -L../lib
+
+main_test_CPPFLAGS = $(main_test_CPPFLAGS_COMMON)
+
+main_test_SOURCES = $(main_test_SOURCES_COMMON)
+
 ../lib:
 	mkdir -p ../lib
 
-main_test_DEPENDENCIES = \
-  ../lib
+main_test_DEPENDENCIES = $(main_test_DEPENDENCIES_COMMON)
 
-main_test_LDFLAGS = \
-  -L. -L../lib
+main_test_LDFLAGS = $(main_test_LDFLAGS_COMMON)
 
 main_test_LDADD = \
   libsource_lib.la
