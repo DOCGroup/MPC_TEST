@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -base different -features FaKe=0 -genins -hierarchy -make_coexistence -name_modifier *_Zargaflan -apply_project -relative TEST_ROOT=/home/elliottc/current/MPC/test/tests/options -static -value_project postbuild+=echo Hello There -value_template targetoutdir=zeep/
+## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake -base different -features FaKe=0 -genins -hierarchy -make_coexistence -name_modifier *_Zargaflan -apply_project -relative TEST_ROOT=/home/elliottc/current/MPC/test/tests/options -static -value_project "postbuild  +=  echo Hello There" -value_template "targetoutdir  =   zeep/"
 
 
 
@@ -15,15 +15,21 @@
 if !BUILD_FAKE
 noinst_PROGRAMS = basic
 
-basic_CPPFLAGS = \
+basic_CPPFLAGS_COMMON = \
   -I.. \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-basic_SOURCES = \
+basic_SOURCES_COMMON = \
   basic.cpp
 
-basic_LDFLAGS = \
+basic_LDFLAGS_COMMON = \
   -L.
+
+basic_CPPFLAGS = $(basic_CPPFLAGS_COMMON)
+
+basic_SOURCES = $(basic_SOURCES_COMMON)
+
+basic_LDFLAGS = $(basic_LDFLAGS_COMMON)
 
 all: __postbuild__
 

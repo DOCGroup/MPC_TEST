@@ -6,27 +6,36 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake implicit_projects.mwc
+## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake implicit_projects.mwc
 
 
 ## Makefile.one.am
 noinst_LTLIBRARIES = libone.la
 
-libone_la_CPPFLAGS = \
+libone_CPPFLAGS_COMMON = \
   -DFAILURE_TRIGGER \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libone_la_SOURCES = \
+libone_SOURCES_COMMON = \
   foo.cpp
+
+libone_DEPENDENCIES_COMMON = \
+ ../../lib
+
+libone_LDFLAGS_COMMON = \
+ -L. -L../../lib
+
+libone_la_CPPFLAGS = $(libone_CPPFLAGS_COMMON)
+
+libone_la_SOURCES = $(libone_SOURCES_COMMON)
 
 ../../lib:
 	mkdir -p ../../lib
 
 libone_la_DEPENDENCIES = \
-  ../../lib
+ $(libone_DEPENDENCIES_COMMON)
 
-libone_la_LDFLAGS = \
- -L. -L../../lib
+libone_la_LDFLAGS = $(libone_LDFLAGS_COMMON)
 
 noinst_HEADERS = \
   foo.h

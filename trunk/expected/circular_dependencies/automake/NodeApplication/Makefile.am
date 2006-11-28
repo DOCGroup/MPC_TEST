@@ -6,29 +6,41 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.NodeApplication.am
 noinst_PROGRAMS = NodeApplication
 
-NodeApplication_SOURCES = \
+NodeApplication_SOURCES_COMMON = \
   foo.cpp
 
-NodeApplication_LDFLAGS = \
+NodeApplication_LDFLAGS_COMMON = \
   -L.
+
+NodeApplication_CPPFLAGS = $(NodeApplication_CPPFLAGS_COMMON)
+
+NodeApplication_SOURCES = $(NodeApplication_SOURCES_COMMON)
+
+NodeApplication_LDFLAGS = $(NodeApplication_LDFLAGS_COMMON)
 
 ## Makefile.RTNA_Configurator.am
 noinst_LTLIBRARIES = libCIAO_RTNA_Configurator.la
 
-libCIAO_RTNA_Configurator_la_CPPFLAGS = \
+libCIAO_RTNA_Configurator_CPPFLAGS_COMMON = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libCIAO_RTNA_Configurator_la_SOURCES = \
+libCIAO_RTNA_Configurator_SOURCES_COMMON = \
   foo.cpp
 
-libCIAO_RTNA_Configurator_la_LDFLAGS = \
+libCIAO_RTNA_Configurator_LDFLAGS_COMMON = \
  -L.
+
+libCIAO_RTNA_Configurator_la_CPPFLAGS = $(libCIAO_RTNA_Configurator_CPPFLAGS_COMMON)
+
+libCIAO_RTNA_Configurator_la_SOURCES = $(libCIAO_RTNA_Configurator_SOURCES_COMMON)
+
+libCIAO_RTNA_Configurator_la_LDFLAGS = $(libCIAO_RTNA_Configurator_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

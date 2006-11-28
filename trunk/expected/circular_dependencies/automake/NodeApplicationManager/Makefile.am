@@ -6,20 +6,26 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.NodeApplicationManager.am
 noinst_LTLIBRARIES = libNodeApplicationManager.la
 
-libNodeApplicationManager_la_CPPFLAGS = \
+libNodeApplicationManager_CPPFLAGS_COMMON = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libNodeApplicationManager_la_SOURCES = \
+libNodeApplicationManager_SOURCES_COMMON = \
   foo.cpp
 
-libNodeApplicationManager_la_LDFLAGS = \
+libNodeApplicationManager_LDFLAGS_COMMON = \
  -L.
+
+libNodeApplicationManager_la_CPPFLAGS = $(libNodeApplicationManager_CPPFLAGS_COMMON)
+
+libNodeApplicationManager_la_SOURCES = $(libNodeApplicationManager_SOURCES_COMMON)
+
+libNodeApplicationManager_la_LDFLAGS = $(libNodeApplicationManager_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

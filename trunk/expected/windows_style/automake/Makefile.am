@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/1.4a_base/p9/ACE_wrappers/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake
 
 
 SUBDIRS = \
@@ -16,15 +16,21 @@ SUBDIRS = \
 ## Makefile.support_lib.am
 lib_LTLIBRARIES = libsupport_lib.la
 
-libsupport_lib_la_CPPFLAGS = \
+libsupport_lib_CPPFLAGS_COMMON = \
   -DBASIC_BUILD_DLL
 
-libsupport_lib_la_SOURCES = \
+libsupport_lib_SOURCES_COMMON = \
   arch.cpp \
   foo.cpp
 
-libsupport_lib_la_LDFLAGS = \
+libsupport_lib_LDFLAGS_COMMON = \
  -L.
+
+libsupport_lib_la_CPPFLAGS = $(libsupport_lib_CPPFLAGS_COMMON)
+
+libsupport_lib_la_SOURCES = $(libsupport_lib_SOURCES_COMMON)
+
+libsupport_lib_la_LDFLAGS = $(libsupport_lib_LDFLAGS_COMMON)
 
 noinst_HEADERS = \
   bar.h \
