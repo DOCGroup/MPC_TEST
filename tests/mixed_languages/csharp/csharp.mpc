@@ -1,7 +1,7 @@
 project(csharp) {
   sharedname = foofooc
   Source_Files {
-    conditional(vc7, vc71, vc8, vc8web) {
+    conditional(vc7, vc71, vc8) {
       floop.cs
     }
   }

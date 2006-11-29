@@ -9,4 +9,3 @@ vc6:
 vc7:
 vc71:
 vc8:
-vc8web:
