@@ -1,3 +1,16 @@
+Wed Nov 29 18:33:00 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/aggregated/*:
+        * tests/aggregated/*:
+
+          Added a new test to exercise workspace aggregation.
+
+        * expected/features_custom_only/vc7/source/other.vcproj:
+        * expected/features_custom_only/vc71/source/other.vcproj:
+        * expected/features_custom_only/vc8/source/other.vcproj:
+
+          Changed the line endings to CRLF as they should have been.
+
 Tue Nov 28 17:41:07 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/automake/*/Makefile.am:

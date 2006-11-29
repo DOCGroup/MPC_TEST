@@ -1,0 +1,8 @@
+workspace {
+  exclude {
+    dir2/dir3
+  }
+  other {
+    dir2
+  }
+}
