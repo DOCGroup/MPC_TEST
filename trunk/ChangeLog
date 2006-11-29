@@ -1,3 +1,21 @@
+Wed Nov 29 19:09:01 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * tests/mixed_languages/csharp/csharp.mpc:
+        * tests/qt/build_entry.txt:
+
+          Removed references to the vc8web project type.
+
+        * expected/mixed_languages/vc8web:
+        * expected/mixed_languages/vc8web/base:
+        * expected/mixed_languages/vc8web/base/base.vcproj:
+        * expected/mixed_languages/vc8web/basic:
+        * expected/mixed_languages/vc8web/basic/basic.vcproj:
+        * expected/mixed_languages/vc8web/csharp:
+        * expected/mixed_languages/vc8web/csharp/csharp.csproj:
+        * expected/mixed_languages/vc8web/mixed_languages.sln:
+
+          Removed these files.
+
 Wed Nov 29 18:33:00 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/aggregated/*:
