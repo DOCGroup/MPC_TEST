@@ -1,0 +1,9 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o dir1/dir2/dir3/libdir3.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Ldir1/dir2/dir3
+foo.cpp
