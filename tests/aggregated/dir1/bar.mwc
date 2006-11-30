@@ -2,7 +2,20 @@ workspace {
   exclude {
     dir2/dir3
   }
-  other {
-    dir2
+
+  // Test code to eat unused exclude blocks with scopes
+  exclude(fake) {
+    inner {
+    }
   }
+
+  exclude(!automake, !bds, !bmake, !cc, !em3, !ghs, !gnuace, !html, !make, !nmake, !sle, !vc6, !vc7, !vc71, !vc8) {
+    cmdline += -value_project macros+=REQUIRED
+    other {
+      cmdline += -value_project macros+=ALSO_REQUIRED
+      dir2
+    }
+    dir5
+  }
+  dir4
 }

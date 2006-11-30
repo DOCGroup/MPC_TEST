@@ -1,4 +1,5 @@
-# Microsoft Developer Studio Generated NMAKE File
+#----------------------------------------------------------------------------
+#       NMAKE Workspace
 #
 # $Id: NMakeWorkspaceCreator.pm 1069 2006-10-16 13:36:23Z elliott_c $
 #
@@ -7,6 +8,8 @@
 #
 # MPC Command:
 # /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake features_custom_only.mwc
+#
+#----------------------------------------------------------------------------
 
 !IF "$(CFG)" == ""
 CFG=Win32 Debug
@@ -17,41 +20,21 @@ CFG=Win32 Debug
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !ENDIF
 
-ALL: fco fco_use other
+all: fco fco_use other
 
-CLEAN:
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" CLEAN
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" CLEAN
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" CLEAN
-
-DEPEND:
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" DEPEND
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" DEPEND
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" DEPEND
-
-GENERATED:
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" GENERATED
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" GENERATED
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" GENERATED
-
-REALCLEAN:
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" REALCLEAN
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" REALCLEAN
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" REALCLEAN
-
-$(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
+clean depend generated realclean $(CUSTOM_TARGETS):
+	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" $(@)
+	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" $(@)
+	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" $(@)
 
 fco:
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" ALL
+	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" all
 
 fco_use: fco
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" ALL
+	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" all
 
 other:
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" ALL
+	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo fco

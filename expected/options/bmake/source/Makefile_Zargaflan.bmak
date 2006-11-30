@@ -17,17 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: basic_Zargaflan
 
-clean:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.basic_Zargaflan.bmak clean
-
-generated:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.basic_Zargaflan.bmak generated
-
-realclean:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.basic_Zargaflan.bmak realclean
-
-$(CUSTOM_TARGETS):
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.basic_Zargaflan.bmak $(CUSTOM_TARGETS)
+clean generated realclean $(CUSTOM_TARGETS):
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.basic_Zargaflan.bmak $(@)
 
 basic_Zargaflan:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.basic_Zargaflan.bmak all

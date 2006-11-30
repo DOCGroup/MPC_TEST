@@ -6,15 +6,17 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake aggregated.mwc
 
-
-SUBDIRS = \
-        . \
-        dir3
 
 ## Makefile.foo.am
 noinst_LTLIBRARIES = libfoo.la
+
+libfoo_CPPFLAGS_COMMON = \
+  -DNEEDED_BY_ALL \
+  -DNEEDED_BY_SOME \
+  -DREQUIRED \
+  -DALSO_REQUIRED
 
 libfoo_SOURCES_COMMON = \
   foo.cpp

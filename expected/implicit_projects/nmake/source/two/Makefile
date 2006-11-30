@@ -1,4 +1,5 @@
-# Microsoft Developer Studio Generated NMAKE File
+#----------------------------------------------------------------------------
+#       NMAKE Workspace
 #
 # $Id$
 #
@@ -7,6 +8,8 @@
 #
 # MPC Command:
 # /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake implicit_projects.mwc
+#
+#----------------------------------------------------------------------------
 
 !IF "$(CFG)" == ""
 CFG=Win32 Debug
@@ -17,25 +20,13 @@ CFG=Win32 Debug
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !ENDIF
 
-ALL: two
+all: two
 
-CLEAN:
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" CLEAN
-
-DEPEND:
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" DEPEND
-
-GENERATED:
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" GENERATED
-
-REALCLEAN:
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" REALCLEAN
-
-$(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
+clean depend generated realclean $(CUSTOM_TARGETS):
+	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" $(@)
 
 two:
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" ALL
+	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo two

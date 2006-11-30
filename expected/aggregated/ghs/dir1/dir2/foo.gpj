@@ -6,4 +6,8 @@
 	-OI
 	--exceptions
 	-Ldir1/dir2
+	-DNEEDED_BY_ALL
+	-DNEEDED_BY_SOME
+	-DREQUIRED
+	-DALSO_REQUIRED
 foo.cpp

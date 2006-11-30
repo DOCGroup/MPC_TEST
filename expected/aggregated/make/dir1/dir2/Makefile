@@ -7,24 +7,19 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make aggregated.mwc
+#
 #----------------------------------------------------------------------------
 
 
-all: foo dir3-target
+all: foo
 
 clean depend generated realclean $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.foo $(@)
-	@cd dir3; $(MAKE) -f Makefile.dir3 $(@)
 
 .PHONY: foo
 foo:
 	@$(MAKE) -f Makefile.foo generated all
 
-.PHONY: dir3-target
-dir3-target:
-	@cd dir3; $(MAKE) -f Makefile.dir3 generated all
-
 project_name_list:
 	@echo foo
-	@echo dir3-target

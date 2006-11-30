@@ -82,6 +82,7 @@ LDLIBPATH     = -L.
 else
 LDFLAGS      += -L.
 endif
+CPPFLAGS     += -DNEEDED_BY_ALL -DNEEDED_BY_SOME -DREQUIRED -DALSO_REQUIRED
 
 #----------------------------------------------------------------------------
 #       Local targets

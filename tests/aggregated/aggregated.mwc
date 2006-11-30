@@ -1,0 +1,8 @@
+workspace {
+  cmdline += -value_project macros+=NEEDED_BY_ALL
+  dir2/dir2.mwc
+  aggregated_scope {
+    cmdline += -value_project macros+=NEEDED_BY_SOME
+    dir1/bar.mwc
+  }
+}

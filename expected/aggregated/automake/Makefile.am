@@ -6,10 +6,11 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake aggregated.mwc
 
 SUBDIRS = \
-        dir1
+        dir1 \
+        dir2
 
 
 ACLOCAL = @ACLOCAL@

@@ -8,27 +8,28 @@
 #
 # MPC Command:
 # /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make features_custom_only.mwc
+#
 #----------------------------------------------------------------------------
 
 
 all: fco fco_use other
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	@cd source; $(MAKE) -f Makefile.fco $(@)
-	@cd source; $(MAKE) -f Makefile.fco_use $(@)
-	@cd source; $(MAKE) -f Makefile.other $(@)
+	@cd source && $(MAKE) -f Makefile.fco $(@)
+	@cd source && $(MAKE) -f Makefile.fco_use $(@)
+	@cd source && $(MAKE) -f Makefile.other $(@)
 
 .PHONY: fco
 fco:
-	@cd source; $(MAKE) -f Makefile.fco generated all
+	@cd source && $(MAKE) -f Makefile.fco generated all
 
 .PHONY: fco_use
 fco_use: fco
-	@cd source; $(MAKE) -f Makefile.fco_use generated all
+	@cd source && $(MAKE) -f Makefile.fco_use generated all
 
 .PHONY: other
 other:
-	@cd source; $(MAKE) -f Makefile.other generated all
+	@cd source && $(MAKE) -f Makefile.other generated all
 
 project_name_list:
 	@echo fco

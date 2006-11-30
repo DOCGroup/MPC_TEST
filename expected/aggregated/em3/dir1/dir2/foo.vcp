@@ -48,9 +48,9 @@ CFG=foo - Win32 (WCE ARM) Debug
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d NEEDED_BY_ALL /d NEEDED_BY_SOME /d REQUIRED /d ALSO_REQUIRED /r
 CPP=clarm.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\foo\ARM/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\foo\ARM/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D NEEDED_BY_ALL /D NEEDED_BY_SOME /D REQUIRED /D ALSO_REQUIRED  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo.bsc"
@@ -68,9 +68,9 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d NEEDED_BY_ALL /d NEEDED_BY_SOME /d REQUIRED /d ALSO_REQUIRED /r
 CPP=clarm.exe
-# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D NEEDED_BY_ALL /D NEEDED_BY_SOME /D REQUIRED /D ALSO_REQUIRED  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo.bsc"
@@ -89,9 +89,9 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /d NEEDED_BY_ALL /d NEEDED_BY_SOME /d REQUIRED /d ALSO_REQUIRED /r
 CPP=clarm.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\foo\ARM/" /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\foo\ARM/" /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4 /D NEEDED_BY_ALL /D NEEDED_BY_SOME /D REQUIRED /D ALSO_REQUIRED  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo.bsc"
@@ -109,9 +109,9 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /d NEEDED_BY_ALL /d NEEDED_BY_SOME /d REQUIRED /d ALSO_REQUIRED /r
 CPP=clarm.exe
-# ADD CPP /nologo /O2 /W3 /GR /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4 /D NEEDED_BY_ALL /D NEEDED_BY_SOME /D REQUIRED /D ALSO_REQUIRED  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo.bsc"
@@ -130,9 +130,9 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /d NEEDED_BY_ALL /d NEEDED_BY_SOME /d REQUIRED /d ALSO_REQUIRED /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\foo\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\foo\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D NEEDED_BY_ALL /D NEEDED_BY_SOME /D REQUIRED /D ALSO_REQUIRED  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo.bsc"
@@ -150,9 +150,9 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /d NEEDED_BY_ALL /d NEEDED_BY_SOME /d REQUIRED /d ALSO_REQUIRED /r
 CPP=cl.exe
-# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D NEEDED_BY_ALL /D NEEDED_BY_SOME /D REQUIRED /D ALSO_REQUIRED  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo.bsc"
@@ -171,9 +171,9 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /d NEEDED_BY_ALL /d NEEDED_BY_SOME /d REQUIRED /d ALSO_REQUIRED /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\foo\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\foo\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D NEEDED_BY_ALL /D NEEDED_BY_SOME /D REQUIRED /D ALSO_REQUIRED  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo.bsc"
@@ -191,9 +191,9 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /d NEEDED_BY_ALL /d NEEDED_BY_SOME /d REQUIRED /d ALSO_REQUIRED /r
 CPP=cl.exe
-# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D NEEDED_BY_ALL /D NEEDED_BY_SOME /D REQUIRED /D ALSO_REQUIRED  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo.bsc"

@@ -17,21 +17,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: one two
 
-clean:
-	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak clean"
-	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak clean"
-
-generated:
-	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak generated"
-	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak generated"
-
-realclean:
-	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak realclean"
-	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak realclean"
-
-$(CUSTOM_TARGETS):
-	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak $(CUSTOM_TARGETS)"
-	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak $(CUSTOM_TARGETS)"
+clean generated realclean $(CUSTOM_TARGETS):
+	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak $(@)"
+	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak $(@)"
 
 one:
 	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak all"

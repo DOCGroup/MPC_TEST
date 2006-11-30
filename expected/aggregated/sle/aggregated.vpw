@@ -1,7 +1,9 @@
 <!DOCTYPE Workspace SYSTEM "http://www.slickedit.com/dtd/vse/8.1/vpw.dtd">
 <Workspace Version="8.1" VendorName="SlickEdit">
 	<Projects>
-		<Project File="dir1/dir2/dir3/dir3.vpj"/>
 		<Project File="dir1/dir2/foo.vpj"/>
+		<Project File="dir1/dir4/dir4.vpj"/>
+		<Project File="dir1/dir5/dir5.vpj"/>
+		<Project File="dir2/another.vpj"/>
 	</Projects>
 </Workspace>
