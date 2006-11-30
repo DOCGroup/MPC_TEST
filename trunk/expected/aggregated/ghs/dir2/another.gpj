@@ -1,0 +1,11 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o dir2/libanother.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Ldir2
+	-DNEEDED_BY_ALL
+	-DNEEDED_BY_NONE
+foo.cpp

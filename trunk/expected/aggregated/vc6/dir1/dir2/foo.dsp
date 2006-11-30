@@ -38,11 +38,11 @@ RSC=rc.exe
 # PROP Intermediate_Dir "Debug\foo"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD CPP /nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"Debug\foo/" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"Debug\foo/" /D _DEBUG /D WIN32 /D _WINDOWS /D NEEDED_BY_ALL /D NEEDED_BY_SOME /D REQUIRED /D ALSO_REQUIRED /FD /c
 # SUBTRACT CPP /Fr /YX
 
 # ADD MTL /D "_DEBUG" /nologo /mktyplib203 /win32
-# ADD RSC /l 0x409 /d _DEBUG
+# ADD RSC /l 0x409 /d _DEBUG /d NEEDED_BY_ALL /d NEEDED_BY_SOME /d REQUIRED /d ALSO_REQUIRED
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo.bsc"
 LINK32=link.exe
@@ -56,11 +56,11 @@ LINK32=link.exe
 # PROP Intermediate_Dir "Release\foo"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD CPP /nologo /O2 /W3 /GX /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+# ADD CPP /nologo /O2 /W3 /GX /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D NEEDED_BY_ALL /D NEEDED_BY_SOME /D REQUIRED /D ALSO_REQUIRED /FD /c
 # SUBTRACT CPP /YX
 
 # ADD MTL /D "NDEBUG" /nologo /mktyplib203 /win32
-# ADD RSC /l 0x409 /d NDEBUG
+# ADD RSC /l 0x409 /d NDEBUG /d NEEDED_BY_ALL /d NEEDED_BY_SOME /d REQUIRED /d ALSO_REQUIRED
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo.bsc"
 LINK32=link.exe

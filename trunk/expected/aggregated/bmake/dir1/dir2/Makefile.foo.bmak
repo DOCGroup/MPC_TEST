@@ -70,6 +70,10 @@ LIBFILES = \
 
 CFLAGS = \
          -a8 \
+         -DNEEDED_BY_ALL \
+         -DNEEDED_BY_SOME \
+         -DREQUIRED \
+         -DALSO_REQUIRED \
          -DWIN32 \
          -D_WINDOWS \
          $(PCH_CFLAGS) \

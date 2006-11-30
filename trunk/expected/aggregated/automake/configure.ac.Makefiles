@@ -1,4 +1,6 @@
 AC_CONFIG_FILES([ Makefile ])
 AC_CONFIG_FILES([ dir1/Makefile ])
 AC_CONFIG_FILES([ dir1/dir2/Makefile ])
-AC_CONFIG_FILES([ dir1/dir2/dir3/Makefile ])
+AC_CONFIG_FILES([ dir1/dir4/Makefile ])
+AC_CONFIG_FILES([ dir1/dir5/Makefile ])
+AC_CONFIG_FILES([ dir2/Makefile ])

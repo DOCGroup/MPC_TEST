@@ -7,23 +7,24 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type make implicit_projects.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make implicit_projects.mwc
+#
 #----------------------------------------------------------------------------
 
 
 all: one-target two-target
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	@cd one; $(MAKE) -f Makefile.one $(@)
-	@cd two; $(MAKE) -f Makefile.two $(@)
+	@cd one && $(MAKE) -f Makefile.one $(@)
+	@cd two && $(MAKE) -f Makefile.two $(@)
 
 .PHONY: one-target
 one-target:
-	@cd one; $(MAKE) -f Makefile.one generated all
+	@cd one && $(MAKE) -f Makefile.one generated all
 
 .PHONY: two-target
 two-target: one-target
-	@cd two; $(MAKE) -f Makefile.two generated all
+	@cd two && $(MAKE) -f Makefile.two generated all
 
 project_name_list:
 	@echo one-target

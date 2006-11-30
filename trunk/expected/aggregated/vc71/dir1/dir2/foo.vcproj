@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;NEEDED_BY_ALL;NEEDED_BY_SOME;REQUIRED;ALSO_REQUIRED"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -70,7 +70,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG"
+				PreprocessorDefinitions="_DEBUG;NEEDED_BY_ALL;NEEDED_BY_SOME;REQUIRED;ALSO_REQUIRED"
 				Culture="1033"
 				AdditionalIncludeDirectories=""/>
 			<Tool
@@ -90,7 +90,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;NEEDED_BY_ALL;NEEDED_BY_SOME;REQUIRED;ALSO_REQUIRED"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="2"
@@ -136,7 +136,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
+				PreprocessorDefinitions="NDEBUG;NEEDED_BY_ALL;NEEDED_BY_SOME;REQUIRED;ALSO_REQUIRED"
 				Culture="1033"
 				AdditionalIncludeDirectories=""/>
 			<Tool

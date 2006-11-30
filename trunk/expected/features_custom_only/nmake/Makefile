@@ -1,4 +1,5 @@
-# Microsoft Developer Studio Generated NMAKE File
+#----------------------------------------------------------------------------
+#       NMAKE Workspace
 #
 # $Id: NMakeWorkspaceCreator.pm 1069 2006-10-16 13:36:23Z elliott_c $
 #
@@ -7,6 +8,8 @@
 #
 # MPC Command:
 # /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake features_custom_only.mwc
+#
+#----------------------------------------------------------------------------
 
 !IF "$(CFG)" == ""
 CFG=Win32 Debug
@@ -17,76 +20,32 @@ CFG=Win32 Debug
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !ENDIF
 
-ALL: fco fco_use other
+all: fco fco_use other
 
-CLEAN:
+clean depend generated realclean $(CUSTOM_TARGETS):
 	@cd source
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" CLEAN
+	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 	@cd source
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" CLEAN
+	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 	@cd source
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" CLEAN
-	@cd $(MAKEDIR)
-
-DEPEND:
-	@cd source
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" DEPEND
-	@cd $(MAKEDIR)
-	@cd source
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" DEPEND
-	@cd $(MAKEDIR)
-	@cd source
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" DEPEND
-	@cd $(MAKEDIR)
-
-GENERATED:
-	@cd source
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" GENERATED
-	@cd $(MAKEDIR)
-	@cd source
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" GENERATED
-	@cd $(MAKEDIR)
-	@cd source
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" GENERATED
-	@cd $(MAKEDIR)
-
-REALCLEAN:
-	@cd source
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" REALCLEAN
-	@cd $(MAKEDIR)
-	@cd source
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" REALCLEAN
-	@cd $(MAKEDIR)
-	@cd source
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" REALCLEAN
-	@cd $(MAKEDIR)
-
-$(CUSTOM_TARGETS):
-	@cd source
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	@cd $(MAKEDIR)
-	@cd source
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	@cd $(MAKEDIR)
-	@cd source
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
+	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 
 fco:
 	@cd source
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" ALL
+	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 fco_use: fco
 	@cd source
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" ALL
+	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 other:
 	@cd source
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" ALL
+	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 project_name_list:

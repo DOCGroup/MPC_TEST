@@ -17,17 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: one
 
-clean:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak clean
-
-generated:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak generated
-
-realclean:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak realclean
-
-$(CUSTOM_TARGETS):
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak $(CUSTOM_TARGETS)
+clean generated realclean $(CUSTOM_TARGETS):
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak $(@)
 
 one:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak all

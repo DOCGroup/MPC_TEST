@@ -1,4 +1,5 @@
-# Microsoft Developer Studio Generated NMAKE File
+#----------------------------------------------------------------------------
+#       NMAKE Workspace
 #
 # $Id$
 #
@@ -7,6 +8,8 @@
 #
 # MPC Command:
 # /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake implicit_projects.mwc
+#
+#----------------------------------------------------------------------------
 
 !IF "$(CFG)" == ""
 CFG=Win32 Debug
@@ -17,56 +20,24 @@ CFG=Win32 Debug
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !ENDIF
 
-ALL: one-target two-target
+all: one-target two-target
 
-CLEAN:
+clean depend generated realclean $(CUSTOM_TARGETS):
 	@cd one
-	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" CLEAN
+	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 	@cd two
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" CLEAN
-	@cd $(MAKEDIR)
-
-DEPEND:
-	@cd one
-	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" DEPEND
-	@cd $(MAKEDIR)
-	@cd two
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" DEPEND
-	@cd $(MAKEDIR)
-
-GENERATED:
-	@cd one
-	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" GENERATED
-	@cd $(MAKEDIR)
-	@cd two
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" GENERATED
-	@cd $(MAKEDIR)
-
-REALCLEAN:
-	@cd one
-	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" REALCLEAN
-	@cd $(MAKEDIR)
-	@cd two
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" REALCLEAN
-	@cd $(MAKEDIR)
-
-$(CUSTOM_TARGETS):
-	@cd one
-	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
-	@cd $(MAKEDIR)
-	@cd two
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" $(CUSTOM_TARGETS)
+	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 
 one-target:
 	@cd one
-	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" ALL
+	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 two-target: one-target
 	@cd two
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" ALL
+	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 project_name_list:

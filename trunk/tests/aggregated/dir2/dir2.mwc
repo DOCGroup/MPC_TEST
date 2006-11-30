@@ -1,0 +1,4 @@
+workspace {
+  cmdline += -value_project macros+=NEEDED_BY_NONE
+  another.mpc
+}

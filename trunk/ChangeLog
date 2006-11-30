@@ -1,3 +1,58 @@
+Thu Nov 30 15:59:52 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/bmake/Makefile:
+        * expected/*/make/Makefile:
+        * expected/*/nmake/Makefile:
+        * tests/options/build_entry.txt:
+
+          Updated to reflect my change from Wed Nov 29 19:47:15 UTC 2006.
+
+        * expected/aggregated/*:
+        * tests/aggregated/foo.mwc:
+        * tests/aggregated/aggregated.mwc:
+        * tests/aggregated/dir1/bar.mwc:
+        * tests/aggregated/dir1/dir2/foo.cpp:
+        * tests/aggregated/dir1/dir4:
+        * tests/aggregated/dir1/dir4/dir4.mpc:
+        * tests/aggregated/dir1/dir4/foo.cpp:
+        * tests/aggregated/dir1/dir5:
+        * tests/aggregated/dir1/dir5/dir5.mpc:
+        * tests/aggregated/dir1/dir5/foo.cpp:
+        * tests/aggregated/dir2:
+        * tests/aggregated/dir2/another.mpc:
+        * tests/aggregated/dir2/dir2.mwc:
+        * tests/aggregated/dir2/foo.cpp:
+
+          Modified this test to more thoroughly test workspace scopes and
+          aggregation.
+
+        * utils/add_expected_directories.sh:
+
+          No need to add files since adding a directory adds subsequent
+          files.
+
+        * expected/aggregated/automake/dir1/dir2/dir3/Makefile.am:
+        * expected/aggregated/bmake/dir1/dir2/dir3/Makefile:
+        * expected/aggregated/bmake/dir1/dir2/dir3/Makefile.dir3.bmak:
+        * expected/aggregated/em3/dir1/dir2/dir3/dir3.vcp:
+        * expected/aggregated/ghs/dir1/dir2/dir3/dir3.gpj:
+        * expected/aggregated/gnuace/dir1/dir2/dir3/GNUmakefile:
+        * expected/aggregated/gnuace/dir1/dir2/dir3/GNUmakefile.dir3:
+        * expected/aggregated/html/dir1/dir2/dir3/dir3.html:
+        * expected/aggregated/make/dir1/dir2/dir3/Makefile:
+        * expected/aggregated/make/dir1/dir2/dir3/Makefile.dir3:
+        * expected/aggregated/nmake/dir1/dir2/dir3/Makefile:
+        * expected/aggregated/nmake/dir1/dir2/dir3/Makefile.dir3.mak:
+        * expected/aggregated/sle/dir1/dir2/dir3/dir3.vpj:
+        * expected/aggregated/vc6/dir1/dir2/dir3/dir3.dsp:
+        * expected/aggregated/vc7/dir1/dir2/dir3/dir3.vcproj:
+        * expected/aggregated/vc71/dir1/dir2/dir3/dir3.vcproj:
+        * expected/aggregated/vc8/dir1/dir2/dir3/dir3.vcproj:
+        * expected/options/nmake/options_Zargaflan.nmake:
+        * expected/options/nmake/source/source_Zargaflan.nmake:
+
+          Removed these files.  They should not have been generated.
+
 Wed Nov 29 19:09:01 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * tests/mixed_languages/csharp/csharp.mpc:

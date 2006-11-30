@@ -17,17 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: two
 
-clean:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak clean
-
-generated:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak generated
-
-realclean:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak realclean
-
-$(CUSTOM_TARGETS):
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak $(CUSTOM_TARGETS)
+clean generated realclean $(CUSTOM_TARGETS):
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak $(@)
 
 two:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak all
