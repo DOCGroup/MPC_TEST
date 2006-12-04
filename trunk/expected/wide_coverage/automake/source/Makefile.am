@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake -features rtti=1 wide_coverage.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -features rtti=1 wide_coverage.mwc
 
 
 
@@ -89,10 +89,10 @@ libsource_lib_CPPFLAGS_COMMON = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
 libsource_lib_SOURCES_COMMON = \
-  ./qwee.cxx \
   TheCheat.cpp \
   cre/o.le/more_names.cpp \
-  names.cpp
+  names.cpp \
+  qwee.cxx
 
 libsource_lib_DEPENDENCIES_COMMON = \
  ../lib
@@ -113,11 +113,11 @@ libsource_lib_la_DEPENDENCIES = \
 libsource_lib_la_LDFLAGS = $(libsource_lib_LDFLAGS_COMMON)
 
 noinst_HEADERS = \
-  ./qwee_T.C \
   TheCheat.h \
   cre/o.le/more_names.h \
   moop.hxx \
   names.h \
+  qwee_T.C \
   weer.inl
 
 ## Makefile.source.am
