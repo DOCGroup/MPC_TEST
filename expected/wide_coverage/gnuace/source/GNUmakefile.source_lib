@@ -20,10 +20,10 @@ LIB_NAME         = libsource_lib
 static_libs_only = 1
 
 FILES = \
-  ./qwee.cxx \
   TheCheat.cpp \
   cre/o.le/more_names.cpp \
-  names.cpp
+  names.cpp \
+  qwee.cxx
 
 VPATH = .:cre/o.le
 

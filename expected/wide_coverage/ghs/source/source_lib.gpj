@@ -60,13 +60,13 @@ qwee.cxx
 	:extraOutputFile=qwee.cxx
 	:extraOutputFile=qwee_T.C
 	:extraOutputFile=weer.inl
-.\qwee.cxx
 TheCheat.cpp
 cre\o.le\more_names.cpp
 names.cpp
+qwee.cxx
 TheCheat.h
 cre\o.le\more_names.h
 moop.hxx
 names.h
 weer.inl
-.\bar.txt		[Documentation]
+bar.txt		[Documentation]

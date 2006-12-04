@@ -1,3 +1,26 @@
+Mon Dec  4 15:33:10 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/wide_coverage/automake/source/Makefile.am:
+        * expected/wide_coverage/bmake/source/Makefile.source_lib.bmak:
+        * expected/wide_coverage/em3/source/source_lib.vcp:
+        * expected/wide_coverage/ghs/source/source_lib.gpj:
+        * expected/wide_coverage/gnuace/source/GNUmakefile.source_lib:
+        * expected/wide_coverage/html/source/source_lib.html:
+        * expected/wide_coverage/make/source/Makefile.source_lib:
+        * expected/wide_coverage/nmake/source/Makefile.source_lib.mak:
+        * expected/wide_coverage/sle/source/source_lib.vpj:
+        * expected/wide_coverage/vc6/source/source_lib.dsp:
+        * expected/wide_coverage/vc7/source/source_lib.vcproj:
+        * expected/wide_coverage/vc71/source/source_lib.vcproj:
+        * expected/wide_coverage/vc8/source/source_lib.vcproj:
+
+          Updated to reflect my change from Mon Dec  4 15:08:19 UTC 2006.
+
+        * run_tests.pl:
+
+          Fixed a bug where a file was diffed twice when a diff command was
+          provided.
+
 Thu Nov 30 15:59:52 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/bmake/Makefile:

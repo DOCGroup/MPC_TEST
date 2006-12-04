@@ -154,13 +154,15 @@ sub compare {
       }
       close($rh);
 
-      while (defined $lines[$i]) {
-        if ($lines[$i] !~ /^\s+$/) {
-          diff_files($left, $right, $i, $lines[$i], "\n") if ($show);
-          $different = 1;
-          last;
+      if (!$different || !defined $diff) {
+        while (defined $lines[$i]) {
+          if ($lines[$i] !~ /^\s+$/) {
+            diff_files($left, $right, $i, $lines[$i], "\n") if ($show);
+            $different = 1;
+            last;
+          }
+          ++$i;
         }
-        ++$i;
       }
     }
   }
@@ -757,7 +759,7 @@ sub run_test {
   my($ret) = system("$^X $MWC -include $cfg -type $type $add $mwc");
   chdir($orig);
 
-  ## A signal killed the diffing process
+  ## A signal killed mwc.pl
   if ($ret > 0 && $ret < 256) {
     &{$SIG{INT}}();
   }
