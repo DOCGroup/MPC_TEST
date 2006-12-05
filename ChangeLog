@@ -1,3 +1,10 @@
+Tue Dec  5 14:30:10 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/wide_coverage/gnuace/source/GNUmakefile.source_lib:
+
+          Updated to reflect my change from Tue Dec  5 13:24:51 UTC 2006 in
+          ocitao/ACE_wrappers.
+
 Mon Dec  4 15:33:10 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wide_coverage/automake/source/Makefile.am:
