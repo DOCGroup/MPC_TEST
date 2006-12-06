@@ -78,8 +78,9 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
-CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_PCH=/D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch"
+CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
@@ -136,8 +137,9 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
-CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_PCH=/D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch"
+CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
@@ -195,8 +197,9 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
-CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_PCH=/D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch"
+CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
@@ -253,8 +256,9 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch" /FD /c
-CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_PCH=/D USING_PCH /Yu"source_lib_pch.h" /Fp"$(INTDIR)\source_lib_pch.pch"
+CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
@@ -361,22 +365,22 @@ SOURCE="cre\o.le\more_names.cpp"
 
 "$(INTDIR)\cre\o.le\more_names.obj" : $(SOURCE) "$(INTDIR)"
 	@if not exist "$(INTDIR)\cre\o.le\$(NULL)" mkdir "$(INTDIR)\cre\o.le\"
-	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\cre\o.le\more_names.obj" $(SOURCE)
+	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\cre\o.le\more_names.obj" $(SOURCE)
 
 SOURCE="names.cpp"
 
 "$(INTDIR)\names.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\names.obj" $(SOURCE)
+	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\names.obj" $(SOURCE)
 
 SOURCE="qwee.cxx"
 
 "$(INTDIR)\qwee.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\qwee.obj" $(SOURCE)
+	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\qwee.obj" $(SOURCE)
 
 SOURCE="TheCheat.cpp"
 
 "$(INTDIR)\TheCheat.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\TheCheat.obj" $(SOURCE)
+	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\TheCheat.obj" $(SOURCE)
 
 SOURCE="more_names.key"
 

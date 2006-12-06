@@ -156,13 +156,15 @@
 					Name="Debug|Win32">
 					<Tool
 						Name="VCCLCompilerTool"
-						AdditionalOptions="-Trogdor"/>
+						AdditionalOptions="-Trogdor"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
 					<Tool
 						Name="VCCLCompilerTool"
-						AdditionalOptions="-Trogdor"/>
+						AdditionalOptions="-Trogdor"
+					/>
 				</FileConfiguration>
 			</File>
 		</Filter>
