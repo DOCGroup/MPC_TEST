@@ -355,25 +355,29 @@
 						Name="Debug|Win32">
 						<Tool
 							Name="VCCLCompilerTool"
-							AdditionalOptions="-Trogdor"/>
+							AdditionalOptions="-Trogdor"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|Win32">
 						<Tool
 							Name="VCCLCompilerTool"
-							AdditionalOptions="-Trogdor"/>
+							AdditionalOptions="-Trogdor"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|x64">
 						<Tool
 							Name="VCCLCompilerTool"
-							AdditionalOptions="-Trogdor"/>
+							AdditionalOptions="-Trogdor"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|x64">
 						<Tool
 							Name="VCCLCompilerTool"
-							AdditionalOptions="-Trogdor"/>
+							AdditionalOptions="-Trogdor"
+						/>
 					</FileConfiguration>
 				</File>
 				<File
@@ -389,25 +393,29 @@
 						Name="Debug|Win32">
 						<Tool
 							Name="VCCLCompilerTool"
-							AdditionalOptions="-Trogdor"/>
+							AdditionalOptions="-Trogdor"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|Win32">
 						<Tool
 							Name="VCCLCompilerTool"
-							AdditionalOptions="-Trogdor"/>
+							AdditionalOptions="-Trogdor"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|x64">
 						<Tool
 							Name="VCCLCompilerTool"
-							AdditionalOptions="-Trogdor"/>
+							AdditionalOptions="-Trogdor"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|x64">
 						<Tool
 							Name="VCCLCompilerTool"
-							AdditionalOptions="-Trogdor"/>
+							AdditionalOptions="-Trogdor"
+						/>
 					</FileConfiguration>
 				</File>
 			</Filter>
@@ -417,25 +425,29 @@
 					Name="Debug|Win32">
 					<Tool
 						Name="VCCLCompilerTool"
-						AdditionalOptions="-Trogdor"/>
+						AdditionalOptions="-Trogdor"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
 					<Tool
 						Name="VCCLCompilerTool"
-						AdditionalOptions="-Trogdor"/>
+						AdditionalOptions="-Trogdor"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|x64">
 					<Tool
 						Name="VCCLCompilerTool"
-						AdditionalOptions="-Trogdor"/>
+						AdditionalOptions="-Trogdor"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|x64">
 					<Tool
 						Name="VCCLCompilerTool"
-						AdditionalOptions="-Trogdor"/>
+						AdditionalOptions="-Trogdor"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -447,25 +459,29 @@
 					Name="Debug|Win32">
 					<Tool
 						Name="VCCLCompilerTool"
-						AdditionalOptions="-Trogdor"/>
+						AdditionalOptions="-Trogdor"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
 					<Tool
 						Name="VCCLCompilerTool"
-						AdditionalOptions="-Trogdor"/>
+						AdditionalOptions="-Trogdor"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|x64">
 					<Tool
 						Name="VCCLCompilerTool"
-						AdditionalOptions="-Trogdor"/>
+						AdditionalOptions="-Trogdor"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|x64">
 					<Tool
 						Name="VCCLCompilerTool"
-						AdditionalOptions="-Trogdor"/>
+						AdditionalOptions="-Trogdor"
+					/>
 				</FileConfiguration>
 			</File>
 		</Filter>

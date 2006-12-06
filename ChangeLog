@@ -1,3 +1,22 @@
+Wed Dec  6 20:00:49 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/buildflags/vc7/source/bfs_exe.vcproj:
+        * expected/buildflags/vc7/source/bfs_lib.vcproj:
+        * expected/buildflags/vc71/source/bfs_exe.vcproj:
+        * expected/buildflags/vc71/source/bfs_lib.vcproj:
+        * expected/buildflags/vc8/source/bfs_exe.vcproj:
+        * expected/buildflags/vc8/source/bfs_lib.vcproj:
+        * expected/relative/em3/build/build_lib.vcp:
+        * expected/relative/nmake/build/Makefile.build_lib.mak:
+        * expected/relative/vc6/build/build_lib.dsp:
+        * expected/relative/vc7/build/build_lib.vcproj:
+        * expected/relative/vc71/build/build_lib.vcproj:
+        * expected/relative/vc8/build/build_lib.vcproj:
+        * expected/wide_coverage/nmake/source/Makefile.source_lib.mak:
+        * tests/relative/build/build.mpc:
+
+          Updated to reflect my change from Wed Dec  6 18:08:49 UTC 2006.
+
 Tue Dec  5 14:30:10 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wide_coverage/gnuace/source/GNUmakefile.source_lib:

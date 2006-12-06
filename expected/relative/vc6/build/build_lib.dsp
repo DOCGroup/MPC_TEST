@@ -87,6 +87,7 @@ SOURCE="..\src\foo.cpp"
 # Begin Source File
 
 SOURCE="bar.cpp"
+# SUBTRACT CPP /YX /Yc /Yu
 # End Source File
 # Begin Source File
 

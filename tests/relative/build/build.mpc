@@ -9,10 +9,13 @@ project(*lib) {
 
   Source_Files {
     ../src/foo.cpp
-    bar.cpp
     conditional(!automake) {
       lower/bar.cpp
     }
+  }
+  Source_Files {
+    no_pch = 1
+    bar.cpp
   }
   Resource_Files {
     ../src/bar.rc
