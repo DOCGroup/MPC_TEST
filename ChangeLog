@@ -1,3 +1,16 @@
+Thu Dec 14 14:39:50 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/features_custom_only/nmake/source/Makefile.other.mak:
+
+          Fixed line endings.
+
+        * expected/implicit_projects/make/source/two/Makefile.two:
+        * expected/wide_coverage/make/generator/Makefile.generator:
+        * expected/wide_coverage/make/source/Makefile.source:
+        * expected/windows_style/make/sub/Makefile.sub:
+
+          Updated to reflect my change from Thu Dec 14 14:30:58 UTC 2006.
+
 Wed Dec  6 20:00:49 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/buildflags/vc7/source/bfs_exe.vcproj:
