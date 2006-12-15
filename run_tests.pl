@@ -247,7 +247,9 @@ sub buildit {
   my($ob)     = $one_built;
   my($cross)  = undef;
 
+  ## Update the PWD environment variable for gnuace
   chdir($path);
+  $ENV{PWD} = $path;
 
   if ($type eq 'html') {
     my($cmd) = which('tidy');
