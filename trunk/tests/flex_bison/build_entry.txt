@@ -1,0 +1,11 @@
+bds:
+bmake:
+em3:
+ghs:
+gnuace: GNUmakefile flex=1 bison=1
+nmake:
+sle:
+vc6:
+vc7:
+vc71:
+vc8:

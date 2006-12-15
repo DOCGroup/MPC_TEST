@@ -1,3 +1,21 @@
+Fri Dec 15 13:08:36 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/flex_bison/*:
+        * tests/flex_bison/build_entry.txt:
+        * tests/flex_bison/bus.l:
+        * tests/flex_bison/bus.y:
+        * tests/flex_bison/flex_bison.mpc:
+
+           Added a new test to use the flex and bison base projects.
+
+        * run_tests.pl:
+
+          Set the PWD environment before building for gnuace.
+
+        * utils/add_expected_directories.sh:
+
+          Changed to only add directories that haven't been added yet.
+
 Thu Dec 14 14:39:50 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/features_custom_only/nmake/source/Makefile.other.mak:
