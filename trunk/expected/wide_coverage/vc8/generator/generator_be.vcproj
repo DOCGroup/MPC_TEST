@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="..\lib"
-			IntermediateDirectory="Debug\generator_be"
+			IntermediateDirectory="Debug\generator_be\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -104,7 +104,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="..\lib"
-			IntermediateDirectory="Release\generator_be"
+			IntermediateDirectory="Release\generator_be\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -185,7 +185,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="..\lib"
-			IntermediateDirectory="Debug\generator_be\Win64"
+			IntermediateDirectory="Debug\generator_be\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -268,7 +268,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="..\lib"
-			IntermediateDirectory="Release\generator_be\Win64"
+			IntermediateDirectory="Release\generator_be\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>

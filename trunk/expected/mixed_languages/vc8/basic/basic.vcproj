@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\basic"
+			IntermediateDirectory="Debug\basic\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -103,7 +103,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Release\basic"
+			IntermediateDirectory="Release\basic\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -183,7 +183,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\basic\Win64"
+			IntermediateDirectory="Debug\basic\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -265,7 +265,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Release\basic\Win64"
+			IntermediateDirectory="Release\basic\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>

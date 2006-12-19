@@ -1,3 +1,11 @@
+Tue Dec 19 18:19:29 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/vc7/*.vcproj:
+        * expected/*/vc71/*.vcproj:
+        * expected/*/vc8/*.vcproj:
+
+          Updated to reflect my change from Tue Dec 19 18:02:21 UTC 2006.
+
 Tue Dec 19 15:55:34 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/automake/*/Makefile.am:

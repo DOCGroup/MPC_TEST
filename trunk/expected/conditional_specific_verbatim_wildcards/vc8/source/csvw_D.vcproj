@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="bin"
-			IntermediateDirectory="Debug\csvw_D"
+			IntermediateDirectory="Debug\csvw_D\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -102,7 +102,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="bin"
-			IntermediateDirectory="Release\csvw_D"
+			IntermediateDirectory="Release\csvw_D\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -181,7 +181,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="bin"
-			IntermediateDirectory="Debug\csvw_D\Win64"
+			IntermediateDirectory="Debug\csvw_D\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -262,7 +262,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="bin"
-			IntermediateDirectory="Release\csvw_D\Win64"
+			IntermediateDirectory="Release\csvw_D\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>

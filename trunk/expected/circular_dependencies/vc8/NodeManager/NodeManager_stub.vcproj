@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\NodeManager_stub"
+			IntermediateDirectory="Debug\NodeManager_stub\I386"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>
@@ -94,7 +94,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Release\NodeManager_stub"
+			IntermediateDirectory="Release\NodeManager_stub\I386"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>
@@ -163,7 +163,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\NodeManager_stub\Win64"
+			IntermediateDirectory="Debug\NodeManager_stub\AMD64"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>
@@ -235,7 +235,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Release\NodeManager_stub\Win64"
+			IntermediateDirectory="Release\NodeManager_stub\AMD64"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>

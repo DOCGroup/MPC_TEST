@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\CIAO_TargetManager_svnt"
+			IntermediateDirectory="Debug\CIAO_TargetManager_svnt\I386"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>
@@ -94,7 +94,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Release\CIAO_TargetManager_svnt"
+			IntermediateDirectory="Release\CIAO_TargetManager_svnt\I386"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>
@@ -163,7 +163,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\CIAO_TargetManager_svnt\Win64"
+			IntermediateDirectory="Debug\CIAO_TargetManager_svnt\AMD64"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>
@@ -235,7 +235,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Release\CIAO_TargetManager_svnt\Win64"
+			IntermediateDirectory="Release\CIAO_TargetManager_svnt\AMD64"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>

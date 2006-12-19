@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="lib"
-			IntermediateDirectory="Debug\support_lib"
+			IntermediateDirectory="Debug\support_lib\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -102,7 +102,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="lib"
-			IntermediateDirectory="Release\support_lib"
+			IntermediateDirectory="Release\support_lib\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -181,7 +181,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="lib"
-			IntermediateDirectory="Debug\support_lib\Win64"
+			IntermediateDirectory="Debug\support_lib\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -262,7 +262,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="lib"
-			IntermediateDirectory="Release\support_lib\Win64"
+			IntermediateDirectory="Release\support_lib\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>

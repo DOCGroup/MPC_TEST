@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\fco"
+			IntermediateDirectory="Debug\fco\I386"
 			ConfigurationType="10"
 			CharacterSet="0"
 			>
@@ -39,7 +39,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
-			IntermediateDirectory="Release\fco"
+			IntermediateDirectory="Release\fco\I386"
 			ConfigurationType="10"
 			CharacterSet="0"
 			>
@@ -56,7 +56,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\fco\Win64"
+			IntermediateDirectory="Debug\fco\AMD64"
 			ConfigurationType="10"
 			CharacterSet="0"
 			>
@@ -73,7 +73,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="Release"
-			IntermediateDirectory="Release\fco\Win64"
+			IntermediateDirectory="Release\fco\AMD64"
 			ConfigurationType="10"
 			CharacterSet="0"
 			>

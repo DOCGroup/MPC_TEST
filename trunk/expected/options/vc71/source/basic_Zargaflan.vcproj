@@ -14,7 +14,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="Static_Debug"
-			IntermediateDirectory="Static_Debug\basic_Zargaflan"
+			IntermediateDirectory="Static_Debug\basic_Zargaflan\I386"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
@@ -33,7 +33,7 @@
 				TreatWChar_tAsBuiltInType="TRUE"
 				ForceConformanceInForLoopScope="TRUE"
 				RuntimeTypeInfo="TRUE"
-				ProgramDataBaseFileName="Static_Debug\basic_Zargaflan/"
+				ProgramDataBaseFileName="Static_Debug\basic_Zargaflan\I386/"
 				WarningLevel="3"
 				SuppressStartupBanner="TRUE"
 				Detect64BitPortabilityProblems="FALSE"
@@ -81,7 +81,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Static_Release"
-			IntermediateDirectory="Static_Release\basic_Zargaflan"
+			IntermediateDirectory="Static_Release\basic_Zargaflan\I386"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
