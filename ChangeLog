@@ -1,3 +1,15 @@
+Tue Dec 19 13:37:23 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/options/nmake/Makefile_Zargaflan.mak:
+        * expected/options/nmake/source/Makefile_Zargaflan.mak:
+
+          Renamed to reflect my change from Mon Dec 18 13:48:15 UTC 2006.
+
+        * expected/options/nmake/Makefile_Zargaflan.nmak:
+        * expected/options/nmake/source/Makefile_Zargaflan.nmak:
+
+          Removed these files.
+
 Fri Dec 15 13:08:36 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/flex_bison/*:
