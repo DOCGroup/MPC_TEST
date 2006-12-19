@@ -14,7 +14,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="..\lib"
-			IntermediateDirectory="Static_Debug\source_lib"
+			IntermediateDirectory="Static_Debug\source_lib\I386"
 			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
@@ -75,7 +75,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="..\lib"
-			IntermediateDirectory="Static_Release\source_lib"
+			IntermediateDirectory="Static_Release\source_lib\I386"
 			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"

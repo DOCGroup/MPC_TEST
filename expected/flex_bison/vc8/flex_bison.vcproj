@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\flex_bison"
+			IntermediateDirectory="Debug\flex_bison\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -103,7 +103,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Release\flex_bison"
+			IntermediateDirectory="Release\flex_bison\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -183,7 +183,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\flex_bison\Win64"
+			IntermediateDirectory="Debug\flex_bison\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>
@@ -265,7 +265,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Release\flex_bison\Win64"
+			IntermediateDirectory="Release\flex_bison\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 			>

@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\Monitor_Monitorlib"
+			IntermediateDirectory="Debug\Monitor_Monitorlib\I386"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>
@@ -94,7 +94,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Release\Monitor_Monitorlib"
+			IntermediateDirectory="Release\Monitor_Monitorlib\I386"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>
@@ -163,7 +163,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\Monitor_Monitorlib\Win64"
+			IntermediateDirectory="Debug\Monitor_Monitorlib\AMD64"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>
@@ -235,7 +235,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Release\Monitor_Monitorlib\Win64"
+			IntermediateDirectory="Release\Monitor_Monitorlib\AMD64"
 			ConfigurationType="4"
 			CharacterSet="0"
 			>

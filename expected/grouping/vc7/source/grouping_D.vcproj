@@ -14,7 +14,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\grouping_D"
+			IntermediateDirectory="Debug\grouping_D\I386"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
@@ -33,7 +33,7 @@
 				TreatWChar_tAsBuiltInType="TRUE"
 				ForceConformanceInForLoopScope="TRUE"
 				RuntimeTypeInfo="TRUE"
-				ProgramDataBaseFileName="Debug\grouping_D/"
+				ProgramDataBaseFileName="Debug\grouping_D\I386/"
 				WarningLevel="3"
 				SuppressStartupBanner="TRUE"
 				Detect64BitPortabilityProblems="FALSE"
@@ -80,7 +80,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
-			IntermediateDirectory="Release\grouping_D"
+			IntermediateDirectory="Release\grouping_D\I386"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"

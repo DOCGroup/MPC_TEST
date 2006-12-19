@@ -14,7 +14,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\CIAO_TargetManager_stub"
+			IntermediateDirectory="Debug\CIAO_TargetManager_stub\I386"
 			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
@@ -73,7 +73,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Release\CIAO_TargetManager_stub"
+			IntermediateDirectory="Release\CIAO_TargetManager_stub\I386"
 			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"

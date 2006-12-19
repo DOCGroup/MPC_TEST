@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\bfs_exe"
+			IntermediateDirectory="Debug\bfs_exe\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>
@@ -101,7 +101,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
-			IntermediateDirectory="Release\bfs_exe"
+			IntermediateDirectory="Release\bfs_exe\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>
@@ -179,7 +179,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\bfs_exe\Win64"
+			IntermediateDirectory="Debug\bfs_exe\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>
@@ -259,7 +259,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="Release"
-			IntermediateDirectory="Release\bfs_exe\Win64"
+			IntermediateDirectory="Release\bfs_exe\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>

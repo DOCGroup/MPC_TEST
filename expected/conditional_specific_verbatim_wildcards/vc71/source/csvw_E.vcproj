@@ -14,7 +14,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="bin"
-			IntermediateDirectory="Debug\csvw_E"
+			IntermediateDirectory="Debug\csvw_E\I386"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
@@ -33,7 +33,7 @@
 				TreatWChar_tAsBuiltInType="TRUE"
 				ForceConformanceInForLoopScope="TRUE"
 				RuntimeTypeInfo="TRUE"
-				ProgramDataBaseFileName="Debug\csvw_E/"
+				ProgramDataBaseFileName="Debug\csvw_E\I386/"
 				WarningLevel="3"
 				SuppressStartupBanner="TRUE"
 				Detect64BitPortabilityProblems="FALSE"
@@ -81,7 +81,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="bin"
-			IntermediateDirectory="Release\csvw_E"
+			IntermediateDirectory="Release\csvw_E\I386"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"

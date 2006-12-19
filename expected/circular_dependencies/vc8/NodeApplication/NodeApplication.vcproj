@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\NodeApplication"
+			IntermediateDirectory="Debug\NodeApplication\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>
@@ -101,7 +101,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
-			IntermediateDirectory="Release\NodeApplication"
+			IntermediateDirectory="Release\NodeApplication\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>
@@ -179,7 +179,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\NodeApplication\Win64"
+			IntermediateDirectory="Debug\NodeApplication\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>
@@ -259,7 +259,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="Release"
-			IntermediateDirectory="Release\NodeApplication\Win64"
+			IntermediateDirectory="Release\NodeApplication\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>

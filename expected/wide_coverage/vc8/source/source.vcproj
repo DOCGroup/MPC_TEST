@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="source"
-	ProjectGUID="{7901769F-FECA-1BAD-2457-8D6B0E3F626E}"
+	ProjectGUID="{7901769F-FECA-1BAD-2457-8D6BA733F8D6}"
 	RootNamespace="source"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\source"
+			IntermediateDirectory="Debug\source\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>
@@ -104,7 +104,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
-			IntermediateDirectory="Release\source"
+			IntermediateDirectory="Release\source\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>
@@ -185,7 +185,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\source\Win64"
+			IntermediateDirectory="Debug\source\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>
@@ -268,7 +268,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="Release"
-			IntermediateDirectory="Release\source\Win64"
+			IntermediateDirectory="Release\source\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
 			>
