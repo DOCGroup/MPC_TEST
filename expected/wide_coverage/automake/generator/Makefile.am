@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake -features rtti=1 wide_coverage.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -features rtti=1 wide_coverage.mwc
 
 
 
@@ -15,29 +15,23 @@
 if BUILD_RTTI
 noinst_LTLIBRARIES = libgenerator_be.la
 
-libgenerator_be_CPPFLAGS_COMMON = \
+libgenerator_be_la_CPPFLAGS = \
   -DGENERATOR_BE_BUILD_DLL
 
-libgenerator_be_SOURCES_COMMON = \
+libgenerator_be_la_SOURCES = \
   generator_be.cpp
-
-libgenerator_be_DEPENDENCIES_COMMON = \
- ../lib
-
-libgenerator_be_LDFLAGS_COMMON = \
- -L. -L../lib
-
-libgenerator_be_la_CPPFLAGS = $(libgenerator_be_CPPFLAGS_COMMON)
-
-libgenerator_be_la_SOURCES = $(libgenerator_be_SOURCES_COMMON)
 
 ../lib:
 	mkdir -p ../lib
 
-libgenerator_be_la_DEPENDENCIES = \
- $(libgenerator_be_DEPENDENCIES_COMMON)
 
-libgenerator_be_la_LDFLAGS = $(libgenerator_be_LDFLAGS_COMMON)
+libgenerator_be_la_DEPENDENCIES = \
+ ../lib
+
+
+libgenerator_be_la_LDFLAGS = \
+ -L. -L../lib
+
 
 noinst_HEADERS = \
   generator_be.h \
@@ -50,26 +44,20 @@ endif BUILD_RTTI
 if BUILD_RTTI
 noinst_PROGRAMS = generator
 
-generator_SOURCES_COMMON = \
+generator_SOURCES = \
   generator.cpp \
   resource.h
-
-generator_DEPENDENCIES_COMMON = \
- ../lib
-
-generator_LDFLAGS_COMMON = \
-  -L. -L../lib
-
-generator_CPPFLAGS = $(generator_CPPFLAGS_COMMON)
-
-generator_SOURCES = $(generator_SOURCES_COMMON)
 
 ../lib:
 	mkdir -p ../lib
 
-generator_DEPENDENCIES = $(generator_DEPENDENCIES_COMMON)
 
-generator_LDFLAGS = $(generator_LDFLAGS_COMMON)
+generator_DEPENDENCIES = \
+ ../lib
+
+
+generator_LDFLAGS = \
+  -L. -L../lib
 
 generator_LDADD = \
   libgenerator_be.la

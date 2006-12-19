@@ -12,21 +12,16 @@
 ## Makefile.dir4.am
 noinst_LTLIBRARIES = libdir4.la
 
-libdir4_CPPFLAGS_COMMON = \
+libdir4_la_CPPFLAGS = \
   -DNEEDED_BY_ALL \
   -DNEEDED_BY_SOME
 
-libdir4_SOURCES_COMMON = \
+libdir4_la_SOURCES = \
   foo.cpp
 
-libdir4_LDFLAGS_COMMON = \
+libdir4_la_LDFLAGS = \
  -L.
 
-libdir4_la_CPPFLAGS = $(libdir4_CPPFLAGS_COMMON)
-
-libdir4_la_SOURCES = $(libdir4_SOURCES_COMMON)
-
-libdir4_la_LDFLAGS = $(libdir4_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

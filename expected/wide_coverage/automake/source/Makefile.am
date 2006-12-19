@@ -84,33 +84,27 @@ CLEANFILES += \
 
 noinst_LTLIBRARIES = libsource_lib.la
 
-libsource_lib_CPPFLAGS_COMMON = \
+libsource_lib_la_CPPFLAGS = \
   -I. \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libsource_lib_SOURCES_COMMON = \
+libsource_lib_la_SOURCES = \
   TheCheat.cpp \
   cre/o.le/more_names.cpp \
   names.cpp \
   qwee.cxx
 
-libsource_lib_DEPENDENCIES_COMMON = \
- ../lib
-
-libsource_lib_LDFLAGS_COMMON = \
- -L. -L../lib
-
-libsource_lib_la_CPPFLAGS = $(libsource_lib_CPPFLAGS_COMMON)
-
-libsource_lib_la_SOURCES = $(libsource_lib_SOURCES_COMMON)
-
 ../lib:
 	mkdir -p ../lib
 
-libsource_lib_la_DEPENDENCIES = \
- $(libsource_lib_DEPENDENCIES_COMMON)
 
-libsource_lib_la_LDFLAGS = $(libsource_lib_LDFLAGS_COMMON)
+libsource_lib_la_DEPENDENCIES = \
+ ../lib
+
+
+libsource_lib_la_LDFLAGS = \
+ -L. -L../lib
+
 
 noinst_HEADERS = \
   TheCheat.h \
@@ -135,7 +129,7 @@ Foolish/foolish.txt: $(srcdir)/Foolish/foolish.simple
 
 noinst_PROGRAMS = main_test
 
-main_test_CPPFLAGS_COMMON = \
+main_test_CPPFLAGS = \
   -I. \
   -I/this/path \
   -IZ:\that\path \
@@ -143,29 +137,23 @@ main_test_CPPFLAGS_COMMON = \
   -IThere \
   -DMACRO_TEST="a_string_with_no_spaces"
 
-main_test_SOURCES_COMMON = \
+main_test_SOURCES = \
   exe/main.cpp \
   exe/use_more_names/use_more_names.cpp \
   exe/use_names/use_names.cpp \
   exe/use_more_names/use_more_names.h \
   exe/use_names/use_names.h
 
-main_test_DEPENDENCIES_COMMON = \
- ../lib
-
-main_test_LDFLAGS_COMMON = \
-  -L. -L../lib
-
-main_test_CPPFLAGS = $(main_test_CPPFLAGS_COMMON)
-
-main_test_SOURCES = $(main_test_SOURCES_COMMON)
-
 ../lib:
 	mkdir -p ../lib
 
-main_test_DEPENDENCIES = $(main_test_DEPENDENCIES_COMMON)
 
-main_test_LDFLAGS = $(main_test_LDFLAGS_COMMON)
+main_test_DEPENDENCIES = \
+ ../lib
+
+
+main_test_LDFLAGS = \
+  -L. -L../lib
 
 main_test_LDADD = \
   libsource_lib.la

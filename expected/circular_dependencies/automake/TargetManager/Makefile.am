@@ -6,80 +6,60 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.CIAO_TargetManager_stub.am
 noinst_LTLIBRARIES = libTargetManager_stub.la
 
-libTargetManager_stub_CPPFLAGS_COMMON = \
+libTargetManager_stub_la_CPPFLAGS = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libTargetManager_stub_SOURCES_COMMON = \
+libTargetManager_stub_la_SOURCES = \
   foo.cpp
 
-libTargetManager_stub_LDFLAGS_COMMON = \
+libTargetManager_stub_la_LDFLAGS = \
  -L.
 
-libTargetManager_stub_la_CPPFLAGS = $(libTargetManager_stub_CPPFLAGS_COMMON)
-
-libTargetManager_stub_la_SOURCES = $(libTargetManager_stub_SOURCES_COMMON)
-
-libTargetManager_stub_la_LDFLAGS = $(libTargetManager_stub_LDFLAGS_COMMON)
 
 ## Makefile.CIAO_TargetManager_svnt.am
 noinst_LTLIBRARIES += libTargetManager_svnt.la
 
-libTargetManager_svnt_CPPFLAGS_COMMON = \
+libTargetManager_svnt_la_CPPFLAGS = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libTargetManager_svnt_SOURCES_COMMON = \
+libTargetManager_svnt_la_SOURCES = \
   foo.cpp
 
-libTargetManager_svnt_LDFLAGS_COMMON = \
+libTargetManager_svnt_la_LDFLAGS = \
  -L.
 
-libTargetManager_svnt_la_CPPFLAGS = $(libTargetManager_svnt_CPPFLAGS_COMMON)
-
-libTargetManager_svnt_la_SOURCES = $(libTargetManager_svnt_SOURCES_COMMON)
-
-libTargetManager_svnt_la_LDFLAGS = $(libTargetManager_svnt_LDFLAGS_COMMON)
 
 ## Makefile.CIAO_TargetManager_exec.am
 noinst_LTLIBRARIES += libTargetManager_exec.la
 
-libTargetManager_exec_CPPFLAGS_COMMON = \
+libTargetManager_exec_la_CPPFLAGS = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libTargetManager_exec_SOURCES_COMMON = \
+libTargetManager_exec_la_SOURCES = \
   foo.cpp
 
-libTargetManager_exec_LDFLAGS_COMMON = \
+libTargetManager_exec_la_LDFLAGS = \
  -L.
 
-libTargetManager_exec_la_CPPFLAGS = $(libTargetManager_exec_CPPFLAGS_COMMON)
-
-libTargetManager_exec_la_SOURCES = $(libTargetManager_exec_SOURCES_COMMON)
-
-libTargetManager_exec_la_LDFLAGS = $(libTargetManager_exec_LDFLAGS_COMMON)
 
 ## Makefile.TMClient.am
 noinst_LTLIBRARIES += libTMClient.la
 
-libTMClient_CPPFLAGS_COMMON = \
+libTMClient_la_CPPFLAGS = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libTMClient_SOURCES_COMMON = \
+libTMClient_la_SOURCES = \
   foo.cpp
 
-libTMClient_LDFLAGS_COMMON = \
+libTMClient_la_LDFLAGS = \
  -L.
 
-libTMClient_la_CPPFLAGS = $(libTMClient_CPPFLAGS_COMMON)
-
-libTMClient_la_SOURCES = $(libTMClient_SOURCES_COMMON)
-
-libTMClient_la_LDFLAGS = $(libTMClient_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake conditional_specific_verbatim_wildcards.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake conditional_specific_verbatim_wildcards.mwc
 
 
 ## Makefile.csvw_A.am
@@ -15,18 +15,13 @@ other:
 
 noinst_LTLIBRARIES = libcsvw_A.la
 
-libcsvw_A_SOURCES_COMMON = \
+libcsvw_A_la_SOURCES = \
   bleer.cpp \
   byion.cpp
 
-libcsvw_A_LDFLAGS_COMMON = \
+libcsvw_A_la_LDFLAGS = \
  -L.
 
-libcsvw_A_la_CPPFLAGS = $(libcsvw_A_CPPFLAGS_COMMON)
-
-libcsvw_A_la_SOURCES = $(libcsvw_A_SOURCES_COMMON)
-
-libcsvw_A_la_LDFLAGS = $(libcsvw_A_LDFLAGS_COMMON)
 
 noinst_HEADERS = \
   byion.h
@@ -34,24 +29,19 @@ noinst_HEADERS = \
 ## Makefile.csvw_B.am
 noinst_LTLIBRARIES += libcsvw_B.la
 
-libcsvw_B_CPPFLAGS_COMMON = \
+libcsvw_B_la_CPPFLAGS = \
   -DONLY_MAKE \
   -DONLY_UNIX
 
-libcsvw_B_SOURCES_COMMON = \
+libcsvw_B_la_SOURCES = \
   conditional/unix.cpp \
   moop.cxx \
   ploor.cpp \
   qwaaa.c
 
-libcsvw_B_LDFLAGS_COMMON = \
+libcsvw_B_la_LDFLAGS = \
  -L.
 
-libcsvw_B_la_CPPFLAGS = $(libcsvw_B_CPPFLAGS_COMMON)
-
-libcsvw_B_la_SOURCES = $(libcsvw_B_SOURCES_COMMON)
-
-libcsvw_B_la_LDFLAGS = $(libcsvw_B_LDFLAGS_COMMON)
 
 noinst_HEADERS += \
   qwaaa.h
@@ -59,25 +49,20 @@ noinst_HEADERS += \
 ## Makefile.csvw_C.am
 noinst_LTLIBRARIES += libcsvw_C.la
 
-libcsvw_C_CPPFLAGS_COMMON = \
+libcsvw_C_la_CPPFLAGS = \
   -DONLY_MAKE \
   -DONLY_UNIX
 
-libcsvw_C_SOURCES_COMMON = \
+libcsvw_C_la_SOURCES = \
   byion.cpp \
   conditional/unix.cpp \
   moop.cxx \
   ploor.cpp \
   qwaaa.c
 
-libcsvw_C_LDFLAGS_COMMON = \
+libcsvw_C_la_LDFLAGS = \
  -L.
 
-libcsvw_C_la_CPPFLAGS = $(libcsvw_C_CPPFLAGS_COMMON)
-
-libcsvw_C_la_SOURCES = $(libcsvw_C_SOURCES_COMMON)
-
-libcsvw_C_la_LDFLAGS = $(libcsvw_C_LDFLAGS_COMMON)
 
 noinst_HEADERS += \
   byion.h \
@@ -86,22 +71,17 @@ noinst_HEADERS += \
 ## Makefile.csvw_D.am
 noinst_LTLIBRARIES += libcsvw_D.la
 
-libcsvw_D_CPPFLAGS_COMMON = \
+libcsvw_D_la_CPPFLAGS = \
   -DFAIL_IF_NOT_DEFINED
 
-libcsvw_D_SOURCES_COMMON = \
+libcsvw_D_la_SOURCES = \
   conditional/every.cpp \
   moop.cxx \
   qwaaa.c
 
-libcsvw_D_LDFLAGS_COMMON = \
+libcsvw_D_la_LDFLAGS = \
  -L.
 
-libcsvw_D_la_CPPFLAGS = $(libcsvw_D_CPPFLAGS_COMMON)
-
-libcsvw_D_la_SOURCES = $(libcsvw_D_SOURCES_COMMON)
-
-libcsvw_D_la_LDFLAGS = $(libcsvw_D_LDFLAGS_COMMON)
 
 noinst_HEADERS += \
   qwaaa.h
@@ -109,17 +89,12 @@ noinst_HEADERS += \
 ## Makefile.csvw_E.am
 noinst_LTLIBRARIES += libcsvw_E.la
 
-libcsvw_E_SOURCES_COMMON = \
+libcsvw_E_la_SOURCES = \
   closed/Apple.cpp
 
-libcsvw_E_LDFLAGS_COMMON = \
+libcsvw_E_la_LDFLAGS = \
  -L.
 
-libcsvw_E_la_CPPFLAGS = $(libcsvw_E_CPPFLAGS_COMMON)
-
-libcsvw_E_la_SOURCES = $(libcsvw_E_SOURCES_COMMON)
-
-libcsvw_E_la_LDFLAGS = $(libcsvw_E_LDFLAGS_COMMON)
 
 noinst_HEADERS += \
   byion.h \

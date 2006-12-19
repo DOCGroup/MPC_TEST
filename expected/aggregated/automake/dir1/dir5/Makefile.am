@@ -12,22 +12,17 @@
 ## Makefile.dir5.am
 noinst_LTLIBRARIES = libdir5.la
 
-libdir5_CPPFLAGS_COMMON = \
+libdir5_la_CPPFLAGS = \
   -DNEEDED_BY_ALL \
   -DNEEDED_BY_SOME \
   -DREQUIRED
 
-libdir5_SOURCES_COMMON = \
+libdir5_la_SOURCES = \
   foo.cpp
 
-libdir5_LDFLAGS_COMMON = \
+libdir5_la_LDFLAGS = \
  -L.
 
-libdir5_la_CPPFLAGS = $(libdir5_CPPFLAGS_COMMON)
-
-libdir5_la_SOURCES = $(libdir5_SOURCES_COMMON)
-
-libdir5_la_LDFLAGS = $(libdir5_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

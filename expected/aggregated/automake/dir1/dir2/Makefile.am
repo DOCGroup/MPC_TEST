@@ -12,23 +12,18 @@
 ## Makefile.foo.am
 noinst_LTLIBRARIES = libfoo.la
 
-libfoo_CPPFLAGS_COMMON = \
+libfoo_la_CPPFLAGS = \
   -DNEEDED_BY_ALL \
   -DNEEDED_BY_SOME \
   -DREQUIRED \
   -DALSO_REQUIRED
 
-libfoo_SOURCES_COMMON = \
+libfoo_la_SOURCES = \
   foo.cpp
 
-libfoo_LDFLAGS_COMMON = \
+libfoo_la_LDFLAGS = \
  -L.
 
-libfoo_la_CPPFLAGS = $(libfoo_CPPFLAGS_COMMON)
-
-libfoo_la_SOURCES = $(libfoo_SOURCES_COMMON)
-
-libfoo_la_LDFLAGS = $(libfoo_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

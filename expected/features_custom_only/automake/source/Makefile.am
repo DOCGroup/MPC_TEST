@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake features_custom_only.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake features_custom_only.mwc
 
 
 ## Makefile.fco.am
@@ -71,30 +71,20 @@ this-stamp: $(srcdir)/this.zar
 	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA $(srcdir)/this.zar
 	@touch "$@"
 
-lib_LDFLAGS_COMMON = \
- -L.
-
-lib_la_CPPFLAGS = $(lib_CPPFLAGS_COMMON)
-
 
 ## Makefile.fco_use.am
 noinst_LTLIBRARIES = libfco_use.la
 
-libfco_use_CPPFLAGS_COMMON = \
+libfco_use_la_CPPFLAGS = \
   -DTHAT_THERE_MACRO
 
-libfco_use_SOURCES_COMMON = \
+libfco_use_la_SOURCES = \
   zar_thatB.cpp \
   zar_thisC.cpp
 
-libfco_use_LDFLAGS_COMMON = \
+libfco_use_la_LDFLAGS = \
  -L.
 
-libfco_use_la_CPPFLAGS = $(libfco_use_CPPFLAGS_COMMON)
-
-libfco_use_la_SOURCES = $(libfco_use_SOURCES_COMMON)
-
-libfco_use_la_LDFLAGS = $(libfco_use_LDFLAGS_COMMON)
 
 noinst_HEADERS = \
   zar_thatB.h \
@@ -133,18 +123,13 @@ other/other-stamp: $(srcdir)/other/other.poo
 
 noinst_LTLIBRARIES += libother.la
 
-libother_SOURCES_COMMON = \
+libother_la_SOURCES = \
   other/zar_otherA.cpp \
   other/zar_otherB.cpp
 
-libother_LDFLAGS_COMMON = \
+libother_la_LDFLAGS = \
  -L.
 
-libother_la_CPPFLAGS = $(libother_CPPFLAGS_COMMON)
-
-libother_la_SOURCES = $(libother_SOURCES_COMMON)
-
-libother_la_LDFLAGS = $(libother_LDFLAGS_COMMON)
 
 noinst_HEADERS += \
   other/zar_otherA.h \

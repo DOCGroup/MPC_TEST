@@ -6,77 +6,57 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.Monitor_Monitorlib.am
 noinst_LTLIBRARIES = libciaomonlib.la
 
-libciaomonlib_CPPFLAGS_COMMON = \
+libciaomonlib_la_CPPFLAGS = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libciaomonlib_SOURCES_COMMON = \
+libciaomonlib_la_SOURCES = \
   foo.cpp
 
-libciaomonlib_LDFLAGS_COMMON = \
+libciaomonlib_la_LDFLAGS = \
  -L.
 
-libciaomonlib_la_CPPFLAGS = $(libciaomonlib_CPPFLAGS_COMMON)
-
-libciaomonlib_la_SOURCES = $(libciaomonlib_SOURCES_COMMON)
-
-libciaomonlib_la_LDFLAGS = $(libciaomonlib_LDFLAGS_COMMON)
 
 ## Makefile.NodeManager_stub.am
 noinst_LTLIBRARIES += libNodeManager_stub.la
 
-libNodeManager_stub_CPPFLAGS_COMMON = \
+libNodeManager_stub_la_CPPFLAGS = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libNodeManager_stub_SOURCES_COMMON = \
+libNodeManager_stub_la_SOURCES = \
   bar.cpp
 
-libNodeManager_stub_LDFLAGS_COMMON = \
+libNodeManager_stub_la_LDFLAGS = \
  -L.
 
-libNodeManager_stub_la_CPPFLAGS = $(libNodeManager_stub_CPPFLAGS_COMMON)
-
-libNodeManager_stub_la_SOURCES = $(libNodeManager_stub_SOURCES_COMMON)
-
-libNodeManager_stub_la_LDFLAGS = $(libNodeManager_stub_LDFLAGS_COMMON)
 
 ## Makefile.NodeManager.am
 noinst_PROGRAMS = one
 
-one_SOURCES_COMMON = \
+one_SOURCES = \
   one.cpp
 
-one_LDFLAGS_COMMON = \
+one_LDFLAGS = \
   -L.
 
-one_CPPFLAGS = $(one_CPPFLAGS_COMMON)
-
-one_SOURCES = $(one_SOURCES_COMMON)
-
-one_LDFLAGS = $(one_LDFLAGS_COMMON)
 
 ## Makefile.lib.am
 noinst_LTLIBRARIES += libNodeManager.la
 
-libNodeManager_CPPFLAGS_COMMON = \
+libNodeManager_la_CPPFLAGS = \
   -D__NO_STATIC_FLAGS_AVAILABLE__
 
-libNodeManager_SOURCES_COMMON = \
+libNodeManager_la_SOURCES = \
   two.cpp
 
-libNodeManager_LDFLAGS_COMMON = \
+libNodeManager_la_LDFLAGS = \
  -L.
 
-libNodeManager_la_CPPFLAGS = $(libNodeManager_CPPFLAGS_COMMON)
-
-libNodeManager_la_SOURCES = $(libNodeManager_SOURCES_COMMON)
-
-libNodeManager_la_LDFLAGS = $(libNodeManager_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

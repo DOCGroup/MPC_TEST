@@ -1,3 +1,11 @@
+Tue Dec 19 15:55:34 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/automake/*/Makefile.am:
+
+          Updated to reflect J.T. Conklin's changes from Tue Dec 19 01:29:01
+          2006 to Tue Dec 19 07:41:59 2006 and my change from Tue Dec 19
+          18:02:21 UTC 2006.
+
 Tue Dec 19 13:37:23 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/options/nmake/Makefile_Zargaflan.mak:
