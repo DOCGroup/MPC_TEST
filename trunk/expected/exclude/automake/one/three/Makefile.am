@@ -6,23 +6,18 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake -exclude one/one.mpc -recurse -include exclude.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -exclude one/one.mpc -recurse -include exclude.mwc
 
 
 ## Makefile.three.am
 noinst_LTLIBRARIES = libthree.la
 
-libthree_SOURCES_COMMON = \
+libthree_la_SOURCES = \
   foo.cpp
 
-libthree_LDFLAGS_COMMON = \
+libthree_la_LDFLAGS = \
  -L.
 
-libthree_la_CPPFLAGS = $(libthree_CPPFLAGS_COMMON)
-
-libthree_la_SOURCES = $(libthree_SOURCES_COMMON)
-
-libthree_la_LDFLAGS = $(libthree_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

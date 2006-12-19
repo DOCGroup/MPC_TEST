@@ -43,18 +43,16 @@ bus-stamp: $(srcdir)/bus.y
 
 noinst_LTLIBRARIES = libbus.la
 
-libbus_SOURCES_COMMON = \
+libbus_la_CPPFLAGS = \
+  -O
+
+libbus_la_SOURCES = \
   bus.cpp \
   bus.tab.c
 
-libbus_LDFLAGS_COMMON = \
+libbus_la_LDFLAGS = \
  -L.
 
-libbus_la_CPPFLAGS = $(libbus_CPPFLAGS_COMMON) -O
-
-libbus_la_SOURCES = $(libbus_SOURCES_COMMON)
-
-libbus_la_LDFLAGS = $(libbus_LDFLAGS_COMMON)
 
 noinst_HEADERS = \
   bus.tab.h

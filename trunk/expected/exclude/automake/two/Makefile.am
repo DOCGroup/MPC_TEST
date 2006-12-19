@@ -6,23 +6,18 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake -exclude one/one.mpc -recurse -include exclude.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -exclude one/one.mpc -recurse -include exclude.mwc
 
 
 ## Makefile.two.am
 noinst_LTLIBRARIES = libtwo.la
 
-libtwo_SOURCES_COMMON = \
+libtwo_la_SOURCES = \
   foo.cpp
 
-libtwo_LDFLAGS_COMMON = \
+libtwo_la_LDFLAGS = \
  -L.
 
-libtwo_la_CPPFLAGS = $(libtwo_CPPFLAGS_COMMON)
-
-libtwo_la_SOURCES = $(libtwo_SOURCES_COMMON)
-
-libtwo_la_LDFLAGS = $(libtwo_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

@@ -12,21 +12,16 @@
 ## Makefile.another.am
 noinst_LTLIBRARIES = libanother.la
 
-libanother_CPPFLAGS_COMMON = \
+libanother_la_CPPFLAGS = \
   -DNEEDED_BY_ALL \
   -DNEEDED_BY_NONE
 
-libanother_SOURCES_COMMON = \
+libanother_la_SOURCES = \
   foo.cpp
 
-libanother_LDFLAGS_COMMON = \
+libanother_la_LDFLAGS = \
  -L.
 
-libanother_la_CPPFLAGS = $(libanother_CPPFLAGS_COMMON)
-
-libanother_la_SOURCES = $(libanother_SOURCES_COMMON)
-
-libanother_la_LDFLAGS = $(libanother_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

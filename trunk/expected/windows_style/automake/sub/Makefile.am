@@ -6,34 +6,28 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.sub.am
 bin_PROGRAMS = sub
 
-sub_CPPFLAGS_COMMON = \
+sub_CPPFLAGS = \
   -I..
 
-sub_SOURCES_COMMON = \
+sub_SOURCES = \
   sub.cpp
-
-sub_DEPENDENCIES_COMMON = \
- ../lib
-
-sub_LDFLAGS_COMMON = \
-  -L. -L../lib
-
-sub_CPPFLAGS = $(sub_CPPFLAGS_COMMON)
-
-sub_SOURCES = $(sub_SOURCES_COMMON)
 
 ../lib:
 	mkdir -p ../lib
 
-sub_DEPENDENCIES = $(sub_DEPENDENCIES_COMMON)
 
-sub_LDFLAGS = $(sub_LDFLAGS_COMMON)
+sub_DEPENDENCIES = \
+ ../lib
+
+
+sub_LDFLAGS = \
+  -L. -L../lib
 
 sub_LDADD = \
   $(top_builddir)/libsupport_lib.la

@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake -features qt=1
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -features qt=1
 
 
 CLEANFILES =
@@ -45,24 +45,18 @@ demo_moc.cpp: $(srcdir)/demo.h
 
 noinst_PROGRAMS = main
 
-main_CPPFLAGS_COMMON = \
+main_CPPFLAGS = \
   -I$(QTDIR)/include \
   -DQT_THREAD_SUPPORT
 
-main_SOURCES_COMMON = \
+main_SOURCES = \
   demo.cpp \
   demo_moc.cpp \
   main.cpp \
   demo.h
 
-main_LDFLAGS_COMMON = \
+main_LDFLAGS = \
   -L. -L$(QTDIR)/lib
-
-main_CPPFLAGS = $(main_CPPFLAGS_COMMON)
-
-main_SOURCES = $(main_SOURCES_COMMON)
-
-main_LDFLAGS = $(main_LDFLAGS_COMMON)
 
 main_LDADD = \
   -lqt-mt$(QT_VERSION)

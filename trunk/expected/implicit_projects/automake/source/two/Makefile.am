@@ -6,34 +6,28 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake implicit_projects.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake implicit_projects.mwc
 
 
 ## Makefile.two.am
 noinst_PROGRAMS = two
 
-two_CPPFLAGS_COMMON = \
+two_CPPFLAGS = \
   -I..
 
-two_SOURCES_COMMON = \
+two_SOURCES = \
   two.cpp
-
-two_DEPENDENCIES_COMMON = \
- ../../lib
-
-two_LDFLAGS_COMMON = \
-  -L. -L../../lib
-
-two_CPPFLAGS = $(two_CPPFLAGS_COMMON)
-
-two_SOURCES = $(two_SOURCES_COMMON)
 
 ../../lib:
 	mkdir -p ../../lib
 
-two_DEPENDENCIES = $(two_DEPENDENCIES_COMMON)
 
-two_LDFLAGS = $(two_LDFLAGS_COMMON)
+two_DEPENDENCIES = \
+ ../../lib
+
+
+two_LDFLAGS = \
+  -L. -L../../lib
 
 two_LDADD = \
   $(top_builddir)/source/one/libone.la

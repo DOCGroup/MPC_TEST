@@ -6,28 +6,23 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.build_exe.am
 noinst_PROGRAMS = other
 
-other_CPPFLAGS_COMMON = \
+other_CPPFLAGS = \
   -I.
 
-other_SOURCES_COMMON = \
+other_SOURCES = \
   ../src/foo.cpp \
   bar.cpp \
   other.cpp
 
-other_LDFLAGS_COMMON = \
+other_LDFLAGS = \
   -L.
 
-other_CPPFLAGS = $(other_CPPFLAGS_COMMON)
-
-other_SOURCES = $(other_SOURCES_COMMON)
-
-other_LDFLAGS = $(other_LDFLAGS_COMMON)
 
 EXTRA_DIST = \
   ../src/bar.rc
@@ -36,21 +31,16 @@ EXTRA_DIST = \
 ## Makefile.build_lib.am
 noinst_LTLIBRARIES = libbuild_lib.la
 
-libbuild_lib_CPPFLAGS_COMMON = \
+libbuild_lib_la_CPPFLAGS = \
   -I.
 
-libbuild_lib_SOURCES_COMMON = \
+libbuild_lib_la_SOURCES = \
   ../src/foo.cpp \
   bar.cpp
 
-libbuild_lib_LDFLAGS_COMMON = \
+libbuild_lib_la_LDFLAGS = \
  -L.
 
-libbuild_lib_la_CPPFLAGS = $(libbuild_lib_CPPFLAGS_COMMON)
-
-libbuild_lib_la_SOURCES = $(libbuild_lib_SOURCES_COMMON)
-
-libbuild_lib_la_LDFLAGS = $(libbuild_lib_LDFLAGS_COMMON)
 
 EXTRA_DIST += \
   ../src/bar.rc

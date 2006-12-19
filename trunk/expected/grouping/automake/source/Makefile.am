@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type automake grouping.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake grouping.mwc
 
 
 ## Makefile.grouping_A.am
@@ -28,21 +28,16 @@ clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 
 noinst_PROGRAMS = A
 
-A_SOURCES_COMMON = \
+A_SOURCES = \
   clown.cpp \
   other.cpp \
   clown.h \
   other.inl \
   zzz.inl
 
-A_LDFLAGS_COMMON = \
+A_LDFLAGS = \
   -L.
 
-A_CPPFLAGS = $(A_CPPFLAGS_COMMON)
-
-A_SOURCES = $(A_SOURCES_COMMON)
-
-A_LDFLAGS = $(A_LDFLAGS_COMMON)
 
 ## Makefile.grouping_B.am
 
@@ -63,21 +58,16 @@ clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 
 noinst_PROGRAMS += B
 
-B_SOURCES_COMMON = \
+B_SOURCES = \
   clown.cpp \
   other.cpp \
   clown.h \
   other.inl \
   zzz.inl
 
-B_LDFLAGS_COMMON = \
+B_LDFLAGS = \
   -L.
 
-B_CPPFLAGS = $(B_CPPFLAGS_COMMON)
-
-B_SOURCES = $(B_SOURCES_COMMON)
-
-B_LDFLAGS = $(B_LDFLAGS_COMMON)
 
 ## Makefile.grouping_C.am
 
@@ -98,20 +88,15 @@ clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 
 noinst_PROGRAMS += C
 
-C_SOURCES_COMMON = \
+C_SOURCES = \
   clown.cpp \
   other.cpp \
   clown.h \
   other.inl
 
-C_LDFLAGS_COMMON = \
+C_LDFLAGS = \
   -L.
 
-C_CPPFLAGS = $(C_CPPFLAGS_COMMON)
-
-C_SOURCES = $(C_SOURCES_COMMON)
-
-C_LDFLAGS = $(C_LDFLAGS_COMMON)
 
 ## Makefile.grouping_D.am
 
@@ -132,20 +117,15 @@ clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 
 noinst_PROGRAMS += D
 
-D_SOURCES_COMMON = \
+D_SOURCES = \
   clown.cpp \
   other.cpp \
   clown.h \
   other.inl
 
-D_LDFLAGS_COMMON = \
+D_LDFLAGS = \
   -L.
 
-D_CPPFLAGS = $(D_CPPFLAGS_COMMON)
-
-D_SOURCES = $(D_SOURCES_COMMON)
-
-D_LDFLAGS = $(D_LDFLAGS_COMMON)
 
 ## Makefile.grouping_E.am
 
@@ -166,20 +146,15 @@ clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 
 noinst_PROGRAMS += E
 
-E_SOURCES_COMMON = \
+E_SOURCES = \
   clown.cpp \
   other.cpp \
   clown.h \
   other.inl
 
-E_LDFLAGS_COMMON = \
+E_LDFLAGS = \
   -L.
 
-E_CPPFLAGS = $(E_CPPFLAGS_COMMON)
-
-E_SOURCES = $(E_SOURCES_COMMON)
-
-E_LDFLAGS = $(E_LDFLAGS_COMMON)
 
 ## Makefile.grouping_F.am
 
@@ -200,20 +175,15 @@ clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 
 noinst_PROGRAMS += F
 
-F_SOURCES_COMMON = \
+F_SOURCES = \
   clown.cpp \
   other.cpp \
   clown.h \
   other.inl
 
-F_LDFLAGS_COMMON = \
+F_LDFLAGS = \
   -L.
 
-F_CPPFLAGS = $(F_CPPFLAGS_COMMON)
-
-F_SOURCES = $(F_SOURCES_COMMON)
-
-F_LDFLAGS = $(F_LDFLAGS_COMMON)
 
 ## Makefile.grouping_G.am
 
@@ -234,7 +204,7 @@ clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
 
 noinst_PROGRAMS += G
 
-G_SOURCES_COMMON = \
+G_SOURCES = \
   alternate/foo.cpp \
   clown.cpp \
   other.cpp \
@@ -242,14 +212,9 @@ G_SOURCES_COMMON = \
   other.inl \
   zzz.inl
 
-G_LDFLAGS_COMMON = \
+G_LDFLAGS = \
   -L.
 
-G_CPPFLAGS = $(G_CPPFLAGS_COMMON)
-
-G_SOURCES = $(G_SOURCES_COMMON)
-
-G_LDFLAGS = $(G_LDFLAGS_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:
