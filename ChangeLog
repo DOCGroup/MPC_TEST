@@ -1,3 +1,13 @@
+Fri Dec 29 16:07:42 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
+
+        * modules/OptionProcessor.pm:
+
+          Updated with the latest version.
+
+        * tests/options/build_entry.txt:
+
+          Updated to reflect my change from Mon Dec 18 13:48:15 UTC 2006.
+
 Tue Dec 19 18:19:29 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc7/*.vcproj:
