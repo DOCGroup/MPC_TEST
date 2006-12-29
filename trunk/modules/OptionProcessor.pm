@@ -15,6 +15,12 @@ use Getopt::Long;
 use File::Basename;
 
 # ******************************************************************
+# Data Section
+# ******************************************************************
+
+our($VERSION) = '1.0.0';
+
+# ******************************************************************
 # Subroutine Section
 # ******************************************************************
 
@@ -86,7 +92,8 @@ sub usageAndExit {
 
   foreach my $key (sort keys %{$self->{'options'}}) {
     my($opt, $type) = split(/=/, $key);
-    my($param) = (defined $type ? " <$opt>" : '');
+    my($param) = (defined $type ?
+                         ($type eq 'i' ? ' <0|1>' : " <$opt>") : '');
     if (UNIVERSAL::isa($self->{'options'}->{$key}, 'HASH')) {
       $param = ' <name=value>';
     }
@@ -115,7 +122,7 @@ sub usageAndExit {
 
     foreach my $key (sort keys %$desc) {
       my($len) = length($key);
-      my($str) = "       $key" . ($len < $max ? ' ' x ($max - $len) : '') .
+      my($str) = "  $key" . ($len < $max ? ' ' x ($max - $len) : '') .
                  '  ';
       $length = length($str);
 
@@ -129,7 +136,7 @@ sub usageAndExit {
           $part = '';
           foreach my $word (@words) {
             if (length($word) + length($part) + $length > $maxLine) {
-              my($space) = '         ' . (' ' x $max);
+              my($space) = '    ' . (' ' x $max);
               $part =~ s/\s+$//;
               print "$part\n$space";
               $part = '';
