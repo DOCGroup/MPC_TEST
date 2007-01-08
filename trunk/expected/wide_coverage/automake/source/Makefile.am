@@ -101,10 +101,8 @@ libsource_lib_la_SOURCES = \
 libsource_lib_la_DEPENDENCIES = \
  ../lib
 
-
 libsource_lib_la_LDFLAGS = \
  -L. -L../lib
-
 
 noinst_HEADERS = \
   TheCheat.h \
@@ -144,13 +142,10 @@ main_test_SOURCES = \
   exe/use_more_names/use_more_names.h \
   exe/use_names/use_names.h
 
-../lib:
-	mkdir -p ../lib
 
 
 main_test_DEPENDENCIES = \
  ../lib
-
 
 main_test_LDFLAGS = \
   -L. -L../lib

@@ -1,3 +1,11 @@
+Mon Jan  8 13:40:33 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/grouping/automake/source/Makefile.am:
+        * expected/wide_coverage/automake/generator/Makefile.am:
+        * expected/wide_coverage/automake/source/Makefile.am:
+
+          Updated to reflect my change from Mon Jan  8 13:39:23 UTC 2007.
+
 Fri Dec 29 16:07:42 UTC 2006  Chad Elliott  <elliott_c@ociweb.com>
 
         * modules/OptionProcessor.pm:
