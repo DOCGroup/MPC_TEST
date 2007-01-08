@@ -13,6 +13,7 @@
 ## Makefile.generator_be.am
 
 if BUILD_RTTI
+
 noinst_LTLIBRARIES = libgenerator_be.la
 
 libgenerator_be_la_CPPFLAGS = \
@@ -28,10 +29,8 @@ libgenerator_be_la_SOURCES = \
 libgenerator_be_la_DEPENDENCIES = \
  ../lib
 
-
 libgenerator_be_la_LDFLAGS = \
  -L. -L../lib
-
 
 noinst_HEADERS = \
   generator_be.h \
@@ -42,19 +41,17 @@ endif BUILD_RTTI
 ## Makefile.generator.am
 
 if BUILD_RTTI
+
 noinst_PROGRAMS = generator
 
 generator_SOURCES = \
   generator.cpp \
   resource.h
 
-../lib:
-	mkdir -p ../lib
 
 
 generator_DEPENDENCIES = \
  ../lib
-
 
 generator_LDFLAGS = \
   -L. -L../lib

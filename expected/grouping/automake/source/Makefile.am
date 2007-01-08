@@ -38,7 +38,6 @@ A_SOURCES = \
 A_LDFLAGS = \
   -L.
 
-
 ## Makefile.grouping_B.am
 
 BUILT_SOURCES += \
@@ -50,11 +49,7 @@ CLEANFILES += \
   clown.cpp \
   clown.h
 
-clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
-	@touch "$@"
 
 noinst_PROGRAMS += B
 
@@ -68,7 +63,6 @@ B_SOURCES = \
 B_LDFLAGS = \
   -L.
 
-
 ## Makefile.grouping_C.am
 
 BUILT_SOURCES += \
@@ -80,11 +74,7 @@ CLEANFILES += \
   clown.cpp \
   clown.h
 
-clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
-	@touch "$@"
 
 noinst_PROGRAMS += C
 
@@ -97,7 +87,6 @@ C_SOURCES = \
 C_LDFLAGS = \
   -L.
 
-
 ## Makefile.grouping_D.am
 
 BUILT_SOURCES += \
@@ -109,11 +98,7 @@ CLEANFILES += \
   clown.cpp \
   clown.h
 
-clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
-	@touch "$@"
 
 noinst_PROGRAMS += D
 
@@ -126,7 +111,6 @@ D_SOURCES = \
 D_LDFLAGS = \
   -L.
 
-
 ## Makefile.grouping_E.am
 
 BUILT_SOURCES += \
@@ -138,11 +122,7 @@ CLEANFILES += \
   clown.cpp \
   clown.h
 
-clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
-	@touch "$@"
 
 noinst_PROGRAMS += E
 
@@ -155,7 +135,6 @@ E_SOURCES = \
 E_LDFLAGS = \
   -L.
 
-
 ## Makefile.grouping_F.am
 
 BUILT_SOURCES += \
@@ -167,11 +146,7 @@ CLEANFILES += \
   clown.cpp \
   clown.h
 
-clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
-	@touch "$@"
 
 noinst_PROGRAMS += F
 
@@ -184,7 +159,6 @@ F_SOURCES = \
 F_LDFLAGS = \
   -L.
 
-
 ## Makefile.grouping_G.am
 
 BUILT_SOURCES += \
@@ -196,11 +170,7 @@ CLEANFILES += \
   clown.cpp \
   clown.h
 
-clown.cpp clown.h: clown-stamp
 
-clown-stamp: $(srcdir)/clown.r ../bin/cppgen.pl
-	perl ../bin/cppgen.pl  $(srcdir)/clown.r -o clown.cpp clown.h
-	@touch "$@"
 
 noinst_PROGRAMS += G
 
@@ -214,7 +184,6 @@ G_SOURCES = \
 
 G_LDFLAGS = \
   -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:
