@@ -9,9 +9,14 @@ project(*A) {
     }
   }
 
+  specific(!make)  {
+    Debug::macros   += WE_SHOULD_NOT_SEE_THIS
+    Release::macros += OR_THIS_EITHER
+  }
   specific(make) {
     macros += ONLY_MAKE ONLY_UNIX
   }
+  macros -= WE_SHOULD_NOT_SEE_THIS OR_THIS_EITHER
 
   verbatim(automake, local) {
     other:

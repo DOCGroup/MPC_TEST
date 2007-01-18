@@ -2,6 +2,8 @@
 
 call "C:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools\vsvars32.bat"
 set PATH=C:\Borland\BCC55\Bin;%PATH%
+set PERL5_INCLUDE=C:\Perl\lib\CORE
+set PERL5_LIB=perl58
 
 set ACE_ROOT=
 set MPC_COMMANDLINE=

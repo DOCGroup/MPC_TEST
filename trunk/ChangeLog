@@ -1,3 +1,31 @@
+Thu Jan 18 14:28:39 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * tests/conditional_specific_verbatim_wildcards/source/csvw.mpc:
+
+          Updated to test my change from Fri Jan 12 15:24:27 UTC 2007.
+
+        * expected/swig_perl/*:
+        * tests/swig_perl/MyModule.i:
+        * tests/swig_perl/MyModule.mpc:
+        * tests/swig_perl/additional_options.txt:
+        * tests/swig_perl/build_entry.txt:
+        * tests/swig_perl/hello.h:
+        * tests/swig_perl/hello.cpp:
+        * tests/swig_perl/run_test.pl:
+
+          Added a test to ensure that, when source files are explicitly
+          listed and a custom definition is supplied where the source
+          extension has text before the '.', the files are added
+          automatically.
+
+        * utils/nightly.sh:
+        * utils/nightly_vc6.bat:
+        * utils/nightly_vc71_bmake.bat:
+        * utils/nightly_vc8.bat:
+
+          Set the PERL5_INCLUDE environment variable for the new SWIG Perl
+          test.
+
 Mon Jan  8 13:40:33 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/grouping/automake/source/Makefile.am:
