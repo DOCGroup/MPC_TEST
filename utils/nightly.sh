@@ -1,5 +1,8 @@
 #!/bin/sh
 
+PERL5_INCLUDE=/usr/lib64/perl5/5.8.6/x86_64-linux-thread-multi/CORE
+export PERL5_INCLUDE
+
 if [ -z "$ACE_ROOT" ]; then
   ACE_ROOT=/tao_builds/chad/ocitao/ACE_wrappers/build/linux; export ACE_ROOT
 fi

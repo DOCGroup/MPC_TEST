@@ -1,6 +1,8 @@
 @echo off
 
 call "C:\Program Files\Microsoft Visual Studio\VC98\Bin\VCVARS32.BAT"
+set PERL5_INCLUDE=C:\Perl\lib\CORE
+set PERL5_LIB=perl58
 
 set ACE_ROOT=
 set MPC_COMMANDLINE=
