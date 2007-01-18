@@ -999,6 +999,10 @@ Mon Feb 13 11:20:49 2006  Chad Elliott  <elliott_c@ociweb.com>
           directory before generating the first MPC pass.  Also added a
           --diffcmd option to specify an alternate diff command.
 
+          Also, switched to building the release mode for vc8 because the
+          debug version of the run-time dll is probably not available on
+          most systems.
+
         * tests/circular_dependencies/NodeApplication/foo.cpp:
         * tests/circular_dependencies/NodeManager/one.cpp:
         * tests/conditional_specific_verbatim_wildcards/source/conditional/windows.cpp:
