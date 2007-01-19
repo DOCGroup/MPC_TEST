@@ -15,23 +15,13 @@
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !endif
 
-all: source_lib source fake
+all: fake
 
 clean generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.source_lib.bmak $(@)
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.source.bmak $(@)
-	$(COMSPEC) /c "cd fake &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.fake.bmak $(@)"
-
-source_lib:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.source_lib.bmak all
-
-source: source_lib
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.source.bmak all
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.fake.bmak $(@)
 
 fake:
-	$(COMSPEC) /c "cd fake &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.fake.bmak all"
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.fake.bmak all
 
 project_name_list:
-	@echo source
-	@echo source_lib
 	@echo fake

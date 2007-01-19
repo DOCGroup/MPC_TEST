@@ -1,0 +1,86 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"."
+CCC           = $(CXX)
+MAKEFILE      = Makefile.fake
+DEPENDENCIES  = .depend.$(MAKEFILE)
+LTARGETDIR    = ./
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+EXEEXT        = 
+LIBPREFIX     = lib
+LIBSUFFIX     = 
+GENFLAGS      = -O
+LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
+OBJS          = other$(OBJEXT)
+AREXT         = .a
+LIB           = $(LTARGETDIR)$(LIBPREFIX)fake$(LIBSUFFIX)$(AREXT)
+SOEXT         = .so
+SHTARGETDIR   = ./
+SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)fake$(LIBSUFFIX)$(SOEXT)
+SHFLAGS       = -shared
+SRC           = other.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = $(DYNAMICFLAGS)
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(SHLIB)
+
+$(SHLIB): $(SHTARGETDIR) $(OBJS)
+	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
+
+$(LTARGETDIR):
+	@$(MKDIR) "$@"
+
+$(LIB): $(LTARGETDIR) $(OBJS)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
+
+GENERATED_DIRTY = ./other.cpp ./other.h
+
+./other.cpp ./other.h: ../../other/other.r ../../bin/cppgen.pl
+	@$(MKDIR) .
+	perl ../../bin/cppgen.pl  ../../other/other.r -o "$@"
+
+.PRECIOUS: $(GENERATED_DIRTY)
+$(OBJS): $(GENERATED_DIRTY)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+other$(OBJEXT): other.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) other.cpp
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(SHLIB) $(LIB)
+	-$(RM) $(GENERATED_DIRTY)
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@touch $(DEPENDENCIES)
+
+depend:
+	-makedepend -Y $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

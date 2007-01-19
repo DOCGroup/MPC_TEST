@@ -9,6 +9,10 @@
 ## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -features rtti=1 wide_coverage.mwc
 
 
+SUBDIRS = \
+        . \
+        fake
+
 
 ## Makefile.source_lib.am
 

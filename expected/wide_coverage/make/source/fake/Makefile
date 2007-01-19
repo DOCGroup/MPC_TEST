@@ -12,26 +12,14 @@
 #----------------------------------------------------------------------------
 
 
-all: source_lib source fake-target
+all: fake
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	@$(MAKE) -f Makefile.source_lib $(@)
-	@$(MAKE) -f Makefile.source $(@)
-	@cd fake && $(MAKE) -f Makefile.fake $(@)
+	@$(MAKE) -f Makefile.fake $(@)
 
-.PHONY: source_lib
-source_lib:
-	@$(MAKE) -f Makefile.source_lib generated all
-
-.PHONY: source
-source: source_lib
-	@$(MAKE) -f Makefile.source generated all
-
-.PHONY: fake-target
-fake-target:
-	@cd fake && $(MAKE) -f Makefile.fake generated all
+.PHONY: fake
+fake:
+	@$(MAKE) -f Makefile.fake generated all
 
 project_name_list:
-	@echo source
-	@echo source_lib
-	@echo fake-target
+	@echo fake

@@ -3,6 +3,7 @@
 	<Projects>
 		<Project File="generator/generator_be.vpj"/>
 		<Project File="generator/generator.vpj"/>
+		<Project File="source/fake/fake.vpj"/>
 		<Project File="source/source_lib.vpj"/>
 		<Project File="source/source.vpj"/>
 	</Projects>
