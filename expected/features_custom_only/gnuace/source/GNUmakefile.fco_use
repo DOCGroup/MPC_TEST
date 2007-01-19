@@ -98,3 +98,6 @@ ifneq ($(GENERATED_DIRTY),)
 	-$(RM) -r $(GENERATED_DIRTY)
 endif
 
+__prebuild__:
+	@-:
+

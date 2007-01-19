@@ -1,3 +1,17 @@
+Fri Jan 19 14:08:50 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/GNUmakefile.*:
+
+          Updated to reflect my ACE change from Thu Jan 18 16:18:18 UTC 2007.
+
+        * expected/mixed_languages/vc8/csharp/csharp.csproj:
+
+          Updated to reflect my change from Thu Jan 18 19:57:42 UTC 2007.
+
+        * tests/swig_perl/build_entry.txt:
+
+          Provide a build entry for gnuace to set swig_perl to 1.
+
 Thu Jan 18 14:28:39 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * tests/conditional_specific_verbatim_wildcards/source/csvw.mpc:
