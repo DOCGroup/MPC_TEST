@@ -19,6 +19,10 @@ generator/generator_int.gpj		[INTEGRITY Application]
 	-Lgenerator/.
 	-L..\lib
 	-lgenerator_be
+source/fake/fake.gpj		[Shared Object]
+	-pic
+	-object_dir=source/fake/.shobj
+	-Lsource/fake
 source/source_lib.gpj		[Library]
 	-object_dir=source/.obj
 	-DUSING_PCH

@@ -20,27 +20,13 @@ CFG=Win32 Debug
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !ENDIF
 
-all: source_lib source fake-target
+all: fake
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.source_lib.mak CFG="$(CFG)" $(@)
-	$(MAKE) /f Makefile.source.mak CFG="$(CFG)" $(@)
-	@cd fake
 	$(MAKE) /f Makefile.fake.mak CFG="$(CFG)" $(@)
-	@cd $(MAKEDIR)
 
-source_lib:
-	$(MAKE) /f Makefile.source_lib.mak CFG="$(CFG)" all
-
-source: source_lib
-	$(MAKE) /f Makefile.source.mak CFG="$(CFG)" all
-
-fake-target:
-	@cd fake
+fake:
 	$(MAKE) /f Makefile.fake.mak CFG="$(CFG)" all
-	@cd $(MAKEDIR)
 
 project_name_list:
-	@echo source
-	@echo source_lib
-	@echo fake-target
+	@echo fake

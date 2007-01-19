@@ -1,3 +1,19 @@
+Fri Jan 19 16:10:50 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/wide_coverage/*:
+        * tests/wide_coverage/other:
+        * tests/wide_coverage/other/other.r:
+        * tests/wide_coverage/source/fake:
+        * tests/wide_coverage/source/fake/fake.mpc:
+
+          Modified this test to use gendir = . with an input file that used
+          .. in the path.
+
+        * utils/nightly_em3.bat:
+        * utils/nightly_vc6.bat:
+
+          Updated to work with a network mapped drive.
+
 Fri Jan 19 14:08:50 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/GNUmakefile.*:
