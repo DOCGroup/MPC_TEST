@@ -1,5 +1,5 @@
 # -*- makefile -*-
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 #       GNU ACE Workspace
 #
 # $Id$
@@ -10,7 +10,8 @@
 # MPC Command:
 # /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace aggregated.mwc
 #
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
+
 MAKEFILE = GNUmakefile
 
 ifeq ($(findstring k,$(MAKEFLAGS)),k)

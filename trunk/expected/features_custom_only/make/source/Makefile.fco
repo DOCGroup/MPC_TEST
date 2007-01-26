@@ -20,6 +20,8 @@ RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
 MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
 EXEEXT        = 
 LIBPREFIX     = lib
 LIBSUFFIX     = 
@@ -33,9 +35,6 @@ EXPORTFLAGS   = $(STATICFLAGS)
 #----------------------------------------------------------------------------
 #       Local targets
 #----------------------------------------------------------------------------
-
-$(LTARGETDIR):
-	@$(MKDIR) "$@"
 
 GENERATED_DIRTY = zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thatC.h zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h
 

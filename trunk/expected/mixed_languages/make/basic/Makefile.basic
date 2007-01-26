@@ -20,6 +20,8 @@ RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
 MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
 EXEEXT        = 
 LIBPREFIX     = lib
 LIBSUFFIX     = 
@@ -48,13 +50,12 @@ all: $(SHLIB).5.3.15 $(SHLIB)
 $(SHLIB):
 	cd $(SHTARGETDIR) && ln -s $(SHLIB_BASE).5.3.15 $(SHLIB_BASE)
 
-$(SHLIB).5.3.15: $(SHTARGETDIR) $(OBJS)
+$(SHLIB).5.3.15: $(OBJS)
+	@$(TESTDIRSTART) "$(SHTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(SHTARGETDIR)"
 	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
-$(LTARGETDIR):
-	@$(MKDIR) "$@"
-
-$(LIB): $(LTARGETDIR) $(OBJS)
+$(LIB): $(OBJS)
+	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
 generated: $(GENERATED_DIRTY)

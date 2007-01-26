@@ -1,5 +1,5 @@
 # -*- makefile -*-
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 #       GNU ACE Workspace
 #
 # $Id$
@@ -8,9 +8,10 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type gnuace features_custom_only.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace features_custom_only.mwc
 #
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
+
 MAKEFILE = GNUmakefile
 
 ifeq ($(findstring k,$(MAKEFLAGS)),k)
@@ -19,7 +20,7 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-all: fco fco_use
+all: fco fco_use other
 
 .PHONY: fco
 fco:
@@ -29,8 +30,13 @@ fco:
 fco_use: fco
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.fco_use
 
+.PHONY: other
+other:
+	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.other
+
 REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
 $(REMAINING_TARGETS):
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.fco $(@)
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.fco_use $(@)
+	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.other $(@)
 

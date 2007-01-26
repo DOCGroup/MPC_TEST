@@ -20,6 +20,8 @@ RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
 MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
 EXEEXT        = 
 LIBPREFIX     = lib
 GENFLAGS      = -O
@@ -37,16 +39,14 @@ EXPORTFLAGS   = $(STATICFLAGS)
 
 all: $(LIB)
 
-$(LTARGETDIR):
-	@$(MKDIR) "$@"
-
-$(LIB): $(LTARGETDIR) $(OBJS)
+$(LIB): $(OBJS)
+	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
 GENERATED_DIRTY = cre/o.le/more_names.cpp cre/o.le/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl
 
 cre/o.le/more_names.cpp cre/o.le/more_names.h: more_names.key ../bin/generator
-	@$(MKDIR) cre/o.le
+	@$(TESTDIRSTART) "cre/o.le" $(TESTDIREND) $(MKDIR) "cre/o.le"
 	../bin/generator -o cre/o.le more_names.key
 	echo cre/o.le/more_names.cpp and cre/o.le/more_names.h have been generated.
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) cre/o.le/more_names.cpp >> temp.$$$$ && $(MV) temp.$$$$ cre/o.le/more_names.cpp
@@ -61,7 +61,7 @@ TheCheat.cpp TheCheat.h: TheCheat.r ../bin/cppgen.pl
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) TheCheat.cpp >> temp.$$$$ && $(MV) temp.$$$$ TheCheat.cpp
 
 ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl: mondo/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
-	@$(MKDIR) .
+	@$(TESTDIRSTART) "." $(TESTDIREND) $(MKDIR) "."
 	perl ../mondo/mondo.pl -fake mondo/all.mondo
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) ./qwee.cxx >> temp.$$$$ && $(MV) temp.$$$$ ./qwee.cxx
 
@@ -72,24 +72,24 @@ generated: $(GENERATED_DIRTY)
 	@-:
 
 .obj/source_lib_pch$(OBJEXT): source_lib_pch.cpp
-	@$(MKDIR) .obj/.
+	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
 	$(COMPILE.cc) -o .obj/source_lib_pch.h.gch $(EXPORTFLAGS) source_lib_pch.cpp
 	@$(CP) .obj/source_lib_pch.h.gch .obj/source_lib_pch$(OBJEXT)
 
 .obj/TheCheat$(OBJEXT): TheCheat.cpp
-	@$(MKDIR) .obj/.
+	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) TheCheat.cpp
 
 .obj/cre/o.le/more_names$(OBJEXT): cre/o.le/more_names.cpp
-	@$(MKDIR) .obj/cre/o.le
+	@$(TESTDIRSTART) ".obj/cre/o.le" $(TESTDIREND) $(MKDIR) ".obj/cre/o.le"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) cre/o.le/more_names.cpp
 
 .obj/names$(OBJEXT): names.cpp
-	@$(MKDIR) .obj/.
+	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) names.cpp
 
 .obj/qwee$(OBJEXT): qwee.cxx
-	@$(MKDIR) .obj/.
+	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) qwee.cxx
 
 clean:

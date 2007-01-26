@@ -21,6 +21,8 @@ RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
 MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
 EXEEXT        = 
 LIBPREFIX     = lib
 LIBSUFFIX     = 
@@ -38,17 +40,15 @@ EXPORTFLAGS   =
 
 all: __prebuild__ $(BIN)
 
-$(BTARGETDIR):
-	@$(MKDIR) "$@"
-
-$(BIN): $(BTARGETDIR) $(OBJS)
+$(BIN): $(OBJS)
+	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
 generated: $(GENERATED_DIRTY)
 	@-:
 
 .obj/generator$(OBJEXT): generator.cpp
-	@$(MKDIR) .obj/.
+	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) generator.cpp
 
 clean:

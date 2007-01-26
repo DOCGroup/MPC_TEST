@@ -21,6 +21,8 @@ RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
 MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
 EXEEXT        = 
 LIBPREFIX     = lib
 EXESUFFIX     = 
@@ -37,10 +39,8 @@ EXPORTFLAGS   =
 
 all: $(BIN) __postbuild__
 
-$(BTARGETDIR):
-	@$(MKDIR) "$@"
-
-$(BIN): $(BTARGETDIR) $(OBJS)
+$(BIN): $(OBJS)
+	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
 GENERATED_DIRTY = Foolish/foolish.txt
@@ -55,15 +55,15 @@ generated: $(GENERATED_DIRTY)
 	@-:
 
 .obj/exe/main$(OBJEXT): exe/main.cpp
-	@$(MKDIR) .obj/exe
+	@$(TESTDIRSTART) ".obj/exe" $(TESTDIREND) $(MKDIR) ".obj/exe"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/main.cpp
 
 .obj/exe/use_more_names/use_more_names$(OBJEXT): exe/use_more_names/use_more_names.cpp
-	@$(MKDIR) .obj/exe/use_more_names
+	@$(TESTDIRSTART) ".obj/exe/use_more_names" $(TESTDIREND) $(MKDIR) ".obj/exe/use_more_names"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/use_more_names/use_more_names.cpp
 
 .obj/exe/use_names/use_names$(OBJEXT): exe/use_names/use_names.cpp
-	@$(MKDIR) .obj/exe/use_names
+	@$(TESTDIRSTART) ".obj/exe/use_names" $(TESTDIREND) $(MKDIR) ".obj/exe/use_names"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/use_names/use_names.cpp
 
 clean:

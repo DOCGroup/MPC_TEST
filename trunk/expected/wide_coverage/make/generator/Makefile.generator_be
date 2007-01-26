@@ -20,6 +20,8 @@ RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
 MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
 EXEEXT        = 
 LIBPREFIX     = lib
 LIBSUFFIX     = 
@@ -48,20 +50,19 @@ all: __prebuild__ $(SHLIB).1.0.0 $(SHLIB)
 $(SHLIB):
 	cd $(SHTARGETDIR) && ln -s $(SHLIB_BASE).1.0.0 $(SHLIB_BASE)
 
-$(SHLIB).1.0.0: $(SHTARGETDIR) $(OBJS)
+$(SHLIB).1.0.0: $(OBJS)
+	@$(TESTDIRSTART) "$(SHTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(SHTARGETDIR)"
 	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
-$(LTARGETDIR):
-	@$(MKDIR) "$@"
-
-$(LIB): $(LTARGETDIR) $(OBJS)
+$(LIB): $(OBJS)
+	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
 generated: $(GENERATED_DIRTY)
 	@-:
 
 .obj/generator_be$(OBJEXT): generator_be.cpp
-	@$(MKDIR) .obj/.
+	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) generator_be.cpp
 
 clean:
