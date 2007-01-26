@@ -20,6 +20,8 @@ RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
 MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
 EXEEXT        = 
 LIBPREFIX     = lib
 LIBSUFFIX     = 
@@ -42,19 +44,18 @@ EXPORTFLAGS   = $(DYNAMICFLAGS)
 
 all: $(SHLIB)
 
-$(SHLIB): $(SHTARGETDIR) $(OBJS)
+$(SHLIB): $(OBJS)
+	@$(TESTDIRSTART) "$(SHTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(SHTARGETDIR)"
 	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
-$(LTARGETDIR):
-	@$(MKDIR) "$@"
-
-$(LIB): $(LTARGETDIR) $(OBJS)
+$(LIB): $(OBJS)
+	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
 GENERATED_DIRTY = ./other.cpp ./other.h
 
 ./other.cpp ./other.h: ../../other/other.r ../../bin/cppgen.pl
-	@$(MKDIR) .
+	@$(TESTDIRSTART) "." $(TESTDIREND) $(MKDIR) "."
 	perl ../../bin/cppgen.pl  ../../other/other.r -o "$@"
 
 .PRECIOUS: $(GENERATED_DIRTY)

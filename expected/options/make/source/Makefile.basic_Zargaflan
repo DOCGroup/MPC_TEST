@@ -21,6 +21,8 @@ RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
 MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
 EXEEXT        = 
 LIBPREFIX     = lib
 LIBSUFFIX     = 
@@ -37,17 +39,15 @@ EXPORTFLAGS   = $(STATICFLAGS)
 
 all: $(BIN) __postbuild__
 
-$(BTARGETDIR):
-	@$(MKDIR) "$@"
-
-$(BIN): $(BTARGETDIR) $(OBJS)
+$(BIN): $(OBJS)
+	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
 generated: $(GENERATED_DIRTY)
 	@-:
 
 zeep/basic$(OBJEXT): basic.cpp
-	@$(MKDIR) zeep/.
+	@$(TESTDIRSTART) "zeep/." $(TESTDIREND) $(MKDIR) "zeep/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) basic.cpp
 
 clean:

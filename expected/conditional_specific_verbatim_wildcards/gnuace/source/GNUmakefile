@@ -1,5 +1,5 @@
 # -*- makefile -*-
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 #       GNU ACE Workspace
 #
 # $Id$
@@ -8,9 +8,10 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type gnuace conditional_specific_verbatim_wildcards.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace conditional_specific_verbatim_wildcards.mwc
 #
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
+
 MAKEFILE = GNUmakefile
 
 ifeq ($(findstring k,$(MAKEFLAGS)),k)
@@ -19,22 +20,22 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-all: csvw_A csvw_B csvw_C csvw_D csvw_E
+all: csvw_A csvw_C csvw_B csvw_D csvw_E
 
 .PHONY: csvw_A
 csvw_A:
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_A
 
-.PHONY: csvw_B
-csvw_B:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_B
-
 .PHONY: csvw_C
-csvw_C: csvw_A csvw_B
+csvw_C: csvw_A
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_C
 
+.PHONY: csvw_B
+csvw_B: csvw_C
+	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_B
+
 .PHONY: csvw_D
-csvw_D: csvw_B
+csvw_D: csvw_C
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_D
 
 .PHONY: csvw_E
@@ -44,8 +45,8 @@ csvw_E:
 REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
 $(REMAINING_TARGETS):
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_A $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_B $(@)
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_C $(@)
+	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_B $(@)
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_D $(@)
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_E $(@)
 

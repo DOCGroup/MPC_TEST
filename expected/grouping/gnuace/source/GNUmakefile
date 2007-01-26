@@ -1,5 +1,5 @@
 # -*- makefile -*-
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 #       GNU ACE Workspace
 #
 # $Id$
@@ -8,9 +8,10 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type gnuace grouping.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace grouping.mwc
 #
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
+
 MAKEFILE = GNUmakefile
 
 ifeq ($(findstring k,$(MAKEFLAGS)),k)
@@ -19,38 +20,43 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-all: grouping_E grouping_A grouping_B grouping_C grouping_D grouping_F
+all: grouping_F grouping_A grouping_B grouping_C grouping_D grouping_E grouping_G
 
-.PHONY: grouping_E
-grouping_E:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_E
+.PHONY: grouping_F
+grouping_F:
+	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_F
 
 .PHONY: grouping_A
-grouping_A: grouping_E
+grouping_A: grouping_F
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_A
 
 .PHONY: grouping_B
-grouping_B: grouping_E
+grouping_B: grouping_F
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_B
 
 .PHONY: grouping_C
-grouping_C: grouping_E
+grouping_C: grouping_F
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_C
 
 .PHONY: grouping_D
-grouping_D: grouping_E
+grouping_D: grouping_F
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_D
 
-.PHONY: grouping_F
-grouping_F: grouping_E
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_F
+.PHONY: grouping_E
+grouping_E: grouping_F
+	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_E
+
+.PHONY: grouping_G
+grouping_G: grouping_F
+	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_G
 
 REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
 $(REMAINING_TARGETS):
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_E $(@)
+	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_F $(@)
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_A $(@)
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_B $(@)
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_C $(@)
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_D $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_F $(@)
+	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_E $(@)
+	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_G $(@)
 

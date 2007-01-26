@@ -20,6 +20,8 @@ RM            = rm -rf
 CP            = cp -p
 NUL           = /dev/null
 MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
 EXEEXT        = 
 LIBPREFIX     = lib
 LIBSUFFIX     = 
@@ -38,10 +40,8 @@ EXPORTFLAGS   = $(STATICFLAGS)
 
 all: $(LIB)
 
-$(LTARGETDIR):
-	@$(MKDIR) "$@"
-
-$(LIB): $(LTARGETDIR) $(OBJS)
+$(LIB): $(OBJS)
+	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
 generated: $(GENERATED_DIRTY)

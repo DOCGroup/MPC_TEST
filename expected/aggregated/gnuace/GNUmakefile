@@ -1,5 +1,5 @@
 # -*- makefile -*-
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 #       GNU ACE Workspace
 #
 # $Id$
@@ -8,9 +8,10 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace aggregated.mwc
 #
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
+
 MAKEFILE = GNUmakefile
 
 ifeq ($(findstring k,$(MAKEFLAGS)),k)
@@ -22,4 +23,5 @@ include $(ACE_ROOT)/include/makeinclude/macros.GNU
 REMAINING_TARGETS := $(TARGETS_NESTED:.nested=) $(CUSTOM_TARGETS)
 $(REMAINING_TARGETS):
 	$(KEEP_GOING)@cd dir1 && $(MAKE) -f $(MAKEFILE) $(@)
+	$(KEEP_GOING)@cd dir2 && $(MAKE) -f $(MAKEFILE) $(@)
 

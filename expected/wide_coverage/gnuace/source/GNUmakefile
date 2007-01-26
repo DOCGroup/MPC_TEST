@@ -1,5 +1,5 @@
 # -*- makefile -*-
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 #       GNU ACE Workspace
 #
 # $Id$
@@ -8,9 +8,10 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include /home/elliottc/current/MPC/config -include /home/elliottc/current/MPC/templates -include config -type gnuace wide_coverage.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace -features rtti=1 wide_coverage.mwc
 #
-#-------------------------------------------------------------------------
+#----------------------------------------------------------------------------
+
 MAKEFILE = GNUmakefile
 
 ifeq ($(findstring k,$(MAKEFLAGS)),k)
@@ -20,6 +21,7 @@ endif
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
 all: source_lib source
+	$(KEEP_GOING)@cd fake && $(MAKE) -f $(MAKEFILE) $(@)
 
 .PHONY: source_lib
 source_lib:
@@ -33,4 +35,5 @@ REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS
 $(REMAINING_TARGETS):
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.source_lib $(@)
 	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.source $(@)
+	$(KEEP_GOING)@cd fake && $(MAKE) -f $(MAKEFILE) $(@)
 
