@@ -90,7 +90,7 @@ endif
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo other will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 ## Some OS's have /bin/test others only have /usr/bin/test
