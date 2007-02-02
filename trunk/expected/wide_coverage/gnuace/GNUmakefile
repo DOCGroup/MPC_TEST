@@ -20,8 +20,40 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-REMAINING_TARGETS := $(TARGETS_NESTED:.nested=) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@cd generator && $(MAKE) -f $(MAKEFILE) $(@)
-	$(KEEP_GOING)@cd source && $(MAKE) -f $(MAKEFILE) $(@)
+all: generator_be generator-target source_lib source-target fake
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@cd generator && $(MAKE) -f GNUmakefile.generator_be $(@)
+	@cd generator && $(MAKE) -f GNUmakefile.generator $(@)
+	@cd source && $(MAKE) -f GNUmakefile.source_lib $(@)
+	@cd source && $(MAKE) -f GNUmakefile.source $(@)
+	@cd source/fake && $(MAKE) -f GNUmakefile.fake $(@)
+
+.PHONY: generator_be
+generator_be:
+	@cd generator && $(MAKE) -f GNUmakefile.generator_be all
+
+.PHONY: generator-target
+generator-target: generator_be
+	@cd generator && $(MAKE) -f GNUmakefile.generator all
+
+.PHONY: source_lib
+source_lib: generator-target
+	@cd source && $(MAKE) -f GNUmakefile.source_lib all
+
+.PHONY: source-target
+source-target: source_lib
+	@cd source && $(MAKE) -f GNUmakefile.source all
+
+.PHONY: fake
+fake:
+	@cd source/fake && $(MAKE) -f GNUmakefile.fake all
+
+project_name_list:
+	@echo generator-target
+	@echo generator_be
+	@echo source-target
+	@echo source_lib
+	@echo fake

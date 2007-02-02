@@ -92,7 +92,7 @@ CPPFLAGS     += -DFAIL_IF_NOT_DEFINED
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo csvw_D will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 

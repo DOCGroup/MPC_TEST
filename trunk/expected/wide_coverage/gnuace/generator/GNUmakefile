@@ -22,16 +22,20 @@ include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
 all: generator_be generator
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@$(MAKE) -f GNUmakefile.generator_be $(@)
+	@$(MAKE) -f GNUmakefile.generator $(@)
+
 .PHONY: generator_be
 generator_be:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.generator_be
+	@$(MAKE) -f GNUmakefile.generator_be all
 
 .PHONY: generator
 generator: generator_be
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.generator
+	@$(MAKE) -f GNUmakefile.generator all
 
-REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.generator_be $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.generator $(@)
-
+project_name_list:
+	@echo generator
+	@echo generator_be

@@ -114,11 +114,11 @@ CPPFLAGS     += -DMACRO_TEST="a_string_with_no_spaces"
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo source will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 avoid_warning:
-	@echo This project will not be built due to one of the following enabled features:
+	@echo source will not be built due to one of the following enabled make macros:
 	@echo mfc
 
 ## Some OS's have /bin/test others only have /usr/bin/test
@@ -149,15 +149,13 @@ endif
 
 ifneq ($(VXWORKSLINK),true)
 ifeq ($(static_libs_only), 1)
-  DEPLIBS = $(foreach lib, source_lib , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
+  ifeq ($(use_dep_libs), 1)
+    DEPLIBS = $(foreach lib, source_lib , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
+  endif
 endif
 
 $(BIN): $(addprefix $(VDIR), $(OBJS)) $(DEPLIBS)
-ifndef kylix
 	$(LINK.cc) $(LDFLAGS) $(CC_OUTPUT_FLAG) $@ $^ $(VLDLIBS) $(POSTLINK)
-else
-	$(LINK.cc) $(LDFLAGS) $(CC_OUTPUT_FLAG) $(VLDLIBS) $(BORINITEXEOBJ) $(POSTLINK) $^, $@,,
-endif
 endif
 
 realclean: clean

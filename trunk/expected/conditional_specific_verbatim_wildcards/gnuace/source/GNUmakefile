@@ -22,31 +22,38 @@ include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
 all: csvw_A csvw_C csvw_B csvw_D csvw_E
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@$(MAKE) -f GNUmakefile.csvw_A $(@)
+	@$(MAKE) -f GNUmakefile.csvw_C $(@)
+	@$(MAKE) -f GNUmakefile.csvw_B $(@)
+	@$(MAKE) -f GNUmakefile.csvw_D $(@)
+	@$(MAKE) -f GNUmakefile.csvw_E $(@)
+
 .PHONY: csvw_A
 csvw_A:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_A
+	@$(MAKE) -f GNUmakefile.csvw_A all
 
 .PHONY: csvw_C
 csvw_C: csvw_A
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_C
+	@$(MAKE) -f GNUmakefile.csvw_C all
 
 .PHONY: csvw_B
 csvw_B: csvw_C
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_B
+	@$(MAKE) -f GNUmakefile.csvw_B all
 
 .PHONY: csvw_D
 csvw_D: csvw_C
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_D
+	@$(MAKE) -f GNUmakefile.csvw_D all
 
 .PHONY: csvw_E
 csvw_E:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_E
+	@$(MAKE) -f GNUmakefile.csvw_E all
 
-REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_A $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_C $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_B $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_D $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.csvw_E $(@)
-
+project_name_list:
+	@echo csvw_A
+	@echo csvw_B
+	@echo csvw_C
+	@echo csvw_D
+	@echo csvw_E

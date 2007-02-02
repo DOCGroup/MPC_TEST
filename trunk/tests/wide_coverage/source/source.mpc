@@ -1,4 +1,4 @@
-project: test_base, zzip, simple {
+project: test_base, ziparchive, simple {
   expand(EMPTY1) {
     $EMPTY1
   }

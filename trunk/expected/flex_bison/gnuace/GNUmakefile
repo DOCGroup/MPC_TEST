@@ -22,11 +22,14 @@ include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
 all: flex_bison
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@$(MAKE) -f GNUmakefile.flex_bison $(@)
+
 .PHONY: flex_bison
 flex_bison:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.flex_bison
+	@$(MAKE) -f GNUmakefile.flex_bison all
 
-REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.flex_bison $(@)
-
+project_name_list:
+	@echo flex_bison

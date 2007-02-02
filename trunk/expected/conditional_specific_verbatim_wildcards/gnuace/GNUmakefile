@@ -20,7 +20,40 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-REMAINING_TARGETS := $(TARGETS_NESTED:.nested=) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@cd source && $(MAKE) -f $(MAKEFILE) $(@)
+all: csvw_A csvw_C csvw_B csvw_D csvw_E
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@cd source && $(MAKE) -f GNUmakefile.csvw_A $(@)
+	@cd source && $(MAKE) -f GNUmakefile.csvw_C $(@)
+	@cd source && $(MAKE) -f GNUmakefile.csvw_B $(@)
+	@cd source && $(MAKE) -f GNUmakefile.csvw_D $(@)
+	@cd source && $(MAKE) -f GNUmakefile.csvw_E $(@)
+
+.PHONY: csvw_A
+csvw_A:
+	@cd source && $(MAKE) -f GNUmakefile.csvw_A all
+
+.PHONY: csvw_C
+csvw_C: csvw_A
+	@cd source && $(MAKE) -f GNUmakefile.csvw_C all
+
+.PHONY: csvw_B
+csvw_B: csvw_C
+	@cd source && $(MAKE) -f GNUmakefile.csvw_B all
+
+.PHONY: csvw_D
+csvw_D: csvw_C
+	@cd source && $(MAKE) -f GNUmakefile.csvw_D all
+
+.PHONY: csvw_E
+csvw_E:
+	@cd source && $(MAKE) -f GNUmakefile.csvw_E all
+
+project_name_list:
+	@echo csvw_A
+	@echo csvw_B
+	@echo csvw_C
+	@echo csvw_D
+	@echo csvw_E

@@ -1,3 +1,48 @@
+Fri Feb  2 13:13:57 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/gnuace/GNUmakefile:
+
+          Updated for TAO 1.5a.
+
+        * expected/features_custom_only/bmake/Makefile:
+        * expected/features_custom_only/bmake/source/Makefile:
+        * expected/features_custom_only/bmake/source/Makefile.fco.bmak:
+        * expected/features_custom_only/bmake/source/Makefile.fco_use.bmak:
+        * expected/features_custom_only/bmake/source/Makefile.other.bmak:
+        * expected/features_custom_only/em3/features_custom_only.vcw:
+        * expected/features_custom_only/em3/source/fco.vcp:
+        * expected/features_custom_only/em3/source/fco_use.vcp:
+        * expected/features_custom_only/em3/source/other.vcp:
+        * expected/features_custom_only/nmake/Makefile:
+        * expected/features_custom_only/nmake/source/Makefile:
+        * expected/features_custom_only/nmake/source/Makefile.fco.mak:
+        * expected/features_custom_only/nmake/source/Makefile.fco_use.mak:
+        * expected/features_custom_only/nmake/source/Makefile.other.mak:
+        * expected/features_custom_only/vc6/features_custom_only.dsw:
+        * expected/features_custom_only/vc6/source/fco.dsp:
+        * expected/features_custom_only/vc6/source/fco_use.dsp:
+        * expected/features_custom_only/vc6/source/other.dsp:
+        * expected/features_custom_only/vc7/features_custom_only.sln:
+        * expected/features_custom_only/vc7/source/fco.vcproj:
+        * expected/features_custom_only/vc7/source/fco_use.vcproj:
+        * expected/features_custom_only/vc7/source/other.vcproj:
+        * expected/features_custom_only/vc71/features_custom_only.sln:
+        * expected/features_custom_only/vc71/source/fco.vcproj:
+        * expected/features_custom_only/vc71/source/fco_use.vcproj:
+        * expected/features_custom_only/vc71/source/other.vcproj:
+        * expected/features_custom_only/vc8/features_custom_only.sln:
+        * expected/features_custom_only/vc8/source/fco.vcproj:
+        * expected/features_custom_only/vc8/source/fco_use.vcproj:
+        * expected/features_custom_only/vc8/source/other.vcproj:
+
+          Re-added these in hopes to correct an issue with line endings.
+
+        * tests/mixed_languages/basic/foo.mpc:
+        * tests/wide_coverage/source/source.mpc:
+
+          Changed feature project from zzip to ziparch.  I need to have a
+          base project feature that isn't enabled by default.
+
 Fri Jan 26 18:41:37 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/GNUmakefile:

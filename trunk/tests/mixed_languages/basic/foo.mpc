@@ -1,4 +1,4 @@
-project(basic): zzip {
+project(basic): ziparchive {
   after        += base csharp
   version       = 5.3.15
   dynamicflags += BASIC_BUILD_DLL
