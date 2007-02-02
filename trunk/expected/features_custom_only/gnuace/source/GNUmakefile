@@ -22,21 +22,26 @@ include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
 all: fco fco_use other
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@$(MAKE) -f GNUmakefile.fco $(@)
+	@$(MAKE) -f GNUmakefile.fco_use $(@)
+	@$(MAKE) -f GNUmakefile.other $(@)
+
 .PHONY: fco
 fco:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.fco
+	@$(MAKE) -f GNUmakefile.fco all
 
 .PHONY: fco_use
 fco_use: fco
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.fco_use
+	@$(MAKE) -f GNUmakefile.fco_use all
 
 .PHONY: other
 other:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.other
+	@$(MAKE) -f GNUmakefile.other all
 
-REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.fco $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.fco_use $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.other $(@)
-
+project_name_list:
+	@echo fco
+	@echo fco_use
+	@echo other

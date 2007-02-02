@@ -89,7 +89,7 @@ CPPFLAGS     += -DTHAT_THERE_MACRO
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo fco_use will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 
