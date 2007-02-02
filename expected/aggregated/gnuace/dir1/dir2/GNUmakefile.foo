@@ -88,7 +88,7 @@ CPPFLAGS     += -DNEEDED_BY_ALL -DNEEDED_BY_SOME -DREQUIRED -DALSO_REQUIRED
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo foo will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 

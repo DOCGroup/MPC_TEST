@@ -22,11 +22,14 @@ include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
 all: two
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@$(MAKE) -f GNUmakefile.two $(@)
+
 .PHONY: two
 two:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.two
+	@$(MAKE) -f GNUmakefile.two all
 
-REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.two $(@)
-
+project_name_list:
+	@echo two

@@ -20,7 +20,52 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-REMAINING_TARGETS := $(TARGETS_NESTED:.nested=) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@cd source && $(MAKE) -f $(MAKEFILE) $(@)
+all: grouping_F grouping_A grouping_B grouping_C grouping_D grouping_E grouping_G
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@cd source && $(MAKE) -f GNUmakefile.grouping_F $(@)
+	@cd source && $(MAKE) -f GNUmakefile.grouping_A $(@)
+	@cd source && $(MAKE) -f GNUmakefile.grouping_B $(@)
+	@cd source && $(MAKE) -f GNUmakefile.grouping_C $(@)
+	@cd source && $(MAKE) -f GNUmakefile.grouping_D $(@)
+	@cd source && $(MAKE) -f GNUmakefile.grouping_E $(@)
+	@cd source && $(MAKE) -f GNUmakefile.grouping_G $(@)
+
+.PHONY: grouping_F
+grouping_F:
+	@cd source && $(MAKE) -f GNUmakefile.grouping_F all
+
+.PHONY: grouping_A
+grouping_A: grouping_F
+	@cd source && $(MAKE) -f GNUmakefile.grouping_A all
+
+.PHONY: grouping_B
+grouping_B: grouping_F
+	@cd source && $(MAKE) -f GNUmakefile.grouping_B all
+
+.PHONY: grouping_C
+grouping_C: grouping_F
+	@cd source && $(MAKE) -f GNUmakefile.grouping_C all
+
+.PHONY: grouping_D
+grouping_D: grouping_F
+	@cd source && $(MAKE) -f GNUmakefile.grouping_D all
+
+.PHONY: grouping_E
+grouping_E: grouping_F
+	@cd source && $(MAKE) -f GNUmakefile.grouping_E all
+
+.PHONY: grouping_G
+grouping_G: grouping_F
+	@cd source && $(MAKE) -f GNUmakefile.grouping_G all
+
+project_name_list:
+	@echo grouping_A
+	@echo grouping_B
+	@echo grouping_C
+	@echo grouping_D
+	@echo grouping_E
+	@echo grouping_F
+	@echo grouping_G

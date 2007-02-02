@@ -20,20 +20,28 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-all: source_lib source
-	$(KEEP_GOING)@cd fake && $(MAKE) -f $(MAKEFILE) $(@)
+all: source_lib source fake-target
+
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@$(MAKE) -f GNUmakefile.source_lib $(@)
+	@$(MAKE) -f GNUmakefile.source $(@)
+	@cd fake && $(MAKE) -f GNUmakefile.fake $(@)
 
 .PHONY: source_lib
 source_lib:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.source_lib
+	@$(MAKE) -f GNUmakefile.source_lib all
 
 .PHONY: source
 source: source_lib
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.source
+	@$(MAKE) -f GNUmakefile.source all
 
-REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.source_lib $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.source $(@)
-	$(KEEP_GOING)@cd fake && $(MAKE) -f $(MAKEFILE) $(@)
+.PHONY: fake-target
+fake-target:
+	@cd fake && $(MAKE) -f GNUmakefile.fake all
 
+project_name_list:
+	@echo source
+	@echo source_lib
+	@echo fake-target

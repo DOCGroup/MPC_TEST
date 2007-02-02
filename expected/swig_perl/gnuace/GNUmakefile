@@ -22,11 +22,14 @@ include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
 all: MyModule
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@$(MAKE) -f GNUmakefile.MyModule $(@)
+
 .PHONY: MyModule
 MyModule:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.MyModule
+	@$(MAKE) -f GNUmakefile.MyModule all
 
-REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.MyModule $(@)
-
+project_name_list:
+	@echo MyModule

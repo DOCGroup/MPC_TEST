@@ -20,7 +20,22 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-REMAINING_TARGETS := $(TARGETS_NESTED:.nested=) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@cd source && $(MAKE) -f $(MAKEFILE) $(@)
+all: one two
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@cd source/one && $(MAKE) -f GNUmakefile.one $(@)
+	@cd source/two && $(MAKE) -f GNUmakefile.two $(@)
+
+.PHONY: one
+one:
+	@cd source/one && $(MAKE) -f GNUmakefile.one all
+
+.PHONY: two
+two: one
+	@cd source/two && $(MAKE) -f GNUmakefile.two all
+
+project_name_list:
+	@echo one
+	@echo two

@@ -22,41 +22,50 @@ include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
 all: grouping_F grouping_A grouping_B grouping_C grouping_D grouping_E grouping_G
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@$(MAKE) -f GNUmakefile.grouping_F $(@)
+	@$(MAKE) -f GNUmakefile.grouping_A $(@)
+	@$(MAKE) -f GNUmakefile.grouping_B $(@)
+	@$(MAKE) -f GNUmakefile.grouping_C $(@)
+	@$(MAKE) -f GNUmakefile.grouping_D $(@)
+	@$(MAKE) -f GNUmakefile.grouping_E $(@)
+	@$(MAKE) -f GNUmakefile.grouping_G $(@)
+
 .PHONY: grouping_F
 grouping_F:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_F
+	@$(MAKE) -f GNUmakefile.grouping_F all
 
 .PHONY: grouping_A
 grouping_A: grouping_F
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_A
+	@$(MAKE) -f GNUmakefile.grouping_A all
 
 .PHONY: grouping_B
 grouping_B: grouping_F
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_B
+	@$(MAKE) -f GNUmakefile.grouping_B all
 
 .PHONY: grouping_C
 grouping_C: grouping_F
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_C
+	@$(MAKE) -f GNUmakefile.grouping_C all
 
 .PHONY: grouping_D
 grouping_D: grouping_F
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_D
+	@$(MAKE) -f GNUmakefile.grouping_D all
 
 .PHONY: grouping_E
 grouping_E: grouping_F
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_E
+	@$(MAKE) -f GNUmakefile.grouping_E all
 
 .PHONY: grouping_G
 grouping_G: grouping_F
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_G
+	@$(MAKE) -f GNUmakefile.grouping_G all
 
-REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_F $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_A $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_B $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_C $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_D $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_E $(@)
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.grouping_G $(@)
-
+project_name_list:
+	@echo grouping_A
+	@echo grouping_B
+	@echo grouping_C
+	@echo grouping_D
+	@echo grouping_E
+	@echo grouping_F
+	@echo grouping_G

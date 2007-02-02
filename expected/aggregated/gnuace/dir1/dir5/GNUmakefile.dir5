@@ -88,7 +88,7 @@ CPPFLAGS     += -DNEEDED_BY_ALL -DNEEDED_BY_SOME -DREQUIRED
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo dir5 will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 

@@ -94,7 +94,7 @@ CPPFLAGS     += -DONLY_MAKE -DONLY_UNIX
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo csvw_C will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 

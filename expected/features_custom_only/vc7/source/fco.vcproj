@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.00"
+	Name="fco"
+	ProjectGUID="{D904729F-FECA-1BAD-605D-8A630726A1C2}"
+	SccProjectName=""
+	SccLocalPath="">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="."
+			IntermediateDirectory="Debug\fco\I386"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="0">
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release\fco\I386"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="0">
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName="$(InputName).tlb"
+				HeaderFileName="$(InputName).h"
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="Zar Files"
+			Filter="zar">
+			<File
+				RelativePath="that.zar">
+				<FileConfiguration
+					Name="Debug|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking perl ..\bin\exercise.pl on that.zar"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc &quot;that.zar&quot;"
+						Outputs="zar_thatA.cpp;zar_thatA.h;zar_thatA.inl;zar_thatB.cpp;zar_thatB.h;zar_thatB.inl;zar_thatC.cpp;zar_thatC.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking perl ..\bin\exercise.pl on that.zar"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc &quot;that.zar&quot;"
+						Outputs="zar_thatA.cpp;zar_thatA.h;zar_thatA.inl;zar_thatB.cpp;zar_thatB.h;zar_thatB.inl;zar_thatC.cpp;zar_thatC.h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="this.zar">
+				<FileConfiguration
+					Name="Debug|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking perl ..\bin\exercise.pl on this.zar"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA &quot;this.zar&quot;"
+						Outputs="zar_thisA.cpp;zar_thisA.h;zar_thisA.inl;zar_thisB.cpp;zar_thisB.h;zar_thisB.inl;zar_thisB_T.cpp;zar_thisB_T.h;zar_thisB_T.inl;zar_thisC.cpp;zar_thisC.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking perl ..\bin\exercise.pl on this.zar"
+						CommandLine="perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA &quot;this.zar&quot;"
+						Outputs="zar_thisA.cpp;zar_thisA.h;zar_thisA.inl;zar_thisB.cpp;zar_thisB.h;zar_thisB.inl;zar_thisB_T.cpp;zar_thisB_T.h;zar_thisB_T.inl;zar_thisC.cpp;zar_thisC.h"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

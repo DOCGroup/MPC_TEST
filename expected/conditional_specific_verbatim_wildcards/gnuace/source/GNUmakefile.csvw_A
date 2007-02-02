@@ -91,7 +91,7 @@ other:
 	echo This is a custom target
 
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo csvw_A will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 

@@ -88,7 +88,7 @@ endif
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo grouping_E will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 ## Some OS's have /bin/test others only have /usr/bin/test
@@ -147,11 +147,7 @@ endif
 
 ifneq ($(VXWORKSLINK),true)
 $(BIN): $(addprefix $(VDIR), $(OBJS)) $(DEPLIBS)
-ifndef kylix
 	$(LINK.cc) $(LDFLAGS) $(CC_OUTPUT_FLAG) $@ $^ $(VLDLIBS) $(POSTLINK)
-else
-	$(LINK.cc) $(LDFLAGS) $(CC_OUTPUT_FLAG) $(VLDLIBS) $(BORINITEXEOBJ) $(POSTLINK) $^, $@,,
-endif
 endif
 
 realclean: clean

@@ -112,11 +112,11 @@ endif
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo flex_bison will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 require_warning:
-	@echo This project will not be built due to one of the following missing features:
+	@echo flex_bison will not be built due to one of the following disabled make macros:
 	@echo flex bison
 
 ## Some OS's have /bin/test others only have /usr/bin/test

@@ -111,11 +111,11 @@ endif
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo generator_be will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 require_warning:
-	@echo This project will not be built due to one of the following missing features:
+	@echo generator_be will not be built due to one of the following disabled make macros:
 	@echo rtti
 
 

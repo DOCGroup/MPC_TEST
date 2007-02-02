@@ -20,8 +20,34 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-REMAINING_TARGETS := $(TARGETS_NESTED:.nested=) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@cd dir1 && $(MAKE) -f $(MAKEFILE) $(@)
-	$(KEEP_GOING)@cd dir2 && $(MAKE) -f $(MAKEFILE) $(@)
+all: foo dir4 dir5 another
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@cd dir1/dir2 && $(MAKE) -f GNUmakefile.foo $(@)
+	@cd dir1/dir4 && $(MAKE) -f GNUmakefile.dir4 $(@)
+	@cd dir1/dir5 && $(MAKE) -f GNUmakefile.dir5 $(@)
+	@cd dir2 && $(MAKE) -f GNUmakefile.another $(@)
+
+.PHONY: foo
+foo:
+	@cd dir1/dir2 && $(MAKE) -f GNUmakefile.foo all
+
+.PHONY: dir4
+dir4:
+	@cd dir1/dir4 && $(MAKE) -f GNUmakefile.dir4 all
+
+.PHONY: dir5
+dir5:
+	@cd dir1/dir5 && $(MAKE) -f GNUmakefile.dir5 all
+
+.PHONY: another
+another:
+	@cd dir2 && $(MAKE) -f GNUmakefile.another all
+
+project_name_list:
+	@echo foo
+	@echo dir4
+	@echo dir5
+	@echo another

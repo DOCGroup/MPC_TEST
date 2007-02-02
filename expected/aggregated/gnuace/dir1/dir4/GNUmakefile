@@ -22,11 +22,14 @@ include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
 all: dir4
 
+REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
+
+$(REMAINING_TARGETS):
+	@$(MAKE) -f GNUmakefile.dir4 $(@)
+
 .PHONY: dir4
 dir4:
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.dir4
+	@$(MAKE) -f GNUmakefile.dir4 all
 
-REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
-$(REMAINING_TARGETS):
-	$(KEEP_GOING)@$(MAKE) -f GNUmakefile.dir4 $(@)
-
+project_name_list:
+	@echo dir4

@@ -117,25 +117,23 @@ endif
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo This project will not be built due to the following missing library:
+	@echo generator will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 require_warning:
-	@echo This project will not be built due to one of the following missing features:
+	@echo generator will not be built due to one of the following disabled make macros:
 	@echo rtti
 
 
 ifneq ($(VXWORKSLINK),true)
 ifeq ($(static_libs_only), 1)
-  DEPLIBS = $(foreach lib, generator_be , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
+  ifeq ($(use_dep_libs), 1)
+    DEPLIBS = $(foreach lib, generator_be , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
+  endif
 endif
 
 $(BIN): $(addprefix $(VDIR), $(OBJS)) $(DEPLIBS)
-ifndef kylix
 	$(LINK.cc) $(LDFLAGS) $(CC_OUTPUT_FLAG) $@ $^ $(VLDLIBS) $(POSTLINK)
-else
-	$(LINK.cc) $(LDFLAGS) $(CC_OUTPUT_FLAG) $(VLDLIBS) $(BORINITEXEOBJ) $(POSTLINK) $^, $@,,
-endif
 endif
 
 realclean: clean
