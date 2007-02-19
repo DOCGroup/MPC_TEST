@@ -1,3 +1,10 @@
+Mon Feb 19 15:38:42 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/buildflags/nmake/source/Makefile.bfs_exe.mak:
+        * expected/buildflags/nmake/source/Makefile.bfs_lib.mak:
+
+          Updated to reflect my change from Thu Feb  8 19:45:54 UTC 2007.
+
 Fri Feb  2 13:13:57 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/gnuace/GNUmakefile:

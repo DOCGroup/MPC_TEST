@@ -69,6 +69,7 @@ REALCLEAN : CLEAN
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
@@ -119,6 +120,7 @@ REALCLEAN : CLEAN
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
@@ -169,6 +171,7 @@ REALCLEAN : CLEAN
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd".\bfssd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
@@ -217,6 +220,7 @@ REALCLEAN : CLEAN
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
@@ -288,17 +292,17 @@ SOURCE="directory\gets_flags.cpp"
 
 "$(INTDIR)\directory\gets_flags.obj" : $(SOURCE) "$(INTDIR)"
 	@if not exist "$(INTDIR)\directory\$(NULL)" mkdir "$(INTDIR)\directory\"
-	$(CPP) -Trogdor $(CPP_COMMON) /Fo"$(INTDIR)\directory\gets_flags.obj" $(SOURCE)
+	$(CPP) $(CPP_COMMON) -Trogdor /Fo"$(INTDIR)\directory\gets_flags.obj" $(SOURCE)
 
 SOURCE="five.cpp"
 
 "$(INTDIR)\five.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) -Trogdor $(CPP_COMMON) /Fo"$(INTDIR)\five.obj" $(SOURCE)
+	$(CPP) $(CPP_COMMON) -Trogdor /Fo"$(INTDIR)\five.obj" $(SOURCE)
 
 SOURCE="four.cpp"
 
 "$(INTDIR)\four.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) -Trogdor $(CPP_COMMON) /Fo"$(INTDIR)\four.obj" $(SOURCE)
+	$(CPP) $(CPP_COMMON) -Trogdor /Fo"$(INTDIR)\four.obj" $(SOURCE)
 
 SOURCE="one.cpp"
 
@@ -308,7 +312,7 @@ SOURCE="one.cpp"
 SOURCE="three.cpp"
 
 "$(INTDIR)\three.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) -Trogdor $(CPP_COMMON) /Fo"$(INTDIR)\three.obj" $(SOURCE)
+	$(CPP) $(CPP_COMMON) -Trogdor /Fo"$(INTDIR)\three.obj" $(SOURCE)
 
 SOURCE="two.cpp"
 
