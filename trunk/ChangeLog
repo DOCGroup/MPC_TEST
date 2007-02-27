@@ -1,3 +1,14 @@
+Tue Feb 27 19:17:15 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/value_template/*:
+        * tests/value_template/additional_options.txt:
+        * tests/value_template/build_entry.txt:
+        * tests/value_template/foo.cpp:
+        * tests/value_template/foo.mpc:
+
+          Added a new test to ensure that -value_template takes precedence
+          over template variable settings within projects.
+
 Mon Feb 19 15:38:42 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/buildflags/nmake/source/Makefile.bfs_exe.mak:
