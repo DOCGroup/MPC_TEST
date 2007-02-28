@@ -1,3 +1,12 @@
+Wed Feb 28 13:59:36 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/flex_bison/automake/configure.ac.Makefiles:
+        * expected/qt/automake/configure.ac.Makefiles:
+        * expected/swig_perl/automake/configure.ac.Makefiles:
+        * expected/windows_style/automake/configure.ac.Makefiles:
+
+          Updated to reflect my change from Wed Feb 28 13:50:41 UTC 2007.
+
 Tue Feb 27 19:17:15 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/value_template/*:
