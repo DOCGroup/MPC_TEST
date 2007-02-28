@@ -1,3 +1,2 @@
 AC_CONFIG_FILES([ Makefile ])
-AC_CONFIG_FILES([ ./Makefile ])
 AC_CONFIG_FILES([ sub/Makefile ])
