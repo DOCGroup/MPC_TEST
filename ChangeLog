@@ -1,3 +1,14 @@
+Fri Mar  9 12:24:02 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * README:
+
+          Updated test addition for Subversion.
+
+        * expected/*/vc8/*.vcproj:
+
+          Updated to reflect Steve Huston's change from Thu Mar 08 19:55:44
+          2007.
+
 Wed Feb 28 13:59:36 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/flex_bison/automake/configure.ac.Makefiles:

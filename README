@@ -43,8 +43,6 @@ Adding a new test
 2) With the $ACE_ROOT environment varialbe set, run run_tests.pl with the
    --expected option to create the expected results for all tests.
 
-3) Add the test and expected results to CVS.
-   NOTE: Anything added to the expected directory needs the -kb option
-   passed to cvs to ensure that carriage return/line feeds are preserved.
-   NOTE: GNUmakefile's may not show up as unknown files which may cause
-   problems when adding a test.
+3) Add the test and expected results to Subversion by changing to the
+   expected directory and running the add_expected_directories.sh script
+   found in the utils directory.
