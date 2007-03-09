@@ -50,7 +50,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_M_IX86;FAIL_IF_NOT_DEFINED"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_M_IX86;FAIL_IF_NOT_DEFINED"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -130,7 +130,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_M_IX86;FAIL_IF_NOT_DEFINED"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_M_IX86;FAIL_IF_NOT_DEFINED"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -209,7 +209,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_AMD64_;_WIN64;FAIL_IF_NOT_DEFINED"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;FAIL_IF_NOT_DEFINED"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -290,7 +290,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_AMD64_;_WIN64;FAIL_IF_NOT_DEFINED"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;FAIL_IF_NOT_DEFINED"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
