@@ -68,7 +68,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
 CPP_PCH=/D USING_PCH /Yu"..\src\zzz_pch.h" /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch"
 CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
@@ -118,7 +118,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
 CPP_PCH=/D USING_PCH /Yu"..\src\zzz_pch.h" /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch"
 CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
@@ -168,7 +168,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd".\build_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\build_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
 CPP_PCH=/D USING_PCH /Yu"..\src\zzz_pch.h" /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch"
 CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
@@ -215,7 +215,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
 CPP_PCH=/D USING_PCH /Yu"..\src\zzz_pch.h" /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch"
 CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
@@ -283,7 +283,7 @@ SOURCE="..\src\zzz_pch.cpp"
 
 !IF  "$(CFG)" == "Win32 Debug"
 
-CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
 "$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE) "$(INTDIR)"
         @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
@@ -293,7 +293,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /MDd /GR /Gy /Fd"$(INTDIR
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
-CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
 "$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE) "$(INTDIR)"
         @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
@@ -303,7 +303,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
-CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd".\build_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\build_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
 "$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE) "$(INTDIR)"
         @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
@@ -313,7 +313,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHs /Zi /GR /Gy /MDd /Fd".\build_
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
-CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHs /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
 "$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE) "$(INTDIR)"
         @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"

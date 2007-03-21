@@ -1,3 +1,13 @@
+Wed Mar 21 16:56:38 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/nmake/*.mak:
+
+          Updated to reflect the change from Mon Mar 13 00:22:33 UTC 2007.
+
+        * expected/wide_coverage/make/generator/Makefile.generator:
+
+          Updated to reflect my change from Wed Mar 21 16:54:06 UTC 2007.
+
 Fri Mar  9 12:24:02 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * README:
