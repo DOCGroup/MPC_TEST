@@ -1,3 +1,19 @@
+Thu Mar 22 18:05:21 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/make/*/Makefile.*:
+
+          Updated to reflect my change from Thu Mar 22 14:36:53 UTC 2007.
+
+        * expected/MultiWS/*:
+        * tests/MultiWS/Multiws/All_Multiws.mwc:
+        * tests/MultiWS/Multiws/Multiws.mwc:
+        * tests/MultiWS/Multiws/src/foo.mpc:
+        * tests/MultiWS/Multiws/src/foo.cpp:
+        * tests/MultiWS/additional_options.txt:
+        * tests/MultiWS/build_entry.txt:
+
+          Added a new test for my change from Thu Mar 22 17:48:27 UTC 2007.
+
 Wed Mar 21 16:56:38 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/nmake/*.mak:
