@@ -955,6 +955,7 @@ else {
             if (-r "$full/$dir.mwc") {
               $mwc = "$dir.mwc";
             }
+            $one_built = 0;
             foreach my $type (@types) {
               if (!defined $tonly[0] || exists $tonly{$type}) {
                 File::Find::find({wanted => \&to_be_cleaned}, $full);
