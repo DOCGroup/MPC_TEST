@@ -1,0 +1,3 @@
+project {
+  after += ROOT Set
+}

@@ -1,3 +1,15 @@
+Thu Mar 29 13:44:03 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/more_cirular_dependencies/*:
+        * tests/more_cirular_dependencies/Code.mpc:
+        * tests/more_cirular_dependencies/Factory.mpc:
+        * tests/more_cirular_dependencies/ROOT.mpc:
+        * tests/more_cirular_dependencies/Set.mpc:
+        * tests/more_cirular_dependencies/foo.cpp:
+
+          Added a new test to exercise my change from Mon Mar 26 16:22:00
+          UTC 2007.
+
 Thu Mar 29 13:38:52 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/nmake/*/Makefile.*.mak:
