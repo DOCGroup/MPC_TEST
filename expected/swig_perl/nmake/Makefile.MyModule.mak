@@ -29,7 +29,9 @@ NULL=nul
 !ENDIF
 
 !IF "$(DEPGEN)" == ""
-!IF EXISTS("$(DEPGEN_ROOT)/depgen.pl")
+!IF EXISTS("$(MPC_ROOT)/depgen.pl")
+DEPGEN=perl $(MPC_ROOT)/depgen.pl -i -t nmake
+!ELSEIF EXISTS("$(DEPGEN_ROOT)/depgen.pl")
 DEPGEN=perl $(DEPGEN_ROOT)/depgen.pl -i -t nmake
 !ELSEIF EXISTS("$(ACE_ROOT)/bin/depgen.pl")
 DEPGEN=perl $(ACE_ROOT)/bin/depgen.pl -i -t nmake
@@ -48,9 +50,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\MyModule.dll"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from the DOC Group using the following svn command:
-	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
+	@echo One comes with MPC, just set the MPC_ROOT environment variable
+	@echo to the full path of MPC.  You can download MPC from
+	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
 	$(DEPGEN) -I"$(PERL5_INCLUDE)\." -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.MyModule.dep" "hello.cpp" "MyModule_wrap.cxx"
 !ENDIF
@@ -98,9 +100,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\MyModule.dll"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from the DOC Group using the following svn command:
-	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
+	@echo One comes with MPC, just set the MPC_ROOT environment variable
+	@echo to the full path of MPC.  You can download MPC from
+	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
 	$(DEPGEN) -I"$(PERL5_INCLUDE)\." -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.MyModule.dep" "hello.cpp" "MyModule_wrap.cxx"
 !ENDIF
@@ -147,9 +149,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\MyModule.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from the DOC Group using the following svn command:
-	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
+	@echo One comes with MPC, just set the MPC_ROOT environment variable
+	@echo to the full path of MPC.  You can download MPC from
+	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
 	$(DEPGEN) -I"$(PERL5_INCLUDE)\." -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.MyModule.dep" "hello.cpp" "MyModule_wrap.cxx"
 !ENDIF
@@ -195,9 +197,9 @@ ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\MyModule.lib"
 DEPEND :
 !IF "$(DEPGEN)" == ""
 	@echo No suitable dependency generator could be found.
-	@echo You can check one out from the DOC Group using the following svn command:
-	@echo svn co svn://svn.dre.vanderbilt.edu/DOC/ACE/trunk/ACE/bin Utils
-	@echo Then set the DEPGEN_ROOT environment variable to the full path of Utils.
+	@echo One comes with MPC, just set the MPC_ROOT environment variable
+	@echo to the full path of MPC.  You can download MPC from
+	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
 	$(DEPGEN) -I"$(PERL5_INCLUDE)\." -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.MyModule.dep" "hello.cpp" "MyModule_wrap.cxx"
 !ENDIF

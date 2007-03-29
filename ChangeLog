@@ -1,3 +1,15 @@
+Thu Mar 29 13:38:52 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/nmake/*/Makefile.*.mak:
+
+          Updated to reflect my change from Mon Mar 26 16:22:00 UTC 2007.
+
+        * run_tests.pl:
+
+          Fixed a bug where if one test was built, the others were not
+          checked to ensure that they were built with at least one build
+          tool.
+
 Thu Mar 22 18:05:21 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/make/*/Makefile.*:
