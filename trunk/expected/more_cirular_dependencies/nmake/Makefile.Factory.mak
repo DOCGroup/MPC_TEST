@@ -54,7 +54,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.Factory.dep" "foo.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -DFACTORY_BUILD_DLL -f "Makefile.Factory.dep" "factory.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -70,7 +70,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /D FACTORY_BUILD_DLL /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -79,7 +79,7 @@ RSC=rc.exe
 LINK32=link.exe
 LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll /debug /pdb:".\Factoryd.pdb" /machine:I386 /out:".\Factoryd.dll" /implib:"$(OUTDIR)\Factoryd.lib"
 LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
+	"$(INTDIR)\factory.obj"
 
 ".\Factoryd.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
@@ -101,7 +101,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.Factory.dep" "foo.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -DFACTORY_BUILD_DLL -f "Makefile.Factory.dep" "factory.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -116,7 +116,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FACTORY_BUILD_DLL /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -125,7 +125,7 @@ RSC=rc.exe
 LINK32=link.exe
 LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll  /machine:I386 /out:".\Factory.dll" /implib:"$(OUTDIR)\Factory.lib"
 LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
+	"$(INTDIR)\factory.obj"
 
 ".\Factory.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
@@ -147,7 +147,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.Factory.dep" "foo.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -DFACTORY_AS_STATIC_LIBS -f "Makefile.Factory.dep" "factory.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -162,7 +162,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\Factorysd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\Factorysd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D FACTORY_AS_STATIC_LIBS /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -170,7 +170,7 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 LINK32=link.exe -lib
 LINK32_FLAGS=/nologo /machine:I386 /out:".\Factorysd.lib"
 LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
+	"$(INTDIR)\factory.obj"
 
 "$(OUTDIR)\Factorysd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
@@ -192,7 +192,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.Factory.dep" "foo.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -DFACTORY_AS_STATIC_LIBS -f "Makefile.Factory.dep" "factory.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -206,7 +206,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FACTORY_AS_STATIC_LIBS /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -214,7 +214,7 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 LINK32=link.exe -lib
 LINK32_FLAGS=/nologo /machine:I386 /out:".\Factorys.lib"
 LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
+	"$(INTDIR)\factory.obj"
 
 "$(OUTDIR)\Factorys.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
@@ -267,10 +267,10 @@ CLEAN :
 !ENDIF
 
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
-SOURCE="foo.cpp"
+SOURCE="factory.cpp"
 
-"$(INTDIR)\foo.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\foo.obj" $(SOURCE)
+"$(INTDIR)\factory.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\factory.obj" $(SOURCE)
 
 
 !ENDIF

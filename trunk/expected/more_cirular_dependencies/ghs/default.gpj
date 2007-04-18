@@ -11,15 +11,19 @@ Code.gpj		[Shared Object]
 	-pic
 	-object_dir=./.shobj
 	-L.
+	-DCODE_BUILD_DLL
 Set.gpj		[Shared Object]
 	-pic
 	-object_dir=./.shobj
 	-L.
+	-DSET_BUILD_DLL
 ROOT.gpj		[Shared Object]
 	-pic
 	-object_dir=./.shobj
 	-L.
+	-DROOT_BUILD_DLL
 Factory.gpj		[Shared Object]
 	-pic
 	-object_dir=./.shobj
 	-L.
+	-DFACTORY_BUILD_DLL

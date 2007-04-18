@@ -1,3 +1,25 @@
+Wed Apr 18 11:01:34 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/more_cirular_dependencies/*:
+        * tests/more_cirular_dependencies/Code.mpc:
+        * tests/more_cirular_dependencies/Factory.mpc:
+        * tests/more_cirular_dependencies/ROOT.mpc:
+        * tests/more_cirular_dependencies/Set.mpc:
+        * tests/more_cirular_dependencies/code.cpp:
+        * tests/more_cirular_dependencies/code_export.h:
+        * tests/more_cirular_dependencies/factory.cpp:
+        * tests/more_cirular_dependencies/factory_export.h:
+        * tests/more_cirular_dependencies/root.cpp:
+        * tests/more_cirular_dependencies/root_export.h:
+        * tests/more_cirular_dependencies/set.cpp:
+        * tests/more_cirular_dependencies/set_export.h:
+
+          Modified this test to build on Windows.
+
+        * tests/more_cirular_dependencies/foo.cpp:
+
+          Removed this file.
+
 Thu Mar 29 13:44:03 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/more_cirular_dependencies/*:

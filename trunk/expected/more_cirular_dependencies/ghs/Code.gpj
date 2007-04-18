@@ -6,4 +6,9 @@
 	-OI
 	--exceptions
 	-L.
-foo.cpp
+	-DCODE_BUILD_DLL
+code.cpp
+code_export.h
+factory_export.h
+root_export.h
+set_export.h

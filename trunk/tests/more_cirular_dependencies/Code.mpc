@@ -1,3 +1,8 @@
 project {
-  after += ROOT Set
+  after        += ROOT Set
+  dynamicflags += CODE_BUILD_DLL                            
+  staticflags  += CODE_AS_STATIC_LIBS
+  Source_Files {
+    code.cpp
+  }
 }

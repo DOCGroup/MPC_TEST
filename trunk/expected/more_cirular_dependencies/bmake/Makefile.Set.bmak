@@ -59,7 +59,7 @@ CPPDIR       = .
 RESDIR       = .
 
 OBJFILES = \
-           "$(INTERMEDIATE)\foo$(OBJ_EXT)"
+           "$(INTERMEDIATE)\set$(OBJ_EXT)"
 
 LFLAGS   = \
            -v \
@@ -72,6 +72,7 @@ CFLAGS = \
          -a8 \
          -DWIN32 \
          -D_WINDOWS \
+         -DSET_BUILD_DLL \
          $(PCH_CFLAGS) \
          $(VCL_CFLAGS)
 

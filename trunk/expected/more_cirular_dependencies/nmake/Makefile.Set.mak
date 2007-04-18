@@ -54,7 +54,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.Set.dep" "foo.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -DSET_BUILD_DLL -f "Makefile.Set.dep" "set.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -70,7 +70,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /D SET_BUILD_DLL /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -79,7 +79,7 @@ RSC=rc.exe
 LINK32=link.exe
 LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll /debug /pdb:".\Setd.pdb" /machine:I386 /out:".\Setd.dll" /implib:"$(OUTDIR)\Setd.lib"
 LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
+	"$(INTDIR)\set.obj"
 
 ".\Setd.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
@@ -101,7 +101,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.Set.dep" "foo.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -DSET_BUILD_DLL -f "Makefile.Set.dep" "set.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -116,7 +116,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D SET_BUILD_DLL /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -125,7 +125,7 @@ RSC=rc.exe
 LINK32=link.exe
 LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll  /machine:I386 /out:".\Set.dll" /implib:"$(OUTDIR)\Set.lib"
 LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
+	"$(INTDIR)\set.obj"
 
 ".\Set.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
@@ -147,7 +147,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.Set.dep" "foo.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -DSET_AS_STATIC_LIBS -f "Makefile.Set.dep" "set.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -162,7 +162,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\Setsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\Setsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D SET_AS_STATIC_LIBS /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -170,7 +170,7 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 LINK32=link.exe -lib
 LINK32_FLAGS=/nologo /machine:I386 /out:".\Setsd.lib"
 LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
+	"$(INTDIR)\set.obj"
 
 "$(OUTDIR)\Setsd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
@@ -192,7 +192,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.Set.dep" "foo.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -DSET_AS_STATIC_LIBS -f "Makefile.Set.dep" "set.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -206,7 +206,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D SET_AS_STATIC_LIBS /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -214,7 +214,7 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 LINK32=link.exe -lib
 LINK32_FLAGS=/nologo /machine:I386 /out:".\Sets.lib"
 LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
+	"$(INTDIR)\set.obj"
 
 "$(OUTDIR)\Sets.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
@@ -267,10 +267,10 @@ CLEAN :
 !ENDIF
 
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
-SOURCE="foo.cpp"
+SOURCE="set.cpp"
 
-"$(INTDIR)\foo.obj" : $(SOURCE) "$(INTDIR)"
-	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\foo.obj" $(SOURCE)
+"$(INTDIR)\set.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\set.obj" $(SOURCE)
 
 
 !ENDIF

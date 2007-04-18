@@ -13,41 +13,77 @@
 
 noinst_LTLIBRARIES = libCode.la
 
+libCode_la_CPPFLAGS = \
+  -DCODE_BUILD_DLL
+
 libCode_la_SOURCES = \
-  foo.cpp
+  code.cpp
 
 libCode_la_LDFLAGS = \
  -L.
+
+noinst_HEADERS = \
+  code_export.h \
+  factory_export.h \
+  root_export.h \
+  set_export.h
 
 ## Makefile.Set.am
 
 noinst_LTLIBRARIES += libSet.la
 
+libSet_la_CPPFLAGS = \
+  -DSET_BUILD_DLL
+
 libSet_la_SOURCES = \
-  foo.cpp
+  set.cpp
 
 libSet_la_LDFLAGS = \
  -L.
+
+noinst_HEADERS += \
+  code_export.h \
+  factory_export.h \
+  root_export.h \
+  set_export.h
 
 ## Makefile.ROOT.am
 
 noinst_LTLIBRARIES += libROOT.la
 
+libROOT_la_CPPFLAGS = \
+  -DROOT_BUILD_DLL
+
 libROOT_la_SOURCES = \
-  foo.cpp
+  root.cpp
 
 libROOT_la_LDFLAGS = \
  -L.
+
+noinst_HEADERS += \
+  code_export.h \
+  factory_export.h \
+  root_export.h \
+  set_export.h
 
 ## Makefile.Factory.am
 
 noinst_LTLIBRARIES += libFactory.la
 
+libFactory_la_CPPFLAGS = \
+  -DFACTORY_BUILD_DLL
+
 libFactory_la_SOURCES = \
-  foo.cpp
+  factory.cpp
 
 libFactory_la_LDFLAGS = \
  -L.
+
+noinst_HEADERS += \
+  code_export.h \
+  factory_export.h \
+  root_export.h \
+  set_export.h
 
 
 ACLOCAL = @ACLOCAL@
