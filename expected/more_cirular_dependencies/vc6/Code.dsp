@@ -38,7 +38,7 @@ RSC=rc.exe
 # PROP Intermediate_Dir "Debug\Code"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD CPP /nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"Debug\Code/" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"Debug\Code/" /D _DEBUG /D WIN32 /D _WINDOWS /D CODE_BUILD_DLL /FD /c
 # SUBTRACT CPP /Fr /YX
 
 # ADD MTL /D "_DEBUG" /nologo /mktyplib203 /win32
@@ -56,7 +56,7 @@ LINK32=link.exe
 # PROP Intermediate_Dir "Release\Code"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD CPP /nologo /O2 /W3 /GX /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+# ADD CPP /nologo /O2 /W3 /GX /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D CODE_BUILD_DLL /FD /c
 # SUBTRACT CPP /YX
 
 # ADD MTL /D "NDEBUG" /nologo /mktyplib203 /win32
@@ -77,7 +77,27 @@ LINK32=link.exe
 # PROP Default_Filter "cpp;cxx;c"
 # Begin Source File
 
-SOURCE="foo.cpp"
+SOURCE="code.cpp"
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hh"
+# Begin Source File
+
+SOURCE="code_export.h"
+# End Source File
+# Begin Source File
+
+SOURCE="factory_export.h"
+# End Source File
+# Begin Source File
+
+SOURCE="root_export.h"
+# End Source File
+# Begin Source File
+
+SOURCE="set_export.h"
 # End Source File
 # End Group
 # End Target

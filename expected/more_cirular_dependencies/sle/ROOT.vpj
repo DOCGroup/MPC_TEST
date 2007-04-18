@@ -22,7 +22,7 @@
 				RunFromDir="%rw">
 				<Exec
 					CmdLine='g++ -c %xup -g -o "%bd%n%oe" %i "%f" %~other'
-                                        OtherOptions="-W -Wall -Wpointer-arith -mcpu=pentiumpro -mthreads -pipe -fno-exceptions -fcheck-new  "/>
+                                        OtherOptions="-W -Wall -Wpointer-arith -mcpu=pentiumpro -mthreads -pipe -fno-exceptions -fcheck-new  -D ROOT_BUILD_DLL "/>
 			</Target>
 			<Target
 				Name="Link"
@@ -117,7 +117,7 @@
 				RunFromDir="%rw">
 				<Exec
 					CmdLine='g++ -c %xup -o "%bd%n%oe" %i "%f" %~other'
-                                        OtherOptions="-W -Wall -Wpointer-arith -mcpu=pentiumpro -mthreads -pipe -fno-exceptions -fcheck-new "/>
+                                        OtherOptions="-W -Wall -Wpointer-arith -mcpu=pentiumpro -mthreads -pipe -fno-exceptions -fcheck-new -D ROOT_BUILD_DLL "/>
 			</Target>
 			<Target
 				Name="Link"
@@ -198,7 +198,15 @@
 		<Folder
 			Name="Source Files"
 			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl">
-                        <F N="foo.cpp"/>
+                        <F N="root.cpp"/>
 		</Folder>
+		<Folder
+			Name="Header Files"
+                        Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+                        <F N="code_export.h"/>
+                        <F N="factory_export.h"/>
+                        <F N="root_export.h"/>
+                        <F N="set_export.h"/>
+                </Folder>
 	</Files>
 </Project>

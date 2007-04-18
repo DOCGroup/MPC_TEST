@@ -50,7 +50,7 @@ CFG=Factory - Win32 (WCE ARM) Debug
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /r
 CPP=clarm.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\Factory\ARM/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\Factory\ARM/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D FACTORY_BUILD_DLL  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\Factory.bsc"
@@ -70,7 +70,7 @@ LINK32=link.exe
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /r
 CPP=clarm.exe
-# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D FACTORY_BUILD_DLL  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\Factory.bsc"
@@ -91,7 +91,7 @@ LINK32=link.exe
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /r
 CPP=clarm.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\Factory\ARM/" /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\Factory\ARM/" /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4 /D FACTORY_BUILD_DLL  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\Factory.bsc"
@@ -111,7 +111,7 @@ LINK32=link.exe
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /r
 CPP=clarm.exe
-# ADD CPP /nologo /O2 /W3 /GR /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4 /D FACTORY_BUILD_DLL  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\Factory.bsc"
@@ -132,7 +132,7 @@ LINK32=link.exe
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\Factory\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\Factory\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D FACTORY_BUILD_DLL  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\Factory.bsc"
@@ -152,7 +152,7 @@ LINK32=link.exe
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /r
 CPP=cl.exe
-# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D FACTORY_BUILD_DLL  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\Factory.bsc"
@@ -173,7 +173,7 @@ LINK32=link.exe
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\Factory\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\Factory\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D FACTORY_BUILD_DLL  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\Factory.bsc"
@@ -193,7 +193,7 @@ LINK32=link.exe
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /r
 CPP=cl.exe
-# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D FACTORY_BUILD_DLL  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\Factory.bsc"
@@ -218,7 +218,27 @@ LINK32=link.exe
 # PROP Default_Filter "cpp;cxx;c"
 # Begin Source File
 
-SOURCE="foo.cpp"
+SOURCE="factory.cpp"
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hh"
+# Begin Source File
+
+SOURCE="code_export.h"
+# End Source File
+# Begin Source File
+
+SOURCE="factory_export.h"
+# End Source File
+# Begin Source File
+
+SOURCE="root_export.h"
+# End Source File
+# Begin Source File
+
+SOURCE="set_export.h"
 # End Source File
 # End Group
 # End Target

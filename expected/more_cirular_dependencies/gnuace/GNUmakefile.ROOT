@@ -23,7 +23,7 @@ SHLIB_UNCHECKED  = libROOT.$(SOEXT)
 SHLIB            = $(SHLIB_UNCHECKED)
 
 FILES = \
-  foo.cpp
+  root.cpp
 
 #----------------------------------------------------------------------------
 #       Include macros and targets
@@ -81,6 +81,14 @@ ifeq ($(VXWORKSLINK),true)
 LDLIBPATH     = -L.
 else
 LDFLAGS      += -L.
+endif
+ifeq ($(shared_libs),1)
+  ifneq ($(SHLIB),)
+    CPPFLAGS += -DROOT_BUILD_DLL
+  endif
+endif
+ifeq ($(static_libs),1)
+  CPPFLAGS += -DROOT_AS_STATIC_LIBS
 endif
 
 #----------------------------------------------------------------------------

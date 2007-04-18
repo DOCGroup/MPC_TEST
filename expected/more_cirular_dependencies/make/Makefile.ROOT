@@ -27,15 +27,17 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = foo$(OBJEXT)
+OBJS          = root$(OBJEXT)
 AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)ROOT$(LIBSUFFIX)$(AREXT)
 SOEXT         = .so
 SHTARGETDIR   = ./
 SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)ROOT$(LIBSUFFIX)$(SOEXT)
 SHFLAGS       = -shared
-SRC           = foo.cpp
+SRC           = root.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
+DYNAMICFLAGS  = -DROOT_BUILD_DLL
+STATICFLAGS   = -DROOT_AS_STATIC_LIBS
 EXPORTFLAGS   = $(DYNAMICFLAGS)
 
 #----------------------------------------------------------------------------
@@ -55,8 +57,8 @@ $(LIB): $(OBJS)
 generated: $(GENERATED_DIRTY)
 	@-:
 
-foo$(OBJEXT): foo.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) foo.cpp
+root$(OBJEXT): root.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) root.cpp
 
 clean:
 	-$(RM) $(OBJS)
