@@ -1,3 +1,10 @@
+Thu Apr 19 11:20:29 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/qt/html/qt_uic_moc.html:
+
+          Updated to reflect Johnny's change from Wed Apr 18 09:27:12 UTC
+          2007.
+
 Wed Apr 18 11:01:34 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/more_cirular_dependencies/*:
