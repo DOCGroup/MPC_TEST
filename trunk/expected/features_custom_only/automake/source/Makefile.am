@@ -71,8 +71,8 @@ this-stamp: $(srcdir)/this.zar
 	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA $(srcdir)/this.zar
 	@touch "$@"
 
-
 ## Makefile.fco_use.am
+
 noinst_LTLIBRARIES = libfco_use.la
 
 libfco_use_la_CPPFLAGS = \
@@ -81,10 +81,6 @@ libfco_use_la_CPPFLAGS = \
 libfco_use_la_SOURCES = \
   zar_thatB.cpp \
   zar_thisC.cpp
-
-libfco_use_la_LDFLAGS = \
- -L.
-
 
 noinst_HEADERS = \
   zar_thatB.h \
@@ -126,10 +122,6 @@ noinst_LTLIBRARIES += libother.la
 libother_la_SOURCES = \
   other/zar_otherA.cpp \
   other/zar_otherB.cpp
-
-libother_la_LDFLAGS = \
- -L.
-
 
 noinst_HEADERS += \
   other/zar_otherA.h \

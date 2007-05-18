@@ -10,14 +10,11 @@
 
 
 ## Makefile.bfs_exe.am
+
 noinst_PROGRAMS = fooz
 
 fooz_SOURCES = \
   fooza.cpp
-
-fooz_LDFLAGS = \
-  -L.
-
 
 fooz_LDADD = libfoozb_cpp_convenience2.la
 noinst_LTLIBRARIES = libfoozb_cpp_convenience2.la
@@ -25,15 +22,12 @@ libfoozb_cpp_convenience2_la_SOURCES = foozb.cpp
 libfoozb_cpp_convenience2_la_CPPFLAGS = $(fooz_CPPFLAGS) -Trogdor
 
 ## Makefile.bfs_lib.am
+
 lib_LTLIBRARIES = libbfs.la
 
 libbfs_la_SOURCES = \
   one.cpp \
   two.cpp
-
-libbfs_la_LDFLAGS = \
- -L.
-
 
 libbfs_la_LIBADD = libdirectory_gets_flags_cpp_convenience1.la
 noinst_LTLIBRARIES += libdirectory_gets_flags_cpp_convenience1.la

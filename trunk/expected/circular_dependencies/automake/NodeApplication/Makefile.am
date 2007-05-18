@@ -10,16 +10,14 @@
 
 
 ## Makefile.NodeApplication.am
+
 noinst_PROGRAMS = NodeApplication
 
 NodeApplication_SOURCES = \
   foo.cpp
 
-NodeApplication_LDFLAGS = \
-  -L.
-
-
 ## Makefile.RTNA_Configurator.am
+
 noinst_LTLIBRARIES = libCIAO_RTNA_Configurator.la
 
 libCIAO_RTNA_Configurator_la_CPPFLAGS = \
@@ -27,10 +25,6 @@ libCIAO_RTNA_Configurator_la_CPPFLAGS = \
 
 libCIAO_RTNA_Configurator_la_SOURCES = \
   foo.cpp
-
-libCIAO_RTNA_Configurator_la_LDFLAGS = \
- -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:

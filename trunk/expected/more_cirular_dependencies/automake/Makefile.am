@@ -19,9 +19,6 @@ libCode_la_CPPFLAGS = \
 libCode_la_SOURCES = \
   code.cpp
 
-libCode_la_LDFLAGS = \
- -L.
-
 noinst_HEADERS = \
   code_export.h \
   factory_export.h \
@@ -37,9 +34,6 @@ libSet_la_CPPFLAGS = \
 
 libSet_la_SOURCES = \
   set.cpp
-
-libSet_la_LDFLAGS = \
- -L.
 
 noinst_HEADERS += \
   code_export.h \
@@ -57,9 +51,6 @@ libROOT_la_CPPFLAGS = \
 libROOT_la_SOURCES = \
   root.cpp
 
-libROOT_la_LDFLAGS = \
- -L.
-
 noinst_HEADERS += \
   code_export.h \
   factory_export.h \
@@ -75,9 +66,6 @@ libFactory_la_CPPFLAGS = \
 
 libFactory_la_SOURCES = \
   factory.cpp
-
-libFactory_la_LDFLAGS = \
- -L.
 
 noinst_HEADERS += \
   code_export.h \

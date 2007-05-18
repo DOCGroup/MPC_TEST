@@ -10,6 +10,7 @@
 
 
 ## Makefile.foo.am
+
 noinst_LTLIBRARIES = libfoo.la
 
 libfoo_la_CPPFLAGS = \
@@ -20,10 +21,6 @@ libfoo_la_CPPFLAGS = \
 
 libfoo_la_SOURCES = \
   foo.cpp
-
-libfoo_la_LDFLAGS = \
- -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:

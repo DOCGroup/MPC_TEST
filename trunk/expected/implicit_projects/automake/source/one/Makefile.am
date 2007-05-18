@@ -10,6 +10,7 @@
 
 
 ## Makefile.one.am
+
 noinst_LTLIBRARIES = libone.la
 
 libone_la_CPPFLAGS = \
@@ -26,10 +27,8 @@ libone_la_SOURCES = \
 libone_la_DEPENDENCIES = \
  ../../lib
 
-
 libone_la_LDFLAGS = \
- -L. -L../../lib
-
+ -L../../lib
 
 noinst_HEADERS = \
   foo.h

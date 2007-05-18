@@ -10,6 +10,7 @@
 
 
 ## Makefile.CIAO_TargetManager_stub.am
+
 noinst_LTLIBRARIES = libTargetManager_stub.la
 
 libTargetManager_stub_la_CPPFLAGS = \
@@ -18,11 +19,8 @@ libTargetManager_stub_la_CPPFLAGS = \
 libTargetManager_stub_la_SOURCES = \
   foo.cpp
 
-libTargetManager_stub_la_LDFLAGS = \
- -L.
-
-
 ## Makefile.CIAO_TargetManager_svnt.am
+
 noinst_LTLIBRARIES += libTargetManager_svnt.la
 
 libTargetManager_svnt_la_CPPFLAGS = \
@@ -31,11 +29,8 @@ libTargetManager_svnt_la_CPPFLAGS = \
 libTargetManager_svnt_la_SOURCES = \
   foo.cpp
 
-libTargetManager_svnt_la_LDFLAGS = \
- -L.
-
-
 ## Makefile.CIAO_TargetManager_exec.am
+
 noinst_LTLIBRARIES += libTargetManager_exec.la
 
 libTargetManager_exec_la_CPPFLAGS = \
@@ -44,11 +39,8 @@ libTargetManager_exec_la_CPPFLAGS = \
 libTargetManager_exec_la_SOURCES = \
   foo.cpp
 
-libTargetManager_exec_la_LDFLAGS = \
- -L.
-
-
 ## Makefile.TMClient.am
+
 noinst_LTLIBRARIES += libTMClient.la
 
 libTMClient_la_CPPFLAGS = \
@@ -56,10 +48,6 @@ libTMClient_la_CPPFLAGS = \
 
 libTMClient_la_SOURCES = \
   foo.cpp
-
-libTMClient_la_LDFLAGS = \
- -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:

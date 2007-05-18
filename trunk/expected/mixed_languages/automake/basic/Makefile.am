@@ -10,6 +10,7 @@
 
 
 ## Makefile.basic.am
+
 lib_LTLIBRARIES = libbasic.la
 
 libbasic_la_CPPFLAGS = \
@@ -20,8 +21,7 @@ libbasic_la_SOURCES = \
   foo.cpp
 
 libbasic_la_LDFLAGS = \
- -version-number 5:3:15 -L.
-
+ -version-number 5:3:15
 
 noinst_HEADERS = \
   bar.h \

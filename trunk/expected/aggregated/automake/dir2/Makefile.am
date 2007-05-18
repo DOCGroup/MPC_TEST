@@ -10,6 +10,7 @@
 
 
 ## Makefile.another.am
+
 noinst_LTLIBRARIES = libanother.la
 
 libanother_la_CPPFLAGS = \
@@ -18,10 +19,6 @@ libanother_la_CPPFLAGS = \
 
 libanother_la_SOURCES = \
   foo.cpp
-
-libanother_la_LDFLAGS = \
- -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:

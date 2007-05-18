@@ -106,7 +106,7 @@ libsource_lib_la_DEPENDENCIES = \
  ../lib
 
 libsource_lib_la_LDFLAGS = \
- -L. -L../lib
+ -L../lib
 
 noinst_HEADERS = \
   TheCheat.h \
@@ -152,7 +152,7 @@ main_test_DEPENDENCIES = \
  ../lib
 
 main_test_LDFLAGS = \
-  -L. -L../lib
+  -L../lib -L.
 
 main_test_LDADD = \
   libsource_lib.la

@@ -10,6 +10,7 @@
 
 
 ## Makefile.two.am
+
 noinst_PROGRAMS = two
 
 two_CPPFLAGS = \
@@ -25,9 +26,8 @@ two_SOURCES = \
 two_DEPENDENCIES = \
  ../../lib
 
-
 two_LDFLAGS = \
-  -L. -L../../lib
+  -L../../lib
 
 two_LDADD = \
   $(top_builddir)/source/one/libone.la

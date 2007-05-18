@@ -20,9 +20,6 @@ libfoo_a_la_CPPFLAGS = \
 libfoo_a_la_SOURCES = \
   foo.cpp
 
-libfoo_a_la_LDFLAGS = \
- -L.
-
 ## Makefile.foo_b.am
 
 noinst_LTLIBRARIES += libfoo_b.la
@@ -33,9 +30,6 @@ libfoo_b_la_CPPFLAGS = \
 
 libfoo_b_la_SOURCES = \
   foo.cpp
-
-libfoo_b_la_LDFLAGS = \
- -L.
 
 ## Makefile.foo_c.am
 
@@ -48,9 +42,6 @@ libfoo_c_la_CPPFLAGS = \
 
 libfoo_c_la_SOURCES = \
   foo.cpp
-
-libfoo_c_la_LDFLAGS = \
- -L.
 
 
 ACLOCAL = @ACLOCAL@
