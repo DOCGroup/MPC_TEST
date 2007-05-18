@@ -10,14 +10,11 @@
 
 
 ## Makefile.two.am
+
 noinst_LTLIBRARIES = libtwo.la
 
 libtwo_la_SOURCES = \
   foo.cpp
-
-libtwo_la_LDFLAGS = \
- -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:

@@ -14,6 +14,7 @@ SUBDIRS = \
         sub
 
 ## Makefile.support_lib.am
+
 lib_LTLIBRARIES = libsupport_lib.la
 
 libsupport_lib_la_CPPFLAGS = \
@@ -22,10 +23,6 @@ libsupport_lib_la_CPPFLAGS = \
 libsupport_lib_la_SOURCES = \
   arch.cpp \
   foo.cpp
-
-libsupport_lib_la_LDFLAGS = \
- -L.
-
 
 noinst_HEADERS = \
   bar.h \

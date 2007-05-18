@@ -10,6 +10,7 @@
 
 
 ## Makefile.NodeApplicationManager.am
+
 noinst_LTLIBRARIES = libNodeApplicationManager.la
 
 libNodeApplicationManager_la_CPPFLAGS = \
@@ -17,10 +18,6 @@ libNodeApplicationManager_la_CPPFLAGS = \
 
 libNodeApplicationManager_la_SOURCES = \
   foo.cpp
-
-libNodeApplicationManager_la_LDFLAGS = \
- -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:

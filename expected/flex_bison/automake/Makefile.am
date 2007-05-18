@@ -50,10 +50,6 @@ libbus_la_SOURCES = \
   bus.cpp \
   bus.tab.c
 
-libbus_la_LDFLAGS = \
- -L.
-
-
 noinst_HEADERS = \
   bus.tab.h
 

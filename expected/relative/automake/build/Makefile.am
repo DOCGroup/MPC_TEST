@@ -10,6 +10,7 @@
 
 
 ## Makefile.build_exe.am
+
 noinst_PROGRAMS = other
 
 other_CPPFLAGS = \
@@ -20,15 +21,12 @@ other_SOURCES = \
   bar.cpp \
   other.cpp
 
-other_LDFLAGS = \
-  -L.
-
-
 EXTRA_DIST = \
   ../src/bar.rc
 
 
 ## Makefile.build_lib.am
+
 noinst_LTLIBRARIES = libbuild_lib.la
 
 libbuild_lib_la_CPPFLAGS = \
@@ -37,10 +35,6 @@ libbuild_lib_la_CPPFLAGS = \
 libbuild_lib_la_SOURCES = \
   ../src/foo.cpp \
   bar.cpp
-
-libbuild_lib_la_LDFLAGS = \
- -L.
-
 
 EXTRA_DIST += \
   ../src/bar.rc

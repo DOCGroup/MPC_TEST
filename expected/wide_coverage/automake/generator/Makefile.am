@@ -30,7 +30,7 @@ libgenerator_be_la_DEPENDENCIES = \
  ../lib
 
 libgenerator_be_la_LDFLAGS = \
- -L. -L../lib
+ -L../lib
 
 noinst_HEADERS = \
   generator_be.h \
@@ -54,7 +54,7 @@ generator_DEPENDENCIES = \
  ../lib
 
 generator_LDFLAGS = \
-  -L. -L../lib
+  -L../lib
 
 generator_LDADD = \
   libgenerator_be.la

@@ -10,6 +10,7 @@
 
 
 ## Makefile.dir5.am
+
 noinst_LTLIBRARIES = libdir5.la
 
 libdir5_la_CPPFLAGS = \
@@ -19,10 +20,6 @@ libdir5_la_CPPFLAGS = \
 
 libdir5_la_SOURCES = \
   foo.cpp
-
-libdir5_la_LDFLAGS = \
- -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:

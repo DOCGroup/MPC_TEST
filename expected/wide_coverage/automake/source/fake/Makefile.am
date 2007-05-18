@@ -32,9 +32,6 @@ noinst_LTLIBRARIES = libfake.la
 libfake_la_SOURCES = \
   other.cpp
 
-libfake_la_LDFLAGS = \
- -L.
-
 noinst_HEADERS = \
   other.h
 

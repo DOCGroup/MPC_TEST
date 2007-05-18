@@ -10,14 +10,11 @@
 
 
 ## Makefile.three.am
+
 noinst_LTLIBRARIES = libthree.la
 
 libthree_la_SOURCES = \
   foo.cpp
-
-libthree_la_LDFLAGS = \
- -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:

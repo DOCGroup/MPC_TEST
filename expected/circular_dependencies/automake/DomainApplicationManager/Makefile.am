@@ -10,6 +10,7 @@
 
 
 ## Makefile.DomainApplicationManager.am
+
 noinst_LTLIBRARIES = libDomainApplicationManager.la
 
 libDomainApplicationManager_la_CPPFLAGS = \
@@ -17,10 +18,6 @@ libDomainApplicationManager_la_CPPFLAGS = \
 
 libDomainApplicationManager_la_SOURCES = \
   foo.cpp
-
-libDomainApplicationManager_la_LDFLAGS = \
- -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:

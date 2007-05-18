@@ -13,6 +13,7 @@
 ## Makefile.basic_Zargaflan.am
 
 if !BUILD_FAKE
+
 noinst_PROGRAMS = basic
 
 basic_CPPFLAGS = \
@@ -21,10 +22,6 @@ basic_CPPFLAGS = \
 
 basic_SOURCES = \
   basic.cpp
-
-basic_LDFLAGS = \
-  -L.
-
 
 all: __postbuild__
 

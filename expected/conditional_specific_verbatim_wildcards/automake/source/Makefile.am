@@ -13,20 +13,18 @@
 other:
 	echo This is a custom target
 
+
 noinst_LTLIBRARIES = libcsvw_A.la
 
 libcsvw_A_la_SOURCES = \
   bleer.cpp \
   byion.cpp
 
-libcsvw_A_la_LDFLAGS = \
- -L.
-
-
 noinst_HEADERS = \
   byion.h
 
 ## Makefile.csvw_B.am
+
 noinst_LTLIBRARIES += libcsvw_B.la
 
 libcsvw_B_la_CPPFLAGS = \
@@ -39,14 +37,11 @@ libcsvw_B_la_SOURCES = \
   ploor.cpp \
   qwaaa.c
 
-libcsvw_B_la_LDFLAGS = \
- -L.
-
-
 noinst_HEADERS += \
   qwaaa.h
 
 ## Makefile.csvw_C.am
+
 noinst_LTLIBRARIES += libcsvw_C.la
 
 libcsvw_C_la_CPPFLAGS = \
@@ -60,15 +55,12 @@ libcsvw_C_la_SOURCES = \
   ploor.cpp \
   qwaaa.c
 
-libcsvw_C_la_LDFLAGS = \
- -L.
-
-
 noinst_HEADERS += \
   byion.h \
   qwaaa.h
 
 ## Makefile.csvw_D.am
+
 noinst_LTLIBRARIES += libcsvw_D.la
 
 libcsvw_D_la_CPPFLAGS = \
@@ -79,22 +71,15 @@ libcsvw_D_la_SOURCES = \
   moop.cxx \
   qwaaa.c
 
-libcsvw_D_la_LDFLAGS = \
- -L.
-
-
 noinst_HEADERS += \
   qwaaa.h
 
 ## Makefile.csvw_E.am
+
 noinst_LTLIBRARIES += libcsvw_E.la
 
 libcsvw_E_la_SOURCES = \
   closed/Apple.cpp
-
-libcsvw_E_la_LDFLAGS = \
- -L.
-
 
 noinst_HEADERS += \
   byion.h \

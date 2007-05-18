@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -features swig_perl=1
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -features swig_perl=1 -value_template use_lib_modifier=
 
 
 
@@ -39,7 +39,7 @@ libMyModule_la_SOURCES = \
   hello.cpp
 
 libMyModule_la_LDFLAGS = \
- -L. -L$(PERL5_INCLUDE)/.
+ -L$(PERL5_INCLUDE)/.
 
 noinst_HEADERS = \
   MyModule.i \

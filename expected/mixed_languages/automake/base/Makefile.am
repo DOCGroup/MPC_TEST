@@ -10,14 +10,11 @@
 
 
 ## Makefile.base.am
+
 noinst_PROGRAMS = foo
 
 foo_SOURCES = \
   foo.cpp
-
-foo_LDFLAGS = \
-  -L.
-
 
 ## Clean up template repositories, etc.
 clean-local:

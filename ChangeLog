@@ -1,3 +1,9 @@
+Fri May 18 11:35:09 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/automake/*/Makefile.am:
+
+          Updated to reflect my change from Thu May 17 13:36:33 UTC 2007.
+
 Thu Apr 19 11:20:29 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/qt/html/qt_uic_moc.html:

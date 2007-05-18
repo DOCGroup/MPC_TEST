@@ -10,6 +10,7 @@
 
 
 ## Makefile.sub.am
+
 bin_PROGRAMS = sub
 
 sub_CPPFLAGS = \
@@ -25,9 +26,8 @@ sub_SOURCES = \
 sub_DEPENDENCIES = \
  ../lib
 
-
 sub_LDFLAGS = \
-  -L. -L../lib
+  -L../lib
 
 sub_LDADD = \
   $(top_builddir)/libsupport_lib.la
