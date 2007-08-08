@@ -46,7 +46,7 @@ OUTDIR=Debug
 INSTALLDIR=Debug
 INTDIR=Debug\sub\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\sub.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\sub.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -80,7 +80,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO support_libd.lib /libpath:"
 LINK32_OBJS= \
 	"$(INTDIR)\sub.obj"
 
-"$(INSTALLDIR)\sub.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\sub.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -92,7 +92,7 @@ OUTDIR=Release
 INSTALLDIR=Release
 INTDIR=Release\sub\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\sub.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\sub.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -125,7 +125,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO support_lib.lib /libpath:".
 LINK32_OBJS= \
 	"$(INTDIR)\sub.obj"
 
-"$(INSTALLDIR)\sub.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\sub.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -137,7 +137,7 @@ OUTDIR=Static_Debug
 INSTALLDIR=Static_Debug
 INTDIR=Static_Debug\sub\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\sub.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\sub.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -171,7 +171,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO support_libsd.lib /libpath:
 LINK32_OBJS= \
 	"$(INTDIR)\sub.obj"
 
-"$(INSTALLDIR)\sub.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\sub.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -183,7 +183,7 @@ OUTDIR=Static_Release
 INSTALLDIR=Static_Release
 INTDIR=Static_Release\sub\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\sub.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\sub.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -216,7 +216,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO support_libs.lib /libpath:"
 LINK32_OBJS= \
 	"$(INTDIR)\sub.obj"
 
-"$(INSTALLDIR)\sub.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\sub.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -269,13 +269,13 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="sub.cpp"
 
-"$(INTDIR)\sub.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\sub.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\sub.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

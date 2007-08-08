@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY = "MyModule.pm" "MyModule_wrap.cxx"
 OUTDIR=.
 INTDIR=Debug\MyModule\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\MyModule.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\MyModule.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -84,7 +84,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\hello.obj" \
 	"$(INTDIR)\MyModule_wrap.obj"
 
-".\MyModule.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\MyModule.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -95,7 +95,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\MyModule\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\MyModule.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\MyModule.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -133,7 +133,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\hello.obj" \
 	"$(INTDIR)\MyModule_wrap.obj"
 
-".\MyModule.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\MyModule.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -144,7 +144,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\MyModule\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\MyModule.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\MyModule.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -181,7 +181,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\hello.obj" \
 	"$(INTDIR)\MyModule_wrap.obj"
 
-"$(OUTDIR)\MyModule.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\MyModule.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -192,7 +192,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\MyModule\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\MyModule.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\MyModule.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -228,7 +228,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\hello.obj" \
 	"$(INTDIR)\MyModule_wrap.obj"
 
-"$(OUTDIR)\MyModule.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\MyModule.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -281,19 +281,19 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="hello.cpp"
 
-"$(INTDIR)\hello.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\hello.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\hello.obj" $(SOURCE)
 
 SOURCE="MyModule_wrap.cxx"
 
-"$(INTDIR)\MyModule_wrap.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\MyModule_wrap.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\MyModule_wrap.obj" $(SOURCE)
 
 SOURCE="MyModule.i"
 
 InputPath=MyModule.i
 
-"MyModule.pm" "MyModule_wrap.cxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"MyModule.pm" "MyModule_wrap.cxx" : $(SOURCE) 
 	<<tempfile.bat
 	@echo off
 	swig -perl -c++ "$(InputPath)"
@@ -302,7 +302,7 @@ InputPath=MyModule.i
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

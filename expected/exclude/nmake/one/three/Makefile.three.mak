@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=.
 INTDIR=Debug\three\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\threed.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\threed.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -81,7 +81,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsy
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-".\threed.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\threed.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -92,7 +92,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\three\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\three.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\three.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -127,7 +127,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsy
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-".\three.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\three.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -138,7 +138,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\three\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\threesd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\threesd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -172,7 +172,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\threesd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\threesd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\threesd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -183,7 +183,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\three\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\threes.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\threes.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -216,7 +216,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\threes.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\threes.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\threes.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -269,13 +269,13 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="foo.cpp"
 
-"$(INTDIR)\foo.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\foo.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\foo.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

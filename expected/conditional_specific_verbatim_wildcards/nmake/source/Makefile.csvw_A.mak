@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=bin
 INTDIR=Debug\csvw_A\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_Ad.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_Ad.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -82,7 +82,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bleer.obj" \
 	"$(INTDIR)\byion.obj"
 
-"bin\csvw_Ad.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"bin\csvw_Ad.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -93,7 +93,7 @@ LINK32_OBJS= \
 OUTDIR=bin
 INTDIR=Release\csvw_A\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_A.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_A.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -129,7 +129,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bleer.obj" \
 	"$(INTDIR)\byion.obj"
 
-"bin\csvw_A.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"bin\csvw_A.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -140,7 +140,7 @@ LINK32_OBJS= \
 OUTDIR=lib
 INTDIR=Static_Debug\csvw_A\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Asd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Asd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -175,7 +175,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bleer.obj" \
 	"$(INTDIR)\byion.obj"
 
-"$(OUTDIR)\csvw_Asd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\csvw_Asd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -186,7 +186,7 @@ LINK32_OBJS= \
 OUTDIR=lib
 INTDIR=Static_Release\csvw_A\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_As.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_As.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -220,7 +220,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bleer.obj" \
 	"$(INTDIR)\byion.obj"
 
-"$(OUTDIR)\csvw_As.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\csvw_As.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -273,12 +273,12 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="bleer.cpp"
 
-"$(INTDIR)\bleer.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\bleer.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\bleer.obj" $(SOURCE)
 
 SOURCE="byion.cpp"
 
-"$(INTDIR)\byion.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\byion.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\byion.obj" $(SOURCE)
 
 other:
@@ -287,7 +287,7 @@ other:
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

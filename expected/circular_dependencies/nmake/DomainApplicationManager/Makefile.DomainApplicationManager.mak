@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=.
 INTDIR=Debug\DomainApplicationManager\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\DomainApplicationManagerd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\DomainApplicationManagerd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -79,7 +79,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\DomainApplicationManagerd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\DomainApplicationManagerd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\DomainApplicationManagerd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -90,7 +90,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\DomainApplicationManager\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\DomainApplicationManager.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\DomainApplicationManager.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -123,7 +123,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\DomainApplicationManager.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\DomainApplicationManager.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\DomainApplicationManager.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -134,7 +134,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\DomainApplicationManager\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\DomainApplicationManagersd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\DomainApplicationManagersd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -168,7 +168,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\DomainApplicationManagersd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\DomainApplicationManagersd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\DomainApplicationManagersd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -179,7 +179,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\DomainApplicationManager\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\DomainApplicationManagers.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\DomainApplicationManagers.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -212,7 +212,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\DomainApplicationManagers.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\DomainApplicationManagers.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\DomainApplicationManagers.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -265,13 +265,13 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="foo.cpp"
 
-"$(INTDIR)\foo.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\foo.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\foo.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

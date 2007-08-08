@@ -46,7 +46,7 @@ OUTDIR=.
 INSTALLDIR=.
 INTDIR=Debug\basic_Zargaflan\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\basic.exe" __postbuild__
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\basic.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -80,7 +80,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsy
 LINK32_OBJS= \
 	"$(INTDIR)\basic.obj"
 
-"$(INSTALLDIR)\basic.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\basic.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -95,7 +95,7 @@ OUTDIR=Release
 INSTALLDIR=Release
 INTDIR=Release\basic_Zargaflan\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\basic.exe" __postbuild__
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\basic.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -128,7 +128,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsy
 LINK32_OBJS= \
 	"$(INTDIR)\basic.obj"
 
-"$(INSTALLDIR)\basic.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\basic.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -143,7 +143,7 @@ OUTDIR=Static_Debug
 INSTALLDIR=Static_Debug
 INTDIR=Static_Debug\basic_Zargaflan\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\basic.exe" __postbuild__
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\basic.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -177,7 +177,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsy
 LINK32_OBJS= \
 	"$(INTDIR)\basic.obj"
 
-"$(INSTALLDIR)\basic.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\basic.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -192,7 +192,7 @@ OUTDIR=Static_Release
 INSTALLDIR=Static_Release
 INTDIR=Static_Release\basic_Zargaflan\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\basic.exe" __postbuild__
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\basic.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -225,7 +225,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsy
 LINK32_OBJS= \
 	"$(INTDIR)\basic.obj"
 
-"$(INSTALLDIR)\basic.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\basic.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -281,13 +281,13 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="basic.cpp"
 
-"$(INTDIR)\basic.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\basic.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\basic.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

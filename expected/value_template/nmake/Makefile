@@ -23,18 +23,24 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: foo_a foo_b foo_c
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.foo_a.mak CFG="$(CFG)" $(@)
-	$(MAKE) /f Makefile.foo_b.mak CFG="$(CFG)" $(@)
-	$(MAKE) /f Makefile.foo_c.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.foo_a.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_a.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.foo_b.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_b.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.foo_c.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_c.mak CFG="$(CFG)" $(@)
 
 foo_a:
-	$(MAKE) /f Makefile.foo_a.mak CFG="$(CFG)" all
+	@echo Project: Makefile.foo_a.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_a.mak CFG="$(CFG)" all
 
 foo_b:
-	$(MAKE) /f Makefile.foo_b.mak CFG="$(CFG)" all
+	@echo Project: Makefile.foo_b.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_b.mak CFG="$(CFG)" all
 
 foo_c:
-	$(MAKE) /f Makefile.foo_c.mak CFG="$(CFG)" all
+	@echo Project: Makefile.foo_c.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_c.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo foo_a

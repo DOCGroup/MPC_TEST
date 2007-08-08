@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=.
 INTDIR=Debug\ROOT\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\ROOTd.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\ROOTd.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -81,7 +81,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsy
 LINK32_OBJS= \
 	"$(INTDIR)\root.obj"
 
-".\ROOTd.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\ROOTd.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -92,7 +92,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\ROOT\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\ROOT.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\ROOT.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -127,7 +127,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsy
 LINK32_OBJS= \
 	"$(INTDIR)\root.obj"
 
-".\ROOT.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\ROOT.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -138,7 +138,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\ROOT\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\ROOTsd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\ROOTsd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -172,7 +172,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\ROOTsd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\root.obj"
 
-"$(OUTDIR)\ROOTsd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\ROOTsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -183,7 +183,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\ROOT\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\ROOTs.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\ROOTs.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -216,7 +216,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\ROOTs.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\root.obj"
 
-"$(OUTDIR)\ROOTs.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\ROOTs.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -269,13 +269,13 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="root.cpp"
 
-"$(INTDIR)\root.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\root.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\root.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

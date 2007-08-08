@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=.
 INTDIR=Debug\bfs_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\bfsd.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\bfsd.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -86,7 +86,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\three.obj" \
 	"$(INTDIR)\two.obj"
 
-".\bfsd.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\bfsd.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -97,7 +97,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\bfs_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\bfs.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\bfs.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -137,7 +137,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\three.obj" \
 	"$(INTDIR)\two.obj"
 
-".\bfs.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\bfs.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -148,7 +148,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\bfs_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\bfssd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\bfssd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -187,7 +187,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\three.obj" \
 	"$(INTDIR)\two.obj"
 
-"$(OUTDIR)\bfssd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\bfssd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -198,7 +198,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\bfs_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\bfss.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\bfss.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -236,7 +236,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\three.obj" \
 	"$(INTDIR)\two.obj"
 
-"$(OUTDIR)\bfss.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\bfss.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -292,39 +292,39 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="directory\gets_flags.cpp"
 
-"$(INTDIR)\directory\gets_flags.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\directory\gets_flags.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\directory\$(NULL)" mkdir "$(INTDIR)\directory\"
 	$(CPP) $(CPP_COMMON) -Trogdor /Fo"$(INTDIR)\directory\gets_flags.obj" $(SOURCE)
 
 SOURCE="five.cpp"
 
-"$(INTDIR)\five.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\five.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) -Trogdor /Fo"$(INTDIR)\five.obj" $(SOURCE)
 
 SOURCE="four.cpp"
 
-"$(INTDIR)\four.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\four.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) -Trogdor /Fo"$(INTDIR)\four.obj" $(SOURCE)
 
 SOURCE="one.cpp"
 
-"$(INTDIR)\one.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\one.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\one.obj" $(SOURCE)
 
 SOURCE="three.cpp"
 
-"$(INTDIR)\three.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\three.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) -Trogdor /Fo"$(INTDIR)\three.obj" $(SOURCE)
 
 SOURCE="two.cpp"
 
-"$(INTDIR)\two.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\two.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\two.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

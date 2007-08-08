@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY = "other\zar_otherA.cpp" "other\zar_otherA.h" "other\zar_otherA.
 OUTDIR=.
 INTDIR=Debug\other\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\otherd.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\otherd.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -89,7 +89,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\other\zar_otherA.obj" \
 	"$(INTDIR)\other\zar_otherB.obj"
 
-".\otherd.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\otherd.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -100,7 +100,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\other\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\other.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\other.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -143,7 +143,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\other\zar_otherA.obj" \
 	"$(INTDIR)\other\zar_otherB.obj"
 
-".\other.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\other.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -154,7 +154,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\other\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\othersd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\othersd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -196,7 +196,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\other\zar_otherA.obj" \
 	"$(INTDIR)\other\zar_otherB.obj"
 
-"$(OUTDIR)\othersd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\othersd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -207,7 +207,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\other\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\others.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\others.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -248,7 +248,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\other\zar_otherA.obj" \
 	"$(INTDIR)\other\zar_otherB.obj"
 
-"$(OUTDIR)\others.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\others.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -301,13 +301,13 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="other\zar_otherA.cpp"
 
-"$(INTDIR)\other\zar_otherA.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\other\zar_otherA.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\other\$(NULL)" mkdir "$(INTDIR)\other\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\other\zar_otherA.obj" $(SOURCE)
 
 SOURCE="other\zar_otherB.cpp"
 
-"$(INTDIR)\other\zar_otherB.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\other\zar_otherB.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\other\$(NULL)" mkdir "$(INTDIR)\other\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\other\zar_otherB.obj" $(SOURCE)
 
@@ -315,7 +315,7 @@ SOURCE="other\other.poo"
 
 InputPath=other\other.poo
 
-"other\zar_otherA.cpp" "other\zar_otherA.h" "other\zar_otherA.inl" "other\zar_otherB.cpp" "other\zar_otherB.h" "other\zar_otherB.inl" "other\zar_otherC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"other\zar_otherA.cpp" "other\zar_otherA.h" "other\zar_otherA.inl" "other\zar_otherB.cpp" "other\zar_otherB.h" "other\zar_otherB.inl" "other\zar_otherC.h" : $(SOURCE) 
 	<<tempfile.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GX -Sc "$(InputPath)"
@@ -324,7 +324,7 @@ InputPath=other\other.poo
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

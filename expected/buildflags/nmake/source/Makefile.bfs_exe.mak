@@ -46,7 +46,7 @@ OUTDIR=.
 INSTALLDIR=.
 INTDIR=Debug\bfs_exe\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\fooz.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\fooz.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -81,7 +81,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\fooza.obj" \
 	"$(INTDIR)\foozb.obj"
 
-"$(INSTALLDIR)\fooz.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\fooz.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -93,7 +93,7 @@ OUTDIR=Release
 INSTALLDIR=Release
 INTDIR=Release\bfs_exe\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\fooz.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\fooz.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -127,7 +127,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\fooza.obj" \
 	"$(INTDIR)\foozb.obj"
 
-"$(INSTALLDIR)\fooz.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\fooz.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -139,7 +139,7 @@ OUTDIR=Static_Debug
 INSTALLDIR=Static_Debug
 INTDIR=Static_Debug\bfs_exe\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\fooz.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\fooz.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -174,7 +174,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\fooza.obj" \
 	"$(INTDIR)\foozb.obj"
 
-"$(INSTALLDIR)\fooz.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\fooz.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -186,7 +186,7 @@ OUTDIR=Static_Release
 INSTALLDIR=Static_Release
 INTDIR=Static_Release\bfs_exe\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\fooz.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\fooz.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -220,7 +220,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\fooza.obj" \
 	"$(INTDIR)\foozb.obj"
 
-"$(INSTALLDIR)\fooz.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\fooz.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -273,18 +273,18 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="fooza.cpp"
 
-"$(INTDIR)\fooza.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\fooza.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\fooza.obj" $(SOURCE)
 
 SOURCE="foozb.cpp"
 
-"$(INTDIR)\foozb.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\foozb.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) -Trogdor /Fo"$(INTDIR)\foozb.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

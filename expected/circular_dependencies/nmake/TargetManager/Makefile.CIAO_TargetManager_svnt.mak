@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=.
 INTDIR=Debug\CIAO_TargetManager_svnt\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\TargetManager_svntd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\TargetManager_svntd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -79,7 +79,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\TargetManager_svntd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\TargetManager_svntd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\TargetManager_svntd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -90,7 +90,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\CIAO_TargetManager_svnt\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\TargetManager_svnt.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\TargetManager_svnt.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -123,7 +123,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\TargetManager_svnt.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\TargetManager_svnt.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\TargetManager_svnt.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -134,7 +134,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\CIAO_TargetManager_svnt\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\TargetManager_svntsd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\TargetManager_svntsd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -168,7 +168,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\TargetManager_svntsd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\TargetManager_svntsd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\TargetManager_svntsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -179,7 +179,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\CIAO_TargetManager_svnt\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\TargetManager_svnts.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\TargetManager_svnts.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -212,7 +212,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\TargetManager_svnts.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\TargetManager_svnts.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\TargetManager_svnts.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -265,13 +265,13 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="foo.cpp"
 
-"$(INTDIR)\foo.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\foo.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\foo.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

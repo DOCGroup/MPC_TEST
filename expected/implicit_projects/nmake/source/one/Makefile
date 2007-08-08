@@ -23,10 +23,12 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: one
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.one.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.one.mak CFG="$(CFG)" $(@)
 
 one:
-	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" all
+	@echo Project: Makefile.one.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.one.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo one

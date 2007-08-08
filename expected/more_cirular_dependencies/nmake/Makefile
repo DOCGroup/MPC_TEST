@@ -23,22 +23,30 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: Code Set ROOT Factory
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.Code.mak CFG="$(CFG)" $(@)
-	$(MAKE) /f Makefile.Set.mak CFG="$(CFG)" $(@)
-	$(MAKE) /f Makefile.ROOT.mak CFG="$(CFG)" $(@)
-	$(MAKE) /f Makefile.Factory.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.Code.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Code.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.Set.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Set.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.ROOT.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.ROOT.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.Factory.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Factory.mak CFG="$(CFG)" $(@)
 
 Code:
-	$(MAKE) /f Makefile.Code.mak CFG="$(CFG)" all
+	@echo Project: Makefile.Code.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Code.mak CFG="$(CFG)" all
 
 Set:
-	$(MAKE) /f Makefile.Set.mak CFG="$(CFG)" all
+	@echo Project: Makefile.Set.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Set.mak CFG="$(CFG)" all
 
 ROOT:
-	$(MAKE) /f Makefile.ROOT.mak CFG="$(CFG)" all
+	@echo Project: Makefile.ROOT.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.ROOT.mak CFG="$(CFG)" all
 
 Factory: Code Set ROOT
-	$(MAKE) /f Makefile.Factory.mak CFG="$(CFG)" all
+	@echo Project: Makefile.Factory.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Factory.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo Code

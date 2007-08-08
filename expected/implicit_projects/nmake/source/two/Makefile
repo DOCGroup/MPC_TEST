@@ -23,10 +23,12 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: two
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.two.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.two.mak CFG="$(CFG)" $(@)
 
 two:
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" all
+	@echo Project: Makefile.two.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.two.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo two

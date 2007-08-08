@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=bin
 INTDIR=Debug\csvw_E\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_Ed.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_Ed.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -81,7 +81,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsy
 LINK32_OBJS= \
 	"$(INTDIR)\closed\Apple.obj"
 
-"bin\csvw_Ed.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"bin\csvw_Ed.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -92,7 +92,7 @@ LINK32_OBJS= \
 OUTDIR=bin
 INTDIR=Release\csvw_E\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_E.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_E.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -127,7 +127,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsy
 LINK32_OBJS= \
 	"$(INTDIR)\closed\Apple.obj"
 
-"bin\csvw_E.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"bin\csvw_E.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -138,7 +138,7 @@ LINK32_OBJS= \
 OUTDIR=lib
 INTDIR=Static_Debug\csvw_E\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Esd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Esd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -172,7 +172,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:"lib\csvw_Esd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\closed\Apple.obj"
 
-"$(OUTDIR)\csvw_Esd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\csvw_Esd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -183,7 +183,7 @@ LINK32_OBJS= \
 OUTDIR=lib
 INTDIR=Static_Release\csvw_E\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Es.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Es.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -216,7 +216,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:"lib\csvw_Es.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\closed\Apple.obj"
 
-"$(OUTDIR)\csvw_Es.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\csvw_Es.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -269,14 +269,14 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="closed\Apple.cpp"
 
-"$(INTDIR)\closed\Apple.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\closed\Apple.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\closed\$(NULL)" mkdir "$(INTDIR)\closed\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\closed\Apple.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

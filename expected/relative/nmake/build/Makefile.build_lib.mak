@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=.
 INTDIR=Debug\build_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\build_libd.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\build_libd.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -85,7 +85,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bar.obj" \
 	"$(INTDIR)\lower\bar.obj"
 
-".\build_libd.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\build_libd.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -96,7 +96,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\build_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\build_lib.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\build_lib.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -135,7 +135,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bar.obj" \
 	"$(INTDIR)\lower\bar.obj"
 
-".\build_lib.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\build_lib.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -146,7 +146,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\build_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\build_libsd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\build_libsd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -183,7 +183,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bar.obj" \
 	"$(INTDIR)\lower\bar.obj"
 
-"$(OUTDIR)\build_libsd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\build_libsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -194,7 +194,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\build_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\build_libs.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\build_libs.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -230,7 +230,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bar.obj" \
 	"$(INTDIR)\lower\bar.obj"
 
-"$(OUTDIR)\build_libs.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\build_libs.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -287,7 +287,7 @@ SOURCE="..\src\zzz_pch.cpp"
 
 CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
-"$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE)
         @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\dotdot\src\zzz_pch.obj" $(SOURCE)
@@ -297,7 +297,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDI
 
 CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
-"$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE)
         @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\dotdot\src\zzz_pch.obj" $(SOURCE)
@@ -307,7 +307,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32
 
 CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\build_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
-"$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE)
         @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\dotdot\src\zzz_pch.obj" $(SOURCE)
@@ -317,7 +317,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\build
 
 CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
-"$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE)
         @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\dotdot\src\zzz_pch.obj" $(SOURCE)
@@ -327,24 +327,24 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32
 
 SOURCE="..\src\foo.cpp"
 
-"$(INTDIR)\dotdot\src\foo.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\dotdot\src\foo.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\dotdot\src\foo.obj" $(SOURCE)
 
 SOURCE="bar.cpp"
 
-"$(INTDIR)\bar.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\bar.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\bar.obj" $(SOURCE)
 
 SOURCE="lower\bar.cpp"
 
-"$(INTDIR)\lower\bar.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\lower\bar.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\lower\$(NULL)" mkdir "$(INTDIR)\lower\"
 	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\lower\bar.obj" $(SOURCE)
 
 SOURCE="..\src\bar.rc"
 
-"$(INTDIR)\dotdot\src\bar.res" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\dotdot\src\bar.res" : $(SOURCE)
 	@if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(RSC) /l 0x409 /fo"$(INTDIR)\dotdot\src\bar.res" /i "." $(SOURCE)
 
@@ -352,7 +352,7 @@ SOURCE="..\src\bar.rc"
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

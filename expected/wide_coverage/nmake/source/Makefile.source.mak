@@ -46,7 +46,7 @@ OUTDIR=.
 INSTALLDIR=.
 INTDIR=Debug\source\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_testd.exe" __postbuild__
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_testd.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -83,7 +83,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\exe\use_more_names\use_more_names.obj" \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
-"$(INSTALLDIR)\main_testd.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main_testd.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -98,7 +98,7 @@ OUTDIR=Release
 INSTALLDIR=Release
 INTDIR=Release\source\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_test.exe" __postbuild__
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_test.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -134,7 +134,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\exe\use_more_names\use_more_names.obj" \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
-"$(INSTALLDIR)\main_test.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main_test.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -149,7 +149,7 @@ OUTDIR=Static_Debug
 INSTALLDIR=Static_Debug
 INTDIR=Static_Debug\source\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_testsd.exe" __postbuild__
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_testsd.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -186,7 +186,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\exe\use_more_names\use_more_names.obj" \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
-"$(INSTALLDIR)\main_testsd.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main_testsd.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -201,7 +201,7 @@ OUTDIR=Static_Release
 INSTALLDIR=Static_Release
 INTDIR=Static_Release\source\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_tests.exe" __postbuild__
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main_tests.exe" __postbuild__
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -237,7 +237,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\exe\use_more_names\use_more_names.obj" \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
-"$(INSTALLDIR)\main_tests.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main_tests.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -293,19 +293,19 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="exe\main.cpp"
 
-"$(INTDIR)\exe\main.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\exe\main.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\exe\$(NULL)" mkdir "$(INTDIR)\exe\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\exe\main.obj" $(SOURCE)
 
 SOURCE="exe\use_more_names\use_more_names.cpp"
 
-"$(INTDIR)\exe\use_more_names\use_more_names.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\exe\use_more_names\use_more_names.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\exe\use_more_names\$(NULL)" mkdir "$(INTDIR)\exe\use_more_names\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\exe\use_more_names\use_more_names.obj" $(SOURCE)
 
 SOURCE="exe\use_names\use_names.cpp"
 
-"$(INTDIR)\exe\use_names\use_names.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\exe\use_names\use_names.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\exe\use_names\$(NULL)" mkdir "$(INTDIR)\exe\use_names\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\exe\use_names\use_names.obj" $(SOURCE)
 
@@ -313,7 +313,7 @@ SOURCE="Foolish/foolish.simple"
 
 InputPath=Foolish/foolish.simple
 
-"Foolish\foolish.txt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"Foolish\foolish.txt" : $(SOURCE) 
 	<<tempfile.bat
 	@echo off
 	echo Generated from "$(InputPath)" > "Foolish\foolish.txt"
@@ -322,7 +322,7 @@ InputPath=Foolish/foolish.simple
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :
