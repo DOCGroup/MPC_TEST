@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=..\lib
 INTDIR=Debug\generator_be\I386
 
-ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "..\lib\generator_bed.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "..\lib\generator_bed.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -81,7 +81,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /libpath:"..\l
 LINK32_OBJS= \
 	"$(INTDIR)\generator_be.obj"
 
-"..\lib\generator_bed.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"..\lib\generator_bed.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -95,7 +95,7 @@ __prebuild__:
 OUTDIR=..\lib
 INTDIR=Release\generator_be\I386
 
-ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "..\lib\generator_be.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "..\lib\generator_be.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -130,7 +130,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /libpath:"..\l
 LINK32_OBJS= \
 	"$(INTDIR)\generator_be.obj"
 
-"..\lib\generator_be.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"..\lib\generator_be.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -144,7 +144,7 @@ __prebuild__:
 OUTDIR=..\lib
 INTDIR=Static_Debug\generator_be\I386
 
-ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_besd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_besd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -178,7 +178,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\generator_besd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\generator_be.obj"
 
-"$(OUTDIR)\generator_besd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\generator_besd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -192,7 +192,7 @@ __prebuild__:
 OUTDIR=..\lib
 INTDIR=Static_Release\generator_be\I386
 
-ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_bes.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\generator_bes.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -225,7 +225,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:"..\lib\generator_bes.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\generator_be.obj"
 
-"$(OUTDIR)\generator_bes.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\generator_bes.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -281,13 +281,13 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="generator_be.cpp"
 
-"$(INTDIR)\generator_be.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\generator_be.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\generator_be.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

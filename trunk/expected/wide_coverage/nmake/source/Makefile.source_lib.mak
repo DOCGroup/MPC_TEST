@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY = "cre\o.le\more_names.cpp" "cre\o.le\more_names.h" "names.cpp" 
 OUTDIR=..\lib
 INTDIR=Static_Debug\source_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -94,7 +94,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\qwee.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
-"$(OUTDIR)\source_lib.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\source_lib.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -105,7 +105,7 @@ LINK32_OBJS= \
 OUTDIR=..\lib
 INTDIR=Static_Release\source_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -153,7 +153,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\qwee.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
-"$(OUTDIR)\source_lib.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\source_lib.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -164,7 +164,7 @@ LINK32_OBJS= \
 OUTDIR=..\lib
 INTDIR=Static_Debug\source_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -213,7 +213,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\qwee.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
-"$(OUTDIR)\source_lib.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\source_lib.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -224,7 +224,7 @@ LINK32_OBJS= \
 OUTDIR=..\lib
 INTDIR=Static_Release\source_lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\source_lib.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -272,7 +272,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\qwee.obj" \
 	"$(INTDIR)\TheCheat.obj"
 
-"$(OUTDIR)\source_lib.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\source_lib.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -329,7 +329,7 @@ SOURCE="source_lib_pch.cpp"
 
 CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
 
-"$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE)
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\source_lib_pch.obj" $(SOURCE)
 <<
@@ -338,7 +338,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"..\lib\
 
 CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
 
-"$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE)
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\source_lib_pch.obj" $(SOURCE)
 <<
@@ -347,7 +347,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32
 
 CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
 
-"$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE)
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\source_lib_pch.obj" $(SOURCE)
 <<
@@ -356,7 +356,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd"..\lib\
 
 CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\source_lib_pch.pch" /Yc"source_lib_pch.h" /FD /c
 
-"$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\source_lib_pch.obj" "$(INTDIR)\source_lib_pch.pch" : $(SOURCE)
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\source_lib_pch.obj" $(SOURCE)
 <<
@@ -365,30 +365,30 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32
 
 SOURCE="cre\o.le\more_names.cpp"
 
-"$(INTDIR)\cre\o.le\more_names.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\cre\o.le\more_names.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\cre\o.le\$(NULL)" mkdir "$(INTDIR)\cre\o.le\"
 	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\cre\o.le\more_names.obj" $(SOURCE)
 
 SOURCE="names.cpp"
 
-"$(INTDIR)\names.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\names.obj" : $(SOURCE)
 	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\names.obj" $(SOURCE)
 
 SOURCE="qwee.cxx"
 
-"$(INTDIR)\qwee.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\qwee.obj" : $(SOURCE)
 	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\qwee.obj" $(SOURCE)
 
 SOURCE="TheCheat.cpp"
 
-"$(INTDIR)\TheCheat.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\TheCheat.obj" : $(SOURCE)
 	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\TheCheat.obj" $(SOURCE)
 
 SOURCE="more_names.key"
 
 InputPath=more_names.key
 
-"cre\o.le\more_names.cpp" "cre\o.le\more_names.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"cre\o.le\more_names.cpp" "cre\o.le\more_names.h" : $(SOURCE)  "..\bin\generator.exe"
 	<<tempfile.bat
 	@echo off
 	PATH=%PATH%;..\lib
@@ -404,7 +404,7 @@ SOURCE="names.key"
 
 InputPath=names.key
 
-"names.cpp" "names.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)" "something"
+"names.cpp" "names.h" : $(SOURCE)  "something" "..\bin\generator.exe"
 	<<tempfile.bat
 	@echo off
 	PATH=%PATH%;..\lib
@@ -419,7 +419,7 @@ SOURCE="TheCheat.r"
 
 InputPath=TheCheat.r
 
-"TheCheat.cpp" "TheCheat.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"TheCheat.cpp" "TheCheat.h" : $(SOURCE)  "..\bin\cppgen.pl"
 	<<tempfile.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "TheCheat.cpp" "TheCheat.h"
@@ -432,7 +432,7 @@ SOURCE="mondo\all.mondo"
 
 InputPath=mondo\all.mondo
 
-".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl" : $(SOURCE)  "..\mondo\mondo.pl" "..\mondo\modules\ReaderGen.pm"
 	<<tempfile.bat
 	@echo off
         if not exist . mkdir .
@@ -445,7 +445,7 @@ InputPath=mondo\all.mondo
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

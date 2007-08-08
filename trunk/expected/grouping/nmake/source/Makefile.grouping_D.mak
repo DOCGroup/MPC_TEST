@@ -46,7 +46,7 @@ OUTDIR=.
 INSTALLDIR=.
 INTDIR=Debug\grouping_D\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\D.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\D.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -83,7 +83,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\clown.obj" \
 	"$(INTDIR)\other.obj"
 
-"$(INSTALLDIR)\D.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\D.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -95,7 +95,7 @@ OUTDIR=Release
 INSTALLDIR=Release
 INTDIR=Release\grouping_D\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\D.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\D.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -131,7 +131,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\clown.obj" \
 	"$(INTDIR)\other.obj"
 
-"$(INSTALLDIR)\D.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\D.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -143,7 +143,7 @@ OUTDIR=Static_Debug
 INSTALLDIR=Static_Debug
 INTDIR=Static_Debug\grouping_D\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\D.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\D.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -180,7 +180,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\clown.obj" \
 	"$(INTDIR)\other.obj"
 
-"$(INSTALLDIR)\D.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\D.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -192,7 +192,7 @@ OUTDIR=Static_Release
 INSTALLDIR=Static_Release
 INTDIR=Static_Release\grouping_D\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\D.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\D.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -228,7 +228,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\clown.obj" \
 	"$(INTDIR)\other.obj"
 
-"$(INSTALLDIR)\D.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\D.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -281,19 +281,19 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="clown.cpp"
 
-"$(INTDIR)\clown.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\clown.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\clown.obj" $(SOURCE)
 
 SOURCE="other.cpp"
 
-"$(INTDIR)\other.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\other.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\other.obj" $(SOURCE)
 
 SOURCE="clown.r"
 
 InputPath=clown.r
 
-"clown.cpp" "clown.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"clown.cpp" "clown.h" : $(SOURCE)  "..\bin\cppgen.pl"
 	<<tempfile.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "clown.cpp" "clown.h"
@@ -302,7 +302,7 @@ InputPath=clown.r
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

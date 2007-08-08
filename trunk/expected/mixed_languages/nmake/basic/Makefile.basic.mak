@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=.
 INTDIR=Debug\basic\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\basicd.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\basicd.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -82,7 +82,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\arch.obj" \
 	"$(INTDIR)\foo.obj"
 
-".\basicd.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\basicd.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -93,7 +93,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\basic\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\basic.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\basic.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -129,7 +129,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\arch.obj" \
 	"$(INTDIR)\foo.obj"
 
-".\basic.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\basic.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -140,7 +140,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\basic\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\basicsd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\basicsd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -175,7 +175,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\arch.obj" \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\basicsd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\basicsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -186,7 +186,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\basic\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\basics.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\basics.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -220,7 +220,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\arch.obj" \
 	"$(INTDIR)\foo.obj"
 
-"$(OUTDIR)\basics.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\basics.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -273,18 +273,18 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="arch.cpp"
 
-"$(INTDIR)\arch.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\arch.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\arch.obj" $(SOURCE)
 
 SOURCE="foo.cpp"
 
-"$(INTDIR)\foo.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\foo.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\foo.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

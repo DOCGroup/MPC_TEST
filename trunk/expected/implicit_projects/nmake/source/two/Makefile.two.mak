@@ -46,7 +46,7 @@ OUTDIR=.
 INSTALLDIR=.
 INTDIR=Debug\two\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\two.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\two.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -80,7 +80,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO oned.lib /libpath:"." /libp
 LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
-"$(INSTALLDIR)\two.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\two.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -92,7 +92,7 @@ OUTDIR=Release
 INSTALLDIR=Release
 INTDIR=Release\two\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\two.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\two.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -125,7 +125,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO one.lib /libpath:"." /libpa
 LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
-"$(INSTALLDIR)\two.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\two.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -137,7 +137,7 @@ OUTDIR=Static_Debug
 INSTALLDIR=Static_Debug
 INTDIR=Static_Debug\two\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\two.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\two.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -171,7 +171,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO onesd.lib /libpath:"." /lib
 LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
-"$(INSTALLDIR)\two.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\two.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -183,7 +183,7 @@ OUTDIR=Static_Release
 INSTALLDIR=Static_Release
 INTDIR=Static_Release\two\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\two.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\two.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -216,7 +216,7 @@ LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO ones.lib /libpath:"." /libp
 LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
-"$(INSTALLDIR)\two.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\two.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -269,13 +269,13 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="two.cpp"
 
-"$(INTDIR)\two.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\two.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\two.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

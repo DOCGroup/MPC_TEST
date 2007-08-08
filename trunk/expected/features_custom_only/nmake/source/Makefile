@@ -23,18 +23,24 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: fco fco_use other
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" $(@)
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" $(@)
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.fco.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.fco_use.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco_use.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.other.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.other.mak CFG="$(CFG)" $(@)
 
 fco:
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" all
+	@echo Project: Makefile.fco.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco.mak CFG="$(CFG)" all
 
 fco_use: fco
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" all
+	@echo Project: Makefile.fco_use.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco_use.mak CFG="$(CFG)" all
 
 other:
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" all
+	@echo Project: Makefile.other.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.other.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo fco

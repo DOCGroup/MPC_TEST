@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=.
 INTDIR=Debug\lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManagerd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManagerd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -79,7 +79,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\NodeManagerd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
-"$(OUTDIR)\NodeManagerd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\NodeManagerd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -90,7 +90,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManager.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManager.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -123,7 +123,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\NodeManager.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
-"$(OUTDIR)\NodeManager.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\NodeManager.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -134,7 +134,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManagersd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManagersd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -168,7 +168,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\NodeManagersd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
-"$(OUTDIR)\NodeManagersd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\NodeManagersd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -179,7 +179,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\lib\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManagers.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\NodeManagers.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -212,7 +212,7 @@ LINK32_FLAGS=/nologo /machine:I386 /out:".\NodeManagers.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
-"$(OUTDIR)\NodeManagers.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\NodeManagers.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -265,13 +265,13 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="two.cpp"
 
-"$(INTDIR)\two.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\two.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\two.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

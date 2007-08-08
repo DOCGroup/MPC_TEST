@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY = "zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" 
 OUTDIR=.
 INTDIR=Debug\fco\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY)
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY)
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -99,7 +99,7 @@ RSC=rc.exe
 OUTDIR=.
 INTDIR=Release\fco\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY)
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY)
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -153,7 +153,7 @@ RSC=rc.exe
 OUTDIR=.
 INTDIR=Static_Debug\fco\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY)
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY)
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -204,7 +204,7 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 OUTDIR=.
 INTDIR=Static_Release\fco\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY)
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY)
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -298,7 +298,7 @@ SOURCE="that.zar"
 
 InputPath=that.zar
 
-"zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" "zar_thatC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" "zar_thatC.h" : $(SOURCE) 
 	<<tempfile.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc "$(InputPath)"
@@ -308,7 +308,7 @@ SOURCE="this.zar"
 
 InputPath=this.zar
 
-"zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp" "zar_thisC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp" "zar_thisC.h" : $(SOURCE) 
 	<<tempfile.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA "$(InputPath)"
@@ -317,7 +317,7 @@ InputPath=this.zar
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

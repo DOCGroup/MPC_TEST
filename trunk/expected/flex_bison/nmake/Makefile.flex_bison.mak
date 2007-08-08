@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY = "bus.cpp" "bus.tab.c" "bus.tab.h"
 OUTDIR=.
 INTDIR=Debug\flex_bison\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\busd.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\busd.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -85,7 +85,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bus.obj" \
 	"$(INTDIR)\bus.tab.obj"
 
-".\busd.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\busd.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -96,7 +96,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\flex_bison\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\bus.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\bus.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -135,7 +135,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bus.obj" \
 	"$(INTDIR)\bus.tab.obj"
 
-".\bus.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\bus.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -146,7 +146,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\flex_bison\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\bussd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\bussd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -184,7 +184,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bus.obj" \
 	"$(INTDIR)\bus.tab.obj"
 
-"$(OUTDIR)\bussd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\bussd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -195,7 +195,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\flex_bison\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\buss.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\buss.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -232,7 +232,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\bus.obj" \
 	"$(INTDIR)\bus.tab.obj"
 
-"$(OUTDIR)\buss.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\buss.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -285,19 +285,19 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="bus.cpp"
 
-"$(INTDIR)\bus.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\bus.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\bus.obj" $(SOURCE)
 
 SOURCE="bus.tab.c"
 
-"$(INTDIR)\bus.tab.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\bus.tab.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\bus.tab.obj" $(SOURCE)
 
 SOURCE="bus.l"
 
 InputPath=bus.l
 
-"bus.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"bus.cpp" : $(SOURCE) 
 	<<tempfile.bat
 	@echo off
 	flex -t "$(InputPath)" > "bus.cpp"
@@ -307,7 +307,7 @@ SOURCE="bus.y"
 
 InputPath=bus.y
 
-"bus.tab.c" "bus.tab.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"bus.tab.c" "bus.tab.h" : $(SOURCE) 
 	<<tempfile.bat
 	@echo off
 	bison -d "$(InputPath)"
@@ -316,7 +316,7 @@ InputPath=bus.y
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

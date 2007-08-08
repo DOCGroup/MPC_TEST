@@ -23,10 +23,12 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: dir5
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.dir5.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.dir5.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir5.mak CFG="$(CFG)" $(@)
 
 dir5:
-	$(MAKE) /f Makefile.dir5.mak CFG="$(CFG)" all
+	@echo Project: Makefile.dir5.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir5.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo dir5

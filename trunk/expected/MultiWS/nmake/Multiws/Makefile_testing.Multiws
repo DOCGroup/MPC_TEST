@@ -24,12 +24,16 @@ all: foo
 
 clean depend generated realclean $(CUSTOM_TARGETS):
 	@cd src
-	$(MAKE) /f Makefile.foo_testing.mak CFG="$(CFG)" $(@)
+	@echo Directory: src
+	@echo Project: Makefile.foo_testing.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_testing.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 
 foo:
 	@cd src
-	$(MAKE) /f Makefile.foo_testing.mak CFG="$(CFG)" all
+	@echo Directory: src
+	@echo Project: Makefile.foo_testing.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_testing.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 project_name_list:

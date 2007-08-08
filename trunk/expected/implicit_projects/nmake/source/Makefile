@@ -24,20 +24,28 @@ all: one-target two-target
 
 clean depend generated realclean $(CUSTOM_TARGETS):
 	@cd one
-	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" $(@)
+	@echo Directory: one
+	@echo Project: Makefile.one.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.one.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 	@cd two
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" $(@)
+	@echo Directory: two
+	@echo Project: Makefile.two.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.two.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 
 one-target:
 	@cd one
-	$(MAKE) /f Makefile.one.mak CFG="$(CFG)" all
+	@echo Directory: one
+	@echo Project: Makefile.one.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.one.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 two-target: one-target
 	@cd two
-	$(MAKE) /f Makefile.two.mak CFG="$(CFG)" all
+	@echo Directory: two
+	@echo Project: Makefile.two.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.two.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 project_name_list:

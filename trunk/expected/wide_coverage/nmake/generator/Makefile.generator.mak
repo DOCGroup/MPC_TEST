@@ -46,7 +46,7 @@ OUTDIR=.
 INSTALLDIR=..\bin
 INTDIR=Debug\generator\I386
 
-ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" "$(INSTALLDIR)" __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\generator.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -81,7 +81,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator.res" \
 	"$(INTDIR)\generator.obj"
 
-"$(INSTALLDIR)\generator.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\generator.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -96,7 +96,7 @@ OUTDIR=Release
 INSTALLDIR=..\bin
 INTDIR=Release\generator\I386
 
-ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" "$(INSTALLDIR)" __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\generator.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -130,7 +130,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator.res" \
 	"$(INTDIR)\generator.obj"
 
-"$(INSTALLDIR)\generator.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\generator.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -145,7 +145,7 @@ OUTDIR=Static_Debug
 INSTALLDIR=..\bin
 INTDIR=Static_Debug\generator\I386
 
-ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" "$(INSTALLDIR)" __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\generator.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -180,7 +180,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator.res" \
 	"$(INTDIR)\generator.obj"
 
-"$(INSTALLDIR)\generator.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\generator.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -195,7 +195,7 @@ OUTDIR=Static_Release
 INSTALLDIR=..\bin
 INTDIR=Static_Release\generator\I386
 
-ALL : __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)" "$(INSTALLDIR)\generator.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" "$(INSTALLDIR)" __prebuild__ DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\generator.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -229,7 +229,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator.res" \
 	"$(INTDIR)\generator.obj"
 
-"$(INSTALLDIR)\generator.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\generator.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -288,19 +288,19 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="generator.cpp"
 
-"$(INTDIR)\generator.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\generator.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\generator.obj" $(SOURCE)
 
 SOURCE="generator.rc"
 
-"$(INTDIR)\generator.res" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\generator.res" : $(SOURCE)
 	$(RSC) /l 0x409 /fo"$(INTDIR)\generator.res" $(SOURCE)
 
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

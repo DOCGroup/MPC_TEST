@@ -24,28 +24,40 @@ all: fco fco_use other
 
 clean depend generated realclean $(CUSTOM_TARGETS):
 	@cd source
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" $(@)
+	@echo Directory: source
+	@echo Project: Makefile.fco.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 	@cd source
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" $(@)
+	@echo Directory: source
+	@echo Project: Makefile.fco_use.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco_use.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 	@cd source
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" $(@)
+	@echo Directory: source
+	@echo Project: Makefile.other.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.other.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 
 fco:
 	@cd source
-	$(MAKE) /f Makefile.fco.mak CFG="$(CFG)" all
+	@echo Directory: source
+	@echo Project: Makefile.fco.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 fco_use: fco
 	@cd source
-	$(MAKE) /f Makefile.fco_use.mak CFG="$(CFG)" all
+	@echo Directory: source
+	@echo Project: Makefile.fco_use.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco_use.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 other:
 	@cd source
-	$(MAKE) /f Makefile.other.mak CFG="$(CFG)" all
+	@echo Directory: source
+	@echo Project: Makefile.other.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.other.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 project_name_list:

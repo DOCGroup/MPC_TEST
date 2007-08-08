@@ -46,7 +46,7 @@ OUTDIR=.
 INSTALLDIR=.
 INTDIR=Debug\qt_uic_moc\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -85,7 +85,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\demo_moc.obj" \
 	"$(INTDIR)\main.obj"
 
-"$(INSTALLDIR)\main.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -97,7 +97,7 @@ OUTDIR=Release
 INSTALLDIR=Release
 INTDIR=Release\qt_uic_moc\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -135,7 +135,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\demo_moc.obj" \
 	"$(INTDIR)\main.obj"
 
-"$(INSTALLDIR)\main.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -147,7 +147,7 @@ OUTDIR=Static_Debug
 INSTALLDIR=Static_Debug
 INTDIR=Static_Debug\qt_uic_moc\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -186,7 +186,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\demo_moc.obj" \
 	"$(INTDIR)\main.obj"
 
-"$(INSTALLDIR)\main.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -198,7 +198,7 @@ OUTDIR=Static_Release
 INSTALLDIR=Static_Release
 INTDIR=Static_Release\qt_uic_moc\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\main.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -236,7 +236,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\demo_moc.obj" \
 	"$(INTDIR)\main.obj"
 
-"$(INSTALLDIR)\main.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\main.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -289,24 +289,24 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="demo.cpp"
 
-"$(INTDIR)\demo.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\demo.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\demo.obj" $(SOURCE)
 
 SOURCE="demo_moc.cpp"
 
-"$(INTDIR)\demo_moc.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\demo_moc.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\demo_moc.obj" $(SOURCE)
 
 SOURCE="main.cpp"
 
-"$(INTDIR)\main.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\main.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\main.obj" $(SOURCE)
 
 SOURCE="demo.ui"
 
 InputPath=demo.ui
 
-"demo.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"demo.h" : $(SOURCE) 
 	<<tempfile.bat
 	@echo off
 	$(QTDIR)\bin\uic  "$(InputPath)" -o "demo.h"
@@ -316,7 +316,7 @@ SOURCE="demo.ui"
 
 InputPath=demo.ui
 
-"demo.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"demo.cpp" : $(SOURCE)  "demo.h"
 	<<tempfile.bat
 	@echo off
 	$(QTDIR)\bin\uic -impl "demo.h" "$(InputPath)" -o "demo.cpp"
@@ -326,7 +326,7 @@ SOURCE="demo.h"
 
 InputPath=demo.h
 
-"demo_moc.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+"demo_moc.cpp" : $(SOURCE) 
 	<<tempfile.bat
 	@echo off
 	$(QTDIR)\bin\moc  "$(InputPath)" -o "demo_moc.cpp"
@@ -335,7 +335,7 @@ InputPath=demo.h
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

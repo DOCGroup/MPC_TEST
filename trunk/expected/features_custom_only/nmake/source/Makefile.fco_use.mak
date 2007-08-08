@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=.
 INTDIR=Debug\fco_use\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\fco_used.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\fco_used.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -82,7 +82,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\zar_thatB.obj" \
 	"$(INTDIR)\zar_thisC.obj"
 
-".\fco_used.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\fco_used.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -93,7 +93,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Release\fco_use\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) ".\fco_use.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\fco_use.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -129,7 +129,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\zar_thatB.obj" \
 	"$(INTDIR)\zar_thisC.obj"
 
-".\fco_use.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+".\fco_use.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -140,7 +140,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Debug\fco_use\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\fco_usesd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\fco_usesd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -175,7 +175,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\zar_thatB.obj" \
 	"$(INTDIR)\zar_thisC.obj"
 
-"$(OUTDIR)\fco_usesd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\fco_usesd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -186,7 +186,7 @@ LINK32_OBJS= \
 OUTDIR=.
 INTDIR=Static_Release\fco_use\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\fco_uses.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\fco_uses.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -220,7 +220,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\zar_thatB.obj" \
 	"$(INTDIR)\zar_thisC.obj"
 
-"$(OUTDIR)\fco_uses.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\fco_uses.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -273,18 +273,18 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="zar_thatB.cpp"
 
-"$(INTDIR)\zar_thatB.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\zar_thatB.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\zar_thatB.obj" $(SOURCE)
 
 SOURCE="zar_thisC.cpp"
 
-"$(INTDIR)\zar_thisC.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\zar_thisC.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\zar_thisC.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

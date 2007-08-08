@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -features swig_perl=1
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -features swig_perl=1 -value_template use_lib_modifier=
 #
 #----------------------------------------------------------------------------
 
@@ -23,10 +23,12 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: MyModule
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.MyModule.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.MyModule.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.MyModule.mak CFG="$(CFG)" $(@)
 
 MyModule:
-	$(MAKE) /f Makefile.MyModule.mak CFG="$(CFG)" all
+	@echo Project: Makefile.MyModule.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.MyModule.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo MyModule

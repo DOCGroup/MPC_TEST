@@ -14,8 +14,8 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Lynk Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Lynk Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
@@ -45,7 +45,7 @@ GENERATED_DIRTY =
 OUTDIR=bin
 INTDIR=Debug\csvw_B\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_Bd.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_Bd.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -84,7 +84,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\ploor.obj" \
 	"$(INTDIR)\qwaaa.obj"
 
-"bin\csvw_Bd.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"bin\csvw_Bd.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -95,7 +95,7 @@ LINK32_OBJS= \
 OUTDIR=bin
 INTDIR=Release\csvw_B\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_B.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_B.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -133,7 +133,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\ploor.obj" \
 	"$(INTDIR)\qwaaa.obj"
 
-"bin\csvw_B.dll" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"bin\csvw_B.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -144,7 +144,7 @@ LINK32_OBJS= \
 OUTDIR=lib
 INTDIR=Static_Debug\csvw_B\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Bsd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Bsd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -181,7 +181,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\ploor.obj" \
 	"$(INTDIR)\qwaaa.obj"
 
-"$(OUTDIR)\csvw_Bsd.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\csvw_Bsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -192,7 +192,7 @@ LINK32_OBJS= \
 OUTDIR=lib
 INTDIR=Static_Release\csvw_B\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Bs.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Bs.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -228,7 +228,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\ploor.obj" \
 	"$(INTDIR)\qwaaa.obj"
 
-"$(OUTDIR)\csvw_Bs.lib" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\csvw_Bs.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -281,29 +281,29 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="conditional\windows.cpp"
 
-"$(INTDIR)\conditional\windows.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\conditional\windows.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\conditional\$(NULL)" mkdir "$(INTDIR)\conditional\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\conditional\windows.obj" $(SOURCE)
 
 SOURCE="moop.cxx"
 
-"$(INTDIR)\moop.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\moop.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\moop.obj" $(SOURCE)
 
 SOURCE="ploor.cpp"
 
-"$(INTDIR)\ploor.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\ploor.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\ploor.obj" $(SOURCE)
 
 SOURCE="qwaaa.c"
 
-"$(INTDIR)\qwaaa.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\qwaaa.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\qwaaa.obj" $(SOURCE)
 
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

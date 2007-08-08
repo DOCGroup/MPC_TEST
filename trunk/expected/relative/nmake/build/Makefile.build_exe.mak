@@ -46,7 +46,7 @@ OUTDIR=.
 INSTALLDIR=.
 INTDIR=Debug\build_exe\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\other.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\other.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -84,7 +84,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\lower\bar.obj" \
 	"$(INTDIR)\other.obj"
 
-"$(INSTALLDIR)\other.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\other.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -96,7 +96,7 @@ OUTDIR=Release
 INSTALLDIR=Release
 INTDIR=Release\build_exe\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\other.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\other.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -133,7 +133,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\lower\bar.obj" \
 	"$(INTDIR)\other.obj"
 
-"$(INSTALLDIR)\other.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\other.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -145,7 +145,7 @@ OUTDIR=Static_Debug
 INSTALLDIR=Static_Debug
 INTDIR=Static_Debug\build_exe\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\other.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\other.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -183,7 +183,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\lower\bar.obj" \
 	"$(INTDIR)\other.obj"
 
-"$(INSTALLDIR)\other.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\other.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -195,7 +195,7 @@ OUTDIR=Static_Release
 INSTALLDIR=Static_Release
 INTDIR=Static_Release\build_exe\I386
 
-ALL : DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\other.exe"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\other.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -232,7 +232,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\lower\bar.obj" \
 	"$(INTDIR)\other.obj"
 
-"$(INSTALLDIR)\other.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\other.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -285,29 +285,29 @@ CLEAN :
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
 SOURCE="..\src\foo.cpp"
 
-"$(INTDIR)\dotdot\src\foo.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\dotdot\src\foo.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\dotdot\src\foo.obj" $(SOURCE)
 
 SOURCE="bar.cpp"
 
-"$(INTDIR)\bar.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\bar.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\bar.obj" $(SOURCE)
 
 SOURCE="lower\bar.cpp"
 
-"$(INTDIR)\lower\bar.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\lower\bar.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\lower\$(NULL)" mkdir "$(INTDIR)\lower\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\lower\bar.obj" $(SOURCE)
 
 SOURCE="other.cpp"
 
-"$(INTDIR)\other.obj" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\other.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\other.obj" $(SOURCE)
 
 SOURCE="..\src\bar.rc"
 
-"$(INTDIR)\dotdot\src\bar.res" : $(SOURCE) "$(INTDIR)"
+"$(INTDIR)\dotdot\src\bar.res" : $(SOURCE)
 	@if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(RSC) /l 0x409 /fo"$(INTDIR)\dotdot\src\bar.res" /i "." $(SOURCE)
 
@@ -315,7 +315,7 @@ SOURCE="..\src\bar.rc"
 
 !ENDIF
 
-GENERATED : $(GENERATED_DIRTY)
+GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 	-@rem
 
 DEPENDCHECK :

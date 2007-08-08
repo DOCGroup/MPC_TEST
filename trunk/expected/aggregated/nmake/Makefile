@@ -24,36 +24,52 @@ all: foo dir4 dir5 another
 
 clean depend generated realclean $(CUSTOM_TARGETS):
 	@cd dir1/dir2
-	$(MAKE) /f Makefile.foo.mak CFG="$(CFG)" $(@)
+	@echo Directory: dir1/dir2
+	@echo Project: Makefile.foo.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 	@cd dir1/dir4
-	$(MAKE) /f Makefile.dir4.mak CFG="$(CFG)" $(@)
+	@echo Directory: dir1/dir4
+	@echo Project: Makefile.dir4.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir4.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 	@cd dir1/dir5
-	$(MAKE) /f Makefile.dir5.mak CFG="$(CFG)" $(@)
+	@echo Directory: dir1/dir5
+	@echo Project: Makefile.dir5.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir5.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 	@cd dir2
-	$(MAKE) /f Makefile.another.mak CFG="$(CFG)" $(@)
+	@echo Directory: dir2
+	@echo Project: Makefile.another.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.another.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 
 foo:
 	@cd dir1/dir2
-	$(MAKE) /f Makefile.foo.mak CFG="$(CFG)" all
+	@echo Directory: dir1/dir2
+	@echo Project: Makefile.foo.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 dir4:
 	@cd dir1/dir4
-	$(MAKE) /f Makefile.dir4.mak CFG="$(CFG)" all
+	@echo Directory: dir1/dir4
+	@echo Project: Makefile.dir4.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir4.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 dir5:
 	@cd dir1/dir5
-	$(MAKE) /f Makefile.dir5.mak CFG="$(CFG)" all
+	@echo Directory: dir1/dir5
+	@echo Project: Makefile.dir5.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir5.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 another:
 	@cd dir2
-	$(MAKE) /f Makefile.another.mak CFG="$(CFG)" all
+	@echo Directory: dir2
+	@echo Project: Makefile.another.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.another.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 project_name_list:

@@ -23,10 +23,12 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: flex_bison
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.flex_bison.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.flex_bison.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.flex_bison.mak CFG="$(CFG)" $(@)
 
 flex_bison:
-	$(MAKE) /f Makefile.flex_bison.mak CFG="$(CFG)" all
+	@echo Project: Makefile.flex_bison.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.flex_bison.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo flex_bison

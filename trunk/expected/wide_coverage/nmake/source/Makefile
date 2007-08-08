@@ -23,21 +23,29 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 all: source_lib source fake-target
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) /f Makefile.source_lib.mak CFG="$(CFG)" $(@)
-	$(MAKE) /f Makefile.source.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.source_lib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.source_lib.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.source.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.source.mak CFG="$(CFG)" $(@)
 	@cd fake
-	$(MAKE) /f Makefile.fake.mak CFG="$(CFG)" $(@)
+	@echo Directory: fake
+	@echo Project: Makefile.fake.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fake.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 
 source_lib:
-	$(MAKE) /f Makefile.source_lib.mak CFG="$(CFG)" all
+	@echo Project: Makefile.source_lib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.source_lib.mak CFG="$(CFG)" all
 
 source: source_lib
-	$(MAKE) /f Makefile.source.mak CFG="$(CFG)" all
+	@echo Project: Makefile.source.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.source.mak CFG="$(CFG)" all
 
 fake-target:
 	@cd fake
-	$(MAKE) /f Makefile.fake.mak CFG="$(CFG)" all
+	@echo Directory: fake
+	@echo Project: Makefile.fake.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fake.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 project_name_list:
