@@ -223,7 +223,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;FAIL_IF_NOT_DEFINED"
+				PreprocessorDefinitions="_DEBUG;FAIL_IF_NOT_DEFINED;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=""
 			/>
@@ -301,7 +301,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;FAIL_IF_NOT_DEFINED"
+				PreprocessorDefinitions="NDEBUG;FAIL_IF_NOT_DEFINED;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=""
 			/>

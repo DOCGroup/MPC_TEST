@@ -224,7 +224,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;QT_THREAD_SUPPORT"
+				PreprocessorDefinitions="_DEBUG;QT_THREAD_SUPPORT;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories="$(QTDIR)\include"
 			/>
@@ -302,7 +302,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;QT_THREAD_SUPPORT"
+				PreprocessorDefinitions="NDEBUG;QT_THREAD_SUPPORT;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories="$(QTDIR)\include"
 			/>

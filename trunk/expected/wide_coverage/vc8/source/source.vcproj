@@ -228,7 +228,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+				PreprocessorDefinitions="_DEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
 			/>
@@ -308,7 +308,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+				PreprocessorDefinitions="NDEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
 			/>

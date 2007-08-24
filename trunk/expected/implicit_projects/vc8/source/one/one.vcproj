@@ -205,7 +205,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;FAILURE_TRIGGER"
+				PreprocessorDefinitions="_DEBUG;FAILURE_TRIGGER;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=""
 			/>
@@ -274,7 +274,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;FAILURE_TRIGGER"
+				PreprocessorDefinitions="NDEBUG;FAILURE_TRIGGER;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=""
 			/>

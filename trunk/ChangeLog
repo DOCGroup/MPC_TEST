@@ -1,8 +1,15 @@
+Fri Aug 24 11:27:56 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/vc8/*.vcproj:
+
+          Updated to reflect James Hill's change from Tue Aug 21 15:27:52
+          UTC 2007
+
 Wed Aug  8 14:41:33 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/nmake/*/Makefile:
 
-          Updated to reflect Adam's change from Fri Jun 29 18:24:22 UTC
+          Updated to reflect Adam Mitz's change from Fri Jun 29 18:24:22 UTC
           2007.
 
 Fri May 18 11:35:09 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>

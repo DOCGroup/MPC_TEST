@@ -223,7 +223,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;NEEDED_BY_ALL;NEEDED_BY_NONE"
+				PreprocessorDefinitions="_DEBUG;NEEDED_BY_ALL;NEEDED_BY_NONE;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=""
 			/>
@@ -301,7 +301,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;NEEDED_BY_ALL;NEEDED_BY_NONE"
+				PreprocessorDefinitions="NDEBUG;NEEDED_BY_ALL;NEEDED_BY_NONE;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=""
 			/>
