@@ -231,7 +231,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="poo"
+				PreprocessorDefinitions="poo;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories="Bigbam,bam"
 			/>
@@ -312,7 +312,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;pan;pan"
+				PreprocessorDefinitions="NDEBUG;pan;pan;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories="Bigbam,bam"
 			/>
