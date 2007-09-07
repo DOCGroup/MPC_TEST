@@ -1,0 +1,15 @@
+project {
+  Define_Custom(Script1) {
+    automatic = 1
+    command = echo <%quote%>int main(){}<%quote%>
+    output_option = <%gt%>
+    inputext = .mco
+    commandflags = -a
+    keyword script1_flags = commandflags
+    source_outputext = .cpp
+  }
+
+  specific {
+    Release::script1_flags += -O
+  }
+}
