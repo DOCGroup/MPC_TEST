@@ -1,3 +1,14 @@
+Fri Sep  7 19:00:12 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/multi_custom_mapping/*
+        * tests/multi_custom_mapping/custom1.mpb:
+        * tests/multi_custom_mapping/custom2.mpb:
+        * tests/multi_custom_mapping/foo.mco:
+        * tests/multi_custom_mapping/mpc_test.mpc:
+
+          Added a new test to exercise my change from Fri Sep  7 13:41:43
+          2007.
+
 Fri Aug 24 11:27:56 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc8/*.vcproj:

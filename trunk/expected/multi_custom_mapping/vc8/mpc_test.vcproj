@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="mpc_test"
+	ProjectGUID="{6302769E-FECA-1BAD-2240-8C6B480E059D}"
+	RootNamespace="mpc_test"
+	Keyword="Win32Proj"
+	SignManifests="true"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+		<Platform
+			Name="x64"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="."
+			IntermediateDirectory="Debug\mpc_test\I386"
+			ConfigurationType="10"
+			CharacterSet="0"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release\mpc_test\I386"
+			ConfigurationType="10"
+			CharacterSet="0"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|x64"
+			OutputDirectory="."
+			IntermediateDirectory="Debug\mpc_test\AMD64"
+			ConfigurationType="10"
+			CharacterSet="0"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|x64"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release\mpc_test\AMD64"
+			ConfigurationType="10"
+			CharacterSet="0"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Script1 Files"
+			Filter="mco">
+			<File
+				RelativePath="foo.mco">
+				<FileConfiguration
+					Name="Debug|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking echo &quot;int main(){}&quot; on foo.mco"
+						CommandLine="echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;"
+						Outputs="foo.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking echo &quot;int main(){}&quot; on foo.mco"
+						CommandLine="echo &quot;int main(){}&quot; -a -O &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;"
+						Outputs="foo.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking echo &quot;int main(){}&quot; on foo.mco"
+						CommandLine="echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;"
+						Outputs="foo.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking echo &quot;int main(){}&quot; on foo.mco"
+						CommandLine="echo &quot;int main(){}&quot; -a -O &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;"
+						Outputs="foo.cpp"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Script2 Files"
+			Filter="mco">
+			<File
+				RelativePath="foo.mco">
+				<FileConfiguration
+					Name="Debug|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking echo &quot;int main(){}&quot; on foo.mco"
+						CommandLine="echo &quot;int main(){}&quot; -b &quot;foo.mco&quot; &gt; &quot;foo_script2.cpp&quot;"
+						Outputs="foo_script2.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking echo &quot;int main(){}&quot; on foo.mco"
+						CommandLine="echo &quot;int main(){}&quot; -b &quot;foo.mco&quot; &gt; &quot;foo_script2.cpp&quot;"
+						Outputs="foo_script2.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking echo &quot;int main(){}&quot; on foo.mco"
+						CommandLine="echo &quot;int main(){}&quot; -b &quot;foo.mco&quot; &gt; &quot;foo_script2.cpp&quot;"
+						Outputs="foo_script2.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+				>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Invoking echo &quot;int main(){}&quot; on foo.mco"
+						CommandLine="echo &quot;int main(){}&quot; -b &quot;foo.mco&quot; &gt; &quot;foo_script2.cpp&quot;"
+						Outputs="foo_script2.cpp"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
