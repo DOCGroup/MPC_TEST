@@ -71,8 +71,21 @@
             <Include>
                         <File
                                 RelPath = "floop.cs"
+                                SubType = "Form"
+                                BuildAction = "Compile"
+                        />
+                        <File
+                                RelPath = "floop.Designer.cs"
                                 SubType = "Code"
                                 BuildAction = "Compile"
+                        />
+                        <File
+                                RelPath = "floop.dag.resx"
+                                BuildAction = "EmbeddedResource"
+                        />
+                        <File
+                                RelPath = "floop.resx"
+                                BuildAction = "EmbeddedResource"
                         />
             </Include>
         </Files>
