@@ -1,3 +1,15 @@
+Thu Oct 11 14:28:42 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/mixed_languages/vc7/csharp/csharp.csproj:
+        * expected/mixed_languages/vc71/csharp/csharp.csproj:
+        * expected/mixed_languages/vc8/csharp/csharp.csproj:
+        * tests/mixed_languages/csharp/csharp.mpc:
+        * tests/mixed_languages/csharp/floop.Designer.cs:
+        * tests/mixed_languages/csharp/floop.dag.resx:
+        * tests/mixed_languages/csharp/floop.resx:
+
+          Modified this test to include a 'Form' subtype.
+
 Fri Sep  7 19:00:12 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/multi_custom_mapping/*
