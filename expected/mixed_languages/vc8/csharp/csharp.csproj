@@ -80,11 +80,13 @@
     <Compile Include="floop.Designer.cs">
       <DependentUpon>floop.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="floop.resx">
+    <EmbeddedResource Include="floop.dag.resx">
       <SubType>Designer</SubType>
       <DependentUpon>floop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="floop.dag.resx">
+    <EmbeddedResource Include="floop.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>floop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
