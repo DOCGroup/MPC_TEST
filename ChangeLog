@@ -1,3 +1,9 @@
+Fri Oct 12 12:00:46 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/mixed_languages/vc8/csharp/csharp.csproj:
+
+          Updated to reflect my change from Thu Oct 11 17:42:54 UTC 2007.
+
 Thu Oct 11 15:46:38 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/mixed_languages/vc8/csharp/csharp.csproj:
