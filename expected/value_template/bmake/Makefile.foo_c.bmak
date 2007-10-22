@@ -13,7 +13,7 @@ EXEMODIFIER  =
 POSTLINKRM   = .tds
 !else
 !ifdef RELEASE
-OCFLAGS      = -O2 -DNDEBUG -Dpan -Dpan
+OCFLAGS      = -O2 -DNDEBUG -Dpan
 CFG_DIR      = Release\\
 LIBMODIFIER  = 
 EXEMODIFIER  = 

@@ -135,7 +135,7 @@
 				AdditionalOptions="-g"
 				Optimization="2"
 				AdditionalIncludeDirectories="Bigbam,bam"
-				PreprocessorDefinitions="NDEBUG;pan;pan;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_M_IX86"
+				PreprocessorDefinitions="NDEBUG;pan;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_M_IX86"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -146,7 +146,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;pan;pan"
+				PreprocessorDefinitions="NDEBUG;pan"
 				Culture="1033"
 				AdditionalIncludeDirectories="Bigbam,bam"
 			/>
@@ -301,7 +301,7 @@
 				AdditionalOptions="-g"
 				Optimization="2"
 				AdditionalIncludeDirectories="Bigbam,bam"
-				PreprocessorDefinitions="NDEBUG;pan;pan;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
+				PreprocessorDefinitions="NDEBUG;pan;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -312,7 +312,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;pan;pan;_WIN64"
+				PreprocessorDefinitions="NDEBUG;pan;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories="Bigbam,bam"
 			/>

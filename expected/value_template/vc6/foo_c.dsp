@@ -56,11 +56,11 @@ LINK32=link.exe
 # PROP Intermediate_Dir "Release\foo_c"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD CPP /nologo /O2 -g /I "Bigbam" /I "bam" /D NDEBUG /D pan /D pan /D WIN32 /D _WINDOWS /FD /c
+# ADD CPP /nologo /O2 -g /I "Bigbam" /I "bam" /D NDEBUG /D pan /D WIN32 /D _WINDOWS /FD /c
 # SUBTRACT CPP /YX
 
-# ADD MTL /D "NDEBUG" /D "pan" /D "pan" /nologo /mktyplib203 /win32
-# ADD RSC /l 0x409 /d NDEBUG /d pan /d pan /i "Bigbam" /i "bam"
+# ADD MTL /D "NDEBUG" /D "pan" /nologo /mktyplib203 /win32
+# ADD RSC /l 0x409 /d NDEBUG /d pan /i "Bigbam" /i "bam"
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\foo_c.bsc"
 LINK32=link.exe
