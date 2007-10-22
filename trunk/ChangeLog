@@ -1,3 +1,15 @@
+Mon Oct 22 12:18:57 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/value_template/bmake/Makefile.foo_c.bmak:
+        * expected/value_template/em3/foo_c.vcp:
+        * expected/value_template/nmake/Makefile.foo_c.mak:
+        * expected/value_template/vc6/foo_c.dsp:
+        * expected/value_template/vc7/foo_c.vcproj:
+        * expected/value_template/vc71/foo_c.vcproj:
+        * expected/value_template/vc8/foo_c.vcproj:
+
+          Updated to reflect my change from Mon Oct 22 12:11:13 UTC 2007.
+
 Fri Oct 12 12:00:46 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/mixed_languages/vc8/csharp/csharp.csproj:

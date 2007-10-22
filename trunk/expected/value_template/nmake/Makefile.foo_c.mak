@@ -101,7 +101,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"Bigbam" -I"bam" -DNDEBUG -Dpan -Dpan -DWIN32 -D_WINDOWS -f "Makefile.foo_c.dep" "foo.cpp"
+	$(DEPGEN) -I"Bigbam" -I"bam" -DNDEBUG -Dpan -DWIN32 -D_WINDOWS -f "Makefile.foo_c.dep" "foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -116,7 +116,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 -g /I "Bigbam" /I "bam" /D NDEBUG /D pan /D pan /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 -g /I "Bigbam" /I "bam" /D NDEBUG /D pan /D WIN32 /D _WINDOWS /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
