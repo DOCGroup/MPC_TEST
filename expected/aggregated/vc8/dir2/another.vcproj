@@ -50,7 +50,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_M_IX86;NEEDED_BY_ALL;NEEDED_BY_NONE"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;NEEDED_BY_ALL;NEEDED_BY_NONE"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -130,7 +130,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_M_IX86;NEEDED_BY_ALL;NEEDED_BY_NONE"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;NEEDED_BY_ALL;NEEDED_BY_NONE"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"

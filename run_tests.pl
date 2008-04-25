@@ -42,6 +42,7 @@ my($nobuild)   = undef;
 my($test_scr)  = 'run_test.pl';
 my($diff)      = which('diff');
 my($patch)     = which('patch');
+my($gmake)     = which('gmake') || which('make');
 my($passed)    = 'succeeded';
 my($failed)    = '****failed****';
 my($quiet)     = undef;
@@ -433,7 +434,7 @@ sub buildit {
   }
   elsif ($type eq 'gnuace') {
     printBuildMessage($type);
-    $status = checkBuildStatus('gmake' . (defined $entry ? " -f $entry" : ''));
+    $status = checkBuildStatus($gmake . (defined $entry ? " -f $entry" : ''));
   }
 
   ## If $one_built has changed then we built the test.
