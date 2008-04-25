@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PERL5_INCLUDE=/usr/lib64/perl5/5.8.6/x86_64-linux-thread-multi/CORE
+PERL5_INCLUDE=/usr/lib/perl/5.8.8/CORE
 export PERL5_INCLUDE
 
 if [ -z "$ACE_ROOT" ]; then
@@ -12,12 +12,12 @@ if [ -z "$MPC_ROOT" ]; then
   MPC_ROOT=/home/elliottc/current/MPC; export MPC_ROOT
 fi
 
+if [ -z "$QTDIR" ]; then
+  QTDIR=/usr; export QTDIR
+fi
+
 cd $MPC_ROOT
 svn update | grep -v '^[\?GA]' | grep -v 'Update to' | grep -v 'At revision'
-
-if [ -z "$QTDIR" ]; then
-  QTDIR=/usr/lib64/qt-3.3; export QTDIR
-fi
 
 cd test
 ./run_tests.pl --quiet --output pick_me_up_Linux

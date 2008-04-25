@@ -1,3 +1,28 @@
+Fri Apr 25 13:55:58 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/vc8/*/*.vcproj:
+
+          Updated to reflect Johnny's change from Wed Apr 23 14:31:32 UTC
+          2008.
+
+        * expected/*/gnuace/*/GNUmakefile.*:
+
+          Updated to reflect Adam's change from Wed Apr  2 18:06:57 UTC
+          2008.
+
+        * run_tests.pl:
+
+          Use which() to find 'gmake' or 'make' instead of using hard-coded
+          gmake.
+
+        * utils/nightly.sh:
+
+          Update paths to reflect the current state of my machine.
+
+        * utils/nightly_vc71_bmake.bat:
+
+          Added a QTDIR environment variable setting.
+
 Mon Oct 22 12:18:57 UTC 2007  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/value_template/bmake/Makefile.foo_c.bmak:
