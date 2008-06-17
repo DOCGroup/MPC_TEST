@@ -1,3 +1,10 @@
+Tue Jun 17 11:56:04 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/make/*/Makefile.*:
+
+          Updated to reflect Adam's change from Tue Jun 10 14:45:18 UTC
+          2008.
+
 Tue Jun 17 11:23:26 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/features_custom_only/make/source/Makefile.fco:

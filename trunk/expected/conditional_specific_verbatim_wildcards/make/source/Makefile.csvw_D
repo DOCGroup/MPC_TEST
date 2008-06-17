@@ -78,6 +78,6 @@ $(DEPENDENCIES):
 	@touch $(DEPENDENCIES)
 
 depend:
-	-$(MPC_ROOT)/depgen.pl $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
 include $(DEPENDENCIES)
