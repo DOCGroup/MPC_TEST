@@ -57,6 +57,7 @@ GENERATED_DIRTY = bus.cpp bus.tab.c bus.tab.h
 bus.cpp: bus.l
 	flex -t bus.l > "$@"
 
+.NOTPARALLEL:
 bus.tab.c bus.tab.h: bus.y
 	bison -d bus.y
 

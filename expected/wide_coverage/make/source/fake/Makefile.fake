@@ -54,6 +54,7 @@ $(LIB): $(OBJS)
 
 GENERATED_DIRTY = ./other.cpp ./other.h
 
+.NOTPARALLEL:
 ./other.cpp ./other.h: ../../other/other.r ../../bin/cppgen.pl
 	@$(TESTDIRSTART) "." $(TESTDIREND) $(MKDIR) "."
 	perl ../../bin/cppgen.pl  ../../other/other.r -o "$@"

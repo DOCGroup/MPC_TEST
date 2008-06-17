@@ -45,6 +45,7 @@ $(BIN): $(OBJS)
 
 GENERATED_DIRTY = clown.cpp clown.h
 
+.NOTPARALLEL:
 clown.cpp clown.h: clown.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  clown.r -o "$@"
 

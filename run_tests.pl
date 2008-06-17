@@ -847,7 +847,7 @@ sub determine_setup {
         if (defined $typestr) {
           foreach my $type (split(/\s*\|\s*/, $typestr)) {
             $type =~ s/\s//g;
-            if ($type ne 'borland') {
+            if ($type ne 'borland' && $type ne 'wb26') {
               push(@types, $type);
             }
           }
