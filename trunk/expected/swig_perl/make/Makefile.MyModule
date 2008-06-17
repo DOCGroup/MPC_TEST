@@ -53,6 +53,7 @@ $(LIB): $(OBJS)
 
 GENERATED_DIRTY = MyModule.pm MyModule_wrap.cxx
 
+.NOTPARALLEL:
 MyModule.pm MyModule_wrap.cxx: MyModule.i
 	swig -perl -c++ MyModule.i
 

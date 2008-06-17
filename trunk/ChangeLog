@@ -1,3 +1,25 @@
+Tue Jun 17 11:23:26 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/features_custom_only/make/source/Makefile.fco:
+        * expected/features_custom_only/make/source/Makefile.other:
+        * expected/flex_bison/make/Makefile.flex_bison:
+        * expected/grouping/make/source/Makefile.grouping_A:
+        * expected/grouping/make/source/Makefile.grouping_B:
+        * expected/grouping/make/source/Makefile.grouping_C:
+        * expected/grouping/make/source/Makefile.grouping_D:
+        * expected/grouping/make/source/Makefile.grouping_E:
+        * expected/grouping/make/source/Makefile.grouping_F:
+        * expected/grouping/make/source/Makefile.grouping_G:
+        * expected/swig_perl/make/Makefile.MyModule:
+        * expected/wide_coverage/make/source/Makefile.source_lib:
+        * expected/wide_coverage/make/source/fake/Makefile.fake:
+
+          Updated to reflect my change from Wed Apr 30 18:59:45 UTC 2008.
+
+        * run_tests.pl:
+
+          Exclude the wb26 project type for now.
+
 Fri Apr 25 13:55:58 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc8/*/*.vcproj:

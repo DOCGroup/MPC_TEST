@@ -38,9 +38,11 @@ EXPORTFLAGS   = $(STATICFLAGS)
 
 GENERATED_DIRTY = zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thatC.h zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h
 
+.NOTPARALLEL:
 zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thatC.h: that.zar
 	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA -Sc that.zar
 
+.NOTPARALLEL:
 zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h: this.zar
 	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA this.zar
 
