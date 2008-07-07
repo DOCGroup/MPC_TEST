@@ -1,3 +1,9 @@
+Mon Jul  7 12:38:30 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/html/*.html:
+
+          Updated to reflect my change from Thu Jul  3 16:36:30.
+
 Tue Jun 17 11:56:04 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/make/*/Makefile.*:
