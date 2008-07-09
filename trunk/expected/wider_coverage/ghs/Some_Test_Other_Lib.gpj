@@ -1,0 +1,13 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Library]
+	-o ./libother_lib.a
+	-bsp cf8000
+	-Ospeed
+	-OI
+	--exceptions
+	-L.
+other_lib.cpp
+additional_options.txt		[Documentation]
+build_entry.txt		[Documentation]
+environment.txt		[Documentation]

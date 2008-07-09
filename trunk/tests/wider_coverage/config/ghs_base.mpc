@@ -1,0 +1,5 @@
+project(ghs_base) {
+  specific(ghs) {
+    bsp = cf8000
+  }
+}

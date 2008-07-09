@@ -1,0 +1,3 @@
+feature(should_not_be_set_to_zero): simple_lib, other_lib {
+  after += Some_Test_Simple_Lib Some_Test_Other_Lib
+}

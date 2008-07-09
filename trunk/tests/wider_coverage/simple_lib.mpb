@@ -1,0 +1,4 @@
+project {
+  libs += simple_lib
+  after += Some_Test_Simple_Lib
+}

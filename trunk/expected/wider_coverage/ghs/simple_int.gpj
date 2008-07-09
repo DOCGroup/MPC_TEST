@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+simple.gpj		[Program]
+simple_int.int
