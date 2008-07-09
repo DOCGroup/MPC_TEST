@@ -1,0 +1,4 @@
+digraph wider_coverage {
+  simple -> Some_Test_Other_Lib;
+  simple -> Some_Test_Simple_Lib;
+}

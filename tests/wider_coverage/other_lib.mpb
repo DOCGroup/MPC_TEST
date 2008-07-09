@@ -1,0 +1,4 @@
+project {
+  libs += other_lib
+  after += Some_Test_Other_Lib
+}

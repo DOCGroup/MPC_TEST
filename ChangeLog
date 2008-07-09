@@ -1,3 +1,42 @@
+Wed Jul  9 18:23:30 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * README:
+
+          Added a comment about needing the full path for the
+          add_expected_directories.sh script.
+
+        * run_tests.pl:
+
+          Added a perl coverage option.
+
+        * expected/wider_coverage:
+        * tests/wider_coverage:
+        * tests/wider_coverage/additional_options.txt:
+        * tests/wider_coverage/build_entry.txt:
+        * tests/wider_coverage/config:
+        * tests/wider_coverage/config/custom_global.mpb:
+        * tests/wider_coverage/config/ghs_base.mpc:
+        * tests/wider_coverage/config/some_feature.mpb:
+        * tests/wider_coverage/environment.txt:
+        * tests/wider_coverage/foolish.rc:
+        * tests/wider_coverage/houses:
+        * tests/wider_coverage/houses/of:
+        * tests/wider_coverage/houses/of/the:
+        * tests/wider_coverage/houses/of/the/holy:
+        * tests/wider_coverage/houses/of/the/holy/test.h:
+        * tests/wider_coverage/houses/simple.cpp:
+        * tests/wider_coverage/other_lib.mpb:
+        * tests/wider_coverage/other_lib.cpp:
+        * tests/wider_coverage/other_lib.mpc:
+        * tests/wider_coverage/simple.mpc:
+        * tests/wider_coverage/simple.rc:
+        * tests/wider_coverage/simple_lib.mpb:
+        * tests/wider_coverage/simple_lib.cpp:
+        * tests/wider_coverage/simple_lib.mpc:
+        * tests/wider_coverage/wider_coverage.mwc:
+
+          Added a test to get additional coverage.
+
 Mon Jul  7 12:38:30 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/html/*.html:

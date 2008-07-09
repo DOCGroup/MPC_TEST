@@ -46,6 +46,7 @@ my($gmake)     = which('gmake') || which('make');
 my($passed)    = 'succeeded';
 my($failed)    = '****failed****';
 my($quiet)     = undef;
+my($coverage)  = undef;
 
 # ******************************************************************
 # Subroutine Section
@@ -146,9 +147,11 @@ sub compare {
             last;
           }
           elsif ($lines[$i] ne $line) {
-            diff_files($left, $right, $i, $lines[$i], $line) if ($show);
-            $different = 1;
-            last;
+            if ($lines[$i] !~ /ACE_HAS_MFC=1/) {
+              diff_files($left, $right, $i, $lines[$i], $line) if ($show);
+              $different = 1;
+              last;
+            }
           }
         }
         ++$i;
@@ -759,7 +762,9 @@ sub run_test {
     }
     close($fh);
   }
-  my($ret) = system("$^X $MWC -include $cfg -type $type $add $mwc");
+  my($ret) = system("$^X " .
+                    ($coverage ? "-MDevel::Cover=-db,$orig/cover_db " : '') .
+                    "$MWC -include $cfg -type $type $add $mwc");
   chdir($orig);
 
   ## A signal killed mwc.pl
@@ -829,7 +834,9 @@ sub determine_setup {
   }
   if (defined $MWC) {
     my($fh) = new FileHandle();
-    if (open($fh, "$^X $MWC -h 2>&1 |")) {
+    if (open($fh, "$^X " .
+                  ($coverage ? "-MDevel::Cover=-db,cover_db " : '') .
+                  "$MWC -help 2>&1 |")) {
       my($look_for_end) = 0;
       while(<$fh>) {
         my($typestr) = undef;
@@ -867,6 +874,7 @@ my(@tonly)   = ();
 my($output)  = undef;
 my(%options) = ('expected'  => \$cr_expect,
                 'break'     => \$br_error,
+                'coverage'  => \$coverage,
                 'nobuild'   => \$nobuild,
                 'nodiff'    => \$nodiff,
                 'output=s'  => \$output,
@@ -878,6 +886,7 @@ my(%options) = ('expected'  => \$cr_expect,
 my(%desc)    = ('expected' => 'Create expected results for all of the ' .
                               'tests',
                 'break'    => 'Break on the first test failure',
+                'coverage' => 'Enable coverage statistics collection',
                 'diffcmd'  => 'Provide the full path to an alternate ' .
                               'diff command',
                 'nobuild'  => 'Do not build any of the tests',

@@ -45,4 +45,5 @@ Adding a new test
 
 3) Add the test and expected results to Subversion by changing to the
    expected directory and running the add_expected_directories.sh script
-   found in the utils directory.
+   found in the utils directory.  You must provide the full path to the
+   script.
