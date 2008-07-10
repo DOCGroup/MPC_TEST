@@ -1,3 +1,13 @@
+Thu Jul 10 14:31:04 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/mixed_languages/make/Makefile:
+        * expected/mixed_languages/make/csharp:
+        * expected/mixed_languages/make/csharp/Makefile:
+        * expected/mixed_languages/make/csharp/Makefile.csharp:
+        * tests/mixed_languages/csharp/csharp.mpc:
+
+          Updated to reflect my change from Thu Jul 10 14:29:44 UTC 2008.
+
 Thu Jul 10 12:16:37 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/command_helper:
