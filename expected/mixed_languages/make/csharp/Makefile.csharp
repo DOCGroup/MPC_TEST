@@ -1,0 +1,37 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+
+TARGETDIR       = ./
+TARGET          = $(TARGETDIR)foofooc.dll
+LDFLAGS         = -lib:.
+CFLAGS          =
+TESTDIRSTART    = test -d
+TESTDIREND      = ||
+RM              = rm -rf
+MKDIR           = mkdir -p
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(GENERATED_DIRTY) $(TARGET)
+
+$(TARGET): floop.Designer.cs floop.cs
+	@$(TESTDIRSTART) "$(TARGETDIR)" $(TESTDIREND) $(MKDIR) "$(TARGETDIR)"
+	mcs -target:library -out:$(TARGET) $(CFLAGS) $(LDFLAGS) floop.Designer.cs floop.cs
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+clean:
+	-$(RM) $(TARGET)
+
+realclean: clean
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+depend:
+	@-:
