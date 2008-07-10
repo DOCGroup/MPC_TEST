@@ -345,6 +345,14 @@
 		</Configuration>
 	</Configurations>
 	<References>
+		<ProjectReference
+			ReferencedProjectIdentifier="{7904709F-FECA-1BAD-4657-8A65C1753E10}"
+			RelativePathToProject="../base/base.vcproj"
+		/>
+		<ProjectReference
+			ReferencedProjectIdentifier="{28407A9F-FECA-1BAD-E652-8C66753DA3CB}"
+			RelativePathToProject="../csharp/csharp.csproj"
+		/>
 	</References>
 	<Files>
 		<Filter

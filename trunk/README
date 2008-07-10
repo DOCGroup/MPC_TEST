@@ -13,29 +13,31 @@ Adding a new test
 -----------------
 
 1) Create a directory under the 'tests' directory containing the test.
-   a) Any additional options that need to be passed to MPC should be placed
+   a) Any additional options that need to be passed to Perl should be placed
+      in a file named perl_options.txt in the root directory of the test.
+   b) Any additional options that need to be passed to MPC should be placed
       in a file named additional_options.txt in the root directory of the
       test.
-   b) If environment variables need to be set, create an environment.txt
+   c) If environment variables need to be set, create an environment.txt
       file in the root directory of the test.  Each line should be of the
       form NAME = VALUE.  These will be set before running the test.
-   c) A 'config' directory is automatically added via the -include option when
+   d) A 'config' directory is automatically added via the -include option when
       MPC is run.
-   d) The library path (for whatever platform you are testing on) is set to
+   e) The library path (for whatever platform you are testing on) is set to
       contain the full path up to the name of your test with a /lib
       appended if it is necessary for the particular project type.
-   e) If a workspace (.mwc file) of the same name as your test directory
+   f) If a workspace (.mwc file) of the same name as your test directory
       exists in the test directory, it will be passed to MPC.
-   f) If the test has non-default build file names (due to options passed to
+   g) If the test has non-default build file names (due to options passed to
       MPC) or the test should not be built, it should be specified by
       placing a file named build_entry.txt in the root directory of the
       test.  The file has the format of <mpc type>: [build file name].  If
       [build file name] is empty, the test will not be built for the
       specified mpc type.
-   g) If any files in the test need modification after MPC genertation there
+   h) If any files in the test need modification after MPC genertation there
       should be one or more files ending in .patch containing patch
       information.  The patch utility is run with the -p0 option.
-   h) If the test needs to run anything, a run_test.pl should be
+   i) If the test needs to run anything, a run_test.pl should be
       placed in the root of the test directory.  This perl script should
       return zero when successful and non-zero when not.  A run_test.pl
       script is optional.
