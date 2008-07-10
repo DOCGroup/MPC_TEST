@@ -1,0 +1,11 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o ./this test
+	-Ospeed
+	-OI
+	--exceptions
+	-L.
+simple.java
+additional_options.txt		[Documentation]
+build_entry.txt		[Documentation]

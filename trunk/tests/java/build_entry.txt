@@ -1,0 +1,11 @@
+automake:
+bmake:
+make: Makefile_java
+gnuace:
+nmake:
+em3:
+vc6:
+vc7: java_java.sln
+vc71: java_java.sln
+vc8: java_java.sln
+vc9: java_java.sln

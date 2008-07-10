@@ -1,0 +1,25 @@
+project: idl2jni {
+  sharedname    = weird$$name
+  idl2jniflags += -DUSE_LOCAL
+  version       = 1.66530.5b
+
+  Modify_Custom(Idl2Jni) {
+    libpath -= $(ACE_ROOT)/lib
+    commandflags += -DIDL2JNI_VERSION=1.0
+  }
+
+  Idl2Jni_Files {
+    postcommand += echo Input: <%noextension(input)%>
+    simple.idl
+    other.idl << simpleJC.h >> SomeSortOfTypedefHelper.java
+  }
+
+  Source_Files {
+    ^simpleJS.cpp
+  }
+
+  specific {
+    jarname = simple
+  }
+  postclean += <%rm%> simple
+}
