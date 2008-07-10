@@ -1,0 +1,128 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o ./libweird$name.so
+	-Ospeed
+	-OI
+	--exceptions
+	--pch
+	-DUSING_PCH
+	-I$(IDL2JNI_ROOT)\runtime
+	-I$(JAVA_HOME)\include
+	-I$(JAVA_HOME)\include\$(JAVA_PLATFORM)
+	-L.
+	-L$(IDL2JNI_ROOT)\lib
+	-lidl2jni_runtime
+SomeSortOfTypedefHelper.java		[Text]
+	:dependsRelative=SomeSortOfTypedefHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar SomeSortOfTypedefHelper.java'
+	:preexecShell='cd . && mkdir classes\\. 2> nul ; copy /y SomeSortOfTypedefHelper.class classes\\. > nul'
+	:extraOutputFile=SomeSortOfTypedefHelper.class
+other.idl		[Text]
+otherJC.cpp
+	:dependsRelative=$(IDL2JNI_ROOT)\\bin\\idl2jni
+	:dependsRelative=other.idl
+	:dependsRelative=simpleJC.h
+	:preexecShell='cd . && $(IDL2JNI_ROOT)\\bin\\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 other.idl'
+	:preexecShell='cd . && echo Input: other'
+	:extraOutputFile=SomeSortOfTypedefHelper.java
+	:extraOutputFile=SomeSortOfTypedefHelper.java
+	:extraOutputFile=otherJC.cpp
+	:extraOutputFile=otherJC.h
+	:extraOutputFile=otherJS.cpp
+	:extraOutputFile=otherJS.h
+simple.idl		[Text]
+simpleJC.cpp
+	:dependsRelative=$(IDL2JNI_ROOT)\\bin\\idl2jni
+	:dependsRelative=simple.idl
+	:preexecShell='cd . && $(IDL2JNI_ROOT)\\bin\\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 simple.idl'
+	:preexecShell='cd . && echo Input: simple'
+	:extraOutputFile=simpleJC.cpp
+	:extraOutputFile=simpleJC.h
+	:extraOutputFile=simpleJS.h
+	:extraOutputFile=simple\\ArrayBounds.java
+	:extraOutputFile=simple\\EnumArrayHelper.java
+	:extraOutputFile=simple\\EnumArrayHolder.java
+	:extraOutputFile=simple\\EnumSeqHelper.java
+	:extraOutputFile=simple\\EnumSeqHolder.java
+	:extraOutputFile=simple\\Local2.java
+	:extraOutputFile=simple\\Local2Helper.java
+	:extraOutputFile=simple\\Local2Holder.java
+	:extraOutputFile=simple\\Local2Operations.java
+	:extraOutputFile=simple\\Local2SeqHelper.java
+	:extraOutputFile=simple\\Local2SeqHolder.java
+	:extraOutputFile=simple\\Local3.java
+	:extraOutputFile=simple\\Local3Helper.java
+	:extraOutputFile=simple\\Local3Holder.java
+	:extraOutputFile=simple\\Local3Operations.java
+	:extraOutputFile=simple\\LongSeqSeqHelper.java
+	:extraOutputFile=simple\\LongSeqSeqHolder.java
+	:extraOutputFile=simple\\LongSeqSeqSeqHelper.java
+	:extraOutputFile=simple\\LongSeqSeqSeqHolder.java
+	:extraOutputFile=simple\\SeqOfTypedefedLongHelper.java
+	:extraOutputFile=simple\\SeqOfTypedefedLongHolder.java
+	:extraOutputFile=simple\\StringSeqHelper.java
+	:extraOutputFile=simple\\StringSeqHolder.java
+	:extraOutputFile=simple\\StringSeqSeqHelper.java
+	:extraOutputFile=simple\\StringSeqSeqHolder.java
+	:extraOutputFile=simple\\StringSeqSeqSeqHelper.java
+	:extraOutputFile=simple\\StringSeqSeqSeqHolder.java
+	:extraOutputFile=simple\\StructWithObjref.java
+	:extraOutputFile=simple\\StructWithObjrefHelper.java
+	:extraOutputFile=simple\\StructWithObjrefHolder.java
+	:extraOutputFile=simple\\TIMESTAMP_INVALID_NSEC.java
+	:extraOutputFile=simple\\TestArrayTypedef2Helper.java
+	:extraOutputFile=simple\\TestArrayTypedefHelper.java
+	:extraOutputFile=simple\\TestArrayTypedefHolder.java
+	:extraOutputFile=simple\\TestConstBool.java
+	:extraOutputFile=simple\\TestConstDouble.java
+	:extraOutputFile=simple\\TestConstFloat.java
+	:extraOutputFile=simple\\TestConstLong.java
+	:extraOutputFile=simple\\TestConstString.java
+	:extraOutputFile=simple\\TestConstTypedef.java
+	:extraOutputFile=simple\\TestEnum.java
+	:extraOutputFile=simple\\TestEnumHelper.java
+	:extraOutputFile=simple\\TestEnumHolder.java
+	:extraOutputFile=simple\\TestInterf.java
+	:extraOutputFile=simple\\TestInterf2.java
+	:extraOutputFile=simple\\TestInterf2Helper.java
+	:extraOutputFile=simple\\TestInterf2Holder.java
+	:extraOutputFile=simple\\TestInterf2Operations.java
+	:extraOutputFile=simple\\TestInterf3.java
+	:extraOutputFile=simple\\TestInterf3Helper.java
+	:extraOutputFile=simple\\TestInterf3Holder.java
+	:extraOutputFile=simple\\TestInterf3Operations.java
+	:extraOutputFile=simple\\TestInterfHelper.java
+	:extraOutputFile=simple\\TestInterfHolder.java
+	:extraOutputFile=simple\\TestInterfOperations.java
+	:extraOutputFile=simple\\TestLI.java
+	:extraOutputFile=simple\\TestLIHelper.java
+	:extraOutputFile=simple\\TestLIHolder.java
+	:extraOutputFile=simple\\TestLIOperations.java
+	:extraOutputFile=simple\\TestNestedStruct.java
+	:extraOutputFile=simple\\TestNestedStructHelper.java
+	:extraOutputFile=simple\\TestNestedStructHolder.java
+	:extraOutputFile=simple\\TestSeqTypedefHelper.java
+	:extraOutputFile=simple\\TestSeqTypedefHolder.java
+	:extraOutputFile=simple\\TestStringArrayHelper.java
+	:extraOutputFile=simple\\TestStringArrayHolder.java
+	:extraOutputFile=simple\\TestStruct.java
+	:extraOutputFile=simple\\TestStructArrayHelper.java
+	:extraOutputFile=simple\\TestStructArrayHolder.java
+	:extraOutputFile=simple\\TestStructHelper.java
+	:extraOutputFile=simple\\TestStructHolder.java
+	:extraOutputFile=simple\\TestStructSequenceHelper.java
+	:extraOutputFile=simple\\TestStructSequenceHolder.java
+	:extraOutputFile=simple\\TestStructWithEnum.java
+	:extraOutputFile=simple\\TestStructWithEnumHelper.java
+	:extraOutputFile=simple\\TestStructWithEnumHolder.java
+	:extraOutputFile=simple\\TestTypedefHelper.java
+	:extraOutputFile=simple\\_Local2LocalBase.java
+	:extraOutputFile=simple\\_Local3LocalBase.java
+	:extraOutputFile=simple\\_TestInterf2Stub.java
+	:extraOutputFile=simple\\_TestInterf3Stub.java
+	:extraOutputFile=simple\\_TestInterfStub.java
+	:extraOutputFile=simple\\_TestLILocalBase.java
+otherJC.cpp
+otherJS.cpp
+simpleJC.cpp

@@ -1,3 +1,36 @@
+Thu Jul 10 12:16:37 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/command_helper:
+        * tests/command_helper:
+        * tests/command_helper/additional_options.txt:
+        * tests/command_helper/build_entry.txt:
+        * tests/command_helper/config:
+        * tests/command_helper/config/idl2jni.mpb:
+        * tests/command_helper/config/java.mpb:
+        * tests/command_helper/modules:
+        * tests/command_helper/modules/IDL2JNIHelper.pm:
+        * tests/command_helper/other.idl:
+        * tests/command_helper/perl_options.txt:
+        * tests/command_helper/simple.idl:
+        * tests/command_helper/simple.mpc:
+        * tests/command_helper/simple_pch.h:
+        * tests/command_helper/simple_pch.cpp:
+
+          Added a test to exercise the command helper, exclusion of
+          generated files, use of a project keyword as a template
+          variable, version numbers with letters, modify_custom, addition
+          and subtraction within a modify_custom, pseudo variable modifier,
+          explicit input and output, and ^ exclusion.
+
+        * expected/java:
+        * tests/java:
+        * tests/java/additional_options.txt:
+        * tests/java/build_entry.txt:
+        * tests/java/simple.java:
+
+          Added a test to exercise java, the name modifier, an exename with
+          a space in it, and a -value_project with a subtraction.
+
 Thu Jul 10 12:08:57 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/mixed_languages/vc8/basic/basic.vcproj:

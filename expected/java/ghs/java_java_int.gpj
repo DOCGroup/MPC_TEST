@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+java_java.gpj		[Program]
+java_java_int.int
