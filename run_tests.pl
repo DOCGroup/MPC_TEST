@@ -762,7 +762,14 @@ sub run_test {
     }
     close($fh);
   }
-  my($ret) = system("$^X " .
+  my($popt) = '';
+  $fh = new FileHandle("perl_options.txt");
+  if (defined $fh) {
+    $popt = <$fh>;
+    $popt =~ s/\s+$//;
+    close($fh);
+  }
+  my($ret) = system("$^X $popt " .
                     ($coverage ? "-MDevel::Cover=-db,$orig/cover_db " : '') .
                     "$MWC -include $cfg -type $type $add $mwc");
   chdir($orig);

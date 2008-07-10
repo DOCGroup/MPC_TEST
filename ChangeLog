@@ -1,3 +1,19 @@
+Thu Jul 10 12:08:57 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/mixed_languages/vc8/basic/basic.vcproj:
+        * tests/mixed_languages/basic/foo.mpc:
+
+          Modified for better template coverage.
+
+        * run_tests.pl:
+        * README:
+
+          Added support for passing options to perl.
+
+        * tests/wider_coverage/houses/simple.cpp:
+
+          Added a multi-line comment to increase coverage testing.
+
 Wed Jul  9 18:23:30 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * README:
