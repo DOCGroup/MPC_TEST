@@ -449,9 +449,22 @@ sub buildit {
         $cmd .= ' -a ';
         $cmd .= $base if ($base ne 'Makefile');
       }
-print "DEBUG: $cmd && ./configure\n";
       system("$cmd && ./configure");
-      $status = checkBuildStatus((defined $dir ? "cd $dir; " :'') . 'make');
+
+      ## Find the automake generated makefile
+      my $mfile;
+      if (opendir(DH, defined $dir ? $dir : '.')) {
+        foreach my $file (readdir(DH)) {
+          if ($file =~ /^(Makefile.+)\.am$/) {
+            $mfile = $1;
+            last;
+          }
+        }
+        closedir(DH);
+      }
+
+      $status = checkBuildStatus((defined $dir ? "cd $dir; " :'') . 'make' .
+                                 (defined $mfile ? " -f $mfile" : ''));
     }
   }
   elsif ($type eq 'make' && $^O eq 'linux') {
