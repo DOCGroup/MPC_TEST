@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+source/csvw_D.gpj		[Program]
+source/csvw_D_int.int

@@ -1,3 +1,19 @@
+Fri Jul 11 13:38:43 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/workspaces:
+        * tests/workspaces:
+
+          Added a test to exercise additional workspace functionality.
+
+        * expected/conditional_specific_verbatim_wildcards/ghs/source/csvw_B_int.gpj:
+        * expected/conditional_specific_verbatim_wildcards/ghs/source/csvw_B_int.int:
+        * expected/conditional_specific_verbatim_wildcards/ghs/source/csvw_C_int.gpj:
+        * expected/conditional_specific_verbatim_wildcards/ghs/source/csvw_C_int.int:
+        * expected/conditional_specific_verbatim_wildcards/ghs/source/csvw_D_int.gpj:
+        * expected/conditional_specific_verbatim_wildcards/ghs/source/csvw_D_int.int:
+
+          These should have been added as part of my previous commit.
+
 Fri Jul 11 13:23:47 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/conditional_specific_verbatim_wildcards/automake/source/Makefile.am:

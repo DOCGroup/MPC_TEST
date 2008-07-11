@@ -1,0 +1,14 @@
+workspace {
+  cmdline += -for_eclipse -value_project includes+=$(SOMETHING)
+
+  implicit = crazy
+  implicit += 1
+  implicit -= crazy
+
+  exclude {
+    "b?d"
+  }
+  exclude(ghs) {
+    not_ghs
+  }
+}

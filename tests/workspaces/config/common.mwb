@@ -1,0 +1,6 @@
+workspace {
+  scope {
+    implicit = 1
+    common
+  }
+}

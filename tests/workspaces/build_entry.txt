@@ -1,0 +1,12 @@
+automake: c/Makefile
+bmake: c/Makefile
+em3: c/c.vcw
+ghs: c/default.gpj
+html: c/c.html
+make: c/Makefile
+nmake: c/Makefile
+vc6: c/c.dsw
+vc7: c/c.sln
+vc71: c/c.sln
+vc8: c/c.sln
+vc9: c/c.sln
