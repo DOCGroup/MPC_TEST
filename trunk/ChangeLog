@@ -1,3 +1,18 @@
+Fri Jul 11 15:16:51 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/MultiWS/automake/Multiws/configure.ac.Makefiles:
+        * expected/java/automake/configure.ac.Makefiles:
+        * expected/options/automake/configure.ac.Makefiles:
+
+          Updated to reflect my change from Fri Jul 11 14:56:44 UTC 2008.
+
+        * run_tests.pl:
+
+          Attempt to locate the differently named automake generated
+          makefile and use it with the -f option to make.  Automake still
+          has some sort of issue with makefiles generated using the
+          -name_modifier option.
+
 Fri Jul 11 14:40:57 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * tests/workspaces/environment.txt:
