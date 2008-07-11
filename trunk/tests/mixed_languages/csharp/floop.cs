@@ -1,7 +1,0 @@
-class zzz
-{
-    void foo()
-    {
-    }
-};
-

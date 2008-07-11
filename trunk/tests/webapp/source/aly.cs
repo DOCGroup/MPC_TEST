@@ -2,4 +2,5 @@ class zzz
 {
   void foo() {
   }
-}
+};
+

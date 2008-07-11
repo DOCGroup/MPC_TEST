@@ -1,3 +1,26 @@
+Fri Jul 11 14:10:35 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/webapp:
+        * tests/webapp:
+
+          Added a test to exercise the webapp keyword.
+
+        * run_tests.pl:
+
+          Change the location of the addition of the 'tidy' options.
+
+        * tests/MultiWS/build_entry.txt:
+        * tests/command_helper/build_entry.txt:
+
+          Removed the blank html: entry.  There's no reason to exclude the
+          checking of the generated html.
+
+        * tests/mixed_languages/csharp/floop.Designer.cs:
+        * tests/mixed_languages/csharp/floop.cs:
+
+          Moved the code from the .cs to the .Designer.cs to allow it to
+          build correctly.
+
 Fri Jul 11 13:38:43 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/workspaces:
