@@ -1,3 +1,62 @@
+Fri Jul 11 13:23:47 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/conditional_specific_verbatim_wildcards/automake/source/Makefile.am:
+        * expected/conditional_specific_verbatim_wildcards/bmake/Makefile:
+        * expected/conditional_specific_verbatim_wildcards/bmake/source/Makefile:
+        * expected/conditional_specific_verbatim_wildcards/bmake/source/Makefile.csvw_B.bmak:
+        * expected/conditional_specific_verbatim_wildcards/bmake/source/Makefile.csvw_C.bmak:
+        * expected/conditional_specific_verbatim_wildcards/bmake/source/Makefile.csvw_D.bmak:
+        * expected/conditional_specific_verbatim_wildcards/em3/conditional_specific_verbatim_wildcards.vcw:
+        * expected/conditional_specific_verbatim_wildcards/em3/source/csvw_B.vcp:
+        * expected/conditional_specific_verbatim_wildcards/em3/source/csvw_C.vcp:
+        * expected/conditional_specific_verbatim_wildcards/em3/source/csvw_D.vcp:
+        * expected/conditional_specific_verbatim_wildcards/ghs/default.gpj:
+        * expected/conditional_specific_verbatim_wildcards/ghs/source/csvw_B.gpj:
+        * expected/conditional_specific_verbatim_wildcards/ghs/source/csvw_C.gpj:
+        * expected/conditional_specific_verbatim_wildcards/ghs/source/csvw_D.gpj:
+        * expected/conditional_specific_verbatim_wildcards/gnuace/source/GNUmakefile.csvw_B:
+        * expected/conditional_specific_verbatim_wildcards/gnuace/source/GNUmakefile.csvw_C:
+        * expected/conditional_specific_verbatim_wildcards/gnuace/source/GNUmakefile.csvw_D:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_B.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_C.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_D.html:
+        * expected/conditional_specific_verbatim_wildcards/make/Makefile:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_B:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_C:
+        * expected/conditional_specific_verbatim_wildcards/make/source/Makefile.csvw_D:
+        * expected/conditional_specific_verbatim_wildcards/nmake/Makefile:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_B.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_C.mak:
+        * expected/conditional_specific_verbatim_wildcards/nmake/source/Makefile.csvw_D.mak:
+        * expected/conditional_specific_verbatim_wildcards/sle/source/csvw_B.vpj:
+        * expected/conditional_specific_verbatim_wildcards/sle/source/csvw_C.vpj:
+        * expected/conditional_specific_verbatim_wildcards/sle/source/csvw_D.vpj:
+        * expected/conditional_specific_verbatim_wildcards/vc6/conditional_specific_verbatim_wildcards.dsw:
+        * expected/conditional_specific_verbatim_wildcards/vc6/source/csvw_B.dsp:
+        * expected/conditional_specific_verbatim_wildcards/vc6/source/csvw_C.dsp:
+        * expected/conditional_specific_verbatim_wildcards/vc6/source/csvw_D.dsp:
+        * expected/conditional_specific_verbatim_wildcards/vc7/conditional_specific_verbatim_wildcards.sln:
+        * expected/conditional_specific_verbatim_wildcards/vc7/source/csvw_B.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc7/source/csvw_C.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc7/source/csvw_D.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc71/conditional_specific_verbatim_wildcards.sln:
+        * expected/conditional_specific_verbatim_wildcards/vc71/source/csvw_B.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc71/source/csvw_C.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc71/source/csvw_D.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc8/conditional_specific_verbatim_wildcards.sln:
+        * expected/conditional_specific_verbatim_wildcards/vc8/source/csvw_B.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc8/source/csvw_C.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc8/source/csvw_D.vcproj:
+        * tests/conditional_specific_verbatim_wildcards/source/csvw.mpc:
+        * tests/conditional_specific_verbatim_wildcards/source/moop.cxx:
+
+          Modified this test to work around a parallel build bug in Visual
+          Studio 2005.  It does not keep track of intermediate build
+          directories correctly during parallel buildin of projects that
+          share source files.
+
 Fri Jul 11 12:47:36 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/command_helper/vc7/simple.vcproj:

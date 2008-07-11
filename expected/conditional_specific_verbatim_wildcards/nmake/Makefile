@@ -63,14 +63,14 @@ csvw_B:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.csvw_B.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
-csvw_C:
+csvw_C: csvw_B
 	@cd source
 	@echo Directory: source
 	@echo Project: Makefile.csvw_C.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.csvw_C.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
-csvw_D:
+csvw_D: csvw_C
 	@cd source
 	@echo Directory: source
 	@echo Project: Makefile.csvw_D.mak

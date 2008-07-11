@@ -42,11 +42,11 @@ csvw_B:
 	@echo Project: Makefile.csvw_B.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.csvw_B.mak CFG="$(CFG)" all
 
-csvw_C:
+csvw_C: csvw_B
 	@echo Project: Makefile.csvw_C.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.csvw_C.mak CFG="$(CFG)" all
 
-csvw_D:
+csvw_D: csvw_C
 	@echo Project: Makefile.csvw_D.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.csvw_D.mak CFG="$(CFG)" all
 

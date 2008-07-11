@@ -1,7 +1,7 @@
 #!gbuild
 #primaryTarget=ppc_integrity.tgt
-	[Shared Object]
-	-o source/bin/libcsvw_D.so
+	[Program]
+	-o source/ddog
 	-Ospeed
 	-OI
 	--exceptions
