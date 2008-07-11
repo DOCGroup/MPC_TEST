@@ -1,3 +1,14 @@
+Fri Jul 11 14:40:57 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * tests/workspaces/environment.txt:
+
+          Added a new-line character.
+
+        * expected/workspaces/ghs/c/not_ghs:
+        * expected/workspaces/ghs/c/not_ghs/not_ghs.gpj:
+
+          Removed these files.  They should not have ever been there.
+
 Fri Jul 11 14:10:35 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/webapp:
