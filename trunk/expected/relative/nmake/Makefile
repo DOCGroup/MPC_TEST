@@ -41,7 +41,7 @@ build_exe:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.build_exe.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
-build_lib:
+build_lib: build_exe
 	@cd build
 	@echo Directory: build
 	@echo Project: Makefile.build_lib.mak

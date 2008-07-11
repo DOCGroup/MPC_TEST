@@ -279,7 +279,12 @@ sub buildit {
         $ENV{DEBUG} = 1;
         if (defined $cmd) {
           printBuildMessage($type);
-          $cmd .= ' -f ' . $entry if (defined $entry);
+          if (defined $entry) {
+            my $dir = dirname($entry);
+            my $base = basename($entry);
+            $cmd = "cd $dir; $cmd" if ($dir ne '.');
+            $cmd .= ' -f ' . $base;
+          }
           $status = checkBuildStatus($cmd);
         }
       }
@@ -288,7 +293,12 @@ sub buildit {
       my($cmd) = which('nmake');
       if (defined $cmd) {
         printBuildMessage($type);
-        $cmd .= ' -f ' . $entry if (defined $entry);
+        if (defined $entry) {
+          my $dir = dirname($entry);
+          my $base = basename($entry);
+          $cmd = "cd $dir; $cmd" if ($dir ne '.');
+          $cmd .= ' -f ' . $base;
+        }
         $status = checkBuildStatus($cmd);
       }
     }
@@ -424,20 +434,48 @@ sub buildit {
       touch('NEWS', 'README', 'AUTHORS', 'ChangeLog');
 
       ## Run the automake setup and configure
-      $entry = '' if (!defined $entry);
-      system("aclocal && libtoolize && " .
-             "autoconf && automake -a $entry && ./configure");
-      $status = checkBuildStatus('make');
+      my $dir;
+      my $cmd = 'aclocal && libtoolize && autoconf && automake';
+      if (defined $entry) {
+        my $base;
+        if ($entry =~ /`/) {
+          $base = $entry;
+        }
+        else {
+          $dir = dirname($entry);
+          $base = basename($entry);
+          $cmd = "cd $dir; $cmd" if ($dir ne '.');
+        }
+        $cmd .= ' -a ';
+        $cmd .= $base if ($base ne 'Makefile');
+      }
+print "DEBUG: $cmd && ./configure\n";
+      system("$cmd && ./configure");
+      $status = checkBuildStatus((defined $dir ? "cd $dir; " :'') . 'make');
     }
   }
   elsif ($type eq 'make' && $^O eq 'linux') {
+    my $cmd = 'make';
     printBuildMessage($type);
     $ENV{LD_LIBRARY_PATH} = getcwd() . '/lib';
-    $status = checkBuildStatus('make' . (defined $entry ? " -f $entry" : ''));
+    if (defined $entry) {
+      my $dir = dirname($entry);
+      my $base = basename($entry);
+      $cmd = "cd $dir; $cmd" if ($dir ne '.');
+      $cmd .= ' -f ' . $base;
+    }
+    $status = checkBuildStatus($cmd);
   }
   elsif ($type eq 'gnuace') {
+    my $cmd = $gmake;
     printBuildMessage($type);
-    $status = checkBuildStatus($gmake . (defined $entry ? " -f $entry" : ''));
+    if (defined $entry) {
+      my $dir = dirname($entry);
+      my $base = basename($entry);
+      $cmd = "cd $dir; $cmd" if ($dir ne '.');
+      $cmd .= ' -f ' . $base;
+    }
+    $status = checkBuildStatus($cmd);
   }
 
   ## If $one_built has changed then we built the test.

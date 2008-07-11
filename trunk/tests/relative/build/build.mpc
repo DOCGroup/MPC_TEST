@@ -1,5 +1,6 @@
 project(*lib) {
-  includes += .
+  after     += *exe
+  includes  += .
   pch_header = ../src/zzz_pch.h
   pch_source = ../src/zzz_pch.cpp
 

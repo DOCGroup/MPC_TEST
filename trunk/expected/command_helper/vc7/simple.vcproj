@@ -74,6 +74,10 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="del /f/s/q classes ./simple.jar &amp; del /f/s/q simple"
+			/>
+			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
@@ -143,6 +147,10 @@
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="del /f/s/q classes ./simple.jar &amp; del /f/s/q simple"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"

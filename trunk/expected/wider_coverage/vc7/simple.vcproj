@@ -68,6 +68,10 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
+			/>
+			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
@@ -131,6 +135,10 @@
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
@@ -198,6 +206,10 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
+			/>
+			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER"
 				Culture="1033"
@@ -262,6 +274,10 @@
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
