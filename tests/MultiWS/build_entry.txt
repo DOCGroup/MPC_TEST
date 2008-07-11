@@ -5,7 +5,6 @@ cc:
 em3:
 ghs:
 gnuace:
-html:
 make:
 nmake:
 sle:

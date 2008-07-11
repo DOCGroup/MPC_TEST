@@ -1,0 +1,7 @@
+project {
+  after += cras
+
+  Source_Files {
+    cras.cs
+  }
+}

@@ -213,7 +213,7 @@ sub validateHTML {
       elsif ($file =~ /\.html$/) {
         my($ph) = new FileHandle();
 
-        if (open($ph, "$cmd -q -e $full |")) {
+        if (open($ph, "$cmd $full |")) {
           my($first) = 1;
           while(<$ph>) {
             if ($first) {
@@ -259,7 +259,7 @@ sub buildit {
     my($cmd) = which('tidy');
     if (defined $cmd) {
       print SAVEERR "+++ Validation for the $type type: ";
-      if (validateHTML($cmd, '.')) {
+      if (validateHTML("$cmd -q -e", '.')) {
         print SAVEERR "$failed.\n";
       }
       else {
