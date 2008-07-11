@@ -13,9 +13,9 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="bin"
+			OutputDirectory="."
 			IntermediateDirectory="Debug\csvw_B\I386"
-			ConfigurationType="2"
+			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
 			CharacterSet="0">
@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ONLY_WINDOWS"
+				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;ONLY_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -43,14 +43,13 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\csvw_Bd.dll"
+				OutputFile="$(OutDir)\bdog.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="TRUE"
-				ProgramDatabaseFile="$(OutDir)\csvw_Bd.pdb"
+				ProgramDatabaseFile="$(OutDir)\bdog.pdb"
 				SubSystem="1"
-				ImportLibrary="lib\csvw_Bd.lib"
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"
@@ -80,9 +79,9 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="bin"
+			OutputDirectory="Release"
 			IntermediateDirectory="Release\csvw_B\I386"
-			ConfigurationType="2"
+			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
 			CharacterSet="0">
@@ -90,7 +89,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;ONLY_WINDOWS"
+				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;ONLY_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="2"
@@ -108,7 +107,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\csvw_B.dll"
+				OutputFile="$(OutDir)\bdog.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="."
@@ -116,7 +115,6 @@
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="lib\csvw_B.lib"
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"

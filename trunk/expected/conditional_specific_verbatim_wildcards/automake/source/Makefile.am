@@ -25,53 +25,47 @@ noinst_HEADERS = \
 
 ## Makefile.csvw_B.am
 
-noinst_LTLIBRARIES += libcsvw_B.la
+noinst_PROGRAMS = bdog
 
-libcsvw_B_la_CPPFLAGS = \
+bdog_CPPFLAGS = \
   -DONLY_MAKE \
   -DONLY_UNIX
 
-libcsvw_B_la_SOURCES = \
+bdog_SOURCES = \
   conditional/unix.cpp \
   moop.cxx \
   ploor.cpp \
-  qwaaa.c
-
-noinst_HEADERS += \
+  qwaaa.c \
   qwaaa.h
 
 ## Makefile.csvw_C.am
 
-noinst_LTLIBRARIES += libcsvw_C.la
+noinst_PROGRAMS += cdog
 
-libcsvw_C_la_CPPFLAGS = \
+cdog_CPPFLAGS = \
   -DONLY_MAKE \
   -DONLY_UNIX
 
-libcsvw_C_la_SOURCES = \
+cdog_SOURCES = \
   byion.cpp \
   conditional/unix.cpp \
   moop.cxx \
   ploor.cpp \
-  qwaaa.c
-
-noinst_HEADERS += \
+  qwaaa.c \
   byion.h \
   qwaaa.h
 
 ## Makefile.csvw_D.am
 
-noinst_LTLIBRARIES += libcsvw_D.la
+noinst_PROGRAMS += ddog
 
-libcsvw_D_la_CPPFLAGS = \
+ddog_CPPFLAGS = \
   -DFAIL_IF_NOT_DEFINED
 
-libcsvw_D_la_SOURCES = \
+ddog_SOURCES = \
   conditional/every.cpp \
   moop.cxx \
-  qwaaa.c
-
-noinst_HEADERS += \
+  qwaaa.c \
   qwaaa.h
 
 ## Makefile.csvw_E.am

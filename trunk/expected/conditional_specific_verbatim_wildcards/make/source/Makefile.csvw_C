@@ -13,7 +13,8 @@ LDFLAGS       = -L"."
 CCC           = $(CXX)
 MAKEFILE      = Makefile.csvw_C
 DEPENDENCIES  = .depend.$(MAKEFILE)
-LTARGETDIR    = lib/
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)cdog$(EXESUFFIX)$(EXEEXT)
 CAT           = cat
 MV            = mv -f
 RM            = rm -rf
@@ -28,29 +29,19 @@ LIBSUFFIX     =
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
 OBJS          = byion$(OBJEXT) conditional/unix$(OBJEXT) moop$(OBJEXT) ploor$(OBJEXT) qwaaa$(OBJEXT)
-AREXT         = .a
-LIB           = $(LTARGETDIR)$(LIBPREFIX)csvw_C$(LIBSUFFIX)$(AREXT)
-SOEXT         = .so
-SHTARGETDIR   = bin/
-SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)csvw_C$(LIBSUFFIX)$(SOEXT)
-SHFLAGS       = -shared
 SRC           = byion.cpp conditional/unix.cpp moop.cxx ploor.cpp qwaaa.c
 LINK.cc       = $(LD) $(LDFLAGS)
-EXPORTFLAGS   = $(DYNAMICFLAGS)
+EXPORTFLAGS   = 
 
 #----------------------------------------------------------------------------
 #       Local targets
 #----------------------------------------------------------------------------
 
-all: $(SHLIB)
+all: $(BIN)
 
-$(SHLIB): $(OBJS)
-	@$(TESTDIRSTART) "$(SHTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(SHTARGETDIR)"
-	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
-
-$(LIB): $(OBJS)
-	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
-	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
+$(BIN): $(OBJS)
+	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
+	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
 generated: $(GENERATED_DIRTY)
 	@-:
@@ -74,7 +65,7 @@ clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
-	-$(RM) $(SHLIB) $(LIB)
+	-$(RM) $(BIN)
 
 #----------------------------------------------------------------------------
 #       Dependencies

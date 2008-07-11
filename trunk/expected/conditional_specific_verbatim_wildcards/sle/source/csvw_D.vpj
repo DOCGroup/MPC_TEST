@@ -9,7 +9,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-                OutputFile="bin\csvw_D.dll">
+                OutputFile="\ddog.exe">
 		<Menu>
 			<Target
 				Name="Compile"
@@ -104,7 +104,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-                OutputFile="bin\csvw_D.dll">
+                OutputFile="\ddog.exe">
 		<Menu>
 			<Target
 				Name="Compile"

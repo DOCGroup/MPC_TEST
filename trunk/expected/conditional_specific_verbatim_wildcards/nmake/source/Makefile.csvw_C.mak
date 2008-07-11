@@ -14,10 +14,10 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
-!MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
-!MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
-!MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Console Application")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Console Application")
+!MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Console Application")
+!MESSAGE "Win32 Static Release" (based on "Win32 (x86) Console Application")
 !MESSAGE
 !ERROR An invalid configuration was specified.
 !ENDIF
@@ -42,10 +42,11 @@ GENERATED_DIRTY =
 
 !IF  "$(CFG)" == "Win32 Debug"
 
-OUTDIR=bin
+OUTDIR=.
+INSTALLDIR=.
 INTDIR=Debug\csvw_C\I386
 
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_Cd.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\cdog.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -54,15 +55,13 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.csvw_C.dep" "byion.cpp" "moop.cxx" "ploor.cpp" "qwaaa.c"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_CONSOLE -f "Makefile.csvw_C.dep" "byion.cpp" "moop.cxx" "ploor.cpp" "qwaaa.c"
 !ENDIF
 
 REALCLEAN : CLEAN
-	-@del /f/q "$(OUTDIR)\csvw_Cd.pdb"
-        -@del /f/q "bin\csvw_Cd.dll"
-        -@del /f/q "$(OUTDIR)\csvw_Cd.lib"
-        -@del /f/q "$(OUTDIR)\csvw_Cd.exp"
-        -@del /f/q "$(OUTDIR)\csvw_Cd.ilk"
+	-@del /f/q "$(INSTALLDIR)\cdog.pdb"
+        -@del /f/q "$(INSTALLDIR)\cdog.exe"
+        -@del /f/q "$(INSTALLDIR)\cdog.ilk"
 
 "$(INTDIR)" :
     if not exist "Debug\$(NULL)" mkdir "Debug"
@@ -70,32 +69,33 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _CONSOLE /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll /debug /pdb:"bin\csvw_Cd.pdb" /machine:I386 /out:"bin\csvw_Cd.dll" /implib:"$(OUTDIR)\csvw_Cd.lib"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:console /debug /pdb:"$(INSTALLDIR)\cdog.pdb" /machine:I386 /out:"$(INSTALLDIR)\cdog.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\byion.obj" \
 	"$(INTDIR)\moop.obj" \
 	"$(INTDIR)\ploor.obj" \
 	"$(INTDIR)\qwaaa.obj"
 
-"bin\csvw_Cd.dll" : $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\cdog.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "bin\csvw_Cd.dll.manifest" mt.exe -manifest "bin\csvw_Cd.dll.manifest" -outputresource:$@;2
+    if exist "$(INSTALLDIR)\cdog.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\cdog.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
-OUTDIR=bin
+OUTDIR=Release
+INSTALLDIR=Release
 INTDIR=Release\csvw_C\I386
 
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "bin\csvw_C.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\cdog.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -104,14 +104,12 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.csvw_C.dep" "byion.cpp" "moop.cxx" "ploor.cpp" "qwaaa.c"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_CONSOLE -f "Makefile.csvw_C.dep" "byion.cpp" "moop.cxx" "ploor.cpp" "qwaaa.c"
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "bin\csvw_C.dll"
-        -@del /f/q "$(OUTDIR)\csvw_C.lib"
-        -@del /f/q "$(OUTDIR)\csvw_C.exp"
-        -@del /f/q "$(OUTDIR)\csvw_C.ilk"
+        -@del /f/q "$(INSTALLDIR)\cdog.exe"
+        -@del /f/q "$(INSTALLDIR)\cdog.ilk"
 
 "$(INTDIR)" :
     if not exist "Release\$(NULL)" mkdir "Release"
@@ -119,32 +117,33 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _CONSOLE /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll  /machine:I386 /out:"bin\csvw_C.dll" /implib:"$(OUTDIR)\csvw_C.lib"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:console  /machine:I386 /out:"$(INSTALLDIR)\cdog.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\byion.obj" \
 	"$(INTDIR)\moop.obj" \
 	"$(INTDIR)\ploor.obj" \
 	"$(INTDIR)\qwaaa.obj"
 
-"bin\csvw_C.dll" : $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\cdog.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "bin\csvw_C.dll.manifest" mt.exe -manifest "bin\csvw_C.dll.manifest" -outputresource:$@;2
+    if exist "$(INSTALLDIR)\cdog.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\cdog.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
-OUTDIR=lib
+OUTDIR=Static_Debug
+INSTALLDIR=Static_Debug
 INTDIR=Static_Debug\csvw_C\I386
 
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Csd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\cdog.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -153,14 +152,13 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.csvw_C.dep" "byion.cpp" "moop.cxx" "ploor.cpp" "qwaaa.c"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_CONSOLE -f "Makefile.csvw_C.dep" "byion.cpp" "moop.cxx" "ploor.cpp" "qwaaa.c"
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\csvw_Csd.lib"
-        -@del /f/q "$(OUTDIR)\csvw_Csd.exp"
-        -@del /f/q "$(OUTDIR)\csvw_Csd.ilk"
-	-@del /f/q "lib\csvw_Csd.pdb"
+	-@del /f/q "$(INSTALLDIR)\cdog.pdb"
+        -@del /f/q "$(INSTALLDIR)\cdog.exe"
+        -@del /f/q "$(INSTALLDIR)\cdog.ilk"
 
 "$(INTDIR)" :
     if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
@@ -168,31 +166,33 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd"lib\csvw_Csd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _CONSOLE /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
+RSC=rc.exe
 
-LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:"lib\csvw_Csd.lib"
+LINK32=link.exe
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:console /debug /pdb:"$(INSTALLDIR)\cdog.pdb" /machine:I386 /out:"$(INSTALLDIR)\cdog.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\byion.obj" \
 	"$(INTDIR)\moop.obj" \
 	"$(INTDIR)\ploor.obj" \
 	"$(INTDIR)\qwaaa.obj"
 
-"$(OUTDIR)\csvw_Csd.lib" : $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\cdog.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\csvw_Csd.lib.manifest" mt.exe -manifest "$(OUTDIR)\csvw_Csd.lib.manifest" -outputresource:$@;2
+    if exist "$(INSTALLDIR)\cdog.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\cdog.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
-OUTDIR=lib
+OUTDIR=Static_Release
+INSTALLDIR=Static_Release
 INTDIR=Static_Release\csvw_C\I386
 
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\csvw_Cs.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(INSTALLDIR)\cdog.exe"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -201,13 +201,12 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.csvw_C.dep" "byion.cpp" "moop.cxx" "ploor.cpp" "qwaaa.c"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_CONSOLE -f "Makefile.csvw_C.dep" "byion.cpp" "moop.cxx" "ploor.cpp" "qwaaa.c"
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\csvw_Cs.lib"
-        -@del /f/q "$(OUTDIR)\csvw_Cs.exp"
-        -@del /f/q "$(OUTDIR)\csvw_Cs.ilk"
+        -@del /f/q "$(INSTALLDIR)\cdog.exe"
+        -@del /f/q "$(INSTALLDIR)\cdog.ilk"
 
 "$(INTDIR)" :
     if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
@@ -215,24 +214,25 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _CONSOLE /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
+RSC=rc.exe
 
-LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:"lib\csvw_Cs.lib"
+LINK32=link.exe
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:console  /machine:I386 /out:"$(INSTALLDIR)\cdog.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\byion.obj" \
 	"$(INTDIR)\moop.obj" \
 	"$(INTDIR)\ploor.obj" \
 	"$(INTDIR)\qwaaa.obj"
 
-"$(OUTDIR)\csvw_Cs.lib" : $(DEF_FILE) $(LINK32_OBJS)
+"$(INSTALLDIR)\cdog.exe" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\csvw_Cs.lib.manifest" mt.exe -manifest "$(OUTDIR)\csvw_Cs.lib.manifest" -outputresource:$@;2
+    if exist "$(INSTALLDIR)\cdog.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\cdog.exe.manifest" -outputresource:$@;1
 
 !ENDIF
 

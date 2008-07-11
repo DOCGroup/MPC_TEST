@@ -41,8 +41,9 @@ project(*A) {
 }
 
 project(*B) {
-  dllout = bin
-  libout = lib
+  exename = bdog
+  dllout  = bin
+  libout  = lib
 
   Source_Files {
     ! *b*.c*
@@ -61,8 +62,14 @@ project(*B) {
 }
 
 project(*C) {
-  dllout = bin
-  libout = lib
+  exename = cdog
+  dllout  = bin
+  libout  = lib
+
+  // This is here due to a parallel bug in Visual Studio 2005.  Since B and
+  // C share source files, it gets confused about the fact that the object
+  // files go into different intermediate directories.
+  after += *B
 
   Source_Files {
     !  bleer.cpp
@@ -77,8 +84,12 @@ project(*C) {
 }
 
 project(*D) {
-  dllout = bin
-  libout = lib
+  exename = ddog
+  dllout  = bin
+  libout  = lib
+
+  // The same goes for this one too.
+  after += *C
 
   Source_Files {
     !*.cpp

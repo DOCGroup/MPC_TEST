@@ -12,15 +12,7 @@
 #----------------------------------------------------------------------------
 MAKEFILE         = GNUmakefile.csvw_B
 DEPENDENCY_FILE  = .depend.csvw_B
-
-## LIB may be set to empty later on in this file
-LIB_UNCHECKED    = libcsvw_B.a
-LIB              = $(LIB_UNCHECKED)
-LIB_NAME         = libcsvw_B
-
-## SHLIB may be set to empty later on in this file
-SHLIB_UNCHECKED  = libcsvw_B.$(SOEXT)
-SHLIB            = $(SHLIB_UNCHECKED)
+BIN_UNCHECKED    = bdog
 
 FILES = \
   conditional/unix.cpp \
@@ -33,18 +25,17 @@ VPATH = .:conditional
 #----------------------------------------------------------------------------
 #       Include macros and targets
 #----------------------------------------------------------------------------
-ACE_SHLIBS =
+LDLIBS =
 
-PRJ_TYPE = library
+PRJ_TYPE = rtp
 
-INSLIB ?= bin
-ifeq ($(INSLIB),.)
+ifeq ($(INSBIN),.)
   ifeq ($(PWD),)
     PWD=$(shell pwd)
   endif
-  INSLIB = $(PWD)
+  INSBIN = $(PWD)
 endif
-OUTPUT_DIRECTORY = $(INSLIB)
+OUTPUT_DIRECTORY = $(INSBIN)
 
 include $(ACE_ROOT)/include/makeinclude/wrapper_macros.GNU
 ## We don't need the ACELIB setting from wrapper_macros.GNU
@@ -65,18 +56,27 @@ $(OUTPUT_DIRECTORY):
 endif
 
 LIBCHECK = 1
-ifneq ($(LIBCHECK), 1)
-  LIB   =
-  SHLIB =
+ifeq ($(LIBCHECK), 1)
+BIN    = $(BIN_UNCHECKED)$(EXEEXT)
+else
   all: lib_warning
 endif
 
-LSRC   = $(FILES)
+# If it contains ../ at all use notdir.
+OBJS   = $(foreach var, $(addsuffix .$(OBJEXT), $(basename $(FILES)) $(RESOURCES)), $(if $(findstring ../,$(var)),$(notdir $(var)),$(var)))
+SRC    = $(FILES)
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 include $(ACE_ROOT)/include/makeinclude/rules.common.GNU
 include $(ACE_ROOT)/include/makeinclude/rules.nonested.GNU
-include $(ACE_ROOT)/include/makeinclude/rules.lib.GNU
+
+ifneq ($(OUTPUT_DIRECTORY),)
+ifneq ($(OUTPUT_DIRECTORY),.)
+  INSTALL = $(VBIN:%=$(INSBIN)/%)
+  CLEANUP_INSTALL += $(CLEANUP_BIN:%=$(INSBIN)/%$(VAR)$(EXEEXT))
+endif
+endif
+
 include $(ACE_ROOT)/include/makeinclude/rules.local.GNU
 ifeq ($(VXWORKSLINK),true)
 include $(TGT_DIR)/h/make/rules.$(PRJ_TYPE)
@@ -96,6 +96,11 @@ lib_warning:
 	@echo csvw_B will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
+
+ifneq ($(VXWORKSLINK),true)
+$(BIN): $(addprefix $(VDIR), $(OBJS)) $(DEPLIBS)
+	$(LINK.cc) $(LDFLAGS) $(CC_OUTPUT_FLAG) $@ $(filter-out %.a,$^) $(VLDLIBS) $(POSTLINK)
+endif
 
 realclean: clean
 ifneq ($(GENERATED_DIRTY),)
