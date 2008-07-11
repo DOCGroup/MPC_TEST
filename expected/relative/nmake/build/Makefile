@@ -32,7 +32,7 @@ build_exe:
 	@echo Project: Makefile.build_exe.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.build_exe.mak CFG="$(CFG)" all
 
-build_lib:
+build_lib: build_exe
 	@echo Project: Makefile.build_lib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.build_lib.mak CFG="$(CFG)" all
 

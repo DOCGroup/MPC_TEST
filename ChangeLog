@@ -1,3 +1,45 @@
+Fri Jul 11 12:47:36 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/command_helper/vc7/simple.vcproj:
+        * expected/command_helper/vc71/simple.vcproj:
+        * expected/command_helper/vc8/simple.vcproj:
+        * expected/wider_coverage/vc7/simple.vcproj:
+        * expected/wider_coverage/vc71/simple.vcproj:
+        * expected/wider_coverage/vc8/simple.vcproj:
+
+          Updated to reflect my change from Thu Jul 10 19:03:14 UTC 2008.
+
+        * expected/relative/bmake/Makefile:
+        * expected/relative/bmake/build/Makefile:
+        * expected/relative/em3/relative.vcw:
+        * expected/relative/html/build/build_lib.html:
+        * expected/relative/make/Makefile:
+        * expected/relative/make/build/Makefile:
+        * expected/relative/nmake/Makefile:
+        * expected/relative/nmake/build/Makefile:
+        * expected/relative/vc6/relative.dsw:
+        * expected/relative/vc7/relative.sln:
+        * expected/relative/vc71/relative.sln:
+        * expected/relative/vc8/relative.sln:
+        * tests/relative/build/build.mpc:
+
+          Added an after setting to avoid parallel build errors from vc8.
+
+        * run_tests.pl:
+
+          Fixed building in a sub-directory of the test for make based build
+          tools.
+
+        * tests/java/additional_options.txt:
+
+          Changed to use double quotes so that the command line would work
+          on Windows too.
+
+        * tests/options/build_entry.txt:
+
+          Added a build entry for automake.  It still doesn't work, but I
+          hope to fix the problem in MPC soon.
+
 Thu Jul 10 14:31:04 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/mixed_languages/make/Makefile:

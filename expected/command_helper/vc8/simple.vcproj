@@ -104,6 +104,10 @@
 				Name="VCPostBuildEventTool"
 				CommandLine="&quot;$(JAVA_HOME)/bin/jar&quot; -cf ./simple.jar -C classes ."
 			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="del /f/s/q classes ./simple.jar &amp; del /f/s/q simple"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
@@ -188,6 +192,10 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				CommandLine="&quot;$(JAVA_HOME)/bin/jar&quot; -cf ./simple.jar -C classes ."
+			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="del /f/s/q classes ./simple.jar &amp; del /f/s/q simple"
 			/>
 		</Configuration>
 		<Configuration
@@ -276,6 +284,10 @@
 				Name="VCPostBuildEventTool"
 				CommandLine="&quot;$(JAVA_HOME)/bin/jar&quot; -cf ./simple.jar -C classes ."
 			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="del /f/s/q classes ./simple.jar &amp; del /f/s/q simple"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
@@ -361,6 +373,10 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				CommandLine="&quot;$(JAVA_HOME)/bin/jar&quot; -cf ./simple.jar -C classes ."
+			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="del /f/s/q classes ./simple.jar &amp; del /f/s/q simple"
 			/>
 		</Configuration>
 	</Configurations>

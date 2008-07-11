@@ -98,6 +98,10 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
@@ -176,6 +180,10 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
 			/>
 		</Configuration>
 		<Configuration
@@ -256,6 +264,10 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
 			/>
 		</Configuration>
 		<Configuration
@@ -338,6 +350,10 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
+			/>
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
@@ -419,6 +435,10 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
@@ -498,6 +518,10 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
 			/>
 		</Configuration>
 		<Configuration
@@ -580,6 +604,10 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
+			/>
 		</Configuration>
 		<Configuration
 			Name="MFC Debug|x64"
@@ -661,6 +689,10 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+			/>
+			<Tool
+				Name="VCPostCleanEventTool"
+				CommandLine="echo It is clean. &amp; echo Really, it is."
 			/>
 		</Configuration>
 	</Configurations>

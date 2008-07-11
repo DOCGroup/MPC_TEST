@@ -1,4 +1,4 @@
-automake:
+automake: `find . -name \*.am | sed 's/\.am//g'`
 bmake: Makefile_Zargaflan.bmak
 make: Makefile_Zargaflan
 gnuace: GNUmakefile_Zargaflan
