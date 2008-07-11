@@ -1,0 +1,7 @@
+<!DOCTYPE Workspace SYSTEM "http://www.slickedit.com/dtd/vse/8.1/vpw.dtd">
+<Workspace Version="8.1" VendorName="SlickEdit">
+	<Projects>
+		<Project File="good/good.vpj"/>
+		<Project File="not_ghs/not_ghs.vpj"/>
+	</Projects>
+</Workspace>

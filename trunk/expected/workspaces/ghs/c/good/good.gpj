@@ -1,0 +1,10 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o c/good/libgood.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Ic/good/$(SOMETHING)
+	-Lc/good
+foo.cpp

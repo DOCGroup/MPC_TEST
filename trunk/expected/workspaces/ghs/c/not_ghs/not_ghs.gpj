@@ -1,0 +1,9 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o c/not_ghs/libnot_ghs.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lc/not_ghs
+foo.cpp

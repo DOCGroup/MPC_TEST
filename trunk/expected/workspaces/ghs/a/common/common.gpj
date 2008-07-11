@@ -1,0 +1,9 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o a/common/libcommon.so
+	-Ospeed
+	-OI
+	--exceptions
+	-La/common
+common.cpp
