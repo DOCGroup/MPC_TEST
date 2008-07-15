@@ -425,9 +425,6 @@ BuildCmds= \
 
 "SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
-
-"SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-   $(BuildCmds)
 # End Custom Build
 
 !ELSEIF  "$(CFG)" == "simple - Win32 (WCE ARM) Release"
@@ -452,9 +449,6 @@ BuildCmds= \
    $(BuildCmds)
 
 "otherJS.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-   $(BuildCmds)
-
-"SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
 "SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -488,9 +482,6 @@ BuildCmds= \
 
 "SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
-
-"SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-   $(BuildCmds)
 # End Custom Build
 
 !ELSEIF  "$(CFG)" == "simple - Win32 (WCE ARMV4) Release"
@@ -515,9 +506,6 @@ BuildCmds= \
    $(BuildCmds)
 
 "otherJS.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-   $(BuildCmds)
-
-"SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
 "SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -551,9 +539,6 @@ BuildCmds= \
 
 "SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
-
-"SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-   $(BuildCmds)
 # End Custom Build
 
 !ELSEIF  "$(CFG)" == "simple - Win32 (WCE emulator) Release"
@@ -578,9 +563,6 @@ BuildCmds= \
    $(BuildCmds)
 
 "otherJS.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-   $(BuildCmds)
-
-"SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
 "SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -614,9 +596,6 @@ BuildCmds= \
 
 "SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
-
-"SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-   $(BuildCmds)
 # End Custom Build
 
 !ELSEIF  "$(CFG)" == "simple - Win32 (WCE x86) Release"
@@ -641,9 +620,6 @@ BuildCmds= \
    $(BuildCmds)
 
 "otherJS.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-   $(BuildCmds)
-
-"SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
 "SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"

@@ -38,7 +38,7 @@ DEPGEN=perl $(ACE_ROOT)/bin/depgen.pl -i -t nmake
 !ENDIF
 !ENDIF
 
-GENERATED_DIRTY = "SomeSortOfTypedefHelper.class" "otherJC.cpp" "otherJC.h" "otherJS.cpp" "otherJS.h" "SomeSortOfTypedefHelper.java" "SomeSortOfTypedefHelper.java" "simple\_Local2LocalBase.java" "simple\_Local3LocalBase.java" "simple\_TestInterf2Stub.java" "simple\_TestInterf3Stub.java" "simple\_TestInterfStub.java" "simple\_TestLILocalBase.java" "simple\ArrayBounds.java" "simple\EnumArrayHelper.java" "simple\EnumArrayHolder.java" "simple\EnumSeqHelper.java" "simple\EnumSeqHolder.java" "simple\Local2.java" "simple\Local2Helper.java" "simple\Local2Holder.java" "simple\Local2Operations.java" "simple\Local2SeqHelper.java" "simple\Local2SeqHolder.java" "simple\Local3.java" "simple\Local3Helper.java" "simple\Local3Holder.java" "simple\Local3Operations.java" "simple\LongSeqSeqHelper.java" "simple\LongSeqSeqHolder.java" "simple\LongSeqSeqSeqHelper.java" "simple\LongSeqSeqSeqHolder.java" "simple\SeqOfTypedefedLongHelper.java" "simple\SeqOfTypedefedLongHolder.java" "simple\StringSeqHelper.java" "simple\StringSeqHolder.java" "simple\StringSeqSeqHelper.java" "simple\StringSeqSeqHolder.java" "simple\StringSeqSeqSeqHelper.java" "simple\StringSeqSeqSeqHolder.java" "simple\StructWithObjref.java" "simple\StructWithObjrefHelper.java" "simple\StructWithObjrefHolder.java" "simple\TestArrayTypedef2Helper.java" "simple\TestArrayTypedefHelper.java" "simple\TestArrayTypedefHolder.java" "simple\TestConstBool.java" "simple\TestConstDouble.java" "simple\TestConstFloat.java" "simple\TestConstLong.java" "simple\TestConstString.java" "simple\TestConstTypedef.java" "simple\TestEnum.java" "simple\TestEnumHelper.java" "simple\TestEnumHolder.java" "simple\TestInterf.java" "simple\TestInterf2.java" "simple\TestInterf2Helper.java" "simple\TestInterf2Holder.java" "simple\TestInterf2Operations.java" "simple\TestInterf3.java" "simple\TestInterf3Helper.java" "simple\TestInterf3Holder.java" "simple\TestInterf3Operations.java" "simple\TestInterfHelper.java" "simple\TestInterfHolder.java" "simple\TestInterfOperations.java" "simple\TestLI.java" "simple\TestLIHelper.java" "simple\TestLIHolder.java" "simple\TestLIOperations.java" "simple\TestNestedStruct.java" "simple\TestNestedStructHelper.java" "simple\TestNestedStructHolder.java" "simple\TestSeqTypedefHelper.java" "simple\TestSeqTypedefHolder.java" "simple\TestStringArrayHelper.java" "simple\TestStringArrayHolder.java" "simple\TestStruct.java" "simple\TestStructArrayHelper.java" "simple\TestStructArrayHolder.java" "simple\TestStructHelper.java" "simple\TestStructHolder.java" "simple\TestStructSequenceHelper.java" "simple\TestStructSequenceHolder.java" "simple\TestStructWithEnum.java" "simple\TestStructWithEnumHelper.java" "simple\TestStructWithEnumHolder.java" "simple\TestTypedefHelper.java" "simple\TIMESTAMP_INVALID_NSEC.java" "simpleJC.cpp" "simpleJC.h" "simpleJS.h"
+GENERATED_DIRTY = "SomeSortOfTypedefHelper.class" "otherJC.cpp" "otherJC.h" "otherJS.cpp" "otherJS.h" "SomeSortOfTypedefHelper.java" "simple\_Local2LocalBase.java" "simple\_Local3LocalBase.java" "simple\_TestInterf2Stub.java" "simple\_TestInterf3Stub.java" "simple\_TestInterfStub.java" "simple\_TestLILocalBase.java" "simple\ArrayBounds.java" "simple\EnumArrayHelper.java" "simple\EnumArrayHolder.java" "simple\EnumSeqHelper.java" "simple\EnumSeqHolder.java" "simple\Local2.java" "simple\Local2Helper.java" "simple\Local2Holder.java" "simple\Local2Operations.java" "simple\Local2SeqHelper.java" "simple\Local2SeqHolder.java" "simple\Local3.java" "simple\Local3Helper.java" "simple\Local3Holder.java" "simple\Local3Operations.java" "simple\LongSeqSeqHelper.java" "simple\LongSeqSeqHolder.java" "simple\LongSeqSeqSeqHelper.java" "simple\LongSeqSeqSeqHolder.java" "simple\SeqOfTypedefedLongHelper.java" "simple\SeqOfTypedefedLongHolder.java" "simple\StringSeqHelper.java" "simple\StringSeqHolder.java" "simple\StringSeqSeqHelper.java" "simple\StringSeqSeqHolder.java" "simple\StringSeqSeqSeqHelper.java" "simple\StringSeqSeqSeqHolder.java" "simple\StructWithObjref.java" "simple\StructWithObjrefHelper.java" "simple\StructWithObjrefHolder.java" "simple\TestArrayTypedef2Helper.java" "simple\TestArrayTypedefHelper.java" "simple\TestArrayTypedefHolder.java" "simple\TestConstBool.java" "simple\TestConstDouble.java" "simple\TestConstFloat.java" "simple\TestConstLong.java" "simple\TestConstString.java" "simple\TestConstTypedef.java" "simple\TestEnum.java" "simple\TestEnumHelper.java" "simple\TestEnumHolder.java" "simple\TestInterf.java" "simple\TestInterf2.java" "simple\TestInterf2Helper.java" "simple\TestInterf2Holder.java" "simple\TestInterf2Operations.java" "simple\TestInterf3.java" "simple\TestInterf3Helper.java" "simple\TestInterf3Holder.java" "simple\TestInterf3Operations.java" "simple\TestInterfHelper.java" "simple\TestInterfHolder.java" "simple\TestInterfOperations.java" "simple\TestLI.java" "simple\TestLIHelper.java" "simple\TestLIHolder.java" "simple\TestLIOperations.java" "simple\TestNestedStruct.java" "simple\TestNestedStructHelper.java" "simple\TestNestedStructHolder.java" "simple\TestSeqTypedefHelper.java" "simple\TestSeqTypedefHolder.java" "simple\TestStringArrayHelper.java" "simple\TestStringArrayHolder.java" "simple\TestStruct.java" "simple\TestStructArrayHelper.java" "simple\TestStructArrayHolder.java" "simple\TestStructHelper.java" "simple\TestStructHolder.java" "simple\TestStructSequenceHelper.java" "simple\TestStructSequenceHolder.java" "simple\TestStructWithEnum.java" "simple\TestStructWithEnumHelper.java" "simple\TestStructWithEnumHolder.java" "simple\TestTypedefHelper.java" "simple\TIMESTAMP_INVALID_NSEC.java" "simpleJC.cpp" "simpleJC.h" "simpleJS.h"
 
 !IF  "$(CFG)" == "Win32 Debug"
 
@@ -68,7 +68,6 @@ REALCLEAN : CLEAN
         -@del /f/q "otherJC.h"
         -@del /f/q "otherJS.cpp"
         -@del /f/q "otherJS.h"
-        -@del /f/q "SomeSortOfTypedefHelper.java"
         -@del /f/q "SomeSortOfTypedefHelper.java"
         -@del /f/q "simple\_Local2LocalBase.java"
         -@del /f/q "simple\_Local3LocalBase.java"
@@ -218,7 +217,6 @@ REALCLEAN : CLEAN
         -@del /f/q "otherJS.cpp"
         -@del /f/q "otherJS.h"
         -@del /f/q "SomeSortOfTypedefHelper.java"
-        -@del /f/q "SomeSortOfTypedefHelper.java"
         -@del /f/q "simple\_Local2LocalBase.java"
         -@del /f/q "simple\_Local3LocalBase.java"
         -@del /f/q "simple\_TestInterf2Stub.java"
@@ -367,7 +365,6 @@ REALCLEAN : CLEAN
         -@del /f/q "otherJS.cpp"
         -@del /f/q "otherJS.h"
         -@del /f/q "SomeSortOfTypedefHelper.java"
-        -@del /f/q "SomeSortOfTypedefHelper.java"
         -@del /f/q "simple\_Local2LocalBase.java"
         -@del /f/q "simple\_Local3LocalBase.java"
         -@del /f/q "simple\_TestInterf2Stub.java"
@@ -513,7 +510,6 @@ REALCLEAN : CLEAN
         -@del /f/q "otherJC.h"
         -@del /f/q "otherJS.cpp"
         -@del /f/q "otherJS.h"
-        -@del /f/q "SomeSortOfTypedefHelper.java"
         -@del /f/q "SomeSortOfTypedefHelper.java"
         -@del /f/q "simple\_Local2LocalBase.java"
         -@del /f/q "simple\_Local3LocalBase.java"
@@ -749,7 +745,7 @@ SOURCE="other.idl"
 
 InputPath=other.idl
 
-"otherJC.cpp" "otherJC.h" "otherJS.cpp" "otherJS.h" "SomeSortOfTypedefHelper.java" "SomeSortOfTypedefHelper.java" : $(SOURCE)  "simpleJC.h" "$(IDL2JNI_ROOT)\bin\idl2jni.exe"
+"otherJC.cpp" "otherJC.h" "otherJS.cpp" "otherJS.h" "SomeSortOfTypedefHelper.java" : $(SOURCE)  "simpleJC.h" "$(IDL2JNI_ROOT)\bin\idl2jni.exe"
 	<<tempfile.bat
 	@echo off
 	PATH=%PATH%;$(ACE_ROOT)\lib
