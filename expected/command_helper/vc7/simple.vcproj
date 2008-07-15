@@ -230,7 +230,7 @@
 						Description="Invoking $(IDL2JNI_ROOT)\bin\idl2jni on other.idl"
 						CommandLine="PATH=%PATH%;$(ACE_ROOT)\lib&#x0D;&#x0A;$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 &quot;other.idl&quot; &amp;&amp; echo Input: other"
 						AdditionalDependencies="$(IDL2JNI_ROOT)\bin\idl2jni.exe;simpleJC.h"
-						Outputs="otherJC.cpp;otherJC.h;otherJS.cpp;otherJS.h;SomeSortOfTypedefHelper.java;SomeSortOfTypedefHelper.java"/>
+						Outputs="otherJC.cpp;otherJC.h;otherJS.cpp;otherJS.h;SomeSortOfTypedefHelper.java"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32"
@@ -240,7 +240,7 @@
 						Description="Invoking $(IDL2JNI_ROOT)\bin\idl2jni on other.idl"
 						CommandLine="PATH=%PATH%;$(ACE_ROOT)\lib&#x0D;&#x0A;$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 &quot;other.idl&quot; &amp;&amp; echo Input: other"
 						AdditionalDependencies="$(IDL2JNI_ROOT)\bin\idl2jni.exe;simpleJC.h"
-						Outputs="otherJC.cpp;otherJC.h;otherJS.cpp;otherJS.h;SomeSortOfTypedefHelper.java;SomeSortOfTypedefHelper.java"/>
+						Outputs="otherJC.cpp;otherJC.h;otherJS.cpp;otherJS.h;SomeSortOfTypedefHelper.java"/>
 				</FileConfiguration>
 			</File>
 			<File

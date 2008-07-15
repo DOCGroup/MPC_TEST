@@ -1,3 +1,24 @@
+Tue Jul 15 16:22:22 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/command_helper/automake/Makefile.am:
+        * expected/command_helper/bmake/Makefile.simple.bmak:
+        * expected/command_helper/em3/simple.vcp:
+        * expected/command_helper/ghs/simple.gpj:
+        * expected/command_helper/gnuace/GNUmakefile.simple:
+        * expected/command_helper/make/Makefile.simple:
+        * expected/command_helper/nmake/Makefile.simple.mak:
+        * expected/command_helper/vc6/simple.dsp:
+        * expected/command_helper/vc7/simple.vcproj:
+        * expected/command_helper/vc71/simple.vcproj:
+        * expected/command_helper/vc8/simple.vcproj:
+
+          Updated to reflect my change from Tue Jul 15 16:08:40 UTC 2008.
+
+        * tests/command_helper/additional_options.txt:
+
+          Use double quotes around the exclude option instead of single
+          quotes.
+
 Fri Jul 11 15:16:51 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/MultiWS/automake/Multiws/configure.ac.Makefiles:

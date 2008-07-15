@@ -173,9 +173,6 @@ BuildCmds= \
 
 "SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
-
-"SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-   $(BuildCmds)
 # End Custom Build
 
 !ELSEIF  "$(CFG)" == "simple - Win32 Release"
@@ -200,9 +197,6 @@ BuildCmds= \
    $(BuildCmds)
 
 "otherJS.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-   $(BuildCmds)
-
-"SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
 "SomeSortOfTypedefHelper.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"

@@ -26,7 +26,6 @@ otherJC.cpp
 	:preexecShell='cd . && $(IDL2JNI_ROOT)\\bin\\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 other.idl'
 	:preexecShell='cd . && echo Input: other'
 	:extraOutputFile=SomeSortOfTypedefHelper.java
-	:extraOutputFile=SomeSortOfTypedefHelper.java
 	:extraOutputFile=otherJC.cpp
 	:extraOutputFile=otherJC.h
 	:extraOutputFile=otherJS.cpp

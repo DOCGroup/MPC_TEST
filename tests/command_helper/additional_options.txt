@@ -1,1 +1,1 @@
--exclude '*Helper.java',TestSeqTypedefHolder.java -value_template includes+=something
+-exclude "*Helper.java,TestSeqTypedefHolder.java" -value_template includes+=something

@@ -23,7 +23,6 @@ SomeSortOfTypedefHelper.class: $(srcdir)/SomeSortOfTypedefHelper.java
 
 BUILT_SOURCES += \
   SomeSortOfTypedefHelper.java \
-  SomeSortOfTypedefHelper.java \
   otherJC.cpp \
   otherJC.h \
   otherJS.cpp \
@@ -32,13 +31,12 @@ BUILT_SOURCES += \
 CLEANFILES += \
   other-stamp \
   SomeSortOfTypedefHelper.java \
-  SomeSortOfTypedefHelper.java \
   otherJC.cpp \
   otherJC.h \
   otherJS.cpp \
   otherJS.h
 
-SomeSortOfTypedefHelper.java SomeSortOfTypedefHelper.java otherJC.cpp otherJC.h otherJS.cpp otherJS.h: other-stamp
+SomeSortOfTypedefHelper.java otherJC.cpp otherJC.h otherJS.cpp otherJS.h: other-stamp
 
 other-stamp: $(srcdir)/other.idl simpleJC.h $(IDL2JNI_ROOT)/bin/idl2jni
 	$(IDL2JNI_ROOT)/bin/idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(srcdir)/other.idl
