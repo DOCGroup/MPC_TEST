@@ -202,5 +202,21 @@
                         <F N="otherJS.cpp"/>
                         <F N="simpleJC.cpp"/>
 		</Folder>
+		<Folder
+			Name="Header Files"
+                        Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+                        <F N="simple_pch.h"/>
+                        <F N="otherJC.h"/>
+                        <F N="otherJS.h"/>
+                        <F N="simpleJC.h"/>
+                        <F N="simpleJS.h"/>
+                </Folder>
+                <Folder
+                        Name="Documentation Files"
+                        Filters="*.txt;*.doc">
+                        <F N="additional_options.txt"/>
+                        <F N="build_entry.txt"/>
+                        <F N="perl_options.txt"/>
+                </Folder>
 	</Files>
 </Project>

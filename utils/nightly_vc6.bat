@@ -21,7 +21,6 @@ set PERL5_INCLUDE=C:\Perl\lib\CORE
 set PERL5_LIB=perl58
 
 set ACE_ROOT=
-set MPC_COMMANDLINE=
 
 run_tests.pl --type vc6 --output pick_me_up_vc6
 

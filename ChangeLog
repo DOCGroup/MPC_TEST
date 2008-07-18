@@ -1,3 +1,35 @@
+Fri Jul 18 17:31:38 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/command_helper/automake/Makefile.am:
+        * expected/command_helper/bmake/Makefile.simple.bmak:
+        * expected/command_helper/em3/simple.vcp:
+        * expected/command_helper/ghs/simple.gpj:
+        * expected/command_helper/gnuace/GNUmakefile.simple:
+        * expected/command_helper/html/simple.html:
+        * expected/command_helper/make/Makefile.simple:
+        * expected/command_helper/nmake/Makefile.simple.mak:
+        * expected/command_helper/sle/simple.vpj:
+        * expected/command_helper/vc6/simple.dsp:
+        * expected/command_helper/vc7/simple.vcproj:
+        * expected/command_helper/vc71/simple.vcproj:
+        * expected/command_helper/vc8/simple.vcproj:
+
+          Updated to reflect my changes from Thu Jul 17 13:50:33 UTC 2008,
+          Thu Jul 17 15:10:48 UTC 2008, and Fri Jul 18 17:22:56 UTC 2008.
+
+        * utils/clean.sh:
+
+          Added a script to remove MPC generated files.
+
+        * utils/nightly.sh:
+        * utils/nightly_em3.bat:
+        * utils/nightly_vc6.bat:
+        * utils/nightly_vc71_bmake.bat:
+        * utils/nightly_vc8.bat:
+
+          Removed the MPC_COMMANDLINE variable unsetting.  That variable no
+          longer means anything to MPC.
+
 Tue Jul 15 16:22:22 UTC 2008  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/command_helper/automake/Makefile.am:
