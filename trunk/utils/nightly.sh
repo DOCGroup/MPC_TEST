@@ -7,11 +7,6 @@ if [ -z "$ACE_ROOT" ]; then
   ACE_ROOT=/tao_builds/chad/ocitao/ACE_wrappers/build/linux; export ACE_ROOT
 fi
 
-unset MPC_COMMANDLINE
-if [ -z "$MPC_ROOT" ]; then
-  MPC_ROOT=/home/elliottc/current/MPC; export MPC_ROOT
-fi
-
 if [ -z "$QTDIR" ]; then
   QTDIR=/usr; export QTDIR
 fi

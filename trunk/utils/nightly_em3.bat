@@ -15,7 +15,6 @@ goto done
 call "%WCEROOT%\EVC\wce420\bin\WCEemulator.BAT"
 
 set ACE_ROOT=
-set MPC_COMMANDLINE=
 
 run_tests.pl --type em3 --output pick_me_up_em3
 
