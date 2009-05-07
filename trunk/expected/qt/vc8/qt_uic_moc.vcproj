@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="qt_uic_moc"
-	ProjectGUID="{110B7DE3-FECA-1BAD-9C90-8965A289A442}"
+	ProjectGUID="{013B1D55-FECA-1BAD-9CF0-0995779AF218}"
 	RootNamespace="qt_uic_moc"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -25,6 +25,7 @@
 			IntermediateDirectory="Debug\qt_uic_moc\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -51,7 +52,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="$(QTDIR)\include"
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;QT_THREAD_SUPPORT"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;QT_THREAD_SUPPORT"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -78,7 +79,7 @@
 				OutputFile="$(OutDir)\main.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".;$(QTDIR)\lib"
+				AdditionalLibraryDirectories=".;$(QTDIR)\lib;$(QTDIR)\lib64"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="1"
@@ -105,6 +106,7 @@
 			IntermediateDirectory="Release\qt_uic_moc\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -131,7 +133,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories="$(QTDIR)\include"
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;QT_THREAD_SUPPORT"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;QT_THREAD_SUPPORT"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -155,7 +157,7 @@
 				OutputFile="$(OutDir)\main.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".;$(QTDIR)\lib"
+				AdditionalLibraryDirectories=".;$(QTDIR)\lib;$(QTDIR)\lib64"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"
@@ -184,6 +186,7 @@
 			IntermediateDirectory="Debug\qt_uic_moc\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -210,7 +213,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="$(QTDIR)\include"
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;QT_THREAD_SUPPORT"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;QT_THREAD_SUPPORT"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -238,7 +241,7 @@
 				OutputFile="$(OutDir)\main.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".;$(QTDIR)\lib"
+				AdditionalLibraryDirectories=".;$(QTDIR)\lib;$(QTDIR)\lib64"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="17"
@@ -265,6 +268,7 @@
 			IntermediateDirectory="Release\qt_uic_moc\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -291,7 +295,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories="$(QTDIR)\include"
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;QT_THREAD_SUPPORT"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;QT_THREAD_SUPPORT"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -316,7 +320,7 @@
 				OutputFile="$(OutDir)\main.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=".;$(QTDIR)\lib"
+				AdditionalLibraryDirectories=".;$(QTDIR)\lib;$(QTDIR)\lib64"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"

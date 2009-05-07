@@ -27,6 +27,8 @@ POSTLINKRM   = .tds
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -54,7 +56,7 @@ WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
 CCFLAGS      = -q
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)source_lib
-NAME         = source_lib$(LIBMODIFIER)
+NAME         = source_lib$(LIBMODIFIER)$(ULIBMODIFIER)
 CPPDIR       = .;cre\o.le
 RESDIR       = .
 
@@ -165,20 +167,20 @@ generated: $(GENERATED_DIRTY)
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) cre\o.le\more_names.cpp
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "cre\o.le\more_names.cpp" del "cre\o.le\more_names.cpp"
-	-if exist "cre\o.le\more_names.h" del "cre\o.le\more_names.h"
-	-if exist "names.cpp" del "names.cpp"
-	-if exist "names.h" del "names.h"
-	-if exist "TheCheat.cpp" del "TheCheat.cpp"
-	-if exist "TheCheat.h" del "TheCheat.h"
-	-if exist ".\bar.txt" del ".\bar.txt"
-	-if exist ".\moop.hxx" del ".\moop.hxx"
-	-if exist ".\qwee.cxx" del ".\qwee.cxx"
-	-if exist ".\qwee_T.C" del ".\qwee_T.C"
-	-if exist ".\weer.inl" del ".\weer.inl"
-	-if exist "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)"
-        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
+        @del "cre\o.le\more_names.cpp" 2>NUL
+        @del "cre\o.le\more_names.h" 2>NUL
+        @del "names.cpp" 2>NUL
+        @del "names.h" 2>NUL
+        @del "TheCheat.cpp" 2>NUL
+        @del "TheCheat.h" 2>NUL
+        @del ".\bar.txt" 2>NUL
+        @del ".\moop.hxx" 2>NUL
+        @del ".\qwee.cxx" 2>NUL
+        @del ".\qwee_T.C" 2>NUL
+        @del ".\weer.inl" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" 2>NUL
 

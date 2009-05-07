@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="Code"
-	ProjectGUID="{79047198-FECA-1BAD-5927-8A6761BC3B97}"
+	ProjectGUID="{79043108-FECA-1BAD-5927-8A6767318C2F}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="CODE_BUILD_DLL;_DEBUG;WIN32;_WINDOWS"
+                                PreprocessorDefinitions="CODE_BUILD_DLL;_DEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -90,7 +90,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="CODE_BUILD_DLL;NDEBUG;WIN32;_WINDOWS"
+                                PreprocessorDefinitions="CODE_BUILD_DLL;NDEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="2"

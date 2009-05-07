@@ -9,7 +9,7 @@
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
 LIBMODIFIER  = 
-EXEMODIFIER  = d
+EXEMODIFIER  = _bd
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = .\\
 !else
@@ -17,7 +17,7 @@ EXEOUTPUTDIR = .\\
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
 LIBMODIFIER  = 
-EXEMODIFIER  = 
+EXEMODIFIER  = _br
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = Release\\
 !else
@@ -29,6 +29,8 @@ EXEOUTPUTDIR = Release\\
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -71,7 +73,7 @@ LFLAGS   = \
            -L"..\lib" -j"..\lib"
 
 LIBFILES = \
-           source_lib$(LIBMODIFIER)$(LIB_EXT) \
+           source_lib$(LIBMODIFIER)$(ULIBMODIFIER)$(LIB_EXT) \
            $(CG_LIB) import32.lib cw32mti.lib ws2_32.lib
 
 CFLAGS = \
@@ -145,12 +147,12 @@ generated: $(GENERATED_DIRTY)
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) exe\use_names\use_names.cpp
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "Foolish\foolish.txt" del "Foolish\foolish.txt"
-	-if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)"
-        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
+        @del "Foolish\foolish.txt" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" 2>NUL
 
 __postbuild__:
 	@echo main_test has been built

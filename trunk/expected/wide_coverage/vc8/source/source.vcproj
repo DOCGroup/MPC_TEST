@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="source"
-	ProjectGUID="{7901769F-FECA-1BAD-2457-8D6BA733F8D6}"
+	ProjectGUID="{7971F6DF-FECA-1BAD-2457-8D3B772A6373}"
 	RootNamespace="source"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -25,6 +25,7 @@
 			IntermediateDirectory="Debug\source\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -51,7 +52,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -107,6 +108,7 @@
 			IntermediateDirectory="Release\source\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -133,7 +135,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -188,6 +190,7 @@
 			IntermediateDirectory="Debug\source\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -214,7 +217,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -271,6 +274,7 @@
 			IntermediateDirectory="Release\source\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -297,7 +301,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"

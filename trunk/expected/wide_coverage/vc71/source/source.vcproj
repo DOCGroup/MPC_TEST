@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="source"
-	ProjectGUID="{7901769F-FECA-1BAD-2457-8D6BA733F8D6}"
+	ProjectGUID="{7971F6DF-FECA-1BAD-2457-8D3B772A6373}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -91,7 +91,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="2"

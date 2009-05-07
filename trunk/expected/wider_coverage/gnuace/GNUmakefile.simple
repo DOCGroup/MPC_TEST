@@ -27,8 +27,12 @@ LDLIBS = -lother_lib -lsimple_lib
 PRJ_TYPE = rtp
 
 ifeq ($(INSBIN),.)
-  ifeq ($(PWD),)
-    PWD=$(shell pwd)
+  ifeq ($(CURDIR),)
+    ifeq ($(PWD),)
+      PWD=$(shell pwd)
+    endif
+  else
+    PWD=$(CURDIR)
   endif
   INSBIN = $(PWD)
 endif

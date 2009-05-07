@@ -8,14 +8,14 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
-LIBMODIFIER  = d
+LIBMODIFIER  = _bd
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
-LIBMODIFIER  = 
+LIBMODIFIER  = _br
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
@@ -27,6 +27,8 @@ POSTLINKRM   = .tds
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -54,7 +56,7 @@ WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
 CCFLAGS      = -q -tWR -tWD
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)other
-NAME         = other$(LIBMODIFIER)
+NAME         = other$(LIBMODIFIER)$(ULIBMODIFIER)
 CPPDIR       = .;other
 RESDIR       = .
 
@@ -130,17 +132,17 @@ generated: $(GENERATED_DIRTY)
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) other\zar_otherB.cpp
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "other\zar_otherA.cpp" del "other\zar_otherA.cpp"
-	-if exist "other\zar_otherA.h" del "other\zar_otherA.h"
-	-if exist "other\zar_otherA.inl" del "other\zar_otherA.inl"
-	-if exist "other\zar_otherB.cpp" del "other\zar_otherB.cpp"
-	-if exist "other\zar_otherB.h" del "other\zar_otherB.h"
-	-if exist "other\zar_otherB.inl" del "other\zar_otherB.inl"
-	-if exist "other\zar_otherC.h" del "other\zar_otherC.h"
-        -if exist "$(OUTPUTDIR)$(NAME)$(DLL_EXT)" del "$(OUTPUTDIR)$(NAME)$(DLL_EXT)"
-	-if exist "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)"
-        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
+        @del "other\zar_otherA.cpp" 2>NUL
+        @del "other\zar_otherA.h" 2>NUL
+        @del "other\zar_otherA.inl" 2>NUL
+        @del "other\zar_otherB.cpp" 2>NUL
+        @del "other\zar_otherB.h" 2>NUL
+        @del "other\zar_otherB.inl" 2>NUL
+        @del "other\zar_otherC.h" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(DLL_EXT)" del "$(OUTPUTDIR)$(NAME)$(DLL_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" 2>NUL
 

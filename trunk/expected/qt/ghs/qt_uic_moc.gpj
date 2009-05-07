@@ -8,6 +8,7 @@
 	-I$(QTDIR)\include
 	-L.
 	-L$(QTDIR)\lib
+	-L$(QTDIR)\lib64
 	-lqt-mt$(QT_VERSION)
 	-DQT_THREAD_SUPPORT
 demo.ui		[Text]
