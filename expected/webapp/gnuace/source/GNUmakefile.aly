@@ -34,8 +34,12 @@ PRJ_TYPE = library
 
 INSLIB ?= .
 ifeq ($(INSLIB),.)
-  ifeq ($(PWD),)
-    PWD=$(shell pwd)
+  ifeq ($(CURDIR),)
+    ifeq ($(PWD),)
+      PWD=$(shell pwd)
+    endif
+  else
+    PWD=$(CURDIR)
   endif
   INSLIB = $(PWD)
 endif

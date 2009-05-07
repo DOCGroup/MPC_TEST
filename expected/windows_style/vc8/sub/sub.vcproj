@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="sub"
-	ProjectGUID="{09047399-FECA-1BAD-7430-8A63B88A1E78}"
+	ProjectGUID="{090473D9-FECA-1BAD-7430-8A6300F62D90}"
 	RootNamespace="sub"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -25,6 +25,7 @@
 			IntermediateDirectory="Debug\sub\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -51,7 +52,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".."
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -105,6 +106,7 @@
 			IntermediateDirectory="Release\sub\I386"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -131,7 +133,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories=".."
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -184,6 +186,7 @@
 			IntermediateDirectory="Debug\sub\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -210,7 +213,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".."
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -265,6 +268,7 @@
 			IntermediateDirectory="Release\sub\AMD64"
 			ConfigurationType="1"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -291,7 +295,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories=".."
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"

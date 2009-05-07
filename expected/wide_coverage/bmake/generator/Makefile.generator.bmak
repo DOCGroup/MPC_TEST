@@ -8,7 +8,7 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
-LIBMODIFIER  = d
+LIBMODIFIER  = _bd
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = ..\bin\\
@@ -16,7 +16,7 @@ EXEOUTPUTDIR = ..\bin\\
 !ifdef RELEASE
 OCFLAGS      =  -DNDEBUG
 CFG_DIR      = Release\\
-LIBMODIFIER  = 
+LIBMODIFIER  = _br
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = ..\bin\\
@@ -29,6 +29,8 @@ EXEOUTPUTDIR = ..\bin\\
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -69,7 +71,7 @@ LFLAGS   = \
            -L"..\lib" -j"..\lib"
 
 LIBFILES = \
-           generator_be$(LIBMODIFIER)$(LIB_EXT) \
+           generator_be$(LIBMODIFIER)$(ULIBMODIFIER)$(LIB_EXT) \
            $(CG_LIB) import32.lib cw32mti.lib ws2_32.lib
 
 RESOURCE = \
@@ -129,11 +131,11 @@ generated: $(GENERATED_DIRTY)
         $(RC) $(RC_FLAGS) -fo$@ $<
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)"
-        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
+        @del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" 2>NUL
 
 __prebuild__:
 	@echo Building generator

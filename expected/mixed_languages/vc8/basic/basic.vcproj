@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="basic"
-	ProjectGUID="{19027295-FECA-1BAD-609D-8A63B7C2E34F}"
+	ProjectGUID="{190232C5-FECA-1BAD-609D-8A6314D04FCA}"
 	RootNamespace="basic"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -25,6 +25,7 @@
 			IntermediateDirectory="Debug\basic\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -50,7 +51,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="BASIC_BUILD_DLL;_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
+                                PreprocessorDefinitions="BASIC_BUILD_DLL;_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -106,6 +107,7 @@
 			IntermediateDirectory="Release\basic\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -131,7 +133,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				PreprocessorDefinitions="BASIC_BUILD_DLL;NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
+                                PreprocessorDefinitions="BASIC_BUILD_DLL;NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -186,6 +188,7 @@
 			IntermediateDirectory="Debug\basic\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -211,7 +214,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="BASIC_BUILD_DLL;_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
+                                PreprocessorDefinitions="BASIC_BUILD_DLL;_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -268,6 +271,7 @@
 			IntermediateDirectory="Release\basic\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -293,7 +297,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				PreprocessorDefinitions="BASIC_BUILD_DLL;NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
+                                PreprocessorDefinitions="BASIC_BUILD_DLL;NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -346,11 +350,11 @@
 	</Configurations>
 	<References>
 		<ProjectReference
-			ReferencedProjectIdentifier="{7904709F-FECA-1BAD-4657-8A65C1753E10}"
+			ReferencedProjectIdentifier="{790410FF-FECA-1BAD-4657-8A65914D04F6}"
 			RelativePathToProject="../base/base.vcproj"
 		/>
 		<ProjectReference
-			ReferencedProjectIdentifier="{28407A9F-FECA-1BAD-E652-8C66753DA3CB}"
+			ReferencedProjectIdentifier="{28202AFF-FECA-1BAD-E652-8C264D0745C1}"
 			RelativePathToProject="../csharp/csharp.csproj"
 		/>
 	</References>

@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="csvw_D"
-	ProjectGUID="{69007591-FECA-1BAD-4415-8A656075DE39}"
+	ProjectGUID="{696035B1-FECA-1BAD-4415-8A651CEEC620}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;FAIL_IF_NOT_DEFINED"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;FAIL_IF_NOT_DEFINED"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -89,7 +89,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;FAIL_IF_NOT_DEFINED"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;FAIL_IF_NOT_DEFINED"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="2"

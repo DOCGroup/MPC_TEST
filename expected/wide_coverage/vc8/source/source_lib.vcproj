@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="source_lib"
-	ProjectGUID="{0B017DE5-FECA-1BAD-9DF8-8E63A733F8D6}"
+	ProjectGUID="{8B417D40-FECA-1BAD-9DA8-AE33772A6373}"
 	RootNamespace="source_lib"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -25,6 +25,7 @@
 			IntermediateDirectory="Static_Debug\source_lib\I386"
 			ConfigurationType="4"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -51,7 +52,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="."
-				PreprocessorDefinitions="USING_PCH;_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
+                                PreprocessorDefinitions="USING_PCH;_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
@@ -100,6 +101,7 @@
 			IntermediateDirectory="Static_Release\source_lib\I386"
 			ConfigurationType="4"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -126,7 +128,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories="."
-				PreprocessorDefinitions="USING_PCH;NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
+                                PreprocessorDefinitions="USING_PCH;NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
 				RuntimeLibrary="0"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
@@ -172,6 +174,7 @@
 			IntermediateDirectory="Static_Debug\source_lib\AMD64"
 			ConfigurationType="4"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -198,7 +201,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="."
-				PreprocessorDefinitions="USING_PCH;_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
+                                PreprocessorDefinitions="USING_PCH;_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
@@ -247,6 +250,7 @@
 			IntermediateDirectory="Static_Release\source_lib\AMD64"
 			ConfigurationType="4"
 			CharacterSet="0"
+
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -273,7 +277,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories="."
-				PreprocessorDefinitions="USING_PCH;NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
+                                PreprocessorDefinitions="USING_PCH;NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				RuntimeLibrary="0"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"

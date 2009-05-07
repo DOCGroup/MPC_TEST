@@ -72,14 +72,14 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(QTDIR)\include" /D _DEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(QTDIR)\include" /D _DEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /nologo /subsystem:console /debug /pdb:"$(INSTALLDIR)\main.pdb" /machine:I386 /out:"$(INSTALLDIR)\main.exe"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /libpath:"$(QTDIR)\lib64" /nologo /subsystem:console /debug /pdb:"$(INSTALLDIR)\main.pdb" /machine:I386 /out:"$(INSTALLDIR)\main.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\demo.obj" \
 	"$(INTDIR)\demo_moc.obj" \
@@ -122,14 +122,14 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(QTDIR)\include" /D NDEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(QTDIR)\include" /D NDEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /nologo /subsystem:console  /machine:I386 /out:"$(INSTALLDIR)\main.exe"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /libpath:"$(QTDIR)\lib64" /nologo /subsystem:console  /machine:I386 /out:"$(INSTALLDIR)\main.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\demo.obj" \
 	"$(INTDIR)\demo_moc.obj" \
@@ -173,14 +173,14 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(QTDIR)\include" /D _DEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(QTDIR)\include" /D _DEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /nologo /subsystem:console /debug /pdb:"$(INSTALLDIR)\main.pdb" /machine:I386 /out:"$(INSTALLDIR)\main.exe"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /libpath:"$(QTDIR)\lib64" /nologo /subsystem:console /debug /pdb:"$(INSTALLDIR)\main.pdb" /machine:I386 /out:"$(INSTALLDIR)\main.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\demo.obj" \
 	"$(INTDIR)\demo_moc.obj" \
@@ -223,14 +223,14 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(QTDIR)\include" /D NDEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(QTDIR)\include" /D NDEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /nologo /subsystem:console  /machine:I386 /out:"$(INSTALLDIR)\main.exe"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /libpath:"$(QTDIR)\lib64" /nologo /subsystem:console  /machine:I386 /out:"$(INSTALLDIR)\main.exe"
 LINK32_OBJS= \
 	"$(INTDIR)\demo.obj" \
 	"$(INTDIR)\demo_moc.obj" \

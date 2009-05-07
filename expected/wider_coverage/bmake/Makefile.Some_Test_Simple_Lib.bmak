@@ -8,13 +8,13 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Static_Debug\\
-LIBMODIFIER  = sd
+LIBMODIFIER  = _bsd
 EXEMODIFIER  = 
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Static_Release\\
-LIBMODIFIER  = s
+LIBMODIFIER  = _bsr
 EXEMODIFIER  = 
 !else
 !error You must define one of these valid configurations: Debug Release MFC Release MFC Debug
@@ -25,6 +25,8 @@ EXEMODIFIER  =
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -52,7 +54,7 @@ WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
 CCFLAGS      = -q
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)Some_Test_Simple_Lib
-NAME         = simple_lib$(LIBMODIFIER)
+NAME         = simple_lib$(LIBMODIFIER)$(ULIBMODIFIER)
 CPPDIR       = .
 RESDIR       = .
 
@@ -114,9 +116,9 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)"
-        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
+        @del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" 2>NUL
 

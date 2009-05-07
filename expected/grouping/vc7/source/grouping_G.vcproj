@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="grouping_G"
-	ProjectGUID="{51027CF1-FECA-1BAD-6F83-8E61EADF07C1}"
+	ProjectGUID="{11228CD1-FECA-1BAD-6F83-8EE16FD77B02}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -89,7 +89,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="2"

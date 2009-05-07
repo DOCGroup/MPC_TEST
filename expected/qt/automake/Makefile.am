@@ -56,7 +56,7 @@ main_SOURCES = \
   demo.h
 
 main_LDFLAGS = \
-  -L$(QTDIR)/lib
+  -L$(QTDIR)/lib -L$(QTDIR)/lib64
 
 main_LDADD = \
   -lqt-mt$(QT_VERSION)

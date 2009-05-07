@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="source_lib"
-	ProjectGUID="{0B017DE5-FECA-1BAD-9DF8-8E63A733F8D6}"
+	ProjectGUID="{8B417D40-FECA-1BAD-9DA8-AE33772A6373}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="."
-				PreprocessorDefinitions="USING_PCH;_DEBUG;WIN32;_WINDOWS"
+                                PreprocessorDefinitions="USING_PCH;_DEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -84,7 +84,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories="."
-				PreprocessorDefinitions="USING_PCH;NDEBUG;WIN32;_WINDOWS"
+                                PreprocessorDefinitions="USING_PCH;NDEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="0"

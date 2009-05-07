@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="foo_a"
-	ProjectGUID="{39027D93-FECA-1BAD-609D-8A63EC4FFFF7}"
+	ProjectGUID="{39027D33-FECA-1BAD-609D-8A63D1DD62B7}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -24,7 +24,7 @@
 				AdditionalOptions="-g"
 				Optimization="0"
 				AdditionalIncludeDirectories="bam"
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -93,7 +93,7 @@
 				AdditionalOptions="-g"
 				Optimization="3"
 				AdditionalIncludeDirectories="bam"
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="2"

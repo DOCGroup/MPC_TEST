@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="flex_bison"
-	ProjectGUID="{CB0D7AF3-FECA-1BAD-E396-8767D5C72B7A}"
+	ProjectGUID="{6BDD3AA3-FECA-1BAD-E396-A7F75A0E16E8}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -24,7 +24,7 @@
 				AdditionalOptions="/O"
 				Optimization="0"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -92,7 +92,7 @@
 				AdditionalOptions="/O"
 				Optimization="3"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="2"

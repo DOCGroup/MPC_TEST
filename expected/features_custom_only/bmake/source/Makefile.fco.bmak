@@ -8,14 +8,14 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
-LIBMODIFIER  = d
+LIBMODIFIER  = _bd
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
-LIBMODIFIER  = 
+LIBMODIFIER  = _br
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
@@ -27,6 +27,8 @@ POSTLINKRM   = .tds
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -114,26 +116,26 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "zar_thatA.cpp" del "zar_thatA.cpp"
-	-if exist "zar_thatA.h" del "zar_thatA.h"
-	-if exist "zar_thatA.inl" del "zar_thatA.inl"
-	-if exist "zar_thatB.cpp" del "zar_thatB.cpp"
-	-if exist "zar_thatB.h" del "zar_thatB.h"
-	-if exist "zar_thatB.inl" del "zar_thatB.inl"
-	-if exist "zar_thatC.cpp" del "zar_thatC.cpp"
-	-if exist "zar_thatC.h" del "zar_thatC.h"
-	-if exist "zar_thisA.cpp" del "zar_thisA.cpp"
-	-if exist "zar_thisA.h" del "zar_thisA.h"
-	-if exist "zar_thisA.inl" del "zar_thisA.inl"
-	-if exist "zar_thisB.cpp" del "zar_thisB.cpp"
-	-if exist "zar_thisB.h" del "zar_thisB.h"
-	-if exist "zar_thisB.inl" del "zar_thisB.inl"
-	-if exist "zar_thisB_T.cpp" del "zar_thisB_T.cpp"
-	-if exist "zar_thisB_T.h" del "zar_thisB_T.h"
-	-if exist "zar_thisB_T.inl" del "zar_thisB_T.inl"
-	-if exist "zar_thisC.cpp" del "zar_thisC.cpp"
-	-if exist "zar_thisC.h" del "zar_thisC.h"
+        @del "zar_thatA.cpp" 2>NUL
+        @del "zar_thatA.h" 2>NUL
+        @del "zar_thatA.inl" 2>NUL
+        @del "zar_thatB.cpp" 2>NUL
+        @del "zar_thatB.h" 2>NUL
+        @del "zar_thatB.inl" 2>NUL
+        @del "zar_thatC.cpp" 2>NUL
+        @del "zar_thatC.h" 2>NUL
+        @del "zar_thisA.cpp" 2>NUL
+        @del "zar_thisA.h" 2>NUL
+        @del "zar_thisA.inl" 2>NUL
+        @del "zar_thisB.cpp" 2>NUL
+        @del "zar_thisB.h" 2>NUL
+        @del "zar_thisB.inl" 2>NUL
+        @del "zar_thisB_T.cpp" 2>NUL
+        @del "zar_thisB_T.h" 2>NUL
+        @del "zar_thisB_T.inl" 2>NUL
+        @del "zar_thisC.cpp" 2>NUL
+        @del "zar_thisC.h" 2>NUL
 

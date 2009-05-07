@@ -12,5 +12,6 @@ qt_uic_moc_int.gpj		[INTEGRITY Application]
 	-I$(QTDIR)\include
 	-L.
 	-L$(QTDIR)\lib
+	-L$(QTDIR)\lib64
 	-lqt-mt$(QT_VERSION)
 	-DQT_THREAD_SUPPORT

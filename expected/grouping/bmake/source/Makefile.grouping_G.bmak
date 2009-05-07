@@ -8,7 +8,7 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
-LIBMODIFIER  = d
+LIBMODIFIER  = _bd
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = .\\
@@ -16,7 +16,7 @@ EXEOUTPUTDIR = .\\
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
-LIBMODIFIER  = 
+LIBMODIFIER  = _br
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = Release\\
@@ -29,6 +29,8 @@ EXEOUTPUTDIR = Release\\
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -129,11 +131,11 @@ generated: $(GENERATED_DIRTY)
 	$(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) alternate\foo.cpp
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "clown.cpp" del "clown.cpp"
-	-if exist "clown.h" del "clown.h"
-	-if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)"
-        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
+        @del "clown.cpp" 2>NUL
+        @del "clown.h" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" 2>NUL
 

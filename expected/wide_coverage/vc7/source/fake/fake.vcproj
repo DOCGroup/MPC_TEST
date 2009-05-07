@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="fake"
-	ProjectGUID="{79047497-FECA-1BAD-07D7-8A65D7F3642A}"
+	ProjectGUID="{790414E7-FECA-1BAD-07D7-8A65371E7573}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -90,7 +90,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="2"

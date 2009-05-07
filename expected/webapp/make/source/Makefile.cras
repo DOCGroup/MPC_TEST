@@ -8,7 +8,11 @@ LDFLAGS         = -lib:.
 CFLAGS          =
 TESTDIRSTART    = test -d
 TESTDIREND      = ||
+CAT             = cat
+MV              = mv -f
 RM              = rm -rf
+CP              = cp -p
+NUL             = /dev/null
 MKDIR           = mkdir -p
 
 #----------------------------------------------------------------------------
@@ -19,7 +23,9 @@ all: $(GENERATED_DIRTY) $(TARGET)
 
 $(TARGET): cras.cs
 	@$(TESTDIRSTART) "$(TARGETDIR)" $(TESTDIREND) $(MKDIR) "$(TARGETDIR)"
-	mcs -target:library -out:$(TARGET) $(CFLAGS) $(LDFLAGS) cras.cs
+	gmcs -target:library -out:$(TARGET) $(CFLAGS) $(LDFLAGS) cras.cs
+
+bundle:
 
 generated: $(GENERATED_DIRTY)
 	@-:

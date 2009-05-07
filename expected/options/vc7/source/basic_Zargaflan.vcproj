@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="basic_Zargaflan"
-	ProjectGUID="{CF4524FD-FECA-1BAD-65F1-8A67D6B17186}"
+	ProjectGUID="{09035B57-FECA-1BAD-65F1-8A07EBA37C56}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".."
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -90,7 +90,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories=".."
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="0"

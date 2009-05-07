@@ -8,14 +8,14 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
-LIBMODIFIER  = d
+LIBMODIFIER  = _bd
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
-LIBMODIFIER  = 
+LIBMODIFIER  = _br
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
@@ -27,6 +27,8 @@ POSTLINKRM   = .tds
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -114,9 +116,9 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "foo.cpp" del "foo.cpp"
-	-if exist "foo_script2.cpp" del "foo_script2.cpp"
+        @del "foo.cpp" 2>NUL
+        @del "foo_script2.cpp" 2>NUL
 

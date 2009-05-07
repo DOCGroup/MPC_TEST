@@ -8,14 +8,14 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
-LIBMODIFIER  = d
+LIBMODIFIER  = _bd
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
-LIBMODIFIER  = 
+LIBMODIFIER  = _br
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
@@ -27,6 +27,8 @@ POSTLINKRM   = .tds
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -54,7 +56,7 @@ WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
 CCFLAGS      = -q -tWR -tWD
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)simple
-NAME         = weird$$name$(LIBMODIFIER)
+NAME         = weird$$name$(LIBMODIFIER)$(ULIBMODIFIER)
 CPPDIR       = .
 RESDIR       = .
 
@@ -69,7 +71,7 @@ LFLAGS   = \
            -L"$(IDL2JNI_ROOT)\lib" -j"$(IDL2JNI_ROOT)\lib"
 
 LIBFILES = \
-           idl2jni_runtime$(LIBMODIFIER)$(LIB_EXT) \
+           idl2jni_runtime$(LIBMODIFIER)$(ULIBMODIFIER)$(LIB_EXT) \
            $(CG_LIB) import32.lib cw32mti.lib ws2_32.lib
 
 # Borland precompiled headers can choke on some header files.
@@ -476,187 +478,187 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "simple\_Local2LocalBase.class" del "simple\_Local2LocalBase.class"
-	-if exist "simple\_Local3LocalBase.class" del "simple\_Local3LocalBase.class"
-	-if exist "simple\_TestInterf2Stub.class" del "simple\_TestInterf2Stub.class"
-	-if exist "simple\_TestInterf3Stub.class" del "simple\_TestInterf3Stub.class"
-	-if exist "simple\_TestInterfStub.class" del "simple\_TestInterfStub.class"
-	-if exist "simple\_TestLILocalBase.class" del "simple\_TestLILocalBase.class"
-	-if exist "simple\ArrayBounds.class" del "simple\ArrayBounds.class"
-	-if exist "simple\EnumArrayHelper.class" del "simple\EnumArrayHelper.class"
-	-if exist "simple\EnumArrayHolder.class" del "simple\EnumArrayHolder.class"
-	-if exist "simple\EnumSeqHelper.class" del "simple\EnumSeqHelper.class"
-	-if exist "simple\EnumSeqHolder.class" del "simple\EnumSeqHolder.class"
-	-if exist "simple\Local2.class" del "simple\Local2.class"
-	-if exist "simple\Local2Helper.class" del "simple\Local2Helper.class"
-	-if exist "simple\Local2Holder.class" del "simple\Local2Holder.class"
-	-if exist "simple\Local2Operations.class" del "simple\Local2Operations.class"
-	-if exist "simple\Local2SeqHelper.class" del "simple\Local2SeqHelper.class"
-	-if exist "simple\Local2SeqHolder.class" del "simple\Local2SeqHolder.class"
-	-if exist "simple\Local3.class" del "simple\Local3.class"
-	-if exist "simple\Local3Helper.class" del "simple\Local3Helper.class"
-	-if exist "simple\Local3Holder.class" del "simple\Local3Holder.class"
-	-if exist "simple\Local3Operations.class" del "simple\Local3Operations.class"
-	-if exist "simple\LongSeqSeqHelper.class" del "simple\LongSeqSeqHelper.class"
-	-if exist "simple\LongSeqSeqHolder.class" del "simple\LongSeqSeqHolder.class"
-	-if exist "simple\LongSeqSeqSeqHelper.class" del "simple\LongSeqSeqSeqHelper.class"
-	-if exist "simple\LongSeqSeqSeqHolder.class" del "simple\LongSeqSeqSeqHolder.class"
-	-if exist "simple\SeqOfTypedefedLongHelper.class" del "simple\SeqOfTypedefedLongHelper.class"
-	-if exist "simple\SeqOfTypedefedLongHolder.class" del "simple\SeqOfTypedefedLongHolder.class"
-	-if exist "simple\StringSeqHelper.class" del "simple\StringSeqHelper.class"
-	-if exist "simple\StringSeqHolder.class" del "simple\StringSeqHolder.class"
-	-if exist "simple\StringSeqSeqHelper.class" del "simple\StringSeqSeqHelper.class"
-	-if exist "simple\StringSeqSeqHolder.class" del "simple\StringSeqSeqHolder.class"
-	-if exist "simple\StringSeqSeqSeqHelper.class" del "simple\StringSeqSeqSeqHelper.class"
-	-if exist "simple\StringSeqSeqSeqHolder.class" del "simple\StringSeqSeqSeqHolder.class"
-	-if exist "simple\StructWithObjref.class" del "simple\StructWithObjref.class"
-	-if exist "simple\StructWithObjrefHelper.class" del "simple\StructWithObjrefHelper.class"
-	-if exist "simple\StructWithObjrefHolder.class" del "simple\StructWithObjrefHolder.class"
-	-if exist "simple\TestArrayTypedef2Helper.class" del "simple\TestArrayTypedef2Helper.class"
-	-if exist "simple\TestArrayTypedefHelper.class" del "simple\TestArrayTypedefHelper.class"
-	-if exist "simple\TestArrayTypedefHolder.class" del "simple\TestArrayTypedefHolder.class"
-	-if exist "simple\TestConstBool.class" del "simple\TestConstBool.class"
-	-if exist "simple\TestConstDouble.class" del "simple\TestConstDouble.class"
-	-if exist "simple\TestConstFloat.class" del "simple\TestConstFloat.class"
-	-if exist "simple\TestConstLong.class" del "simple\TestConstLong.class"
-	-if exist "simple\TestConstString.class" del "simple\TestConstString.class"
-	-if exist "simple\TestConstTypedef.class" del "simple\TestConstTypedef.class"
-	-if exist "simple\TestEnum.class" del "simple\TestEnum.class"
-	-if exist "simple\TestEnumHelper.class" del "simple\TestEnumHelper.class"
-	-if exist "simple\TestEnumHolder.class" del "simple\TestEnumHolder.class"
-	-if exist "simple\TestInterf.class" del "simple\TestInterf.class"
-	-if exist "simple\TestInterf2.class" del "simple\TestInterf2.class"
-	-if exist "simple\TestInterf2Helper.class" del "simple\TestInterf2Helper.class"
-	-if exist "simple\TestInterf2Holder.class" del "simple\TestInterf2Holder.class"
-	-if exist "simple\TestInterf2Operations.class" del "simple\TestInterf2Operations.class"
-	-if exist "simple\TestInterf3.class" del "simple\TestInterf3.class"
-	-if exist "simple\TestInterf3Helper.class" del "simple\TestInterf3Helper.class"
-	-if exist "simple\TestInterf3Holder.class" del "simple\TestInterf3Holder.class"
-	-if exist "simple\TestInterf3Operations.class" del "simple\TestInterf3Operations.class"
-	-if exist "simple\TestInterfHelper.class" del "simple\TestInterfHelper.class"
-	-if exist "simple\TestInterfHolder.class" del "simple\TestInterfHolder.class"
-	-if exist "simple\TestInterfOperations.class" del "simple\TestInterfOperations.class"
-	-if exist "simple\TestLI.class" del "simple\TestLI.class"
-	-if exist "simple\TestLIHelper.class" del "simple\TestLIHelper.class"
-	-if exist "simple\TestLIHolder.class" del "simple\TestLIHolder.class"
-	-if exist "simple\TestLIOperations.class" del "simple\TestLIOperations.class"
-	-if exist "simple\TestNestedStruct.class" del "simple\TestNestedStruct.class"
-	-if exist "simple\TestNestedStructHelper.class" del "simple\TestNestedStructHelper.class"
-	-if exist "simple\TestNestedStructHolder.class" del "simple\TestNestedStructHolder.class"
-	-if exist "simple\TestSeqTypedefHelper.class" del "simple\TestSeqTypedefHelper.class"
-	-if exist "simple\TestSeqTypedefHolder.class" del "simple\TestSeqTypedefHolder.class"
-	-if exist "simple\TestStringArrayHelper.class" del "simple\TestStringArrayHelper.class"
-	-if exist "simple\TestStringArrayHolder.class" del "simple\TestStringArrayHolder.class"
-	-if exist "simple\TestStruct.class" del "simple\TestStruct.class"
-	-if exist "simple\TestStructArrayHelper.class" del "simple\TestStructArrayHelper.class"
-	-if exist "simple\TestStructArrayHolder.class" del "simple\TestStructArrayHolder.class"
-	-if exist "simple\TestStructHelper.class" del "simple\TestStructHelper.class"
-	-if exist "simple\TestStructHolder.class" del "simple\TestStructHolder.class"
-	-if exist "simple\TestStructSequenceHelper.class" del "simple\TestStructSequenceHelper.class"
-	-if exist "simple\TestStructSequenceHolder.class" del "simple\TestStructSequenceHolder.class"
-	-if exist "simple\TestStructWithEnum.class" del "simple\TestStructWithEnum.class"
-	-if exist "simple\TestStructWithEnumHelper.class" del "simple\TestStructWithEnumHelper.class"
-	-if exist "simple\TestStructWithEnumHolder.class" del "simple\TestStructWithEnumHolder.class"
-	-if exist "simple\TestTypedefHelper.class" del "simple\TestTypedefHelper.class"
-	-if exist "simple\TIMESTAMP_INVALID_NSEC.class" del "simple\TIMESTAMP_INVALID_NSEC.class"
-	-if exist "SomeSortOfTypedefHelper.class" del "SomeSortOfTypedefHelper.class"
-	-if exist "otherJC.cpp" del "otherJC.cpp"
-	-if exist "otherJC.h" del "otherJC.h"
-	-if exist "otherJS.cpp" del "otherJS.cpp"
-	-if exist "otherJS.h" del "otherJS.h"
-	-if exist "SomeSortOfTypedefHelper.java" del "SomeSortOfTypedefHelper.java"
-	-if exist "simple\_Local2LocalBase.java" del "simple\_Local2LocalBase.java"
-	-if exist "simple\_Local3LocalBase.java" del "simple\_Local3LocalBase.java"
-	-if exist "simple\_TestInterf2Stub.java" del "simple\_TestInterf2Stub.java"
-	-if exist "simple\_TestInterf3Stub.java" del "simple\_TestInterf3Stub.java"
-	-if exist "simple\_TestInterfStub.java" del "simple\_TestInterfStub.java"
-	-if exist "simple\_TestLILocalBase.java" del "simple\_TestLILocalBase.java"
-	-if exist "simple\ArrayBounds.java" del "simple\ArrayBounds.java"
-	-if exist "simple\EnumArrayHelper.java" del "simple\EnumArrayHelper.java"
-	-if exist "simple\EnumArrayHolder.java" del "simple\EnumArrayHolder.java"
-	-if exist "simple\EnumSeqHelper.java" del "simple\EnumSeqHelper.java"
-	-if exist "simple\EnumSeqHolder.java" del "simple\EnumSeqHolder.java"
-	-if exist "simple\Local2.java" del "simple\Local2.java"
-	-if exist "simple\Local2Helper.java" del "simple\Local2Helper.java"
-	-if exist "simple\Local2Holder.java" del "simple\Local2Holder.java"
-	-if exist "simple\Local2Operations.java" del "simple\Local2Operations.java"
-	-if exist "simple\Local2SeqHelper.java" del "simple\Local2SeqHelper.java"
-	-if exist "simple\Local2SeqHolder.java" del "simple\Local2SeqHolder.java"
-	-if exist "simple\Local3.java" del "simple\Local3.java"
-	-if exist "simple\Local3Helper.java" del "simple\Local3Helper.java"
-	-if exist "simple\Local3Holder.java" del "simple\Local3Holder.java"
-	-if exist "simple\Local3Operations.java" del "simple\Local3Operations.java"
-	-if exist "simple\LongSeqSeqHelper.java" del "simple\LongSeqSeqHelper.java"
-	-if exist "simple\LongSeqSeqHolder.java" del "simple\LongSeqSeqHolder.java"
-	-if exist "simple\LongSeqSeqSeqHelper.java" del "simple\LongSeqSeqSeqHelper.java"
-	-if exist "simple\LongSeqSeqSeqHolder.java" del "simple\LongSeqSeqSeqHolder.java"
-	-if exist "simple\SeqOfTypedefedLongHelper.java" del "simple\SeqOfTypedefedLongHelper.java"
-	-if exist "simple\SeqOfTypedefedLongHolder.java" del "simple\SeqOfTypedefedLongHolder.java"
-	-if exist "simple\StringSeqHelper.java" del "simple\StringSeqHelper.java"
-	-if exist "simple\StringSeqHolder.java" del "simple\StringSeqHolder.java"
-	-if exist "simple\StringSeqSeqHelper.java" del "simple\StringSeqSeqHelper.java"
-	-if exist "simple\StringSeqSeqHolder.java" del "simple\StringSeqSeqHolder.java"
-	-if exist "simple\StringSeqSeqSeqHelper.java" del "simple\StringSeqSeqSeqHelper.java"
-	-if exist "simple\StringSeqSeqSeqHolder.java" del "simple\StringSeqSeqSeqHolder.java"
-	-if exist "simple\StructWithObjref.java" del "simple\StructWithObjref.java"
-	-if exist "simple\StructWithObjrefHelper.java" del "simple\StructWithObjrefHelper.java"
-	-if exist "simple\StructWithObjrefHolder.java" del "simple\StructWithObjrefHolder.java"
-	-if exist "simple\TestArrayTypedef2Helper.java" del "simple\TestArrayTypedef2Helper.java"
-	-if exist "simple\TestArrayTypedefHelper.java" del "simple\TestArrayTypedefHelper.java"
-	-if exist "simple\TestArrayTypedefHolder.java" del "simple\TestArrayTypedefHolder.java"
-	-if exist "simple\TestConstBool.java" del "simple\TestConstBool.java"
-	-if exist "simple\TestConstDouble.java" del "simple\TestConstDouble.java"
-	-if exist "simple\TestConstFloat.java" del "simple\TestConstFloat.java"
-	-if exist "simple\TestConstLong.java" del "simple\TestConstLong.java"
-	-if exist "simple\TestConstString.java" del "simple\TestConstString.java"
-	-if exist "simple\TestConstTypedef.java" del "simple\TestConstTypedef.java"
-	-if exist "simple\TestEnum.java" del "simple\TestEnum.java"
-	-if exist "simple\TestEnumHelper.java" del "simple\TestEnumHelper.java"
-	-if exist "simple\TestEnumHolder.java" del "simple\TestEnumHolder.java"
-	-if exist "simple\TestInterf.java" del "simple\TestInterf.java"
-	-if exist "simple\TestInterf2.java" del "simple\TestInterf2.java"
-	-if exist "simple\TestInterf2Helper.java" del "simple\TestInterf2Helper.java"
-	-if exist "simple\TestInterf2Holder.java" del "simple\TestInterf2Holder.java"
-	-if exist "simple\TestInterf2Operations.java" del "simple\TestInterf2Operations.java"
-	-if exist "simple\TestInterf3.java" del "simple\TestInterf3.java"
-	-if exist "simple\TestInterf3Helper.java" del "simple\TestInterf3Helper.java"
-	-if exist "simple\TestInterf3Holder.java" del "simple\TestInterf3Holder.java"
-	-if exist "simple\TestInterf3Operations.java" del "simple\TestInterf3Operations.java"
-	-if exist "simple\TestInterfHelper.java" del "simple\TestInterfHelper.java"
-	-if exist "simple\TestInterfHolder.java" del "simple\TestInterfHolder.java"
-	-if exist "simple\TestInterfOperations.java" del "simple\TestInterfOperations.java"
-	-if exist "simple\TestLI.java" del "simple\TestLI.java"
-	-if exist "simple\TestLIHelper.java" del "simple\TestLIHelper.java"
-	-if exist "simple\TestLIHolder.java" del "simple\TestLIHolder.java"
-	-if exist "simple\TestLIOperations.java" del "simple\TestLIOperations.java"
-	-if exist "simple\TestNestedStruct.java" del "simple\TestNestedStruct.java"
-	-if exist "simple\TestNestedStructHelper.java" del "simple\TestNestedStructHelper.java"
-	-if exist "simple\TestNestedStructHolder.java" del "simple\TestNestedStructHolder.java"
-	-if exist "simple\TestSeqTypedefHelper.java" del "simple\TestSeqTypedefHelper.java"
-	-if exist "simple\TestSeqTypedefHolder.java" del "simple\TestSeqTypedefHolder.java"
-	-if exist "simple\TestStringArrayHelper.java" del "simple\TestStringArrayHelper.java"
-	-if exist "simple\TestStringArrayHolder.java" del "simple\TestStringArrayHolder.java"
-	-if exist "simple\TestStruct.java" del "simple\TestStruct.java"
-	-if exist "simple\TestStructArrayHelper.java" del "simple\TestStructArrayHelper.java"
-	-if exist "simple\TestStructArrayHolder.java" del "simple\TestStructArrayHolder.java"
-	-if exist "simple\TestStructHelper.java" del "simple\TestStructHelper.java"
-	-if exist "simple\TestStructHolder.java" del "simple\TestStructHolder.java"
-	-if exist "simple\TestStructSequenceHelper.java" del "simple\TestStructSequenceHelper.java"
-	-if exist "simple\TestStructSequenceHolder.java" del "simple\TestStructSequenceHolder.java"
-	-if exist "simple\TestStructWithEnum.java" del "simple\TestStructWithEnum.java"
-	-if exist "simple\TestStructWithEnumHelper.java" del "simple\TestStructWithEnumHelper.java"
-	-if exist "simple\TestStructWithEnumHolder.java" del "simple\TestStructWithEnumHolder.java"
-	-if exist "simple\TestTypedefHelper.java" del "simple\TestTypedefHelper.java"
-	-if exist "simple\TIMESTAMP_INVALID_NSEC.java" del "simple\TIMESTAMP_INVALID_NSEC.java"
-	-if exist "simpleJC.cpp" del "simpleJC.cpp"
-	-if exist "simpleJC.h" del "simpleJC.h"
-	-if exist "simpleJS.h" del "simpleJS.h"
-        -if exist "$(OUTPUTDIR)$(NAME)$(DLL_EXT)" del "$(OUTPUTDIR)$(NAME)$(DLL_EXT)"
-	-if exist "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)"
-        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
+        @del "simple\_Local2LocalBase.class" 2>NUL
+        @del "simple\_Local3LocalBase.class" 2>NUL
+        @del "simple\_TestInterf2Stub.class" 2>NUL
+        @del "simple\_TestInterf3Stub.class" 2>NUL
+        @del "simple\_TestInterfStub.class" 2>NUL
+        @del "simple\_TestLILocalBase.class" 2>NUL
+        @del "simple\ArrayBounds.class" 2>NUL
+        @del "simple\EnumArrayHelper.class" 2>NUL
+        @del "simple\EnumArrayHolder.class" 2>NUL
+        @del "simple\EnumSeqHelper.class" 2>NUL
+        @del "simple\EnumSeqHolder.class" 2>NUL
+        @del "simple\Local2.class" 2>NUL
+        @del "simple\Local2Helper.class" 2>NUL
+        @del "simple\Local2Holder.class" 2>NUL
+        @del "simple\Local2Operations.class" 2>NUL
+        @del "simple\Local2SeqHelper.class" 2>NUL
+        @del "simple\Local2SeqHolder.class" 2>NUL
+        @del "simple\Local3.class" 2>NUL
+        @del "simple\Local3Helper.class" 2>NUL
+        @del "simple\Local3Holder.class" 2>NUL
+        @del "simple\Local3Operations.class" 2>NUL
+        @del "simple\LongSeqSeqHelper.class" 2>NUL
+        @del "simple\LongSeqSeqHolder.class" 2>NUL
+        @del "simple\LongSeqSeqSeqHelper.class" 2>NUL
+        @del "simple\LongSeqSeqSeqHolder.class" 2>NUL
+        @del "simple\SeqOfTypedefedLongHelper.class" 2>NUL
+        @del "simple\SeqOfTypedefedLongHolder.class" 2>NUL
+        @del "simple\StringSeqHelper.class" 2>NUL
+        @del "simple\StringSeqHolder.class" 2>NUL
+        @del "simple\StringSeqSeqHelper.class" 2>NUL
+        @del "simple\StringSeqSeqHolder.class" 2>NUL
+        @del "simple\StringSeqSeqSeqHelper.class" 2>NUL
+        @del "simple\StringSeqSeqSeqHolder.class" 2>NUL
+        @del "simple\StructWithObjref.class" 2>NUL
+        @del "simple\StructWithObjrefHelper.class" 2>NUL
+        @del "simple\StructWithObjrefHolder.class" 2>NUL
+        @del "simple\TestArrayTypedef2Helper.class" 2>NUL
+        @del "simple\TestArrayTypedefHelper.class" 2>NUL
+        @del "simple\TestArrayTypedefHolder.class" 2>NUL
+        @del "simple\TestConstBool.class" 2>NUL
+        @del "simple\TestConstDouble.class" 2>NUL
+        @del "simple\TestConstFloat.class" 2>NUL
+        @del "simple\TestConstLong.class" 2>NUL
+        @del "simple\TestConstString.class" 2>NUL
+        @del "simple\TestConstTypedef.class" 2>NUL
+        @del "simple\TestEnum.class" 2>NUL
+        @del "simple\TestEnumHelper.class" 2>NUL
+        @del "simple\TestEnumHolder.class" 2>NUL
+        @del "simple\TestInterf.class" 2>NUL
+        @del "simple\TestInterf2.class" 2>NUL
+        @del "simple\TestInterf2Helper.class" 2>NUL
+        @del "simple\TestInterf2Holder.class" 2>NUL
+        @del "simple\TestInterf2Operations.class" 2>NUL
+        @del "simple\TestInterf3.class" 2>NUL
+        @del "simple\TestInterf3Helper.class" 2>NUL
+        @del "simple\TestInterf3Holder.class" 2>NUL
+        @del "simple\TestInterf3Operations.class" 2>NUL
+        @del "simple\TestInterfHelper.class" 2>NUL
+        @del "simple\TestInterfHolder.class" 2>NUL
+        @del "simple\TestInterfOperations.class" 2>NUL
+        @del "simple\TestLI.class" 2>NUL
+        @del "simple\TestLIHelper.class" 2>NUL
+        @del "simple\TestLIHolder.class" 2>NUL
+        @del "simple\TestLIOperations.class" 2>NUL
+        @del "simple\TestNestedStruct.class" 2>NUL
+        @del "simple\TestNestedStructHelper.class" 2>NUL
+        @del "simple\TestNestedStructHolder.class" 2>NUL
+        @del "simple\TestSeqTypedefHelper.class" 2>NUL
+        @del "simple\TestSeqTypedefHolder.class" 2>NUL
+        @del "simple\TestStringArrayHelper.class" 2>NUL
+        @del "simple\TestStringArrayHolder.class" 2>NUL
+        @del "simple\TestStruct.class" 2>NUL
+        @del "simple\TestStructArrayHelper.class" 2>NUL
+        @del "simple\TestStructArrayHolder.class" 2>NUL
+        @del "simple\TestStructHelper.class" 2>NUL
+        @del "simple\TestStructHolder.class" 2>NUL
+        @del "simple\TestStructSequenceHelper.class" 2>NUL
+        @del "simple\TestStructSequenceHolder.class" 2>NUL
+        @del "simple\TestStructWithEnum.class" 2>NUL
+        @del "simple\TestStructWithEnumHelper.class" 2>NUL
+        @del "simple\TestStructWithEnumHolder.class" 2>NUL
+        @del "simple\TestTypedefHelper.class" 2>NUL
+        @del "simple\TIMESTAMP_INVALID_NSEC.class" 2>NUL
+        @del "SomeSortOfTypedefHelper.class" 2>NUL
+        @del "otherJC.cpp" 2>NUL
+        @del "otherJC.h" 2>NUL
+        @del "otherJS.cpp" 2>NUL
+        @del "otherJS.h" 2>NUL
+        @del "SomeSortOfTypedefHelper.java" 2>NUL
+        @del "simple\_Local2LocalBase.java" 2>NUL
+        @del "simple\_Local3LocalBase.java" 2>NUL
+        @del "simple\_TestInterf2Stub.java" 2>NUL
+        @del "simple\_TestInterf3Stub.java" 2>NUL
+        @del "simple\_TestInterfStub.java" 2>NUL
+        @del "simple\_TestLILocalBase.java" 2>NUL
+        @del "simple\ArrayBounds.java" 2>NUL
+        @del "simple\EnumArrayHelper.java" 2>NUL
+        @del "simple\EnumArrayHolder.java" 2>NUL
+        @del "simple\EnumSeqHelper.java" 2>NUL
+        @del "simple\EnumSeqHolder.java" 2>NUL
+        @del "simple\Local2.java" 2>NUL
+        @del "simple\Local2Helper.java" 2>NUL
+        @del "simple\Local2Holder.java" 2>NUL
+        @del "simple\Local2Operations.java" 2>NUL
+        @del "simple\Local2SeqHelper.java" 2>NUL
+        @del "simple\Local2SeqHolder.java" 2>NUL
+        @del "simple\Local3.java" 2>NUL
+        @del "simple\Local3Helper.java" 2>NUL
+        @del "simple\Local3Holder.java" 2>NUL
+        @del "simple\Local3Operations.java" 2>NUL
+        @del "simple\LongSeqSeqHelper.java" 2>NUL
+        @del "simple\LongSeqSeqHolder.java" 2>NUL
+        @del "simple\LongSeqSeqSeqHelper.java" 2>NUL
+        @del "simple\LongSeqSeqSeqHolder.java" 2>NUL
+        @del "simple\SeqOfTypedefedLongHelper.java" 2>NUL
+        @del "simple\SeqOfTypedefedLongHolder.java" 2>NUL
+        @del "simple\StringSeqHelper.java" 2>NUL
+        @del "simple\StringSeqHolder.java" 2>NUL
+        @del "simple\StringSeqSeqHelper.java" 2>NUL
+        @del "simple\StringSeqSeqHolder.java" 2>NUL
+        @del "simple\StringSeqSeqSeqHelper.java" 2>NUL
+        @del "simple\StringSeqSeqSeqHolder.java" 2>NUL
+        @del "simple\StructWithObjref.java" 2>NUL
+        @del "simple\StructWithObjrefHelper.java" 2>NUL
+        @del "simple\StructWithObjrefHolder.java" 2>NUL
+        @del "simple\TestArrayTypedef2Helper.java" 2>NUL
+        @del "simple\TestArrayTypedefHelper.java" 2>NUL
+        @del "simple\TestArrayTypedefHolder.java" 2>NUL
+        @del "simple\TestConstBool.java" 2>NUL
+        @del "simple\TestConstDouble.java" 2>NUL
+        @del "simple\TestConstFloat.java" 2>NUL
+        @del "simple\TestConstLong.java" 2>NUL
+        @del "simple\TestConstString.java" 2>NUL
+        @del "simple\TestConstTypedef.java" 2>NUL
+        @del "simple\TestEnum.java" 2>NUL
+        @del "simple\TestEnumHelper.java" 2>NUL
+        @del "simple\TestEnumHolder.java" 2>NUL
+        @del "simple\TestInterf.java" 2>NUL
+        @del "simple\TestInterf2.java" 2>NUL
+        @del "simple\TestInterf2Helper.java" 2>NUL
+        @del "simple\TestInterf2Holder.java" 2>NUL
+        @del "simple\TestInterf2Operations.java" 2>NUL
+        @del "simple\TestInterf3.java" 2>NUL
+        @del "simple\TestInterf3Helper.java" 2>NUL
+        @del "simple\TestInterf3Holder.java" 2>NUL
+        @del "simple\TestInterf3Operations.java" 2>NUL
+        @del "simple\TestInterfHelper.java" 2>NUL
+        @del "simple\TestInterfHolder.java" 2>NUL
+        @del "simple\TestInterfOperations.java" 2>NUL
+        @del "simple\TestLI.java" 2>NUL
+        @del "simple\TestLIHelper.java" 2>NUL
+        @del "simple\TestLIHolder.java" 2>NUL
+        @del "simple\TestLIOperations.java" 2>NUL
+        @del "simple\TestNestedStruct.java" 2>NUL
+        @del "simple\TestNestedStructHelper.java" 2>NUL
+        @del "simple\TestNestedStructHolder.java" 2>NUL
+        @del "simple\TestSeqTypedefHelper.java" 2>NUL
+        @del "simple\TestSeqTypedefHolder.java" 2>NUL
+        @del "simple\TestStringArrayHelper.java" 2>NUL
+        @del "simple\TestStringArrayHolder.java" 2>NUL
+        @del "simple\TestStruct.java" 2>NUL
+        @del "simple\TestStructArrayHelper.java" 2>NUL
+        @del "simple\TestStructArrayHolder.java" 2>NUL
+        @del "simple\TestStructHelper.java" 2>NUL
+        @del "simple\TestStructHolder.java" 2>NUL
+        @del "simple\TestStructSequenceHelper.java" 2>NUL
+        @del "simple\TestStructSequenceHolder.java" 2>NUL
+        @del "simple\TestStructWithEnum.java" 2>NUL
+        @del "simple\TestStructWithEnumHelper.java" 2>NUL
+        @del "simple\TestStructWithEnumHolder.java" 2>NUL
+        @del "simple\TestTypedefHelper.java" 2>NUL
+        @del "simple\TIMESTAMP_INVALID_NSEC.java" 2>NUL
+        @del "simpleJC.cpp" 2>NUL
+        @del "simpleJC.h" 2>NUL
+        @del "simpleJS.h" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(DLL_EXT)" del "$(OUTPUTDIR)$(NAME)$(DLL_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" 2>NUL
 	-del /f/s/q classes ./simple.jar & del /f/s/q simple
 
 __prebuild__:

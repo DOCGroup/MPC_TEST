@@ -8,14 +8,14 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
-LIBMODIFIER  = d
+LIBMODIFIER  = _bd
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
-LIBMODIFIER  = 
+LIBMODIFIER  = _br
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
@@ -27,6 +27,8 @@ POSTLINKRM   = .tds
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -54,7 +56,7 @@ WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
 CCFLAGS      = -q -tWR -tWD
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)ROOT
-NAME         = ROOT$(LIBMODIFIER)
+NAME         = ROOT$(LIBMODIFIER)$(ULIBMODIFIER)
 CPPDIR       = .
 RESDIR       = .
 
@@ -116,10 +118,10 @@ generated: $(GENERATED_DIRTY)
         $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-        -if exist "$(OUTPUTDIR)$(NAME)$(DLL_EXT)" del "$(OUTPUTDIR)$(NAME)$(DLL_EXT)"
-	-if exist "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)"
-        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
+        @del "$(OUTPUTDIR)$(NAME)$(DLL_EXT)" del "$(OUTPUTDIR)$(NAME)$(DLL_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" del "$(OUTPUTDIR)$(NAME)$(LIB_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" 2>NUL
 

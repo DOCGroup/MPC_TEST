@@ -8,7 +8,7 @@
 !ifdef DEBUG
 OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Static_Debug\\
-LIBMODIFIER  = sd
+LIBMODIFIER  = _bsd
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = Static_Debug\\
@@ -16,7 +16,7 @@ EXEOUTPUTDIR = Static_Debug\\
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Static_Release\\
-LIBMODIFIER  = s
+LIBMODIFIER  = _bsr
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 EXEOUTPUTDIR = Static_Release\\
@@ -29,6 +29,8 @@ EXEOUTPUTDIR = Static_Release\\
 UC_CFLAGS    = -WU
 UNICODE_DIR  = Unicode\\
 UC_MAIN      = w
+ULIBMODIFIER = u
+UEXEMODIFIER = u
 !endif
 
 !ifdef CODEGUARD
@@ -69,8 +71,8 @@ LFLAGS   = \
            -L"non_existent" -j"non_existent"
 
 LIBFILES = \
-           simple_lib$(LIBMODIFIER)$(LIB_EXT) \
-           other_lib$(LIBMODIFIER)$(LIB_EXT) \
+           simple_lib$(LIBMODIFIER)$(ULIBMODIFIER)$(LIB_EXT) \
+           other_lib$(LIBMODIFIER)$(ULIBMODIFIER)$(LIB_EXT) \
            $(CG_LIB) import32.lib cw32mti.lib ws2_32.lib
 
 RESOURCE = \
@@ -144,10 +146,10 @@ generated: $(GENERATED_DIRTY)
         $(RC) $(RC_FLAGS) -fo$@ $<
 
 clean:
-	-if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
+        @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)
 
 realclean: clean
-	-if exist "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)"
-        -if exist "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)"
+        @del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" 2>NUL
+        @del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" 2>NUL
 	-echo It is clean. & echo Really, it is.
 

@@ -45,7 +45,7 @@ RSC=rc.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /nologo /subsystem:console /pdb:".\main.pdb" /debug /machine:I386 /out:".\main.exe"
+# ADD LINK32 advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /libpath:"$(QTDIR)\lib64" /nologo /subsystem:console /pdb:".\main.pdb" /debug /machine:I386 /out:".\main.exe"
 
 !ELSEIF  "$(CFG)" == "qt_uic_moc - Win32 Release"
 
@@ -62,7 +62,7 @@ LINK32=link.exe
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
-# ADD LINK32 advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /nologo /subsystem:console /pdb:none  /machine:I386 /out:"Release\main.exe"
+# ADD LINK32 advapi32.lib user32.lib /INCREMENTAL:NO qt-mt$(QT_VERSION).lib /libpath:"." /libpath:"$(QTDIR)\lib" /libpath:"$(QTDIR)\lib64" /nologo /subsystem:console /pdb:none  /machine:I386 /out:"Release\main.exe"
 
 !ENDIF
 
