@@ -72,7 +72,7 @@ LINK32=link.exe
 # Name "java_java - Win32 Release"
 # Begin Group "Source Files"
 
-# PROP Default_Filter "cpp;cxx;c"
+# PROP Default_Filter "java"
 # Begin Source File
 
 SOURCE="simple.java"

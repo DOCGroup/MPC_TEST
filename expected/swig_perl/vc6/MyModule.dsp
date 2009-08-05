@@ -94,7 +94,7 @@ SOURCE="hello.h"
 # End Group
 # Begin Group "Inline Files"
 
-# PROP Default_Filter "i;inl"
+# PROP Default_Filter "i;ipp;inl"
 # Begin Source File
 
 SOURCE="MyModule.i"

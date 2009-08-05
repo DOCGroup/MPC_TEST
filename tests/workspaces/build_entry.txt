@@ -1,5 +1,5 @@
 automake: c/Makefile
-bmake: c/Makefile
+bmake: c/Makefile.bmak
 em3: c/c.vcw
 ghs: c/default.gpj
 html: c/c.html

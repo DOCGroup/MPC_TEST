@@ -146,5 +146,7 @@ ifneq ($(GENERATED_DIRTY),)
 endif
 
 __prebuild__:
+ifeq ($(rtti),1)
 	@echo Building generator
+endif
 

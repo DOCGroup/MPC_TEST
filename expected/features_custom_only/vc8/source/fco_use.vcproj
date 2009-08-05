@@ -349,7 +349,7 @@
 	<Files>
 		<Filter
 			Name="Source Files"
-			Filter="cpp;cxx;cc;C;c">
+			Filter="cpp;cxx;cc;c;C">
 			<File
 				RelativePath="zar_thatB.cpp">
 			</File>
@@ -372,7 +372,7 @@
 		</Filter>
 		<Filter
 			Name="Inline Files"
-			Filter="i;inl">
+			Filter="i;ipp;inl">
 			<File
 				RelativePath="zar_thatB.inl">
 			</File>

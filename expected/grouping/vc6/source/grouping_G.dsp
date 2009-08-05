@@ -112,7 +112,7 @@ SOURCE="clown.h"
 # End Group
 # Begin Group "Inline Files"
 
-# PROP Default_Filter "i;inl"
+# PROP Default_Filter "i;ipp;inl"
 # Begin Group "carnival"
 
 # PROP Default_Filter ""

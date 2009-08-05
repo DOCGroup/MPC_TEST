@@ -353,7 +353,7 @@
 	<Files>
 		<Filter
 			Name="Source Files"
-			Filter="cpp;cxx;cc;C;c">
+			Filter="cpp;cxx;cc;c;C">
 			<File
 				RelativePath="hello.cpp">
 			</File>
@@ -413,7 +413,7 @@
 		</Filter>
 		<Filter
 			Name="Inline Files"
-			Filter="i;inl">
+			Filter="i;ipp;inl">
 			<File
 				RelativePath="MyModule.i">
 			</File>
