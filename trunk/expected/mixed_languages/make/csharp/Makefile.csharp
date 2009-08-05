@@ -2,10 +2,12 @@
 #       Macros
 #----------------------------------------------------------------------------
 
+ICONOPT         =
+RESXOPT         = -resource:floop.dag.resx -resource:floop.resx
 TARGETDIR       = ./
 TARGET          = $(TARGETDIR)foofooc.dll
 LDFLAGS         = -lib:.
-CFLAGS          =
+CFLAGS          = -define:DESIGN,DEBUG
 TESTDIRSTART    = test -d
 TESTDIREND      = ||
 CAT             = cat
@@ -23,7 +25,7 @@ all: $(GENERATED_DIRTY) $(TARGET)
 
 $(TARGET): floop.Designer.cs floop.cs
 	@$(TESTDIRSTART) "$(TARGETDIR)" $(TESTDIREND) $(MKDIR) "$(TARGETDIR)"
-	gmcs -target:library -out:$(TARGET) $(CFLAGS) $(LDFLAGS) floop.Designer.cs floop.cs
+	gmcs -target:library -out:$(TARGET) $(CFLAGS) $(LDFLAGS) $(ICONOPT) $(RESXOPT) floop.Designer.cs floop.cs
 
 bundle:
 

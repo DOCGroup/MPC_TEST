@@ -1,3 +1,15 @@
+Wed Aug  5 18:46:17 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/mixed_languages/make/csharp/Makefile.csharp:
+        * expected/webapp/make/source/Makefile.aly:
+        * expected/webapp/make/source/Makefile.cras:
+
+          Updated to reflect my change from Wed Aug  5 18:41:55 UTC 2009.
+
+        * tests/mixed_languages/csharp/floop.Designer.cs:
+
+          Removed build warning.
+
 Wed Aug  5 16:38:40 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*:
