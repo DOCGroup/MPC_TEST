@@ -243,7 +243,7 @@ SOURCE="other\zar_otherC.h"
 # End Group
 # Begin Group "Inline Files"
 
-# PROP Default_Filter "i;inl"
+# PROP Default_Filter "i;ipp;inl"
 # Begin Source File
 
 SOURCE="other\zar_otherA.inl"

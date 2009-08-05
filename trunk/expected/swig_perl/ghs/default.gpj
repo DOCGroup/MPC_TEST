@@ -13,3 +13,4 @@ MyModule.gpj		[Shared Object]
 	-I$(PERL5_INCLUDE)\.
 	-L.
 	-L$(PERL5_INCLUDE)\.
+	-l$(PERL5_LIB)

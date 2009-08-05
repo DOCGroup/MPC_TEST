@@ -164,5 +164,7 @@ ifneq ($(GENERATED_DIRTY),)
 endif
 
 __prebuild__:
+ifeq ($(swig_perl),1)
 	@-:
+endif
 

@@ -10,14 +10,16 @@ OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Static_Debug\\
 LIBMODIFIER  = _bsd
 EXEMODIFIER  = 
+STATIC_CFG   = 1
 !else
 !ifdef RELEASE
 OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Static_Release\\
 LIBMODIFIER  = _bsr
 EXEMODIFIER  = 
+STATIC_CFG   = 1
 !else
-!error You must define one of these valid configurations: Debug Release MFC Release MFC Debug
+!error You must define one of these valid configurations: DEBUG RELEASE
 !endif
 !endif
 
@@ -75,6 +77,7 @@ CFLAGS = \
          $(PCH_CFLAGS) \
          $(VCL_CFLAGS)
 
+!ifdef STATIC_CFG
 OUTPUTDIR = .\\
 all: $(OUTPUTDIR)$(NAME)$(LIB_EXT)
 
@@ -84,6 +87,7 @@ $(OUTPUTDIR)$(NAME)$(LIB_EXT): $(OBJFILES)
 + $(**: = &^
 + )
 !
+!endif
 
 generated: $(GENERATED_DIRTY)
 	@-rem
@@ -93,27 +97,27 @@ generated: $(GENERATED_DIRTY)
 .path.cpp = $(CPPDIR)
 .cpp$(OBJ_EXT):
 	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+        $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 .path.cxx = $(CPPDIR)
 .cxx$(OBJ_EXT):
 	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+        $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 .path.cc = $(CPPDIR)
 .cc$(OBJ_EXT):
 	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+        $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 .path.C = $(CPPDIR)
 .C$(OBJ_EXT):
 	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+        $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 .path.c = $(CPPDIR)
 .c$(OBJ_EXT):
 	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(CC) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+        $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
 
 clean:
         @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)

@@ -179,5 +179,9 @@ ifneq ($(GENERATED_DIRTY),)
 endif
 
 __prebuild__:
+ifeq ($(flex),1)
+ifeq ($(bison),1)
 	@-:
+endif
+endif
 

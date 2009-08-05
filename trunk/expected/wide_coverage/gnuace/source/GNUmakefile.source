@@ -168,10 +168,14 @@ ifneq ($(GENERATED_DIRTY),)
 endif
 
 __prebuild__:
+ifneq ($(mfc),1)
 	@-:
+endif
 
 all: __postbuild__
 
 __postbuild__:
+ifneq ($(mfc),1)
 	@echo main_test has been built
+endif
 

@@ -13,7 +13,7 @@
 
 noinst_PROGRAMS = this\ test
 
-this_ test_SOURCES = \
+this__test_SOURCES = \
   simple.java
 
 

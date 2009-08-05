@@ -74,7 +74,7 @@ LINK32=link.exe
 # Name "aly - Win32 Release"
 # Begin Group "Source Files"
 
-# PROP Default_Filter "cpp;cxx;c"
+# PROP Default_Filter "cs"
 # Begin Source File
 
 SOURCE="aly.cs"
