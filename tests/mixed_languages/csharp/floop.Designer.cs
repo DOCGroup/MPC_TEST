@@ -1,5 +1,5 @@
 class zzz
 {
-  void foo() {
+  public void foo() {
   }
 }
