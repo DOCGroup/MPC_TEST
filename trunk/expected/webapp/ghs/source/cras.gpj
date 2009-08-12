@@ -1,9 +1,0 @@
-#!gbuild
-#primaryTarget=ppc_integrity.tgt
-	[Shared Object]
-	-o source/libcras.so
-	-Ospeed
-	-OI
-	--exceptions
-	-Lsource
-cras.cs

@@ -1,3 +1,88 @@
+Wed Aug 12 02:41:36 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/java/automake:
+        * expected/java/automake/Makefile_java.am:
+        * expected/java/automake/configure.ac.Makefiles:
+        * expected/java/bmake:
+        * expected/java/bmake/Makefile.java_java.bmak:
+        * expected/java/bmake/Makefile_java.bmak:
+        * expected/java/em3:
+        * expected/java/em3/java_java.vcp:
+        * expected/java/em3/java_java.vcw:
+        * expected/java/ghs:
+        * expected/java/ghs/default_java.gpj:
+        * expected/java/ghs/java_java.gpj:
+        * expected/java/ghs/java_java_int.gpj:
+        * expected/java/ghs/java_java_int.int:
+        * expected/java/gnuace:
+        * expected/java/gnuace/GNUmakefile.java_java:
+        * expected/java/gnuace/GNUmakefile_java:
+        * expected/java/html:
+        * expected/java/html/java_java.html:
+        * expected/java/html/java_java_workspace.html:
+        * expected/java/nmake:
+        * expected/java/nmake/Makefile.java_java.mak:
+        * expected/java/nmake/Makefile_java:
+        * expected/java/sle:
+        * expected/java/sle/java_java.vpj:
+        * expected/java/sle/java_java.vpw:
+        * expected/java/vc6:
+        * expected/java/vc6/java_java.dsp:
+        * expected/java/vc6/java_java.dsw:
+        * expected/java/vxtest:
+        * expected/java/vxtest/this_test.vxtest:
+        * expected/webapp/automake:
+        * expected/webapp/automake/Makefile.am:
+        * expected/webapp/automake/configure.ac.Makefiles:
+        * expected/webapp/automake/source:
+        * expected/webapp/automake/source/Makefile.am:
+        * expected/webapp/bmake:
+        * expected/webapp/bmake/Makefile.bmak:
+        * expected/webapp/bmake/source:
+        * expected/webapp/bmake/source/Makefile.aly.bmak:
+        * expected/webapp/bmake/source/Makefile.bmak:
+        * expected/webapp/bmake/source/Makefile.cras.bmak:
+        * expected/webapp/em3:
+        * expected/webapp/em3/source:
+        * expected/webapp/em3/source/aly.vcp:
+        * expected/webapp/em3/source/cras.vcp:
+        * expected/webapp/em3/webapp.vcw:
+        * expected/webapp/ghs:
+        * expected/webapp/ghs/default.gpj:
+        * expected/webapp/ghs/source:
+        * expected/webapp/ghs/source/aly.gpj:
+        * expected/webapp/ghs/source/cras.gpj:
+        * expected/webapp/gnuace:
+        * expected/webapp/gnuace/GNUmakefile:
+        * expected/webapp/gnuace/source:
+        * expected/webapp/gnuace/source/GNUmakefile:
+        * expected/webapp/gnuace/source/GNUmakefile.aly:
+        * expected/webapp/gnuace/source/GNUmakefile.cras:
+        * expected/webapp/html:
+        * expected/webapp/html/source:
+        * expected/webapp/html/source/aly.html:
+        * expected/webapp/html/source/cras.html:
+        * expected/webapp/html/webapp_workspace.html:
+        * expected/webapp/nmake:
+        * expected/webapp/nmake/Makefile:
+        * expected/webapp/nmake/source:
+        * expected/webapp/nmake/source/Makefile:
+        * expected/webapp/nmake/source/Makefile.aly.mak:
+        * expected/webapp/nmake/source/Makefile.cras.mak:
+        * expected/webapp/sle:
+        * expected/webapp/sle/source:
+        * expected/webapp/sle/source/aly.vpj:
+        * expected/webapp/sle/source/cras.vpj:
+        * expected/webapp/sle/webapp.vpw:
+        * expected/webapp/vc6:
+        * expected/webapp/vc6/source:
+        * expected/webapp/vc6/source/aly.dsp:
+        * expected/webapp/vc6/source/cras.dsp:
+        * expected/webapp/vc6/webapp.dsw:
+
+          Removed these files to reflect my change from Thu Aug  6 15:11:07
+          UTC 2009.
+
 Wed Aug  5 18:46:17 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/mixed_languages/make/csharp/Makefile.csharp:
