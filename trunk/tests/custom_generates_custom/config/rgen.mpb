@@ -1,0 +1,11 @@
+// -*- MPC -*-
+// $Id$
+
+project: cppgen {
+  Define_Custom(rgen) {
+    command           = echo
+    output_option     = <%gt%>
+    inputext          = .ts
+    generic_outputext = .crap.r
+  }
+}
