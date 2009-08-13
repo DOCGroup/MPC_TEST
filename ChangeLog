@@ -1,3 +1,15 @@
+Thu Aug 13 14:40:24 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/custom_generates_custom/*:
+        * tests/custom_generates_custom/bin/cppgen.pl:
+        * tests/custom_generates_custom/config/cppgen.mpb:
+        * tests/custom_generates_custom/config/rgen.mpb:
+        * tests/custom_generates_custom/src/fire.ts:
+        * tests/custom_generates_custom/src/src.mpc:
+
+          Added a test to cover a recently introduced bug.  The input
+          extension matches a generated extension, but is longer in length.
+
 Wed Aug 12 02:41:36 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/java/automake:
