@@ -1,3 +1,10 @@
+Fri Aug 14 13:22:57 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * tests/custom_generates_custom/additional_options.txt:
+
+          Added a command line option to set the TEST_ROOT environment
+          variable.
+
 Thu Aug 13 14:40:24 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/custom_generates_custom/*:
