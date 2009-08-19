@@ -1,0 +1,6 @@
+project {
+  after += r n o
+  specific {
+    add_references = 1
+  }
+}

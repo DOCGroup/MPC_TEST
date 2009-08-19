@@ -1,3 +1,28 @@
+Wed Aug 19 02:37:11 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/mixed_languages_refs/*:
+        * tests/mixed_languages_refs:
+        * tests/mixed_languages_refs/mixed_languages_refs.mwc:
+        * tests/mixed_languages_refs/n:
+        * tests/mixed_languages_refs/n/foo.cpp:
+        * tests/mixed_languages_refs/n/n.mpc:
+        * tests/mixed_languages_refs/o:
+        * tests/mixed_languages_refs/o/foo.cpp:
+        * tests/mixed_languages_refs/o/o.mpc:
+        * tests/mixed_languages_refs/r:
+        * tests/mixed_languages_refs/r/foo.cpp:
+        * tests/mixed_languages_refs/r/r.mpc:
+        * tests/mixed_languages_refs/z:
+        * tests/mixed_languages_refs/z/foo.cs:
+        * tests/mixed_languages_refs/z/z.mpc:
+
+          Added a test that mixes managed and unmanaged libraries and tests
+          references to one another.
+
+        * tests/relative/src/foo.cpp:
+
+          Use #if 0 to exercise the MPC preprocessor.
+
 Fri Aug 14 13:22:57 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * tests/custom_generates_custom/additional_options.txt:

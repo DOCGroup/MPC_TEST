@@ -1,0 +1,52 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+
+ICONOPT         =
+RESXOPT         =
+TARGETDIR       = ./
+TARGET          = $(TARGETDIR)foo.exe
+LDFLAGS         = -lib:.
+CFLAGS          = -define:DESIGN,DEBUG
+TESTDIRSTART    = test -d
+TESTDIREND      = ||
+CAT             = cat
+MV              = mv -f
+RM              = rm -rf
+CP              = cp -p
+NUL             = /dev/null
+MKDIR           = mkdir -p
+MONO_ETC        = /etc/mono
+MONO_CONFIG     = $(MONO_ETC)/config
+BIN             = $(TARGETDIR)foo
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(GENERATED_DIRTY) $(TARGET)
+
+$(TARGET): foo.cs
+	@$(TESTDIRSTART) "$(TARGETDIR)" $(TESTDIREND) $(MKDIR) "$(TARGETDIR)"
+	gmcs -target:exe -out:$(TARGET) $(CFLAGS) $(LDFLAGS) $(ICONOPT) $(RESXOPT) foo.cs
+
+$(BIN): $(TARGET)
+	mkbundle2 --static --deps -z --config $(MONO_CONFIG) $(TARGET) $(CONFIG_DIR_OPT) -o $(BIN)
+	strip $(BIN)
+
+bundle: $(BIN)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+clean:
+	-$(RM) $(TARGET) $(BIN)
+
+realclean: clean
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+depend:
+	@-:

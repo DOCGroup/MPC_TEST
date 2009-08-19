@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include n/n.wxi ?>
+  <?include r/r.wxi ?>
+  <?include o/o.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="mixed_languages_refs">
+      <ComponentRef Id="n" />
+      <ComponentRef Id="r" />
+      <ComponentRef Id="o" />
+    </ComponentGroup>
+  </Fragment>
+</Include>
