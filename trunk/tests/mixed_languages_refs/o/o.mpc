@@ -1,0 +1,7 @@
+project {
+  managed = 1
+  after += r n
+  specific {
+    add_references = 1
+  }
+}
