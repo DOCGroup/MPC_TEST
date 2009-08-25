@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="template_input"
+	ProjectGUID="{0B7FB782-FECA-1BAD-0000-0000D2C04618}"
+	RootNamespace="template_input"
+	Keyword="Win32Proj"
+	SignManifests="true"
+	>
+	<Platforms>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;cxx;cc;c;C">
+			<File
+				RelativePath="foo.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="Documentation"
+			Filter="">
+			<File
+				RelativePath="additional_options.txt">
+			</File>
+			<File
+				RelativePath="build_entry.txt">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

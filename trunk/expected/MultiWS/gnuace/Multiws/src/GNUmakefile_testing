@@ -8,7 +8,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace -recurse -name_modifier *_testing
+# /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type gnuace -recurse -name_modifier "*_testing"
 #
 #----------------------------------------------------------------------------
 
@@ -20,16 +20,22 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-all: foo
+all: foo bar
 
 REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
 
 $(REMAINING_TARGETS):
 	@$(MAKE) -f GNUmakefile.foo_testing $(@)
+	@$(MAKE) -f GNUmakefile.bar_testing $(@)
 
 .PHONY: foo
 foo:
 	@$(MAKE) -f GNUmakefile.foo_testing all
 
+.PHONY: bar
+bar: foo
+	@$(MAKE) -f GNUmakefile.bar_testing all
+
 project_name_list:
+	@echo bar
 	@echo foo

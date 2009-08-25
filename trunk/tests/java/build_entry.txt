@@ -9,3 +9,4 @@ vc7: java_java.sln
 vc71: java_java.sln
 vc8: java_java.sln
 vc9: java_java.sln
+vc10: java_java.sln

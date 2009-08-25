@@ -11,3 +11,7 @@ src/foo_testing.gpj		[Shared Object]
 	-pic
 	-object_dir=src/.shobj
 	-LMultiws/src
+src/bar_testing.gpj		[Shared Object]
+	-pic
+	-object_dir=src/.shobj
+	-LMultiws/src

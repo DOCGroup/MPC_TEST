@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include another/another.wxi ?>
+  <?include c++/foo.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="more_options">
+      <ComponentRef Id="another" />
+      <ComponentRef Id="foo" />
+    </ComponentGroup>
+  </Fragment>
+</Include>

@@ -40,13 +40,20 @@ my($br_error)  = undef;
 my($nodiff)    = undef;
 my($nobuild)   = undef;
 my($test_scr)  = 'run_test.pl';
-my($diff)      = which('diff');
+my($diff)      = $ENV{DIFFILES_CMD} || which('diff');
 my($patch)     = which('patch');
 my($gmake)     = which('gmake') || which('make');
 my($passed)    = 'succeeded';
 my($failed)    = '****failed****';
 my($quiet)     = undef;
 my($coverage)  = undef;
+
+my %devenv_ver = ('vc7'  => '13.00',
+                  'vc71' => '13.10',
+                  'vc8'  => '14.00',
+                  'vc9'  => '15.00',
+                  'vc10' => '16.00',
+                 );
 
 # ******************************************************************
 # Subroutine Section
@@ -72,7 +79,7 @@ sub which {
 
 
 sub touch {
-  my(@files) = shift;
+  my(@files) = @_;
   my($fh)    = new FileHandle();
   foreach my $file (@files) {
     if (open($fh, ">>$file")) {
@@ -322,7 +329,8 @@ sub buildit {
                                    "$entry /make \"all - win32 debug\"");
       }
     }
-    elsif ($type eq 'vc7') {
+    elsif ($type eq 'vc7' || $type eq 'vc71' || $type eq 'vc8' ||
+           $type eq 'vc9' || $type eq 'vc10') {
       my($cmd) = which('devenv');
       if (defined $cmd) {
         my($fh) = new FileHandle();
@@ -331,7 +339,7 @@ sub buildit {
           if (open($fh, "$cl /? 2>&1 |")) {
             while(<$fh>) {
               if (/Version\s+(\d+\.\d+)/) {
-                if ($1 ne '13.00') {
+                if ($1 ne $devenv_ver{$type}) {
                   $cmd = undef;
                 }
               }
@@ -347,62 +355,6 @@ sub buildit {
           $entry = basename($path) . '.sln' if (!defined $entry);
           $status = checkBuildStatus("$cmd " .
                                      "$entry /build debug");
-        }
-      }
-    }
-    elsif ($type eq 'vc71') {
-      my($cmd) = which('devenv');
-      if (defined $cmd) {
-        my($fh) = new FileHandle();
-        my($cl) = which('cl');
-        if (defined $cl) {
-          if (open($fh, "$cl /? 2>&1 |")) {
-            while(<$fh>) {
-              if (/Version\s+(\d+\.\d+)/) {
-                if ($1 ne '13.10') {
-                  $cmd = undef;
-                }
-              }
-            }
-            close($fh);
-          }
-        }
-        else {
-          $cmd = undef;
-        }
-        if (defined $cmd) {
-          printBuildMessage($type);
-          $entry = basename($path) . '.sln' if (!defined $entry);
-          $status = checkBuildStatus("$cmd " .
-                                     "$entry /build debug");
-        }
-      }
-    }
-    elsif ($type eq 'vc8') {
-      my($cmd) = which('devenv');
-      if (defined $cmd) {
-        my($fh) = new FileHandle();
-        my($cl) = which('cl');
-        if (defined $cl) {
-          if (open($fh, "$cl /? 2>&1 |")) {
-            while(<$fh>) {
-              if (/Version\s+(\d+\.\d+)/) {
-                if ($1 ne '14.00') {
-                  $cmd = undef;
-                }
-              }
-            }
-            close($fh);
-          }
-        }
-        else {
-          $cmd = undef;
-        }
-        if (defined $cmd) {
-          printBuildMessage($type);
-          $entry = basename($path) . '.sln' if (!defined $entry);
-          $status = checkBuildStatus("$cmd " .
-                                     "$entry /build release");
         }
       }
     }
@@ -423,7 +375,7 @@ sub buildit {
       }
     }
     if (defined $cmd) {
-      printBuildMessage($type);
+      #printBuildMessage($type);
       $ENV{LD_LIBRARY_PATH}   = getcwd() . '/lib';
       $ENV{SHLIB_PATH}        = $ENV{LD_LIBRARY_PATH};
       $ENV{LIBPATH}           = $ENV{LD_LIBRARY_PATH};
@@ -431,7 +383,8 @@ sub buildit {
 
       ## Create the necessary files and directories for automake
       mkdir('m4');
-      touch('NEWS', 'README', 'AUTHORS', 'ChangeLog');
+      touch('NEWS', 'README', 'AUTHORS', 'ChangeLog', 'install-sh',
+            'missing', 'depcomp');
 
       ## Run the automake setup and configure
       my $dir;
@@ -912,9 +865,7 @@ sub determine_setup {
         if (defined $typestr) {
           foreach my $type (split(/\s*\|\s*/, $typestr)) {
             $type =~ s/\s//g;
-            if ($type ne 'borland' && $type ne 'wb26') {
-              push(@types, $type);
-            }
+            push(@types, $type);
           }
         }
       }
@@ -958,6 +909,9 @@ my(%desc)    = ('expected' => 'Create expected results for all of the ' .
 my($status)  = 0;
 my($options) = new OptionProcessor($0, \%options, \%desc);
 $options->process();
+
+## We're doing coverage testing, there is no need for building
+$nobuild = 1 if ($coverage);
 
 if ($cr_expect && "@types" =~ /gnuace/ && !defined $ENV{ACE_ROOT}) {
   print STDERR "ERROR: You can not generate expected results without ",

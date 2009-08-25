@@ -1,1 +1,1 @@
--features swig_perl=1 -value_template use_lib_modifier=
+-value_template use_lib_modifier=

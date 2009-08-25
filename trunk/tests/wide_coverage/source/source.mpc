@@ -1,4 +1,4 @@
-project: test_base, ziparchive, simple {
+project: test_base, test_base, ziparchive, simple {
   expand(EMPTY1) {
     $EMPTY1
   }
@@ -13,6 +13,9 @@ project: test_base, ziparchive, simple {
   }
   expand(WPATH) {
     $WPATH
+  }
+  expand(FOOBAG) {
+    $PWD
   }
 
   specific {

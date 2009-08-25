@@ -69,6 +69,11 @@ foreach my $file (@files) {
           $output .= $pre_ext . $types{$type}->{'outputext'};
 
           if (open($fh, ">$output")) {
+            if ($output =~ /\.cpp$/ && $output !~ /_T\.cpp$/) {
+              print $fh "#if defined(THIS_IS_A_MACRO) || defined(THAT_IS_A_MACRO)\n",
+                        "#error These should not be defined\n",
+                        "#endif\n";
+            }
             close($fh);
           }
           else {

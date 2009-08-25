@@ -1,1 +1,1 @@
--exclude one/one.mpc -recurse -include
+-relative EXCLUDED=three -exclude one/o*.mpc -recurse -include

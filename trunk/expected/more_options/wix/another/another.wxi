@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="another">
+    <DirectoryRef Id="INSTALLDIR">
+
+        <Component Id="another" Guid="2E20F761-FECA-1BAD-2E20-EDEB95091384">
+          <File Id="file.another" Name="another.dll"
+                Source="./another.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>
