@@ -1,4 +1,5 @@
 workspace {
-  one
-  two
+  exclude {
+    $(EXCLUDED)
+  }
 }

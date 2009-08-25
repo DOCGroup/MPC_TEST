@@ -1,0 +1,17 @@
+workspace {
+  c++
+  another
+  java {
+    cmdline += -language java
+    java
+  }
+  associate(cplusplus) {
+    c++
+  }
+  associate(java) {
+    java
+  }
+  associate(--) {
+    another
+  }
+}

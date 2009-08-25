@@ -1,0 +1,16 @@
+automake: down/two/Makefile.am
+bds4:
+bmake: down/two/Makefile.bmak
+cc:
+em3: down/two/two.vcw
+ghs: down/two/default.gpj
+gnuace: down/two/GNUmakefile
+make: down/two/Makefile
+nmake: down/two/Makefile
+sle: down/two/two.vpw
+vc6: down/two/two.dsp
+vc7: down/two/two.sln
+vc71: down/two/two.sln
+vc8: down/two/two.sln
+vc9: down/two/two.sln
+vc10: down/two/two.sln

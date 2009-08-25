@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake -recurse -name_modifier *_testing
+# /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type bmake -recurse -name_modifier "*_testing"
 #
 #----------------------------------------------------------------------------
 
@@ -15,13 +15,18 @@
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !endif
 
-all: foo
+all: foo bar
 
 clean generated realclean $(CUSTOM_TARGETS):
 	$(COMSPEC) /c "cd src &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.foo_testing.bmak $(@)"
+	$(COMSPEC) /c "cd src &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.bar_testing.bmak $(@)"
 
 foo:
 	$(COMSPEC) /c "cd src &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.foo_testing.bmak all"
 
+bar: foo
+	$(COMSPEC) /c "cd src &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.bar_testing.bmak all"
+
 project_name_list:
+	@echo bar
 	@echo foo

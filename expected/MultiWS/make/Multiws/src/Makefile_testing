@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -recurse -name_modifier *_testing
+# /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type make -recurse -name_modifier "*_testing"
 #
 #----------------------------------------------------------------------------
 
 
-all: foo
+all: foo bar
 
 clean depend generated realclean $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.foo_testing $(@)
+	@$(MAKE) -f Makefile.bar_testing $(@)
 
 .PHONY: foo
 foo:
 	@$(MAKE) -f Makefile.foo_testing generated all
 
+.PHONY: bar
+bar: foo
+	@$(MAKE) -f Makefile.bar_testing generated all
+
 project_name_list:
+	@echo bar
 	@echo foo

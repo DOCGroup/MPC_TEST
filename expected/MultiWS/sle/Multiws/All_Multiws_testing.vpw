@@ -2,5 +2,6 @@
 <Workspace Version="8.1" VendorName="SlickEdit">
 	<Projects>
 		<Project File="src/foo_testing.vpj"/>
+		<Project File="src/bar_testing.vpj"/>
 	</Projects>
 </Workspace>

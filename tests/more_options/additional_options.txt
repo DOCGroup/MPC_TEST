@@ -1,0 +1,1 @@
+-expand_vars -nocomments -noreldefs -use_env

@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "another", "another\another.vcproj", "{0F7CF678-FECA-1BAD-2E20-EDEB95091384}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo", "c++\foo.vcproj", "{D9047293-FECA-1BAD-609D-8A633DA6931A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{E6FDF86B-F3D1-11D4-8576-0002A516ECE8}") = "j", "java\j.vjsproj", "{90D474F2-FECA-1BAD-0068-8A63DA69EE12}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{0F7CF678-FECA-1BAD-2E20-EDEB95091384}.Debug.ActiveCfg = Debug|Win32
+		{0F7CF678-FECA-1BAD-2E20-EDEB95091384}.Debug.Build.0 = Debug|Win32
+		{0F7CF678-FECA-1BAD-2E20-EDEB95091384}.Release.ActiveCfg = Release|Win32
+		{0F7CF678-FECA-1BAD-2E20-EDEB95091384}.Release.Build.0 = Release|Win32
+		{D9047293-FECA-1BAD-609D-8A633DA6931A}.Debug.ActiveCfg = Debug|Win32
+		{D9047293-FECA-1BAD-609D-8A633DA6931A}.Debug.Build.0 = Debug|Win32
+		{D9047293-FECA-1BAD-609D-8A633DA6931A}.Release.ActiveCfg = Release|Win32
+		{D9047293-FECA-1BAD-609D-8A633DA6931A}.Release.Build.0 = Release|Win32
+		{90D474F2-FECA-1BAD-0068-8A63DA69EE12}.Debug.ActiveCfg = Debug|.NET
+		{90D474F2-FECA-1BAD-0068-8A63DA69EE12}.Debug.Build.0 = Debug|.NET
+		{90D474F2-FECA-1BAD-0068-8A63DA69EE12}.Release.ActiveCfg = Release|.NET
+		{90D474F2-FECA-1BAD-0068-8A63DA69EE12}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

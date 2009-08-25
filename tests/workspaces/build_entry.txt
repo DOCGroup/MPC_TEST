@@ -10,3 +10,4 @@ vc7: c/c.sln
 vc71: c/c.sln
 vc8: c/c.sln
 vc9: c/c.sln
+vc10: c/c.sln

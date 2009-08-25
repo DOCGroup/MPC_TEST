@@ -1,3 +1,103 @@
+Tue Aug 25 16:41:53 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * README:
+
+          Fixed wording about building the workspace.
+
+        * run_tests.pl:
+
+          Consolidated the vc7 - vc8 build code and added vc9 and vc10.
+          Added more files for automake and allowed the wb26 project type.
+
+        * expected/MultiWS/*:
+        * expected/aggregated/html/dir1/dir2/foo.html:
+        * expected/backwards/*:
+        * expected/more_options/*:
+        * expected/template_input/*:
+        * tests/MultiWS/Multiws/src/bar.mpc:
+        * tests/MultiWS/build_entry.txt:
+        * tests/aggregated/dir1/bar.mwc:
+        * tests/aggregated/dir1/dir2/foo.mpc:
+        * tests/aggregated/dir1/other:
+        * tests/aggregated/dir1/other/nothing.mpb:
+        * tests/backwards:
+        * tests/backwards/additional_options.txt:
+        * tests/backwards/build_entry.txt:
+        * tests/backwards/down:
+        * tests/backwards/down/two:
+        * tests/backwards/down/two/two.mwc:
+        * tests/backwards/foo.cpp:
+        * tests/backwards/foo.mpc:
+        * tests/command_helper/additional_options.txt:
+        * tests/command_helper/build_entry.txt:
+        * tests/exclude/additional_options.txt:
+        * tests/exclude/exclude.mwc:
+        * tests/exclude/three:
+        * tests/exclude/three/three.cpp:
+        * tests/exclude/three/three.mpc:
+        * tests/features_custom_only/bin/exercise.pl:
+        * tests/features_custom_only/config/two.mpb:
+        * tests/flex_bison/build_entry.txt:
+        * tests/flex_bison/flex_bison.mpc:
+        * tests/more_options:
+        * tests/more_options/additional_options.txt:
+        * tests/more_options/another:
+        * tests/more_options/another/another.mpc:
+        * tests/more_options/another/zzz.cpp:
+        * tests/more_options/c++:
+        * tests/more_options/c++/foo.cpp:
+        * tests/more_options/c++/foo.mpc:
+        * tests/more_options/java:
+        * tests/more_options/java/j.mpc:
+        * tests/more_options/java/simple.java:
+        * tests/more_options/more_options.mwc:
+        * tests/options/build_entry.txt:
+        * tests/swig_perl/MyModule.mpc:
+        * tests/swig_perl/additional_options.txt:
+        * tests/swig_perl/swig_perl.mwc:
+        * tests/swig_perl/test.features:
+        * tests/template_input:
+        * tests/template_input/additional_options.txt:
+        * tests/template_input/build_entry.txt:
+        * tests/template_input/config:
+        * tests/template_input/config/features:
+        * tests/template_input/config/fooson.mpt:
+        * tests/template_input/config/relative:
+        * tests/template_input/foo.cpp:
+        * tests/wide_coverage/config/MPC.cfg:
+        * tests/wide_coverage/config/test_base.mpb:
+        * tests/wide_coverage/source/source.mpc:
+        * tests/wider_coverage/config/some_feature.mpb:
+
+          Modified to provide wider coverage.
+
+        * tests/java/build_entry.txt:
+        * tests/qt/build_entry.txt:
+        * tests/workspaces/build_entry.txt:
+
+          Added vc10.
+
+        * utils/add_expected_files.sh:
+
+          Added a script to add expected files.
+
+        * expected/command_helper/automake/Makefile.am:
+        * expected/command_helper/automake/configure.ac.Makefiles:
+        * expected/command_helper/bmake/Makefile.bmak:
+        * expected/command_helper/em3/command_helper.vcw:
+        * expected/command_helper/ghs/default.gpj:
+        * expected/command_helper/gnuace/GNUmakefile:
+        * expected/command_helper/html/command_helper_workspace.html:
+        * expected/command_helper/make/Makefile:
+        * expected/command_helper/nmake/Makefile:
+        * expected/command_helper/sle/command_helper.vpw:
+        * expected/command_helper/vc6/command_helper.dsw:
+        * expected/command_helper/vc7/command_helper.sln:
+        * expected/command_helper/vc71/command_helper.sln:
+        * expected/command_helper/vc8/command_helper.sln:
+
+          Removed these files.
+
 Wed Aug 19 02:37:11 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/mixed_languages_refs/*:

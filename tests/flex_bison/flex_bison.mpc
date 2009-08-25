@@ -1,10 +1,10 @@
 project(flex_bison): flex, bison {
   sharedname = bus
 
-  specific(em3, nmake, vc6, vc7, vc71, vc8) {
-    compile_flags += /O
-  } else {
+  specific(!prop:microsoft, foo:bar) {
     compile_flags += -O
+  } else {
+    compile_flags += /O
   }
 
   FLEX_Files {

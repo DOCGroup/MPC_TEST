@@ -1,5 +1,5 @@
 project: swig_perl {
-  sharedname = MyModule
+  sharedname = *
 
   // List the source file to test automatic addition
   // of files with source_outputext with text before the .

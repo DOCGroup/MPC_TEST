@@ -32,7 +32,7 @@ Adding a new test
       MPC) or the test should not be built, it should be specified by
       placing a file named build_entry.txt in the root directory of the
       test.  The file has the format of <mpc type>: [build file name].  If
-      [build file name] is empty, the test will not be built for the
+      [build file name] is empty, the workspace will not be built for the
       specified mpc type.
    h) If any files in the test need modification after MPC genertation there
       should be one or more files ending in .patch containing patch

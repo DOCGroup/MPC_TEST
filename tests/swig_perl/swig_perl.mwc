@@ -1,0 +1,7 @@
+workspace {
+  // This scope causes the features to be saved and restored
+  necessary {
+    cmdline += -feature_file test.features
+    MyModule.mpc
+  }
+}
