@@ -1,6 +1,47 @@
 #----------------------------------------------------------------------------
 #       Macros
 #----------------------------------------------------------------------------
+CFG = Debug
+
+ifeq ($(CFG), Debug)
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"."
+CCC           = $(CXX)
+MAKEFILE      = Makefile.foo
+DEPENDENCIES  = .depend.$(MAKEFILE)
+LTARGETDIR    = ./
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+EXEEXT        = 
+LIBPREFIX     = lib
+LIBSUFFIX     = d
+GENFLAGS      = -g
+LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
+OBJS          = foo$(OBJEXT)
+AREXT         = .a
+LIB           = $(LTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(AREXT)
+SOEXT         = .so
+SHTARGETDIR   = ./
+SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(SOEXT)
+SHFLAGS       = -shared
+SRC           = foo.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = $(DYNAMICFLAGS)
+endif
+ifeq ($(CFG), Release)
 CXX           = g++
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
@@ -37,6 +78,7 @@ SHFLAGS       = -shared
 SRC           = foo.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(DYNAMICFLAGS)
+endif
 
 #----------------------------------------------------------------------------
 #       Local targets

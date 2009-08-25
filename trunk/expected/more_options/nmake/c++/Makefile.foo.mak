@@ -4,7 +4,7 @@ CFG=Win32 Debug
 !MESSAGE No configuration specified. Defaulting to Win32 Debug.
 !ENDIF
 
-!IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release"
+!IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release"
 !ELSE
 !MESSAGE Invalid configuration "$(CFG)" specified.
 !MESSAGE You can specify a configuration when running NMAKE
@@ -16,8 +16,6 @@ CFG=Win32 Debug
 !MESSAGE
 !MESSAGE "Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE "Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
-!MESSAGE "Win32 Static Debug" (based on "Win32 (x86) Static Library")
-!MESSAGE "Win32 Static Release" (based on "Win32 (x86) Static Library")
 !MESSAGE
 !ERROR An invalid configuration was specified.
 !ENDIF
@@ -133,95 +131,6 @@ LINK32_OBJS= \
 <<
     if exist ".\foo.dll.manifest" mt.exe -manifest ".\foo.dll.manifest" -outputresource:$@;2
 
-!ELSEIF  "$(CFG)" == "Win32 Static Debug"
-
-OUTDIR=.
-INTDIR=Static_Debug\foo\I386
-
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\foosd.lib"
-
-DEPEND :
-!IF "$(DEPGEN)" == ""
-	@echo No suitable dependency generator could be found.
-	@echo One comes with MPC, just set the MPC_ROOT environment variable
-	@echo to the full path of MPC.  You can download MPC from
-	@echo http://www.ociweb.com/products/mpc/down.html
-!ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "foo.cpp"
-!ENDIF
-
-REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\foosd.lib"
-        -@del /f/q "$(OUTDIR)\foosd.exp"
-        -@del /f/q "$(OUTDIR)\foosd.ilk"
-	-@del /f/q ".\foosd.pdb"
-
-"$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\foo\$(NULL)" mkdir "Static_Debug\foo"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
-
-CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\foosd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
-
-CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
-
-
-LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:".\foosd.lib"
-LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
-
-"$(OUTDIR)\foosd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
-  $(LINK32_FLAGS) $(LINK32_OBJS)
-<<
-    if exist "$(OUTDIR)\foosd.lib.manifest" mt.exe -manifest "$(OUTDIR)\foosd.lib.manifest" -outputresource:$@;2
-
-!ELSEIF  "$(CFG)" == "Win32 Static Release"
-
-OUTDIR=.
-INTDIR=Static_Release\foo\I386
-
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\foos.lib"
-
-DEPEND :
-!IF "$(DEPGEN)" == ""
-	@echo No suitable dependency generator could be found.
-	@echo One comes with MPC, just set the MPC_ROOT environment variable
-	@echo to the full path of MPC.  You can download MPC from
-	@echo http://www.ociweb.com/products/mpc/down.html
-!ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "foo.cpp"
-!ENDIF
-
-REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\foos.lib"
-        -@del /f/q "$(OUTDIR)\foos.exp"
-        -@del /f/q "$(OUTDIR)\foos.ilk"
-
-"$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\foo\$(NULL)" mkdir "Static_Release\foo"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
-
-CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
-
-CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
-
-
-LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:".\foos.lib"
-LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
-
-"$(OUTDIR)\foos.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
-  $(LINK32_FLAGS) $(LINK32_OBJS)
-<<
-    if exist "$(OUTDIR)\foos.lib.manifest" mt.exe -manifest "$(OUTDIR)\foos.lib.manifest" -outputresource:$@;2
-
 !ENDIF
 
 CLEAN :
@@ -266,7 +175,7 @@ CLEAN :
 !ENDIF
 !ENDIF
 
-!IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
+!IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" 
 SOURCE="foo.cpp"
 
 "$(INTDIR)\foo.obj" : $(SOURCE)
