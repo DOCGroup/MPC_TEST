@@ -6,7 +6,7 @@ Microsoft Visual Studio Solution File, Format Version 7.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/doc/build/linux/ACE/bin/mwc.pl -include config -type vc7 -recurse -name_modifier "*_testing"
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type vc7 -recurse -name_modifier "*_testing"
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bar", "src\bar_testing.vcproj", "{21263024-FECA-1BAD-6460-8A637B8F2384}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo", "src\foo_testing.vcproj", "{F126306B-FECA-1BAD-609D-8A637B8F2384}"
