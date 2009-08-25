@@ -1,3 +1,13 @@
+Tue Aug 25 17:50:48 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/MultiWS/*:
+
+          Fixed line endings.
+
+        * utils/add_expected_files.sh:
+
+          Changed to use file passed on the command line.
+
 Tue Aug 25 16:41:53 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * README:
