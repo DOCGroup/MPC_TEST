@@ -2,9 +2,15 @@
 ## Makefile.foo.am
 
 noinst_LTLIBRARIES = libfoo.la
+Debug : libfoo.la
+noinst_LTLIBRARIES += libfoo.la
+Release : libfoo.la
 
-libfoo_la_SOURCES = \
+libfoo_SOURCES_COMMON = \
   foo.cpp
+
+libfoo_la_SOURCES = $(libfoo_SOURCES_COMMON)
+libfoo_la_SOURCES = $(libfoo_SOURCES_COMMON)
 
 ## Clean up template repositories, etc.
 clean-local:

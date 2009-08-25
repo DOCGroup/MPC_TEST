@@ -61,7 +61,6 @@ my %devenv_ver = ('vc7'  => '13.00',
 
 sub which {
   my($prog) = shift;
-  my($exec) = $prog;
 
   if (defined $ENV{'PATH'}) {
     my($part)   = '';
@@ -526,7 +525,6 @@ sub remove_files {
   my($dir)   = shift;
   my($exist) = shift;
   my($fh)    = new FileHandle();
-  my(@files) = ();
 
   if (opendir($fh, $dir)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
@@ -554,7 +552,6 @@ sub move_expected {
   my($to)    = shift;
   my($exist) = shift;
   my($fh)    = new FileHandle();
-  my(@files) = ();
 
   if (opendir($fh, $from)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {

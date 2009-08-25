@@ -19,23 +19,7 @@ LIBMODIFIER  = _br
 EXEMODIFIER  = 
 POSTLINKRM   = .tds
 !else
-!ifdef STATIC_DEBUG
-OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
-CFG_DIR      = Static_Debug\\
-LIBMODIFIER  = _bsd
-EXEMODIFIER  = 
-STATIC_CFG   = 1
-!else
-!ifdef STATIC_RELEASE
-OCFLAGS      = -O2 -DNDEBUG
-CFG_DIR      = Static_Release\\
-LIBMODIFIER  = _bsr
-EXEMODIFIER  = 
-STATIC_CFG   = 1
-!else
-!error You must define one of these valid configurations: DEBUG RELEASE STATIC_DEBUG STATIC_RELEASE
-!endif
-!endif
+!error You must define one of these valid configurations: DEBUG RELEASE
 !endif
 !endif
 

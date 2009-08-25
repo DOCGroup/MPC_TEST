@@ -1,3 +1,20 @@
+Tue Aug 25 18:46:23 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/more_options/automake/c++/Makefile.am:
+        * expected/more_options/bmake/c++/Makefile.foo.bmak:
+        * expected/more_options/html/c++/foo.html:
+        * expected/more_options/make/c++/Makefile.foo:
+        * expected/more_options/nmake/c++/Makefile.foo.mak:
+        * tests/more_options/c++/foo.mpc:
+        * tests/more_options/environment.txt:
+
+          Modified to test creating an array out of a template variable that
+          has double quoted strings.
+
+        * run_tests.pl:
+
+          Removed unused variables.
+
 Tue Aug 25 17:50:48 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/MultiWS/*:
