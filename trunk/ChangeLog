@@ -1,3 +1,59 @@
+Mon Aug 31 18:09:18 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/command_helper/automake/Makefile.simple.am:
+        * expected/command_helper/bmake/Makefile.simple.bmak:
+        * expected/command_helper/em3/simple.vcp:
+        * expected/command_helper/ghs/simple.gpj:
+        * expected/command_helper/gnuace/GNUmakefile.simple:
+        * expected/command_helper/html/simple.html:
+        * expected/command_helper/make/Makefile.simple:
+        * expected/command_helper/nmake/Makefile.simple.mak:
+        * expected/command_helper/vc6/simple.dsp:
+        * expected/command_helper/vc7/simple.vcproj:
+        * expected/command_helper/vc71/simple.vcproj:
+        * expected/command_helper/vc8/simple.vcproj:
+        * tests/command_helper/modules/IDL2JNIHelper.pm:
+        * tests/command_helper/modules/IDLBase.pm:
+
+          Using the latest from DDS.
+
+
+        * expected/more_options/html/another/another.html:
+        * expected/more_options/html/c++/foo.html:
+        * tests/features_custom_only/environment.txt:
+        * tests/features_custom_only/features_custom_only.mwc:
+        * tests/more_options/additional_options.txt:
+        * tests/more_options/config:
+        * tests/more_options/config/foo.mpb:
+        * tests/relative/src/foo.cpp:
+        * tests/wide_coverage/config/MPC.cfg:
+
+          Increased coverage.
+
+        * expected/more_workspaces/*:
+        * tests/more_workspaces/additional_options.txt:
+        * tests/more_workspaces/config/base.mwc:
+        * tests/more_workspaces/environment.txt:
+        * tests/more_workspaces/more_workspaces.mwc:
+        * tests/more_workspaces/second.mwc:
+        * tests/more_workspaces/src/foo.cpp:
+        * tests/more_workspaces/src/src.mpc:
+        * tests/more_workspaces/src/zpoo.cpp:
+
+          Added a test to test multiple workspaces that use the same
+          directories.
+
+        * expected/template/*:
+        * tests/template/additional_options.txt:
+        * tests/template/build_entry.txt:
+        * tests/template/config/flap.mpb:
+        * tests/template/config/foo.mpd:
+        * tests/template/environment.txt:
+        * tests/template/src/down/foo.flap:
+        * tests/template/src/src.mpc:
+
+          Added a test to test template overriding and group naming.
+
 Tue Aug 25 18:46:23 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/more_options/automake/c++/Makefile.am:

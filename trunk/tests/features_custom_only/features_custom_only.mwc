@@ -1,3 +1,3 @@
 workspace {
-  cmdline += -relative TEST_ROOT=$PWD
+  cmdline += -relative TEST_ROOT=$ZIGGY
 }

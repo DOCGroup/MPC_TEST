@@ -1,0 +1,5 @@
+project {
+  Source_Files {
+    ^*poo.cpp
+  }
+}
