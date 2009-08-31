@@ -1,0 +1,9 @@
+project: flap {
+  flapflags += -some_option
+
+  flap_files(FIRST) {
+    Group1 {
+      down/foo.flap
+    }
+  }
+}

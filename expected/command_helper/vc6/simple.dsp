@@ -181,6 +181,41 @@ BuildCmds= \
 # End Source File
 # Begin Source File
 
+SOURCE="simple\_Local2TAOPeer.java"
+
+!IF  "$(CFG)" == "simple - Win32 Debug"
+
+# PROP Ignore_Default_Tool 1
+# Begin Custom Build - Invoking "$(JAVA_HOME)\bin\javac" on $(InputPath)
+InputPath="simple\_Local2TAOPeer.java"
+
+BuildCmds= \
+	"$(JAVA_HOME)\bin\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(InputPath) \
+	mkdir classes\simple 2> nul & copy /y simple\_Local2TAOPeer.class classes\simple > nul \
+
+"simple\_Local2TAOPeer.class" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ELSEIF  "$(CFG)" == "simple - Win32 Release"
+
+# PROP Ignore_Default_Tool 1
+# Begin Custom Build - Invoking "$(JAVA_HOME)\bin\javac" on $(InputPath)
+InputPath="simple\_Local2TAOPeer.java"
+
+BuildCmds= \
+	"$(JAVA_HOME)\bin\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(InputPath) \
+	mkdir classes\simple 2> nul & copy /y simple\_Local2TAOPeer.class classes\simple > nul \
+
+"simple\_Local2TAOPeer.class" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ENDIF
+
+# End Source File
+# Begin Source File
+
 SOURCE="simple\_Local3LocalBase.java"
 
 !IF  "$(CFG)" == "simple - Win32 Debug"
@@ -208,6 +243,41 @@ BuildCmds= \
 	mkdir classes\simple 2> nul & copy /y simple\_Local3LocalBase.class classes\simple > nul \
 
 "simple\_Local3LocalBase.class" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ENDIF
+
+# End Source File
+# Begin Source File
+
+SOURCE="simple\_Local3TAOPeer.java"
+
+!IF  "$(CFG)" == "simple - Win32 Debug"
+
+# PROP Ignore_Default_Tool 1
+# Begin Custom Build - Invoking "$(JAVA_HOME)\bin\javac" on $(InputPath)
+InputPath="simple\_Local3TAOPeer.java"
+
+BuildCmds= \
+	"$(JAVA_HOME)\bin\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(InputPath) \
+	mkdir classes\simple 2> nul & copy /y simple\_Local3TAOPeer.class classes\simple > nul \
+
+"simple\_Local3TAOPeer.class" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ELSEIF  "$(CFG)" == "simple - Win32 Release"
+
+# PROP Ignore_Default_Tool 1
+# Begin Custom Build - Invoking "$(JAVA_HOME)\bin\javac" on $(InputPath)
+InputPath="simple\_Local3TAOPeer.java"
+
+BuildCmds= \
+	"$(JAVA_HOME)\bin\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(InputPath) \
+	mkdir classes\simple 2> nul & copy /y simple\_Local3TAOPeer.class classes\simple > nul \
+
+"simple\_Local3TAOPeer.class" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 # End Custom Build
 
@@ -348,6 +418,41 @@ BuildCmds= \
 	mkdir classes\simple 2> nul & copy /y simple\_TestLILocalBase.class classes\simple > nul \
 
 "simple\_TestLILocalBase.class" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ENDIF
+
+# End Source File
+# Begin Source File
+
+SOURCE="simple\_TestLITAOPeer.java"
+
+!IF  "$(CFG)" == "simple - Win32 Debug"
+
+# PROP Ignore_Default_Tool 1
+# Begin Custom Build - Invoking "$(JAVA_HOME)\bin\javac" on $(InputPath)
+InputPath="simple\_TestLITAOPeer.java"
+
+BuildCmds= \
+	"$(JAVA_HOME)\bin\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(InputPath) \
+	mkdir classes\simple 2> nul & copy /y simple\_TestLITAOPeer.class classes\simple > nul \
+
+"simple\_TestLITAOPeer.class" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ELSEIF  "$(CFG)" == "simple - Win32 Release"
+
+# PROP Ignore_Default_Tool 1
+# Begin Custom Build - Invoking "$(JAVA_HOME)\bin\javac" on $(InputPath)
+InputPath="simple\_TestLITAOPeer.java"
+
+BuildCmds= \
+	"$(JAVA_HOME)\bin\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(InputPath) \
+	mkdir classes\simple 2> nul & copy /y simple\_TestLITAOPeer.class classes\simple > nul \
+
+"simple\_TestLITAOPeer.class" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 # End Custom Build
 
@@ -3170,7 +3275,13 @@ BuildCmds= \
 "simple\_Local2LocalBase.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
+"simple\_Local2TAOPeer.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
 "simple\_Local3LocalBase.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"simple\_Local3TAOPeer.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
 "simple\_TestInterf2Stub.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -3183,6 +3294,9 @@ BuildCmds= \
    $(BuildCmds)
 
 "simple\_TestLILocalBase.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"simple\_TestLITAOPeer.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
 "simple\ArrayBounds.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -3441,7 +3555,13 @@ BuildCmds= \
 "simple\_Local2LocalBase.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
+"simple\_Local2TAOPeer.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
 "simple\_Local3LocalBase.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"simple\_Local3TAOPeer.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
 "simple\_TestInterf2Stub.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -3454,6 +3574,9 @@ BuildCmds= \
    $(BuildCmds)
 
 "simple\_TestLILocalBase.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"simple\_TestLITAOPeer.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
 
 "simple\ArrayBounds.java" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"

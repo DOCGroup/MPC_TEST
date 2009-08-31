@@ -408,11 +408,21 @@ simple\\_Local2LocalBase.java		[Text]
 	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_Local2LocalBase.java'
 	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_Local2LocalBase.class classes\\simple > nul'
 	:extraOutputFile=simple\\_Local2LocalBase.class
+simple\\_Local2TAOPeer.java		[Text]
+	:dependsRelative=simple\\_Local2TAOPeer.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_Local2TAOPeer.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_Local2TAOPeer.class classes\\simple > nul'
+	:extraOutputFile=simple\\_Local2TAOPeer.class
 simple\\_Local3LocalBase.java		[Text]
 	:dependsRelative=simple\\_Local3LocalBase.java
 	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_Local3LocalBase.java'
 	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_Local3LocalBase.class classes\\simple > nul'
 	:extraOutputFile=simple\\_Local3LocalBase.class
+simple\\_Local3TAOPeer.java		[Text]
+	:dependsRelative=simple\\_Local3TAOPeer.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_Local3TAOPeer.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_Local3TAOPeer.class classes\\simple > nul'
+	:extraOutputFile=simple\\_Local3TAOPeer.class
 simple\\_TestInterf2Stub.java		[Text]
 	:dependsRelative=simple\\_TestInterf2Stub.java
 	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_TestInterf2Stub.java'
@@ -433,6 +443,11 @@ simple\\_TestLILocalBase.java		[Text]
 	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_TestLILocalBase.java'
 	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_TestLILocalBase.class classes\\simple > nul'
 	:extraOutputFile=simple\\_TestLILocalBase.class
+simple\\_TestLITAOPeer.java		[Text]
+	:dependsRelative=simple\\_TestLITAOPeer.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_TestLITAOPeer.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_TestLITAOPeer.class classes\\simple > nul'
+	:extraOutputFile=simple\\_TestLITAOPeer.class
 other.idl		[Text]
 otherJC.cpp
 	:dependsRelative=$(IDL2JNI_ROOT)\\bin\\idl2jni
@@ -532,11 +547,14 @@ simpleJC.cpp
 	:extraOutputFile=simple\\TestStructWithEnumHolder.java
 	:extraOutputFile=simple\\TestTypedefHelper.java
 	:extraOutputFile=simple\\_Local2LocalBase.java
+	:extraOutputFile=simple\\_Local2TAOPeer.java
 	:extraOutputFile=simple\\_Local3LocalBase.java
+	:extraOutputFile=simple\\_Local3TAOPeer.java
 	:extraOutputFile=simple\\_TestInterf2Stub.java
 	:extraOutputFile=simple\\_TestInterf3Stub.java
 	:extraOutputFile=simple\\_TestInterfStub.java
 	:extraOutputFile=simple\\_TestLILocalBase.java
+	:extraOutputFile=simple\\_TestLITAOPeer.java
 otherJC.cpp
 otherJS.cpp
 simpleJC.cpp

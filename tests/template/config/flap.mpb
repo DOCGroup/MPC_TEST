@@ -1,0 +1,14 @@
+// -*- MPC -*-
+// $Id$
+
+project {
+  Define_Custom(flap) {
+    dependent            = $(TEST_ROOT)/bin/flap.pl
+    command              = perl $(TEST_ROOT)/bin/flap.pl
+    commandflags         = <%exename%> <%unknown%> <%libout%> <%loaded(sharedname)%>
+    inputext             = .flap
+    generic_outputext    = .wing
+    output_follows_input = 0
+    keyword flapflags
+  }
+}
