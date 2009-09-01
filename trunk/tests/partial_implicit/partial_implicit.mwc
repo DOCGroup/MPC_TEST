@@ -1,0 +1,16 @@
+workspace {
+  cmdline += -relative TEST_ROOT=$PWD
+
+  explicit
+
+  // Duplicate mpc file added via aggregate
+  explicit.mwc
+
+  scope {
+    // Setting
+    implicit = 1
+
+    // Directory name
+    implicit
+  }
+}

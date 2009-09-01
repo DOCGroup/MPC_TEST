@@ -374,7 +374,7 @@ sub buildit {
       }
     }
     if (defined $cmd) {
-      #printBuildMessage($type);
+      printBuildMessage($type);
       $ENV{LD_LIBRARY_PATH}   = getcwd() . '/lib';
       $ENV{SHLIB_PATH}        = $ENV{LD_LIBRARY_PATH};
       $ENV{LIBPATH}           = $ENV{LD_LIBRARY_PATH};

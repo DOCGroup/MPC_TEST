@@ -2,6 +2,7 @@ automake: c/Makefile
 bmake: c/Makefile.bmak
 em3: c/c.vcw
 ghs: c/default.gpj
+gnuace: c/GNUmakefile
 html: c/c.html
 make: c/Makefile
 nmake: c/Makefile
