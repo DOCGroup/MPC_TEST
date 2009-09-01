@@ -8,7 +8,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace -ti dll_exe:foo
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -20,16 +20,34 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-all: template_input
+all: dll-target dll_exe-target lib-target lib_exe-target
 
 REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
 
 $(REMAINING_TARGETS):
-	@$(MAKE) -f GNUmakefile.template_input $(@)
+	@cd dll && $(MAKE) -f GNUmakefile.dll $(@)
+	@cd dll_exe && $(MAKE) -f GNUmakefile.dll_exe $(@)
+	@cd lib && $(MAKE) -f GNUmakefile.lib $(@)
+	@cd lib_exe && $(MAKE) -f GNUmakefile.lib_exe $(@)
 
-.PHONY: template_input
-template_input:
-	@$(MAKE) -f GNUmakefile.template_input all
+.PHONY: dll-target
+dll-target:
+	@cd dll && $(MAKE) -f GNUmakefile.dll all
+
+.PHONY: dll_exe-target
+dll_exe-target:
+	@cd dll_exe && $(MAKE) -f GNUmakefile.dll_exe all
+
+.PHONY: lib-target
+lib-target:
+	@cd lib && $(MAKE) -f GNUmakefile.lib all
+
+.PHONY: lib_exe-target
+lib_exe-target:
+	@cd lib_exe && $(MAKE) -f GNUmakefile.lib_exe all
 
 project_name_list:
-	@echo template_input
+	@echo dll-target
+	@echo dll_exe-target
+	@echo lib-target
+	@echo lib_exe-target

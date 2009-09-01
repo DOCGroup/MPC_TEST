@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+dll_exe/dll_exe.gpj		[Program]
+dll_exe/dll_exe_int.int

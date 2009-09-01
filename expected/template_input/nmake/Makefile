@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -ti dll_exe:foo
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -20,15 +20,60 @@ CFG=Win32 Debug
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !ENDIF
 
-all: template_input
+all: dll-target dll_exe-target lib-target lib_exe-target
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	@echo Project: Makefile.template_input.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.template_input.mak CFG="$(CFG)" $(@)
+	@cd dll
+	@echo Directory: dll
+	@echo Project: Makefile.dll.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dll.mak CFG="$(CFG)" $(@)
+	@cd $(MAKEDIR)
+	@cd dll_exe
+	@echo Directory: dll_exe
+	@echo Project: Makefile.dll_exe.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dll_exe.mak CFG="$(CFG)" $(@)
+	@cd $(MAKEDIR)
+	@cd lib
+	@echo Directory: lib
+	@echo Project: Makefile.lib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib.mak CFG="$(CFG)" $(@)
+	@cd $(MAKEDIR)
+	@cd lib_exe
+	@echo Directory: lib_exe
+	@echo Project: Makefile.lib_exe.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib_exe.mak CFG="$(CFG)" $(@)
+	@cd $(MAKEDIR)
 
-template_input:
-	@echo Project: Makefile.template_input.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.template_input.mak CFG="$(CFG)" all
+dll-target:
+	@cd dll
+	@echo Directory: dll
+	@echo Project: Makefile.dll.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dll.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+dll_exe-target:
+	@cd dll_exe
+	@echo Directory: dll_exe
+	@echo Project: Makefile.dll_exe.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dll_exe.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+lib-target:
+	@cd lib
+	@echo Directory: lib
+	@echo Project: Makefile.lib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+lib_exe-target:
+	@cd lib_exe
+	@echo Directory: lib_exe
+	@echo Project: Makefile.lib_exe.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib_exe.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
 
 project_name_list:
-	@echo template_input
+	@echo dll-target
+	@echo dll_exe-target
+	@echo lib-target
+	@echo lib_exe-target
