@@ -1,3 +1,27 @@
+Tue Sep  1 13:44:55 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/partial_implicit/*:
+        * tests/partial_implicit/bin/cppgen.pl:
+        * tests/partial_implicit/config/cppgen.mpb:
+        * tests/partial_implicit/explicit.mwc:
+        * tests/partial_implicit/explicit/crap.r:
+        * tests/partial_implicit/explicit/explicit.mpc:
+        * tests/partial_implicit/explicit/foo.h:
+        * tests/partial_implicit/explicit/foo.cpp:
+        * tests/partial_implicit/implicit/foo.cpp:
+        * tests/partial_implicit/partial_implicit.mwc:
+
+          Added a test to test scoped implicit and >> with a gendir other
+          than '.'.
+
+        * run_tests.pl:
+
+          Removed a debugging comment.
+
+        * tests/workspaces/build_entry.txt:
+
+          Added the gnuace build entry.
+
 Mon Aug 31 18:09:18 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/command_helper/automake/Makefile.simple.am:

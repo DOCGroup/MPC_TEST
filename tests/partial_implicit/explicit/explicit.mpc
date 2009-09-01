@@ -1,0 +1,23 @@
+project: cppgen {
+  includes += .
+  postclean += <%rmdir%> down
+
+  Cppgen_Files {
+    gendir = down
+    crap.r >> crap.inl
+  }
+
+  Source_Files {
+    foo.cpp
+    down/crap.cpp
+    foo.cpp
+    down/crap.cpp
+  }
+
+  Header_Files {
+    foo.h
+    down/crap.h
+    foo.h
+    down/crap.h
+  }
+}
