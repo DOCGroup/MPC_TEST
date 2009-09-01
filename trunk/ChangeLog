@@ -1,3 +1,29 @@
+Tue Sep  1 18:28:48 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/template_input/*:
+        * tests/template_input/additional_options.txt:
+        * tests/template_input/config/fooson.mpt:
+        * tests/template_input/config/fooson_exe.mpt:
+        * tests/template_input/config/foosonplatforms.mpt:
+        * tests/template_input/config/static_fooson.mpt:
+        * tests/template_input/config/static_fooson_exe.mpt:
+        * tests/template_input/dll/dll.mpc:
+        * tests/template_input/dll/foo.cpp:
+        * tests/template_input/dll_exe/dll_exe.mpc:
+        * tests/template_input/dll_exe/foo.cpp:
+        * tests/template_input/lib/foo.cpp:
+        * tests/template_input/lib/lib.mpc:
+        * tests/template_input/lib_exe/foo.cpp:
+        * tests/template_input/lib_exe/lib_exe.mpc:
+        * tests/template_input/template_input.mwc:
+
+          Updated this test to use a template input override for all for
+          target types.
+
+        * tests/template_input/foo.cpp:
+
+          Removed these files.
+
 Tue Sep  1 13:44:55 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/partial_implicit/*:

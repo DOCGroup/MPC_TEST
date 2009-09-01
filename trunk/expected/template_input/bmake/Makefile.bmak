@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake -ti dll_exe:foo
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -15,13 +15,28 @@
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !endif
 
-all: template_input
+all: dll dll_exe lib lib_exe
 
 clean generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.template_input.bmak $(@)
+	$(COMSPEC) /c "cd dll &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dll.bmak $(@)"
+	$(COMSPEC) /c "cd dll_exe &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dll_exe.bmak $(@)"
+	$(COMSPEC) /c "cd lib &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.lib.bmak $(@)"
+	$(COMSPEC) /c "cd lib_exe &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.lib_exe.bmak $(@)"
 
-template_input:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.template_input.bmak all
+dll:
+	$(COMSPEC) /c "cd dll &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dll.bmak all"
+
+dll_exe:
+	$(COMSPEC) /c "cd dll_exe &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dll_exe.bmak all"
+
+lib:
+	$(COMSPEC) /c "cd lib &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.lib.bmak all"
+
+lib_exe:
+	$(COMSPEC) /c "cd lib_exe &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.lib_exe.bmak all"
 
 project_name_list:
-	@echo template_input
+	@echo dll
+	@echo dll_exe
+	@echo lib
+	@echo lib_exe

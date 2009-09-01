@@ -6,11 +6,47 @@ Microsoft Developer Studio Workspace File, Format Version 6.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type vc6 -ti dll_exe:foo
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type vc6 -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
 
 ###############################################################################
 
-Project: "template_input"=template_input.dsp - Package Owner=<4>
+Project: "dll"=dll\dll.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "dll_exe"=dll_exe\dll_exe.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "lib"=lib\lib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "lib_exe"=lib_exe\lib_exe.dsp - Package Owner=<4>
 
 Package=<5>
 {{{

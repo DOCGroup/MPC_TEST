@@ -6,18 +6,45 @@ Microsoft Visual Studio Solution File, Format Version 8.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type vc71 -type html -ti dll_exe:fooson
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "template_input", "template_input.vcproj", "{0B7FB782-FECA-1BAD-0000-0000D2C04618}"
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type vc71 -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dll", "dll\dll.vcproj", "{E90472B0-FECA-1BAD-62AE-8A63461A406C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dll_exe", "dll_exe\dll_exe.vcproj", "{7F2EEDB4-FECA-1BAD-92E7-E8CA4069D4FF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lib", "lib\lib.vcproj", "{09047235-FECA-1BAD-6AF0-8A63461A4832}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lib_exe", "lib_exe\lib_exe.vcproj", "{7FAB0DB4-FECA-1BAD-92E7-E0944837D4FF}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
 		Debug = Debug
+		Release = Release
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{0B7FB782-FECA-1BAD-0000-0000D2C04618}.Debug.ActiveCfg = Debug|Win32
-		{0B7FB782-FECA-1BAD-0000-0000D2C04618}.Debug.Build.0 = Debug|Win32
+		{E90472B0-FECA-1BAD-62AE-8A63461A406C}.Debug.ActiveCfg = Debug|Win32
+		{E90472B0-FECA-1BAD-62AE-8A63461A406C}.Debug.Build.0 = Debug|Win32
+		{E90472B0-FECA-1BAD-62AE-8A63461A406C}.Release.ActiveCfg = Release|Win32
+		{E90472B0-FECA-1BAD-62AE-8A63461A406C}.Release.Build.0 = Release|Win32
+		{7F2EEDB4-FECA-1BAD-92E7-E8CA4069D4FF}.Debug.ActiveCfg = Debug|Win32
+		{7F2EEDB4-FECA-1BAD-92E7-E8CA4069D4FF}.Debug.Build.0 = Debug|Win32
+		{7F2EEDB4-FECA-1BAD-92E7-E8CA4069D4FF}.Release.ActiveCfg = Release|Win32
+		{7F2EEDB4-FECA-1BAD-92E7-E8CA4069D4FF}.Release.Build.0 = Release|Win32
+		{09047235-FECA-1BAD-6AF0-8A63461A4832}.Debug.ActiveCfg = Debug|Win32
+		{09047235-FECA-1BAD-6AF0-8A63461A4832}.Debug.Build.0 = Debug|Win32
+		{09047235-FECA-1BAD-6AF0-8A63461A4832}.Release.ActiveCfg = Release|Win32
+		{09047235-FECA-1BAD-6AF0-8A63461A4832}.Release.Build.0 = Release|Win32
+		{7FAB0DB4-FECA-1BAD-92E7-E0944837D4FF}.Debug.ActiveCfg = Debug|Win32
+		{7FAB0DB4-FECA-1BAD-92E7-E0944837D4FF}.Debug.Build.0 = Debug|Win32
+		{7FAB0DB4-FECA-1BAD-92E7-E0944837D4FF}.Release.ActiveCfg = Release|Win32
+		{7FAB0DB4-FECA-1BAD-92E7-E0944837D4FF}.Release.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

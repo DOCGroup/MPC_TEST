@@ -1,4 +1,0 @@
-#!gbuild
-	[INTEGRITY Application]
-template_input.gpj		[Program]
-template_input_int.int

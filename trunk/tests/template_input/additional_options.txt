@@ -1,1 +1,1 @@
--type html -ti dll_exe:fooson -relative_file config/relative -gfeature_file config/features
+-type html -relative_file config/relative -gfeature_file config/features

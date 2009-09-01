@@ -1,0 +1,7 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Library]
+	-o lib/lib.a
+	-G
+	-Llib
+foo.cpp

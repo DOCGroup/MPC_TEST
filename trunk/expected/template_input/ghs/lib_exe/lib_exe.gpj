@@ -1,0 +1,8 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o lib_exe/foo.exe
+	{optional} -non_shared
+	-G
+	-Llib_exe
+foo.cpp

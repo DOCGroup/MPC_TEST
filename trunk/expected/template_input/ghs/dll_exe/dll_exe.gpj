@@ -1,0 +1,7 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o dll_exe/foo.exe
+	-G
+	-Ldll_exe
+foo.cpp

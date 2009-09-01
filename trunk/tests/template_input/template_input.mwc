@@ -1,0 +1,18 @@
+workspace {
+  dll {
+    cmdline += -ti dll:fooson
+    dll
+  }
+  dll_exe {
+    cmdline += -ti dll_exe:fooson_exe
+    dll_exe
+  }
+  lib {
+    cmdline += -ti lib:static_fooson -static
+    lib
+  }
+  lib_exe {
+    cmdline += -ti lib_exe:static_fooson_exe -static
+    lib_exe
+  }
+}

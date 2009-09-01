@@ -6,28 +6,16 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -type html -ti dll_exe:fooson
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
 
-
-## Makefile.template_input.am
-
-noinst_PROGRAMS = food
-Debug : food
-
-foo_SOURCES_COMMON = \
-  foo.cpp
-
-food_SOURCES = $(foo_SOURCES_COMMON)
+SUBDIRS = \
+        dll \
+        dll_exe \
+        lib \
+        lib_exe
 
 
 ACLOCAL = @ACLOCAL@
 ACLOCAL_AMFLAGS = -I m4
 AUTOMAKE_OPTIONS = foreign
 
-## Clean up template repositories, etc.
-clean-local:
-	-rm -f *~ *.bak *.rpo *.sym lib*.*_pure_* core core.*
-	-rm -f gcctemp.c gcctemp so_locations *.ics
-	-rm -rf cxx_repository ptrepository ti_files
-	-rm -rf templateregistry ir.out
-	-rm -rf ptrepository SunWS_cache Templates.DB
