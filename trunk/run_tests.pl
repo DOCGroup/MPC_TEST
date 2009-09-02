@@ -745,6 +745,7 @@ sub run_test {
     $add =~ s/\s+$//;
     close($fh);
   }
+  $ENV{TEST_ROOT} = getcwd();
   $fh = new FileHandle("environment.txt");
   if (defined $fh) {
      while(<$fh>) {

@@ -1,3 +1,40 @@
+Wed Sep  2 16:19:56 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * README:
+        * run_tests.pl:
+
+          Added a TEST_ROOT environment variable that will be set to the
+          full path of the individual tests.
+
+        * expected/template/automake/src/Makefile.am:
+        * expected/template/bmake/src/Makefile.src.bmak:
+        * expected/template/em3/src/src.vcp:
+        * expected/template/ghs/src/src.gpj:
+        * expected/template/gnuace/src/GNUmakefile.src:
+        * expected/template/html/src/src.html:
+        * expected/template/make/src/Makefile.src:
+        * expected/template/nmake/src/Makefile.src.mak:
+        * expected/template/sle/src/src.vpj:
+        * expected/template/vc6/src/src.dsp:
+        * expected/template/vc7/src/src.vcproj:
+        * expected/template/vc71/src/src.vcproj:
+        * expected/template/vc8/src/src.vcproj:
+        * expected/template/wb26/src/src/.project:
+        * tests/buildflags/additional_options.txt:
+        * tests/options/additional_options.txt:
+        * tests/template/additional_options.txt:
+        * tests/template/src/src.mpc:
+        * tests/template_input/config/relative:
+        * tests/wide_coverage/config/MPC.cfg:
+        * tests/workspaces/nothing.mwc:
+
+          Increased code coverage.
+
+        * utils/nightly.sh:
+        * utils/pick_up_nightly.sh:
+
+          Added generic script comments.
+
 Tue Sep  1 18:28:48 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/template_input/*:

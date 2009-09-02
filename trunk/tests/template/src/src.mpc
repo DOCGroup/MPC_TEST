@@ -1,5 +1,5 @@
 project: flap {
-  flapflags += -some_option
+  flapflags += -some_option $(Debug)
 
   flap_files(FIRST) {
     Group1 {
