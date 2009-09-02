@@ -20,7 +20,9 @@ Adding a new test
       test.
    c) If environment variables need to be set, create an environment.txt
       file in the root directory of the test.  Each line should be of the
-      form NAME = VALUE.  These will be set before running the test.
+      form NAME = VALUE.  These will be set before running the test. The
+      TEST_ROOT environment variable is always set to the full path of the
+      test, but can be overridden by values in this file.
    d) A 'config' directory is automatically added via the -include option when
       MPC is run.
    e) The library path (for whatever platform you are testing on) is set to

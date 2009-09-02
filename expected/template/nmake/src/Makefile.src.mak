@@ -2,7 +2,7 @@
 # Define_Custom to nothing.  This has the effect of creating a new project
 # keyword on the fly and can be used within a template as any other project
 # keyword
-FLAPFLAGS = -some_option
+FLAPFLAGS = -some_option $(Debug)
 
 FEATURES = \
   "boost = " \

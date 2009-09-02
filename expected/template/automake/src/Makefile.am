@@ -10,7 +10,7 @@
 
 
 ## Makefile.src.am
-FLAPFLAGS = -some_option
+FLAPFLAGS = -some_option $(Debug)
 
 FEATURES = \
   "boost = 1" \
