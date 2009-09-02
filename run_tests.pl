@@ -23,7 +23,7 @@ use File::Spec;
 use File::Basename;
 use File::Find;
 
-my($basePath) = $FindBin::Bin;
+my $basePath = $FindBin::Bin;
 unshift(@INC, $basePath . '/modules');
 
 require OptionProcessor;
@@ -32,21 +32,21 @@ require OptionProcessor;
 # Data Section
 # ******************************************************************
 
-my($MWC)       = undef;
-my(@types)     = ();
-my($one_built) = 0;
-my($cr_expect) = undef;
-my($br_error)  = undef;
-my($nodiff)    = undef;
-my($nobuild)   = undef;
-my($test_scr)  = 'run_test.pl';
-my($diff)      = $ENV{DIFFILES_CMD} || which('diff');
-my($patch)     = which('patch');
-my($gmake)     = which('gmake') || which('make');
-my($passed)    = 'succeeded';
-my($failed)    = '****failed****';
-my($quiet)     = undef;
-my($coverage)  = undef;
+my $MWC;
+my @types;
+my $one_built = 0;
+my $cr_expect;
+my $br_error;
+my $nodiff;
+my $nobuild;
+my $test_scr  = 'run_test.pl';
+my $diff      = $ENV{DIFFILES_CMD} || which('diff');
+my $patch     = which('patch');
+my $gmake     = which('gmake') || which('make');
+my $passed    = 'succeeded';
+my $failed    = '****failed****';
+my $quiet;
+my $coverage;
 
 my %devenv_ver = ('vc7'  => '13.00',
                   'vc71' => '13.10',
@@ -60,11 +60,11 @@ my %devenv_ver = ('vc7'  => '13.00',
 # ******************************************************************
 
 sub which {
-  my($prog) = shift;
+  my $prog = shift;
 
   if (defined $ENV{'PATH'}) {
-    my($part)   = '';
-    my($envSep) = ($^O eq 'VMS' ? ':' : $Config{'path_sep'});
+    my $part   = '';
+    my $envSep = ($^O eq 'VMS' ? ':' : $Config{'path_sep'});
     foreach $part (split(/$envSep/, $ENV{'PATH'})) {
       $part .= "/$prog";
       if (-x "$part$Config{'exe_ext'}") {
@@ -78,8 +78,8 @@ sub which {
 
 
 sub touch {
-  my(@files) = @_;
-  my($fh)    = new FileHandle();
+  my @files = @_;
+  my $fh    = new FileHandle();
   foreach my $file (@files) {
     if (open($fh, ">>$file")) {
       close($fh);
@@ -89,16 +89,12 @@ sub touch {
 
 
 sub diff_files {
-  my($left)  = shift;
-  my($right) = shift;
-  my($i)     = shift;
-  my($lline) = shift;
-  my($rline) = shift;
+  my($left, $right, $i, $lline, $rline) = @_;
 
   if (!$nodiff) {
     if (defined $diff) {
-      my($txt) = 'diff.' . $$ . '.txt';
-      my($dh)  = new FileHandle();
+      my $txt = 'diff.' . $$ . '.txt';
+      my $dh  = new FileHandle();
       system("$diff $left $right > $txt");
       if (open($dh, $txt)) {
         while(<$dh>) {
@@ -118,24 +114,22 @@ sub diff_files {
 }
 
 sub compare {
-  my($left)      = shift;
-  my($right)     = shift;
-  my($show)      = shift;
-  my($lh)        = new FileHandle();
-  my($rh)        = new FileHandle();
-  my($different) = 1;
+  my($left, $right, $show) = @_;
+  my $lh = new FileHandle();
+  my $rh = new FileHandle();
+  my $different = 1;
 
   if (open($lh, $left)) {
-    my(@lines) = ();
+    my @lines;
     while(<$lh>) {
       push(@lines, $_);
     }
     close($lh);
     if (open($rh, $right)) {
-      my($i) = 0;
+      my $i = 0;
       $different = 0;
       while(<$rh>) {
-        my($line) = $_;
+        my $line = $_;
         next if ($line =~ /^\s*$/);
 
         while(defined $lines[$i] && $lines[$i] =~ /^\s*$/) {
@@ -182,14 +176,14 @@ sub compare {
 
 
 sub printBuildMessage {
-  my($type) = shift;
+  my $type = shift;
   print SAVEERR "+++ Building for the $type type: ";
 }
 
 
 sub checkBuildStatus {
-  my($cmd)    = shift;
-  my($status) = 0;
+  my $cmd    = shift;
+  my $status = 0;
 
   if (system($cmd) / 256 == 0) {
     $status = 1;
@@ -205,22 +199,21 @@ sub checkBuildStatus {
 
 
 sub validateHTML {
-  my($cmd)    = shift;
-  my($dir)    = shift;
-  my($status) = 0;
-  my($fh)     = new FileHandle();
+  my($cmd, $dir) = @_;
+  my $status = 0;
+  my $fh = new FileHandle();
 
   if (opendir($fh, $dir)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
-      my($full) = "$dir/$file";
+      my $full = "$dir/$file";
       if (-d $full) {
         $status += validateHTML($cmd, $full);
       }
       elsif ($file =~ /\.html$/) {
-        my($ph) = new FileHandle();
+        my $ph = new FileHandle();
 
         if (open($ph, "$cmd $full |")) {
-          my($first) = 1;
+          my $first = 1;
           while(<$ph>) {
             if ($first) {
               print $full, ":\n";
@@ -249,20 +242,18 @@ sub validateHTML {
 
 
 sub buildit {
-  my($type)   = shift;
-  my($path)   = shift;
-  my($entry)  = shift;
-  my($status) = 0;
-  my($orig)   = getcwd();
-  my($ob)     = $one_built;
-  my($cross)  = undef;
+  my($type, $path, $entry) = @_;
+  my $status = 0;
+  my $orig = getcwd();
+  my $ob = $one_built;
+  my $cross;
 
   ## Update the PWD environment variable for gnuace
   chdir($path);
   $ENV{PWD} = $path;
 
   if ($type eq 'html') {
-    my($cmd) = which('tidy');
+    my $cmd = which('tidy');
     if (defined $cmd) {
       print SAVEERR "+++ Validation for the $type type: ";
       if (validateHTML("$cmd -q -e", '.')) {
@@ -275,7 +266,7 @@ sub buildit {
   }
   elsif ($^O eq 'MSWin32') {
     if ($type eq 'bmake') {
-      my($cmd) = which('bcc32');
+      my $cmd = which('bcc32');
       if (!defined $cmd) {
         $cmd = which('bccx');
         $ENV{CBX} = 1;
@@ -296,7 +287,7 @@ sub buildit {
       }
     }
     elsif ($type eq 'nmake') {
-      my($cmd) = which('nmake');
+      my $cmd = which('nmake');
       if (defined $cmd) {
         printBuildMessage($type);
         if (defined $entry) {
@@ -309,7 +300,7 @@ sub buildit {
       }
     }
     elsif ($type eq 'em3') {
-      my($cmd) = which('evc');
+      my $cmd = which('evc');
       if (defined $cmd && defined $ENV{TARGETCPU}) {
         printBuildMessage($type);
         $entry = basename($path) . '.vcw' if (!defined $entry);
@@ -320,7 +311,7 @@ sub buildit {
       }
     }
     elsif ($type eq 'vc6') {
-      my($cmd) = which('msdev');
+      my $cmd = which('msdev');
       if (defined $cmd) {
         printBuildMessage($type);
         $entry = basename($path) . '.dsw' if (!defined $entry);
@@ -330,10 +321,10 @@ sub buildit {
     }
     elsif ($type eq 'vc7' || $type eq 'vc71' || $type eq 'vc8' ||
            $type eq 'vc9' || $type eq 'vc10') {
-      my($cmd) = which('devenv');
+      my $cmd = which('devenv');
       if (defined $cmd) {
-        my($fh) = new FileHandle();
-        my($cl) = which('cl');
+        my $fh = new FileHandle();
+        my $cl = which('cl');
         if (defined $cl) {
           if (open($fh, "$cl /? 2>&1 |")) {
             while(<$fh>) {
@@ -359,9 +350,9 @@ sub buildit {
     }
   }
   elsif ($type eq 'automake') {
-    my($cmd) = which('automake');
+    my $cmd = which('automake');
     if (defined $cmd) {
-      my($fh) = new FileHandle();
+      my $fh = new FileHandle();
       if (open($fh, "$cmd --version 2>&1 |")) {
         while(<$fh>) {
           if (/^automake\s+\(.*\)\s+(\d+.\d+)/) {
@@ -456,10 +447,9 @@ sub buildit {
 
 
 sub compare_output {
-  my($test)   = shift;
-  my($expect) = shift;
-  my($fh)     = new FileHandle();
-  my($status) = 0;
+  my($test, $expect) = @_;
+  my $fh = new FileHandle();
+  my $status = 0;
 
   if (opendir($fh, $expect)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
@@ -469,8 +459,8 @@ sub compare_output {
       ## as everything builds correctly we won't have a problem.
       $file =~ s/\.dir$// if ($^O eq 'VMS');
       if ($file ne '.svn' && $file ne 'CVS' && $file ne 'GNUmakefile') {
-        my($tf) = "$test/$file";
-        my($ef) = "$expect/$file";
+        my $tf = "$test/$file";
+        my $ef = "$expect/$file";
         if (-d $ef) {
           $status += compare_output($tf, $ef);
         }
@@ -502,14 +492,14 @@ sub compare_output {
 
 
 sub list_files {
-  my($dir)   = shift;
-  my($fh)    = new FileHandle();
-  my(@files) = ();
+  my $dir   = shift;
+  my $fh = new FileHandle();
+  my @files;
 
   if (opendir($fh, $dir)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
       $file =~ s/\.dir$// if ($^O eq 'VMS');
-      my($full) = "$dir/$file";
+      my $full = "$dir/$file";
       if (-d $full) {
         push(@files, list_files($full));
       }
@@ -522,14 +512,13 @@ sub list_files {
 
 
 sub remove_files {
-  my($dir)   = shift;
-  my($exist) = shift;
-  my($fh)    = new FileHandle();
+  my($dir, $exist) = @_;
+  my $fh = new FileHandle();
 
   if (opendir($fh, $dir)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
       $file =~ s/\.dir$// if ($^O eq 'VMS');
-      my($full) = "$dir/$file";
+      my $full = "$dir/$file";
       if (-d $full) {
         remove_files($full, $exist);
         if (!exists $$exist{$full}) {
@@ -548,17 +537,15 @@ sub remove_files {
 
 
 sub move_expected {
-  my($from)  = shift;
-  my($to)    = shift;
-  my($exist) = shift;
-  my($fh)    = new FileHandle();
+  my($from, $to, $exist) = @_;
+  my $fh = new FileHandle();
 
   if (opendir($fh, $from)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
       $file =~ s/\.dir$// if ($^O eq 'VMS');
       if ($file ne '.svn' && $file ne 'CVS') {
-        my($ffull) = "$from/$file";
-        my($tfull) = "$to/$file";
+        my $ffull = "$from/$file";
+        my $tfull = "$to/$file";
         if (-d $ffull) {
           move_expected($ffull, $tfull, $exist);
         }
@@ -587,21 +574,20 @@ sub move_expected {
 
 
 sub apply_patches {
-  my($path)    = shift;
-  my($reverse) = shift;
-  my($fh)      = new FileHandle();
+  my($path, $reverse) = @_;
+  my $fh = new FileHandle();
 
   if (defined $patch && opendir($fh, $path)) {
     foreach my $file (grep(!/^\.\.?$/, readdir($fh))) {
       $file =~ s/\.dir$// if ($^O eq 'VMS');
-      my($full) = "$path/$file";
+      my $full = "$path/$file";
       if (-d $full) {
         apply_patches($full, $reverse);
       }
       elsif ($file =~ /(.*)\.patch$/) {
-        my($real) = $1;
+        my $real = $1;
         if (-r "$path/$real") {
-          my($orig) = getcwd();
+          my $orig = getcwd();
           chdir($path);
           system("$patch -p0 " . ($reverse ? '-R ' : '') . "< $file");
           chdir($orig);
@@ -614,12 +600,12 @@ sub apply_patches {
 
 
 sub clean_dir {
-  my($file) = shift;
+  my $file = shift;
   if (-d $file) {
-    my($fh) = new FileHandle();
+    my $fh = new FileHandle();
     if (opendir($fh, $file)) {
       foreach my $name (grep(!/^\.\.?$/, readdir($fh))) {
-        my($full) = "$file/$name";
+        my $full = "$file/$name";
         clean_dir($full);
         rmdir($full);
       }
@@ -716,30 +702,25 @@ sub to_be_cleaned {
 
 
 sub run_test {
-  my($path)     = shift;
-  my($mwc)      = shift;
-  my($cfg)      = shift;
-  my($expect)   = shift;
-  my($type)     = shift;
-  my($pass)     = shift;
-  my($orig)     = getcwd();
-  my($status)   = 0;
-  my(%existing) = ();
+  my($path, $mwc, $cfg, $expect, $type, $pass) = @_;
+  my $orig = getcwd();
+  my $status = 0;
+  my %existing;
 
   if ($pass == 0) {
-    my(@files) = list_files($path);
+    my @files = list_files($path);
     @existing{@files} = ();
   }
 
-  my($defsigint) = $SIG{INT};
+  my $defsigint = $SIG{INT};
   $SIG{INT} = sub { chdir($orig);
                     remove_files($path, \%existing);
                     exit(1);
                   };
 
   chdir($path);
-  my($add) = '';
-  my($fh)  = new FileHandle("additional_options.txt");
+  my $add = '';
+  my $fh  = new FileHandle("additional_options.txt");
   if (defined $fh) {
     $add = <$fh>;
     $add =~ s/\s+$//;
@@ -750,8 +731,8 @@ sub run_test {
   if (defined $fh) {
      while(<$fh>) {
       if ($_ =~ /(\w+)\s*=\s*(.*)$/) {
-        my($name) = $1;
-        my($val)  = $2;
+        my $name = $1;
+        my $val  = $2;
         $val =~ s/^\s+//;
         $val =~ s/\s+$//;
 
@@ -764,16 +745,16 @@ sub run_test {
     }
     close($fh);
   }
-  my($popt) = '';
+  my $popt = '';
   $fh = new FileHandle("perl_options.txt");
   if (defined $fh) {
     $popt = <$fh>;
     $popt =~ s/\s+$//;
     close($fh);
   }
-  my($ret) = system("$^X $popt " .
-                    ($coverage ? "-MDevel::Cover=-db,$orig/cover_db " : '') .
-                    "$MWC -include $cfg -type $type $add $mwc");
+  my $ret = system("$^X $popt " .
+                   ($coverage ? "-MDevel::Cover=-db,$orig/cover_db " : '') .
+                   "$MWC -include $cfg -type $type $add $mwc");
   chdir($orig);
 
   ## A signal killed mwc.pl
@@ -792,7 +773,7 @@ sub run_test {
       $status += compare_output($path, "$expect/$type");
       if ($pass < 1) {
         apply_patches($path);
-        my($entry) = undef;
+        my $entry;
         $fh = new FileHandle("$path/build_entry.txt");
         if (defined $fh) {
           while(<$fh>) {
@@ -842,13 +823,13 @@ sub determine_setup {
     $MWC = "$ENV{MPC_ROOT}/mwc.pl"
   }
   if (defined $MWC) {
-    my($fh) = new FileHandle();
+    my $fh = new FileHandle();
     if (open($fh, "$^X " .
                   ($coverage ? "-MDevel::Cover=-db,cover_db " : '') .
                   "$MWC -help 2>&1 |")) {
-      my($look_for_end) = 0;
+      my $look_for_end = 0;
       while(<$fh>) {
-        my($typestr) = undef;
+        my $typestr;
         if (/\[-type <(.*)/) {
           $typestr = $1;
           $look_for_end = 1;
@@ -876,36 +857,36 @@ sub determine_setup {
 # Main Section
 # ******************************************************************
 
-my(@dirs)    = ();
-my(@tonly)   = ();
-my($output)  = undef;
-my(%options) = ('expected'  => \$cr_expect,
-                'break'     => \$br_error,
-                'coverage'  => \$coverage,
-                'nobuild'   => \$nobuild,
-                'nodiff'    => \$nodiff,
-                'output=s'  => \$output,
-                'test=s'    => \@dirs,
-                'type=s'    => \@tonly,
-                'diffcmd=s' => \$diff,
-                'quiet'     => \$quiet,
-               );
-my(%desc)    = ('expected' => 'Create expected results for all of the ' .
-                              'tests',
-                'break'    => 'Break on the first test failure',
-                'coverage' => 'Enable coverage statistics collection',
-                'diffcmd'  => 'Provide the full path to an alternate ' .
-                              'diff command',
-                'nobuild'  => 'Do not build any of the tests',
-                'nodiff'   => 'Do not show file differences',
-                'output'   => 'Send output to the specified file',
-                'test'     => 'Run the specified test or tests',
-                'type'     => 'Use only the specified type or types',
-                'quiet'    => 'Only print the test name and errors',
-               );
+my @dirs;
+my @tonly;
+my $output;
+my %options = ('expected'  => \$cr_expect,
+               'break'     => \$br_error,
+               'coverage'  => \$coverage,
+               'nobuild'   => \$nobuild,
+               'nodiff'    => \$nodiff,
+               'output=s'  => \$output,
+               'test=s'    => \@dirs,
+               'type=s'    => \@tonly,
+               'diffcmd=s' => \$diff,
+               'quiet'     => \$quiet,
+              );
+my %desc    = ('expected' => 'Create expected results for all of the ' .
+                             'tests',
+               'break'    => 'Break on the first test failure',
+               'coverage' => 'Enable coverage statistics collection',
+               'diffcmd'  => 'Provide the full path to an alternate ' .
+                             'diff command',
+               'nobuild'  => 'Do not build any of the tests',
+               'nodiff'   => 'Do not show file differences',
+               'output'   => 'Send output to the specified file',
+               'test'     => 'Run the specified test or tests',
+               'type'     => 'Use only the specified type or types',
+               'quiet'    => 'Only print the test name and errors',
+              );
 
-my($status)  = 0;
-my($options) = new OptionProcessor($0, \%options, \%desc);
+my $status  = 0;
+my $options = new OptionProcessor($0, \%options, \%desc);
 $options->process();
 
 ## We're doing coverage testing, there is no need for building
@@ -929,14 +910,14 @@ else {
     $status++;
   }
   else {
-    my($expectdir) = 'expected';
-    my($testdir)   = 'tests';
-    my($logdir)    = 'logs';
-    my(@lt)        = localtime(time());
-    my($logfile)   = sprintf("$logdir/%04d%02d%02d-%02d%02d%02d.log",
-                             $lt[5] + 1900, $lt[4] + 1, $lt[3],
-                             $lt[2], $lt[1], $lt[0]);
-    my($fh)        = new FileHandle();
+    my $expectdir = 'expected';
+    my $testdir   = 'tests';
+    my $logdir    = 'logs';
+    my @lt        = localtime(time());
+    my $logfile   = sprintf("$logdir/%04d%02d%02d-%02d%02d%02d.log",
+                            $lt[5] + 1900, $lt[4] + 1, $lt[3],
+                            $lt[2], $lt[1], $lt[0]);
+    my $fh        = new FileHandle();
 
     open(SAVEOUT, ">&STDOUT");
     open(SAVEERR, (defined $output ? ">$output" : ">&STDERR"));
@@ -951,18 +932,18 @@ else {
     $ENV{MPC_ALWAYS_SORT} = 1;
 
     if (opendir($fh, $testdir)) {
-      my(%dirs)    = ();
-      my(%tonly)   = ();
-      my($columns) = (defined $ENV{COLUMNS} ? $ENV{COLUMNS} : 80);
+      my %dirs;
+      my %tonly;
+      my $columns = (defined $ENV{COLUMNS} ? $ENV{COLUMNS} : 80);
       @dirs{@dirs} = ();
       @tonly{@tonly} = ();
       foreach my $dir (sort(grep(!/^\.\.?$/, readdir($fh)))) {
         $dir =~ s/\.dir$// if ($^O eq 'VMS');
         if ($dir ne '.svn' && $dir ne 'CVS' &&
             (!defined $dirs[0] || exists $dirs{$dir})) {
-          my($full) = "$testdir/$dir";
+          my $full = "$testdir/$dir";
           if (-d $full) {
-            my($amount) = $columns - 4 - length($dir);
+            my $amount = $columns - 4 - length($dir);
             if ($amount < 0) {
               $amount = 1;
             }
@@ -971,7 +952,7 @@ else {
             }
 
             print SAVEERR '', ('=' x $amount), " $dir ", ('=' x $amount), "\n";
-            my($mwc) = '';
+            my $mwc = '';
             if (-r "$full/$dir.mwc") {
               $mwc = "$dir.mwc";
             }
@@ -979,8 +960,8 @@ else {
             foreach my $type (@types) {
               if (!defined $tonly[0] || exists $tonly{$type}) {
                 File::Find::find({wanted => \&to_be_cleaned}, $full);
-                my($ret) = run_test($full, $mwc, 'config',
-                                    "$expectdir/$dir", $type, 0);
+                my $ret = run_test($full, $mwc, 'config',
+                                   "$expectdir/$dir", $type, 0);
                 $status += $ret;
                 if ($ret) {
                   print SAVEERR "MPC generation for $type $failed.\n";
