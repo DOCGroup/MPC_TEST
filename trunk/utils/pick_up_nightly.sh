@@ -13,7 +13,7 @@ if [ -z "$TESTDIR" ]; then
   TESTDIR=$HOME/current/MPC/test
 fi
 if [ -z "$RECIPIENTS" ]; then
-  RECIPIENTS=elliott_c@ociweb.com
+  RECIPIENTS=mpctest@ociweb.com
 fi
 
 # ******************************************************************

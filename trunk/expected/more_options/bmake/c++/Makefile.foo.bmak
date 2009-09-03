@@ -57,11 +57,11 @@ CCFLAGS      = -q -tWR -tWD
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)foo
 NAME         = foo$(LIBMODIFIER)$(ULIBMODIFIER)
-CPPDIR       = .
+CPPDIR       = .;\home\elliottc\current\MPC\test\tests\more_options\c++\down
 RESDIR       = .
 
 OBJFILES = \
-           "$(INTERMEDIATE)\foo$(OBJ_EXT)"
+           "$(INTERMEDIATE)\down\foo$(OBJ_EXT)"
 
 LFLAGS   = \
            -v \
@@ -129,6 +129,10 @@ generated: $(GENERATED_DIRTY)
 .c$(OBJ_EXT):
 	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
         $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+
+"$(INTERMEDIATE)\down\foo$(OBJ_EXT)":
+	@if not exist "$(INTERMEDIATE)\down\" mkdir "$(INTERMEDIATE)\down\"
+	$(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) \home\elliottc\current\MPC\test\tests\more_options\c++\down\foo.cpp
 
 clean:
         @if exist "$(INTERMEDIATE)" rmdir /s/q $(INTERMEDIATE)

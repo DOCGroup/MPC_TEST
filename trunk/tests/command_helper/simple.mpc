@@ -16,6 +16,7 @@ project: idl2jni {
 
   Source_Files {
     ^simpleJS.cpp
+    !nonmatching_pch.cpp
   }
 
   specific {

@@ -126,6 +126,9 @@ sub compare {
     }
     close($lh);
     if (open($rh, $right)) {
+      my $cwdre = getcwd();
+      $cwdre =~ s!/![\\\\\\/]!g;
+
       my $i = 0;
       $different = 0;
       while(<$rh>) {
@@ -138,10 +141,12 @@ sub compare {
 
         ## Don't compare things that are likely to change.  This
         ## currently includes MPC command line, CVS Id tags, GUID's
-        ## and html references.
+        ## and html references.  Due to expansion of environment
+        ## variables containing full paths, we're skipping lines that
+        ## contain the current working directory.
         if ($line !~ /mwc\.pl/ && $line !~ /\$Id[:\$]/ &&
             $line !~ /[\da-f]+\-[\da-f]+\-/i && $line !~ /a\s+href=/i &&
-            $line !~ /^ProjectDir=/) {
+            $line !~ /^ProjectDir=/ && ($line !~ /$cwdre/ || $cr_expect)) {
           if (!defined $lines[$i]) {
             $different = 1;
             last;
@@ -548,6 +553,12 @@ sub move_expected {
         my $tfull = "$to/$file";
         if (-d $ffull) {
           move_expected($ffull, $tfull, $exist);
+
+          ## If a directory was made during project creation, we need to
+          ## make sure we attempt to remove it after we're done.
+          if (!exists $$exist{$ffull}) {
+            rmdir($ffull);
+          }
         }
         else {
           if (!exists $$exist{$ffull}) {
@@ -849,6 +860,23 @@ sub determine_setup {
         }
       }
       close($fh);
+
+      ## To complete the coverage of the Options.pm module, we will run
+      ## the two options that cause a print-out and exit.
+      if ($coverage) {
+        if (open($fh, "$^X -MDevel::Cover=-db,cover_db " .
+                      "$MWC -complete 2>&1 |")) {
+          while(<$fh>) {
+          }
+          close($fh);
+        }
+        if (open($fh, "$^X -MDevel::Cover=-db,cover_db " .
+                      "$MWC -version 2>&1 |")) {
+          while(<$fh>) {
+          }
+          close($fh);
+        }
+      }
     }
   }
 }

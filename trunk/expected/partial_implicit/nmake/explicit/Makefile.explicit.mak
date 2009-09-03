@@ -54,7 +54,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.explicit.dep" "down\crap.cpp" "foo.cpp"
+	$(DEPGEN) -I"..\explicit" -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.explicit.dep" "down\crap.cpp" "foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -74,7 +74,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "..\explicit" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -106,7 +106,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.explicit.dep" "down\crap.cpp" "foo.cpp"
+	$(DEPGEN) -I"..\explicit" -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.explicit.dep" "down\crap.cpp" "foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -125,7 +125,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "..\explicit" /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -157,7 +157,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"." -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.explicit.dep" "down\crap.cpp" "foo.cpp"
+	$(DEPGEN) -I"..\explicit" -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.explicit.dep" "down\crap.cpp" "foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -176,7 +176,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\explicitsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\explicitsd.pdb" /I "..\explicit" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -207,7 +207,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"." -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.explicit.dep" "down\crap.cpp" "foo.cpp"
+	$(DEPGEN) -I"..\explicit" -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.explicit.dep" "down\crap.cpp" "foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -225,7 +225,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "..\explicit" /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 

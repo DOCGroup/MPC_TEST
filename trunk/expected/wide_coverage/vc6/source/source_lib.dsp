@@ -307,7 +307,7 @@ BuildCmds= \
 # End Group
 # Begin Group "Mondo Files"
 
-# PROP Default_Filter "mondo"
+# PROP Default_Filter ""
 # Begin Source File
 
 SOURCE="mondo\all.mondo"

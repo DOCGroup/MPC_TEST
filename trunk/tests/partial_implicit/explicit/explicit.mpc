@@ -1,5 +1,5 @@
 project: cppgen {
-  includes += .
+  recursive_includes += .
   postclean += <%rmdir%> down
 
   Cppgen_Files {

@@ -77,7 +77,7 @@ LINK32=link.exe
 # PROP Default_Filter "cpp;cxx;c"
 # Begin Source File
 
-SOURCE="foo.cpp"
+SOURCE="\home\elliottc\current\MPC\test\tests\more_options\c++\down\foo.cpp"
 # End Source File
 # End Group
 # End Target

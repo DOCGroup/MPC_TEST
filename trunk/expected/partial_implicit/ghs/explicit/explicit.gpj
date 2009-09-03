@@ -5,7 +5,7 @@
 	-Ospeed
 	-OI
 	--exceptions
-	-Iexplicit
+	-Iexplicit/..\explicit
 	-Lexplicit
 crap.r		[Text]
 down\\crap.cpp

@@ -262,7 +262,7 @@
 		</Filter>
 		<Filter
 			Name="Mondo Files"
-			Filter="mondo">
+			Filter="">
 			<File
 				RelativePath="mondo\all.mondo">
 				<FileConfiguration
