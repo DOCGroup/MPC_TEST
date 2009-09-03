@@ -1,3 +1,18 @@
+Thu Sep  3 16:39:41 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/template/*:
+        * tests/template/config/foo.mpd:
+        * expected/template_input/*/dll/*:
+        * tests/template_input/config/user_foosondll.mpt:
+        * tests/template_input/dll/dll.mpc:
+
+          Updated to increase coverage of the template parser.
+
+        * run_tests.pl:
+
+          Fixed a bug where additional files would be marked as a
+          difference, but nothing would be shown.
+
 Thu Sep  3 12:48:32 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/more_options/*:

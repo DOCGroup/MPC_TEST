@@ -86,6 +86,7 @@ LDLIBPATH     = -L.
 else
 LDFLAGS      += -L.
 endif
+CPPFLAGS     += -Icrapday -I..
 
 #----------------------------------------------------------------------------
 #       Local targets

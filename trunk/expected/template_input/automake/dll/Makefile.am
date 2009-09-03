@@ -17,7 +17,8 @@ noinst_LTLIBRARIES += libdll.la
 Release : libdll.la
 
 libdll_CPPFLAGS_COMMON = \
-  -DNDEBUG \
+  -Icrapday \
+  -I.. \
   -DWIN32 \
   -D_WINDOWS \
   -D_CRT_NONSTDC_NO_WARNINGS

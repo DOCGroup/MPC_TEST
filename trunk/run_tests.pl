@@ -105,6 +105,8 @@ sub diff_files {
       unlink($txt);
     }
     else {
+      $lline .= "\n" if ($lline !~ /\n$/);
+      $rline .= "\n" if ($rline !~ /\n$/);
       print SAVEERR "Line $i of $left differs\n",
                     "from $right\n",
                     "< $lline",
@@ -148,6 +150,7 @@ sub compare {
             $line !~ /[\da-f]+\-[\da-f]+\-/i && $line !~ /a\s+href=/i &&
             $line !~ /^ProjectDir=/ && ($line !~ /$cwdre/ || $cr_expect)) {
           if (!defined $lines[$i]) {
+            diff_files($left, $right, $i, $lines[$i], $line) if ($show);
             $different = 1;
             last;
           }

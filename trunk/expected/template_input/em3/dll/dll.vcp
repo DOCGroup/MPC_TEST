@@ -42,9 +42,9 @@ CFG=dll - Win32 (Win32)
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d WIN32 /d _WINDOWS /d _CRT_NONSTDC_NO_WARNINGS /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d WIN32 /d _WINDOWS /d _CRT_NONSTDC_NO_WARNINGS /i "crapday" /i ".." /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0   /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /Gy /c
+# ADD CPP /nologo /Ob0   /I "crapday" /I ".." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /Gy /c
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\dll.bsc"
 LINK32=link.exe
@@ -61,9 +61,9 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d WIN32 /d _WINDOWS /d _CRT_NONSTDC_NO_WARNINGS /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d WIN32 /d _WINDOWS /d _CRT_NONSTDC_NO_WARNINGS /i "crapday" /i ".." /r
 CPP=cl.exe
-# ADD CPP /nologo /O2   /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /Gy /c
+# ADD CPP /nologo /O2   /I "crapday" /I ".." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /Gy /c
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\dll.bsc"
 LINK32=link.exe
@@ -81,9 +81,9 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d WIN32 /d _WINDOWS /d _CRT_NONSTDC_NO_WARNINGS /d _AMD64_ /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d WIN32 /d _WINDOWS /d _CRT_NONSTDC_NO_WARNINGS /d _AMD64_ /i "crapday" /i ".." /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0   /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _AMD64_  /FD /Gy /c
+# ADD CPP /nologo /Ob0   /I "crapday" /I ".." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _AMD64_  /FD /Gy /c
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\dll.bsc"
 LINK32=link.exe
@@ -100,9 +100,9 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d WIN32 /d _WINDOWS /d _CRT_NONSTDC_NO_WARNINGS /d _AMD64_ /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d WIN32 /d _WINDOWS /d _CRT_NONSTDC_NO_WARNINGS /d _AMD64_ /i "crapday" /i ".." /r
 CPP=cl.exe
-# ADD CPP /nologo /O2   /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _AMD64_  /FD /Gy /c
+# ADD CPP /nologo /O2   /I "crapday" /I ".." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _AMD64_  /FD /Gy /c
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\dll.bsc"
 LINK32=link.exe

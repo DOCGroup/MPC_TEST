@@ -38,10 +38,10 @@ RSC=rc.exe
 # PROP Intermediate_Dir "Debug\dll"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD CPP /nologo /Ob0  /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /FD /c
+# ADD CPP /nologo /Ob0  /I "crapday" /I ".." /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /FD /c
 
 # ADD MTL /D "_DEBUG" 
-# ADD RSC /l 0x409 /d _DEBUG
+# ADD RSC /l 0x409 /d _DEBUG /i "crapday" /i ".."
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\dll.bsc"
 LINK32=link.exe
@@ -55,10 +55,10 @@ LINK32=link.exe
 # PROP Intermediate_Dir "Release\dll"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD CPP /nologo /O2  /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /FD /c
+# ADD CPP /nologo /O2  /I "crapday" /I ".." /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /FD /c
 
 # ADD MTL /D "NDEBUG" 
-# ADD RSC /l 0x409 /d NDEBUG
+# ADD RSC /l 0x409 /d NDEBUG /i "crapday" /i ".."
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\dll.bsc"
 LINK32=link.exe

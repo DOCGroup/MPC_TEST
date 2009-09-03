@@ -58,9 +58,28 @@ FEATURES = \
   "motif = " \
   "tk = "
 
+FLAPS = down\foo.flap
+
+UNIQ_AN_UC = \
+  DOWN\FOO.FLAP
+
+DOUBLE_LC = \
+  down
+
 ## Section FIRST
 Group1 = down\foo.flap
 
 foo.wing: down\foo.flap $(TEST_ROOT)\bin\flap.pl
 	perl $(TEST_ROOT)\bin\flap.pl  down\foo.flap
 
+
+0
+1
+
+1
+1
+
+down\foo.flap
+down\foo.flap
+down\foo.flap
+flap

@@ -9,7 +9,19 @@ FEATURES = \
   "<%feature%> = <%feature->value%>"<%fornotlast(" \\")%>
 <%endfor%>
 
-<%foreach(grouped_flap_files)%>
+FLAPS = <%reverse(flap_files)%>
+
+UNIQ_AN_UC = \
+<%foreach(uc(uniq(flap_files)))%>
+  <%flap_file%><%fornotlast(" \\")%>
+<%endfor%>
+
+DOUBLE_LC = \
+<%foreach(dirname(fullpath(noextension(lc(lc(flap_files))))))%>
+  <%flap_file%><%fornotlast(" \\")%>
+<%endfor%>
+
+<%foreach(reverse(grouped_flap_files))%>
 ## Section <%grouped_flap_file->component_name%>
 <%grouped_flap_file%> = <%grouped_flap_file->files%>
 <%endfor%>
@@ -47,3 +59,23 @@ FEATURES = \
 <%endif%>
 <%endfor%>
 <%endfor%>
+
+<%multiple(source_files)%>
+
+<%starts_with(flapflags, -)%>
+
+<%ends_with(source_files, cpp)%>
+
+<%has_extension(flap_files)%>
+
+<%contains(flap_files, foo)%>
+
+<%compares(flap_files, " ")%>
+
+<%sort(flap_files)%>
+
+<%uniq(flap_files)%>
+
+<%lc(flap_files)%>
+
+<%extensions(flap_files)%>

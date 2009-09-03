@@ -7,7 +7,7 @@ ifeq ($(CFG), Win32 Debug)
 CXX           = 
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
-CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -I"crapday" -I".."
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
@@ -43,7 +43,7 @@ ifeq ($(CFG), Win32 Release)
 CXX           = 
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
-CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -I"crapday" -I".."
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
@@ -116,7 +116,7 @@ ifeq ($(CFG), x64 Debug)
 CXX           = 
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
-CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -I"crapday" -I".."
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
@@ -152,7 +152,7 @@ ifeq ($(CFG), x64 Release)
 CXX           = 
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
-CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -I"crapday" -I".."
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
