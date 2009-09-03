@@ -1,1 +1,2 @@
--template foo
+-template foo -gfeature_file config/ace.features
+

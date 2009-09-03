@@ -1,3 +1,34 @@
+Thu Sep  3 18:18:01 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/automake/configure.ac.bak:
+
+          Regenerated to remove features added by my default.features.
+
+        * expected/partial_implicit/*:
+        * expected/template/*:
+        * tests/partial_implicit/explicit/explicit.mpc:
+        * tests/template/config/foo.mpd:
+        * tests/template/src/src.mpc:
+
+          Removed the recursive_includes from the partial_implicit test
+          and put it into the template test.  Building the test caused the
+          project to change.
+
+        * tests/mixed_languages_refs/n/foo.cpp:
+        * tests/mixed_languages_refs/r/foo.cpp:
+
+          Fixed build issues on Windows.
+
+        * tests/more_workspaces/build_entry.txt:
+
+          Added build entries.
+
+        * tests/template/additional_options.txt:
+        * tests/template/config/ace.features:
+
+          Brought in the global.features from ACE so that this test won't
+          change when $ACE_ROOT is not set.
+
 Thu Sep  3 17:15:13 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:

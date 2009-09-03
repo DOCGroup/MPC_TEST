@@ -10,7 +10,7 @@ primaryTarget=ppc_integrity.tgt
 explicit/explicit.gpj		[Shared Object]
 	-pic
 	-object_dir=explicit/.shobj
-	-Iexplicit/..\explicit
+	-Iexplicit
 	-Lexplicit
 implicit/implicit.gpj		[Shared Object]
 	-pic
