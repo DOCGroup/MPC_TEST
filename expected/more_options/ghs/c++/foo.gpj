@@ -6,4 +6,4 @@
 	-OI
 	--exceptions
 	-Lc++
-foo.cpp
+\home\elliottc\current\MPC\test\tests\more_options\c++\down\foo.cpp

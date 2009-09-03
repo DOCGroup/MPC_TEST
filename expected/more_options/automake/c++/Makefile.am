@@ -1,4 +1,3 @@
-
 ## Makefile.foo.am
 
 noinst_LTLIBRARIES = libfoo.la
@@ -7,7 +6,7 @@ noinst_LTLIBRARIES += libfoo.la
 Release : libfoo.la
 
 libfoo_SOURCES_COMMON = \
-  foo.cpp
+  /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
 
 libfoo_la_SOURCES = $(libfoo_SOURCES_COMMON)
 libfoo_la_SOURCES = $(libfoo_SOURCES_COMMON)

@@ -30,14 +30,14 @@ LIBPREFIX     = lib
 LIBSUFFIX     = d
 GENFLAGS      = -g
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = foo$(OBJEXT)
+OBJS          = /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo$(OBJEXT)
 AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(AREXT)
 SOEXT         = .so
 SHTARGETDIR   = ./
 SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(SOEXT)
 SHFLAGS       = -shared
-SRC           = foo.cpp
+SRC           = /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(DYNAMICFLAGS)
 endif
@@ -68,14 +68,14 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = foo$(OBJEXT)
+OBJS          = /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo$(OBJEXT)
 AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(AREXT)
 SOEXT         = .so
 SHTARGETDIR   = ./
 SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(SOEXT)
 SHFLAGS       = -shared
-SRC           = foo.cpp
+SRC           = /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(DYNAMICFLAGS)
 endif
@@ -97,8 +97,8 @@ $(LIB): $(OBJS)
 generated: $(GENERATED_DIRTY)
 	@-:
 
-foo$(OBJEXT): foo.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) foo.cpp
+/home/elliottc/current/MPC/test/tests/more_options/c++/down/foo$(OBJEXT): /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
 
 clean:
 	-$(RM) $(OBJS)

@@ -1,3 +1,38 @@
+Thu Sep  3 12:48:32 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/more_options/*:
+        * expected/partial_implicit/*:
+        * expected/wide_coverage/em3/source/source_lib.vcp:
+        * expected/wide_coverage/vc6/source/source_lib.dsp:
+        * expected/wide_coverage/vc7/source/source_lib.vcproj:
+        * expected/wide_coverage/vc71/source/source_lib.vcproj:
+        * expected/wide_coverage/vc8/source/source_lib.vcproj:
+        * tests/command_helper/nonmatching_pch.h:
+        * tests/command_helper/nonmatching_pch.cpp:
+        * tests/command_helper/simple.mpc:
+        * tests/more_options/additional_options.txt:
+        * tests/more_options/c++/down:
+        * tests/more_options/c++/down/foo.cpp:
+        * tests/more_options/c++/foo.mpc:
+        * tests/more_options/config/bar.mpb:
+        * tests/partial_implicit/explicit/explicit.mpc:
+        * tests/wide_coverage/config/mondo_base.mpb:
+
+          Increased test coverage.
+
+        * utils/pick_up_nightly.sh:
+
+          Changed to send email to mpctest@ociweb.com instead of me.
+
+        * run_tests.pl:
+
+          Avoid diffing full paths.  Remove created directories when
+          creating expected files.  Also, increase test coverage.
+
+        * tests/more_options/c++/foo.cpp:
+
+          This file was moved into a different directory.
+
 Wed Sep  2 16:25:00 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:

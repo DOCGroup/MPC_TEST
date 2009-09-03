@@ -52,7 +52,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "foo.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "\home\elliottc\current\MPC\test\tests\more_options\c++\down\foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -77,7 +77,7 @@ RSC=rc.exe
 LINK32=link.exe
 LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll /debug /pdb:".\food.pdb" /machine:I386 /out:".\food.dll" /implib:"$(OUTDIR)\food.lib"
 LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
+	"$(INTDIR)\down\foo.obj"
 
 ".\food.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
@@ -99,7 +99,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "foo.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "\home\elliottc\current\MPC\test\tests\more_options\c++\down\foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -123,7 +123,7 @@ RSC=rc.exe
 LINK32=link.exe
 LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll  /machine:I386 /out:".\foo.dll" /implib:"$(OUTDIR)\foo.lib"
 LINK32_OBJS= \
-	"$(INTDIR)\foo.obj"
+	"$(INTDIR)\down\foo.obj"
 
 ".\foo.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
@@ -176,10 +176,11 @@ CLEAN :
 !ENDIF
 
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" 
-SOURCE="foo.cpp"
+SOURCE="\home\elliottc\current\MPC\test\tests\more_options\c++\down\foo.cpp"
 
-"$(INTDIR)\foo.obj" : $(SOURCE)
-	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\foo.obj" $(SOURCE)
+"$(INTDIR)\down\foo.obj" : $(SOURCE)
+	@if not exist "$(INTDIR)\down\$(NULL)" mkdir "$(INTDIR)\down\"
+	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\down\foo.obj" $(SOURCE)
 
 
 !ENDIF

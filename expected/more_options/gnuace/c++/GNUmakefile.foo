@@ -23,7 +23,9 @@ SHLIB_UNCHECKED  = libfoo.$(SOEXT)
 SHLIB            = $(SHLIB_UNCHECKED)
 
 FILES = \
-  foo.cpp
+  /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
+
+VPATH = .:/home/elliottc/current/MPC/test/tests/more_options/c++/down
 
 #----------------------------------------------------------------------------
 #       Include macros and targets
