@@ -1,3 +1,10 @@
+Thu Sep  3 19:08:51 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * run_tests.pl:
+
+          Fixed a bug where bmake and nmake would fail to build if the build
+          entry contained a directory.
+
 Thu Sep  3 18:18:01 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/automake/configure.ac.bak:
