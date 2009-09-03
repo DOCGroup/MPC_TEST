@@ -284,13 +284,18 @@ sub buildit {
         $ENV{DEBUG} = 1;
         if (defined $cmd) {
           printBuildMessage($type);
+          my $save;
           if (defined $entry) {
             my $dir = dirname($entry);
             my $base = basename($entry);
-            $cmd = "cd $dir; $cmd" if ($dir ne '.');
+            if ($dir ne '.') {
+              $save = getcwd();
+              chdir($dir);
+            }
             $cmd .= ' -f ' . $base;
           }
           $status = checkBuildStatus($cmd);
+          chdir($save) if (defined $save);
         }
       }
     }
@@ -298,13 +303,18 @@ sub buildit {
       my $cmd = which('nmake');
       if (defined $cmd) {
         printBuildMessage($type);
+        my $save;
         if (defined $entry) {
           my $dir = dirname($entry);
           my $base = basename($entry);
-          $cmd = "cd $dir; $cmd" if ($dir ne '.');
+          if ($dir ne '.') {
+            $save = getcwd();
+            chdir($dir);
+          }
           $cmd .= ' -f ' . $base;
         }
         $status = checkBuildStatus($cmd);
+        chdir($save) if (defined $save);
       }
     }
     elsif ($type eq 'em3') {
