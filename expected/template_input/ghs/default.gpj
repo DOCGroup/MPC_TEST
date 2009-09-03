@@ -11,6 +11,7 @@ dll/dll.gpj		[Shared Object]
 	-pic
 	-object_dir=dll/.shobj
 	-G
+	-Idll/..
 	-Ldll
 dll_exe/dll_exe_int.gpj		[INTEGRITY Application]
 	-object_dir=dll_exe/.obj

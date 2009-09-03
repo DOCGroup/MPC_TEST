@@ -51,6 +51,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="crapday,.."
                                 PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
@@ -67,7 +68,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories=""
+				AdditionalIncludeDirectories="crapday,.."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -132,6 +133,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
+				AdditionalIncludeDirectories="crapday,.."
                                 PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
@@ -145,7 +147,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories=""
+				AdditionalIncludeDirectories="crapday,.."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -212,6 +214,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="crapday,.."
                                 PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
@@ -228,7 +231,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG;_WIN64"
 				Culture="1033"
-				AdditionalIncludeDirectories=""
+				AdditionalIncludeDirectories="crapday,.."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -294,6 +297,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
+				AdditionalIncludeDirectories="crapday,.."
                                 PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
@@ -307,7 +311,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG;_WIN64"
 				Culture="1033"
-				AdditionalIncludeDirectories=""
+				AdditionalIncludeDirectories="crapday,.."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"

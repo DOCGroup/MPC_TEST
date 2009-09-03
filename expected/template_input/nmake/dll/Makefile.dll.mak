@@ -61,7 +61,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -D_CRT_NONSTDC_NO_WARNINGS -f "Makefile.dll.dep" "foo.cpp"
+	$(DEPGEN) -I"crapday" -I".." -D_DEBUG -DWIN32 -D_WINDOWS -D_CRT_NONSTDC_NO_WARNINGS -f "Makefile.dll.dep" "foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -76,7 +76,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /Ob0  /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /c
+CPP_COMMON=/nologo /Ob0  /I "crapday" /I ".." /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -107,7 +107,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -D_CRT_NONSTDC_NO_WARNINGS -f "Makefile.dll.dep" "foo.cpp"
+	$(DEPGEN) -I"crapday" -I".." -DNDEBUG -DWIN32 -D_WINDOWS -D_CRT_NONSTDC_NO_WARNINGS -f "Makefile.dll.dep" "foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -122,7 +122,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /O2  /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /c
+CPP_COMMON=/nologo /O2  /I "crapday" /I ".." /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -154,7 +154,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -D_AMD64_ -DWIN32 -D_WINDOWS -D_CRT_NONSTDC_NO_WARNINGS -D_WIN64 -f "Makefile.dll.dep" "foo.cpp"
+	$(DEPGEN) -I"crapday" -I".." -D_DEBUG -D_AMD64_ -DWIN32 -D_WINDOWS -D_CRT_NONSTDC_NO_WARNINGS -D_WIN64 -f "Makefile.dll.dep" "foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -169,7 +169,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /Ob0  /D _DEBUG /D _AMD64_ /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _WIN64  /FD /c
+CPP_COMMON=/nologo /Ob0  /I "crapday" /I ".." /D _DEBUG /D _AMD64_ /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _WIN64  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -200,7 +200,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -D_AMD64_ -DWIN32 -D_WINDOWS -D_CRT_NONSTDC_NO_WARNINGS -D_WIN64 -f "Makefile.dll.dep" "foo.cpp"
+	$(DEPGEN) -I"crapday" -I".." -DNDEBUG -D_AMD64_ -DWIN32 -D_WINDOWS -D_CRT_NONSTDC_NO_WARNINGS -D_WIN64 -f "Makefile.dll.dep" "foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -215,7 +215,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /O2  /D NDEBUG /D _AMD64_ /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _WIN64  /FD /c
+CPP_COMMON=/nologo /O2  /I "crapday" /I ".." /D NDEBUG /D _AMD64_ /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _WIN64  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 

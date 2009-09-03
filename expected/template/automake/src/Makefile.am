@@ -67,12 +67,30 @@ FEATURES = \
   "motif = 1" \
   "tk = 1"
 
+FLAPS = down/foo.flap
+
+UNIQ_AN_UC = \
+  DOWN/FOO.FLAP
+
+DOUBLE_LC = \
+  down
+
 Group1 = down/foo.flap
 
 foo.wing: down/foo.flap $(TEST_ROOT)/bin/flap.pl
 	perl $(TEST_ROOT)/bin/flap.pl  down/foo.flap
 
 
+0
+1
+
+1
+1
+
+down/foo.flap
+down/foo.flap
+down/foo.flap
+flap
 ## Clean up template repositories, etc.
 clean-local:
 	-rm -f *~ *.bak *.rpo *.sym lib*.*_pure_* core core.*

@@ -3,5 +3,6 @@
 	[Shared Object]
 	-o dll/dll.so
 	-G
+	-Idll/..
 	-Ldll
 foo.cpp
