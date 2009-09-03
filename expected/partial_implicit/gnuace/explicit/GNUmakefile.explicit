@@ -89,7 +89,7 @@ LDLIBPATH     = -L.
 else
 LDFLAGS      += -L.
 endif
-CPPFLAGS     += -I../explicit
+CPPFLAGS     += -I.
 
 #----------------------------------------------------------------------------
 #       Local targets

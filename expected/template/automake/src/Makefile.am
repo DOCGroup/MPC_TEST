@@ -6,66 +6,67 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -template foo
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -template foo -gfeature_file config/ace.features
 
 
 ## Makefile.src.am
 FLAPFLAGS = -some_option $(Debug)
 
+INCLUDES = . down
+
 FEATURES = \
-  "boost = 1" \
-  "gl = 1" \
-  "qos = " \
   "ace_flreactor = 1" \
-  "xt = 1" \
-  "wince = " \
-  "link_codecfactory = " \
-  "zlib = 1" \
-  "minimum_corba = " \
-  "zzip = 1" \
-  "ace_token = 1" \
-  "omniorb = " \
-  "ace_svcconf = 1" \
-  "rapi = " \
-  "xerces3 = " \
-  "mico = " \
-  "dummy_label = " \
-  "ziparchive = " \
-  "corba_e_compact = " \
-  "automake = 1" \
-  "static_libs_only = " \
-  "sctp = " \
-  "uses_wchar = " \
-  "negotiate_codesets = " \
-  "tao_xtresource = 1" \
-  "zip_wrapper = " \
-  "tao_tkresource = 1" \
-  "ace_xtreactor = 1" \
-  "vcl = " \
   "ace_for_tao = " \
-  "x11 = 1" \
-  "repo = " \
-  "tao_qtresource = 1" \
-  "cidl = " \
   "ace_qtreactor = 1" \
-  "qt = 1" \
-  "ipv6 = " \
-  "fl = 1" \
-  "rpc = " \
-  "acexml = 1" \
-  "mfc = " \
-  "ssl = 1" \
-  "stl = 1" \
-  "java = 1" \
-  "corba_e_micro = " \
-  "athena = 1" \
+  "ace_svcconf = 1" \
   "ace_tkreactor = 1" \
+  "ace_token = 1" \
+  "ace_xtreactor = 1" \
+  "acexml = 1" \
+  "athena = " \
+  "boost = " \
+  "cidl = " \
+  "corba_e_compact = " \
+  "corba_e_micro = " \
+  "dummy_label = " \
+  "fl = " \
+  "gl = 1" \
+  "ipv6 = " \
+  "java = " \
+  "link_codecfactory = " \
+  "mfc = " \
+  "mico = " \
+  "minimum_corba = " \
+  "motif = " \
+  "negotiate_codesets = " \
+  "omniorb = " \
+  "qos = " \
+  "qt = " \
+  "rapi = " \
+  "repo = " \
+  "rpc = " \
+  "sctp = " \
+  "ssl = 1" \
+  "static_libs_only = " \
+  "stl = " \
   "tao_flresource = 1" \
-  "versioned_namespace = " \
   "tao_no_iiop = " \
-  "wxwindows = 1" \
-  "motif = 1" \
-  "tk = 1"
+  "tao_qtresource = 1" \
+  "tao_tkresource = 1" \
+  "tao_xtresource = 1" \
+  "tk = " \
+  "uses_wchar = " \
+  "vcl = " \
+  "versioned_namespace = " \
+  "wince = " \
+  "wxwindows = " \
+  "x11 = 1" \
+  "xerces3 = " \
+  "xt = " \
+  "zip_wrapper = " \
+  "ziparchive = " \
+  "zlib = " \
+  "zzip = "
 
 FLAPS = down/foo.flap
 

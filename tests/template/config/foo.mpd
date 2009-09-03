@@ -4,6 +4,8 @@
 # keyword
 FLAPFLAGS = <%flapflags%>
 
+INCLUDES = <%includes%>
+
 FEATURES = \
 <%foreach(features)%>
   "<%feature%> = <%feature->value%>"<%fornotlast(" \\")%>

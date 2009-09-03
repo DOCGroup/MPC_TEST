@@ -32,7 +32,7 @@ down/crap-stamp: $(srcdir)/crap.r ../bin/cppgen.pl
 noinst_LTLIBRARIES = libexplicit.la
 
 libexplicit_la_CPPFLAGS = \
-  -I../explicit
+  -I.
 
 libexplicit_la_SOURCES = \
   down/crap.cpp \
