@@ -1,1 +1,1 @@
--relative TEST_ROOT=$PWD
+-relative TEST_ROOT=.

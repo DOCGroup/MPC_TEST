@@ -40,7 +40,7 @@ my $br_error;
 my $nodiff;
 my $nobuild;
 my $test_scr  = 'run_test.pl';
-my $diff      = $ENV{DIFFILES_CMD} || which('diff');
+my $diff      = which('diff');
 my $patch     = which('patch');
 my $gmake     = which('gmake') || which('make');
 my $passed    = 'succeeded';
@@ -919,6 +919,12 @@ my %desc    = ('expected' => 'Create expected results for all of the ' .
 my $status  = 0;
 my $options = new OptionProcessor($0, \%options, \%desc);
 $options->process();
+
+## If we're not redirecting the output to a file and we have a
+## diffiles.pl diff command, then use it.
+if (!defined $output && defined $ENV{DIFFILES_CMD}) {
+  $diff = $ENV{DIFFILES_CMD};
+}
 
 ## We're doing coverage testing, there is no need for building
 $nobuild = 1 if ($coverage);

@@ -1,3 +1,16 @@
+Thu Sep  3 17:15:13 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * run_tests.pl:
+
+          Only use the DIFFILES_CMD environment variable if we're not
+          redirecting the output to a file.
+
+        * tests/custom_generates_custom/additional_options.txt:
+        * tests/options/additional_options.txt:
+
+          Use . instead of $PWD since $PWD is unix specific and does not
+          work on the Windows command line.
+
 Thu Sep  3 16:39:41 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/template/*:
