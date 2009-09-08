@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ Some_Test_Other_Lib:
 	@echo Project: Makefile.Some_Test_Other_Lib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.Some_Test_Other_Lib.mak CFG="$(CFG)" all
 
-Some_Test_Simple_Lib:
+Some_Test_Simple_Lib: Some_Test_Other_Lib
 	@echo Project: Makefile.Some_Test_Simple_Lib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.Some_Test_Simple_Lib.mak CFG="$(CFG)" all
 
