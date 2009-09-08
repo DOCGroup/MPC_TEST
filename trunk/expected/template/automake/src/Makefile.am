@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -template foo -gfeature_file config/ace.features
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake -template ../config/foo -gfeature_file config/ace.features
 
 
 ## Makefile.src.am
@@ -78,8 +78,8 @@ DOUBLE_LC = \
 
 Group1 = down/foo.flap
 
-foo.wing: down/foo.flap $(TEST_ROOT)/bin/flap.pl
-	perl $(TEST_ROOT)/bin/flap.pl  down/foo.flap
+foo_wing: down/foo.flap $(TEST_ROOT)/bin/flap.pl
+	perl $(TEST_ROOT)/bin/flap.pl   .  down/foo.flap
 
 
 0
@@ -92,6 +92,7 @@ down/foo.flap
 down/foo.flap
 down/foo.flap
 flap
+
 ## Clean up template repositories, etc.
 clean-local:
 	-rm -f *~ *.bak *.rpo *.sym lib*.*_pure_* core core.*

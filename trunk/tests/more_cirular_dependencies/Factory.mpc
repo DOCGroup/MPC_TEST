@@ -5,4 +5,6 @@ project {
   Source_Files {
     factory.cpp
   }
+  Documentation_Files {
+  }
 }

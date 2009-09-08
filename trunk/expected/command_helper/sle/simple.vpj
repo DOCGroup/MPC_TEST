@@ -200,6 +200,8 @@
 			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl">
                         <F N="otherJC.cpp"/>
                         <F N="otherJS.cpp"/>
+                        <F N="otherTypeSupportJC.cpp"/>
+                        <F N="otherTypeSupportJS.cpp"/>
                         <F N="simpleJC.cpp"/>
 		</Folder>
 		<Folder
@@ -208,6 +210,8 @@
                         <F N="simple_pch.h"/>
                         <F N="otherJC.h"/>
                         <F N="otherJS.h"/>
+                        <F N="otherTypeSupportJC.h"/>
+                        <F N="otherTypeSupportJS.h"/>
                         <F N="simpleJC.h"/>
                         <F N="simpleJS.h"/>
                 </Folder>

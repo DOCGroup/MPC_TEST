@@ -33,14 +33,15 @@ require OptionProcessor;
 # ******************************************************************
 
 my $MWC;
+my $MPC;
 my @types;
 my $one_built = 0;
 my $cr_expect;
 my $br_error;
 my $nodiff;
 my $nobuild;
+my $diff;
 my $test_scr  = 'run_test.pl';
-my $diff      = which('diff');
 my $patch     = which('patch');
 my $gmake     = which('gmake') || which('make');
 my $passed    = 'succeeded';
@@ -281,7 +282,7 @@ sub buildit {
       }
       if (defined $cmd) {
         $cmd = which('make');
-        $ENV{DEBUG} = 1;
+        $ENV{RELEASE} = 1;
         if (defined $cmd) {
           printBuildMessage($type);
           my $save;
@@ -324,7 +325,7 @@ sub buildit {
         $entry = basename($path) . '.vcw' if (!defined $entry);
         $status = checkBuildStatus("$cmd " .
                                    "$entry /make \"all - win32 " .
-                                   "(WCE $ENV{TARGETCPU}) Debug\"");
+                                   "(WCE $ENV{TARGETCPU}) Release\"");
         $cross = 1;
       }
     }
@@ -334,7 +335,7 @@ sub buildit {
         printBuildMessage($type);
         $entry = basename($path) . '.dsw' if (!defined $entry);
         $status = checkBuildStatus("$cmd " .
-                                   "$entry /make \"all - win32 debug\"");
+                                   "$entry /make \"all - win32 release\"");
       }
     }
     elsif ($type eq 'vc7' || $type eq 'vc71' || $type eq 'vc8' ||
@@ -362,7 +363,7 @@ sub buildit {
           printBuildMessage($type);
           $entry = basename($path) . '.sln' if (!defined $entry);
           $status = checkBuildStatus("$cmd " .
-                                     "$entry /build debug");
+                                     "$entry /build release");
         }
       }
     }
@@ -744,14 +745,14 @@ sub run_test {
 
   chdir($path);
   my $add = '';
-  my $fh  = new FileHandle("additional_options.txt");
+  my $fh  = new FileHandle('additional_options.txt');
   if (defined $fh) {
     $add = <$fh>;
     $add =~ s/\s+$//;
     close($fh);
   }
   $ENV{TEST_ROOT} = getcwd();
-  $fh = new FileHandle("environment.txt");
+  $fh = new FileHandle('environment.txt');
   if (defined $fh) {
      while(<$fh>) {
       if ($_ =~ /(\w+)\s*=\s*(.*)$/) {
@@ -770,15 +771,16 @@ sub run_test {
     close($fh);
   }
   my $popt = '';
-  $fh = new FileHandle("perl_options.txt");
+  $fh = new FileHandle('perl_options.txt');
   if (defined $fh) {
     $popt = <$fh>;
     $popt =~ s/\s+$//;
     close($fh);
   }
+  my $CMD = -e 'MPC_ONLY' ? $MPC : $MWC;
   my $ret = system("$^X $popt " .
                    ($coverage ? "-MDevel::Cover=-db,$orig/cover_db " : '') .
-                   "$MWC -include $cfg -type $type $add $mwc");
+                   "$CMD -include $cfg -type $type $add $mwc");
   chdir($orig);
 
   ## A signal killed mwc.pl
@@ -841,10 +843,12 @@ sub run_test {
 sub determine_setup {
   if (defined $ENV{ACE_ROOT}) {
     $MWC = "$ENV{ACE_ROOT}/bin/mwc.pl";
+    $MPC = "$ENV{ACE_ROOT}/bin/mpc.pl";
     delete $ENV{MPC_GNUACE_NAMED_TARGETS};
   }
   elsif (defined $ENV{MPC_ROOT}) {
-    $MWC = "$ENV{MPC_ROOT}/mwc.pl"
+    $MWC = "$ENV{MPC_ROOT}/mwc.pl";
+    $MPC = "$ENV{MPC_ROOT}/mpc.pl";
   }
   if (defined $MWC) {
     my $fh = new FileHandle();
@@ -932,8 +936,13 @@ $options->process();
 
 ## If we're not redirecting the output to a file and we have a
 ## diffiles.pl diff command, then use it.
-if (!defined $output && defined $ENV{DIFFILES_CMD}) {
-  $diff = $ENV{DIFFILES_CMD};
+if (!defined $diff) {
+  if (!defined $output && defined $ENV{DIFFILES_CMD}) {
+    $diff = $ENV{DIFFILES_CMD};
+  }
+  else {
+    $diff = which('diff');
+  }
 }
 
 ## We're doing coverage testing, there is no need for building

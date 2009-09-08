@@ -1,0 +1,13 @@
+automake:
+em3: src/foo.vcp
+ghs: src/foo.gpj
+gnuace: src/GNUmakefile.foo
+make: src/Makefile.foo
+nmake: src/Makefile.foo.mak
+sle: src/foo.vpj
+vc6: src/foo.dsp
+vc7: src/foo.vcproj
+vc71: src/foo.vcproj
+vc8: src/foo.vcproj
+vc9: src/foo.vcproj
+vc10: src/foo.vcproj

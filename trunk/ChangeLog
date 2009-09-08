@@ -1,3 +1,66 @@
+Tue Sep  8 12:33:06 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * README:
+        * run_tests.pl:
+
+          Added the ability to use mpc.pl instead of mwc.pl.
+
+        * tests/MultiWS/additional_options.txt:
+        * tests/MultiWS/config/ace.features:
+
+          Added a feature file so that the test results do not rely on ACE.
+
+        * tests/buildflags/additional_options.txt:
+
+          Added -genins to get the install code to run on a dll.
+
+        * expected/command_helper/*:
+        * tests/command_helper/otherTypeSupport.idl:
+        * tests/command_helper/simple.mpc:
+
+          Added the otherTypeSupport.idl file to get the tied files code to
+          run.
+
+        * tests/more_cirular_dependencies/Code.mpc:
+        * tests/more_cirular_dependencies/Factory.mpc:
+        * tests/more_cirular_dependencies/ROOT.mpc:
+        * tests/more_cirular_dependencies/Set.mpc:
+
+          Added empty Documentation_Files sections to avoid pulling in the
+          build_entry.txt file.
+
+        * tests/more_cirular_dependencies/build_entry.txt:
+
+          Disable building for vc6.  It can't handle building something with
+          circular dependencies.
+
+        * expected/no_workspace/*:
+        * tests/no_workspace/MPC_ONLY:
+        * tests/no_workspace/additional_options.txt:
+        * tests/no_workspace/build_entry.txt:
+        * tests/no_workspace/src:
+        * tests/no_workspace/src/foo.cpp:
+        * tests/no_workspace/src/foo.mpc:
+
+          Added a test that uses mpc.pl.
+
+        * tests/template/additional_options.txt:
+
+          Changed the template path to get different template finding code
+          to run.
+
+        * expected/template/*:
+        * tests/template/config/flap.mpb:
+        * tests/template/config/foo.mpd:
+        * tests/template/src/src.mpc:
+
+          Modified the test to get desired coverage testing.
+
+        * tests/wider_coverage/simple.mpc:
+
+          Added an 'after' setting to get coverage for the
+          dependency_combined_static_library() method.
+
 Thu Sep  3 19:08:51 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:

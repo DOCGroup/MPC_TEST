@@ -43,6 +43,8 @@ Adding a new test
       placed in the root of the test directory.  This perl script should
       return zero when successful and non-zero when not.  A run_test.pl
       script is optional.
+   j) To use mpc.pl instead of mwc.pl, add a file in the test top-level
+      directory named MPC_ONLY.
 
 2) With the $ACE_ROOT environment varialbe set, run run_tests.pl with the
    --expected option to create the expected results for all tests.

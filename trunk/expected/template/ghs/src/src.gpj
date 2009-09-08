@@ -71,8 +71,8 @@ DOUBLE_LC = \
 ## Section FIRST
 Group1 = down\foo.flap
 
-foo.wing: down\foo.flap $(TEST_ROOT)\bin\flap.pl
-	perl $(TEST_ROOT)\bin\flap.pl  down\foo.flap
+foo_wing: down\foo.flap $(TEST_ROOT)\bin\flap.pl
+	perl $(TEST_ROOT)\bin\flap.pl   . . down\foo.flap
 
 
 0

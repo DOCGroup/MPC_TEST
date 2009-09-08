@@ -5,4 +5,6 @@ project {
   Source_Files {
     code.cpp
   }
+  Documentation_Files {
+  }
 }

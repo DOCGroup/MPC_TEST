@@ -98,6 +98,14 @@ SOURCE="otherJS.cpp"
 # End Source File
 # Begin Source File
 
+SOURCE="otherTypeSupportJC.cpp"
+# End Source File
+# Begin Source File
+
+SOURCE="otherTypeSupportJS.cpp"
+# End Source File
+# Begin Source File
+
 SOURCE="simpleJC.cpp"
 # End Source File
 # End Group
@@ -115,6 +123,14 @@ SOURCE="otherJC.h"
 # Begin Source File
 
 SOURCE="otherJS.h"
+# End Source File
+# Begin Source File
+
+SOURCE="otherTypeSupportJC.h"
+# End Source File
+# Begin Source File
+
+SOURCE="otherTypeSupportJS.h"
 # End Source File
 # Begin Source File
 
@@ -3199,7 +3215,7 @@ SOURCE="other.idl"
 
 !IF  "$(CFG)" == "simple - Win32 Debug"
 
-USERDEP__other="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "simpleJC.h"
+USERDEP__other="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHelper.java" "simpleJC.h"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking $(IDL2JNI_ROOT)\bin\idl2jni on $(InputPath)
 InputPath="other.idl"
@@ -3227,7 +3243,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "simple - Win32 Release"
 
-USERDEP__other="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "simpleJC.h"
+USERDEP__other="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHelper.java" "simpleJC.h"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking $(IDL2JNI_ROOT)\bin\idl2jni on $(InputPath)
 InputPath="other.idl"
@@ -3258,11 +3274,68 @@ BuildCmds= \
 # End Source File
 # Begin Source File
 
+SOURCE="otherTypeSupport.idl"
+
+!IF  "$(CFG)" == "simple - Win32 Debug"
+
+USERDEP__otherTypeSupport="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHelper.java"
+# PROP Ignore_Default_Tool 1
+# Begin Custom Build - Invoking $(IDL2JNI_ROOT)\bin\idl2jni on $(InputPath)
+InputPath="otherTypeSupport.idl"
+
+BuildCmds= \
+	PATH=%PATH%;$(ACE_ROOT)\lib \
+	$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(InputPath) \
+	echo Input: otherTypeSupport \
+
+"otherTypeSupportJC.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"otherTypeSupportJC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"otherTypeSupportJS.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"otherTypeSupportJS.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ELSEIF  "$(CFG)" == "simple - Win32 Release"
+
+USERDEP__otherTypeSupport="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHelper.java"
+# PROP Ignore_Default_Tool 1
+# Begin Custom Build - Invoking $(IDL2JNI_ROOT)\bin\idl2jni on $(InputPath)
+InputPath="otherTypeSupport.idl"
+
+BuildCmds= \
+	PATH=%PATH%;$(ACE_ROOT)\lib \
+	$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(InputPath) \
+	echo Input: otherTypeSupport \
+
+"otherTypeSupportJC.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"otherTypeSupportJC.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"otherTypeSupportJS.cpp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"otherTypeSupportJS.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ENDIF
+
+# End Source File
+# Begin Source File
+
 SOURCE="simple.idl"
 
 !IF  "$(CFG)" == "simple - Win32 Debug"
 
-USERDEP__simple="$(IDL2JNI_ROOT)\bin\idl2jni.exe"
+USERDEP__simple="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHelper.java"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking $(IDL2JNI_ROOT)\bin\idl2jni on $(InputPath)
 InputPath="simple.idl"
@@ -3542,7 +3615,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "simple - Win32 Release"
 
-USERDEP__simple="$(IDL2JNI_ROOT)\bin\idl2jni.exe"
+USERDEP__simple="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHelper.java"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking $(IDL2JNI_ROOT)\bin\idl2jni on $(InputPath)
 InputPath="simple.idl"
