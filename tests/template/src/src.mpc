@@ -1,9 +1,13 @@
 project: flap {
+  sharedname = <%exename%>
   recursive_includes += .
   flapflags += -some_option $(Debug)
 
   flap_files(FIRST) {
+    recurse -= 1
     Group1 {
+      command += <%unknown%>
+      commandflags -= -bad
       down/foo.flap
     }
   }

@@ -81,3 +81,5 @@ DOUBLE_LC = \
 <%lc(flap_files)%>
 
 <%extensions(flap_files)%>
+
+<%crap->wipe%>

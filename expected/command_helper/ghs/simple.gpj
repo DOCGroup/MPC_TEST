@@ -451,6 +451,7 @@ simple\\_TestLITAOPeer.java		[Text]
 other.idl		[Text]
 otherJC.cpp
 	:dependsRelative=$(IDL2JNI_ROOT)\\bin\\idl2jni
+	:dependsRelative=SomeSortOfTypedefHelper.java
 	:dependsRelative=other.idl
 	:dependsRelative=simpleJC.h
 	:preexecShell='cd . && $(IDL2JNI_ROOT)\\bin\\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 other.idl'
@@ -460,9 +461,21 @@ otherJC.cpp
 	:extraOutputFile=otherJC.h
 	:extraOutputFile=otherJS.cpp
 	:extraOutputFile=otherJS.h
+otherTypeSupport.idl		[Text]
+otherTypeSupportJC.cpp
+	:dependsRelative=$(IDL2JNI_ROOT)\\bin\\idl2jni
+	:dependsRelative=SomeSortOfTypedefHelper.java
+	:dependsRelative=otherTypeSupport.idl
+	:preexecShell='cd . && $(IDL2JNI_ROOT)\\bin\\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 otherTypeSupport.idl'
+	:preexecShell='cd . && echo Input: otherTypeSupport'
+	:extraOutputFile=otherTypeSupportJC.cpp
+	:extraOutputFile=otherTypeSupportJC.h
+	:extraOutputFile=otherTypeSupportJS.cpp
+	:extraOutputFile=otherTypeSupportJS.h
 simple.idl		[Text]
 simpleJC.cpp
 	:dependsRelative=$(IDL2JNI_ROOT)\\bin\\idl2jni
+	:dependsRelative=SomeSortOfTypedefHelper.java
 	:dependsRelative=simple.idl
 	:preexecShell='cd . && $(IDL2JNI_ROOT)\\bin\\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 simple.idl'
 	:preexecShell='cd . && echo Input: simple'
@@ -557,9 +570,13 @@ simpleJC.cpp
 	:extraOutputFile=simple\\_TestLITAOPeer.java
 otherJC.cpp
 otherJS.cpp
+otherTypeSupportJC.cpp
+otherTypeSupportJS.cpp
 simpleJC.cpp
 otherJC.h
 otherJS.h
+otherTypeSupportJC.h
+otherTypeSupportJS.h
 simpleJC.h
 simpleJS.h
 additional_options.txt		[Documentation]

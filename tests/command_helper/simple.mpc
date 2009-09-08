@@ -12,6 +12,7 @@ project: idl2jni {
     postcommand += echo Input: <%noextension(input)%>
     simple.idl
     other.idl << simpleJC.h >> SomeSortOfTypedefHelper.java
+    otherTypeSupport.idl
   }
 
   Source_Files {

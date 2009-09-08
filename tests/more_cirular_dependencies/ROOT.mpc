@@ -4,4 +4,6 @@ project {
   Source_Files {
     root.cpp
   }
+  Documentation_Files {
+  }
 }

@@ -1,0 +1,10 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o src/libfoo.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsrc
+poo.run		[Text]
+foo.cpp
