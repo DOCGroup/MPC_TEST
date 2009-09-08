@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -into here/.. -value_template "configurations='MFC Release' 'MFC Debug'" wider_coverage.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ Some_Test_Other_Lib:
 	@$(MAKE) -f Makefile.Some_Test_Other_Lib generated all
 
 .PHONY: Some_Test_Simple_Lib
-Some_Test_Simple_Lib:
+Some_Test_Simple_Lib: Some_Test_Other_Lib
 	@$(MAKE) -f Makefile.Some_Test_Simple_Lib generated all
 
 .PHONY: simple

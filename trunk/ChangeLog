@@ -1,3 +1,26 @@
+Tue Sep  8 17:30:43 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/wider_coverage/automake/wider_coverage.dot:
+        * expected/wider_coverage/bmake/Makefile.bmak:
+        * expected/wider_coverage/bmake/wider_coverage.dot:
+        * expected/wider_coverage/ghs/wider_coverage.dot:
+        * expected/wider_coverage/gnuace/wider_coverage.dot:
+        * expected/wider_coverage/html/Some_Test_Simple_Lib.html:
+        * expected/wider_coverage/html/wider_coverage.dot:
+        * expected/wider_coverage/make/Makefile:
+        * expected/wider_coverage/make/wider_coverage.dot:
+        * expected/wider_coverage/nmake/Makefile:
+        * expected/wider_coverage/nmake/wider_coverage.dot:
+        * expected/wider_coverage/sle/wider_coverage.dot:
+        * expected/wider_coverage/vc8/wider_coverage.dot:
+        * expected/wider_coverage/vc8/wider_coverage.sln:
+        * tests/wider_coverage/simple.mpc:
+        * tests/wider_coverage/simple_lib.mpc:
+
+          Corrected the usage of 'after' to truly get the call to
+          dependency_combined_static_library().  My previous modification
+          didn't do the trick.
+
 Tue Sep  8 13:04:33 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * tests/more_circular_dependencies:

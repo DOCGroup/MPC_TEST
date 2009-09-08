@@ -1,7 +1,6 @@
 project: ghs_base, some_feature, ghs_base {
   recursive_includes += houses
   recursive_libpaths += non_existent
-  after += other_lib
 
   expand(FOO_ROOT) {
     $FOOT_ROOT
