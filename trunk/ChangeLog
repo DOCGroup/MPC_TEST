@@ -1,3 +1,10 @@
+Wed Sep  9 12:50:15 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/more_circular_dependencies:
+
+          Renamed the more_cirular_dependencies directory.  The test was
+          renamed, but I forgot the expected results directory.
+
 Tue Sep  8 17:30:43 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wider_coverage/automake/wider_coverage.dot:
