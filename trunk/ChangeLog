@@ -1,3 +1,10 @@
+Thu Sep 10 13:36:02 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/more_circular_dependencies/*:
+
+          Renaming this directory was not enough.  With the directory name
+          change, so too did the workspace name.
+
 Wed Sep  9 12:50:15 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/more_circular_dependencies:
