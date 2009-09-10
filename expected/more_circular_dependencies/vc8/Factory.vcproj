@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="Factory"
-	ProjectGUID="{BD03361F-FECA-1BAD-285B-CA1767318C2F}"
+	ProjectGUID="{BD03361F-FECA-1BAD-285B-CA17134E6AC7}"
 	RootNamespace="Factory"
 	Keyword="Win32Proj"
 	SignManifests="true"
