@@ -1,1 +1,1 @@
-second.mwc
+-gfeature_file config/ace.features second.mwc
