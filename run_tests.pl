@@ -130,7 +130,9 @@ sub compare {
     close($lh);
     if (open($rh, $right)) {
       my $cwdre = getcwd();
-      $cwdre =~ s!/![\\\\\\/]!g;
+      $cwdre =~ s![\\\/]![\\\\\\/]!g;
+      my $mpcre = $ENV{MPC_ROOT};
+      $mpcre =~ s![\\\/]![\\\\\\/]!g;
 
       my $i = 0;
       $different = 0;
@@ -156,7 +158,7 @@ sub compare {
             last;
           }
           elsif ($lines[$i] ne $line) {
-            if ($lines[$i] !~ /ACE_HAS_MFC=1/) {
+            if ($lines[$i] !~ /ACE_HAS_MFC=1/ && $line !~ /$mpcre/) {
               diff_files($left, $right, $i, $lines[$i], $line) if ($show);
               $different = 1;
               last;
