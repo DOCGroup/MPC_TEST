@@ -22,6 +22,7 @@ NUL           = /dev/null
 MKDIR         = mkdir -p
 TESTDIRSTART  = test -d
 TESTDIREND    = ||
+TOUCH         = touch
 EXEEXT        = 
 LIBPREFIX     = lib
 LIBSUFFIX     = 
@@ -71,7 +72,7 @@ realclean: clean
 #----------------------------------------------------------------------------
 
 $(DEPENDENCIES):
-	@touch $(DEPENDENCIES)
+	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
 	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)

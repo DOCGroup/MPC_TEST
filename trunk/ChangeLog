@@ -1,3 +1,10 @@
+Tue Oct 27 19:38:58 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/make/*:
+        * expected/*/vc8/*.vcproj:
+
+          Updated to reflect my change from Wed Oct 21 19:29:58 UTC 2009.
+
 Sun Oct  4 23:09:12 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:
