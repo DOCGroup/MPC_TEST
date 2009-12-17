@@ -1,3 +1,9 @@
+Thu Dec 17 20:38:00 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/options/make/source/Makefile.basic_Zargaflan:
+
+          Missed in my last checkin.
+
 Thu Dec 17 20:26:49 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/wide_coverage/automake/source/Makefile.am:
