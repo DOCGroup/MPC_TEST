@@ -1,3 +1,9 @@
+Thu Dec 17 20:14:04 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * utils/nightly.sh:
+
+          Set MPC_ROOT if it isn't already set.
+
 Tue Oct 27 19:38:58 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/make/*:

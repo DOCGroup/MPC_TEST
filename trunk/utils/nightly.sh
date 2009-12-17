@@ -22,6 +22,10 @@ if [ -z "$QTDIR" ]; then
   QTDIR=/usr; export QTDIR
 fi
 
+if [ -z "$MPC_ROOT" ]; then
+  MPC_ROOT=/home/elliottc/current/MPC; export MPC_ROOT
+fi
+
 # ******************************************************************
 # Main Section
 # ******************************************************************
