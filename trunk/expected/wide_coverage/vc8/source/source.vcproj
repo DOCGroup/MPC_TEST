@@ -52,7 +52,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -66,7 +66,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+				PreprocessorDefinitions="_DEBUG;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
 			/>
@@ -135,7 +135,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -146,7 +146,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+				PreprocessorDefinitions="NDEBUG;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
 			/>
@@ -217,7 +217,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -231,7 +231,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;;_WIN64"
+				PreprocessorDefinitions="_DEBUG;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
 			/>
@@ -301,7 +301,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -312,7 +312,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;;_WIN64"
+				PreprocessorDefinitions="NDEBUG;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
 			/>

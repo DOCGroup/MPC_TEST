@@ -39,4 +39,4 @@ source/source_int.gpj		[INTEGRITY Application]
 	-Lsource/.
 	-L..\lib
 	-lsource_lib
-	-DMACRO_TEST="a_string_with_no_spaces"
+	-DMACRO_TEST=\"a_string_with_no_spaces\"

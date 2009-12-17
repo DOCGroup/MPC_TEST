@@ -13,7 +13,7 @@
 	-Lsource/.
 	-L..\lib
 	-lsource_lib
-	-DMACRO_TEST="a_string_with_no_spaces"
+	-DMACRO_TEST=\"a_string_with_no_spaces\"
 Foolish/foolish.simple		[Text]
 Foolish\\foolish.txt
 	:dependsRelative=Foolish/foolish.simple
