@@ -55,7 +55,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -D_DEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
+	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -D_DEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST=\"a_string_with_no_spaces\" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -70,7 +70,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST="a_string_with_no_spaces"  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -107,7 +107,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -DNDEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
+	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -DNDEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST=\"a_string_with_no_spaces\" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -121,7 +121,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST="a_string_with_no_spaces"  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -158,7 +158,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -D_DEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
+	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -D_DEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST=\"a_string_with_no_spaces\" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -173,7 +173,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST="a_string_with_no_spaces"  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -210,7 +210,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -DNDEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST="a_string_with_no_spaces" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
+	$(DEPGEN) -I"." -I"\this\path" -I"Z:\that\path" -I"Here" -I"There" -DNDEBUG -DWIN32 -D_CONSOLE -DMACRO_TEST=\"a_string_with_no_spaces\" -f "Makefile.source.dep" "exe\main.cpp" "exe\use_more_names\use_more_names.cpp" "exe\use_names\use_names.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -224,7 +224,7 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST="a_string_with_no_spaces"  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 

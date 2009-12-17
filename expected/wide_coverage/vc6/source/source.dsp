@@ -37,11 +37,11 @@ RSC=rc.exe
 # PROP Output_Dir "."
 # PROP Intermediate_Dir "Debug\source"
 # PROP Target_Dir ""
-# ADD CPP /nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"Debug\source/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST="a_string_with_no_spaces" /FD /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"Debug\source/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\" /FD /c
 # SUBTRACT CPP /YX
 
 # ADD MTL /D "_DEBUG" /nologo /mktyplib203 /win32
-# ADD RSC /l 0x409 /d _DEBUG /d MACRO_TEST="a_string_with_no_spaces" /i "." /i "\this\path" /i "Z:\that\path" /i "Here" /i "There"
+# ADD RSC /l 0x409 /d _DEBUG /d MACRO_TEST=\"a_string_with_no_spaces\" /i "." /i "\this\path" /i "Z:\that\path" /i "Here" /i "There"
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe
@@ -58,11 +58,11 @@ PostBuild_Cmds=echo main_test has been built
 # PROP Output_Dir "Release"
 # PROP Intermediate_Dir "Release\source"
 # PROP Target_Dir ""
-# ADD CPP /nologo /O2 /W3 /GX /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST="a_string_with_no_spaces" /FD /c
+# ADD CPP /nologo /O2 /W3 /GX /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\" /FD /c
 # SUBTRACT CPP /YX
 
 # ADD MTL /D "NDEBUG" /nologo /mktyplib203 /win32
-# ADD RSC /l 0x409 /d NDEBUG /d MACRO_TEST="a_string_with_no_spaces" /i "." /i "\this\path" /i "Z:\that\path" /i "Here" /i "There"
+# ADD RSC /l 0x409 /d NDEBUG /d MACRO_TEST=\"a_string_with_no_spaces\" /i "." /i "\this\path" /i "Z:\that\path" /i "Here" /i "There"
 BSC32=bscmake.exe
 # ADD BSC32 /nologo 
 LINK32=link.exe

@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+                                PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				BasicRuntimeChecks="3"
@@ -71,7 +71,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+				PreprocessorDefinitions="_DEBUG;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"/>
 			<Tool
@@ -91,7 +91,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"
-                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+                                PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
 				RuntimeLibrary="2"
@@ -138,7 +138,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;MACRO_TEST=&quot;a_string_with_no_spaces&quot;"
+				PreprocessorDefinitions="NDEBUG;MACRO_TEST=\&quot;a_string_with_no_spaces\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories=".,\this\path,Z:\that\path,Here,There"/>
 			<Tool

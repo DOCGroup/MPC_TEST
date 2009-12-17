@@ -98,7 +98,7 @@ LIBFILES = \
 
 CFLAGS = \
          -a8 \
-         -DMACRO_TEST="a_string_with_no_spaces" \
+         -DMACRO_TEST=\"a_string_with_no_spaces\" \
          -DWIN32 \
          -D_WINDOWS \
          -I"." \

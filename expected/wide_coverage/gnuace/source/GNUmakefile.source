@@ -112,7 +112,7 @@ else
 LDFLAGS      += -L. -L../lib
 endif
 CPPFLAGS     += -I. -I/this/path -IZ:\that\path -IHere -IThere
-CPPFLAGS     += -DMACRO_TEST="a_string_with_no_spaces"
+CPPFLAGS     += -DMACRO_TEST=\"a_string_with_no_spaces\"
 
 #----------------------------------------------------------------------------
 #       Local targets

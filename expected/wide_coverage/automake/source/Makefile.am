@@ -137,7 +137,7 @@ main_test_CPPFLAGS = \
   -IZ:\that\path \
   -IHere \
   -IThere \
-  -DMACRO_TEST="a_string_with_no_spaces"
+  -DMACRO_TEST=\"a_string_with_no_spaces\"
 
 main_test_SOURCES = \
   exe/main.cpp \

@@ -5,7 +5,7 @@ CXX           = g++
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
 PICFLAGS      = -fPIC
-CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I"." -I"/this/path" -I"Z:\that\path" -I"Here" -I"There" -DMACRO_TEST="a_string_with_no_spaces"
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I"." -I"/this/path" -I"Z:\that\path" -I"Here" -I"There" -DMACRO_TEST=\"a_string_with_no_spaces\"
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
@@ -86,6 +86,6 @@ $(DEPENDENCIES):
 	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
-	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+	-VDIR=.obj/ $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
 include $(DEPENDENCIES)
