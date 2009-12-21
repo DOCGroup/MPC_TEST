@@ -1,4 +1,4 @@
-automake: down/two/Makefile.am
+automake:
 bds4:
 bmake: down/two/Makefile.bmak
 cc:

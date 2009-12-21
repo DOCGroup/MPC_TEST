@@ -1,3 +1,23 @@
+Mon Dec 21 20:19:14 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/command_helper/html/simple.html:
+        * expected/implicit_projects/html/source/one/one.html:
+        * expected/implicit_projects/html/source/two/two.html:
+        * expected/qt/html/qt_uic_moc.html:
+        * expected/swig_perl/html/MyModule.html:
+        * expected/wide_coverage/html/generator/generator.html:
+        * expected/wide_coverage/html/generator/generator_be.html:
+        * expected/wide_coverage/html/source/source.html:
+        * expected/wide_coverage/html/source/source_lib.html:
+
+          Updated to reflect my change from Thu Dec 17 20:45:21 UTC 2009.
+
+        * run_tests.pl:
+        * tests/backwards/build_entry.txt:
+        * tests/more_workspaces/build_entry.txt:
+
+          Fixed test issues relating to the automake project type.
+
 Thu Dec 17 20:38:00 UTC 2009  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/options/make/source/Makefile.basic_Zargaflan:

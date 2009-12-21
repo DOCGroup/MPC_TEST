@@ -1,4 +1,4 @@
-automake: Makefile.first_more_workspaces.am
+automake: `find . -name \*.am | sed 's/\.am//g'`
 bcb2007: first_more_workspaces.groupproj
 bcb2009: first_more_workspaces.groupproj
 bds4: first_more_workspaces.bdsgroup
