@@ -395,7 +395,10 @@ sub buildit {
       ## Create the necessary files and directories for automake
       mkdir('m4');
       touch('NEWS', 'README', 'AUTHORS', 'ChangeLog', 'install-sh',
-            'missing', 'depcomp');
+            'missing', 'compile');
+      open(FH, ">depcomp");
+      print FH "eval \$\@\n";
+      close(FH);
 
       ## Run the automake setup and configure
       my $dir;
@@ -408,27 +411,38 @@ sub buildit {
         else {
           $dir = dirname($entry);
           $base = basename($entry);
-          $cmd = "cd $dir; $cmd" if ($dir ne '.');
         }
         $cmd .= ' -a ';
         $cmd .= $base if ($base ne 'Makefile');
       }
-      system("$cmd && ./configure");
+      if (!defined $dir || $dir eq '.') {
+        system("$cmd && ./configure");
+      }
+      else {
+        system("cd $dir; ($cmd && ./configure)");
+      }
+        
 
       ## Find the automake generated makefile
       my $mfile;
-      if (opendir(DH, defined $dir ? $dir : '.')) {
-        foreach my $file (readdir(DH)) {
-          if ($file =~ /^(Makefile.+)\.am$/) {
-            $mfile = $1;
-            last;
+      if (!-r 'Makefile.am') {
+        if (opendir(DH, defined $dir ? $dir : '.')) {
+          foreach my $file (sort(readdir(DH))) {
+            if ($file =~ /^(Makefile.+)\.am$/) {
+              $mfile = $1;
+              last;
+            }
           }
+          closedir(DH);
         }
-        closedir(DH);
       }
 
       $status = checkBuildStatus((defined $dir ? "cd $dir; " :'') . 'make' .
-                                 (defined $mfile ? " -f $mfile" : ''));
+                                 (defined $mfile ?
+                                   " -f $mfile" .
+                                   ($mfile =~ /^Makefile[^\.]/ ?
+                                      " AM_MAKEFLAGS='-f $mfile'" : '') :
+                                   ''));
     }
   }
   elsif ($type eq 'make' && $^O eq 'linux') {
