@@ -47,6 +47,7 @@ noinst_PROGRAMS = main
 
 main_CPPFLAGS = \
   -I$(QTDIR)/include \
+  -I/usr/include/qt3 \
   -DQT_THREAD_SUPPORT
 
 main_SOURCES = \
