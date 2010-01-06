@@ -92,7 +92,7 @@ LDLIBPATH     = -L. -L$(QTDIR)/lib -L$(QTDIR)/lib64
 else
 LDFLAGS      += -L. -L$(QTDIR)/lib -L$(QTDIR)/lib64
 endif
-CPPFLAGS     += -I$(QTDIR)/include
+CPPFLAGS     += -I$(QTDIR)/include -I/usr/include/qt3
 CPPFLAGS     += -DQT_THREAD_SUPPORT
 
 #----------------------------------------------------------------------------
