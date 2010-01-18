@@ -33,6 +33,7 @@ OBJS          = zeep/basic$(OBJEXT)
 SRC           = basic.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(STATICFLAGS)
+DEPLIBS       = $(foreach lib, , $(foreach libpath, ./zeep/ ., $(wildcard $(libpath)/lib$(lib).a)))
 
 #----------------------------------------------------------------------------
 #       Local targets
@@ -40,7 +41,7 @@ EXPORTFLAGS   = $(STATICFLAGS)
 
 all: $(BIN) __postbuild__
 
-$(BIN): $(OBJS)
+$(BIN): $(OBJS) $(DEPLIBS)
 	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 

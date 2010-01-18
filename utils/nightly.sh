@@ -26,6 +26,8 @@ if [ -z "$MPC_ROOT" ]; then
   MPC_ROOT=/home/elliottc/current/MPC; export MPC_ROOT
 fi
 
+PATH=$PATH:/usr/local/bin
+
 # ******************************************************************
 # Main Section
 # ******************************************************************

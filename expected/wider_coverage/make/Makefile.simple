@@ -36,6 +36,7 @@ OBJS          = ./houses/simple$(OBJEXT)
 SRC           = ./houses/simple.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(STATICFLAGS)
+DEPLIBS       = $(foreach lib, other_lib simple_lib , $(foreach libpath, . non_existent, $(wildcard $(libpath)/lib$(lib).a)))
 endif
 
 #----------------------------------------------------------------------------
@@ -44,7 +45,7 @@ endif
 
 all: $(BIN)
 
-$(BIN): $(OBJS)
+$(BIN): $(OBJS) $(DEPLIBS)
 	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 

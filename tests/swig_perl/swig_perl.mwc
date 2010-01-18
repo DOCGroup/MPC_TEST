@@ -1,5 +1,8 @@
 workspace {
-  // This scope causes the features to be saved and restored
+  // This scope causes the features to be saved and restored. Also, this
+  // highlights an error in AutomakeWorkspaceCreator.pm where the feature
+  // parser obtained from the ProjectCreator does not have the feature
+  // settings from within this scope.
   necessary {
     cmdline += -feature_file test.features
     MyModule.mpc
