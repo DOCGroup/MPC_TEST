@@ -1,0 +1,10 @@
+// The configurations is set the the $FOOBAG value.  If configurations are
+// to be used with automake, there must be a lib_modifier set to distinguish
+// between the configurations.
+
+Debug {
+  lib_modifier = d
+}
+
+Release {
+}
