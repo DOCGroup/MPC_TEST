@@ -1,3 +1,16 @@
+Wed Jan 20 20:40:34 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * run_tests.pl:
+
+          Modified so that patching actually works.
+
+        * expected/more_options/automake/c++/Makefile.am:
+        * tests/more_options/config/user_automakedll.mpt:
+        * tests/more_options/configure.ac.patch:
+
+          Corrected problems with this test so that it will build under
+          automake.
+
 Mon Jan 18 14:55:06 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/options/make/source/Makefile.basic_Zargaflan:

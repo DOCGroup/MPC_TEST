@@ -402,7 +402,7 @@ sub buildit {
 
       ## Run the automake setup and configure
       my $dir;
-      my $cmd = 'aclocal && libtoolize && autoconf && automake';
+      my $cmd = 'aclocal -I m4 && libtoolize && autoconf && automake';
       if (defined $entry) {
         my $base;
         if ($entry =~ /`/) {
@@ -625,14 +625,11 @@ sub apply_patches {
       if (-d $full) {
         apply_patches($full, $reverse);
       }
-      elsif ($file =~ /(.*)\.patch$/) {
-        my $real = $1;
-        if (-r "$path/$real") {
-          my $orig = getcwd();
-          chdir($path);
-          system("$patch -p0 " . ($reverse ? '-R ' : '') . "< $file");
-          chdir($orig);
-        }
+      elsif ($file =~ /\.patch$/) {
+        my $orig = getcwd();
+        chdir($path);
+        system("$patch -p0 " . ($reverse ? '-R ' : '') . "< $file");
+        chdir($orig);
       }
     }
     closedir($fh);

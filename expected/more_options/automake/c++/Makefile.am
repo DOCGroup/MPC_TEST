@@ -1,14 +1,15 @@
+
 ## Makefile.foo.am
 
-noinst_LTLIBRARIES = libfoo.la
-Debug : libfoo.la
+noinst_LTLIBRARIES = libfood.la
+Debug : libfood.la
 noinst_LTLIBRARIES += libfoo.la
 Release : libfoo.la
 
 libfoo_SOURCES_COMMON = \
   /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
 
-libfoo_la_SOURCES = $(libfoo_SOURCES_COMMON)
+libfood_la_SOURCES = $(libfoo_SOURCES_COMMON)
 libfoo_la_SOURCES = $(libfoo_SOURCES_COMMON)
 
 ## Clean up template repositories, etc.
