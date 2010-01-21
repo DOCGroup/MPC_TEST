@@ -1,3 +1,9 @@
+Thu Jan 21 12:56:37 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * run_tests.pl:
+
+          Removed include path on aclocal call.
+
 Wed Jan 20 20:40:34 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:
