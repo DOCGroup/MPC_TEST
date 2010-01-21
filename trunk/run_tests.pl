@@ -402,7 +402,7 @@ sub buildit {
 
       ## Run the automake setup and configure
       my $dir;
-      my $cmd = 'aclocal -I m4 && libtoolize && autoconf && automake';
+      my $cmd = 'aclocal && libtoolize && autoconf && automake';
       if (defined $entry) {
         my $base;
         if ($entry =~ /`/) {
