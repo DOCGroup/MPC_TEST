@@ -1,6 +1,7 @@
 #----------------------------------------------------------------------------
 #       Macros
 #----------------------------------------------------------------------------
+CC            = gcj
 CXX           = gcj
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
@@ -8,6 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)

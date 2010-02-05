@@ -1,6 +1,7 @@
 #----------------------------------------------------------------------------
 #       Macros
 #----------------------------------------------------------------------------
+CC            = gcc
 CXX           = g++
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
@@ -8,6 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -DUSING_PCH -D_REENTRANT -I"."
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"." -L"../lib"
 CCC           = $(CXX)
@@ -44,6 +46,7 @@ $(LIB): $(OBJS)
 	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
+SPACE           = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY = cre/o.le/more_names.cpp cre/o.le/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl
 
 .NOTPARALLEL:

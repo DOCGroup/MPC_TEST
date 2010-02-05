@@ -1,6 +1,7 @@
 #----------------------------------------------------------------------------
 #       Macros
 #----------------------------------------------------------------------------
+CC            = gcc
 CXX           = g++
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
@@ -8,6 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I"$(QTDIR)/include" -I"/usr/include/qt3" -DQT_THREAD_SUPPORT
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"." -L"$(QTDIR)/lib" -L"$(QTDIR)/lib64"
 CCC           = $(CXX)
@@ -44,6 +46,7 @@ $(BIN): $(OBJS)
 	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
+SPACE           = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY = demo.h demo.cpp demo_moc.cpp
 
 demo.h: demo.ui

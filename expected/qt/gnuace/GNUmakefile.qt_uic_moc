@@ -115,6 +115,7 @@ ifeq ($(wildcard /usr/bin/test), /usr/bin/test)
 endif
 endif
 
+SPACE = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY += demo.h
 OBJS_DEPEND_ON_GENERATED = 1
 demo.h: demo.ui

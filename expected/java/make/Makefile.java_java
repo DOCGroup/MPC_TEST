@@ -1,12 +1,14 @@
 #----------------------------------------------------------------------------
 #       Macros
 #----------------------------------------------------------------------------
+CC            = javac
 CXX           = javac
 LD            = :
 AR            = jar
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
 OBJEXT        = .class
 OUTPUT_OPTION = 
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) 
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) 
 ARFLAGS       = cvf
 LDFLAGS       = -L"."

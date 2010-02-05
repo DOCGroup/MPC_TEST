@@ -1,6 +1,7 @@
 #----------------------------------------------------------------------------
 #       Macros
 #----------------------------------------------------------------------------
+CC            = gcc
 CXX           = g++
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
@@ -8,6 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -DONLY_MAKE -DONLY_UNIX
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -60,7 +62,7 @@ ploor$(OBJEXT): ploor.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ploor.cpp
 
 qwaaa$(OBJEXT): qwaaa.c
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) qwaaa.c
+	$(COMPILE.c) $(EXPORTFLAGS) $(OUTPUT_OPTION) qwaaa.c
 
 clean:
 	-$(RM) $(OBJS)
