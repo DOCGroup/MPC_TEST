@@ -1,3 +1,18 @@
+Fri Feb  5 23:46:55 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/dependencies/*:
+        * tests/dependencies/bar.ar:
+        * tests/dependencies/foo.ar:
+        * tests/dependencies/foo.cpp:
+        * tests/dependencies/foo.mpc:
+        * tests/dependencies/nospace.txt:
+        * tests/dependencies/space 1.txt:
+        * tests/dependencies/space 2.txt:
+        * tests/dependencies/space 3.txt:
+
+          Tadded a test to exercise my changes from Thu Jan 21 12:52:48 UTC
+          2010.
+
 Thu Jan 21 12:56:37 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * run_tests.pl:
