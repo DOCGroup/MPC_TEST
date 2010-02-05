@@ -1,6 +1,7 @@
 #----------------------------------------------------------------------------
 #       Macros
 #----------------------------------------------------------------------------
+CC            = gcc
 CXX           = g++
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
@@ -8,6 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -37,6 +39,7 @@ EXPORTFLAGS   = $(STATICFLAGS)
 #       Local targets
 #----------------------------------------------------------------------------
 
+SPACE           = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY = zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thatC.h zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h
 
 .NOTPARALLEL:

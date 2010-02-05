@@ -4,12 +4,14 @@
 CFG = Win32 Debug
 
 ifeq ($(CFG), Win32 Debug)
+CC            = 
 CXX           = 
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -37,12 +39,14 @@ LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(STATICFLAGS)
 endif
 ifeq ($(CFG), Win32 Release)
+CC            = 
 CXX           = 
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -103,12 +107,14 @@ depend:
 	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
 ifeq ($(CFG), x64 Debug)
+CC            = 
 CXX           = 
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -136,12 +142,14 @@ LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(STATICFLAGS)
 endif
 ifeq ($(CFG), x64 Release)
+CC            = 
 CXX           = 
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)

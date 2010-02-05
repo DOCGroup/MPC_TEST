@@ -132,6 +132,7 @@ ifeq ($(wildcard /usr/bin/test), /usr/bin/test)
 endif
 endif
 
+SPACE = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY += bus.cpp
 bus.cpp: bus.l
 	flex -t bus.l > $@

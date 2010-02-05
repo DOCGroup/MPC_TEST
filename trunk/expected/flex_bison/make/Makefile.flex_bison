@@ -1,6 +1,7 @@
 #----------------------------------------------------------------------------
 #       Macros
 #----------------------------------------------------------------------------
+CC            = gcc
 CXX           = g++
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
 AR            = ar
@@ -8,6 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -O -D_REENTRANT
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -53,6 +55,7 @@ $(LIB): $(OBJS)
 	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
+SPACE           = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY = bus.cpp bus.tab.c bus.tab.h
 
 bus.cpp: bus.l
@@ -72,7 +75,7 @@ bus$(OBJEXT): bus.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) bus.cpp
 
 bus.tab$(OBJEXT): bus.tab.c
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) bus.tab.c
+	$(COMPILE.c) $(EXPORTFLAGS) $(OUTPUT_OPTION) bus.tab.c
 
 clean:
 	-$(RM) $(OBJS)

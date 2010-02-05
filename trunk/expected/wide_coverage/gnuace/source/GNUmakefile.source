@@ -134,6 +134,7 @@ ifeq ($(wildcard /usr/bin/test), /usr/bin/test)
 endif
 endif
 
+SPACE = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY += Foolish/foolish.txt
 OBJS_DEPEND_ON_GENERATED = 1
 Foolish/foolish.txt: Foolish/foolish.simple

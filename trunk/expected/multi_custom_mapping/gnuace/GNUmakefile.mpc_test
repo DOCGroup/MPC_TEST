@@ -88,6 +88,7 @@ ifeq ($(wildcard /usr/bin/test), /usr/bin/test)
 endif
 endif
 
+SPACE = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY += foo.cpp
 foo.cpp: foo.mco
 	echo "int main(){}" -a foo.mco > $@
