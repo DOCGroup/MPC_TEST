@@ -1,3 +1,31 @@
+Fri Feb  5 23:59:37 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/buildflags/automake/source/bfs_exe.ins:
+        * expected/buildflags/automake/source/bfs_lib.ins:
+        * expected/buildflags/bmake/source/bfs_exe.ins:
+        * expected/buildflags/bmake/source/bfs_lib.ins:
+        * expected/buildflags/em3/source/bfs_exe.ins:
+        * expected/buildflags/em3/source/bfs_lib.ins:
+        * expected/buildflags/ghs/source/bfs_exe.ins:
+        * expected/buildflags/ghs/source/bfs_lib.ins:
+        * expected/buildflags/gnuace/source/bfs_exe.ins:
+        * expected/buildflags/gnuace/source/bfs_lib.ins:
+        * expected/buildflags/html/source/bfs_exe.ins:
+        * expected/buildflags/html/source/bfs_lib.ins:
+        * expected/buildflags/nmake/source/bfs_exe.ins:
+        * expected/buildflags/nmake/source/bfs_lib.ins:
+        * expected/buildflags/sle/source/bfs_exe.ins:
+        * expected/buildflags/sle/source/bfs_lib.ins:
+        * expected/buildflags/vc6/source/bfs_exe.ins:
+        * expected/buildflags/vc6/source/bfs_lib.ins:
+        * expected/buildflags/vc7/source/bfs_exe.ins:
+        * expected/buildflags/vc7/source/bfs_lib.ins:
+        * expected/buildflags/vc71/source/bfs_exe.ins:
+        * expected/buildflags/vc71/source/bfs_lib.ins:
+
+          Added files from my test modification on Tue Sep  8 12:33:06 UTC
+          2009.
+
 Fri Feb  5 23:52:28 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/make/Makefile.*:
