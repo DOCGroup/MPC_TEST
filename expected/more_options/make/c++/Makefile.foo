@@ -12,7 +12,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -53,7 +53,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -105,6 +105,7 @@ generated: $(GENERATED_DIRTY)
 
 /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo$(OBJEXT): /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
+
 
 clean:
 	-$(RM) $(OBJS)

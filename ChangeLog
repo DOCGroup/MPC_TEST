@@ -1,3 +1,9 @@
+Mon Mar  1 13:00:39 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/make/*/Makefile.*:
+
+          Updated to reflect my change from Sun Feb 28 15:50:03 UTC 2010.
+
 Fri Feb  5 23:59:37 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/buildflags/automake/source/bfs_exe.ins:

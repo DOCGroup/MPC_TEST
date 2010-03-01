@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -61,20 +61,26 @@ generated: $(GENERATED_DIRTY)
 directory/gets_flags$(OBJEXT): directory/gets_flags.cpp
 	$(COMPILE.cc) -Trogdor $(EXPORTFLAGS) $(OUTPUT_OPTION) directory/gets_flags.cpp
 
+
 five$(OBJEXT): five.cpp
 	$(COMPILE.cc) -Trogdor $(EXPORTFLAGS) $(OUTPUT_OPTION) five.cpp
+
 
 four$(OBJEXT): four.cpp
 	$(COMPILE.cc) -Trogdor $(EXPORTFLAGS) $(OUTPUT_OPTION) four.cpp
 
+
 one$(OBJEXT): one.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) one.cpp
+
 
 three$(OBJEXT): three.cpp
 	$(COMPILE.cc) -Trogdor $(EXPORTFLAGS) $(OUTPUT_OPTION) three.cpp
 
+
 two$(OBJEXT): two.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) two.cpp
+
 
 clean:
 	-$(RM) $(OBJS)

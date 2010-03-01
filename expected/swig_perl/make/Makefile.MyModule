@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I"$(PERL5_INCLUDE)/."
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"." -L"$(PERL5_INCLUDE)/."
 CCC           = $(CXX)
@@ -70,8 +70,10 @@ generated: $(GENERATED_DIRTY)
 MyModule_wrap$(OBJEXT): MyModule_wrap.cxx
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) MyModule_wrap.cxx
 
+
 hello$(OBJEXT): hello.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) hello.cpp
+
 
 clean:
 	-$(RM) $(OBJS)

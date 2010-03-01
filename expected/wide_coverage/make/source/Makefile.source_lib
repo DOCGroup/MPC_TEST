@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -DUSING_PCH -D_REENTRANT -I"."
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"." -L"../lib"
 CCC           = $(CXX)
@@ -88,17 +88,21 @@ generated: $(GENERATED_DIRTY)
 	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) TheCheat.cpp
 
+
 .obj/cre/o.le/more_names$(OBJEXT): cre/o.le/more_names.cpp
 	@$(TESTDIRSTART) ".obj/cre/o.le" $(TESTDIREND) $(MKDIR) ".obj/cre/o.le"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) cre/o.le/more_names.cpp
+
 
 .obj/names$(OBJEXT): names.cpp
 	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) names.cpp
 
+
 .obj/qwee$(OBJEXT): qwee.cxx
 	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) qwee.cxx
+
 
 clean:
 	-$(RM) $(OBJS)

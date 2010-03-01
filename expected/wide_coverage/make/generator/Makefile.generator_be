@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"." -L"../lib"
 CCC           = $(CXX)
@@ -67,6 +67,7 @@ generated: $(GENERATED_DIRTY)
 .obj/generator_be$(OBJEXT): generator_be.cpp
 	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) generator_be.cpp
+
 
 clean:
 	-$(RM) $(OBJS)

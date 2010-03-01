@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -DONLY_MAKE -DONLY_UNIX
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -52,14 +52,18 @@ generated: $(GENERATED_DIRTY)
 conditional/unix$(OBJEXT): conditional/unix.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) conditional/unix.cpp
 
+
 moop$(OBJEXT): moop.cxx
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) moop.cxx
+
 
 ploor$(OBJEXT): ploor.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ploor.cpp
 
+
 qwaaa$(OBJEXT): qwaaa.c
 	$(COMPILE.c) $(EXPORTFLAGS) $(OUTPUT_OPTION) qwaaa.c
+
 
 clean:
 	-$(RM) $(OBJS)

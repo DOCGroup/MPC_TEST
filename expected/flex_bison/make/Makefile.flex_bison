@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -O -D_REENTRANT
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -74,8 +74,10 @@ generated: $(GENERATED_DIRTY)
 bus$(OBJEXT): bus.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) bus.cpp
 
+
 bus.tab$(OBJEXT): bus.tab.c
 	$(COMPILE.c) $(EXPORTFLAGS) $(OUTPUT_OPTION) bus.tab.c
+
 
 clean:
 	-$(RM) $(OBJS)

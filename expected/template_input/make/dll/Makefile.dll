@@ -11,7 +11,7 @@ AR            = ar
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -I"crapday" -I".."
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -50,7 +50,7 @@ AR            = ar
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -I"crapday" -I".."
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -102,6 +102,7 @@ generated: $(GENERATED_DIRTY)
 foo$(OBJEXT): foo.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) foo.cpp
 
+
 clean:
 	-$(RM) $(OBJS)
 
@@ -126,7 +127,7 @@ AR            = ar
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -I"crapday" -I".."
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -165,7 +166,7 @@ AR            = ar
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -I"crapday" -I".."
 OBJEXT        = 
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -216,6 +217,7 @@ generated: $(GENERATED_DIRTY)
 
 foo$(OBJEXT): foo.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) foo.cpp
+
 
 clean:
 	-$(RM) $(OBJS)
