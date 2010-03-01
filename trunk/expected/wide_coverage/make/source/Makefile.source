@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I"." -I"/this/path" -I"Z:\that\path" -I"Here" -I"There" -DMACRO_TEST=\"a_string_with_no_spaces\"
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"." -L"../lib"
 CCC           = $(CXX)
@@ -62,13 +62,16 @@ generated: $(GENERATED_DIRTY)
 	@$(TESTDIRSTART) ".obj/exe" $(TESTDIREND) $(MKDIR) ".obj/exe"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/main.cpp
 
+
 .obj/exe/use_more_names/use_more_names$(OBJEXT): exe/use_more_names/use_more_names.cpp
 	@$(TESTDIRSTART) ".obj/exe/use_more_names" $(TESTDIREND) $(MKDIR) ".obj/exe/use_more_names"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/use_more_names/use_more_names.cpp
 
+
 .obj/exe/use_names/use_names$(OBJEXT): exe/use_names/use_names.cpp
 	@$(TESTDIRSTART) ".obj/exe/use_names" $(TESTDIREND) $(MKDIR) ".obj/exe/use_names"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/use_names/use_names.cpp
+
 
 clean:
 	-$(RM) $(OBJS)

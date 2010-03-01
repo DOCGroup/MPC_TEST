@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -50,6 +50,7 @@ generated: $(GENERATED_DIRTY)
 
 simple$(OBJEXT): simple.java
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) simple.java
+
 
 clean:
 	-$(RM) $(OBJS)
