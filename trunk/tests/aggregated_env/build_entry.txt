@@ -1,0 +1,14 @@
+automake: t/c/d/Makefile
+bmake: t/c/d/Makefile.bmak
+em3: t/c/d/d.vcw
+ghs: t/c/d/default.gpj
+gnuace: t/c/d/GNUmakefile
+html: t/c/d/d.html
+make: t/c/d/Makefile
+nmake: t/c/d/Makefile
+vc6: t/c/d/d.dsw
+vc7: t/c/d/d.sln
+vc71: t/c/d/d.sln
+vc8: t/c/d/d.sln
+vc9: t/c/d/d.sln
+vc10: t/c/d/d.sln

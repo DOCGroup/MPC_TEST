@@ -1,3 +1,27 @@
+Mon Mar 15 19:25:21 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * README:
+
+          Fixed a typo.
+
+        * expected/aggregated_env/*:
+        * tests/aggregated_env:
+        * tests/aggregated_env/a:
+        * tests/aggregated_env/a/a.cpp:
+        * tests/aggregated_env/a/a.mpc:
+        * tests/aggregated_env/additional_options.txt:
+        * tests/aggregated_env/build_entry.txt:
+        * tests/aggregated_env/t:
+        * tests/aggregated_env/t/c:
+        * tests/aggregated_env/t/c/d:
+        * tests/aggregated_env/t/c/d/d.mwc:
+        * tests/aggregated_env/t/i:
+        * tests/aggregated_env/t/i/i.mwc:
+
+          Added a new test for aggregated workspaces that use environment
+          variables to locate the other .mwc files.  This test verifies the
+          change to WorkspaceCreator.pm that I will committing today.
+
 Mon Mar  1 13:00:39 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/make/*/Makefile.*:
@@ -3637,3 +3661,6 @@ Thu Jul  7 11:21:20 2005  Chad Elliott  <elliott_c@ociweb.com>
 
           Please see the README for running and adding new tests.
 
+Local Variables:
+indent-tabs-mode: nil
+End:
