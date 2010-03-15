@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+        <name>a</name>
+	<comment></comment>
+	<buildSpec>
+		<buildCommand>
+			<name>com.windriver.ide.core.wrbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.windriver.ide.core.wrnature</nature>
+		<nature>com.windriver.ide.core.wrcorenature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>a.cpp</name>
+			<type>1</type>
+			<location>D:/tao_builds/MPC_TEST/tests/aggregated_env/a/a.cpp</location>
+		</link>
+	</linkedResources>
+</projectDescription>
