@@ -46,7 +46,7 @@ Adding a new test
    j) To use mpc.pl instead of mwc.pl, add a file in the test top-level
       directory named MPC_ONLY.
 
-2) With the $ACE_ROOT environment varialbe set, run run_tests.pl with the
+2) With the $ACE_ROOT environment variable set, run run_tests.pl with the
    --expected option to create the expected results for all tests.
 
 3) Add the test and expected results to Subversion by changing to the
