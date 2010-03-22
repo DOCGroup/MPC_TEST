@@ -3221,7 +3221,6 @@ USERDEP__other="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHelper.java" 
 InputPath="other.idl"
 
 BuildCmds= \
-	PATH=%PATH%;$(ACE_ROOT)\lib \
 	$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(InputPath) \
 	echo Input: other \
 
@@ -3249,7 +3248,6 @@ USERDEP__other="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHelper.java" 
 InputPath="other.idl"
 
 BuildCmds= \
-	PATH=%PATH%;$(ACE_ROOT)\lib \
 	$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(InputPath) \
 	echo Input: other \
 
@@ -3284,7 +3282,6 @@ USERDEP__otherTypeSupport="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHe
 InputPath="otherTypeSupport.idl"
 
 BuildCmds= \
-	PATH=%PATH%;$(ACE_ROOT)\lib \
 	$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(InputPath) \
 	echo Input: otherTypeSupport \
 
@@ -3309,7 +3306,6 @@ USERDEP__otherTypeSupport="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHe
 InputPath="otherTypeSupport.idl"
 
 BuildCmds= \
-	PATH=%PATH%;$(ACE_ROOT)\lib \
 	$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(InputPath) \
 	echo Input: otherTypeSupport \
 
@@ -3341,7 +3337,6 @@ USERDEP__simple="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHelper.java"
 InputPath="simple.idl"
 
 BuildCmds= \
-	PATH=%PATH%;$(ACE_ROOT)\lib \
 	$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(InputPath) \
 	echo Input: simple \
 
@@ -3621,7 +3616,6 @@ USERDEP__simple="$(IDL2JNI_ROOT)\bin\idl2jni.exe" "SomeSortOfTypedefHelper.java"
 InputPath="simple.idl"
 
 BuildCmds= \
-	PATH=%PATH%;$(ACE_ROOT)\lib \
 	$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(InputPath) \
 	echo Input: simple \
 

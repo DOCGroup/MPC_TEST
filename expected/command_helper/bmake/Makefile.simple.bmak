@@ -480,7 +480,6 @@ SomeSortOfTypedefHelper.class: SomeSortOfTypedefHelper.java
 	"$(JAVA_HOME)\bin\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar SomeSortOfTypedefHelper.java
 	mkdir classes\. 2> nul & copy /y SomeSortOfTypedefHelper.class classes\. > nul
 
-PATH = $(PATH);$(ACE_ROOT)\lib
 otherJC.cpp otherJC.h otherJS.cpp otherJS.h SomeSortOfTypedefHelper.java: other.idl simpleJC.h
 	$(IDL2JNI_ROOT)\bin\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 other.idl
 	echo Input: other
