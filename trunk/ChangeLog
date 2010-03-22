@@ -1,3 +1,35 @@
+Mon Mar 22 14:25:10 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * README:
+
+          Added a note that tests must be added under UNIX to avoid problems
+          with line endings.
+
+        * expected/aggregated_env/automake/t/c/d/configure.ac.Makefiles:
+        * expected/aggregated_env/bcb2007/a/a.cbproj:
+        * expected/aggregated_env/bcb2007/t/c/d/d.groupproj:
+        * expected/aggregated_env/bcb2009/a/a.cbproj:
+        * expected/aggregated_env/bcb2009/t/c/d/d.groupproj:
+        * expected/aggregated_env/bds4/a/a.bdsproj:
+        * expected/aggregated_env/bds4/t/c/d/d.bdsgroup:
+        * expected/aggregated_env/ghs/a/a.gpj:
+        * expected/aggregated_env/ghs/t/c/d/default.gpj:
+        * expected/aggregated_env/make/Makefile:
+        * expected/aggregated_env/make/a/Makefile:
+        * expected/aggregated_env/make/a/Makefile.a:
+        * expected/aggregated_env/make/t/Makefile:
+        * expected/aggregated_env/make/t/c/Makefile:
+        * expected/aggregated_env/make/t/c/d/Makefile:
+        * expected/aggregated_env/sle/a/a.vpj:
+        * expected/aggregated_env/sle/t/c/d/d.vpw:
+        * expected/aggregated_env/wb26/a/a/.project:
+        * expected/aggregated_env/wb26/a/a/.wrmakefile:
+        * expected/aggregated_env/wb26/a/a/.wrproject:
+        * expected/aggregated_env/wb26/t/c/d/org.eclipse.core.resources.prefs:
+        * expected/aggregated_env/wix/t/c/d/d.wxi:
+
+          Corrected line endings.
+
 Mon Mar 22 01:00:14 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/command_helper/bmake/Makefile.simple.bmak:

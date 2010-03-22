@@ -11,6 +11,8 @@ printed if it is unable to build for at least one project type.
 
 Adding a new test
 -----------------
+NOTE: This must be done under UNIX due to the incorrect handling of carriage
+return/line fee combination under Windows subversion.
 
 1) Create a directory under the 'tests' directory containing the test.
    a) Any additional options that need to be passed to Perl should be placed
