@@ -1,4 +1,4 @@
-automake: t/c/d/Makefile
+automake:
 bmake: t/c/d/Makefile.bmak
 em3: t/c/d/d.vcw
 ghs: t/c/d/default.gpj
