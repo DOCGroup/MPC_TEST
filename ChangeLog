@@ -1,3 +1,9 @@
+Thu Mar 25 17:16:21 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * tests/aggregated_env/build_entry.txt:
+
+          This test won't build with automake due to it's layout complexity.
+
 Tue Mar 23 14:12:29 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/aggregated_env/gnuace/GNUmakefile:
