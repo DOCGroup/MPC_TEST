@@ -46,7 +46,6 @@
 				LinkIncremental="2"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="."
-				GenerateDebugInformation="TRUE"
 				SubSystem="1"
 				TargetMachine="1"/>
 			<Tool
@@ -109,7 +108,6 @@
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="."
-				GenerateDebugInformation="TRUE"
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"

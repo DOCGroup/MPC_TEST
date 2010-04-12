@@ -1,3 +1,13 @@
+Mon Apr 12 18:40:45 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/vc7/*.vcproj:
+        * expected/*/vc71/*.vcproj:
+        * expected/*/vc8/*.vcproj:
+        * expected/aggregated_env/vc10/a/a.vcproj:
+        * expected/aggregated_env/vc9/a/a.vcproj:
+
+          Updated to reflect my change from Sat Apr 10 19:37:34 UTC 2010.
+
 Thu Mar 25 17:16:21 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * tests/aggregated_env/build_entry.txt:
