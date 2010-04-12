@@ -115,7 +115,6 @@
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories=".;..\lib"
-				GenerateDebugInformation="TRUE"
 				SubSystem="1"
 				TargetMachine="1"/>
 			<Tool

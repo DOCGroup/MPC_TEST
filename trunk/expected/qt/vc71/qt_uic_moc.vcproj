@@ -111,7 +111,6 @@
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories=".;$(QTDIR)\lib;$(QTDIR)\lib64"
-				GenerateDebugInformation="TRUE"
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
