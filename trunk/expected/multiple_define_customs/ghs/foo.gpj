@@ -1,0 +1,25 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o ./libfoo.so
+	-Ospeed
+	-OI
+	--exceptions
+	-L.
+Foo.idl		[Text]
+FooTypeSupportImpl.cpp
+	:dependsRelative=Foo.idl
+	:preexecShell='cd . && perl foo.pl  Foo.idl'
+	:extraOutputFile=FooTypeSupportImpl.cpp
+	:extraOutputFile=FooTypeSupportImpl.h
+Foo.idl		[Text]
+FooD.cpp
+	:dependsRelative=Foo.idl
+	:preexecShell='cd . && perl zzz.pl  Foo.idl'
+	:extraOutputFile=FooD.cpp
+	:extraOutputFile=FooD.h
+	:extraOutputFile=FooD.idl
+FooD.cpp
+FooTypeSupportImpl.cpp
+FooD.h
+FooTypeSupportImpl.h
