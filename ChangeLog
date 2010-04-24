@@ -1,3 +1,14 @@
+Sat Apr 24 23:41:37 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/multiple_define_customs/*:
+        * tests/multiple_define_customs/Foo.idl:
+        * tests/multiple_define_customs/foo.mpc:
+        * tests/multiple_define_customs/foo.pl:
+        * tests/multiple_define_customs/zzz.pl:
+
+          Added a test to exercise my changes from Sat Apr 24 23:40:57 UTC
+          2010.
+
 Mon Apr 12 18:40:45 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/vc7/*.vcproj:
