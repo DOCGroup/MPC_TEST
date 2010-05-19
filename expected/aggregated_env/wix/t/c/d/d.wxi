@@ -4,7 +4,7 @@
 
   <Fragment>
     <ComponentGroup Id="d">
-      <ComponentRef Id="a" />
+      <ComponentGroupRef Id="ComponentGroup.a" />
     </ComponentGroup>
   </Fragment>
 </Include>

@@ -5,8 +5,8 @@
 
   <Fragment>
     <ComponentGroup Id="more_options">
-      <ComponentRef Id="another" />
-      <ComponentRef Id="foo" />
+      <ComponentGroupRef Id="ComponentGroup.another" />
+      <ComponentGroupRef Id="ComponentGroup.foo" />
     </ComponentGroup>
   </Fragment>
 </Include>
