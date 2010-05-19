@@ -1,3 +1,18 @@
+Wed May 19 14:39:03 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/aggregated_env/wix/a/a.wxi:
+        * expected/aggregated_env/wix/t/c/d/d.wxi:
+        * expected/mixed_languages_refs/wix/mixed_languages_refs.wxi:
+        * expected/mixed_languages_refs/wix/n/n.wxi:
+        * expected/mixed_languages_refs/wix/o/o.wxi:
+        * expected/mixed_languages_refs/wix/r/r.wxi:
+        * expected/more_options/wix/another/another.wxi:
+        * expected/more_options/wix/c++/foo.wxi:
+        * expected/more_options/wix/more_options.wxi:
+
+          Updated to reflect the following change: Mon May 17 06:43:59 UTC
+          2010  James H. Hill.
+
 Sat Apr 24 23:41:37 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/multiple_define_customs/*:

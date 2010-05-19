@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <Include>
   <Fragment Id="o">
-    <DirectoryRef Id="INSTALLDIR">
+    <ComponentGroup Id="ComponentGroup.o">
+      <ComponentRef Id="o.o.dll" />
+    </ComponentGroup>
 
-        <Component Id="o" Guid="006D90E9-FECA-1BAD-006D-8A633C01B20E">
-          <File Id="file.o" Name="o.dll"
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="o.o.dll" Guid="*">
+          <File Name="o.dll"
                 Source="./o.dll"
                 DiskId="1" />
         </Component>

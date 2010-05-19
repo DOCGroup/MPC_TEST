@@ -6,9 +6,9 @@
 
   <Fragment>
     <ComponentGroup Id="mixed_languages_refs">
-      <ComponentRef Id="n" />
-      <ComponentRef Id="r" />
-      <ComponentRef Id="o" />
+      <ComponentGroupRef Id="ComponentGroup.n" />
+      <ComponentGroupRef Id="ComponentGroup.r" />
+      <ComponentGroupRef Id="ComponentGroup.o" />
     </ComponentGroup>
   </Fragment>
 </Include>
