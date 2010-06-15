@@ -1,0 +1,12 @@
+project {
+  Define_Custom(Foo) {
+    automatic             = 1
+    command               = perl <%quote%>foo.pl<%quote%>
+    commandflags          = <%input_noext%>C.h
+    dependent             = <%quote%>foo.pl<%quote%>
+    source_outputext      = .cpp
+    header_outputext      = .h
+
+    keyword foo_flags = commandflags
+  }
+}
