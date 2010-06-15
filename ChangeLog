@@ -1,3 +1,14 @@
+Tue Jun 15 11:41:09 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/psuedo_replacement/*:
+        * tests/psuedo_replacement/Bar.adl:
+        * tests/psuedo_replacement/foo.mpb:
+        * tests/psuedo_replacement/foo.pl:
+        * tests/psuedo_replacement/z.mpc:
+
+          Added a test to exercise my change from Mon Jun 14 22:06:56 UTC
+          2010.
+
 Wed May 19 14:39:03 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/aggregated_env/wix/a/a.wxi:
