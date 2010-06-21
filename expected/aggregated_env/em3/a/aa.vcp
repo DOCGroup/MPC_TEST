@@ -1,4 +1,4 @@
-# Microsoft eMbedded Visual Tools Project File - Name="a" - Package Owner=<4>
+# Microsoft eMbedded Visual Tools Project File - Name="aa" - Package Owner=<4>
 # Microsoft eMbedded Visual Tools Generated Build File, Format Version 6.02
 # ** DO NOT EDIT **
 
@@ -7,7 +7,7 @@
 # TARGTYPE "Win32 (WCE emulator) Dynamic-Link Library" 0xa602
 # TARGTYPE "Win32 (WCE x86) Dynamic-Link Library" 0x8302
 
-CFG=a - Win32 (WCE ARM) Debug
+CFG=aa - Win32 (WCE ARM) Debug
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE run the tool that generated this project file and specify the
 !MESSAGE nmake output type.  You can then use the following command:
@@ -17,18 +17,18 @@ CFG=a - Win32 (WCE ARM) Debug
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
 !MESSAGE
-!MESSAGE NMAKE CFG="a - Win32 (WCE ARM) Debug"
+!MESSAGE NMAKE CFG="aa - Win32 (WCE ARM) Debug"
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
-!MESSAGE "a - Win32 (WCE ARM) Debug" (based on "Win32 (WCE ARM) Dynamic-Link Library")
-!MESSAGE "a - Win32 (WCE ARM) Release" (based on "Win32 (WCE ARM) Dynamic-Link Library")
-!MESSAGE "a - Win32 (WCE ARMV4) Debug" (based on "Win32 (WCE ARMV4) Dynamic-Link Library")
-!MESSAGE "a - Win32 (WCE ARMV4) Release" (based on "Win32 (WCE ARMV4) Dynamic-Link Library")
-!MESSAGE "a - Win32 (WCE emulator) Debug" (based on "Win32 (WCE emulator) Dynamic-Link Library")
-!MESSAGE "a - Win32 (WCE emulator) Release" (based on "Win32 (WCE emulator) Dynamic-Link Library")
-!MESSAGE "a - Win32 (WCE x86) Debug" (based on "Win32 (WCE x86) Dynamic-Link Library")
-!MESSAGE "a - Win32 (WCE x86) Release" (based on "Win32 (WCE x86) Dynamic-Link Library")
+!MESSAGE "aa - Win32 (WCE ARM) Debug" (based on "Win32 (WCE ARM) Dynamic-Link Library")
+!MESSAGE "aa - Win32 (WCE ARM) Release" (based on "Win32 (WCE ARM) Dynamic-Link Library")
+!MESSAGE "aa - Win32 (WCE ARMV4) Debug" (based on "Win32 (WCE ARMV4) Dynamic-Link Library")
+!MESSAGE "aa - Win32 (WCE ARMV4) Release" (based on "Win32 (WCE ARMV4) Dynamic-Link Library")
+!MESSAGE "aa - Win32 (WCE emulator) Debug" (based on "Win32 (WCE emulator) Dynamic-Link Library")
+!MESSAGE "aa - Win32 (WCE emulator) Release" (based on "Win32 (WCE emulator) Dynamic-Link Library")
+!MESSAGE "aa - Win32 (WCE x86) Debug" (based on "Win32 (WCE x86) Dynamic-Link Library")
+!MESSAGE "aa - Win32 (WCE x86) Release" (based on "Win32 (WCE x86) Dynamic-Link Library")
 !MESSAGE
 
 # Begin Project
@@ -37,12 +37,12 @@ CFG=a - Win32 (WCE ARM) Debug
 # PROP Scc_LocalPath ""
 # PROP ATL_Project 2
 
-!IF  "$(CFG)" == "a - Win32 (WCE ARM) Debug"
+!IF  "$(CFG)" == "aa - Win32 (WCE ARM) Debug"
 
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 1
 # PROP Output_Dir ".\ARM"
-# PROP Intermediate_Dir "Debug\a\ARM"
+# PROP Intermediate_Dir "Debug\aa\ARM"
 # PROP CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
 # PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
 # PROP Ignore_Export_Lib 0
@@ -50,19 +50,19 @@ CFG=a - Win32 (WCE ARM) Debug
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /r
 CPP=clarm.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\a\ARM/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\aa\ARM/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
-# ADD BSC32 /nologo /o".\a.bsc"
+# ADD BSC32 /nologo /o".\aa.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:".\ARM\ad.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\ARM\ad.pdb"  /dll /debug /machine:ARM /out:".\ARM\ad.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:".\ARM\aad.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\ARM\aad.pdb"  /dll /debug /machine:ARM /out:".\ARM\aad.dll"
 
-!ELSEIF  "$(CFG)" == "a - Win32 (WCE ARM) Release"
+!ELSEIF  "$(CFG)" == "aa - Win32 (WCE ARM) Release"
 
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 0
 # PROP Output_Dir ".\ARM"
-# PROP Intermediate_Dir "Release\a\ARM"
+# PROP Intermediate_Dir "Release\aa\ARM"
 # PROP CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
 # PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
 # PROP Ignore_Export_Lib 0
@@ -73,17 +73,17 @@ CPP=clarm.exe
 # ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
-# ADD BSC32 /nologo /o".\a.bsc"
+# ADD BSC32 /nologo /o".\aa.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:".\ARM\a.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:ARM /out:".\ARM\a.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:".\ARM\aa.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:ARM /out:".\ARM\aa.dll"
 
 !ENDIF
-!IF  "$(CFG)" == "a - Win32 (WCE ARMV4) Debug"
+!IF  "$(CFG)" == "aa - Win32 (WCE ARMV4) Debug"
 
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 1
 # PROP Output_Dir ".\ARM"
-# PROP Intermediate_Dir "Debug\a\ARM"
+# PROP Intermediate_Dir "Debug\aa\ARM"
 # PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
 # PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
 # PROP Ignore_Export_Lib 0
@@ -91,19 +91,19 @@ LINK32=link.exe
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /r
 CPP=clarm.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\a\ARM/" /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\aa\ARM/" /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
-# ADD BSC32 /nologo /o".\a.bsc"
+# ADD BSC32 /nologo /o".\aa.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:".\ARM\ad.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\ARM\ad.pdb"  /dll /debug /machine:ARM /out:".\ARM\ad.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:".\ARM\aad.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\ARM\aad.pdb"  /dll /debug /machine:ARM /out:".\ARM\aad.dll"
 
-!ELSEIF  "$(CFG)" == "a - Win32 (WCE ARMV4) Release"
+!ELSEIF  "$(CFG)" == "aa - Win32 (WCE ARMV4) Release"
 
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 0
 # PROP Output_Dir ".\ARM"
-# PROP Intermediate_Dir "Release\a\ARM"
+# PROP Intermediate_Dir "Release\aa\ARM"
 # PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
 # PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
 # PROP Ignore_Export_Lib 0
@@ -114,17 +114,17 @@ CPP=clarm.exe
 # ADD CPP /nologo /O2 /W3 /GR /QRxscale /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
-# ADD BSC32 /nologo /o".\a.bsc"
+# ADD BSC32 /nologo /o".\aa.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:".\ARM\a.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:ARM /out:".\ARM\a.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\ARM" /nologo /base:"0x00010000"  /implib:".\ARM\aa.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:ARM /out:".\ARM\aa.dll"
 
 !ENDIF
-!IF  "$(CFG)" == "a - Win32 (WCE emulator) Debug"
+!IF  "$(CFG)" == "aa - Win32 (WCE emulator) Debug"
 
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 1
 # PROP Output_Dir ".\IX86"
-# PROP Intermediate_Dir "Debug\a\IX86"
+# PROP Intermediate_Dir "Debug\aa\IX86"
 # PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
 # PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
 # PROP Ignore_Export_Lib 0
@@ -132,19 +132,19 @@ LINK32=link.exe
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\a\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\aa\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
-# ADD BSC32 /nologo /o".\a.bsc"
+# ADD BSC32 /nologo /o".\aa.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:".\IX86\ad.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\ad.pdb"  /dll /debug /machine:IX86 /out:".\IX86\ad.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:".\IX86\aad.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\aad.pdb"  /dll /debug /machine:IX86 /out:".\IX86\aad.dll"
 
-!ELSEIF  "$(CFG)" == "a - Win32 (WCE emulator) Release"
+!ELSEIF  "$(CFG)" == "aa - Win32 (WCE emulator) Release"
 
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 0
 # PROP Output_Dir ".\IX86"
-# PROP Intermediate_Dir "Release\a\IX86"
+# PROP Intermediate_Dir "Release\aa\IX86"
 # PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
 # PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
 # PROP Ignore_Export_Lib 0
@@ -155,17 +155,17 @@ CPP=cl.exe
 # ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
-# ADD BSC32 /nologo /o".\a.bsc"
+# ADD BSC32 /nologo /o".\aa.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:".\IX86\a.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:IX86 /out:".\IX86\a.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:".\IX86\aa.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:IX86 /out:".\IX86\aa.dll"
 
 !ENDIF
-!IF  "$(CFG)" == "a - Win32 (WCE x86) Debug"
+!IF  "$(CFG)" == "aa - Win32 (WCE x86) Debug"
 
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 1
 # PROP Output_Dir ".\IX86"
-# PROP Intermediate_Dir "Debug\a\IX86"
+# PROP Intermediate_Dir "Debug\aa\IX86"
 # PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
 # PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
 # PROP Ignore_Export_Lib 0
@@ -173,19 +173,19 @@ LINK32=link.exe
 RSC=rc.exe
 # ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\a\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\aa\IX86/"  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
-# ADD BSC32 /nologo /o".\a.bsc"
+# ADD BSC32 /nologo /o".\aa.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:".\IX86\ad.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\ad.pdb"  /dll /debug /machine:IX86 /out:".\IX86\ad.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:".\IX86\aad.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:".\IX86\aad.pdb"  /dll /debug /machine:IX86 /out:".\IX86\aad.dll"
 
-!ELSEIF  "$(CFG)" == "a - Win32 (WCE x86) Release"
+!ELSEIF  "$(CFG)" == "aa - Win32 (WCE x86) Release"
 
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 0
 # PROP Output_Dir ".\IX86"
-# PROP Intermediate_Dir "Release\a\IX86"
+# PROP Intermediate_Dir "Release\aa\IX86"
 # PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
 # PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
 # PROP Ignore_Export_Lib 0
@@ -196,23 +196,23 @@ CPP=cl.exe
 # ADD CPP /nologo /O2 /W3 /GR  /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
-# ADD BSC32 /nologo /o".\a.bsc"
+# ADD BSC32 /nologo /o".\aa.bsc"
 LINK32=link.exe
-# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:".\IX86\a.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:IX86 /out:".\IX86\a.dll"
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO $(CEx86Corelibc) /libpath:".\IX86" /nologo /base:"0x00010000"  /implib:".\IX86\aa.lib" /entry:"_DllMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib),OLDNAMES.lib" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /dll /machine:IX86 /out:".\IX86\aa.dll"
 
 !ENDIF
 
 
 # Begin Target
 
-# Name "a - Win32 (WCE ARM) Debug"
-# Name "a - Win32 (WCE ARM) Release"
-# Name "a - Win32 (WCE ARMV4) Debug"
-# Name "a - Win32 (WCE ARMV4) Release"
-# Name "a - Win32 (WCE emulator) Debug"
-# Name "a - Win32 (WCE emulator) Release"
-# Name "a - Win32 (WCE x86) Debug"
-# Name "a - Win32 (WCE x86) Release"
+# Name "aa - Win32 (WCE ARM) Debug"
+# Name "aa - Win32 (WCE ARM) Release"
+# Name "aa - Win32 (WCE ARMV4) Debug"
+# Name "aa - Win32 (WCE ARMV4) Release"
+# Name "aa - Win32 (WCE emulator) Debug"
+# Name "aa - Win32 (WCE emulator) Release"
+# Name "aa - Win32 (WCE x86) Debug"
+# Name "aa - Win32 (WCE x86) Release"
 # Begin Group "Source Files"
 
 # PROP Default_Filter "cpp;cxx;c"

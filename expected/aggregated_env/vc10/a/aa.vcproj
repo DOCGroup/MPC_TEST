@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
-	Name="a"
-	ProjectGUID="{3904749C-FECA-1BAD-0063-8A633CE03F00}"
-	RootNamespace="a"
+	Version="9.00"
+	Name="aa"
+	ProjectGUID="{390474FD-FECA-1BAD-0063-8A633CE03F00}"
+	RootNamespace="aa"
 	Keyword="Win32Proj"
 	SignManifests="true"
 	>
@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\a\I386"
+			IntermediateDirectory="Debug\aa\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 
@@ -75,13 +75,13 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\ad.dll"
+				OutputFile="$(OutDir)\aad.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\ad.lib"
+				ImportLibrary=".\aad.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -103,7 +103,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Release\a\I386"
+			IntermediateDirectory="Release\aa\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 
@@ -153,7 +153,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\a.dll"
+				OutputFile="$(OutDir)\aa.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="."
@@ -161,7 +161,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\a.lib"
+				ImportLibrary=".\aa.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -183,7 +183,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\a\AMD64"
+			IntermediateDirectory="Debug\aa\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 
@@ -237,13 +237,13 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/machine:AMD64"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\ad.dll"
+				OutputFile="$(OutDir)\aad.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\ad.lib"
+				ImportLibrary=".\aad.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -265,7 +265,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Release\a\AMD64"
+			IntermediateDirectory="Release\aa\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 
@@ -316,7 +316,7 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/machine:AMD64"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\a.dll"
+				OutputFile="$(OutDir)\aa.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="."
@@ -324,7 +324,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\a.lib"
+				ImportLibrary=".\aa.lib"
 				TargetMachine="17"
 			/>
 			<Tool

@@ -6,14 +6,14 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## D:\tao_builds\1.5a\ACE_wrappers/bin/mwc.pl -include config -type automake t/c/d/d.mwc
+## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake t/c/d/d.mwc
 
 
-## Makefile.a.am
+## Makefile.aa.am
 
-noinst_LTLIBRARIES = liba.la
+noinst_LTLIBRARIES = libaa.la
 
-liba_la_SOURCES = \
+libaa_la_SOURCES = \
   a.cpp
 
 ## Clean up template repositories, etc.

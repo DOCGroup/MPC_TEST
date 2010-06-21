@@ -1,3 +1,84 @@
+Mon Jun 21 16:07:32 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/aggregated_env/automake/a/Makefile.am:
+        * expected/aggregated_env/bcb2007/a/aa.cbproj:
+        * expected/aggregated_env/bcb2007/t/c/d/d.groupproj:
+        * expected/aggregated_env/bcb2009/a/aa.cbproj:
+        * expected/aggregated_env/bcb2009/t/c/d/d.groupproj:
+        * expected/aggregated_env/bds4/a/aa.bdsproj:
+        * expected/aggregated_env/bmake/Makefile.bmak:
+        * expected/aggregated_env/bmake/a/Makefile.aa.bmak:
+        * expected/aggregated_env/bmake/a/Makefile.bmak:
+        * expected/aggregated_env/bmake/t/Makefile.bmak:
+        * expected/aggregated_env/bmake/t/c/Makefile.bmak:
+        * expected/aggregated_env/bmake/t/c/d/Makefile.bmak:
+        * expected/aggregated_env/cc/a/aa.pjt:
+        * expected/aggregated_env/cc/t/c/d/d.code_composer:
+        * expected/aggregated_env/em3/a/aa.vcp:
+        * expected/aggregated_env/em3/t/c/d/d.vcw:
+        * expected/aggregated_env/ghs/a/aa.gpj:
+        * expected/aggregated_env/ghs/t/c/d/default.gpj:
+        * expected/aggregated_env/gnuace/a/GNUmakefile.aa:
+        * expected/aggregated_env/html/a/aa.html:
+        * expected/aggregated_env/make/Makefile:
+        * expected/aggregated_env/make/a/Makefile:
+        * expected/aggregated_env/make/a/Makefile.aa:
+        * expected/aggregated_env/make/t/Makefile:
+        * expected/aggregated_env/make/t/c/Makefile:
+        * expected/aggregated_env/make/t/c/d/Makefile:
+        * expected/aggregated_env/nmake/Makefile:
+        * expected/aggregated_env/nmake/a/Makefile:
+        * expected/aggregated_env/nmake/a/Makefile.aa.mak:
+        * expected/aggregated_env/nmake/t/Makefile:
+        * expected/aggregated_env/nmake/t/c/Makefile:
+        * expected/aggregated_env/nmake/t/c/d/Makefile:
+        * expected/aggregated_env/sle/a/aa.vpj:
+        * expected/aggregated_env/sle/t/c/d/d.vpw:
+        * expected/aggregated_env/vc10/a/aa.vcproj:
+        * expected/aggregated_env/vc6/a/aa.dsp:
+        * expected/aggregated_env/vc6/t/c/d/d.dsw:
+        * expected/aggregated_env/vc7/a/aa.vcproj:
+        * expected/aggregated_env/vc71/a/aa.vcproj:
+        * expected/aggregated_env/vc8/a/aa.vcproj:
+        * expected/aggregated_env/vc9/a/aa.vcproj:
+        * expected/aggregated_env/wb26/a/aa:
+        * expected/aggregated_env/wb26/a/aa/.project:
+        * expected/aggregated_env/wb26/a/aa/.wrmakefile:
+        * expected/aggregated_env/wb26/a/aa/.wrproject:
+        * expected/aggregated_env/wb26/t/c/d/org.eclipse.core.resources.prefs:
+        * expected/aggregated_env/wb26/t/c/d/wb26projects.lst:
+        * expected/aggregated_env/wix/a/aa.wxi:
+        * expected/aggregated_env/wix/t/c/d/d.wxi:
+        * tests/aggregated_env/a/a.mpc:
+
+          Renamed this project to avoid the problem with nmake and a single
+          character target in the workspace makefile.
+
+        * expected/aggregated_env/bcb2007/a/a.cbproj:
+        * expected/aggregated_env/bcb2009/a/a.cbproj:
+        * expected/aggregated_env/bds4/a/a.bdsproj:
+        * expected/aggregated_env/bmake/a/Makefile.a.bmak:
+        * expected/aggregated_env/em3/a/a.vcp:
+        * expected/aggregated_env/ghs/a/a.gpj:
+        * expected/aggregated_env/gnuace/a/GNUmakefile.a:
+        * expected/aggregated_env/html/a/a.html:
+        * expected/aggregated_env/make/a/Makefile.a:
+        * expected/aggregated_env/nmake/a/Makefile.a.mak:
+        * expected/aggregated_env/sle/a/a.vpj:
+        * expected/aggregated_env/vc10/a/a.vcproj:
+        * expected/aggregated_env/vc6/a/a.dsp:
+        * expected/aggregated_env/vc7/a/a.vcproj:
+        * expected/aggregated_env/vc71/a/a.vcproj:
+        * expected/aggregated_env/vc8/a/a.vcproj:
+        * expected/aggregated_env/vc9/a/a.vcproj:
+        * expected/aggregated_env/wb26/a/a:
+        * expected/aggregated_env/wb26/a/a/.project:
+        * expected/aggregated_env/wb26/a/a/.wrmakefile:
+        * expected/aggregated_env/wb26/a/a/.wrproject:
+        * expected/aggregated_env/wix/a/a.wxi:
+
+          Removed these files.
+
 Mon Jun 21 15:36:25 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/psuedo_replacement/automake/Makefile.am:

@@ -1,7 +1,7 @@
 #!gbuild
 #primaryTarget=ppc_integrity.tgt
 	[Shared Object]
-	-o a/liba.so
+	-o a/libaa.so
 	-Ospeed
 	-OI
 	--exceptions
