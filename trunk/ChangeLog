@@ -1,3 +1,51 @@
+Mon Jun 21 15:36:25 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/psuedo_replacement/automake/Makefile.am:
+        * expected/psuedo_replacement/bmake/Makefile.bmak:
+        * expected/psuedo_replacement/bmake/Makefile.zz.bmak:
+        * expected/psuedo_replacement/em3/psuedo_replacement.vcw:
+        * expected/psuedo_replacement/em3/zz.vcp:
+        * expected/psuedo_replacement/ghs/default.gpj:
+        * expected/psuedo_replacement/ghs/zz.gpj:
+        * expected/psuedo_replacement/gnuace/GNUmakefile.zz:
+        * expected/psuedo_replacement/html/zz.html:
+        * expected/psuedo_replacement/make/Makefile:
+        * expected/psuedo_replacement/make/Makefile.zz:
+        * expected/psuedo_replacement/nmake/Makefile:
+        * expected/psuedo_replacement/nmake/Makefile.zz.mak:
+        * expected/psuedo_replacement/sle/psuedo_replacement.vpw:
+        * expected/psuedo_replacement/sle/zz.vpj:
+        * expected/psuedo_replacement/vc6/psuedo_replacement.dsw:
+        * expected/psuedo_replacement/vc6/zz.dsp:
+        * expected/psuedo_replacement/vc7/zz.vcproj:
+        * expected/psuedo_replacement/vc71/zz.vcproj:
+        * expected/psuedo_replacement/vc8/zz.vcproj:
+        * tests/psuedo_replacement/zz.mpc:
+
+          Renamed the project to avoid a problem with nmake.  Apparently, a
+          target (in the workspace makefile) must be more than one character
+          long.
+
+        * tests/psuedo_replacement/foo.pl:
+
+          Fixed an issue with an input file supplied with a preceeding ./
+
+        * expected/psuedo_replacement/bmake/Makefile.z.bmak:
+        * expected/psuedo_replacement/em3/z.vcp:
+        * expected/psuedo_replacement/ghs/z.gpj:
+        * expected/psuedo_replacement/gnuace/GNUmakefile.z:
+        * expected/psuedo_replacement/html/z.html:
+        * expected/psuedo_replacement/make/Makefile.z:
+        * expected/psuedo_replacement/nmake/Makefile.z.mak:
+        * expected/psuedo_replacement/sle/z.vpj:
+        * expected/psuedo_replacement/vc6/z.dsp:
+        * expected/psuedo_replacement/vc7/z.vcproj:
+        * expected/psuedo_replacement/vc71/z.vcproj:
+        * expected/psuedo_replacement/vc8/z.vcproj:
+        * tests/psuedo_replacement/z.mpc:
+
+          Removed these files.
+
 Tue Jun 15 11:41:09 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/psuedo_replacement/*:

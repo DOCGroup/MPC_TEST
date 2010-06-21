@@ -5,6 +5,7 @@ use strict;
 my $in;
 my $other;
 foreach my $file (@ARGV) {
+  $file =~ s!^\./!!;
   if ($file =~ /\.adl$/) {
     $in = $file;
   }

@@ -9,7 +9,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-                OutputFile=".\z.dll">
+                OutputFile=".\zz.dll">
 		<Menu>
 			<Target
 				Name="Compile"
@@ -104,7 +104,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-                OutputFile=".\z.dll">
+                OutputFile=".\zz.dll">
 		<Menu>
 			<Target
 				Name="Compile"

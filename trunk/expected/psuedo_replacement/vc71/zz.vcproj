@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.00"
-	Name="z"
-	ProjectGUID="{8904749D-FECA-1BAD-0078-8A63E3E3C5BA}"
+	Version="7.10"
+	Name="zz"
+	ProjectGUID="{890474E7-FECA-1BAD-07D8-8A63E3E3C5BA}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -14,7 +14,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\z\I386"
+			IntermediateDirectory="Debug\zz\I386"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
@@ -33,7 +33,7 @@
 				TreatWChar_tAsBuiltInType="TRUE"
 				ForceConformanceInForLoopScope="TRUE"
 				RuntimeTypeInfo="TRUE"
-				ProgramDataBaseFileName="Debug\z\I386/"
+				ProgramDataBaseFileName="Debug\zz\I386/"
 				WarningLevel="3"
 				SuppressStartupBanner="TRUE"
 				Detect64BitPortabilityProblems="FALSE"
@@ -43,14 +43,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\zd.dll"
+				OutputFile="$(OutDir)\zzd.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="TRUE"
-				ProgramDatabaseFile="$(OutDir)\zd.pdb"
+				ProgramDatabaseFile="$(OutDir)\zzd.pdb"
 				SubSystem="1"
-				ImportLibrary=".\zd.lib"
+				ImportLibrary=".\zzd.lib"
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"
@@ -81,7 +81,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Release\z\I386"
+			IntermediateDirectory="Release\zz\I386"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
@@ -108,14 +108,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\z.dll"
+				OutputFile="$(OutDir)\zz.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="."
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\z.lib"
+				ImportLibrary=".\zz.lib"
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"

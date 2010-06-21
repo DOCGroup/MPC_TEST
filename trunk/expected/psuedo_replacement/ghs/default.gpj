@@ -7,7 +7,7 @@ primaryTarget=ppc_integrity.tgt
 	-language=cxx
 	--long_long
 	--new_style_casts
-z.gpj		[Shared Object]
+zz.gpj		[Shared Object]
 	-pic
 	-object_dir=./.shobj
 	-L.

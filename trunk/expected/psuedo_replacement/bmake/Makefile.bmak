@@ -15,13 +15,13 @@
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !endif
 
-all: z
+all: zz
 
 clean generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.z.bmak $(@)
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.zz.bmak $(@)
 
-z:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.z.bmak all
+zz:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.zz.bmak all
 
 project_name_list:
-	@echo z
+	@echo zz

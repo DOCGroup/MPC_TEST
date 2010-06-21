@@ -71,8 +71,8 @@ EXEFLAGS     = -Tpe -x -Gn
 WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
 CCFLAGS      = -q -tWR -tWD
 
-INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)z
-NAME         = z$(LIBMODIFIER)$(ULIBMODIFIER)
+INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)zz
+NAME         = zz$(LIBMODIFIER)$(ULIBMODIFIER)
 CPPDIR       = .
 RESDIR       = .
 

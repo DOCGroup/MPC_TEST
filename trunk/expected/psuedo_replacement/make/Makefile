@@ -12,14 +12,14 @@
 #----------------------------------------------------------------------------
 
 
-all: z
+all: zz
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	@$(MAKE) -f Makefile.z $(@)
+	@$(MAKE) -f Makefile.zz $(@)
 
-.PHONY: z
-z:
-	@$(MAKE) -f Makefile.z generated all
+.PHONY: zz
+zz:
+	@$(MAKE) -f Makefile.zz generated all
 
 project_name_list:
-	@echo z
+	@echo zz
