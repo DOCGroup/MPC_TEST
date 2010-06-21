@@ -20,15 +20,15 @@ CFG=Win32 Debug
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !ENDIF
 
-all: z
+all: zz
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	@echo Project: Makefile.z.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.z.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.zz.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.zz.mak CFG="$(CFG)" $(@)
 
-z:
-	@echo Project: Makefile.z.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.z.mak CFG="$(CFG)" all
+zz:
+	@echo Project: Makefile.zz.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.zz.mak CFG="$(CFG)" all
 
 project_name_list:
-	@echo z
+	@echo zz

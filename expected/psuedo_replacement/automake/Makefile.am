@@ -9,7 +9,7 @@
 ## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
 
 
-## Makefile.z.am
+## Makefile.zz.am
 
 BUILT_SOURCES = \
   Bar.cpp \
@@ -26,9 +26,9 @@ Bar-stamp: $(srcdir)/Bar.adl foo.pl
 	perl "foo.pl" BarC.h -Abdul $(srcdir)/Bar.adl
 	@touch "$@"
 
-noinst_LTLIBRARIES = libz.la
+noinst_LTLIBRARIES = libzz.la
 
-libz_la_SOURCES = \
+libzz_la_SOURCES = \
   Bar.cpp
 
 noinst_HEADERS = \

@@ -10,7 +10,7 @@ CFG=Win32 Debug
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
 !MESSAGE
-!MESSAGE NMAKE /f "Makefile.z.mak" CFG="Win32 Debug"
+!MESSAGE NMAKE /f "Makefile.zz.mak" CFG="Win32 Debug"
 !MESSAGE
 !MESSAGE Possible choices for configuration are:
 !MESSAGE
@@ -43,9 +43,9 @@ GENERATED_DIRTY = "Bar.cpp" "Bar.h"
 !IF  "$(CFG)" == "Win32 Debug"
 
 OUTDIR=.
-INTDIR=Debug\z\I386
+INTDIR=Debug\zz\I386
 
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\zd.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\zzd.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -54,21 +54,21 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.z.dep" "Bar.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.zz.dep" "Bar.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
-	-@del /f/q "$(OUTDIR)\zd.pdb"
-        -@del /f/q ".\zd.dll"
-        -@del /f/q "$(OUTDIR)\zd.lib"
-        -@del /f/q "$(OUTDIR)\zd.exp"
-        -@del /f/q "$(OUTDIR)\zd.ilk"
+	-@del /f/q "$(OUTDIR)\zzd.pdb"
+        -@del /f/q ".\zzd.dll"
+        -@del /f/q "$(OUTDIR)\zzd.lib"
+        -@del /f/q "$(OUTDIR)\zzd.exp"
+        -@del /f/q "$(OUTDIR)\zzd.ilk"
         -@del /f/q "Bar.cpp"
         -@del /f/q "Bar.h"
 
 "$(INTDIR)" :
     if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\z\$(NULL)" mkdir "Debug\z"
+    if not exist "Debug\zz\$(NULL)" mkdir "Debug\zz"
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
@@ -79,22 +79,22 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll /debug /pdb:".\zd.pdb" /machine:I386 /out:".\zd.dll" /implib:"$(OUTDIR)\zd.lib"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll /debug /pdb:".\zzd.pdb" /machine:I386 /out:".\zzd.dll" /implib:"$(OUTDIR)\zzd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\Bar.obj"
 
-".\zd.dll" : $(DEF_FILE) $(LINK32_OBJS)
+".\zzd.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\zd.dll.manifest" mt.exe -manifest ".\zd.dll.manifest" -outputresource:$@;2
+    if exist ".\zzd.dll.manifest" mt.exe -manifest ".\zzd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
 OUTDIR=.
-INTDIR=Release\z\I386
+INTDIR=Release\zz\I386
 
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\z.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\zz.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -103,20 +103,20 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.z.dep" "Bar.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.zz.dep" "Bar.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\z.dll"
-        -@del /f/q "$(OUTDIR)\z.lib"
-        -@del /f/q "$(OUTDIR)\z.exp"
-        -@del /f/q "$(OUTDIR)\z.ilk"
+        -@del /f/q ".\zz.dll"
+        -@del /f/q "$(OUTDIR)\zz.lib"
+        -@del /f/q "$(OUTDIR)\zz.exp"
+        -@del /f/q "$(OUTDIR)\zz.ilk"
         -@del /f/q "Bar.cpp"
         -@del /f/q "Bar.h"
 
 "$(INTDIR)" :
     if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\z\$(NULL)" mkdir "Release\z"
+    if not exist "Release\zz\$(NULL)" mkdir "Release\zz"
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
@@ -127,22 +127,22 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll  /machine:I386 /out:".\z.dll" /implib:"$(OUTDIR)\z.lib"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll  /machine:I386 /out:".\zz.dll" /implib:"$(OUTDIR)\zz.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\Bar.obj"
 
-".\z.dll" : $(DEF_FILE) $(LINK32_OBJS)
+".\zz.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\z.dll.manifest" mt.exe -manifest ".\z.dll.manifest" -outputresource:$@;2
+    if exist ".\zz.dll.manifest" mt.exe -manifest ".\zz.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
 OUTDIR=.
-INTDIR=Static_Debug\z\I386
+INTDIR=Static_Debug\zz\I386
 
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\zsd.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\zzsd.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -151,45 +151,45 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.z.dep" "Bar.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.zz.dep" "Bar.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\zsd.lib"
-        -@del /f/q "$(OUTDIR)\zsd.exp"
-        -@del /f/q "$(OUTDIR)\zsd.ilk"
-	-@del /f/q ".\zsd.pdb"
+        -@del /f/q "$(OUTDIR)\zzsd.lib"
+        -@del /f/q "$(OUTDIR)\zzsd.exp"
+        -@del /f/q "$(OUTDIR)\zzsd.ilk"
+	-@del /f/q ".\zzsd.pdb"
         -@del /f/q "Bar.cpp"
         -@del /f/q "Bar.h"
 
 "$(INTDIR)" :
     if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\z\$(NULL)" mkdir "Static_Debug\z"
+    if not exist "Static_Debug\zz\$(NULL)" mkdir "Static_Debug\zz"
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\zsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\zzsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:".\zsd.lib"
+LINK32_FLAGS=/nologo /machine:I386 /out:".\zzsd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\Bar.obj"
 
-"$(OUTDIR)\zsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\zzsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\zsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\zsd.lib.manifest" -outputresource:$@;2
+    if exist "$(OUTDIR)\zzsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\zzsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
 OUTDIR=.
-INTDIR=Static_Release\z\I386
+INTDIR=Static_Release\zz\I386
 
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\zs.lib"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\zzs.lib"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -198,19 +198,19 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.z.dep" "Bar.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.zz.dep" "Bar.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\zs.lib"
-        -@del /f/q "$(OUTDIR)\zs.exp"
-        -@del /f/q "$(OUTDIR)\zs.ilk"
+        -@del /f/q "$(OUTDIR)\zzs.lib"
+        -@del /f/q "$(OUTDIR)\zzs.exp"
+        -@del /f/q "$(OUTDIR)\zzs.ilk"
         -@del /f/q "Bar.cpp"
         -@del /f/q "Bar.h"
 
 "$(INTDIR)" :
     if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\z\$(NULL)" mkdir "Static_Release\z"
+    if not exist "Static_Release\zz\$(NULL)" mkdir "Static_Release\zz"
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
@@ -220,15 +220,15 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:".\zs.lib"
+LINK32_FLAGS=/nologo /machine:I386 /out:".\zzs.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\Bar.obj"
 
-"$(OUTDIR)\zs.lib" : $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\zzs.lib" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\zs.lib.manifest" mt.exe -manifest "$(OUTDIR)\zs.lib.manifest" -outputresource:$@;2
+    if exist "$(OUTDIR)\zzs.lib.manifest" mt.exe -manifest "$(OUTDIR)\zzs.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -269,8 +269,8 @@ CLEAN :
 <<
 
 !IF "$(NO_EXTERNAL_DEPS)" != "1"
-!IF EXISTS("Makefile.z.dep")
-!INCLUDE "Makefile.z.dep"
+!IF EXISTS("Makefile.zz.dep")
+!INCLUDE "Makefile.zz.dep"
 !ENDIF
 !ENDIF
 
@@ -298,10 +298,10 @@ GENERATED : "$(INTDIR)" "$(OUTDIR)" $(GENERATED_DIRTY)
 
 DEPENDCHECK :
 !IF "$(NO_EXTERNAL_DEPS)" != "1"
-!IF EXISTS("Makefile.z.dep")
-	@echo Using "Makefile.z.dep"
+!IF EXISTS("Makefile.zz.dep")
+	@echo Using "Makefile.zz.dep"
 !ELSE
-	@echo Warning: cannot find "Makefile.z.dep"
+	@echo Warning: cannot find "Makefile.zz.dep"
 !ENDIF
 !ENDIF
 

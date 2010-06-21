@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="z"
-	ProjectGUID="{8904749D-FECA-1BAD-0078-8A63E3E3C5BA}"
-	RootNamespace="z"
+	Name="zz"
+	ProjectGUID="{890474E7-FECA-1BAD-07D8-8A63E3E3C5BA}"
+	RootNamespace="zz"
 	Keyword="Win32Proj"
 	SignManifests="true"
 	>
@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\z\I386"
+			IntermediateDirectory="Debug\zz\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 
@@ -75,13 +75,13 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\zd.dll"
+				OutputFile="$(OutDir)\zzd.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\zd.lib"
+				ImportLibrary=".\zzd.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -103,7 +103,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Release\z\I386"
+			IntermediateDirectory="Release\zz\I386"
 			ConfigurationType="2"
 			CharacterSet="0"
 
@@ -153,7 +153,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\z.dll"
+				OutputFile="$(OutDir)\zz.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="."
@@ -161,7 +161,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\z.lib"
+				ImportLibrary=".\zz.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -183,7 +183,7 @@
 		<Configuration
 			Name="Debug|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\z\AMD64"
+			IntermediateDirectory="Debug\zz\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 
@@ -237,13 +237,13 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/machine:AMD64"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\zd.dll"
+				OutputFile="$(OutDir)\zzd.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary=".\zd.lib"
+				ImportLibrary=".\zzd.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -265,7 +265,7 @@
 		<Configuration
 			Name="Release|x64"
 			OutputDirectory="."
-			IntermediateDirectory="Release\z\AMD64"
+			IntermediateDirectory="Release\zz\AMD64"
 			ConfigurationType="2"
 			CharacterSet="0"
 
@@ -316,7 +316,7 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/machine:AMD64"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\z.dll"
+				OutputFile="$(OutDir)\zz.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="."
@@ -324,7 +324,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\z.lib"
+				ImportLibrary=".\zz.lib"
 				TargetMachine="17"
 			/>
 			<Tool

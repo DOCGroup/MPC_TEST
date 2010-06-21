@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 #       GNU Makefile
 #
-# @file GNUmakefile.z
+# @file GNUmakefile.zz
 #
 # $Id$
 #
@@ -10,16 +10,16 @@
 # this file will be lost the next time it is generated.
 #
 #----------------------------------------------------------------------------
-MAKEFILE         = GNUmakefile.z
-DEPENDENCY_FILE  = .depend.z
+MAKEFILE         = GNUmakefile.zz
+DEPENDENCY_FILE  = .depend.zz
 
 ## LIB may be set to empty later on in this file
-LIB_UNCHECKED    = libz.a
+LIB_UNCHECKED    = libzz.a
 LIB              = $(LIB_UNCHECKED)
-LIB_NAME         = libz
+LIB_NAME         = libzz
 
 ## SHLIB may be set to empty later on in this file
-SHLIB_UNCHECKED  = libz.$(SOEXT)
+SHLIB_UNCHECKED  = libzz.$(SOEXT)
 SHLIB            = $(SHLIB_UNCHECKED)
 
 FILES = \
@@ -53,7 +53,7 @@ ACELIB =
 # best to have a template directory per project.
 # The compiler/linker isn't too smart about instantiating templates...
 ifdef TEMPINCDIR
-TEMPINCDIR := $(TEMPINCDIR)/z
+TEMPINCDIR := $(TEMPINCDIR)/zz
 all: $(TEMPINCDIR)
 endif
 
@@ -91,7 +91,7 @@ endif
 #       Local targets
 #----------------------------------------------------------------------------
 lib_warning:
-	@echo z will not be built due to the following missing library:
+	@echo zz will not be built due to the following missing library:
 	@echo $(LIBCHECK)
 
 ## Some OS's have /bin/test others only have /usr/bin/test
