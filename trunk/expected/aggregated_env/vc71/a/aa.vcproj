@@ -2,8 +2,8 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="7.10"
-	Name="a"
-	ProjectGUID="{3904749C-FECA-1BAD-0063-8A633CE03F00}"
+	Name="aa"
+	ProjectGUID="{390474FD-FECA-1BAD-0063-8A633CE03F00}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -14,7 +14,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Debug\a\I386"
+			IntermediateDirectory="Debug\aa\I386"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
@@ -33,7 +33,7 @@
 				TreatWChar_tAsBuiltInType="TRUE"
 				ForceConformanceInForLoopScope="TRUE"
 				RuntimeTypeInfo="TRUE"
-				ProgramDataBaseFileName="Debug\a\I386/"
+				ProgramDataBaseFileName="Debug\aa\I386/"
 				WarningLevel="3"
 				SuppressStartupBanner="TRUE"
 				Detect64BitPortabilityProblems="FALSE"
@@ -43,14 +43,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\ad.dll"
+				OutputFile="$(OutDir)\aad.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="."
 				GenerateDebugInformation="TRUE"
-				ProgramDatabaseFile="$(OutDir)\ad.pdb"
+				ProgramDatabaseFile="$(OutDir)\aad.pdb"
 				SubSystem="1"
-				ImportLibrary=".\ad.lib"
+				ImportLibrary=".\aad.lib"
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"
@@ -81,7 +81,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="."
-			IntermediateDirectory="Release\a\I386"
+			IntermediateDirectory="Release\aa\I386"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
@@ -108,14 +108,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=""
-				OutputFile="$(OutDir)\a.dll"
+				OutputFile="$(OutDir)\aa.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="."
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\a.lib"
+				ImportLibrary=".\aa.lib"
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"

@@ -10,22 +10,22 @@
     <BorlandProject>
   <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
   </ProjectExtensions>
-  <Target Name="a">
-    <MSBuild Projects="a.cbproj" Targets="" />
+  <Target Name="aa">
+    <MSBuild Projects="aa.cbproj" Targets="" />
   </Target>
-  <Target Name="a:Make">
-    <MSBuild Projects="a.cbproj" Targets="Make" />
+  <Target Name="aa:Make">
+    <MSBuild Projects="aa.cbproj" Targets="Make" />
   </Target>
-  <Target Name="a:Clean">
-    <MSBuild Projects="a.cbproj" Targets="Clean" />
+  <Target Name="aa:Clean">
+    <MSBuild Projects="aa.cbproj" Targets="Clean" />
   </Target>
   <Target Name="Build">
-    <CallTarget Targets="a;" />
+    <CallTarget Targets="aa;" />
   </Target>
   <Target Name="Make">
-    <CallTarget Targets="a:Make;" />
+    <CallTarget Targets="aa:Make;" />
   </Target>
   <Target Name="Clean">
-    <CallTarget Targets="a:Clean;" />
+    <CallTarget Targets="aa:Clean;" />
   </Target>
 </Project>

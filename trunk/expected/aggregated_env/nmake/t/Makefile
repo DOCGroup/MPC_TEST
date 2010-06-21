@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# D:\tao_builds\1.5a\ACE_wrappers/bin/mwc.pl -include config -type nmake t/c/d/d.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake t/c/d/d.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -20,21 +20,21 @@ CFG=Win32 Debug
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !ENDIF
 
-all: a
+all: aa
 
 clean depend generated realclean $(CUSTOM_TARGETS):
 	@cd ../a
 	@echo Directory: ../a
-	@echo Project: Makefile.a.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.a.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.aa.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.aa.mak CFG="$(CFG)" $(@)
 	@cd $(MAKEDIR)
 
-a:
+aa:
 	@cd ../a
 	@echo Directory: ../a
-	@echo Project: Makefile.a.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.a.mak CFG="$(CFG)" all
+	@echo Project: Makefile.aa.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.aa.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
 project_name_list:
-	@echo a
+	@echo aa

@@ -6,11 +6,11 @@ Microsoft eMbedded Visual Tools Workspace File, Format Version 3.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# D:\tao_builds\1.5a\ACE_wrappers/bin/mwc.pl -include config -type em3 t/c/d/d.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type em3 t/c/d/d.mwc
 
 ###############################################################################
 
-Project: "a"=..\..\..\a\a.vcp - Package Owner=<4>
+Project: "aa"=..\..\..\a\aa.vcp - Package Owner=<4>
 
 Package=<5>
 {{{
