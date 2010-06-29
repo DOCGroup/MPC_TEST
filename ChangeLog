@@ -1,3 +1,32 @@
+Tue Jun 29 18:43:46 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/aggregated_env/wix/a/aa.wxi:
+        * expected/mixed_languages_refs/wix/n/n.wxi:
+        * expected/mixed_languages_refs/wix/o/o.wxi:
+        * expected/mixed_languages_refs/wix/r/r.wxi:
+        * expected/more_options/wix/another/another.wxi:
+        * expected/more_options/wix/c++/foo.wxi:
+
+          Updated to reflect James H. Hill's changes from Mon Jun 28 2010.
+
+        * expected/template/automake/src/Makefile.am:
+        * expected/template/bmake/src/Makefile.src.bmak:
+        * expected/template/em3/src/src.vcp:
+        * expected/template/ghs/src/src.gpj:
+        * expected/template/gnuace/src/GNUmakefile.src:
+        * expected/template/html/src/src.html:
+        * expected/template/make/src/Makefile.src:
+        * expected/template/nmake/src/Makefile.src.mak:
+        * expected/template/sle/src/src.vpj:
+        * expected/template/vc6/src/src.dsp:
+        * expected/template/vc7/src/src.vcproj:
+        * expected/template/vc71/src/src.vcproj:
+        * expected/template/vc8/src/src.vcproj:
+        * expected/template/wb26/src/src/.project:
+
+          Updated to account for the change to global.mpb from Mon Jun 28
+          20:16:54 UTC 2010.
+
 Mon Jun 21 16:07:32 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/aggregated_env/automake/a/Makefile.am:

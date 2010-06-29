@@ -54,6 +54,7 @@ FEATURES = \
   "tao_qtresource = 1" \
   "tao_tkresource = 1" \
   "tao_xtresource = 1" \
+  "threads = 1" \
   "tk = " \
   "uses_wchar = " \
   "vcl = " \
