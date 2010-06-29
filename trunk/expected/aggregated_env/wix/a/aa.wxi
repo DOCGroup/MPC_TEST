@@ -7,7 +7,8 @@
 
     <DirectoryRef Id="INSTALLDIR">
         <Component Id="aa.aa.dll" Guid="*">
-          <File Name="aa.dll"
+          <File Id="aa_aa_dll"
+                Name="aa.dll"
                 Source="./aa.dll"
                 DiskId="1" />
         </Component>
