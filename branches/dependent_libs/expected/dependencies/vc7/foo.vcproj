@@ -164,7 +164,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on bar.ar"
 						CommandLine="echo  &quot;bar.ar&quot; &gt; &quot;bar.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt"
+						AdditionalDependencies="nospace.txt;space 1.txt;lib\somelibd.dll;lib\some 2nd libd.dll;lib\some 3rd libd.dll;lib\some4thlibd.dll"
 						Outputs="bar.cr"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -174,7 +174,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on bar.ar"
 						CommandLine="echo  &quot;bar.ar&quot; &gt; &quot;bar.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt"
+						AdditionalDependencies="nospace.txt;space 1.txt;lib\somelib.dll;lib\some 2nd lib.dll;lib\some 3rd lib.dll;lib\some4thlib.dll"
 						Outputs="bar.cr"/>
 				</FileConfiguration>
 			</File>
@@ -187,7 +187,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on foo.ar"
 						CommandLine="echo  &quot;foo.ar&quot; &gt; &quot;foo.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt;space 2.txt;space 3.txt"
+						AdditionalDependencies="nospace.txt;space 1.txt;space 2.txt;space 3.txt;lib\somelibd.dll;lib\some 2nd libd.dll"
 						Outputs="foo.cr"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -197,7 +197,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on foo.ar"
 						CommandLine="echo  &quot;foo.ar&quot; &gt; &quot;foo.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt;space 2.txt;space 3.txt"
+						AdditionalDependencies="nospace.txt;space 1.txt;space 2.txt;space 3.txt;lib\somelib.dll;lib\some 2nd lib.dll"
 						Outputs="foo.cr"/>
 				</FileConfiguration>
 			</File>

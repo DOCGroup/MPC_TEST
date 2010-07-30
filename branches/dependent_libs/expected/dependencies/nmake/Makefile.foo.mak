@@ -284,7 +284,7 @@ SOURCE="bar.ar"
 
 InputPath=bar.ar
 
-"bar.cr" : $(SOURCE)  "nospace.txt" "space 1.txt"
+"bar.cr" : $(SOURCE)  "nospace.txt" "space 1.txt" "lib\somelib.dll" "lib\some 2nd lib.dll" "lib\some 3rd lib.dll" "lib\some4thlib.dll"
 	<<tempfile.bat
 	@echo off
 	echo  "$(InputPath)" > "bar.cr"
@@ -294,7 +294,7 @@ SOURCE="foo.ar"
 
 InputPath=foo.ar
 
-"foo.cr" : $(SOURCE)  "space 3.txt" "nospace.txt" "space 1.txt" "space 2.txt"
+"foo.cr" : $(SOURCE)  "space 3.txt" "nospace.txt" "space 1.txt" "space 2.txt" "lib\somelib.dll" "lib\some 2nd lib.dll"
 	<<tempfile.bat
 	@echo off
 	echo  "$(InputPath)" > "foo.cr"

@@ -111,7 +111,7 @@ bar.cr: bar.ar nospace.txt $(subst $(SPACE),\$(SPACE),space 1.txt)
 
 GENERATED_DIRTY += foo.cr
 OBJS_DEPEND_ON_GENERATED = 1
-foo.cr: foo.ar $(subst $(SPACE),\$(SPACE),space 3.txt) nospace.txt $(subst $(SPACE),\$(SPACE),space 1.txt) $(subst $(SPACE),\$(SPACE),space 2.txt)
+foo.cr: foo.ar $(subst $(SPACE),\$(SPACE),space 3.txt) nospace.txt $(subst $(SPACE),\$(SPACE),space 1.txt) $(subst $(SPACE),\$(SPACE),space 2.txt) lib/libsomelib.$(SOEXT) $(subst $(SPACE),\$(SPACE),lib/libsome 2nd lib.$(SOEXT)) $(subst $(SPACE),\$(SPACE),lib/libsome 3rd lib.$(SOEXT)) lib/libsome4thlib.$(SOEXT)
 	echo  foo.ar > $@
 
 ifneq ($(GENERATED_DIRTY),)
