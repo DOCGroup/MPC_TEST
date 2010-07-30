@@ -1,0 +1,17 @@
+project {
+
+//TODO: document the tricks/hacks in here, and the custom "specific" variables
+
+  Define_Custom(Java) {
+    automatic            = 1 
+    inputext             = .java
+    command              = <%quote%>$(JAVA_HOME)/bin/javac<%quote%>
+    commandflags         = -sourcepath .
+    generic_outputext    = .class
+    postcommand          = <%mkdir%> classes/<%output_dirname%> 2<%gt%> <%nul%> <%cmdsep%> <%cp%> <%output%> classes/<%output_dirname%> <%gt%> <%nul%>
+    keyword javacflags   = commandflags
+  }
+  prebuild += <%mkdir%> classes 2<%gt%> <%nul%> <%or%> <%cat%> <%nul%> <%gt%> <%nul%>
+  postbuild += <%if(jarname)%><%quote%>$(JAVA_HOME)/bin/jar<%quote%> -cf <%libout%>/<%jarname%>.jar -C classes .<%endif%>
+  postclean += <%rm%> classes<%if(jarname)%> <%libout%>/<%jarname%>.jar<%endif%>
+}

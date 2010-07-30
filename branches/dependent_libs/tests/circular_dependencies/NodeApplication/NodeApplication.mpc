@@ -1,0 +1,8 @@
+project(NodeApplication) {
+  exename = NodeApplication
+}
+
+project(RTNA_Configurator) {
+  sharedname =
+  staticname = CIAO_RTNA_Configurator
+}

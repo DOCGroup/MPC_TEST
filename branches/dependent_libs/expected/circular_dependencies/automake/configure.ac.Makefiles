@@ -1,0 +1,6 @@
+AC_CONFIG_FILES([ Makefile ])
+AC_CONFIG_FILES([ DomainApplicationManager/Makefile ])
+AC_CONFIG_FILES([ NodeApplication/Makefile ])
+AC_CONFIG_FILES([ NodeApplicationManager/Makefile ])
+AC_CONFIG_FILES([ NodeManager/Makefile ])
+AC_CONFIG_FILES([ TargetManager/Makefile ])

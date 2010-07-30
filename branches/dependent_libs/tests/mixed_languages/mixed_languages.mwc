@@ -1,0 +1,8 @@
+workspace {
+  base
+  basic
+  csharp {
+    cmdline += -language csharp
+    csharp
+  }
+}

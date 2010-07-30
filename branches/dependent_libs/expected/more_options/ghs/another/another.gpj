@@ -1,0 +1,9 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o another/libanother.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lanother
+zzz.cpp

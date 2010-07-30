@@ -1,0 +1,3 @@
+bmake:
+em3:
+gnuace: GNUmakefile swig_perl=1

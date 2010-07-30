@@ -1,0 +1,8 @@
+project: foo {
+  specific {
+    configurations = $(FOOBAG)
+  }
+  Source_Files {
+    $(TEST_ROOT)/c++/down/foo.cpp
+  }
+}

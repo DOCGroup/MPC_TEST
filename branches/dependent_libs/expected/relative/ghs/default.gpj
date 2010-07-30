@@ -1,0 +1,19 @@
+#!gbuild
+primaryTarget=ppc_integrity.tgt
+[Project]
+	--one_instantiation_per_object
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+build/build_exe_int.gpj		[INTEGRITY Application]
+	-object_dir=build/.obj
+	-Ibuild
+	-Lbuild
+build/build_lib.gpj		[Shared Object]
+	-pic
+	-object_dir=build/.shobj
+	-DUSING_PCH
+	-Ibuild
+	-Lbuild

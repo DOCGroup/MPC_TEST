@@ -1,0 +1,8 @@
+--- configure.ac	2010-01-20 14:32:56.000000000 -0600
++++ configure.ac	2010-01-20 14:28:41.000000000 -0600
+@@ -34,3 +34,5 @@
+ m4_include([configure.ac.Makefiles])
+ 
++AC_SUBST([another],[another])
++
+ AC_OUTPUT

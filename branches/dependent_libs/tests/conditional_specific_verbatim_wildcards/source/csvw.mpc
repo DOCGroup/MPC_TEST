@@ -1,0 +1,117 @@
+project(*A) {
+  dllout  = bin
+  libout  = lib
+
+  Source_Files {
+    *b*.c*
+    conditional(make) {
+      conditional/unix.cpp
+    }
+  }
+
+  specific(!make)  {
+    Debug::macros   += WE_SHOULD_NOT_SEE_THIS
+    Release::macros += OR_THIS_EITHER
+  }
+  specific(make) {
+    macros += ONLY_MAKE ONLY_UNIX
+  }
+  macros -= WE_SHOULD_NOT_SEE_THIS OR_THIS_EITHER
+
+  verbatim(automake, local) {
+    other:
+    "	echo This is a custom target"
+  }
+  verbatim(bmake, local) {
+    other:
+    "	echo This is a custom target"
+  }
+  verbatim(gnuace, local) {
+    other:
+    "	echo This is a custom target"
+  }
+  verbatim(make, local) {
+    other:
+    "	echo This is a custom target"
+  }
+  verbatim(nmake, local) {
+    other:
+    "	echo This is a custom target"
+  }
+}
+
+project(*B) {
+  exename = bdog
+  dllout  = bin
+  libout  = lib
+
+  Source_Files {
+    ! *b*.c*
+    conditional(bmake, cbx, em3, nmake, vc6, vc7, vc71, vc8) {
+      conditional/windows.cpp
+    } else {
+      conditional/unix.cpp
+    }
+  }
+
+  specific(bmake, cbx, em3, nmake, vc6, vc7, vc71, vc8) {
+    macros += ONLY_WINDOWS
+  } else {
+    macros += ONLY_MAKE ONLY_UNIX
+  }
+}
+
+project(*C) {
+  exename = cdog
+  dllout  = bin
+  libout  = lib
+
+  // This is here due to a parallel bug in Visual Studio 2005.  Since B and
+  // C share source files, it gets confused about the fact that the object
+  // files go into different intermediate directories.
+  after += *B
+
+  Source_Files {
+    !  bleer.cpp
+    conditional(!bmake, !cbx, !em3, !nmake, !vc6, !vc7, !vc71, !vc8) {
+      conditional/unix.cpp
+    }
+  }
+
+  specific(!bmake, !cbx, !em3, !nmake, !vc6, !vc7, !vc71, !vc8) {
+    macros += ONLY_MAKE ONLY_UNIX
+  }
+}
+
+project(*D) {
+  exename = ddog
+  dllout  = bin
+  libout  = lib
+
+  // The same goes for this one too.
+  after += *C
+
+  Source_Files {
+    !*.cpp
+    conditional(!html) {
+      conditional/every.cpp
+    }
+  }
+
+  specific {
+    macros += FAIL_IF_NOT_DEFINED
+  }
+}
+
+project(*E) {
+  dllout = bin
+  libout = lib
+
+  specific(bmake) {
+    debug_macros += E_NO_INLINE=1
+  }
+
+  Source_Files {
+    !closed/[Ss]*ing.cpp
+  }
+}

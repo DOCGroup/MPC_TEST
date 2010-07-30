@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+source/two/two.gpj		[Program]
+source/two/two_int.int

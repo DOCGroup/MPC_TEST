@@ -1,0 +1,17 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o ./libzz.so
+	-Ospeed
+	-OI
+	--exceptions
+	-L.
+Bar.adl		[Text]
+Bar.cpp
+	:dependsRelative=foo.pl
+	:dependsRelative=Bar.adl
+	:preexecShell='cd . && perl "foo.pl" BarC.h -Abdul Bar.adl'
+	:extraOutputFile=Bar.cpp
+	:extraOutputFile=Bar.h
+Bar.cpp
+Bar.h

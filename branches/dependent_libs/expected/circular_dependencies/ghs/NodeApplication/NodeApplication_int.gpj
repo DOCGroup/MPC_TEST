@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+NodeApplication/NodeApplication.gpj		[Program]
+NodeApplication/NodeApplication_int.int

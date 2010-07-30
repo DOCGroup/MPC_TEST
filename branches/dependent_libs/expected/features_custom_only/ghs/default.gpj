@@ -1,0 +1,21 @@
+#!gbuild
+primaryTarget=ppc_integrity.tgt
+[Project]
+	--one_instantiation_per_object
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+source/fco.gpj		[Subproject]
+	-object_dir=source/.obj
+	-Lsource
+source/fco_use.gpj		[Shared Object]
+	-pic
+	-object_dir=source/.shobj
+	-Lsource
+	-DTHAT_THERE_MACRO
+source/other.gpj		[Shared Object]
+	-pic
+	-object_dir=source/.shobj
+	-Lsource

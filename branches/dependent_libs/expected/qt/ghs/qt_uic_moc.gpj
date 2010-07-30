@@ -1,0 +1,35 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o ./main
+	-Ospeed
+	-OI
+	--exceptions
+	-I$(QTDIR)\include
+	-L.
+	-L$(QTDIR)\lib
+	-L$(QTDIR)\lib64
+	-lqt-mt$(QT_VERSION)
+	-DQT_THREAD_SUPPORT
+demo.ui		[Text]
+demo.h
+	:dependsRelative=demo.ui
+	:preexecShell='cd . && $(QTDIR)\\bin\\uic  demo.ui -o demo.h'
+	:extraOutputFile=demo.h
+demo.ui		[Text]
+demo.cpp
+	:dependsRelative=demo.h
+	:dependsRelative=demo.ui
+	:preexecShell='cd . && $(QTDIR)\\bin\\uic -impl "demo.h" demo.ui -o demo.cpp'
+	:extraOutputFile=demo.cpp
+demo.h		[Text]
+demo_moc.cpp
+	:dependsRelative=demo.h
+	:preexecShell='cd . && $(QTDIR)\\bin\\moc  demo.h -o demo_moc.cpp'
+	:extraOutputFile=demo_moc.cpp
+demo.cpp
+demo_moc.cpp
+main.cpp
+demo.h
+additional_options.txt		[Documentation]
+build_entry.txt		[Documentation]

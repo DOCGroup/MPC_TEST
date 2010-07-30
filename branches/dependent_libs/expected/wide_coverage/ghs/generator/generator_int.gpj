@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+generator/generator.gpj		[Program]
+generator/generator_int.int

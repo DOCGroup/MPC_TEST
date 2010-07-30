@@ -1,0 +1,5 @@
+source       : qwee.cxx
+header       : moop.hxx
+inline       : weer.inl
+documentation: bar.txt
+template     : qwee_T.C

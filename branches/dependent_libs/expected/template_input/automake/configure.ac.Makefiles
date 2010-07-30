@@ -1,0 +1,5 @@
+AC_CONFIG_FILES([ Makefile ])
+AC_CONFIG_FILES([ dll/Makefile ])
+AC_CONFIG_FILES([ dll_exe/Makefile ])
+AC_CONFIG_FILES([ lib/Makefile ])
+AC_CONFIG_FILES([ lib_exe/Makefile ])

@@ -1,0 +1,125 @@
+# Microsoft eMbedded Visual Tools Project File - Name="dll_exe" - Package Owner=<4>
+# Microsoft eMbedded Visual Tools Generated Build File, Format Version 6.02
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (Win32) " 
+# TARGTYPE "Win32 (x64) " 
+
+CFG=dll_exe - Win32 (Win32) 
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE run the tool that generated this project file and specify the
+!MESSAGE nmake output type.  You can then use the following command:
+!MESSAGE
+!MESSAGE NMAKE.
+!MESSAGE
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE
+!MESSAGE NMAKE CFG="dll_exe - Win32 (Win32) "
+!MESSAGE
+!MESSAGE Possible choices for configuration are:
+!MESSAGE
+!MESSAGE "dll_exe - Win32 (Win32) Debug" (based on "Win32 (Win32) ")
+!MESSAGE "dll_exe - Win32 (Win32) Release" (based on "Win32 (Win32) ")
+!MESSAGE "dll_exe - Win32 (x64) Debug" (based on "Win32 (x64) ")
+!MESSAGE "dll_exe - Win32 (x64) Release" (based on "Win32 (x64) ")
+!MESSAGE
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""
+# PROP Scc_LocalPath ""
+# PROP ATL_Project 2
+
+!IF  "$(CFG)" == "dll_exe - Win32 (Win32) Debug"
+
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir ".\"
+# PROP Intermediate_Dir "Debug\dll_exe\"
+# PROP CPU_ID "{}"
+# PROP Platform_ID "{}"
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d WIN32 /d _CONSOLE /d _CRT_NONSTDC_NO_WARNINGS /r
+CPP=cl.exe
+# ADD CPP /nologo /Ob0   /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D WIN32 /D _CONSOLE /D _CRT_NONSTDC_NO_WARNINGS  /FD /Gy /c
+BSC32=bscmake.exe
+# ADD BSC32 /nologo 
+LINK32=link.exe
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine: /out:".\\foo.exe"
+
+!ELSEIF  "$(CFG)" == "dll_exe - Win32 (Win32) Release"
+
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "Release\"
+# PROP Intermediate_Dir "Release\dll_exe\"
+# PROP CPU_ID "{}"
+# PROP Platform_ID "{}"
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d WIN32 /d _CONSOLE /d _CRT_NONSTDC_NO_WARNINGS /r
+CPP=cl.exe
+# ADD CPP /nologo /O2   /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D WIN32 /D _CONSOLE /D _CRT_NONSTDC_NO_WARNINGS  /FD /Gy /c
+BSC32=bscmake.exe
+# ADD BSC32 /nologo 
+LINK32=link.exe
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /INCREMENTAL:NO /libpath:".\" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine: /out:"Release\\foo.exe"
+
+!ENDIF
+!IF  "$(CFG)" == "dll_exe - Win32 (x64) Debug"
+
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir ".\"
+# PROP Intermediate_Dir "Debug\dll_exe\"
+# PROP CPU_ID "{}"
+# PROP Platform_ID "{}"
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d WIN32 /d _CONSOLE /d _CRT_NONSTDC_NO_WARNINGS /d _AMD64_ /r
+CPP=cl.exe
+# ADD CPP /nologo /Ob0   /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D WIN32 /D _CONSOLE /D _CRT_NONSTDC_NO_WARNINGS /D _AMD64_  /FD /Gy /c
+BSC32=bscmake.exe
+# ADD BSC32 /nologo 
+LINK32=link.exe
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /machine:AMD64 /INCREMENTAL:NO /libpath:".\" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine: /out:".\\foo.exe"
+
+!ELSEIF  "$(CFG)" == "dll_exe - Win32 (x64) Release"
+
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "Release\"
+# PROP Intermediate_Dir "Release\dll_exe\"
+# PROP CPU_ID "{}"
+# PROP Platform_ID "{}"
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d WIN32 /d _CONSOLE /d _CRT_NONSTDC_NO_WARNINGS /d _AMD64_ /r
+CPP=cl.exe
+# ADD CPP /nologo /O2   /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D WIN32 /D _CONSOLE /D _CRT_NONSTDC_NO_WARNINGS /D _AMD64_  /FD /Gy /c
+BSC32=bscmake.exe
+# ADD BSC32 /nologo 
+LINK32=link.exe
+# ADD LINK32 winsock.lib commctrl.lib coredll.lib iphlpapi.lib /machine:AMD64 /INCREMENTAL:NO /libpath:".\" /nologo /base:"0x00010000"  /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /pdb:none  /machine: /out:"Release\\foo.exe"
+
+!ENDIF
+
+
+# Begin Target
+
+# Name "dll_exe - Win32 (Win32) Debug"
+# Name "dll_exe - Win32 (Win32) Release"
+# Name "dll_exe - Win32 (x64) Debug"
+# Name "dll_exe - Win32 (x64) Release"
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;cxx;c"
+# Begin Source File
+
+SOURCE="foo.cpp"
+# End Source File
+# End Group
+# End Target
+# End Project

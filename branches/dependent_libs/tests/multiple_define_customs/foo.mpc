@@ -1,0 +1,28 @@
+project {
+  Define_Custom(TypeSupport) {
+    automatic_in     = 0
+    automatic_out    = 1
+    command          = perl foo.pl
+    inputext         = .idl
+    source_outputext = TypeSupportImpl.cpp
+    header_outputext = TypeSupportImpl.h
+  }
+
+  Define_Custom(DDSIDL) {
+    automatic_in      = 0
+    automatic_out     = 1
+    command           = perl zzz.pl
+    inputext          = .idl
+    source_outputext  = D.cpp
+    header_outputext  = D.h
+    generic_outputext = D.idl
+  }
+
+  TypeSupport_Files {
+    Foo.idl
+  }
+
+  DDSIDL_Files {
+    Foo.idl
+  }
+}

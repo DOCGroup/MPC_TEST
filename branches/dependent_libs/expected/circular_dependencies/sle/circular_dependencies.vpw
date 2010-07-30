@@ -1,0 +1,17 @@
+<!DOCTYPE Workspace SYSTEM "http://www.slickedit.com/dtd/vse/8.1/vpw.dtd">
+<Workspace Version="8.1" VendorName="SlickEdit">
+	<Projects>
+		<Project File="NodeManager/NodeManager_stub.vpj"/>
+		<Project File="DomainApplicationManager/DomainApplicationManager.vpj"/>
+		<Project File="NodeApplication/NodeApplication.vpj"/>
+		<Project File="NodeApplication/RTNA_Configurator.vpj"/>
+		<Project File="NodeApplicationManager/NodeApplicationManager.vpj"/>
+		<Project File="NodeManager/Monitor_Monitorlib.vpj"/>
+		<Project File="TargetManager/CIAO_TargetManager_stub.vpj"/>
+		<Project File="NodeManager/NodeManager.vpj"/>
+		<Project File="NodeManager/lib.vpj"/>
+		<Project File="TargetManager/CIAO_TargetManager_svnt.vpj"/>
+		<Project File="TargetManager/CIAO_TargetManager_exec.vpj"/>
+		<Project File="TargetManager/TMClient.vpj"/>
+	</Projects>
+</Workspace>

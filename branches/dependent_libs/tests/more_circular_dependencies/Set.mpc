@@ -1,0 +1,10 @@
+project {
+  after        += ROOT Factory
+  dynamicflags += SET_BUILD_DLL                            
+  staticflags  += SET_AS_STATIC_LIBS
+  Source_Files {
+    set.cpp
+  }
+  Documentation_Files {
+  }
+}

@@ -1,0 +1,14 @@
+// -*- MPC -*-
+// $Id$
+
+project {
+  Define_Custom(cppgen) {
+    dependent        = $(TEST_ROOT)/bin/cppgen.pl
+    command          = perl $(TEST_ROOT)/bin/cppgen.pl
+    output_option    = -o
+    inputext         = .r
+    pch_postrule     = 1
+    source_outputext = .cpp
+    header_outputext = .h
+  }
+}

@@ -1,0 +1,1133 @@
+# @file Makefile.simple.am
+#
+# $Id$
+
+BUILT_SOURCES += \
+  SomeSortOfTypedefHelper.class
+
+CLEANFILES += \
+  SomeSortOfTypedefHelper.class
+
+SomeSortOfTypedefHelper.class: $(srcdir)/SomeSortOfTypedefHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/SomeSortOfTypedefHelper.java
+	mkdir -p classes/. 2> /dev/null ; cp -f SomeSortOfTypedefHelper.class classes/. > /dev/null
+
+BUILT_SOURCES += \
+  simple/ArrayBounds.class
+
+CLEANFILES += \
+  simple/ArrayBounds.class
+
+simple/ArrayBounds.class: $(srcdir)/simple/ArrayBounds.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/ArrayBounds.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/ArrayBounds.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/EnumArrayHelper.class
+
+CLEANFILES += \
+  simple/EnumArrayHelper.class
+
+simple/EnumArrayHelper.class: $(srcdir)/simple/EnumArrayHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/EnumArrayHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumArrayHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/EnumArrayHolder.class
+
+CLEANFILES += \
+  simple/EnumArrayHolder.class
+
+simple/EnumArrayHolder.class: $(srcdir)/simple/EnumArrayHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/EnumArrayHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumArrayHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/EnumSeqHelper.class
+
+CLEANFILES += \
+  simple/EnumSeqHelper.class
+
+simple/EnumSeqHelper.class: $(srcdir)/simple/EnumSeqHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/EnumSeqHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumSeqHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/EnumSeqHolder.class
+
+CLEANFILES += \
+  simple/EnumSeqHolder.class
+
+simple/EnumSeqHolder.class: $(srcdir)/simple/EnumSeqHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/EnumSeqHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumSeqHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/Local2.class
+
+CLEANFILES += \
+  simple/Local2.class
+
+simple/Local2.class: $(srcdir)/simple/Local2.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/Local2.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/Local2Helper.class
+
+CLEANFILES += \
+  simple/Local2Helper.class
+
+simple/Local2Helper.class: $(srcdir)/simple/Local2Helper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/Local2Helper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2Helper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/Local2Holder.class
+
+CLEANFILES += \
+  simple/Local2Holder.class
+
+simple/Local2Holder.class: $(srcdir)/simple/Local2Holder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/Local2Holder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2Holder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/Local2Operations.class
+
+CLEANFILES += \
+  simple/Local2Operations.class
+
+simple/Local2Operations.class: $(srcdir)/simple/Local2Operations.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/Local2Operations.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2Operations.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/Local2SeqHelper.class
+
+CLEANFILES += \
+  simple/Local2SeqHelper.class
+
+simple/Local2SeqHelper.class: $(srcdir)/simple/Local2SeqHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/Local2SeqHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2SeqHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/Local2SeqHolder.class
+
+CLEANFILES += \
+  simple/Local2SeqHolder.class
+
+simple/Local2SeqHolder.class: $(srcdir)/simple/Local2SeqHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/Local2SeqHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2SeqHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/Local3.class
+
+CLEANFILES += \
+  simple/Local3.class
+
+simple/Local3.class: $(srcdir)/simple/Local3.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/Local3.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/Local3Helper.class
+
+CLEANFILES += \
+  simple/Local3Helper.class
+
+simple/Local3Helper.class: $(srcdir)/simple/Local3Helper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/Local3Helper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3Helper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/Local3Holder.class
+
+CLEANFILES += \
+  simple/Local3Holder.class
+
+simple/Local3Holder.class: $(srcdir)/simple/Local3Holder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/Local3Holder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3Holder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/Local3Operations.class
+
+CLEANFILES += \
+  simple/Local3Operations.class
+
+simple/Local3Operations.class: $(srcdir)/simple/Local3Operations.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/Local3Operations.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3Operations.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/LongSeqSeqHelper.class
+
+CLEANFILES += \
+  simple/LongSeqSeqHelper.class
+
+simple/LongSeqSeqHelper.class: $(srcdir)/simple/LongSeqSeqHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/LongSeqSeqHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/LongSeqSeqHolder.class
+
+CLEANFILES += \
+  simple/LongSeqSeqHolder.class
+
+simple/LongSeqSeqHolder.class: $(srcdir)/simple/LongSeqSeqHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/LongSeqSeqHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/LongSeqSeqSeqHelper.class
+
+CLEANFILES += \
+  simple/LongSeqSeqSeqHelper.class
+
+simple/LongSeqSeqSeqHelper.class: $(srcdir)/simple/LongSeqSeqSeqHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/LongSeqSeqSeqHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqSeqHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/LongSeqSeqSeqHolder.class
+
+CLEANFILES += \
+  simple/LongSeqSeqSeqHolder.class
+
+simple/LongSeqSeqSeqHolder.class: $(srcdir)/simple/LongSeqSeqSeqHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/LongSeqSeqSeqHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqSeqHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/SeqOfTypedefedLongHelper.class
+
+CLEANFILES += \
+  simple/SeqOfTypedefedLongHelper.class
+
+simple/SeqOfTypedefedLongHelper.class: $(srcdir)/simple/SeqOfTypedefedLongHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/SeqOfTypedefedLongHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/SeqOfTypedefedLongHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/SeqOfTypedefedLongHolder.class
+
+CLEANFILES += \
+  simple/SeqOfTypedefedLongHolder.class
+
+simple/SeqOfTypedefedLongHolder.class: $(srcdir)/simple/SeqOfTypedefedLongHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/SeqOfTypedefedLongHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/SeqOfTypedefedLongHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/StringSeqHelper.class
+
+CLEANFILES += \
+  simple/StringSeqHelper.class
+
+simple/StringSeqHelper.class: $(srcdir)/simple/StringSeqHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/StringSeqHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/StringSeqHolder.class
+
+CLEANFILES += \
+  simple/StringSeqHolder.class
+
+simple/StringSeqHolder.class: $(srcdir)/simple/StringSeqHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/StringSeqHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/StringSeqSeqHelper.class
+
+CLEANFILES += \
+  simple/StringSeqSeqHelper.class
+
+simple/StringSeqSeqHelper.class: $(srcdir)/simple/StringSeqSeqHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/StringSeqSeqHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/StringSeqSeqHolder.class
+
+CLEANFILES += \
+  simple/StringSeqSeqHolder.class
+
+simple/StringSeqSeqHolder.class: $(srcdir)/simple/StringSeqSeqHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/StringSeqSeqHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/StringSeqSeqSeqHelper.class
+
+CLEANFILES += \
+  simple/StringSeqSeqSeqHelper.class
+
+simple/StringSeqSeqSeqHelper.class: $(srcdir)/simple/StringSeqSeqSeqHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/StringSeqSeqSeqHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqSeqHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/StringSeqSeqSeqHolder.class
+
+CLEANFILES += \
+  simple/StringSeqSeqSeqHolder.class
+
+simple/StringSeqSeqSeqHolder.class: $(srcdir)/simple/StringSeqSeqSeqHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/StringSeqSeqSeqHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqSeqHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/StructWithObjref.class
+
+CLEANFILES += \
+  simple/StructWithObjref.class
+
+simple/StructWithObjref.class: $(srcdir)/simple/StructWithObjref.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/StructWithObjref.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StructWithObjref.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/StructWithObjrefHelper.class
+
+CLEANFILES += \
+  simple/StructWithObjrefHelper.class
+
+simple/StructWithObjrefHelper.class: $(srcdir)/simple/StructWithObjrefHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/StructWithObjrefHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StructWithObjrefHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/StructWithObjrefHolder.class
+
+CLEANFILES += \
+  simple/StructWithObjrefHolder.class
+
+simple/StructWithObjrefHolder.class: $(srcdir)/simple/StructWithObjrefHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/StructWithObjrefHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StructWithObjrefHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TIMESTAMP_INVALID_NSEC.class
+
+CLEANFILES += \
+  simple/TIMESTAMP_INVALID_NSEC.class
+
+simple/TIMESTAMP_INVALID_NSEC.class: $(srcdir)/simple/TIMESTAMP_INVALID_NSEC.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TIMESTAMP_INVALID_NSEC.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TIMESTAMP_INVALID_NSEC.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestArrayTypedef2Helper.class
+
+CLEANFILES += \
+  simple/TestArrayTypedef2Helper.class
+
+simple/TestArrayTypedef2Helper.class: $(srcdir)/simple/TestArrayTypedef2Helper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestArrayTypedef2Helper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestArrayTypedef2Helper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestArrayTypedefHelper.class
+
+CLEANFILES += \
+  simple/TestArrayTypedefHelper.class
+
+simple/TestArrayTypedefHelper.class: $(srcdir)/simple/TestArrayTypedefHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestArrayTypedefHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestArrayTypedefHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestArrayTypedefHolder.class
+
+CLEANFILES += \
+  simple/TestArrayTypedefHolder.class
+
+simple/TestArrayTypedefHolder.class: $(srcdir)/simple/TestArrayTypedefHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestArrayTypedefHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestArrayTypedefHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestConstBool.class
+
+CLEANFILES += \
+  simple/TestConstBool.class
+
+simple/TestConstBool.class: $(srcdir)/simple/TestConstBool.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestConstBool.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstBool.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestConstDouble.class
+
+CLEANFILES += \
+  simple/TestConstDouble.class
+
+simple/TestConstDouble.class: $(srcdir)/simple/TestConstDouble.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestConstDouble.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstDouble.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestConstFloat.class
+
+CLEANFILES += \
+  simple/TestConstFloat.class
+
+simple/TestConstFloat.class: $(srcdir)/simple/TestConstFloat.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestConstFloat.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstFloat.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestConstLong.class
+
+CLEANFILES += \
+  simple/TestConstLong.class
+
+simple/TestConstLong.class: $(srcdir)/simple/TestConstLong.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestConstLong.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstLong.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestConstString.class
+
+CLEANFILES += \
+  simple/TestConstString.class
+
+simple/TestConstString.class: $(srcdir)/simple/TestConstString.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestConstString.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstString.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestConstTypedef.class
+
+CLEANFILES += \
+  simple/TestConstTypedef.class
+
+simple/TestConstTypedef.class: $(srcdir)/simple/TestConstTypedef.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestConstTypedef.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstTypedef.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestEnum.class
+
+CLEANFILES += \
+  simple/TestEnum.class
+
+simple/TestEnum.class: $(srcdir)/simple/TestEnum.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestEnum.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestEnum.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestEnumHelper.class
+
+CLEANFILES += \
+  simple/TestEnumHelper.class
+
+simple/TestEnumHelper.class: $(srcdir)/simple/TestEnumHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestEnumHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestEnumHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestEnumHolder.class
+
+CLEANFILES += \
+  simple/TestEnumHolder.class
+
+simple/TestEnumHolder.class: $(srcdir)/simple/TestEnumHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestEnumHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestEnumHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterf.class
+
+CLEANFILES += \
+  simple/TestInterf.class
+
+simple/TestInterf.class: $(srcdir)/simple/TestInterf.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterf.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterf2.class
+
+CLEANFILES += \
+  simple/TestInterf2.class
+
+simple/TestInterf2.class: $(srcdir)/simple/TestInterf2.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterf2.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterf2Helper.class
+
+CLEANFILES += \
+  simple/TestInterf2Helper.class
+
+simple/TestInterf2Helper.class: $(srcdir)/simple/TestInterf2Helper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterf2Helper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2Helper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterf2Holder.class
+
+CLEANFILES += \
+  simple/TestInterf2Holder.class
+
+simple/TestInterf2Holder.class: $(srcdir)/simple/TestInterf2Holder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterf2Holder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2Holder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterf2Operations.class
+
+CLEANFILES += \
+  simple/TestInterf2Operations.class
+
+simple/TestInterf2Operations.class: $(srcdir)/simple/TestInterf2Operations.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterf2Operations.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2Operations.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterf3.class
+
+CLEANFILES += \
+  simple/TestInterf3.class
+
+simple/TestInterf3.class: $(srcdir)/simple/TestInterf3.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterf3.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterf3Helper.class
+
+CLEANFILES += \
+  simple/TestInterf3Helper.class
+
+simple/TestInterf3Helper.class: $(srcdir)/simple/TestInterf3Helper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterf3Helper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3Helper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterf3Holder.class
+
+CLEANFILES += \
+  simple/TestInterf3Holder.class
+
+simple/TestInterf3Holder.class: $(srcdir)/simple/TestInterf3Holder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterf3Holder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3Holder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterf3Operations.class
+
+CLEANFILES += \
+  simple/TestInterf3Operations.class
+
+simple/TestInterf3Operations.class: $(srcdir)/simple/TestInterf3Operations.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterf3Operations.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3Operations.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterfHelper.class
+
+CLEANFILES += \
+  simple/TestInterfHelper.class
+
+simple/TestInterfHelper.class: $(srcdir)/simple/TestInterfHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterfHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterfHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterfHolder.class
+
+CLEANFILES += \
+  simple/TestInterfHolder.class
+
+simple/TestInterfHolder.class: $(srcdir)/simple/TestInterfHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterfHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterfHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestInterfOperations.class
+
+CLEANFILES += \
+  simple/TestInterfOperations.class
+
+simple/TestInterfOperations.class: $(srcdir)/simple/TestInterfOperations.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestInterfOperations.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterfOperations.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestLI.class
+
+CLEANFILES += \
+  simple/TestLI.class
+
+simple/TestLI.class: $(srcdir)/simple/TestLI.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestLI.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLI.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestLIHelper.class
+
+CLEANFILES += \
+  simple/TestLIHelper.class
+
+simple/TestLIHelper.class: $(srcdir)/simple/TestLIHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestLIHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLIHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestLIHolder.class
+
+CLEANFILES += \
+  simple/TestLIHolder.class
+
+simple/TestLIHolder.class: $(srcdir)/simple/TestLIHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestLIHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLIHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestLIOperations.class
+
+CLEANFILES += \
+  simple/TestLIOperations.class
+
+simple/TestLIOperations.class: $(srcdir)/simple/TestLIOperations.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestLIOperations.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLIOperations.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestNestedStruct.class
+
+CLEANFILES += \
+  simple/TestNestedStruct.class
+
+simple/TestNestedStruct.class: $(srcdir)/simple/TestNestedStruct.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestNestedStruct.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestNestedStruct.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestNestedStructHelper.class
+
+CLEANFILES += \
+  simple/TestNestedStructHelper.class
+
+simple/TestNestedStructHelper.class: $(srcdir)/simple/TestNestedStructHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestNestedStructHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestNestedStructHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestNestedStructHolder.class
+
+CLEANFILES += \
+  simple/TestNestedStructHolder.class
+
+simple/TestNestedStructHolder.class: $(srcdir)/simple/TestNestedStructHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestNestedStructHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestNestedStructHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestSeqTypedefHelper.class
+
+CLEANFILES += \
+  simple/TestSeqTypedefHelper.class
+
+simple/TestSeqTypedefHelper.class: $(srcdir)/simple/TestSeqTypedefHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestSeqTypedefHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestSeqTypedefHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestSeqTypedefHolder.class
+
+CLEANFILES += \
+  simple/TestSeqTypedefHolder.class
+
+simple/TestSeqTypedefHolder.class: $(srcdir)/simple/TestSeqTypedefHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestSeqTypedefHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestSeqTypedefHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStringArrayHelper.class
+
+CLEANFILES += \
+  simple/TestStringArrayHelper.class
+
+simple/TestStringArrayHelper.class: $(srcdir)/simple/TestStringArrayHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStringArrayHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStringArrayHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStringArrayHolder.class
+
+CLEANFILES += \
+  simple/TestStringArrayHolder.class
+
+simple/TestStringArrayHolder.class: $(srcdir)/simple/TestStringArrayHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStringArrayHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStringArrayHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStruct.class
+
+CLEANFILES += \
+  simple/TestStruct.class
+
+simple/TestStruct.class: $(srcdir)/simple/TestStruct.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStruct.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStruct.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStructArrayHelper.class
+
+CLEANFILES += \
+  simple/TestStructArrayHelper.class
+
+simple/TestStructArrayHelper.class: $(srcdir)/simple/TestStructArrayHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStructArrayHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructArrayHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStructArrayHolder.class
+
+CLEANFILES += \
+  simple/TestStructArrayHolder.class
+
+simple/TestStructArrayHolder.class: $(srcdir)/simple/TestStructArrayHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStructArrayHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructArrayHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStructHelper.class
+
+CLEANFILES += \
+  simple/TestStructHelper.class
+
+simple/TestStructHelper.class: $(srcdir)/simple/TestStructHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStructHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStructHolder.class
+
+CLEANFILES += \
+  simple/TestStructHolder.class
+
+simple/TestStructHolder.class: $(srcdir)/simple/TestStructHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStructHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStructSequenceHelper.class
+
+CLEANFILES += \
+  simple/TestStructSequenceHelper.class
+
+simple/TestStructSequenceHelper.class: $(srcdir)/simple/TestStructSequenceHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStructSequenceHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructSequenceHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStructSequenceHolder.class
+
+CLEANFILES += \
+  simple/TestStructSequenceHolder.class
+
+simple/TestStructSequenceHolder.class: $(srcdir)/simple/TestStructSequenceHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStructSequenceHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructSequenceHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStructWithEnum.class
+
+CLEANFILES += \
+  simple/TestStructWithEnum.class
+
+simple/TestStructWithEnum.class: $(srcdir)/simple/TestStructWithEnum.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStructWithEnum.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructWithEnum.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStructWithEnumHelper.class
+
+CLEANFILES += \
+  simple/TestStructWithEnumHelper.class
+
+simple/TestStructWithEnumHelper.class: $(srcdir)/simple/TestStructWithEnumHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStructWithEnumHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructWithEnumHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestStructWithEnumHolder.class
+
+CLEANFILES += \
+  simple/TestStructWithEnumHolder.class
+
+simple/TestStructWithEnumHolder.class: $(srcdir)/simple/TestStructWithEnumHolder.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestStructWithEnumHolder.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructWithEnumHolder.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/TestTypedefHelper.class
+
+CLEANFILES += \
+  simple/TestTypedefHelper.class
+
+simple/TestTypedefHelper.class: $(srcdir)/simple/TestTypedefHelper.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/TestTypedefHelper.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestTypedefHelper.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/_Local2LocalBase.class
+
+CLEANFILES += \
+  simple/_Local2LocalBase.class
+
+simple/_Local2LocalBase.class: $(srcdir)/simple/_Local2LocalBase.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/_Local2LocalBase.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local2LocalBase.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/_Local2TAOPeer.class
+
+CLEANFILES += \
+  simple/_Local2TAOPeer.class
+
+simple/_Local2TAOPeer.class: $(srcdir)/simple/_Local2TAOPeer.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/_Local2TAOPeer.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local2TAOPeer.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/_Local3LocalBase.class
+
+CLEANFILES += \
+  simple/_Local3LocalBase.class
+
+simple/_Local3LocalBase.class: $(srcdir)/simple/_Local3LocalBase.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/_Local3LocalBase.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local3LocalBase.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/_Local3TAOPeer.class
+
+CLEANFILES += \
+  simple/_Local3TAOPeer.class
+
+simple/_Local3TAOPeer.class: $(srcdir)/simple/_Local3TAOPeer.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/_Local3TAOPeer.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local3TAOPeer.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/_TestInterf2Stub.class
+
+CLEANFILES += \
+  simple/_TestInterf2Stub.class
+
+simple/_TestInterf2Stub.class: $(srcdir)/simple/_TestInterf2Stub.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/_TestInterf2Stub.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestInterf2Stub.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/_TestInterf3Stub.class
+
+CLEANFILES += \
+  simple/_TestInterf3Stub.class
+
+simple/_TestInterf3Stub.class: $(srcdir)/simple/_TestInterf3Stub.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/_TestInterf3Stub.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestInterf3Stub.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/_TestInterfStub.class
+
+CLEANFILES += \
+  simple/_TestInterfStub.class
+
+simple/_TestInterfStub.class: $(srcdir)/simple/_TestInterfStub.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/_TestInterfStub.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestInterfStub.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/_TestLILocalBase.class
+
+CLEANFILES += \
+  simple/_TestLILocalBase.class
+
+simple/_TestLILocalBase.class: $(srcdir)/simple/_TestLILocalBase.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/_TestLILocalBase.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestLILocalBase.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  simple/_TestLITAOPeer.class
+
+CLEANFILES += \
+  simple/_TestLITAOPeer.class
+
+simple/_TestLITAOPeer.class: $(srcdir)/simple/_TestLITAOPeer.java
+	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar $(srcdir)/simple/_TestLITAOPeer.java
+	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestLITAOPeer.class classes/simple > /dev/null
+
+BUILT_SOURCES += \
+  SomeSortOfTypedefHelper.java \
+  otherJC.cpp \
+  otherJC.h \
+  otherJS.cpp \
+  otherJS.h
+
+CLEANFILES += \
+  other-stamp \
+  SomeSortOfTypedefHelper.java \
+  otherJC.cpp \
+  otherJC.h \
+  otherJS.cpp \
+  otherJS.h
+
+SomeSortOfTypedefHelper.java otherJC.cpp otherJC.h otherJS.cpp otherJS.h: other-stamp
+
+other-stamp: $(srcdir)/other.idl simpleJC.h $(IDL2JNI_ROOT)/bin/idl2jni SomeSortOfTypedefHelper.java
+	$(IDL2JNI_ROOT)/bin/idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(srcdir)/other.idl
+	echo Input: other
+	@touch "$@"
+
+BUILT_SOURCES += \
+  otherTypeSupportJC.cpp \
+  otherTypeSupportJC.h \
+  otherTypeSupportJS.cpp \
+  otherTypeSupportJS.h
+
+CLEANFILES += \
+  otherTypeSupport-stamp \
+  otherTypeSupportJC.cpp \
+  otherTypeSupportJC.h \
+  otherTypeSupportJS.cpp \
+  otherTypeSupportJS.h
+
+otherTypeSupportJC.cpp otherTypeSupportJC.h otherTypeSupportJS.cpp otherTypeSupportJS.h: otherTypeSupport-stamp
+
+otherTypeSupport-stamp: $(srcdir)/otherTypeSupport.idl $(IDL2JNI_ROOT)/bin/idl2jni SomeSortOfTypedefHelper.java
+	$(IDL2JNI_ROOT)/bin/idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(srcdir)/otherTypeSupport.idl
+	echo Input: otherTypeSupport
+	@touch "$@"
+
+BUILT_SOURCES += \
+  simple/ArrayBounds.java \
+  simple/EnumArrayHelper.java \
+  simple/EnumArrayHolder.java \
+  simple/EnumSeqHelper.java \
+  simple/EnumSeqHolder.java \
+  simple/Local2.java \
+  simple/Local2Helper.java \
+  simple/Local2Holder.java \
+  simple/Local2Operations.java \
+  simple/Local2SeqHelper.java \
+  simple/Local2SeqHolder.java \
+  simple/Local3.java \
+  simple/Local3Helper.java \
+  simple/Local3Holder.java \
+  simple/Local3Operations.java \
+  simple/LongSeqSeqHelper.java \
+  simple/LongSeqSeqHolder.java \
+  simple/LongSeqSeqSeqHelper.java \
+  simple/LongSeqSeqSeqHolder.java \
+  simple/SeqOfTypedefedLongHelper.java \
+  simple/SeqOfTypedefedLongHolder.java \
+  simple/StringSeqHelper.java \
+  simple/StringSeqHolder.java \
+  simple/StringSeqSeqHelper.java \
+  simple/StringSeqSeqHolder.java \
+  simple/StringSeqSeqSeqHelper.java \
+  simple/StringSeqSeqSeqHolder.java \
+  simple/StructWithObjref.java \
+  simple/StructWithObjrefHelper.java \
+  simple/StructWithObjrefHolder.java \
+  simple/TIMESTAMP_INVALID_NSEC.java \
+  simple/TestArrayTypedef2Helper.java \
+  simple/TestArrayTypedefHelper.java \
+  simple/TestArrayTypedefHolder.java \
+  simple/TestConstBool.java \
+  simple/TestConstDouble.java \
+  simple/TestConstFloat.java \
+  simple/TestConstLong.java \
+  simple/TestConstString.java \
+  simple/TestConstTypedef.java \
+  simple/TestEnum.java \
+  simple/TestEnumHelper.java \
+  simple/TestEnumHolder.java \
+  simple/TestInterf.java \
+  simple/TestInterf2.java \
+  simple/TestInterf2Helper.java \
+  simple/TestInterf2Holder.java \
+  simple/TestInterf2Operations.java \
+  simple/TestInterf3.java \
+  simple/TestInterf3Helper.java \
+  simple/TestInterf3Holder.java \
+  simple/TestInterf3Operations.java \
+  simple/TestInterfHelper.java \
+  simple/TestInterfHolder.java \
+  simple/TestInterfOperations.java \
+  simple/TestLI.java \
+  simple/TestLIHelper.java \
+  simple/TestLIHolder.java \
+  simple/TestLIOperations.java \
+  simple/TestNestedStruct.java \
+  simple/TestNestedStructHelper.java \
+  simple/TestNestedStructHolder.java \
+  simple/TestSeqTypedefHelper.java \
+  simple/TestSeqTypedefHolder.java \
+  simple/TestStringArrayHelper.java \
+  simple/TestStringArrayHolder.java \
+  simple/TestStruct.java \
+  simple/TestStructArrayHelper.java \
+  simple/TestStructArrayHolder.java \
+  simple/TestStructHelper.java \
+  simple/TestStructHolder.java \
+  simple/TestStructSequenceHelper.java \
+  simple/TestStructSequenceHolder.java \
+  simple/TestStructWithEnum.java \
+  simple/TestStructWithEnumHelper.java \
+  simple/TestStructWithEnumHolder.java \
+  simple/TestTypedefHelper.java \
+  simple/_Local2LocalBase.java \
+  simple/_Local2TAOPeer.java \
+  simple/_Local3LocalBase.java \
+  simple/_Local3TAOPeer.java \
+  simple/_TestInterf2Stub.java \
+  simple/_TestInterf3Stub.java \
+  simple/_TestInterfStub.java \
+  simple/_TestLILocalBase.java \
+  simple/_TestLITAOPeer.java \
+  simpleJC.cpp \
+  simpleJC.h \
+  simpleJS.h
+
+CLEANFILES += \
+  simple-stamp \
+  simple/ArrayBounds.java \
+  simple/EnumArrayHelper.java \
+  simple/EnumArrayHolder.java \
+  simple/EnumSeqHelper.java \
+  simple/EnumSeqHolder.java \
+  simple/Local2.java \
+  simple/Local2Helper.java \
+  simple/Local2Holder.java \
+  simple/Local2Operations.java \
+  simple/Local2SeqHelper.java \
+  simple/Local2SeqHolder.java \
+  simple/Local3.java \
+  simple/Local3Helper.java \
+  simple/Local3Holder.java \
+  simple/Local3Operations.java \
+  simple/LongSeqSeqHelper.java \
+  simple/LongSeqSeqHolder.java \
+  simple/LongSeqSeqSeqHelper.java \
+  simple/LongSeqSeqSeqHolder.java \
+  simple/SeqOfTypedefedLongHelper.java \
+  simple/SeqOfTypedefedLongHolder.java \
+  simple/StringSeqHelper.java \
+  simple/StringSeqHolder.java \
+  simple/StringSeqSeqHelper.java \
+  simple/StringSeqSeqHolder.java \
+  simple/StringSeqSeqSeqHelper.java \
+  simple/StringSeqSeqSeqHolder.java \
+  simple/StructWithObjref.java \
+  simple/StructWithObjrefHelper.java \
+  simple/StructWithObjrefHolder.java \
+  simple/TIMESTAMP_INVALID_NSEC.java \
+  simple/TestArrayTypedef2Helper.java \
+  simple/TestArrayTypedefHelper.java \
+  simple/TestArrayTypedefHolder.java \
+  simple/TestConstBool.java \
+  simple/TestConstDouble.java \
+  simple/TestConstFloat.java \
+  simple/TestConstLong.java \
+  simple/TestConstString.java \
+  simple/TestConstTypedef.java \
+  simple/TestEnum.java \
+  simple/TestEnumHelper.java \
+  simple/TestEnumHolder.java \
+  simple/TestInterf.java \
+  simple/TestInterf2.java \
+  simple/TestInterf2Helper.java \
+  simple/TestInterf2Holder.java \
+  simple/TestInterf2Operations.java \
+  simple/TestInterf3.java \
+  simple/TestInterf3Helper.java \
+  simple/TestInterf3Holder.java \
+  simple/TestInterf3Operations.java \
+  simple/TestInterfHelper.java \
+  simple/TestInterfHolder.java \
+  simple/TestInterfOperations.java \
+  simple/TestLI.java \
+  simple/TestLIHelper.java \
+  simple/TestLIHolder.java \
+  simple/TestLIOperations.java \
+  simple/TestNestedStruct.java \
+  simple/TestNestedStructHelper.java \
+  simple/TestNestedStructHolder.java \
+  simple/TestSeqTypedefHelper.java \
+  simple/TestSeqTypedefHolder.java \
+  simple/TestStringArrayHelper.java \
+  simple/TestStringArrayHolder.java \
+  simple/TestStruct.java \
+  simple/TestStructArrayHelper.java \
+  simple/TestStructArrayHolder.java \
+  simple/TestStructHelper.java \
+  simple/TestStructHolder.java \
+  simple/TestStructSequenceHelper.java \
+  simple/TestStructSequenceHolder.java \
+  simple/TestStructWithEnum.java \
+  simple/TestStructWithEnumHelper.java \
+  simple/TestStructWithEnumHolder.java \
+  simple/TestTypedefHelper.java \
+  simple/_Local2LocalBase.java \
+  simple/_Local2TAOPeer.java \
+  simple/_Local3LocalBase.java \
+  simple/_Local3TAOPeer.java \
+  simple/_TestInterf2Stub.java \
+  simple/_TestInterf3Stub.java \
+  simple/_TestInterfStub.java \
+  simple/_TestLILocalBase.java \
+  simple/_TestLITAOPeer.java \
+  simpleJC.cpp \
+  simpleJC.h \
+  simpleJS.h
+
+simple/ArrayBounds.java simple/EnumArrayHelper.java simple/EnumArrayHolder.java simple/EnumSeqHelper.java simple/EnumSeqHolder.java simple/Local2.java simple/Local2Helper.java simple/Local2Holder.java simple/Local2Operations.java simple/Local2SeqHelper.java simple/Local2SeqHolder.java simple/Local3.java simple/Local3Helper.java simple/Local3Holder.java simple/Local3Operations.java simple/LongSeqSeqHelper.java simple/LongSeqSeqHolder.java simple/LongSeqSeqSeqHelper.java simple/LongSeqSeqSeqHolder.java simple/SeqOfTypedefedLongHelper.java simple/SeqOfTypedefedLongHolder.java simple/StringSeqHelper.java simple/StringSeqHolder.java simple/StringSeqSeqHelper.java simple/StringSeqSeqHolder.java simple/StringSeqSeqSeqHelper.java simple/StringSeqSeqSeqHolder.java simple/StructWithObjref.java simple/StructWithObjrefHelper.java simple/StructWithObjrefHolder.java simple/TIMESTAMP_INVALID_NSEC.java simple/TestArrayTypedef2Helper.java simple/TestArrayTypedefHelper.java simple/TestArrayTypedefHolder.java simple/TestConstBool.java simple/TestConstDouble.java simple/TestConstFloat.java simple/TestConstLong.java simple/TestConstString.java simple/TestConstTypedef.java simple/TestEnum.java simple/TestEnumHelper.java simple/TestEnumHolder.java simple/TestInterf.java simple/TestInterf2.java simple/TestInterf2Helper.java simple/TestInterf2Holder.java simple/TestInterf2Operations.java simple/TestInterf3.java simple/TestInterf3Helper.java simple/TestInterf3Holder.java simple/TestInterf3Operations.java simple/TestInterfHelper.java simple/TestInterfHolder.java simple/TestInterfOperations.java simple/TestLI.java simple/TestLIHelper.java simple/TestLIHolder.java simple/TestLIOperations.java simple/TestNestedStruct.java simple/TestNestedStructHelper.java simple/TestNestedStructHolder.java simple/TestSeqTypedefHelper.java simple/TestSeqTypedefHolder.java simple/TestStringArrayHelper.java simple/TestStringArrayHolder.java simple/TestStruct.java simple/TestStructArrayHelper.java simple/TestStructArrayHolder.java simple/TestStructHelper.java simple/TestStructHolder.java simple/TestStructSequenceHelper.java simple/TestStructSequenceHolder.java simple/TestStructWithEnum.java simple/TestStructWithEnumHelper.java simple/TestStructWithEnumHolder.java simple/TestTypedefHelper.java simple/_Local2LocalBase.java simple/_Local2TAOPeer.java simple/_Local3LocalBase.java simple/_Local3TAOPeer.java simple/_TestInterf2Stub.java simple/_TestInterf3Stub.java simple/_TestInterfStub.java simple/_TestLILocalBase.java simple/_TestLITAOPeer.java simpleJC.cpp simpleJC.h simpleJS.h: simple-stamp
+
+simple-stamp: $(srcdir)/simple.idl $(IDL2JNI_ROOT)/bin/idl2jni SomeSortOfTypedefHelper.java
+	$(IDL2JNI_ROOT)/bin/idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 $(srcdir)/simple.idl
+	echo Input: simple
+	@touch "$@"
+
+noinst_LTLIBRARIES += libweird$$name.la
+
+libweird__name_la_CPPFLAGS = \
+  -Isomething
+
+libweird__name_la_SOURCES = \
+  otherJC.cpp \
+  otherJS.cpp \
+  otherTypeSupportJC.cpp \
+  otherTypeSupportJS.cpp \
+  simpleJC.cpp \
+
+libweird__name_la_LDFLAGS = \
+ -L$(IDL2JNI_ROOT)/lib
+
+noinst_HEADERS += \
+  otherJC.h \
+  otherJS.h \
+  otherTypeSupportJC.h \
+  otherTypeSupportJS.h \
+  simpleJC.h \
+  simpleJS.h
+
+all: __postbuild__
+
+__postbuild__:
+	@"$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .

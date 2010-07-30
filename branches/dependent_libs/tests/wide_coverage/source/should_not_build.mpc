@@ -1,0 +1,8 @@
+project {
+  avoids += feature_should_default_to_true
+
+  Source_Files {
+    this.cpp
+    that.cpp
+  }
+}

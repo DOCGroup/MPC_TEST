@@ -1,0 +1,31 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{1946f85e-487f-46b6-8e41-159cd446db35}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="aa">
+    <MSBuild Projects="aa.cbproj" Targets="" />
+  </Target>
+  <Target Name="aa:Make">
+    <MSBuild Projects="aa.cbproj" Targets="Make" />
+  </Target>
+  <Target Name="aa:Clean">
+    <MSBuild Projects="aa.cbproj" Targets="Clean" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="aa;" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="aa:Make;" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="aa:Clean;" />
+  </Target>
+</Project>

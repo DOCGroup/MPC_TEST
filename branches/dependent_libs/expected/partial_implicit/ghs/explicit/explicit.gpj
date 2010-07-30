@@ -1,0 +1,33 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o explicit/libexplicit.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Iexplicit
+	-Lexplicit
+crap.r		[Text]
+down\\crap.cpp
+	:dependsRelative=..\\bin\\cppgen.pl
+	:dependsRelative=crap.r
+	:preexecShell='cd explicit && mkdir down || type nul'
+	:preexecShell='cd explicit && perl ..\\bin\\cppgen.pl  crap.r -o down\\crap.cpp'
+down\\crap.h
+	:dependsRelative=..\\bin\\cppgen.pl
+	:dependsRelative=crap.r
+	:preexecShell='cd explicit && mkdir down || type nul'
+	:preexecShell='cd explicit && perl ..\\bin\\cppgen.pl  crap.r -o down\\crap.h'
+down\\crap.inl
+	:dependsRelative=..\\bin\\cppgen.pl
+	:dependsRelative=crap.r
+	:preexecShell='cd explicit && mkdir down || type nul'
+	:preexecShell='cd explicit && perl ..\\bin\\cppgen.pl  crap.r -o down\\crap.inl'
+	:extraOutputFile=down\\crap.cpp
+	:extraOutputFile=down\\crap.h
+	:extraOutputFile=down\\crap.inl
+down\crap.cpp
+foo.cpp
+down\crap.h
+foo.h
+down\crap.inl

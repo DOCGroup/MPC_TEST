@@ -1,0 +1,10 @@
+#!gbuild
+primaryTarget=
+[Project]
+	--one_instantiation_per_object
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+src/src.gpj

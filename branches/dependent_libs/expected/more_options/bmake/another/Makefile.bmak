@@ -1,0 +1,14 @@
+!ifndef CUSTOM_TARGETS
+CUSTOM_TARGETS=_EMPTY_TARGET_
+!endif
+
+all: another
+
+clean generated realclean $(CUSTOM_TARGETS):
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.another.bmak $(@)
+
+another:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.another.bmak all
+
+project_name_list:
+	@echo another

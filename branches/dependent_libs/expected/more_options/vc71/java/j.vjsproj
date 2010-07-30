@@ -1,0 +1,71 @@
+<VisualStudioProject>
+    <VISUALJSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{90D474F2-FECA-1BAD-0068-8A63DA69EE12}"
+    >
+        <Build>
+            <Settings
+                AssemblyKeyContainerName = ""
+                AssemblyName = "simple"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Exe"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = ""
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+                ReferencePath = "."
+            >
+                <Config
+                   Name = "Debug"
+                   AllowUnsafeBlocks = "false"
+                   BaseAddress = "285212672"
+                   CheckForOverflowUnderflow = "false"
+                   ConfigurationOverrideFile = ""
+                   DefineConstants = "DESIGN;DEBUG;TRACE"
+                   DebugSymbols = "true"
+                   NoWarn = ""
+                   Optimize = "false"
+                   OutputPath = ".\Debug\"
+                   RegisterForComInterop = "false"
+                   TreatWarningsAsErrors = "false"
+                   WarningLevel = "4"
+                   AdditionalOptions = ""
+                />
+                <Config
+                   Name = "Release"
+                   AllowUnsafeBlocks = "false"
+                   BaseAddress = "285212672"
+                   CheckForOverflowUnderflow = "false"
+                   ConfigurationOverrideFile = ""
+                   DefineConstants = "TRACE"
+                   DebugSymbols = "false"
+                   NoWarn = ""
+                   Optimize = "true"
+                   OutputPath = ".\Release\"
+                   RegisterForComInterop = "false"
+                   TreatWarningsAsErrors = "false"
+                   WarningLevel = "4"
+                   AdditionalOptions = ""
+                />
+            </Settings>
+            <References>
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                        <File
+                                RelPath = "simple.java"
+                                SubType = "Code"
+                                BuildAction = "Compile"
+                        />
+            </Include>
+        </Files>
+    </VISUALJSHARP>
+</VisualStudioProject>

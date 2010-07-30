@@ -1,0 +1,11 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o ./libfoo.so
+	-Ospeed
+	-OI
+	--exceptions
+	-L.
+foo.cpp
+additional_options.txt		[Documentation]
+build_entry.txt		[Documentation]

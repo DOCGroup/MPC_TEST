@@ -1,0 +1,1 @@
+-type html -relative_file config/relative -gfeature_file config/features

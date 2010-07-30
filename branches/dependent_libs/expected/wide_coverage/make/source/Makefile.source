@@ -1,0 +1,97 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CC            = gcc
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -I"." -I"/this/path" -I"Z:\that\path" -I"Here" -I"There" -DMACRO_TEST=\"a_string_with_no_spaces\"
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"." -L"../lib"
+CCC           = $(CXX)
+MAKEFILE      = Makefile.source
+DEPENDENCIES  = .depend.$(MAKEFILE)
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)main_test$(EXESUFFIX)$(EXEEXT)
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+EXEEXT        = 
+LIBPREFIX     = lib
+EXESUFFIX     = 
+GENFLAGS      = -O
+LDLIBS        = -l"source_lib$(LIBSUFFIX)" -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
+OBJS          = .obj/exe/main$(OBJEXT) .obj/exe/use_more_names/use_more_names$(OBJEXT) .obj/exe/use_names/use_names$(OBJEXT)
+SRC           = exe/main.cpp exe/use_more_names/use_more_names.cpp exe/use_names/use_names.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = 
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(BIN) __postbuild__
+
+$(BIN): $(OBJS)
+	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
+	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
+
+SPACE           = $(should_be_unset) $(should_be_unset)
+GENERATED_DIRTY = Foolish/foolish.txt
+
+Foolish/foolish.txt: Foolish/foolish.simple
+	echo Generated from Foolish/foolish.simple > "$@"
+
+.PRECIOUS: $(GENERATED_DIRTY)
+$(OBJS): $(GENERATED_DIRTY)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+.obj/exe/main$(OBJEXT): exe/main.cpp
+	@$(TESTDIRSTART) ".obj/exe" $(TESTDIREND) $(MKDIR) ".obj/exe"
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/main.cpp
+
+
+.obj/exe/use_more_names/use_more_names$(OBJEXT): exe/use_more_names/use_more_names.cpp
+	@$(TESTDIRSTART) ".obj/exe/use_more_names" $(TESTDIREND) $(MKDIR) ".obj/exe/use_more_names"
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/use_more_names/use_more_names.cpp
+
+
+.obj/exe/use_names/use_names$(OBJEXT): exe/use_names/use_names.cpp
+	@$(TESTDIRSTART) ".obj/exe/use_names" $(TESTDIREND) $(MKDIR) ".obj/exe/use_names"
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/use_names/use_names.cpp
+
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(BIN)
+	-$(RM) $(GENERATED_DIRTY)
+	-$(RM) .obj/
+
+__postbuild__:
+	@echo main_test has been built
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@$(TOUCH) $(DEPENDENCIES)
+
+depend:
+	-VDIR=.obj/ $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

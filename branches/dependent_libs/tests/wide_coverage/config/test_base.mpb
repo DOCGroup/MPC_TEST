@@ -1,0 +1,9 @@
+project {
+  libout = $(TEST_ROOT)/lib
+  recursive_libpaths += $(TEST_ROOT)/lib
+  version = 1.0.0
+
+  specific(make) {
+    obj_dir = .obj/
+  }
+}

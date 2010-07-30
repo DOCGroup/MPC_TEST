@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="aa">
+    <ComponentGroup Id="ComponentGroup.aa">
+      <ComponentRef Id="aa.aa.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="aa.aa.dll" Guid="*">
+          <File Id="aa_aa_dll"
+                Name="aa.dll"
+                Source="./aa.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

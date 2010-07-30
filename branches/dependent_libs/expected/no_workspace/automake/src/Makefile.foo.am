@@ -1,0 +1,8 @@
+# @file Makefile.foo.am
+#
+# $Id$
+
+noinst_LTLIBRARIES += libfoo.la
+
+libfoo_la_SOURCES = \
+  foo.cpp \

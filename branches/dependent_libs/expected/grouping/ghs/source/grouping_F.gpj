@@ -1,0 +1,23 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o source/F
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsource
+clown.r		[Text]
+clown.cpp
+	:dependsRelative=..\\bin\\cppgen.pl
+	:dependsRelative=clown.r
+	:preexecShell='cd source && perl ..\\bin\\cppgen.pl  clown.r -o clown.cpp'
+clown.h
+	:dependsRelative=..\\bin\\cppgen.pl
+	:dependsRelative=clown.r
+	:preexecShell='cd source && perl ..\\bin\\cppgen.pl  clown.r -o clown.h'
+	:extraOutputFile=clown.cpp
+	:extraOutputFile=clown.h
+clown.cpp
+other.cpp
+clown.h
+other.inl

@@ -1,0 +1,71 @@
+<!DOCTYPE UI><UI>
+<class>Form1</class>
+<widget>
+    <class>QWidget</class>
+    <property stdset="1">
+        <name>name</name>
+        <cstring>Form1</cstring>
+    </property>
+    <property stdset="1">
+        <name>geometry</name>
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>588</width>
+            <height>480</height>
+        </rect>
+    </property>
+    <property stdset="1">
+        <name>caption</name>
+        <string>MPC Rockage Meter -- Turn it up!</string>
+    </property>
+    <widget>
+        <class>QLCDNumber</class>
+        <property stdset="1">
+            <name>name</name>
+            <cstring>LCDNumber1</cstring>
+        </property>
+        <property stdset="1">
+            <name>geometry</name>
+            <rect>
+                <x>110</x>
+                <y>30</y>
+                <width>361</width>
+                <height>211</height>
+            </rect>
+        </property>
+        <property stdset="1">
+            <name>segmentStyle</name>
+            <enum>Filled</enum>
+        </property>
+    </widget>
+    <widget>
+        <class>QDial</class>
+        <property stdset="1">
+            <name>name</name>
+            <cstring>Dial1</cstring>
+        </property>
+        <property stdset="1">
+            <name>geometry</name>
+            <rect>
+                <x>240</x>
+                <y>300</y>
+                <width>151</width>
+                <height>111</height>
+            </rect>
+        </property>
+        <property stdset="1">
+            <name>notchesVisible</name>
+            <bool>true</bool>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>Dial1</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>LCDNumber1</receiver>
+        <slot>display(int)</slot>
+    </connection>
+</connections>
+</UI>

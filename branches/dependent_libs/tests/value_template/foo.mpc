@@ -1,0 +1,24 @@
+project(*a) {
+  specific {
+    compile_flags  = -A
+    compile_flags += -B
+  }
+}
+
+project(*b) {
+  specific {
+    win_version  = 6.66
+    win_version += 4.44
+    win_version -= 6.66
+  }
+}
+
+project(*c) {
+  includes += Bigbam
+  specific {
+    Debug::defines  = poo
+    Release::defines += pan
+    includes -= bam
+  }
+}
+

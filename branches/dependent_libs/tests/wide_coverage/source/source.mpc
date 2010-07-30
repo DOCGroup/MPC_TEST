@@ -1,0 +1,60 @@
+project: test_base, test_base, ziparchive, simple {
+  expand(EMPTY1) {
+    $EMPTY1
+  }
+  expand(EMPTY2) {
+    $EMPTY2
+  }
+  expand(ARRAY) {
+    $ARRAY
+  }
+  expand(UPATH) {
+    $UPATH
+  }
+  expand(WPATH) {
+    $WPATH
+  }
+  expand(FOOBAG) {
+    $PWD
+  }
+
+  specific {
+    use_lib_modifier =
+    use_exe_modifier = 1
+  }
+
+  exename   = $(EMPTY1)main_test
+  after    += source_lib
+  libs     += source_lib
+  macros   += "MACRO_TEST=<%equote%>a_string_with_no_spaces<%equote%>"
+  avoids   += mfc
+  includes += . $(UPATH) $(WPATH) $(ARRAY)
+  libpaths += .
+  postbuild = echo <%exename%> has been built$(EMPTY2)
+  pch_header =
+  pch_source =
+
+  Source_Files {
+    recurse = 1
+    exe
+  }
+
+  Header_Files {
+    recurse = 1
+    exe
+  }
+
+  Template_Files {
+  }
+  Inline_Files {
+  }
+
+  Simple_Files {
+    Foolish
+  }
+  Documentation_Files {
+    // We must specify it explicitly because automatic
+    // is set to 0 in simple.mpb.
+    Foolish/foolish.txt
+  }
+}

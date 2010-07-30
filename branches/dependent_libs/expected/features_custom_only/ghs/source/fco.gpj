@@ -1,0 +1,35 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Subproject]
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsource
+.custom_build_rule		[HTML Source]
+	:dependsRelative=that.zar
+	:preexecShell='cd source && perl ..\\bin\\exercise.pl $(CLO_ZARFLAGS) -GA -Sc that.zar'
+	:extraOutputFile=zar_thatA.cpp
+	:extraOutputFile=zar_thatA.h
+	:extraOutputFile=zar_thatA.inl
+	:extraOutputFile=zar_thatB.cpp
+	:extraOutputFile=zar_thatB.h
+	:extraOutputFile=zar_thatB.inl
+	:extraOutputFile=zar_thatC.cpp
+	:extraOutputFile=zar_thatC.h
+	-c
+	:postexecShell='del /f/s/q .c && del /f/s/q .h'
+	:dependsRelative=this.zar
+	:preexecShell='cd source && perl ..\\bin\\exercise.pl $(CLO_ZARFLAGS) -GA this.zar'
+	:extraOutputFile=zar_thisA.cpp
+	:extraOutputFile=zar_thisA.h
+	:extraOutputFile=zar_thisA.inl
+	:extraOutputFile=zar_thisB.cpp
+	:extraOutputFile=zar_thisB.h
+	:extraOutputFile=zar_thisB.inl
+	:extraOutputFile=zar_thisB_T.cpp
+	:extraOutputFile=zar_thisB_T.h
+	:extraOutputFile=zar_thisB_T.inl
+	:extraOutputFile=zar_thisC.cpp
+	:extraOutputFile=zar_thisC.h
+	-c
+	:postexecShell='del /f/s/q .c && del /f/s/q .h'

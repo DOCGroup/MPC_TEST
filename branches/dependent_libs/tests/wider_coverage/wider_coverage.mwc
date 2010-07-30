@@ -1,0 +1,5 @@
+workspace {
+  $(FOO_ROOT)/simple.mpc
+  $(FOO_ROOT)/other_lib.mpc
+  $(FOO_ROOT)/simple_lib.mpc
+}

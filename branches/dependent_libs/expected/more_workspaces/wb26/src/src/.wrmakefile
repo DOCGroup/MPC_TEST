@@ -1,0 +1,84 @@
+# The file ".wrmakefile" is the template used by the Wind River Workbench to
+# generate the makefiles of this project. Add user-specific build targets and
+# make rules only(!) in this project's ".wrmakefile" file. These will then be
+# automatically dumped into the makefiles.
+
+WIND_HOME := $(subst \,/,$(WIND_HOME))
+WIND_BASE := $(subst \,/,$(WIND_BASE))
+WIND_USR := $(subst \,/,$(WIND_USR))
+ACE_ROOT := $(subst \,/,$(ACE_ROOT))
+TAO_ROOT := $(subst \,/,$(TAO_ROOT))
+CIAO_ROOT := $(subst \,/,$(CIAO_ROOT))
+HOST_ROOT := $(subst \,/,$(HOST_ROOT))
+ACE_LIBOUT := .
+
+ACE_TARGET_PREFIX := lib
+ACE_TARGET_NAME := src
+ACE_TARGET_EXT := .a
+PROJECT_TARGET=$(filter %.a,$(PROJECT_TARGETS))
+
+
+all : generate_sources pre_build main_all post_build
+
+_clean ::
+	@echo "make: removing targets and objects of `pwd`"
+
+%IDE_GENERATED%
+
+
+-include $(PRJ_ROOT_DIR)/*.makefile
+
+-include *.makefile
+
+main_all : external_build $(PROJECT_TARGETS)
+        @echo "make: built targets of `pwd`"
+
+
+# entry point for extending the build
+external_build ::
+	@echo ""
+
+# main entry point for pre processing prior to the build
+pre_build :: $(PRE_BUILD_STEP)
+	@echo "Create object list";\
+	rm -f $(PRJ_ROOT_DIR)/filelist.txt;\
+	for object in _dummy_ $(OBJECTS_src); do\
+		if [ "$$object" = "_dummy_" ]; then\
+			continue ;\
+		fi;\
+		echo "$$object" >> $(PRJ_ROOT_DIR)/filelist.txt ;\
+	done
+
+# entry point for generating sources prior to the build
+generate_sources ::
+
+# main entry point for post processing after the build
+post_build :: $(POST_BUILD_STEP) deploy_output
+	@echo ""
+
+# entry point for deploying output after the build
+deploy_output ::
+	if [ $(ACE_LIBOUT) != . ]; then\
+		if [ ! -d $(ACE_LIBOUT) ]; then\
+			mkdir -p $(ACE_LIBOUT);\
+		fi;\
+		if test -e $(ACE_LIBOUT)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT); then \
+			if test $(ACE_TARGET_NAME)/$(MODE_DIR)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT) -nt $(ACE_LIBOUT)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT); then \
+				cp $(ACE_TARGET_NAME)/$(MODE_DIR)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT) $(ACE_LIBOUT);\
+			fi \
+		else \
+			cp $(ACE_TARGET_NAME)/$(MODE_DIR)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT) $(ACE_LIBOUT);\
+		fi\
+	fi
+	@echo ""
+
+
+clean :: external_clean $(CLEAN_STEP) _clean
+
+# entry point for extending the build clean
+external_clean ::
+	rm -f ./$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)
+	@echo ""
+
+
+

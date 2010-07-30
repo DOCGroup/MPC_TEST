@@ -1,0 +1,9 @@
+project(some_Test*): ghs_base {
+  staticname = \
+    simple_lib
+  after += Some_Test_Other_Lib
+
+  Source_Files {
+    "simple_lib.cpp"
+  }
+}

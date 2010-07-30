@@ -1,0 +1,12 @@
+automake: `find . -name \*.am | sed 's/\.am//g'`
+bmake: Makefile_Zargaflan.bmak
+make: Makefile_Zargaflan
+gnuace: GNUmakefile_Zargaflan
+nmake: Makefile_Zargaflan.mak
+em3: options_Zargaflan.vcw
+vc6: options_Zargaflan.dsw
+vc7: options_Zargaflan.sln
+vc71: options_Zargaflan.sln
+vc8: options_Zargaflan.sln
+vc9: options_Zargaflan.sln
+vc10: options_Zargaflan.sln

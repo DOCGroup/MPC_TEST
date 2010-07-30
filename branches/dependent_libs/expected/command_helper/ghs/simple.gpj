@@ -1,0 +1,584 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o ./libweird$name.so
+	-Ospeed
+	-OI
+	--exceptions
+	--pch
+	-DUSING_PCH
+	-I$(IDL2JNI_ROOT)\runtime
+	-I$(JAVA_HOME)\include
+	-I$(JAVA_HOME)\include\$(JAVA_PLATFORM)
+	-L.
+	-L$(IDL2JNI_ROOT)\lib
+	-lidl2jni_runtime
+SomeSortOfTypedefHelper.java		[Text]
+	:dependsRelative=SomeSortOfTypedefHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar SomeSortOfTypedefHelper.java'
+	:preexecShell='cd . && mkdir classes\\. 2> nul ; copy /y SomeSortOfTypedefHelper.class classes\\. > nul'
+	:extraOutputFile=SomeSortOfTypedefHelper.class
+simple\\ArrayBounds.java		[Text]
+	:dependsRelative=simple\\ArrayBounds.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\ArrayBounds.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\ArrayBounds.class classes\\simple > nul'
+	:extraOutputFile=simple\\ArrayBounds.class
+simple\\EnumArrayHelper.java		[Text]
+	:dependsRelative=simple\\EnumArrayHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\EnumArrayHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\EnumArrayHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\EnumArrayHelper.class
+simple\\EnumArrayHolder.java		[Text]
+	:dependsRelative=simple\\EnumArrayHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\EnumArrayHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\EnumArrayHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\EnumArrayHolder.class
+simple\\EnumSeqHelper.java		[Text]
+	:dependsRelative=simple\\EnumSeqHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\EnumSeqHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\EnumSeqHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\EnumSeqHelper.class
+simple\\EnumSeqHolder.java		[Text]
+	:dependsRelative=simple\\EnumSeqHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\EnumSeqHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\EnumSeqHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\EnumSeqHolder.class
+simple\\Local2.java		[Text]
+	:dependsRelative=simple\\Local2.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\Local2.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\Local2.class classes\\simple > nul'
+	:extraOutputFile=simple\\Local2.class
+simple\\Local2Helper.java		[Text]
+	:dependsRelative=simple\\Local2Helper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\Local2Helper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\Local2Helper.class classes\\simple > nul'
+	:extraOutputFile=simple\\Local2Helper.class
+simple\\Local2Holder.java		[Text]
+	:dependsRelative=simple\\Local2Holder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\Local2Holder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\Local2Holder.class classes\\simple > nul'
+	:extraOutputFile=simple\\Local2Holder.class
+simple\\Local2Operations.java		[Text]
+	:dependsRelative=simple\\Local2Operations.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\Local2Operations.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\Local2Operations.class classes\\simple > nul'
+	:extraOutputFile=simple\\Local2Operations.class
+simple\\Local2SeqHelper.java		[Text]
+	:dependsRelative=simple\\Local2SeqHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\Local2SeqHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\Local2SeqHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\Local2SeqHelper.class
+simple\\Local2SeqHolder.java		[Text]
+	:dependsRelative=simple\\Local2SeqHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\Local2SeqHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\Local2SeqHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\Local2SeqHolder.class
+simple\\Local3.java		[Text]
+	:dependsRelative=simple\\Local3.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\Local3.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\Local3.class classes\\simple > nul'
+	:extraOutputFile=simple\\Local3.class
+simple\\Local3Helper.java		[Text]
+	:dependsRelative=simple\\Local3Helper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\Local3Helper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\Local3Helper.class classes\\simple > nul'
+	:extraOutputFile=simple\\Local3Helper.class
+simple\\Local3Holder.java		[Text]
+	:dependsRelative=simple\\Local3Holder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\Local3Holder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\Local3Holder.class classes\\simple > nul'
+	:extraOutputFile=simple\\Local3Holder.class
+simple\\Local3Operations.java		[Text]
+	:dependsRelative=simple\\Local3Operations.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\Local3Operations.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\Local3Operations.class classes\\simple > nul'
+	:extraOutputFile=simple\\Local3Operations.class
+simple\\LongSeqSeqHelper.java		[Text]
+	:dependsRelative=simple\\LongSeqSeqHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\LongSeqSeqHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\LongSeqSeqHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\LongSeqSeqHelper.class
+simple\\LongSeqSeqHolder.java		[Text]
+	:dependsRelative=simple\\LongSeqSeqHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\LongSeqSeqHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\LongSeqSeqHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\LongSeqSeqHolder.class
+simple\\LongSeqSeqSeqHelper.java		[Text]
+	:dependsRelative=simple\\LongSeqSeqSeqHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\LongSeqSeqSeqHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\LongSeqSeqSeqHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\LongSeqSeqSeqHelper.class
+simple\\LongSeqSeqSeqHolder.java		[Text]
+	:dependsRelative=simple\\LongSeqSeqSeqHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\LongSeqSeqSeqHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\LongSeqSeqSeqHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\LongSeqSeqSeqHolder.class
+simple\\SeqOfTypedefedLongHelper.java		[Text]
+	:dependsRelative=simple\\SeqOfTypedefedLongHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\SeqOfTypedefedLongHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\SeqOfTypedefedLongHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\SeqOfTypedefedLongHelper.class
+simple\\SeqOfTypedefedLongHolder.java		[Text]
+	:dependsRelative=simple\\SeqOfTypedefedLongHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\SeqOfTypedefedLongHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\SeqOfTypedefedLongHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\SeqOfTypedefedLongHolder.class
+simple\\StringSeqHelper.java		[Text]
+	:dependsRelative=simple\\StringSeqHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\StringSeqHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\StringSeqHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\StringSeqHelper.class
+simple\\StringSeqHolder.java		[Text]
+	:dependsRelative=simple\\StringSeqHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\StringSeqHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\StringSeqHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\StringSeqHolder.class
+simple\\StringSeqSeqHelper.java		[Text]
+	:dependsRelative=simple\\StringSeqSeqHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\StringSeqSeqHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\StringSeqSeqHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\StringSeqSeqHelper.class
+simple\\StringSeqSeqHolder.java		[Text]
+	:dependsRelative=simple\\StringSeqSeqHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\StringSeqSeqHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\StringSeqSeqHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\StringSeqSeqHolder.class
+simple\\StringSeqSeqSeqHelper.java		[Text]
+	:dependsRelative=simple\\StringSeqSeqSeqHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\StringSeqSeqSeqHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\StringSeqSeqSeqHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\StringSeqSeqSeqHelper.class
+simple\\StringSeqSeqSeqHolder.java		[Text]
+	:dependsRelative=simple\\StringSeqSeqSeqHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\StringSeqSeqSeqHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\StringSeqSeqSeqHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\StringSeqSeqSeqHolder.class
+simple\\StructWithObjref.java		[Text]
+	:dependsRelative=simple\\StructWithObjref.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\StructWithObjref.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\StructWithObjref.class classes\\simple > nul'
+	:extraOutputFile=simple\\StructWithObjref.class
+simple\\StructWithObjrefHelper.java		[Text]
+	:dependsRelative=simple\\StructWithObjrefHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\StructWithObjrefHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\StructWithObjrefHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\StructWithObjrefHelper.class
+simple\\StructWithObjrefHolder.java		[Text]
+	:dependsRelative=simple\\StructWithObjrefHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\StructWithObjrefHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\StructWithObjrefHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\StructWithObjrefHolder.class
+simple\\TIMESTAMP_INVALID_NSEC.java		[Text]
+	:dependsRelative=simple\\TIMESTAMP_INVALID_NSEC.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TIMESTAMP_INVALID_NSEC.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TIMESTAMP_INVALID_NSEC.class classes\\simple > nul'
+	:extraOutputFile=simple\\TIMESTAMP_INVALID_NSEC.class
+simple\\TestArrayTypedef2Helper.java		[Text]
+	:dependsRelative=simple\\TestArrayTypedef2Helper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestArrayTypedef2Helper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestArrayTypedef2Helper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestArrayTypedef2Helper.class
+simple\\TestArrayTypedefHelper.java		[Text]
+	:dependsRelative=simple\\TestArrayTypedefHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestArrayTypedefHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestArrayTypedefHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestArrayTypedefHelper.class
+simple\\TestArrayTypedefHolder.java		[Text]
+	:dependsRelative=simple\\TestArrayTypedefHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestArrayTypedefHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestArrayTypedefHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestArrayTypedefHolder.class
+simple\\TestConstBool.java		[Text]
+	:dependsRelative=simple\\TestConstBool.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestConstBool.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestConstBool.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestConstBool.class
+simple\\TestConstDouble.java		[Text]
+	:dependsRelative=simple\\TestConstDouble.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestConstDouble.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestConstDouble.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestConstDouble.class
+simple\\TestConstFloat.java		[Text]
+	:dependsRelative=simple\\TestConstFloat.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestConstFloat.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestConstFloat.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestConstFloat.class
+simple\\TestConstLong.java		[Text]
+	:dependsRelative=simple\\TestConstLong.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestConstLong.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestConstLong.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestConstLong.class
+simple\\TestConstString.java		[Text]
+	:dependsRelative=simple\\TestConstString.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestConstString.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestConstString.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestConstString.class
+simple\\TestConstTypedef.java		[Text]
+	:dependsRelative=simple\\TestConstTypedef.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestConstTypedef.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestConstTypedef.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestConstTypedef.class
+simple\\TestEnum.java		[Text]
+	:dependsRelative=simple\\TestEnum.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestEnum.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestEnum.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestEnum.class
+simple\\TestEnumHelper.java		[Text]
+	:dependsRelative=simple\\TestEnumHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestEnumHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestEnumHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestEnumHelper.class
+simple\\TestEnumHolder.java		[Text]
+	:dependsRelative=simple\\TestEnumHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestEnumHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestEnumHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestEnumHolder.class
+simple\\TestInterf.java		[Text]
+	:dependsRelative=simple\\TestInterf.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterf.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterf.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterf.class
+simple\\TestInterf2.java		[Text]
+	:dependsRelative=simple\\TestInterf2.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterf2.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterf2.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterf2.class
+simple\\TestInterf2Helper.java		[Text]
+	:dependsRelative=simple\\TestInterf2Helper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterf2Helper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterf2Helper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterf2Helper.class
+simple\\TestInterf2Holder.java		[Text]
+	:dependsRelative=simple\\TestInterf2Holder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterf2Holder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterf2Holder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterf2Holder.class
+simple\\TestInterf2Operations.java		[Text]
+	:dependsRelative=simple\\TestInterf2Operations.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterf2Operations.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterf2Operations.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterf2Operations.class
+simple\\TestInterf3.java		[Text]
+	:dependsRelative=simple\\TestInterf3.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterf3.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterf3.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterf3.class
+simple\\TestInterf3Helper.java		[Text]
+	:dependsRelative=simple\\TestInterf3Helper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterf3Helper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterf3Helper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterf3Helper.class
+simple\\TestInterf3Holder.java		[Text]
+	:dependsRelative=simple\\TestInterf3Holder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterf3Holder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterf3Holder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterf3Holder.class
+simple\\TestInterf3Operations.java		[Text]
+	:dependsRelative=simple\\TestInterf3Operations.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterf3Operations.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterf3Operations.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterf3Operations.class
+simple\\TestInterfHelper.java		[Text]
+	:dependsRelative=simple\\TestInterfHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterfHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterfHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterfHelper.class
+simple\\TestInterfHolder.java		[Text]
+	:dependsRelative=simple\\TestInterfHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterfHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterfHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterfHolder.class
+simple\\TestInterfOperations.java		[Text]
+	:dependsRelative=simple\\TestInterfOperations.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestInterfOperations.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestInterfOperations.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestInterfOperations.class
+simple\\TestLI.java		[Text]
+	:dependsRelative=simple\\TestLI.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestLI.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestLI.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestLI.class
+simple\\TestLIHelper.java		[Text]
+	:dependsRelative=simple\\TestLIHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestLIHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestLIHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestLIHelper.class
+simple\\TestLIHolder.java		[Text]
+	:dependsRelative=simple\\TestLIHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestLIHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestLIHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestLIHolder.class
+simple\\TestLIOperations.java		[Text]
+	:dependsRelative=simple\\TestLIOperations.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestLIOperations.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestLIOperations.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestLIOperations.class
+simple\\TestNestedStruct.java		[Text]
+	:dependsRelative=simple\\TestNestedStruct.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestNestedStruct.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestNestedStruct.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestNestedStruct.class
+simple\\TestNestedStructHelper.java		[Text]
+	:dependsRelative=simple\\TestNestedStructHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestNestedStructHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestNestedStructHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestNestedStructHelper.class
+simple\\TestNestedStructHolder.java		[Text]
+	:dependsRelative=simple\\TestNestedStructHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestNestedStructHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestNestedStructHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestNestedStructHolder.class
+simple\\TestSeqTypedefHelper.java		[Text]
+	:dependsRelative=simple\\TestSeqTypedefHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestSeqTypedefHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestSeqTypedefHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestSeqTypedefHelper.class
+simple\\TestSeqTypedefHolder.java		[Text]
+	:dependsRelative=simple\\TestSeqTypedefHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestSeqTypedefHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestSeqTypedefHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestSeqTypedefHolder.class
+simple\\TestStringArrayHelper.java		[Text]
+	:dependsRelative=simple\\TestStringArrayHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStringArrayHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStringArrayHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStringArrayHelper.class
+simple\\TestStringArrayHolder.java		[Text]
+	:dependsRelative=simple\\TestStringArrayHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStringArrayHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStringArrayHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStringArrayHolder.class
+simple\\TestStruct.java		[Text]
+	:dependsRelative=simple\\TestStruct.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStruct.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStruct.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStruct.class
+simple\\TestStructArrayHelper.java		[Text]
+	:dependsRelative=simple\\TestStructArrayHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStructArrayHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStructArrayHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStructArrayHelper.class
+simple\\TestStructArrayHolder.java		[Text]
+	:dependsRelative=simple\\TestStructArrayHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStructArrayHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStructArrayHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStructArrayHolder.class
+simple\\TestStructHelper.java		[Text]
+	:dependsRelative=simple\\TestStructHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStructHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStructHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStructHelper.class
+simple\\TestStructHolder.java		[Text]
+	:dependsRelative=simple\\TestStructHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStructHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStructHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStructHolder.class
+simple\\TestStructSequenceHelper.java		[Text]
+	:dependsRelative=simple\\TestStructSequenceHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStructSequenceHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStructSequenceHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStructSequenceHelper.class
+simple\\TestStructSequenceHolder.java		[Text]
+	:dependsRelative=simple\\TestStructSequenceHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStructSequenceHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStructSequenceHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStructSequenceHolder.class
+simple\\TestStructWithEnum.java		[Text]
+	:dependsRelative=simple\\TestStructWithEnum.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStructWithEnum.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStructWithEnum.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStructWithEnum.class
+simple\\TestStructWithEnumHelper.java		[Text]
+	:dependsRelative=simple\\TestStructWithEnumHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStructWithEnumHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStructWithEnumHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStructWithEnumHelper.class
+simple\\TestStructWithEnumHolder.java		[Text]
+	:dependsRelative=simple\\TestStructWithEnumHolder.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestStructWithEnumHolder.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestStructWithEnumHolder.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestStructWithEnumHolder.class
+simple\\TestTypedefHelper.java		[Text]
+	:dependsRelative=simple\\TestTypedefHelper.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\TestTypedefHelper.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\TestTypedefHelper.class classes\\simple > nul'
+	:extraOutputFile=simple\\TestTypedefHelper.class
+simple\\_Local2LocalBase.java		[Text]
+	:dependsRelative=simple\\_Local2LocalBase.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_Local2LocalBase.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_Local2LocalBase.class classes\\simple > nul'
+	:extraOutputFile=simple\\_Local2LocalBase.class
+simple\\_Local2TAOPeer.java		[Text]
+	:dependsRelative=simple\\_Local2TAOPeer.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_Local2TAOPeer.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_Local2TAOPeer.class classes\\simple > nul'
+	:extraOutputFile=simple\\_Local2TAOPeer.class
+simple\\_Local3LocalBase.java		[Text]
+	:dependsRelative=simple\\_Local3LocalBase.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_Local3LocalBase.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_Local3LocalBase.class classes\\simple > nul'
+	:extraOutputFile=simple\\_Local3LocalBase.class
+simple\\_Local3TAOPeer.java		[Text]
+	:dependsRelative=simple\\_Local3TAOPeer.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_Local3TAOPeer.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_Local3TAOPeer.class classes\\simple > nul'
+	:extraOutputFile=simple\\_Local3TAOPeer.class
+simple\\_TestInterf2Stub.java		[Text]
+	:dependsRelative=simple\\_TestInterf2Stub.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_TestInterf2Stub.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_TestInterf2Stub.class classes\\simple > nul'
+	:extraOutputFile=simple\\_TestInterf2Stub.class
+simple\\_TestInterf3Stub.java		[Text]
+	:dependsRelative=simple\\_TestInterf3Stub.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_TestInterf3Stub.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_TestInterf3Stub.class classes\\simple > nul'
+	:extraOutputFile=simple\\_TestInterf3Stub.class
+simple\\_TestInterfStub.java		[Text]
+	:dependsRelative=simple\\_TestInterfStub.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_TestInterfStub.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_TestInterfStub.class classes\\simple > nul'
+	:extraOutputFile=simple\\_TestInterfStub.class
+simple\\_TestLILocalBase.java		[Text]
+	:dependsRelative=simple\\_TestLILocalBase.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_TestLILocalBase.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_TestLILocalBase.class classes\\simple > nul'
+	:extraOutputFile=simple\\_TestLILocalBase.class
+simple\\_TestLITAOPeer.java		[Text]
+	:dependsRelative=simple\\_TestLITAOPeer.java
+	:preexecShell='cd . && "$(JAVA_HOME)\\bin\\javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple\\_TestLITAOPeer.java'
+	:preexecShell='cd . && mkdir classes\\simple 2> nul ; copy /y simple\\_TestLITAOPeer.class classes\\simple > nul'
+	:extraOutputFile=simple\\_TestLITAOPeer.class
+other.idl		[Text]
+otherJC.cpp
+	:dependsRelative=$(IDL2JNI_ROOT)\\bin\\idl2jni
+	:dependsRelative=SomeSortOfTypedefHelper.java
+	:dependsRelative=other.idl
+	:dependsRelative=simpleJC.h
+	:preexecShell='cd . && $(IDL2JNI_ROOT)\\bin\\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 other.idl'
+	:preexecShell='cd . && echo Input: other'
+	:extraOutputFile=SomeSortOfTypedefHelper.java
+	:extraOutputFile=otherJC.cpp
+	:extraOutputFile=otherJC.h
+	:extraOutputFile=otherJS.cpp
+	:extraOutputFile=otherJS.h
+otherTypeSupport.idl		[Text]
+otherTypeSupportJC.cpp
+	:dependsRelative=$(IDL2JNI_ROOT)\\bin\\idl2jni
+	:dependsRelative=SomeSortOfTypedefHelper.java
+	:dependsRelative=otherTypeSupport.idl
+	:preexecShell='cd . && $(IDL2JNI_ROOT)\\bin\\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 otherTypeSupport.idl'
+	:preexecShell='cd . && echo Input: otherTypeSupport'
+	:extraOutputFile=otherTypeSupportJC.cpp
+	:extraOutputFile=otherTypeSupportJC.h
+	:extraOutputFile=otherTypeSupportJS.cpp
+	:extraOutputFile=otherTypeSupportJS.h
+simple.idl		[Text]
+simpleJC.cpp
+	:dependsRelative=$(IDL2JNI_ROOT)\\bin\\idl2jni
+	:dependsRelative=SomeSortOfTypedefHelper.java
+	:dependsRelative=simple.idl
+	:preexecShell='cd . && $(IDL2JNI_ROOT)\\bin\\idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 simple.idl'
+	:preexecShell='cd . && echo Input: simple'
+	:extraOutputFile=simpleJC.cpp
+	:extraOutputFile=simpleJC.h
+	:extraOutputFile=simpleJS.h
+	:extraOutputFile=simple\\ArrayBounds.java
+	:extraOutputFile=simple\\EnumArrayHelper.java
+	:extraOutputFile=simple\\EnumArrayHolder.java
+	:extraOutputFile=simple\\EnumSeqHelper.java
+	:extraOutputFile=simple\\EnumSeqHolder.java
+	:extraOutputFile=simple\\Local2.java
+	:extraOutputFile=simple\\Local2Helper.java
+	:extraOutputFile=simple\\Local2Holder.java
+	:extraOutputFile=simple\\Local2Operations.java
+	:extraOutputFile=simple\\Local2SeqHelper.java
+	:extraOutputFile=simple\\Local2SeqHolder.java
+	:extraOutputFile=simple\\Local3.java
+	:extraOutputFile=simple\\Local3Helper.java
+	:extraOutputFile=simple\\Local3Holder.java
+	:extraOutputFile=simple\\Local3Operations.java
+	:extraOutputFile=simple\\LongSeqSeqHelper.java
+	:extraOutputFile=simple\\LongSeqSeqHolder.java
+	:extraOutputFile=simple\\LongSeqSeqSeqHelper.java
+	:extraOutputFile=simple\\LongSeqSeqSeqHolder.java
+	:extraOutputFile=simple\\SeqOfTypedefedLongHelper.java
+	:extraOutputFile=simple\\SeqOfTypedefedLongHolder.java
+	:extraOutputFile=simple\\StringSeqHelper.java
+	:extraOutputFile=simple\\StringSeqHolder.java
+	:extraOutputFile=simple\\StringSeqSeqHelper.java
+	:extraOutputFile=simple\\StringSeqSeqHolder.java
+	:extraOutputFile=simple\\StringSeqSeqSeqHelper.java
+	:extraOutputFile=simple\\StringSeqSeqSeqHolder.java
+	:extraOutputFile=simple\\StructWithObjref.java
+	:extraOutputFile=simple\\StructWithObjrefHelper.java
+	:extraOutputFile=simple\\StructWithObjrefHolder.java
+	:extraOutputFile=simple\\TIMESTAMP_INVALID_NSEC.java
+	:extraOutputFile=simple\\TestArrayTypedef2Helper.java
+	:extraOutputFile=simple\\TestArrayTypedefHelper.java
+	:extraOutputFile=simple\\TestArrayTypedefHolder.java
+	:extraOutputFile=simple\\TestConstBool.java
+	:extraOutputFile=simple\\TestConstDouble.java
+	:extraOutputFile=simple\\TestConstFloat.java
+	:extraOutputFile=simple\\TestConstLong.java
+	:extraOutputFile=simple\\TestConstString.java
+	:extraOutputFile=simple\\TestConstTypedef.java
+	:extraOutputFile=simple\\TestEnum.java
+	:extraOutputFile=simple\\TestEnumHelper.java
+	:extraOutputFile=simple\\TestEnumHolder.java
+	:extraOutputFile=simple\\TestInterf.java
+	:extraOutputFile=simple\\TestInterf2.java
+	:extraOutputFile=simple\\TestInterf2Helper.java
+	:extraOutputFile=simple\\TestInterf2Holder.java
+	:extraOutputFile=simple\\TestInterf2Operations.java
+	:extraOutputFile=simple\\TestInterf3.java
+	:extraOutputFile=simple\\TestInterf3Helper.java
+	:extraOutputFile=simple\\TestInterf3Holder.java
+	:extraOutputFile=simple\\TestInterf3Operations.java
+	:extraOutputFile=simple\\TestInterfHelper.java
+	:extraOutputFile=simple\\TestInterfHolder.java
+	:extraOutputFile=simple\\TestInterfOperations.java
+	:extraOutputFile=simple\\TestLI.java
+	:extraOutputFile=simple\\TestLIHelper.java
+	:extraOutputFile=simple\\TestLIHolder.java
+	:extraOutputFile=simple\\TestLIOperations.java
+	:extraOutputFile=simple\\TestNestedStruct.java
+	:extraOutputFile=simple\\TestNestedStructHelper.java
+	:extraOutputFile=simple\\TestNestedStructHolder.java
+	:extraOutputFile=simple\\TestSeqTypedefHelper.java
+	:extraOutputFile=simple\\TestSeqTypedefHolder.java
+	:extraOutputFile=simple\\TestStringArrayHelper.java
+	:extraOutputFile=simple\\TestStringArrayHolder.java
+	:extraOutputFile=simple\\TestStruct.java
+	:extraOutputFile=simple\\TestStructArrayHelper.java
+	:extraOutputFile=simple\\TestStructArrayHolder.java
+	:extraOutputFile=simple\\TestStructHelper.java
+	:extraOutputFile=simple\\TestStructHolder.java
+	:extraOutputFile=simple\\TestStructSequenceHelper.java
+	:extraOutputFile=simple\\TestStructSequenceHolder.java
+	:extraOutputFile=simple\\TestStructWithEnum.java
+	:extraOutputFile=simple\\TestStructWithEnumHelper.java
+	:extraOutputFile=simple\\TestStructWithEnumHolder.java
+	:extraOutputFile=simple\\TestTypedefHelper.java
+	:extraOutputFile=simple\\_Local2LocalBase.java
+	:extraOutputFile=simple\\_Local2TAOPeer.java
+	:extraOutputFile=simple\\_Local3LocalBase.java
+	:extraOutputFile=simple\\_Local3TAOPeer.java
+	:extraOutputFile=simple\\_TestInterf2Stub.java
+	:extraOutputFile=simple\\_TestInterf3Stub.java
+	:extraOutputFile=simple\\_TestInterfStub.java
+	:extraOutputFile=simple\\_TestLILocalBase.java
+	:extraOutputFile=simple\\_TestLITAOPeer.java
+otherJC.cpp
+otherJS.cpp
+otherTypeSupportJC.cpp
+otherTypeSupportJS.cpp
+simpleJC.cpp
+otherJC.h
+otherJS.h
+otherTypeSupportJC.h
+otherTypeSupportJS.h
+simpleJC.h
+simpleJS.h
+additional_options.txt		[Documentation]
+build_entry.txt		[Documentation]
+perl_options.txt		[Documentation]

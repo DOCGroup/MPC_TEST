@@ -1,0 +1,39 @@
+project: generator_base, test_base, cppgen, mondo_base {
+  sharedname   =
+  staticname   = source_lib
+  includes    += .
+  mondo_flags += -fake
+
+  // Just to test scoped template variable settings, we will
+  // override the defaults.
+  specific {
+    Release::intermediate_dir = Static_Release
+    Debug::intermediate_dir = Static_Debug
+    use_lib_modifier =
+  }
+
+  GEN_Files {
+    commandflags += -n names
+    names.key   <<  something
+  }
+
+  GEN_Files {
+    gendir = cre/o.le
+    generator_flags += -o cre/o.le
+    more_names.key
+  }
+
+  MONDO_Files {
+    gendir = .
+    mondo/all.mondo  >>   bar.txt moop.hxx qwee.cxx qwee_T.C weer.inl
+  }
+
+  // Only add a few of the generated files to test
+  // automatic addition of explicitly listed output files
+  Inline_Files {
+    weer.inl
+  }
+  Header_Files {
+    moop.hxx
+  }
+}
