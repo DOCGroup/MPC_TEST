@@ -1,0 +1,6 @@
+version=1
+eclipse.preferences.version=1
+description.defaultbuildorder=false
+description.buildorder=wb_another/wb_foo/
+another/wb_another/.project
+c++/wb_foo/.project

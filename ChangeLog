@@ -1,3 +1,28 @@
+Thu Aug  5 17:51:14 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/*/wb30/*:
+
+          Added expected results for -type wb30.
+
+        * expected/aggregated_env/wb26/a/aa/.project:
+        * expected/aggregated_env/wb26/a/aa/.wrmakefile:
+        * expected/aggregated_env/wb26/a/aa/.wrproject:
+        * expected/aggregated_env/wb26/t/c/d/org.eclipse.core.resources.prefs:
+        * expected/aggregated_env/wb26/t/c/d/wb26projects.lst:
+        * expected/dependencies/wb26/foo/.project:
+        * expected/dependencies/wb26/foo/.wrmakefile:
+        * expected/dependencies/wb26/foo/.wrproject:
+        * expected/dependencies/wb26/org.eclipse.core.resources.prefs:
+        * expected/dependencies/wb26/wb26projects.lst:
+        * expected/more_workspaces/wb26/org.eclipse.core.resources.prefs:
+        * expected/more_workspaces/wb26/src/src/.project:
+        * expected/more_workspaces/wb26/src/src/.wrmakefile:
+        * expected/more_workspaces/wb26/src/src/.wrproject:
+        * expected/more_workspaces/wb26/wb26projects.lst:
+
+          Updated to account for the template changes in wb26 templates
+          that are re-used in wb30.
+
 Wed Jun 30 13:42:26 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/MultiWS/automake/Multiws/configure.ac.bak:
