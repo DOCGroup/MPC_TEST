@@ -1,3 +1,21 @@
+Fri Aug  6 12:29:50 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/aggregated_env/vc10/a/aa.vcxproj:
+        * expected/aggregated_env/vc10/a/aa.vcxproj.filters:
+        * expected/aggregated_env/vc10/t/c/d/d.sln:
+
+          Updated to reflect recent changes.
+
+        * expected/template/*:
+        * tests/template/build_entry.txt:
+        * tests/template/config/foo.mpd:
+
+          Updated to test the 'set' function.
+
+        * expected/aggregated_env/vc10/a/aa.vcproj:
+
+          Removed this file.
+
 Thu Aug  5 17:51:14 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/*/wb30/*:
