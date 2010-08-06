@@ -94,6 +94,10 @@ down/foo.flap
 down/foo.flap
 flap
 
+blah
+blee
+blah
+
 ## Clean up template repositories, etc.
 clean-local:
 	-rm -f *~ *.bak *.rpo *.sym lib*.*_pure_* core core.*
