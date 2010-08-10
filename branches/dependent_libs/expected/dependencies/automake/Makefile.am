@@ -17,7 +17,7 @@ BUILT_SOURCES = \
 CLEANFILES = \
   bar.cr
 
-bar.cr: $(srcdir)/bar.ar nospace.txt space\ 1.txt
+bar.cr: $(srcdir)/bar.ar nospace.txt space\ 1.txt lib/somelib.la lib/some\ 2nd\ lib.la lib/some\ 3rd\ lib.la lib/some4thlib.la
 	echo  $(srcdir)/bar.ar > bar.cr
 
 BUILT_SOURCES += \
@@ -26,7 +26,7 @@ BUILT_SOURCES += \
 CLEANFILES += \
   foo.cr
 
-foo.cr: $(srcdir)/foo.ar space\ 3.txt nospace.txt space\ 1.txt space\ 2.txt
+foo.cr: $(srcdir)/foo.ar space\ 3.txt nospace.txt space\ 1.txt space\ 2.txt lib/somelib.la lib/some\ 2nd\ lib.la
 	echo  $(srcdir)/foo.ar > foo.cr
 
 noinst_LTLIBRARIES = libfoo.la
