@@ -109,7 +109,7 @@ SOURCE="bar.ar"
 
 !IF  "$(CFG)" == "foo - Win32 Debug"
 
-USERDEP__bar="nospace.txt" "space 1.txt"
+USERDEP__bar="nospace.txt" "space 1.txt" "lib\somelibd.dll" "lib\some 2nd libd.dll" "lib\some 3rd libd.dll" "lib\some4thlibd.dll"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking echo on $(InputPath)
 InputPath="bar.ar"
@@ -123,7 +123,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 Release"
 
-USERDEP__bar="nospace.txt" "space 1.txt"
+USERDEP__bar="nospace.txt" "space 1.txt" "lib\somelib.dll" "lib\some 2nd lib.dll" "lib\some 3rd lib.dll" "lib\some4thlib.dll"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking echo on $(InputPath)
 InputPath="bar.ar"
@@ -144,7 +144,7 @@ SOURCE="foo.ar"
 
 !IF  "$(CFG)" == "foo - Win32 Debug"
 
-USERDEP__foo="nospace.txt" "space 1.txt" "space 2.txt" "space 3.txt"
+USERDEP__foo="nospace.txt" "space 1.txt" "space 2.txt" "space 3.txt" "lib\somelibd.dll" "lib\some 2nd libd.dll"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking echo on $(InputPath)
 InputPath="foo.ar"
@@ -158,7 +158,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 Release"
 
-USERDEP__foo="nospace.txt" "space 1.txt" "space 2.txt" "space 3.txt"
+USERDEP__foo="nospace.txt" "space 1.txt" "space 2.txt" "space 3.txt" "lib\somelib.dll" "lib\some 2nd lib.dll"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking echo on $(InputPath)
 InputPath="foo.ar"

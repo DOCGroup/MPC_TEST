@@ -2,6 +2,7 @@ project {
   Define_Custom(foo) {
     command = echo
     dependent = nospace.txt "space 1.txt"
+    dependent_libs = lib/somelib "lib/some 2nd lib"
     output_option = <%gt%>
     inputext = .ar
     generic_outputext = .cr
@@ -9,6 +10,7 @@ project {
 
   FOO_Files {
     dependent += "space 2.txt"
+    dependent_libs += "lib/some 3rd lib" lib/some4thlib
     foo.ar << "space 3.txt"
   }
 

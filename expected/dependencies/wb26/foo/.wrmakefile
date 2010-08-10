@@ -12,12 +12,10 @@ CIAO_ROOT := $(subst \,/,$(CIAO_ROOT))
 HOST_ROOT := $(subst \,/,$(HOST_ROOT))
 ACE_LIBOUT := .
 
-ACE_EXE_EXT = $(if $(filter PPC604gnu,$(BUILD_SPEC)),.out)$(if $(filter PPC603gnu,$(BUILD_SPEC)),.out)$(if $(filter PENTIUM4gnu,$(BUILD_SPEC)),.out)$(if $(filter PPC85XXgnu,$(BUILD_SPEC)),.out)
-ACE_TARGET_PREFIX = $(if $(filter PPC604gnu,$(BUILD_SPEC)),lib)$(if $(filter PPC603gnu,$(BUILD_SPEC)),lib)$(if $(filter PENTIUM4gnu,$(BUILD_SPEC)),lib)$(if $(filter PPC85XXgnu,$(BUILD_SPEC)),lib)
+ACE_TARGET_PREFIX := lib
 ACE_TARGET_NAME := foo
-ACE_TARGET_EXT = $(if $(filter PPC604gnu,$(BUILD_SPEC)),.a)$(if $(filter PPC603gnu,$(BUILD_SPEC)),.a)$(if $(filter PENTIUM4gnu,$(BUILD_SPEC)),.a)$(if $(filter PPC85XXgnu,$(BUILD_SPEC)),.a)
-PROJECT_TARGET = $(filter %$(ACE_TARGET_EXT),$(PROJECT_TARGETS))
-ACE_TARGET_DIR ?= $(ACE_TARGET_NAME)
+ACE_TARGET_EXT := .a
+PROJECT_TARGET=$(filter %.a,$(PROJECT_TARGETS))
 
 
 all : generate_sources pre_build main_all post_build
@@ -33,7 +31,7 @@ _clean ::
 -include *.makefile
 
 main_all : external_build $(PROJECT_TARGETS)
-	@echo "make: built targets of `pwd`"
+        @echo "make: built targets of `pwd`"
 
 
 # entry point for extending the build
@@ -51,36 +49,29 @@ pre_build :: $(PRE_BUILD_STEP)
 		echo "$$object" >> $(PRJ_ROOT_DIR)/filelist.txt ;\
 	done
 
-
-# function for generating the correct Custom type Prerequisite (input or dep)
-# using a ../ or ../../ prefix unless it's already an absolute path
-CUST_PRE = $(if $(patsubst $%,,$(1:/%=)),../../)$(1)
-
-# function for adding an exe_ext, if needed and the file exists
-ADD_EXT = $(if $(ACE_EXE_EXT),$(if $(suffix $(1)),$(1),$(wildcard $(1) $(1)$(ACE_EXE_EXT))),$(1))
-
-SPACE = $(should_be_unset) $(should_be_unset)
-GENERATED_DIRTY = $(addprefix ../../, bar.cr foo.cr)
-
 # entry point for generating sources prior to the build
-generate_sources :: $(GENERATED_DIRTY)
-
-
-$(addprefix ../../,bar.cr): $(foreach pre,bar.ar nospace.txt space\ 1.txt,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
-	$(TRACE_FLAG)cd ../.. ; echo  bar.ar > bar.cr
-$(addprefix ../../,foo.cr): $(foreach pre,foo.ar space\ 3.txt nospace.txt space\ 1.txt space\ 2.txt,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
-	$(TRACE_FLAG)cd ../.. ; echo  foo.ar > foo.cr
-
-DIR_PREFIX = foo/$(BUILD_SPEC)
+generate_sources ::
+		cd ../.. ; echo  bar.ar > $@
+		cd ../.. ; echo  foo.ar > $@
 
 # main entry point for post processing after the build
 post_build :: $(POST_BUILD_STEP) deploy_output
 	@echo ""
 
 # entry point for deploying output after the build
-deploy_output :: $(call CUST_PRE,$(ACE_LIBOUT)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT))
-$(call CUST_PRE,$(ACE_LIBOUT)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)): $(ACE_TARGET_DIR)/$(MODE_DIR)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)
-	$(TRACE_FLAG)cd ../.. ; test -d $(ACE_LIBOUT) || mkdir -p $(ACE_LIBOUT); cp $(DIR_PREFIX)/$(ACE_TARGET_DIR)/$(MODE_DIR)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT) $(ACE_LIBOUT)
+deploy_output ::
+	if [ $(ACE_LIBOUT) != . ]; then\
+		if [ ! -d $(ACE_LIBOUT) ]; then\
+			mkdir -p $(ACE_LIBOUT);\
+		fi;\
+		if test -e $(ACE_LIBOUT)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT); then \
+			if test $(ACE_TARGET_NAME)/$(MODE_DIR)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT) -nt $(ACE_LIBOUT)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT); then \
+				cp $(ACE_TARGET_NAME)/$(MODE_DIR)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT) $(ACE_LIBOUT);\
+			fi \
+		else \
+			cp $(ACE_TARGET_NAME)/$(MODE_DIR)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT) $(ACE_LIBOUT);\
+		fi\
+	fi
 	@echo ""
 
 
@@ -88,9 +79,9 @@ clean :: external_clean $(CLEAN_STEP) _clean
 
 # entry point for extending the build clean
 external_clean ::
-	$(TRACE_FLAG)cd ../.. ; rm -f  bar.cr
-	$(TRACE_FLAG)cd ../.. ; rm -f  foo.cr
-	$(TRACE_FLAG)cd ../.. ; rm -f ./$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)
+	cd ../.. ; rm -f  bar.cr
+	cd ../.. ; rm -f  foo.cr
+	rm -f ./$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)
 	@echo ""
 
 

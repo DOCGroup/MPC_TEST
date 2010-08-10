@@ -86,7 +86,3 @@ down\foo.flap
 down\foo.flap
 down\foo.flap
 flap
-
-blah
-blee
-blah

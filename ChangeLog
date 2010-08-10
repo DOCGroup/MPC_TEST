@@ -1,53 +1,59 @@
-Tue Aug 10 16:43:29 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
+Fri Jun 30 18:03:22 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
-        * expected/template/wb30/src/wb_src/.project:
+        * tests/dependencies/foo.mpc
         
-          Previous commit to template test missed changing expected
-          results for the new wb30 type.
+          Added dependent_libs for testing.
+        
+        * tests/dependencies/lib/ARM/some 2nd lib.lib
+        * tests/dependencies/lib/ARM/some 2nd libd.lib
+        * tests/dependencies/lib/ARM/some 3rd lib.lib
+        * tests/dependencies/lib/ARM/some 3rd libd.lib
+        * tests/dependencies/lib/ARM/some4thlib.lib
+        * tests/dependencies/lib/ARM/some4thlibd.lib
+        * tests/dependencies/lib/ARM/somelib.lib
+        * tests/dependencies/lib/ARM/somelibd.lib
+        * tests/dependencies/lib/IX86/some 2nd lib.lib
+        * tests/dependencies/lib/IX86/some 2nd libd.lib
+        * tests/dependencies/lib/IX86/some 3rd lib.lib
+        * tests/dependencies/lib/IX86/some 3rd libd.lib
+        * tests/dependencies/lib/IX86/some4thlib.lib
+        * tests/dependencies/lib/IX86/some4thlibd.lib
+        * tests/dependencies/lib/IX86/somelib.lib
+        * tests/dependencies/lib/IX86/somelibd.lib
+        * tests/dependencies/lib/libsome 2nd lib.so
+        * tests/dependencies/lib/libsome 3rd lib.so
+        * tests/dependencies/lib/libsome4thlib.so
+        * tests/dependencies/lib/libsomelib.so
+        * tests/dependencies/lib/some 2nd lib.dll
+        * tests/dependencies/lib/some 2nd lib.la
+        * tests/dependencies/lib/some 2nd libd.dll
+        * tests/dependencies/lib/some 3rd lib.dll
+        * tests/dependencies/lib/some 3rd lib.la
+        * tests/dependencies/lib/some 3rd libd.dll
+        * tests/dependencies/lib/some4thlib.dll
+        * tests/dependencies/lib/some4thlib.la
+        * tests/dependencies/lib/some4thlibd.dll
+        * tests/dependencies/lib/somelib.dll
+        * tests/dependencies/lib/somelib.la
+        * tests/dependencies/lib/somelibd.dll
+        
+          Added empty files for libraries to allow 
+          compilations to not fail.
 
-Fri Aug  6 12:29:50 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
-
-        * expected/aggregated_env/vc10/a/aa.vcxproj:
-        * expected/aggregated_env/vc10/a/aa.vcxproj.filters:
-        * expected/aggregated_env/vc10/t/c/d/d.sln:
-
-          Updated to reflect recent changes.
-
-        * expected/template/*:
-        * tests/template/build_entry.txt:
-        * tests/template/config/foo.mpd:
-
-          Updated to test the 'set' function.
-
-        * expected/aggregated_env/vc10/a/aa.vcproj:
-
-          Removed this file.
-
-Thu Aug  5 17:51:14 UTC 2010  Adam Mitz  <mitza@ociweb.com>
-
-        * expected/*/wb30/*:
-
-          Added expected results for -type wb30.
-
-        * expected/aggregated_env/wb26/a/aa/.project:
-        * expected/aggregated_env/wb26/a/aa/.wrmakefile:
-        * expected/aggregated_env/wb26/a/aa/.wrproject:
-        * expected/aggregated_env/wb26/t/c/d/org.eclipse.core.resources.prefs:
-        * expected/aggregated_env/wb26/t/c/d/wb26projects.lst:
-        * expected/dependencies/wb26/foo/.project:
-        * expected/dependencies/wb26/foo/.wrmakefile:
-        * expected/dependencies/wb26/foo/.wrproject:
-        * expected/dependencies/wb26/org.eclipse.core.resources.prefs:
-        * expected/dependencies/wb26/wb26projects.lst:
-        * expected/more_workspaces/wb26/org.eclipse.core.resources.prefs:
-        * expected/more_workspaces/wb26/src/src/.project:
-        * expected/more_workspaces/wb26/src/src/.wrmakefile:
-        * expected/more_workspaces/wb26/src/src/.wrproject:
-        * expected/more_workspaces/wb26/wb26projects.lst:
-
-          Updated to account for the template changes in wb26 templates
-          that are re-used in wb30.
-
+        * expected/dependencies/automake/Makefile.am
+        * expected/dependencies/em3/foo.vcp
+        * expected/dependencies/ghs/foo.gpj
+        * expected/dependencies/gnuace/GNUmakefile.foo
+        * expected/dependencies/make/Makefile.foo
+        * expected/dependencies/nmake/Makefile.foo.mak
+        * expected/dependencies/vc6/foo.dsp
+        * expected/dependencies/vc7/foo.vcproj
+        * expected/dependencies/vc71/foo.vcproj
+        * expected/dependencies/vc8/foo.vcproj
+        
+          Expected results for the projects that handle
+          dependent_libs.
+        
 Wed Jun 30 13:42:26 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/MultiWS/automake/Multiws/configure.ac.bak:

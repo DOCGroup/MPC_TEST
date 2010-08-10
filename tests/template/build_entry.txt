@@ -2,7 +2,6 @@ automake:
 bds4:
 bmake:
 cc:
-cdt6:
 em3:
 ghs:
 gnuace:

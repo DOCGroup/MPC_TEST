@@ -83,10 +83,3 @@ DOUBLE_LC = \
 <%extensions(flap_files)%>
 
 <%crap->wipe%>
-
-<%set(some_words, blah blee blah)%>
-<%if(some_words)%>
-<%foreach(some_words)%>
-<%some_word%>
-<%endfor%>
-<%endif%>
