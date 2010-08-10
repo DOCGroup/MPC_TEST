@@ -1,0 +1,26 @@
+Tue Aug 10 21:10:20 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
+
+        * BranchChangeLog:
+
+          Added Branch specific changelog.
+
+        * tests/dependencies/foo.mpc:
+
+          Added lines to exercise dependent_libs keyword.
+
+        * expected/dependencies/automake/Makefile.am:
+        * expected/dependencies/em3/foo.vcp:
+        * expected/dependencies/ghs/foo.gpj:
+        * expected/dependencies/gnuace/GNUmakefile.foo:
+        * expected/dependencies/make/Makefile.foo:
+        * expected/dependencies/nmake/Makefile.foo.mak:
+        * expected/dependencies/vc6/foo.dsp:
+        * expected/dependencies/vc7/foo.vcproj:
+        * expected/dependencies/vc71/foo.vcproj:
+        * expected/dependencies/vc8/foo.vcproj:
+
+          Added expected changes for changes in foo.mpc.
+
+Local Variables:
+indent-tabs-mode: nil
+End:
