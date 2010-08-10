@@ -1,0 +1,3 @@
+workspace(noname) {
+  cmdline += -static
+}

@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+build/build_exe.gpj		[Program]
+build/build_exe_int.int

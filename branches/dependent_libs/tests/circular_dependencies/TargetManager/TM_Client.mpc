@@ -1,0 +1,4 @@
+project(TMClient) {
+  after += CIAO_TargetManager_stub
+  sharedname =
+}

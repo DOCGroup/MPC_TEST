@@ -1,0 +1,23 @@
+project (NodeManager_stub) {
+  sharedname =
+  staticname = NodeManager_stub
+  Source_Files {
+    bar.cpp
+  }
+}
+
+project(NodeManager) {
+  after += NodeApplicationManager NodeManager_stub CIAO_TargetManager_stub
+  Source_Files {
+    one.cpp
+  }
+}
+
+project(lib) {
+  sharedname =
+  staticname = NodeManager
+  after += NodeApplicationManager NodeManager_stub CIAO_TargetManager_stub
+  Source_Files {
+    two.cpp
+  }
+}

@@ -1,0 +1,9 @@
+project {
+  Define_Custom(MONDO) {
+    automatic = 1
+    command = perl $(TEST_ROOT)/mondo/mondo.pl
+    dependent = $(TEST_ROOT)/mondo/mondo.pl $(TEST_ROOT)/mondo/modules/ReaderGen.pm
+    pch_postrule = 1
+    keyword mondo_flags = commandflags
+  }
+}

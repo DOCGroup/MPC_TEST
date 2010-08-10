@@ -1,0 +1,5 @@
+project {
+  libout        = $(TEST_ROOT)/lib
+  macros       += FAILURE_TRIGGER
+  sharedname    =
+}

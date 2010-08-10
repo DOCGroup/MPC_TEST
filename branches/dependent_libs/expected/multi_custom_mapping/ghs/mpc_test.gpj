@@ -1,0 +1,18 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Subproject]
+	-Ospeed
+	-OI
+	--exceptions
+	-L.
+.custom_build_rule		[HTML Source]
+	:dependsRelative=foo.mco
+	:preexecShell='cd . && echo "int main(){}" -a foo.mco > foo.cpp'
+	:extraOutputFile=foo.cpp
+	-c
+	:postexecShell='del /f/s/q .c && del /f/s/q .h'
+	:dependsRelative=foo.mco
+	:preexecShell='cd . && echo "int main(){}" -b foo.mco > foo_script2.cpp'
+	:extraOutputFile=foo_script2.cpp
+	-c
+	:postexecShell='del /f/s/q .c && del /f/s/q .h'

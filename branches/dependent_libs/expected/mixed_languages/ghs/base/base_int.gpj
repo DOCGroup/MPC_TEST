@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+base/base.gpj		[Program]
+base/base_int.int

@@ -1,0 +1,9 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o NodeManager/one
+	-Ospeed
+	-OI
+	--exceptions
+	-LNodeManager
+one.cpp

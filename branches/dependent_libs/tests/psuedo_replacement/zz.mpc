@@ -1,0 +1,7 @@
+project: foo {
+  Foo_Files {
+    Bar.adl
+  }
+
+  foo_flags += -Abdul
+}

@@ -1,0 +1,23 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o source/fake/libfake.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsource/fake
+..\\..\\other\\other.r		[Text]
+other.cpp
+	:dependsRelative=..\\..\\bin\\cppgen.pl
+	:dependsRelative=..\\..\\other\\other.r
+	:preexecShell='cd source/fake && mkdir . || type nul'
+	:preexecShell='cd source/fake && perl ..\\..\\bin\\cppgen.pl  ..\\..\\other\\other.r -o other.cpp'
+other.h
+	:dependsRelative=..\\..\\bin\\cppgen.pl
+	:dependsRelative=..\\..\\other\\other.r
+	:preexecShell='cd source/fake && mkdir . || type nul'
+	:preexecShell='cd source/fake && perl ..\\..\\bin\\cppgen.pl  ..\\..\\other\\other.r -o other.h'
+	:extraOutputFile=other.cpp
+	:extraOutputFile=other.h
+other.cpp
+other.h

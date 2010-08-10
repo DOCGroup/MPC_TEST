@@ -1,0 +1,11 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o source/fooz
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsource
+fooza.cpp
+foozb.cpp
+	-cxx_compiler.args=-Trogdor

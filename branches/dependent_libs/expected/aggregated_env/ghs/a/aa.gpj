@@ -1,0 +1,9 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o a/libaa.so
+	-Ospeed
+	-OI
+	--exceptions
+	-La
+a.cpp

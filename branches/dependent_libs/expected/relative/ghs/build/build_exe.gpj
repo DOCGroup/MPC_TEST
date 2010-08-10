@@ -1,0 +1,14 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o build/other
+	-Ospeed
+	-OI
+	--exceptions
+	-Ibuild
+	-Lbuild
+..\src\foo.cpp
+bar.cpp
+lower\bar.cpp
+other.cpp
+..\src\bar.rc

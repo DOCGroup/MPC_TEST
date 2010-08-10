@@ -1,0 +1,6 @@
+project: cppgen {
+  CPPGEN_Files {
+    gendir = .
+    ../../other/other.r
+  }
+}

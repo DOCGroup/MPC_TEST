@@ -1,0 +1,5 @@
+workspace {
+  // Since this variable will resolve to nothing, and nothing else is listed
+  // in the workspace, this will result in nothing being processed.
+  $(CRACKHEAD)
+}

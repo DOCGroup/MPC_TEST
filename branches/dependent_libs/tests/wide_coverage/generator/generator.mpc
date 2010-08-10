@@ -1,0 +1,41 @@
+project(*be): test_base {
+  requires     += rtti
+  staticflags  += GENERATOR_BE_AS_STATIC_LIBS
+  dynamicflags += GENERATOR_BE_BUILD_DLL
+
+  Source_Files {
+    generator_be.cpp
+  }
+  Header_Files {
+    generator_be_export.h
+  }
+  Resource_Files {
+  }
+
+  prebuild = echo Building <%staticname%>
+}
+
+
+project: test_base {
+  after       += *be
+  requires    += rtti
+  install      = $(TEST_ROOT)/bin
+  libs        += generator_be
+  staticflags += GENERATOR_BE_AS_STATIC_LIBS
+
+  specific {
+    optimize =
+  }
+
+  Source_Files {
+    generator.cpp
+  }
+  Header_Files {
+    resource.h
+  }
+
+  prebuild = echo Building <%exename%>
+  specific(automake) {
+    postbuild = <%cp%> <%exename%> <%install%>
+  }
+}

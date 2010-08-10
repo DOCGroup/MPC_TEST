@@ -1,0 +1,11 @@
+project: base {
+  includes    += ..
+  libpaths    += ../lib
+  libs        += support_lib
+  after       += support_lib
+  staticflags += BASIC_AS_STATIC_LIBS
+
+  specific(automake) {
+    install_this_target = 1
+  }
+}

@@ -1,0 +1,3 @@
+workspace {
+  $(TEST_ROOT)/t/i/i.mwc
+}

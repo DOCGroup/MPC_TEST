@@ -1,0 +1,42 @@
+#!gbuild
+primaryTarget=ppc_integrity.tgt
+[Project]
+	--one_instantiation_per_object
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+generator/generator_be.gpj		[Shared Object]
+	-pic
+	-object_dir=generator/.shobj
+	-Lgenerator/.
+	-L..\lib
+	-DGENERATOR_BE_BUILD_DLL
+generator/generator_int.gpj		[INTEGRITY Application]
+	-object_dir=generator/.obj
+	-G
+	-Lgenerator/.
+	-L..\lib
+	-lgenerator_be
+source/fake/fake.gpj		[Shared Object]
+	-pic
+	-object_dir=source/fake/.shobj
+	-Lsource/fake
+source/source_lib.gpj		[Library]
+	-object_dir=source/.obj
+	-DUSING_PCH
+	-Isource
+	-Lsource/.
+	-L..\lib
+source/source_int.gpj		[INTEGRITY Application]
+	-object_dir=source/.obj
+	-Isource/.
+	-I\this\path
+	-IZ:\that\path
+	-IHere
+	-IThere
+	-Lsource/.
+	-L..\lib
+	-lsource_lib
+	-DMACRO_TEST=\"a_string_with_no_spaces\"

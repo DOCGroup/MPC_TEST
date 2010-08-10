@@ -1,0 +1,84 @@
+project(*A): cppgen {
+  exename = A
+}
+
+project(*B): cppgen {
+  exename = B
+  CPPGEN_Files {
+    carnival {
+      clown.r
+    }
+  }
+}
+
+project(*C): cppgen {
+  exename = C
+  CPPGEN_Files {
+    clown.r
+  }
+  Source_Files {
+    located {
+      other.cpp
+    }
+  }
+}
+
+project(*D): cppgen {
+  exename = D
+  CPPGEN_Files {
+    carnival {
+      clown.r
+    }
+  }
+  Source_Files {
+    located {
+      other.cpp
+    }
+  }
+}
+
+project(*E): cppgen {
+  exename = E
+  CPPGEN_Files {
+    clown.r
+  }
+  Source_Files {
+    other.cpp
+  }
+}
+
+project(*F): cppgen {
+  exename = F
+  CPPGEN_Files {
+    carnival {
+      clown.r
+    }
+  }
+  Source_Files {
+    other.cpp
+  }
+}
+
+project(*G): cppgen {
+  exename = G
+  CPPGEN_Files {
+    carnival {
+      clown.r
+    }
+  }
+  Source_Files {
+    other.cpp
+    carnival {
+      c*.cpp
+    }
+    fake {
+      alternate/*.cpp
+    }
+  }
+  Inline_Files {
+    carnival {
+      zzz.inl
+    }
+  }
+}
+

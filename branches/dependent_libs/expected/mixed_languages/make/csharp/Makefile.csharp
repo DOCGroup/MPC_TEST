@@ -1,0 +1,45 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+
+ICONOPT         =
+RESXOPT         = -resource:floop.dag.resx -resource:floop.resx
+TARGETDIR       = ./
+TARGET          = $(TARGETDIR)foofooc.dll
+LDFLAGS         = -lib:.
+CFLAGS          = -define:DESIGN,DEBUG
+TESTDIRSTART    = test -d
+TESTDIREND      = ||
+CAT             = cat
+MV              = mv -f
+RM              = rm -rf
+CP              = cp -p
+NUL             = /dev/null
+MKDIR           = mkdir -p
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(GENERATED_DIRTY) $(TARGET)
+
+$(TARGET): floop.Designer.cs floop.cs
+	@$(TESTDIRSTART) "$(TARGETDIR)" $(TESTDIREND) $(MKDIR) "$(TARGETDIR)"
+	gmcs -target:library -out:$(TARGET) $(CFLAGS) $(LDFLAGS) $(ICONOPT) $(RESXOPT) floop.Designer.cs floop.cs
+
+bundle:
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+clean:
+	-$(RM) $(TARGET)
+
+realclean: clean
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+depend:
+	@-:

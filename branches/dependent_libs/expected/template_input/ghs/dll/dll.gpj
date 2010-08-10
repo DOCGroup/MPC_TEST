@@ -1,0 +1,8 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o dll/dll.so
+	-G
+	-Idll/..
+	-Ldll
+foo.cpp

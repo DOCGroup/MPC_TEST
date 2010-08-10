@@ -1,0 +1,8 @@
+project(*monitorlib) {
+  after += TargetManager_stub
+  sharedname =
+  staticname = ciaomonlib
+  Source_Files {
+    foo.cpp
+  }
+}

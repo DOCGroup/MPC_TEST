@@ -1,0 +1,71 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CC            = javac
+CXX           = javac
+LD            = :
+AR            = jar
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
+OBJEXT        = .class
+OUTPUT_OPTION = 
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) 
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) 
+ARFLAGS       = cvf
+LDFLAGS       = -L"."
+CCC           = $(CXX)
+MAKEFILE      = Makefile.java_java
+DEPENDENCIES  = .depend.$(MAKEFILE)
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)this\ test$(EXESUFFIX)$(EXEEXT)
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+EXEEXT        = 
+LIBPREFIX     = 
+LIBSUFFIX     = 
+GENFLAGS      = -O
+LDLIBS        = 
+OBJS          = simple$(OBJEXT)
+SRC           = simple.java
+LINK.cc       = $(LD) $(LDFLAGS)
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(BIN)
+
+$(BIN): $(OBJS)
+	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
+	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+simple$(OBJEXT): simple.java
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) simple.java
+
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(BIN)
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@$(TOUCH) $(DEPENDENCIES)
+
+depend:
+	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

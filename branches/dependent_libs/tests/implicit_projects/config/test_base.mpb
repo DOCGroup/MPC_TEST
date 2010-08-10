@@ -1,0 +1,3 @@
+project {
+  libpaths += $(TEST_ROOT)/lib
+}

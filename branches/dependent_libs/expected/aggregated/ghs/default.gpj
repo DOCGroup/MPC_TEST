@@ -1,0 +1,36 @@
+#!gbuild
+primaryTarget=ppc_integrity.tgt
+[Project]
+	--one_instantiation_per_object
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+dir1/dir2/foo.gpj		[Shared Object]
+	-pic
+	-object_dir=dir1/dir2/.shobj
+	-Ldir1/dir2
+	-DNEEDED_BY_ALL
+	-DNEEDED_BY_SOME
+	-DREQUIRED
+	-DALSO_REQUIRED
+dir1/dir4/dir4.gpj		[Shared Object]
+	-pic
+	-object_dir=dir1/dir4/.shobj
+	-Ldir1/dir4
+	-DNEEDED_BY_ALL
+	-DNEEDED_BY_SOME
+dir1/dir5/dir5.gpj		[Shared Object]
+	-pic
+	-object_dir=dir1/dir5/.shobj
+	-Ldir1/dir5
+	-DNEEDED_BY_ALL
+	-DNEEDED_BY_SOME
+	-DREQUIRED
+dir2/another.gpj		[Shared Object]
+	-pic
+	-object_dir=dir2/.shobj
+	-Ldir2
+	-DNEEDED_BY_ALL
+	-DNEEDED_BY_NONE

@@ -1,0 +1,126 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CC            = gcc
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -DUSING_PCH -D_REENTRANT -I"."
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"." -L"../lib"
+CCC           = $(CXX)
+MAKEFILE      = Makefile.source_lib
+DEPENDENCIES  = .depend.$(MAKEFILE)
+LTARGETDIR    = ../lib/
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+EXEEXT        = 
+LIBPREFIX     = lib
+GENFLAGS      = -O
+LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
+OBJS          = .obj/source_lib_pch$(OBJEXT) .obj/TheCheat$(OBJEXT) .obj/cre/o.le/more_names$(OBJEXT) .obj/names$(OBJEXT) .obj/qwee$(OBJEXT)
+AREXT         = .a
+LIB           = $(LTARGETDIR)$(LIBPREFIX)source_lib$(LIBSUFFIX)$(AREXT)
+SRC           = source_lib_pch.cpp TheCheat.cpp cre/o.le/more_names.cpp names.cpp qwee.cxx
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = $(STATICFLAGS)
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(LIB)
+
+$(LIB): $(OBJS)
+	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
+	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
+
+SPACE           = $(should_be_unset) $(should_be_unset)
+GENERATED_DIRTY = cre/o.le/more_names.cpp cre/o.le/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl
+
+.NOTPARALLEL:
+cre/o.le/more_names.cpp cre/o.le/more_names.h: more_names.key ../bin/generator
+	@$(TESTDIRSTART) "cre/o.le" $(TESTDIREND) $(MKDIR) "cre/o.le"
+	../bin/generator -o cre/o.le more_names.key
+	echo cre/o.le/more_names.cpp and cre/o.le/more_names.h have been generated.
+	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) cre/o.le/more_names.cpp >> temp.$$$$ && $(MV) temp.$$$$ cre/o.le/more_names.cpp
+
+.NOTPARALLEL:
+names.cpp names.h: names.key something ../bin/generator
+	../bin/generator -n names names.key
+	echo names.cpp and names.h have been generated.
+	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) names.cpp >> temp.$$$$ && $(MV) temp.$$$$ names.cpp
+
+.NOTPARALLEL:
+TheCheat.cpp TheCheat.h: TheCheat.r ../bin/cppgen.pl
+	perl ../bin/cppgen.pl  TheCheat.r -o "$@"
+	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) TheCheat.cpp >> temp.$$$$ && $(MV) temp.$$$$ TheCheat.cpp
+
+.NOTPARALLEL:
+./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl: mondo/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm
+	@$(TESTDIRSTART) "." $(TESTDIREND) $(MKDIR) "."
+	perl ../mondo/mondo.pl -fake mondo/all.mondo
+	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) ./qwee.cxx >> temp.$$$$ && $(MV) temp.$$$$ ./qwee.cxx
+
+.PRECIOUS: $(GENERATED_DIRTY)
+$(OBJS): $(GENERATED_DIRTY)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+.obj/source_lib_pch$(OBJEXT): source_lib_pch.cpp
+	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
+	$(COMPILE.cc) -o .obj/source_lib_pch.h.gch $(EXPORTFLAGS) source_lib_pch.cpp
+	@$(CP) .obj/source_lib_pch.h.gch .obj/source_lib_pch$(OBJEXT)
+
+.obj/TheCheat$(OBJEXT): TheCheat.cpp
+	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) TheCheat.cpp
+
+
+.obj/cre/o.le/more_names$(OBJEXT): cre/o.le/more_names.cpp
+	@$(TESTDIRSTART) ".obj/cre/o.le" $(TESTDIREND) $(MKDIR) ".obj/cre/o.le"
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) cre/o.le/more_names.cpp
+
+
+.obj/names$(OBJEXT): names.cpp
+	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) names.cpp
+
+
+.obj/qwee$(OBJEXT): qwee.cxx
+	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) qwee.cxx
+
+
+clean:
+	-$(RM) $(OBJS)
+	-$(RM) .obj/source_lib_pch.h.gch
+
+realclean: clean
+	-$(RM) $(SHLIB) $(LIB)
+	-$(RM) $(GENERATED_DIRTY)
+	-$(RM) .obj/
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@$(TOUCH) $(DEPENDENCIES)
+
+depend:
+	-VDIR=.obj/ $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

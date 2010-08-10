@@ -1,0 +1,1 @@
+-base foo -expand_vars -nocomments -noreldefs -use_env -base bar

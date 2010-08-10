@@ -1,0 +1,4 @@
+project {
+  webapp = 1
+  after += aly
+}

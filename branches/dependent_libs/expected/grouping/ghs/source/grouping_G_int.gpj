@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+source/grouping_G.gpj		[Program]
+source/grouping_G_int.int

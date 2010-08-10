@@ -1,0 +1,16 @@
+project(flex_bison): flex, bison {
+  sharedname = bus
+
+  specific(!prop:microsoft, foo:bar) {
+    compile_flags += -O
+  } else {
+    compile_flags += /O
+  }
+
+  FLEX_Files {
+    bus.l
+  }
+  BISON_Files {
+    bus.y
+  }
+}

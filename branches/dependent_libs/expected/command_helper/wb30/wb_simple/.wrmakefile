@@ -1,0 +1,460 @@
+# The file ".wrmakefile" is the template used by the Wind River Workbench to
+# generate the makefiles of this project. Add user-specific build targets and
+# make rules only(!) in this project's ".wrmakefile" file. These will then be
+# automatically dumped into the makefiles.
+
+WIND_HOME := $(subst \,/,$(WIND_HOME))
+ACE_ROOT := $(subst \,/,$(ACE_ROOT))
+TAO_ROOT := $(subst \,/,$(TAO_ROOT))
+CIAO_ROOT := $(subst \,/,$(CIAO_ROOT))
+HOST_ROOT := $(subst \,/,$(HOST_ROOT))
+ACE_LIBOUT := .
+
+ACE_EXE_EXT = $(if $(filter Linux_gnu_native_3.x_4.x,$(BUILD_SPEC)),)$(if $(filter Windows_gnu_native_3.x_4.x,$(BUILD_SPEC)),.exe)
+
+ACE_TARGET_DIR = $(ACE_TARGET_NAME)_$(BUILD_SPEC)
+ACE_TARGET_PREFIX = $(if $(filter Linux_gnu_native_3.x_4.x,$(BUILD_SPEC)),lib)$(if $(filter Windows_gnu_native_3.x_4.x,$(BUILD_SPEC)),)
+ACE_TARGET_NAME := weird$name
+ACE_TARGET_EXT = $(if $(filter Linux_gnu_native_3.x_4.x,$(BUILD_SPEC)),.so)$(if $(filter Windows_gnu_native_3.x_4.x,$(BUILD_SPEC)),.dll)
+PROJECT_TARGET = $(filter %$(ACE_TARGET_EXT),$(PROJECT_TARGETS))
+ACE_TARGET_DIR ?= $(ACE_TARGET_NAME)
+
+
+all : generate_sources pre_build main_all post_build
+
+_clean ::
+	@echo "make: removing targets and objects of `pwd`"
+
+%IDE_GENERATED%
+
+
+-include $(PRJ_ROOT_DIR)/*.makefile
+
+-include *.makefile
+
+main_all : external_build $(PROJECT_TARGETS)
+	@echo "make: built targets of `pwd`"
+
+
+# entry point for extending the build
+external_build ::
+	@echo ""
+
+# main entry point for pre processing prior to the build
+pre_build ::
+	@cd ../.. ; mkdir -p classes 2> /dev/null || cat /dev/null > /dev/null
+pre_build :: $(PRE_BUILD_STEP)
+	@echo "Create object list";\
+	rm -f $(PRJ_ROOT_DIR)/filelist.txt;\
+	for object in _dummy_ $(OBJECTS_weird$name); do\
+		if [ "$$object" = "_dummy_" ]; then\
+			continue ;\
+		fi;\
+		echo "$$object" >> $(PRJ_ROOT_DIR)/filelist.txt ;\
+	done
+
+
+# function for generating the correct Custom type Prerequisite (input or dep)
+# using a ../ or ../../ prefix unless it's already an absolute path
+CUST_PRE = $(if $(patsubst $%,,$(1:/%=)),../../)$(1)
+
+# function for adding an exe_ext, if needed and the file exists
+ADD_EXT = $(if $(ACE_EXE_EXT),$(if $(suffix $(1)),$(1),$(wildcard $(1) $(1)$(ACE_EXE_EXT))),$(1))
+
+SPACE = $(should_be_unset) $(should_be_unset)
+GENERATED_DIRTY = $(addprefix ../../, SomeSortOfTypedefHelper.class simple/ArrayBounds.class simple/EnumArrayHelper.class simple/EnumArrayHolder.class simple/EnumSeqHelper.class simple/EnumSeqHolder.class simple/Local2.class simple/Local2Helper.class simple/Local2Holder.class simple/Local2Operations.class simple/Local2SeqHelper.class simple/Local2SeqHolder.class simple/Local3.class simple/Local3Helper.class simple/Local3Holder.class simple/Local3Operations.class simple/LongSeqSeqHelper.class simple/LongSeqSeqHolder.class simple/LongSeqSeqSeqHelper.class simple/LongSeqSeqSeqHolder.class simple/SeqOfTypedefedLongHelper.class simple/SeqOfTypedefedLongHolder.class simple/StringSeqHelper.class simple/StringSeqHolder.class simple/StringSeqSeqHelper.class simple/StringSeqSeqHolder.class simple/StringSeqSeqSeqHelper.class simple/StringSeqSeqSeqHolder.class simple/StructWithObjref.class simple/StructWithObjrefHelper.class simple/StructWithObjrefHolder.class simple/TIMESTAMP_INVALID_NSEC.class simple/TestArrayTypedef2Helper.class simple/TestArrayTypedefHelper.class simple/TestArrayTypedefHolder.class simple/TestConstBool.class simple/TestConstDouble.class simple/TestConstFloat.class simple/TestConstLong.class simple/TestConstString.class simple/TestConstTypedef.class simple/TestEnum.class simple/TestEnumHelper.class simple/TestEnumHolder.class simple/TestInterf.class simple/TestInterf2.class simple/TestInterf2Helper.class simple/TestInterf2Holder.class simple/TestInterf2Operations.class simple/TestInterf3.class simple/TestInterf3Helper.class simple/TestInterf3Holder.class simple/TestInterf3Operations.class simple/TestInterfHelper.class simple/TestInterfHolder.class simple/TestInterfOperations.class simple/TestLI.class simple/TestLIHelper.class simple/TestLIHolder.class simple/TestLIOperations.class simple/TestNestedStruct.class simple/TestNestedStructHelper.class simple/TestNestedStructHolder.class simple/TestSeqTypedefHelper.class simple/TestSeqTypedefHolder.class simple/TestStringArrayHelper.class simple/TestStringArrayHolder.class simple/TestStruct.class simple/TestStructArrayHelper.class simple/TestStructArrayHolder.class simple/TestStructHelper.class simple/TestStructHolder.class simple/TestStructSequenceHelper.class simple/TestStructSequenceHolder.class simple/TestStructWithEnum.class simple/TestStructWithEnumHelper.class simple/TestStructWithEnumHolder.class simple/TestTypedefHelper.class simple/_Local2LocalBase.class simple/_Local2TAOPeer.class simple/_Local3LocalBase.class simple/_Local3TAOPeer.class simple/_TestInterf2Stub.class simple/_TestInterf3Stub.class simple/_TestInterfStub.class simple/_TestLILocalBase.class simple/_TestLITAOPeer.class SomeSortOfTypedefHelper.java otherJC.cpp otherJC.h otherJS.cpp otherJS.h otherTypeSupportJC.cpp otherTypeSupportJC.h otherTypeSupportJS.cpp otherTypeSupportJS.h simple/ArrayBounds.java simple/EnumArrayHelper.java simple/EnumArrayHolder.java simple/EnumSeqHelper.java simple/EnumSeqHolder.java simple/Local2.java simple/Local2Helper.java simple/Local2Holder.java simple/Local2Operations.java simple/Local2SeqHelper.java simple/Local2SeqHolder.java simple/Local3.java simple/Local3Helper.java simple/Local3Holder.java simple/Local3Operations.java simple/LongSeqSeqHelper.java simple/LongSeqSeqHolder.java simple/LongSeqSeqSeqHelper.java simple/LongSeqSeqSeqHolder.java simple/SeqOfTypedefedLongHelper.java simple/SeqOfTypedefedLongHolder.java simple/StringSeqHelper.java simple/StringSeqHolder.java simple/StringSeqSeqHelper.java simple/StringSeqSeqHolder.java simple/StringSeqSeqSeqHelper.java simple/StringSeqSeqSeqHolder.java simple/StructWithObjref.java simple/StructWithObjrefHelper.java simple/StructWithObjrefHolder.java simple/TIMESTAMP_INVALID_NSEC.java simple/TestArrayTypedef2Helper.java simple/TestArrayTypedefHelper.java simple/TestArrayTypedefHolder.java simple/TestConstBool.java simple/TestConstDouble.java simple/TestConstFloat.java simple/TestConstLong.java simple/TestConstString.java simple/TestConstTypedef.java simple/TestEnum.java simple/TestEnumHelper.java simple/TestEnumHolder.java simple/TestInterf.java simple/TestInterf2.java simple/TestInterf2Helper.java simple/TestInterf2Holder.java simple/TestInterf2Operations.java simple/TestInterf3.java simple/TestInterf3Helper.java simple/TestInterf3Holder.java simple/TestInterf3Operations.java simple/TestInterfHelper.java simple/TestInterfHolder.java simple/TestInterfOperations.java simple/TestLI.java simple/TestLIHelper.java simple/TestLIHolder.java simple/TestLIOperations.java simple/TestNestedStruct.java simple/TestNestedStructHelper.java simple/TestNestedStructHolder.java simple/TestSeqTypedefHelper.java simple/TestSeqTypedefHolder.java simple/TestStringArrayHelper.java simple/TestStringArrayHolder.java simple/TestStruct.java simple/TestStructArrayHelper.java simple/TestStructArrayHolder.java simple/TestStructHelper.java simple/TestStructHolder.java simple/TestStructSequenceHelper.java simple/TestStructSequenceHolder.java simple/TestStructWithEnum.java simple/TestStructWithEnumHelper.java simple/TestStructWithEnumHolder.java simple/TestTypedefHelper.java simple/_Local2LocalBase.java simple/_Local2TAOPeer.java simple/_Local3LocalBase.java simple/_Local3TAOPeer.java simple/_TestInterf2Stub.java simple/_TestInterf3Stub.java simple/_TestInterfStub.java simple/_TestLILocalBase.java simple/_TestLITAOPeer.java simpleJC.cpp simpleJC.h simpleJS.h)
+
+# entry point for generating sources prior to the build
+generate_sources :: $(GENERATED_DIRTY)
+
+
+$(addprefix ../../,SomeSortOfTypedefHelper.class): $(foreach pre,SomeSortOfTypedefHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar SomeSortOfTypedefHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/. 2> /dev/null ; cp -f SomeSortOfTypedefHelper.class classes/. > /dev/null
+$(addprefix ../../,simple/ArrayBounds.class): $(foreach pre,simple/ArrayBounds.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/ArrayBounds.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/ArrayBounds.class classes/simple > /dev/null
+$(addprefix ../../,simple/EnumArrayHelper.class): $(foreach pre,simple/EnumArrayHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/EnumArrayHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumArrayHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/EnumArrayHolder.class): $(foreach pre,simple/EnumArrayHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/EnumArrayHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumArrayHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/EnumSeqHelper.class): $(foreach pre,simple/EnumSeqHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/EnumSeqHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumSeqHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/EnumSeqHolder.class): $(foreach pre,simple/EnumSeqHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/EnumSeqHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumSeqHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/Local2.class): $(foreach pre,simple/Local2.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2.class classes/simple > /dev/null
+$(addprefix ../../,simple/Local2Helper.class): $(foreach pre,simple/Local2Helper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2Helper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2Helper.class classes/simple > /dev/null
+$(addprefix ../../,simple/Local2Holder.class): $(foreach pre,simple/Local2Holder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2Holder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2Holder.class classes/simple > /dev/null
+$(addprefix ../../,simple/Local2Operations.class): $(foreach pre,simple/Local2Operations.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2Operations.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2Operations.class classes/simple > /dev/null
+$(addprefix ../../,simple/Local2SeqHelper.class): $(foreach pre,simple/Local2SeqHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2SeqHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2SeqHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/Local2SeqHolder.class): $(foreach pre,simple/Local2SeqHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2SeqHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2SeqHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/Local3.class): $(foreach pre,simple/Local3.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local3.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3.class classes/simple > /dev/null
+$(addprefix ../../,simple/Local3Helper.class): $(foreach pre,simple/Local3Helper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local3Helper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3Helper.class classes/simple > /dev/null
+$(addprefix ../../,simple/Local3Holder.class): $(foreach pre,simple/Local3Holder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local3Holder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3Holder.class classes/simple > /dev/null
+$(addprefix ../../,simple/Local3Operations.class): $(foreach pre,simple/Local3Operations.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local3Operations.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3Operations.class classes/simple > /dev/null
+$(addprefix ../../,simple/LongSeqSeqHelper.class): $(foreach pre,simple/LongSeqSeqHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/LongSeqSeqHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/LongSeqSeqHolder.class): $(foreach pre,simple/LongSeqSeqHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/LongSeqSeqHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/LongSeqSeqSeqHelper.class): $(foreach pre,simple/LongSeqSeqSeqHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/LongSeqSeqSeqHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqSeqHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/LongSeqSeqSeqHolder.class): $(foreach pre,simple/LongSeqSeqSeqHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/LongSeqSeqSeqHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqSeqHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/SeqOfTypedefedLongHelper.class): $(foreach pre,simple/SeqOfTypedefedLongHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/SeqOfTypedefedLongHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/SeqOfTypedefedLongHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/SeqOfTypedefedLongHolder.class): $(foreach pre,simple/SeqOfTypedefedLongHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/SeqOfTypedefedLongHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/SeqOfTypedefedLongHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/StringSeqHelper.class): $(foreach pre,simple/StringSeqHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/StringSeqHolder.class): $(foreach pre,simple/StringSeqHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/StringSeqSeqHelper.class): $(foreach pre,simple/StringSeqSeqHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqSeqHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/StringSeqSeqHolder.class): $(foreach pre,simple/StringSeqSeqHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqSeqHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/StringSeqSeqSeqHelper.class): $(foreach pre,simple/StringSeqSeqSeqHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqSeqSeqHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqSeqHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/StringSeqSeqSeqHolder.class): $(foreach pre,simple/StringSeqSeqSeqHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqSeqSeqHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqSeqHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/StructWithObjref.class): $(foreach pre,simple/StructWithObjref.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StructWithObjref.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/StructWithObjref.class classes/simple > /dev/null
+$(addprefix ../../,simple/StructWithObjrefHelper.class): $(foreach pre,simple/StructWithObjrefHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StructWithObjrefHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/StructWithObjrefHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/StructWithObjrefHolder.class): $(foreach pre,simple/StructWithObjrefHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StructWithObjrefHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/StructWithObjrefHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TIMESTAMP_INVALID_NSEC.class): $(foreach pre,simple/TIMESTAMP_INVALID_NSEC.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TIMESTAMP_INVALID_NSEC.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TIMESTAMP_INVALID_NSEC.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestArrayTypedef2Helper.class): $(foreach pre,simple/TestArrayTypedef2Helper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestArrayTypedef2Helper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestArrayTypedef2Helper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestArrayTypedefHelper.class): $(foreach pre,simple/TestArrayTypedefHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestArrayTypedefHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestArrayTypedefHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestArrayTypedefHolder.class): $(foreach pre,simple/TestArrayTypedefHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestArrayTypedefHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestArrayTypedefHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestConstBool.class): $(foreach pre,simple/TestConstBool.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstBool.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstBool.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestConstDouble.class): $(foreach pre,simple/TestConstDouble.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstDouble.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstDouble.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestConstFloat.class): $(foreach pre,simple/TestConstFloat.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstFloat.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstFloat.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestConstLong.class): $(foreach pre,simple/TestConstLong.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstLong.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstLong.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestConstString.class): $(foreach pre,simple/TestConstString.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstString.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstString.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestConstTypedef.class): $(foreach pre,simple/TestConstTypedef.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstTypedef.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstTypedef.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestEnum.class): $(foreach pre,simple/TestEnum.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestEnum.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestEnum.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestEnumHelper.class): $(foreach pre,simple/TestEnumHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestEnumHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestEnumHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestEnumHolder.class): $(foreach pre,simple/TestEnumHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestEnumHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestEnumHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterf.class): $(foreach pre,simple/TestInterf.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterf2.class): $(foreach pre,simple/TestInterf2.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf2.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterf2Helper.class): $(foreach pre,simple/TestInterf2Helper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf2Helper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2Helper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterf2Holder.class): $(foreach pre,simple/TestInterf2Holder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf2Holder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2Holder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterf2Operations.class): $(foreach pre,simple/TestInterf2Operations.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf2Operations.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2Operations.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterf3.class): $(foreach pre,simple/TestInterf3.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf3.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterf3Helper.class): $(foreach pre,simple/TestInterf3Helper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf3Helper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3Helper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterf3Holder.class): $(foreach pre,simple/TestInterf3Holder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf3Holder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3Holder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterf3Operations.class): $(foreach pre,simple/TestInterf3Operations.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf3Operations.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3Operations.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterfHelper.class): $(foreach pre,simple/TestInterfHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterfHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterfHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterfHolder.class): $(foreach pre,simple/TestInterfHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterfHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterfHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestInterfOperations.class): $(foreach pre,simple/TestInterfOperations.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterfOperations.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterfOperations.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestLI.class): $(foreach pre,simple/TestLI.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestLI.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLI.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestLIHelper.class): $(foreach pre,simple/TestLIHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestLIHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLIHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestLIHolder.class): $(foreach pre,simple/TestLIHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestLIHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLIHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestLIOperations.class): $(foreach pre,simple/TestLIOperations.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestLIOperations.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLIOperations.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestNestedStruct.class): $(foreach pre,simple/TestNestedStruct.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestNestedStruct.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestNestedStruct.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestNestedStructHelper.class): $(foreach pre,simple/TestNestedStructHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestNestedStructHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestNestedStructHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestNestedStructHolder.class): $(foreach pre,simple/TestNestedStructHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestNestedStructHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestNestedStructHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestSeqTypedefHelper.class): $(foreach pre,simple/TestSeqTypedefHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestSeqTypedefHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestSeqTypedefHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestSeqTypedefHolder.class): $(foreach pre,simple/TestSeqTypedefHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestSeqTypedefHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestSeqTypedefHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStringArrayHelper.class): $(foreach pre,simple/TestStringArrayHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStringArrayHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStringArrayHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStringArrayHolder.class): $(foreach pre,simple/TestStringArrayHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStringArrayHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStringArrayHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStruct.class): $(foreach pre,simple/TestStruct.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStruct.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStruct.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStructArrayHelper.class): $(foreach pre,simple/TestStructArrayHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructArrayHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructArrayHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStructArrayHolder.class): $(foreach pre,simple/TestStructArrayHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructArrayHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructArrayHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStructHelper.class): $(foreach pre,simple/TestStructHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStructHolder.class): $(foreach pre,simple/TestStructHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStructSequenceHelper.class): $(foreach pre,simple/TestStructSequenceHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructSequenceHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructSequenceHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStructSequenceHolder.class): $(foreach pre,simple/TestStructSequenceHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructSequenceHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructSequenceHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStructWithEnum.class): $(foreach pre,simple/TestStructWithEnum.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructWithEnum.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructWithEnum.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStructWithEnumHelper.class): $(foreach pre,simple/TestStructWithEnumHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructWithEnumHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructWithEnumHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestStructWithEnumHolder.class): $(foreach pre,simple/TestStructWithEnumHolder.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructWithEnumHolder.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructWithEnumHolder.class classes/simple > /dev/null
+$(addprefix ../../,simple/TestTypedefHelper.class): $(foreach pre,simple/TestTypedefHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestTypedefHelper.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestTypedefHelper.class classes/simple > /dev/null
+$(addprefix ../../,simple/_Local2LocalBase.class): $(foreach pre,simple/_Local2LocalBase.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_Local2LocalBase.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local2LocalBase.class classes/simple > /dev/null
+$(addprefix ../../,simple/_Local2TAOPeer.class): $(foreach pre,simple/_Local2TAOPeer.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_Local2TAOPeer.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local2TAOPeer.class classes/simple > /dev/null
+$(addprefix ../../,simple/_Local3LocalBase.class): $(foreach pre,simple/_Local3LocalBase.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_Local3LocalBase.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local3LocalBase.class classes/simple > /dev/null
+$(addprefix ../../,simple/_Local3TAOPeer.class): $(foreach pre,simple/_Local3TAOPeer.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_Local3TAOPeer.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local3TAOPeer.class classes/simple > /dev/null
+$(addprefix ../../,simple/_TestInterf2Stub.class): $(foreach pre,simple/_TestInterf2Stub.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_TestInterf2Stub.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestInterf2Stub.class classes/simple > /dev/null
+$(addprefix ../../,simple/_TestInterf3Stub.class): $(foreach pre,simple/_TestInterf3Stub.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_TestInterf3Stub.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestInterf3Stub.class classes/simple > /dev/null
+$(addprefix ../../,simple/_TestInterfStub.class): $(foreach pre,simple/_TestInterfStub.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_TestInterfStub.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestInterfStub.class classes/simple > /dev/null
+$(addprefix ../../,simple/_TestLILocalBase.class): $(foreach pre,simple/_TestLILocalBase.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_TestLILocalBase.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestLILocalBase.class classes/simple > /dev/null
+$(addprefix ../../,simple/_TestLITAOPeer.class): $(foreach pre,simple/_TestLITAOPeer.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; "$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_TestLITAOPeer.java
+	$(TRACE_FLAG)cd ../.. ; mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestLITAOPeer.class classes/simple > /dev/null
+
+.NOTPARALLEL:
+$(addprefix ../../,SomeSortOfTypedefHelper.java otherJC.cpp otherJC.h otherJS.cpp otherJS.h): $(foreach pre,other.idl simpleJC.h $(subst $(SPACE),\$(SPACE),$(IDL2JNI_ROOT)/bin/idl2jni) SomeSortOfTypedefHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; $(IDL2JNI_ROOT)/bin/idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 other.idl
+	$(TRACE_FLAG)cd ../.. ; echo Input: other
+.NOTPARALLEL:
+$(addprefix ../../,otherTypeSupportJC.cpp otherTypeSupportJC.h otherTypeSupportJS.cpp otherTypeSupportJS.h): $(foreach pre,otherTypeSupport.idl $(subst $(SPACE),\$(SPACE),$(IDL2JNI_ROOT)/bin/idl2jni) SomeSortOfTypedefHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; $(IDL2JNI_ROOT)/bin/idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 otherTypeSupport.idl
+	$(TRACE_FLAG)cd ../.. ; echo Input: otherTypeSupport
+.NOTPARALLEL:
+$(addprefix ../../,simple/ArrayBounds.java simple/EnumArrayHelper.java simple/EnumArrayHolder.java simple/EnumSeqHelper.java simple/EnumSeqHolder.java simple/Local2.java simple/Local2Helper.java simple/Local2Holder.java simple/Local2Operations.java simple/Local2SeqHelper.java simple/Local2SeqHolder.java simple/Local3.java simple/Local3Helper.java simple/Local3Holder.java simple/Local3Operations.java simple/LongSeqSeqHelper.java simple/LongSeqSeqHolder.java simple/LongSeqSeqSeqHelper.java simple/LongSeqSeqSeqHolder.java simple/SeqOfTypedefedLongHelper.java simple/SeqOfTypedefedLongHolder.java simple/StringSeqHelper.java simple/StringSeqHolder.java simple/StringSeqSeqHelper.java simple/StringSeqSeqHolder.java simple/StringSeqSeqSeqHelper.java simple/StringSeqSeqSeqHolder.java simple/StructWithObjref.java simple/StructWithObjrefHelper.java simple/StructWithObjrefHolder.java simple/TIMESTAMP_INVALID_NSEC.java simple/TestArrayTypedef2Helper.java simple/TestArrayTypedefHelper.java simple/TestArrayTypedefHolder.java simple/TestConstBool.java simple/TestConstDouble.java simple/TestConstFloat.java simple/TestConstLong.java simple/TestConstString.java simple/TestConstTypedef.java simple/TestEnum.java simple/TestEnumHelper.java simple/TestEnumHolder.java simple/TestInterf.java simple/TestInterf2.java simple/TestInterf2Helper.java simple/TestInterf2Holder.java simple/TestInterf2Operations.java simple/TestInterf3.java simple/TestInterf3Helper.java simple/TestInterf3Holder.java simple/TestInterf3Operations.java simple/TestInterfHelper.java simple/TestInterfHolder.java simple/TestInterfOperations.java simple/TestLI.java simple/TestLIHelper.java simple/TestLIHolder.java simple/TestLIOperations.java simple/TestNestedStruct.java simple/TestNestedStructHelper.java simple/TestNestedStructHolder.java simple/TestSeqTypedefHelper.java simple/TestSeqTypedefHolder.java simple/TestStringArrayHelper.java simple/TestStringArrayHolder.java simple/TestStruct.java simple/TestStructArrayHelper.java simple/TestStructArrayHolder.java simple/TestStructHelper.java simple/TestStructHolder.java simple/TestStructSequenceHelper.java simple/TestStructSequenceHolder.java simple/TestStructWithEnum.java simple/TestStructWithEnumHelper.java simple/TestStructWithEnumHolder.java simple/TestTypedefHelper.java simple/_Local2LocalBase.java simple/_Local2TAOPeer.java simple/_Local3LocalBase.java simple/_Local3TAOPeer.java simple/_TestInterf2Stub.java simple/_TestInterf3Stub.java simple/_TestInterfStub.java simple/_TestLILocalBase.java simple/_TestLITAOPeer.java simpleJC.cpp simpleJC.h simpleJS.h): $(foreach pre,simple.idl $(subst $(SPACE),\$(SPACE),$(IDL2JNI_ROOT)/bin/idl2jni) SomeSortOfTypedefHelper.java,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+	$(TRACE_FLAG)cd ../.. ; $(IDL2JNI_ROOT)/bin/idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 simple.idl
+	$(TRACE_FLAG)cd ../.. ; echo Input: simple
+
+DIR_PREFIX = wb_simple/$(BUILD_SPEC)
+
+# main entry point for post processing after the build
+post_build ::
+	@cd ../.. ; "$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
+post_build :: $(POST_BUILD_STEP) deploy_output
+	@echo ""
+
+# entry point for deploying output after the build
+deploy_output :: $(call CUST_PRE,$(ACE_LIBOUT)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT))
+$(call CUST_PRE,$(ACE_LIBOUT)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)): $(ACE_TARGET_DIR)/$(MODE_DIR)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)
+	$(TRACE_FLAG)cd ../.. ; test -d $(ACE_LIBOUT) || mkdir -p $(ACE_LIBOUT); cp $(DIR_PREFIX)/$(ACE_TARGET_DIR)/$(MODE_DIR)/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT) $(ACE_LIBOUT)
+	@echo ""
+
+
+clean :: external_clean $(CLEAN_STEP) _clean
+
+# entry point for extending the build clean
+external_clean ::
+	$(TRACE_FLAG)cd ../.. ; rm -f  SomeSortOfTypedefHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/ArrayBounds.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/EnumArrayHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/EnumArrayHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/EnumSeqHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/EnumSeqHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/Local2.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/Local2Helper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/Local2Holder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/Local2Operations.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/Local2SeqHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/Local2SeqHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/Local3.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/Local3Helper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/Local3Holder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/Local3Operations.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/LongSeqSeqHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/LongSeqSeqHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/LongSeqSeqSeqHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/LongSeqSeqSeqHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/SeqOfTypedefedLongHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/SeqOfTypedefedLongHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/StringSeqHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/StringSeqHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/StringSeqSeqHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/StringSeqSeqHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/StringSeqSeqSeqHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/StringSeqSeqSeqHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/StructWithObjref.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/StructWithObjrefHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/StructWithObjrefHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TIMESTAMP_INVALID_NSEC.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestArrayTypedef2Helper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestArrayTypedefHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestArrayTypedefHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestConstBool.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestConstDouble.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestConstFloat.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestConstLong.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestConstString.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestConstTypedef.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestEnum.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestEnumHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestEnumHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterf.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterf2.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterf2Helper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterf2Holder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterf2Operations.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterf3.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterf3Helper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterf3Holder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterf3Operations.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterfHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterfHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestInterfOperations.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestLI.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestLIHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestLIHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestLIOperations.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestNestedStruct.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestNestedStructHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestNestedStructHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestSeqTypedefHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestSeqTypedefHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStringArrayHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStringArrayHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStruct.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStructArrayHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStructArrayHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStructHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStructHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStructSequenceHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStructSequenceHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStructWithEnum.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStructWithEnumHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestStructWithEnumHolder.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/TestTypedefHelper.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/_Local2LocalBase.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/_Local2TAOPeer.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/_Local3LocalBase.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/_Local3TAOPeer.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/_TestInterf2Stub.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/_TestInterf3Stub.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/_TestInterfStub.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/_TestLILocalBase.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/_TestLITAOPeer.class
+	$(TRACE_FLAG)cd ../.. ; rm -f  SomeSortOfTypedefHelper.java otherJC.cpp otherJC.h otherJS.cpp otherJS.h
+	$(TRACE_FLAG)cd ../.. ; rm -f  otherTypeSupportJC.cpp otherTypeSupportJC.h otherTypeSupportJS.cpp otherTypeSupportJS.h
+	$(TRACE_FLAG)cd ../.. ; rm -f  simple/ArrayBounds.java simple/EnumArrayHelper.java simple/EnumArrayHolder.java simple/EnumSeqHelper.java simple/EnumSeqHolder.java simple/Local2.java simple/Local2Helper.java simple/Local2Holder.java simple/Local2Operations.java simple/Local2SeqHelper.java simple/Local2SeqHolder.java simple/Local3.java simple/Local3Helper.java simple/Local3Holder.java simple/Local3Operations.java simple/LongSeqSeqHelper.java simple/LongSeqSeqHolder.java simple/LongSeqSeqSeqHelper.java simple/LongSeqSeqSeqHolder.java simple/SeqOfTypedefedLongHelper.java simple/SeqOfTypedefedLongHolder.java simple/StringSeqHelper.java simple/StringSeqHolder.java simple/StringSeqSeqHelper.java simple/StringSeqSeqHolder.java simple/StringSeqSeqSeqHelper.java simple/StringSeqSeqSeqHolder.java simple/StructWithObjref.java simple/StructWithObjrefHelper.java simple/StructWithObjrefHolder.java simple/TIMESTAMP_INVALID_NSEC.java simple/TestArrayTypedef2Helper.java simple/TestArrayTypedefHelper.java simple/TestArrayTypedefHolder.java simple/TestConstBool.java simple/TestConstDouble.java simple/TestConstFloat.java simple/TestConstLong.java simple/TestConstString.java simple/TestConstTypedef.java simple/TestEnum.java simple/TestEnumHelper.java simple/TestEnumHolder.java simple/TestInterf.java simple/TestInterf2.java simple/TestInterf2Helper.java simple/TestInterf2Holder.java simple/TestInterf2Operations.java simple/TestInterf3.java simple/TestInterf3Helper.java simple/TestInterf3Holder.java simple/TestInterf3Operations.java simple/TestInterfHelper.java simple/TestInterfHolder.java simple/TestInterfOperations.java simple/TestLI.java simple/TestLIHelper.java simple/TestLIHolder.java simple/TestLIOperations.java simple/TestNestedStruct.java simple/TestNestedStructHelper.java simple/TestNestedStructHolder.java simple/TestSeqTypedefHelper.java simple/TestSeqTypedefHolder.java simple/TestStringArrayHelper.java simple/TestStringArrayHolder.java simple/TestStruct.java simple/TestStructArrayHelper.java simple/TestStructArrayHolder.java simple/TestStructHelper.java simple/TestStructHolder.java simple/TestStructSequenceHelper.java simple/TestStructSequenceHolder.java simple/TestStructWithEnum.java simple/TestStructWithEnumHelper.java simple/TestStructWithEnumHolder.java simple/TestTypedefHelper.java simple/_Local2LocalBase.java simple/_Local2TAOPeer.java simple/_Local3LocalBase.java simple/_Local3TAOPeer.java simple/_TestInterf2Stub.java simple/_TestInterf3Stub.java simple/_TestInterfStub.java simple/_TestLILocalBase.java simple/_TestLITAOPeer.java simpleJC.cpp simpleJC.h simpleJS.h
+	$(TRACE_FLAG)cd ../.. ; rm -f ./$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)
+	$(TRACE_FLAG)cd ../.. ; rm -rf classes ./simple.jar ; rm -rf simple
+	@echo ""
+
+
+

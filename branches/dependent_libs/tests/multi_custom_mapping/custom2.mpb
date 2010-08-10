@@ -1,0 +1,12 @@
+project {
+  Define_Custom(Script2) {
+    automatic = 1
+    command = echo <%quote%>int main(){}<%quote%>
+    output_option = <%gt%>
+    inputext = .mco
+    commandflags = -b
+    keyword script2_flags = commandflags
+    source_outputext = .cpp
+    pre_extension = _script2
+  }
+}

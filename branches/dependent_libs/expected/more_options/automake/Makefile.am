@@ -1,0 +1,11 @@
+SUBDIRS = \
+        @another@
+
+if BUILD_CPLUSPLUS
+SUBDIRS += c++
+endif
+
+ACLOCAL = @ACLOCAL@
+ACLOCAL_AMFLAGS = -I m4
+AUTOMAKE_OPTIONS = foreign
+

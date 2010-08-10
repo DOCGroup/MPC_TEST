@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>simple</title>
+  <style type="text/css">
+    p {font: 9pt verdana, lucida; width:800px; color: slategray;}
+    h1 {font: 36pt verdana, lucida; width: 800px; color: darkcyan;}
+    h2 {font: 16pt "trebuchet ms", helvetica; color: white; padding: 3px; background-color: teal;}
+    a {text-decoration: none; }
+    td {font: 12pt verdana, lucida; color: white; padding: 3px; background-color: cadetblue;}
+    td.sub {font: 12pt verdana, lucida; color: white; padding: 3px; background-color: darkcyan;}
+    td.subsub {font: 12pt verdana, lucida; color: white; padding: 3px; padding-left: 12px; background-color: darkcyan;}
+    thead tr td {font: 16pt "trebuchet ms", helvetica; color: white; padding: 3px; background-color: teal;}
+    th {font: 14pt bold verdana, lucida; background-color: teal; color: white; padding: 3px;}
+
+    div {
+      font: bold 12pt verdana, lucida;
+      color: white;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      border: 2px outset darkgray;
+      margin: 3px;
+      width: 3in;
+      padding: 2px;
+      padding-left: 6px;
+    }
+    .tree0 { background-color: #006464; }
+    .tree1 { background-color: #009797; margin-left: 0.5in; }
+    .tree2 { background-color: #00caca; margin-left: 1in; }
+  </style>
+  <script type="text/javascript">
+  <!--
+  function popup(mylink, windowname) {
+    if (!window.focus) {
+      return true;
+    }
+    else {
+      var href;
+      if (typeof(mylink) == 'string') {
+        href=mylink;
+      }
+      else {
+        href=mylink.href;
+      }
+      window.open(href, windowname, 'width=535,height=465,scrollbars=yes,menubar=yes,resizable=yes');
+      return false;
+    }
+  }
+  //-->
+  </script>
+</head>
+<body>
+<h1>simple</h1>
+
+<h2>MPC Inheritance Hierarchy</h2><a href="file:///home/elliottc/current/MPC/test/tests/command_helper/simple.mpc" onClick="return popup(this, 'Project File')" target=_blank><div class="tree0">simple</div></a>
+<a href="file:///home/elliottc/current/MPC/test/tests/command_helper/config/idl2jni.mpb" onClick="return popup(this, 'Project File')" target=_blank><div class="tree1">idl2jni</div></a>
+<a href="file:///home/elliottc/current/MPC/test/tests/command_helper/config/java.mpb" onClick="return popup(this, 'Project File')" target=_blank><div class="tree2">java</div></a>
+<br>
+<table style="table-layout:fixed" width="800" summary="MPC Project Information">
+<col width="200">
+<col width="600">
+<thead>
+<tr><td colspan="2">MPC Project Settings</td></tr>
+<tr><th>Name</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>after</td><td>idl2jni_runtime idl2jni_codegen</td></tr>
+<tr><td>avoids</td><td></td></tr>
+<tr><td>custom_only</td><td></td></tr>
+<tr><td>dllout</td><td></td></tr>
+<tr><td>dynamicflags</td><td></td></tr>
+<tr><td>exename</td><td></td></tr>
+<tr><td>includes</td><td>something</td></tr>
+<tr><td>exeout</td><td></td></tr>
+<tr><td>libout</td><td>.</td></tr>
+<tr><td>libpaths</td><td>. "$(IDL2JNI_ROOT)/lib"</td></tr>
+<tr><td>libs</td><td>idl2jni_runtime</td></tr>
+<tr><td>lit_libs</td><td></td></tr>
+<tr><td>macros</td><td></td></tr>
+<tr><td>pch_header</td><td>simple_pch.h</td></tr>
+<tr><td>pch_source</td><td>simple_pch.cpp</td></tr>
+<tr><td>prebuild</td><td><%mkdir%> classes 2<%gt%> <%nul%> <%or%> <%cat%> <%nul%> <%gt%> <%nul%></td></tr>
+<tr><td>postbuild</td><td><%if(jarname)%><%quote%>$(JAVA_HOME)/bin/jar<%quote%> -cf <%libout%>/<%jarname%>.jar -C classes .<%endif%></td></tr>
+<tr><td>postclean</td><td><%rm%> classes<%if(jarname)%> <%libout%>/<%jarname%>.jar<%endif%> <%cmdsep%> <%rm%> simple</td></tr>
+<tr><td>pure_libs</td><td></td></tr>
+<tr><td>recurse</td><td></td></tr>
+<tr><td>requires</td><td></td></tr>
+<tr><td>sharedname</td><td>weird$name</td></tr>
+<tr><td>staticflags</td><td></td></tr>
+<tr><td>staticname</td><td>weird$name</td></tr>
+<tr><td>tagname *</td><td></td></tr>
+<tr><td>tagchecks *</td><td></td></tr>
+<tr><td>version</td><td>1.66530.5b</td></tr>
+</tbody>
+<thead>
+<tr><td colspan="2">MPC Project Files</td></tr>
+<tr><th>Name</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Source Files</td><td>otherJC.cpp otherJS.cpp otherTypeSupportJC.cpp otherTypeSupportJS.cpp simpleJC.cpp</td></tr>
+<tr><td>Header Files</td><td>otherJC.h otherJS.h otherTypeSupportJC.h otherTypeSupportJS.h simpleJC.h simpleJS.h</td></tr>
+<tr><td>Inline Files</td><td></td></tr>
+<tr><td>Template Files</td><td></td></tr>
+<tr><td>Resource Files</td><td></td></tr>
+<tr><td>Documentation Files</td><td>additional_options.txt build_entry.txt perl_options.txt</td></tr>
+<tr><td>Java Files</td><td>simple/_Local2LocalBase.java simple/_Local2TAOPeer.java simple/_Local3LocalBase.java simple/_Local3TAOPeer.java simple/_TestInterf2Stub.java simple/_TestInterf3Stub.java simple/_TestInterfStub.java simple/_TestLILocalBase.java simple/_TestLITAOPeer.java simple/ArrayBounds.java simple/EnumArrayHelper.java simple/EnumArrayHolder.java simple/EnumSeqHelper.java simple/EnumSeqHolder.java simple/Local2.java simple/Local2Helper.java simple/Local2Holder.java simple/Local2Operations.java simple/Local2SeqHelper.java simple/Local2SeqHolder.java simple/Local3.java simple/Local3Helper.java simple/Local3Holder.java simple/Local3Operations.java simple/LongSeqSeqHelper.java simple/LongSeqSeqHolder.java simple/LongSeqSeqSeqHelper.java simple/LongSeqSeqSeqHolder.java simple/SeqOfTypedefedLongHelper.java simple/SeqOfTypedefedLongHolder.java simple/StringSeqHelper.java simple/StringSeqHolder.java simple/StringSeqSeqHelper.java simple/StringSeqSeqHolder.java simple/StringSeqSeqSeqHelper.java simple/StringSeqSeqSeqHolder.java simple/StructWithObjref.java simple/StructWithObjrefHelper.java simple/StructWithObjrefHolder.java simple/TestArrayTypedef2Helper.java simple/TestArrayTypedefHelper.java simple/TestArrayTypedefHolder.java simple/TestConstBool.java simple/TestConstDouble.java simple/TestConstFloat.java simple/TestConstLong.java simple/TestConstString.java simple/TestConstTypedef.java simple/TestEnum.java simple/TestEnumHelper.java simple/TestEnumHolder.java simple/TestInterf.java simple/TestInterf2.java simple/TestInterf2Helper.java simple/TestInterf2Holder.java simple/TestInterf2Operations.java simple/TestInterf3.java simple/TestInterf3Helper.java simple/TestInterf3Holder.java simple/TestInterf3Operations.java simple/TestInterfHelper.java simple/TestInterfHolder.java simple/TestInterfOperations.java simple/TestLI.java simple/TestLIHelper.java simple/TestLIHolder.java simple/TestLIOperations.java simple/TestNestedStruct.java simple/TestNestedStructHelper.java simple/TestNestedStructHolder.java simple/TestSeqTypedefHelper.java simple/TestSeqTypedefHolder.java simple/TestStringArrayHelper.java simple/TestStringArrayHolder.java simple/TestStruct.java simple/TestStructArrayHelper.java simple/TestStructArrayHolder.java simple/TestStructHelper.java simple/TestStructHolder.java simple/TestStructSequenceHelper.java simple/TestStructSequenceHolder.java simple/TestStructWithEnum.java simple/TestStructWithEnumHelper.java simple/TestStructWithEnumHolder.java simple/TestTypedefHelper.java simple/TIMESTAMP_INVALID_NSEC.java SomeSortOfTypedefHelper.java</td></tr>
+<tr><td>Idl2jni Files</td><td>other.idl otherTypeSupport.idl simple.idl</td></tr>
+</tbody>
+</table>
+
+<p>
+*   This keyword is specific to the gnuace project type.
+</p>
+
+</body>
+</html>

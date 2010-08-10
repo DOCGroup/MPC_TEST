@@ -1,0 +1,1 @@
+FOOBAG="Debug" "Release"

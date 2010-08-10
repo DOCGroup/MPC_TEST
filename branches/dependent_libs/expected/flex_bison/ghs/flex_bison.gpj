@@ -1,0 +1,26 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o ./libbus.so
+	-Ospeed
+	-OI
+	--exceptions
+	-L.
+	-O
+bus.l		[Text]
+bus.cpp
+	:dependsRelative=bus.l
+	:preexecShell='cd . && flex -t bus.l > bus.cpp'
+	:extraOutputFile=bus.cpp
+bus.y		[Text]
+bus.tab.c
+	:dependsRelative=bus.y
+	:preexecShell='cd . && bison -d bus.y'
+	:extraOutputFile=bus.tab.c
+	:extraOutputFile=bus.tab.h
+bus.cpp
+	-cxx_compiler.args=-O
+bus.tab.c
+	-cxx_compiler.args=-O
+bus.tab.h
+build_entry.txt		[Documentation]

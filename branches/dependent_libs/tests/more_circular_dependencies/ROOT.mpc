@@ -1,0 +1,9 @@
+project {
+  dynamicflags += ROOT_BUILD_DLL
+  staticflags  += ROOT_AS_STATIC_LIBS
+  Source_Files {
+    root.cpp
+  }
+  Documentation_Files {
+  }
+}

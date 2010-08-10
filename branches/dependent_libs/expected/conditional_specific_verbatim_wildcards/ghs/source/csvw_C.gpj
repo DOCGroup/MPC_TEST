@@ -1,0 +1,17 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o source/cdog
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsource
+	-DONLY_MAKE
+	-DONLY_UNIX
+byion.cpp
+conditional\unix.cpp
+moop.cxx
+ploor.cpp
+qwaaa.c
+byion.h
+qwaaa.h

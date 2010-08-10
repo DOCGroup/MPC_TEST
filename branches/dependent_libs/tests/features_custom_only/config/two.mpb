@@ -1,0 +1,7 @@
+feature(!two, !three) {
+  specific(automake) {
+    macros += THIS_IS_A_MACRO
+  } else {
+    macros += THAT_IS_A_MACRO
+  }
+}

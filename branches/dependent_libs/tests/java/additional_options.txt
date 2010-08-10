@@ -1,0 +1,1 @@
+-language java -name_modifier "*_java" -apply_project -value_project "exename=this test" -value_project includes-=nothing

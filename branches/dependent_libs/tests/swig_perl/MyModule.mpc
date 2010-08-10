@@ -1,0 +1,9 @@
+project: swig_perl {
+  sharedname = *
+
+  // List the source file to test automatic addition
+  // of files with source_outputext with text before the .
+  Source_Files {
+    hello.cpp
+  }
+}

@@ -1,0 +1,14 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o generator/..\lib/libgenerator_be.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lgenerator/.
+	-L..\lib
+	-DGENERATOR_BE_BUILD_DLL
+generator_be.cpp
+generator_be.h
+generator_be_export.h
+readme.txt		[Documentation]

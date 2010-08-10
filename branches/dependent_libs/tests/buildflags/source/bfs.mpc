@@ -1,0 +1,38 @@
+project(*exe) {
+  exename = fooz
+  Source_Files {
+    fooza.cpp
+  }
+  Source_Files {
+    buildflags += -Trogdor
+    foozb.cpp
+  }
+}
+
+project(*lib) {
+  install = ../lib
+  sharedname = bfs
+
+  specific(automake) {
+    install_this_target = 1
+  }
+
+  Source_Files {
+    one.cpp
+    Inside {
+      two.cpp
+    }
+  }
+
+  Source_Files {
+    buildflags += -Trogdor
+    three.cpp
+    Inside {
+      four.cpp
+    }
+    Outside {
+      five.cpp
+    }
+    directory
+  }
+}

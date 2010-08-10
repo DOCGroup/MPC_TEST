@@ -1,0 +1,9 @@
+workspace {
+  o
+  r
+  n
+  csharp {
+    cmdline += -language csharp
+    z
+  }
+}

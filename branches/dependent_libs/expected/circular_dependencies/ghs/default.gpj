@@ -1,0 +1,45 @@
+#!gbuild
+primaryTarget=ppc_integrity.tgt
+[Project]
+	--one_instantiation_per_object
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+NodeManager/NodeManager_stub.gpj		[Library]
+	-object_dir=NodeManager/.obj
+	-LNodeManager
+DomainApplicationManager/DomainApplicationManager.gpj		[Library]
+	-object_dir=DomainApplicationManager/.obj
+	-LDomainApplicationManager
+NodeApplication/NodeApplication_int.gpj		[INTEGRITY Application]
+	-object_dir=NodeApplication/.obj
+	-LNodeApplication
+NodeApplication/RTNA_Configurator.gpj		[Library]
+	-object_dir=NodeApplication/.obj
+	-LNodeApplication
+NodeApplicationManager/NodeApplicationManager.gpj		[Library]
+	-object_dir=NodeApplicationManager/.obj
+	-LNodeApplicationManager
+NodeManager/Monitor_Monitorlib.gpj		[Library]
+	-object_dir=NodeManager/.obj
+	-LNodeManager
+TargetManager/CIAO_TargetManager_stub.gpj		[Library]
+	-object_dir=TargetManager/.obj
+	-LTargetManager
+NodeManager/NodeManager_int.gpj		[INTEGRITY Application]
+	-object_dir=NodeManager/.obj
+	-LNodeManager
+NodeManager/lib.gpj		[Library]
+	-object_dir=NodeManager/.obj
+	-LNodeManager
+TargetManager/CIAO_TargetManager_svnt.gpj		[Library]
+	-object_dir=TargetManager/.obj
+	-LTargetManager
+TargetManager/CIAO_TargetManager_exec.gpj		[Library]
+	-object_dir=TargetManager/.obj
+	-LTargetManager
+TargetManager/TMClient.gpj		[Library]
+	-object_dir=TargetManager/.obj
+	-LTargetManager

@@ -1,0 +1,26 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o src/libsrc.so
+	-Ospeed
+	-OI
+	--exceptions
+	-Lsrc
+fire.crap.r		[Text]
+fire.crap.cpp
+	:dependsRelative=..\\bin\\cppgen.pl
+	:dependsRelative=fire.crap.r
+	:preexecShell='cd src && perl ..\\bin\\cppgen.pl  fire.crap.r -o fire.crap.cpp'
+fire.crap.h
+	:dependsRelative=..\\bin\\cppgen.pl
+	:dependsRelative=fire.crap.r
+	:preexecShell='cd src && perl ..\\bin\\cppgen.pl  fire.crap.r -o fire.crap.h'
+	:extraOutputFile=fire.crap.cpp
+	:extraOutputFile=fire.crap.h
+fire.ts		[Text]
+fire.crap.r
+	:dependsRelative=fire.ts
+	:preexecShell='cd src && echo  fire.ts > fire.crap.r'
+	:extraOutputFile=fire.crap.r
+fire.crap.cpp
+fire.crap.h

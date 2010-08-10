@@ -1,0 +1,28 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="\home\elliottc\current\MPC\test\tests\aggregated_env\a"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="a.cpp"
+
+["Compiler" Settings: "Debug"]
+Options=-g -rtti -fr"$(Proj_dir)\Debug" -d"_DEBUG" -mv6400
+
+["Compiler" Settings: "Release"]
+Options=-o3 -rtti -fr"$(Proj_dir)\Release" -mv6400
+
+["Archiver" Settings: "Debug"]
+Options=-r -o.\aad.lib
+
+["Archiver" Settings: "Release"]
+Options=-r -o.\aa.lib
+

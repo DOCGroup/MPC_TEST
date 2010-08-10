@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+source/bfs_exe.gpj		[Program]
+source/bfs_exe_int.int

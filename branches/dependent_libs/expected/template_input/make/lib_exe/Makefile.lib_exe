@@ -1,0 +1,214 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CFG = Win32 Debug
+
+ifeq ($(CFG), Win32 Debug)
+CC            = 
+CXX           = 
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
+OBJEXT        = 
+OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"."
+CCC           = $(CXX)
+MAKEFILE      = Makefile.lib_exe
+DEPENDENCIES  = $(MAKEFILE)
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)foo$(EXESUFFIX)$(EXEEXT)
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+EXEEXT        = .exe
+LIBPREFIX     = 
+LIBSUFFIX     = sd
+GENFLAGS      = 
+LDLIBS        = 
+OBJS          = foo$(OBJEXT)
+SRC           = foo.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = $(STATICFLAGS)
+endif
+ifeq ($(CFG), Win32 Release)
+CC            = 
+CXX           = 
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
+OBJEXT        = 
+OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"."
+CCC           = $(CXX)
+MAKEFILE      = Makefile.lib_exe
+DEPENDENCIES  = $(MAKEFILE)
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)foo$(EXESUFFIX)$(EXEEXT)
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+EXEEXT        = .exe
+LIBPREFIX     = 
+LIBSUFFIX     = s
+GENFLAGS      = 
+LDLIBS        = 
+OBJS          = foo$(OBJEXT)
+SRC           = foo.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = $(STATICFLAGS)
+endif
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(BIN)
+
+$(BIN): $(OBJS)
+	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
+	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+foo$(OBJEXT): foo.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) foo.cpp
+
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(BIN)
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@$(TOUCH) $(DEPENDENCIES)
+
+depend:
+	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+ifeq ($(CFG), x64 Debug)
+CC            = 
+CXX           = 
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
+OBJEXT        = 
+OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"."
+CCC           = $(CXX)
+MAKEFILE      = Makefile.lib_exe
+DEPENDENCIES  = $(MAKEFILE)
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)foo$(EXESUFFIX)$(EXEEXT)
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+EXEEXT        = .exe
+LIBPREFIX     = 
+LIBSUFFIX     = sd
+GENFLAGS      = 
+LDLIBS        = 
+OBJS          = foo$(OBJEXT)
+SRC           = foo.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = $(STATICFLAGS)
+endif
+ifeq ($(CFG), x64 Release)
+CC            = 
+CXX           = 
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS)
+OBJEXT        = 
+OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"."
+CCC           = $(CXX)
+MAKEFILE      = Makefile.lib_exe
+DEPENDENCIES  = $(MAKEFILE)
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)foo$(EXESUFFIX)$(EXEEXT)
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+EXEEXT        = .exe
+LIBPREFIX     = 
+LIBSUFFIX     = s
+GENFLAGS      = 
+LDLIBS        = 
+OBJS          = foo$(OBJEXT)
+SRC           = foo.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = $(STATICFLAGS)
+endif
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(BIN)
+
+$(BIN): $(OBJS)
+	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
+	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+foo$(OBJEXT): foo.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) foo.cpp
+
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(BIN)
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@$(TOUCH) $(DEPENDENCIES)
+
+depend:
+	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+# DO NOT DELETE THIS LINE

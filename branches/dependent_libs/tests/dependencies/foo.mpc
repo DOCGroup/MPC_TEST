@@ -1,0 +1,18 @@
+project {
+  Define_Custom(foo) {
+    command = echo
+    dependent = nospace.txt "space 1.txt"
+    output_option = <%gt%>
+    inputext = .ar
+    generic_outputext = .cr
+  }
+
+  FOO_Files {
+    dependent += "space 2.txt"
+    foo.ar << "space 3.txt"
+  }
+
+  FOO_Files {
+    bar.ar
+  }
+}

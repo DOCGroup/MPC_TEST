@@ -1,0 +1,21 @@
+project: ghs_base, some_feature, ghs_base {
+  recursive_includes += houses
+  recursive_libpaths += non_existent
+
+  expand(FOO_ROOT) {
+    $FOOT_ROOT
+    .
+  }
+
+  Source_Files {
+    $(FOO_ROOT)/houses/simple.cpp
+    $(FOO_ROOT)/houses/simple.cpp
+  }
+
+  postclean += echo It is clean.
+  postclean += echo Really, it is.
+
+  verbatim(make, fakin) {
+    slow: echo help
+  }
+}

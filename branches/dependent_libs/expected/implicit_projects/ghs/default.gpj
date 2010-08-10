@@ -1,0 +1,20 @@
+#!gbuild
+primaryTarget=ppc_integrity.tgt
+[Project]
+	--one_instantiation_per_object
+	:sourceDir=.
+	--std
+	-language=cxx
+	--long_long
+	--new_style_casts
+source/one/one.gpj		[Library]
+	-object_dir=source/one/.obj
+	-Lsource/one/.
+	-L..\..\lib
+	-DFAILURE_TRIGGER
+source/two/two_int.gpj		[INTEGRITY Application]
+	-object_dir=source/two/.obj
+	-Isource/two/..
+	-Lsource/two/.
+	-L..\..\lib
+	-lone

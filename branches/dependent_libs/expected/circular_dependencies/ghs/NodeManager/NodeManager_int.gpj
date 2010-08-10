@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+NodeManager/NodeManager.gpj		[Program]
+NodeManager/NodeManager_int.int
