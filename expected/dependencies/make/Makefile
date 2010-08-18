@@ -7,19 +7,43 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make
+# c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type make
 #
 #----------------------------------------------------------------------------
 
 
-all: foo
+all: foo foo__some2ndlib foo__some3rdlib foo__some4thlib foo__somelib
 
 clean depend generated realclean $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.foo $(@)
+	@$(MAKE) -f Makefile.foo__some2ndlib $(@)
+	@$(MAKE) -f Makefile.foo__some3rdlib $(@)
+	@$(MAKE) -f Makefile.foo__some4thlib $(@)
+	@$(MAKE) -f Makefile.foo__somelib $(@)
 
 .PHONY: foo
 foo:
 	@$(MAKE) -f Makefile.foo generated all
 
+.PHONY: foo__some2ndlib
+foo__some2ndlib:
+	@$(MAKE) -f Makefile.foo__some2ndlib generated all
+
+.PHONY: foo__some3rdlib
+foo__some3rdlib:
+	@$(MAKE) -f Makefile.foo__some3rdlib generated all
+
+.PHONY: foo__some4thlib
+foo__some4thlib:
+	@$(MAKE) -f Makefile.foo__some4thlib generated all
+
+.PHONY: foo__somelib
+foo__somelib:
+	@$(MAKE) -f Makefile.foo__somelib generated all
+
 project_name_list:
 	@echo foo
+	@echo foo__some2ndlib
+	@echo foo__some3rdlib
+	@echo foo__some4thlib
+	@echo foo__somelib
