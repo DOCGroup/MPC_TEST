@@ -1,3 +1,150 @@
+Wed Aug 18 21:33:07 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
+
+        * tests/dependencies/foo.mpc:
+        * tests/dependencies/something.cpp:
+
+          Added projects to build the dependent_libs, instead of
+          relying on fake libraries (see removed files below) to
+          allow dependencies test to compile.
+        
+        * expected/dependencies/automake/Makefile.am:
+        * expected/dependencies/bmake/Makefile.bmak:
+        * expected/dependencies/bmake/Makefile.foo__some2ndlib.bmak:
+        * expected/dependencies/bmake/Makefile.foo__some3rdlib.bmak:
+        * expected/dependencies/bmake/Makefile.foo__some4thlib.bmak:
+        * expected/dependencies/bmake/Makefile.foo__somelib.bmak:
+        * expected/dependencies/em3/dependencies.vcw:
+        * expected/dependencies/em3/foo__some2ndlib.vcp:
+        * expected/dependencies/em3/foo__some3rdlib.vcp:
+        * expected/dependencies/em3/foo__some4thlib.vcp:
+        * expected/dependencies/em3/foo__somelib.vcp:
+        * expected/dependencies/ghs/default.gpj:
+        * expected/dependencies/ghs/foo__some2ndlib.gpj:
+        * expected/dependencies/ghs/foo__some3rdlib.gpj:
+        * expected/dependencies/ghs/foo__some4thlib.gpj:
+        * expected/dependencies/ghs/foo__somelib.gpj:
+        * expected/dependencies/gnuace/GNUmakefile:
+        * expected/dependencies/gnuace/GNUmakefile.foo__some2ndlib:
+        * expected/dependencies/gnuace/GNUmakefile.foo__some3rdlib:
+        * expected/dependencies/gnuace/GNUmakefile.foo__some4thlib:
+        * expected/dependencies/gnuace/GNUmakefile.foo__somelib:
+        * expected/dependencies/html/dependencies_workspace.html:
+        * expected/dependencies/html/foo__some2ndlib.html:
+        * expected/dependencies/html/foo__some3rdlib.html:
+        * expected/dependencies/html/foo__some4thlib.html:
+        * expected/dependencies/html/foo__somelib.html:
+        * expected/dependencies/make/Makefile:
+        * expected/dependencies/make/Makefile.foo__some2ndlib:
+        * expected/dependencies/make/Makefile.foo__some3rdlib:
+        * expected/dependencies/make/Makefile.foo__some4thlib:
+        * expected/dependencies/make/Makefile.foo__somelib:
+        * expected/dependencies/nmake/Makefile:
+        * expected/dependencies/nmake/Makefile.foo__some2ndlib.mak:
+        * expected/dependencies/nmake/Makefile.foo__some3rdlib.mak:
+        * expected/dependencies/nmake/Makefile.foo__some4thlib.mak:
+        * expected/dependencies/nmake/Makefile.foo__somelib.mak:
+        * expected/dependencies/vc6/dependencies.dsw:
+        * expected/dependencies/vc6/foo__some2ndlib.dsp:
+        * expected/dependencies/vc6/foo__some3rdlib.dsp:
+        * expected/dependencies/vc6/foo__some4thlib.dsp:
+        * expected/dependencies/vc6/foo__somelib.dsp:
+        * expected/dependencies/vc7/dependencies.sln:
+        * expected/dependencies/vc7/foo__some2ndlib.vcproj:
+        * expected/dependencies/vc7/foo__some3rdlib.vcproj:
+        * expected/dependencies/vc7/foo__some4thlib.vcproj:
+        * expected/dependencies/vc7/foo__somelib.vcproj:
+        * expected/dependencies/vc71/dependencies.sln:
+        * expected/dependencies/vc71/foo__some2ndlib.vcproj:
+        * expected/dependencies/vc71/foo__some3rdlib.vcproj:
+        * expected/dependencies/vc71/foo__some4thlib.vcproj:
+        * expected/dependencies/vc71/foo__somelib.vcproj:
+        * expected/dependencies/vc8/dependencies.sln:
+        * expected/dependencies/vc8/foo__some2ndlib.vcproj:
+        * expected/dependencies/vc8/foo__some3rdlib.vcproj:
+        * expected/dependencies/vc8/foo__some4thlib.vcproj:
+        * expected/dependencies/vc8/foo__somelib.vcproj:
+        * expected/dependencies/wb26/foo__some2ndlib:
+        * expected/dependencies/wb26/foo__some2ndlib/.project:
+        * expected/dependencies/wb26/foo__some2ndlib/.wrmakefile:
+        * expected/dependencies/wb26/foo__some2ndlib/.wrproject:
+        * expected/dependencies/wb26/foo__some3rdlib:
+        * expected/dependencies/wb26/foo__some3rdlib/.project:
+        * expected/dependencies/wb26/foo__some3rdlib/.wrmakefile:
+        * expected/dependencies/wb26/foo__some3rdlib/.wrproject:
+        * expected/dependencies/wb26/foo__some4thlib:
+        * expected/dependencies/wb26/foo__some4thlib/.project:
+        * expected/dependencies/wb26/foo__some4thlib/.wrmakefile:
+        * expected/dependencies/wb26/foo__some4thlib/.wrproject:
+        * expected/dependencies/wb26/foo__somelib:
+        * expected/dependencies/wb26/foo__somelib/.project:
+        * expected/dependencies/wb26/foo__somelib/.wrmakefile:
+        * expected/dependencies/wb26/foo__somelib/.wrproject:
+        * expected/dependencies/wb26/org.eclipse.core.resources.prefs:
+        * expected/dependencies/wb26/wb26projects.lst:
+        * expected/dependencies/wb30/org.eclipse.core.resources.prefs:
+        * expected/dependencies/wb30/wb30projects.lst:
+        * expected/dependencies/wb30/wb_foo__some2ndlib:
+        * expected/dependencies/wb30/wb_foo__some2ndlib/.cproject:
+        * expected/dependencies/wb30/wb_foo__some2ndlib/.project:
+        * expected/dependencies/wb30/wb_foo__some2ndlib/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__some2ndlib/.wrproject:
+        * expected/dependencies/wb30/wb_foo__some3rdlib:
+        * expected/dependencies/wb30/wb_foo__some3rdlib/.cproject:
+        * expected/dependencies/wb30/wb_foo__some3rdlib/.project:
+        * expected/dependencies/wb30/wb_foo__some3rdlib/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__some3rdlib/.wrproject:
+        * expected/dependencies/wb30/wb_foo__some4thlib:
+        * expected/dependencies/wb30/wb_foo__some4thlib/.cproject:
+        * expected/dependencies/wb30/wb_foo__some4thlib/.project:
+        * expected/dependencies/wb30/wb_foo__some4thlib/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__some4thlib/.wrproject:
+        * expected/dependencies/wb30/wb_foo__somelib:
+        * expected/dependencies/wb30/wb_foo__somelib/.cproject:
+        * expected/dependencies/wb30/wb_foo__somelib/.project:
+        * expected/dependencies/wb30/wb_foo__somelib/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__somelib/.wrproject:
+        
+          Added expected file changes and new files for added some*lib
+          projects.
+
+        * tests/dependencies/lib:
+        * tests/dependencies/lib/ARM:
+        * tests/dependencies/lib/ARM/some 2nd lib.lib:
+        * tests/dependencies/lib/ARM/some 2nd libd.lib:
+        * tests/dependencies/lib/ARM/some 3rd lib.lib:
+        * tests/dependencies/lib/ARM/some 3rd libd.lib:
+        * tests/dependencies/lib/ARM/some4thlib.lib:
+        * tests/dependencies/lib/ARM/some4thlibd.lib:
+        * tests/dependencies/lib/ARM/somelib.lib:
+        * tests/dependencies/lib/ARM/somelibd.lib:
+        * tests/dependencies/lib/IX86:
+        * tests/dependencies/lib/IX86/some 2nd lib.lib:
+        * tests/dependencies/lib/IX86/some 2nd libd.lib:
+        * tests/dependencies/lib/IX86/some 3rd lib.lib:
+        * tests/dependencies/lib/IX86/some 3rd libd.lib:
+        * tests/dependencies/lib/IX86/some4thlib.lib:
+        * tests/dependencies/lib/IX86/some4thlibd.lib:
+        * tests/dependencies/lib/IX86/somelib.lib:
+        * tests/dependencies/lib/IX86/somelibd.lib:
+        * tests/dependencies/lib/libsome 2nd lib.so:
+        * tests/dependencies/lib/libsome 3rd lib.so:
+        * tests/dependencies/lib/libsome4thlib.so:
+        * tests/dependencies/lib/libsomelib.so:
+        * tests/dependencies/lib/some 2nd lib.dll:
+        * tests/dependencies/lib/some 2nd lib.la:
+        * tests/dependencies/lib/some 2nd libd.dll:
+        * tests/dependencies/lib/some 3rd lib.dll:
+        * tests/dependencies/lib/some 3rd lib.la:
+        * tests/dependencies/lib/some 3rd libd.dll:
+        * tests/dependencies/lib/some4thlib.dll:
+        * tests/dependencies/lib/some4thlib.la:
+        * tests/dependencies/lib/some4thlibd.dll:
+        * tests/dependencies/lib/somelib.dll:
+        * tests/dependencies/lib/somelib.la:
+        * tests/dependencies/lib/somelibd.dll:
+
+          Removed these files.
+
 Thu Aug 12 15:18:53 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * tests/dependencies/lib:

@@ -8,10 +8,14 @@
 # This file should be placed in the .metadata/.plugins/org.eclipse.core.runtime/.settings directory
 #
 # MPC Command:
-# /home/mitza/wb30_MPC/mwc.pl -include config -type wb26
+# c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type wb26
 #----------------------------------------------------------------------------
 version=1
 eclipse.preferences.version=1
 description.defaultbuildorder=false
-description.buildorder=foo/
+description.buildorder=foo/foo__some2ndlib/foo__some3rdlib/foo__some4thlib/foo__somelib/
 foo/.project
+foo__some2ndlib/.project
+foo__some3rdlib/.project
+foo__some4thlib/.project
+foo__somelib/.project

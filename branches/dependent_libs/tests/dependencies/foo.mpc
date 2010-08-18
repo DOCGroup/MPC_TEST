@@ -8,6 +8,10 @@ project {
     generic_outputext = .cr
   }
 
+  Source_Files {
+    foo.cpp
+  }
+
   FOO_Files {
     dependent += "space 2.txt"
     foo.ar << "space 3.txt"
@@ -16,5 +20,41 @@ project {
   FOO_Files {
     dependent_libs += "lib/some 3rd lib" lib/some4thlib
     bar.ar
+  }
+}
+
+project(*_somelib) {
+  sharedname   = somelib
+  libout       = $(TEST_ROOT)/lib
+
+  Source_Files {
+    something.cpp
+  }
+}
+
+project(*_some2ndlib) {
+  sharedname   = some 2nd lib
+  libout       = $(TEST_ROOT)/lib
+
+  Source_Files {
+    something.cpp
+  }
+}
+
+project(*_some3rdlib) {
+  sharedname   = some 3rd lib
+  libout       = $(TEST_ROOT)/lib
+
+  Source_Files {
+    something.cpp
+  }
+}
+
+project(*_some4thlib) {
+  sharedname   = some4thlib
+  libout       = $(TEST_ROOT)/lib
+
+  Source_Files {
+    something.cpp
   }
 }

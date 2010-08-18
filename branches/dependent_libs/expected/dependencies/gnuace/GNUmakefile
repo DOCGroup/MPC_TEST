@@ -20,16 +20,40 @@ endif
 
 include $(ACE_ROOT)/include/makeinclude/macros.GNU
 
-all: foo
+all: foo foo__some3rdlib foo__some2ndlib foo__some4thlib foo__somelib
 
 REMAINING_TARGETS := $(subst all, , $(TARGETS_NESTED:.nested=)) $(CUSTOM_TARGETS)
 
 $(REMAINING_TARGETS):
 	@$(MAKE) -f GNUmakefile.foo $(@)
+	@$(MAKE) -f GNUmakefile.foo__some3rdlib $(@)
+	@$(MAKE) -f GNUmakefile.foo__some2ndlib $(@)
+	@$(MAKE) -f GNUmakefile.foo__some4thlib $(@)
+	@$(MAKE) -f GNUmakefile.foo__somelib $(@)
 
 .PHONY: foo
 foo:
 	@$(MAKE) -f GNUmakefile.foo all
 
+.PHONY: foo__some3rdlib
+foo__some3rdlib:
+	@$(MAKE) -f GNUmakefile.foo__some3rdlib all
+
+.PHONY: foo__some2ndlib
+foo__some2ndlib: foo__some3rdlib
+	@$(MAKE) -f GNUmakefile.foo__some2ndlib all
+
+.PHONY: foo__some4thlib
+foo__some4thlib: foo__some3rdlib
+	@$(MAKE) -f GNUmakefile.foo__some4thlib all
+
+.PHONY: foo__somelib
+foo__somelib: foo__some3rdlib
+	@$(MAKE) -f GNUmakefile.foo__somelib all
+
 project_name_list:
 	@echo foo
+	@echo foo__some2ndlib
+	@echo foo__some3rdlib
+	@echo foo__some4thlib
+	@echo foo__somelib

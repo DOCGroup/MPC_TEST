@@ -6,11 +6,59 @@ Microsoft Developer Studio Workspace File, Format Version 6.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type vc6
+# c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type vc6
 
 ###############################################################################
 
 Project: "foo"=foo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "foo__some2ndlib"=foo__some2ndlib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "foo__some3rdlib"=foo__some3rdlib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "foo__some4thlib"=foo__some4thlib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "foo__somelib"=foo__somelib.dsp - Package Owner=<4>
 
 Package=<5>
 {{{

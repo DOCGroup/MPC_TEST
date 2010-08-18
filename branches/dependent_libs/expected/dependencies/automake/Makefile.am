@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
+## c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.foo.am
@@ -33,6 +33,34 @@ noinst_LTLIBRARIES = libfoo.la
 
 libfoo_la_SOURCES = \
   foo.cpp
+
+## Makefile.foo__some2ndlib.am
+
+noinst_LTLIBRARIES += libsome\ 2nd\ lib.la
+
+libsome__2nd__lib_la_SOURCES = \
+  something.cpp
+
+## Makefile.foo__some3rdlib.am
+
+noinst_LTLIBRARIES += libsome\ 3rd\ lib.la
+
+libsome__3rd__lib_la_SOURCES = \
+  something.cpp
+
+## Makefile.foo__some4thlib.am
+
+noinst_LTLIBRARIES += libsome4thlib.la
+
+libsome4thlib_la_SOURCES = \
+  something.cpp
+
+## Makefile.foo__somelib.am
+
+noinst_LTLIBRARIES += libsomelib.la
+
+libsomelib_la_SOURCES = \
+  something.cpp
 
 
 ACLOCAL = @ACLOCAL@
