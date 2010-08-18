@@ -1,7 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 #
 # 1) Change to the expected directory
 # 2) Run this script with the full path to execute it
+
+# * should expand files starting with .
+shopt -s dotglob
 
 for i in *; do
   if [ -d $i ]; then
