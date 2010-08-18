@@ -1,0 +1,27 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="\tao_builds\mitza\MPC_TEST\tests\implicit_resources\dir3"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+
+["Compiler" Settings: "Debug"]
+Options=-g -rtti -fr"$(Proj_dir)\Debug" -d"_DEBUG" -mv6400
+
+["Compiler" Settings: "Release"]
+Options=-o3 -rtti -fr"$(Proj_dir)\Release" -mv6400
+
+["Archiver" Settings: "Debug"]
+Options=-r -o.\dir3d.lib
+
+["Archiver" Settings: "Release"]
+Options=-r -o.\dir3.lib
+

@@ -1,7 +1,27 @@
+Wed Aug 18 16:24:59 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/implicit_resources/*:
+        * tests/implicit_resources:
+        * tests/implicit_resources/dir1:
+        * tests/implicit_resources/dir1/res.rc:
+        * tests/implicit_resources/dir1/src.cpp:
+        * tests/implicit_resources/dir2:
+        * tests/implicit_resources/dir2/res.rc:
+        * tests/implicit_resources/dir3:
+        * tests/implicit_resources/dir3/dir3.mpc:
+        * tests/implicit_resources/dir3/res.rc:
+        * tests/implicit_resources/implicit_resources.mwc:
+
+          Added new test.
+
+        * utils/add_expected_directories.sh:
+
+          Allow '*' to expand to files that start with dots.  Requires bash.
+
 Tue Aug 10 16:43:29 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * expected/template/wb30/src/wb_src/.project:
-        
+
           Previous commit to template test missed changing expected
           results for the new wb30 type.
 

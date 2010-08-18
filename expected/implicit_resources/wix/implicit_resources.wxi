@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include dir1/dir1.wxi ?>
+  <?include dir3/dir3.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="implicit_resources">
+      <ComponentGroupRef Id="ComponentGroup.dir1" />
+      <ComponentGroupRef Id="ComponentGroup.dir3" />
+    </ComponentGroup>
+  </Fragment>
+</Include>
