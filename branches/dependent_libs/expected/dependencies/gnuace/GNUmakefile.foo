@@ -106,12 +106,12 @@ endif
 SPACE = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY += bar.cr
 OBJS_DEPEND_ON_GENERATED = 1
-bar.cr: bar.ar nospace.txt $(subst $(SPACE),\$(SPACE),space 1.txt) lib/libsomelib.$(SOEXT) $(subst $(SPACE),\$(SPACE),lib/libsome 2nd lib.$(SOEXT)) $(subst $(SPACE),\$(SPACE),lib/libsome 3rd lib.$(SOEXT)) lib/libsome4thlib.$(SOEXT)
+bar.cr: bar.ar nospace.txt $(subst $(SPACE),\$(SPACE),space 1.txt) someExecutable ./.libs/libsomelib.$(SOEXT)
 	echo  bar.ar > $@
 
 GENERATED_DIRTY += foo.cr
 OBJS_DEPEND_ON_GENERATED = 1
-foo.cr: foo.ar $(subst $(SPACE),\$(SPACE),space 3.txt) nospace.txt $(subst $(SPACE),\$(SPACE),space 1.txt) $(subst $(SPACE),\$(SPACE),space 2.txt) lib/libsomelib.$(SOEXT) $(subst $(SPACE),\$(SPACE),lib/libsome 2nd lib.$(SOEXT))
+foo.cr: foo.ar $(subst $(SPACE),\$(SPACE),space 3.txt) nospace.txt $(subst $(SPACE),\$(SPACE),space 1.txt) someExecutable $(subst $(SPACE),\$(SPACE),space 2.txt) ./.libs/libsomelib.$(SOEXT)
 	echo  foo.ar > $@
 
 ifneq ($(GENERATED_DIRTY),)

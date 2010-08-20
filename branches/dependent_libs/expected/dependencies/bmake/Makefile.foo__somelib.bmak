@@ -94,7 +94,7 @@ CFLAGS = \
          $(VCL_CFLAGS)
 
 !ifndef STATIC_CFG
-OUTPUTDIR = .\lib\\
+OUTPUTDIR = .\.libs\\
 all: $(OUTPUTDIR)$(NAME)$(DLL_EXT)
 
 $(OUTPUTDIR)$(NAME)$(DLL_EXT): $(OBJFILES) $(RESOURCE)
@@ -105,7 +105,7 @@ $(OUTPUTDIR)$(NAME)$(DLL_EXT): $(OBJFILES) $(RESOURCE)
 !endif
 
 !ifdef STATIC_CFG
-OUTPUTDIR = .\lib\\
+OUTPUTDIR = .\.libs\\
 all: $(OUTPUTDIR)$(NAME)$(LIB_EXT)
 
 $(OUTPUTDIR)$(NAME)$(LIB_EXT): $(OBJFILES)

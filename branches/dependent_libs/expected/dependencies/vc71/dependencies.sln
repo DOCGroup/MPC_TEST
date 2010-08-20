@@ -6,24 +6,18 @@ Microsoft Visual Studio Solution File, Format Version 8.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type vc71
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo", "foo.vcproj", "{D9047293-FECA-1BAD-609D-8A63C12F9383}"
+# /home/johnsonb/dev/TAO/spider1_5/ACE_wrappers//bin/mwc.pl -include config -type vc71
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo", "foo.vcproj", "{D9047293-FECA-1BAD-609D-8A63541878F4}"
 	ProjectSection(ProjectDependencies) = postProject
+		{30C3CEEB-FECA-1BAD-609D-8A63541878F4} = {30C3CEEB-FECA-1BAD-609D-8A63541878F4}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo__some2ndlib", "foo__some2ndlib.vcproj", "{94695CB0-FECA-1BAD-609D-8A63C12F9383}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo__someexecutable", "foo__someexecutable.vcproj", "{30C3CEEB-FECA-1BAD-609D-8A63541878F4}"
 	ProjectSection(ProjectDependencies) = postProject
+		{A15DA7AF-FECA-1BAD-609D-8A63541878F4} = {A15DA7AF-FECA-1BAD-609D-8A63541878F4}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo__some3rdlib", "foo__some3rdlib.vcproj", "{94699CB0-FECA-1BAD-609D-8A63C12F9383}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo__some4thlib", "foo__some4thlib.vcproj", "{946EF0B0-FECA-1BAD-609D-8A63C12F9383}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo__somelib", "foo__somelib.vcproj", "{A15DA7AF-FECA-1BAD-609D-8A63C12F9383}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo__somelib", "foo__somelib.vcproj", "{A15DA7AF-FECA-1BAD-609D-8A63541878F4}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
@@ -33,26 +27,18 @@ Global
 		Release = Release
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{D9047293-FECA-1BAD-609D-8A63C12F9383}.Debug.ActiveCfg = Debug|Win32
-		{D9047293-FECA-1BAD-609D-8A63C12F9383}.Debug.Build.0 = Debug|Win32
-		{D9047293-FECA-1BAD-609D-8A63C12F9383}.Release.ActiveCfg = Release|Win32
-		{D9047293-FECA-1BAD-609D-8A63C12F9383}.Release.Build.0 = Release|Win32
-		{94695CB0-FECA-1BAD-609D-8A63C12F9383}.Debug.ActiveCfg = Debug|Win32
-		{94695CB0-FECA-1BAD-609D-8A63C12F9383}.Debug.Build.0 = Debug|Win32
-		{94695CB0-FECA-1BAD-609D-8A63C12F9383}.Release.ActiveCfg = Release|Win32
-		{94695CB0-FECA-1BAD-609D-8A63C12F9383}.Release.Build.0 = Release|Win32
-		{94699CB0-FECA-1BAD-609D-8A63C12F9383}.Debug.ActiveCfg = Debug|Win32
-		{94699CB0-FECA-1BAD-609D-8A63C12F9383}.Debug.Build.0 = Debug|Win32
-		{94699CB0-FECA-1BAD-609D-8A63C12F9383}.Release.ActiveCfg = Release|Win32
-		{94699CB0-FECA-1BAD-609D-8A63C12F9383}.Release.Build.0 = Release|Win32
-		{946EF0B0-FECA-1BAD-609D-8A63C12F9383}.Debug.ActiveCfg = Debug|Win32
-		{946EF0B0-FECA-1BAD-609D-8A63C12F9383}.Debug.Build.0 = Debug|Win32
-		{946EF0B0-FECA-1BAD-609D-8A63C12F9383}.Release.ActiveCfg = Release|Win32
-		{946EF0B0-FECA-1BAD-609D-8A63C12F9383}.Release.Build.0 = Release|Win32
-		{A15DA7AF-FECA-1BAD-609D-8A63C12F9383}.Debug.ActiveCfg = Debug|Win32
-		{A15DA7AF-FECA-1BAD-609D-8A63C12F9383}.Debug.Build.0 = Debug|Win32
-		{A15DA7AF-FECA-1BAD-609D-8A63C12F9383}.Release.ActiveCfg = Release|Win32
-		{A15DA7AF-FECA-1BAD-609D-8A63C12F9383}.Release.Build.0 = Release|Win32
+		{D9047293-FECA-1BAD-609D-8A63541878F4}.Debug.ActiveCfg = Debug|Win32
+		{D9047293-FECA-1BAD-609D-8A63541878F4}.Debug.Build.0 = Debug|Win32
+		{D9047293-FECA-1BAD-609D-8A63541878F4}.Release.ActiveCfg = Release|Win32
+		{D9047293-FECA-1BAD-609D-8A63541878F4}.Release.Build.0 = Release|Win32
+		{30C3CEEB-FECA-1BAD-609D-8A63541878F4}.Debug.ActiveCfg = Debug|Win32
+		{30C3CEEB-FECA-1BAD-609D-8A63541878F4}.Debug.Build.0 = Debug|Win32
+		{30C3CEEB-FECA-1BAD-609D-8A63541878F4}.Release.ActiveCfg = Release|Win32
+		{30C3CEEB-FECA-1BAD-609D-8A63541878F4}.Release.Build.0 = Release|Win32
+		{A15DA7AF-FECA-1BAD-609D-8A63541878F4}.Debug.ActiveCfg = Debug|Win32
+		{A15DA7AF-FECA-1BAD-609D-8A63541878F4}.Debug.Build.0 = Debug|Win32
+		{A15DA7AF-FECA-1BAD-609D-8A63541878F4}.Release.ActiveCfg = Release|Win32
+		{A15DA7AF-FECA-1BAD-609D-8A63541878F4}.Release.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

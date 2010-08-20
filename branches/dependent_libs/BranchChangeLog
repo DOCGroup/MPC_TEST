@@ -1,3 +1,200 @@
+Fri Aug 20 20:55:12 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>
+
+        * expected/dependencies/automake/Makefile.am:
+        * expected/dependencies/bmake/Makefile.bmak:
+        * expected/dependencies/bmake/Makefile.foo__someexecutable.bmak:
+        * expected/dependencies/bmake/Makefile.foo__somelib.bmak:
+        * expected/dependencies/em3/dependencies.vcw:
+        * expected/dependencies/em3/foo.vcp:
+        * expected/dependencies/em3/foo__someexecutable.vcp:
+        * expected/dependencies/em3/foo__somelib.vcp:
+        * expected/dependencies/ghs/default.gpj:
+        * expected/dependencies/ghs/foo.gpj:
+        * expected/dependencies/ghs/foo__someexecutable.gpj:
+        * expected/dependencies/ghs/foo__someexecutable_int.gpj:
+        * expected/dependencies/ghs/foo__someexecutable_int.int:
+        * expected/dependencies/ghs/foo__somelib.gpj:
+        * expected/dependencies/gnuace/GNUmakefile:
+        * expected/dependencies/gnuace/GNUmakefile.foo:
+        * expected/dependencies/gnuace/GNUmakefile.foo__someexecutable:
+        * expected/dependencies/gnuace/GNUmakefile.foo__somelib:
+        * expected/dependencies/html/dependencies_workspace.html:
+        * expected/dependencies/html/foo.html:
+        * expected/dependencies/html/foo__someexecutable.html:
+        * expected/dependencies/html/foo__somelib.html:
+        * expected/dependencies/make/Makefile:
+        * expected/dependencies/make/Makefile.foo:
+        * expected/dependencies/make/Makefile.foo__someexecutable:
+        * expected/dependencies/make/Makefile.foo__somelib:
+        * expected/dependencies/nmake/Makefile:
+        * expected/dependencies/nmake/Makefile.foo.mak:
+        * expected/dependencies/nmake/Makefile.foo__someexecutable.mak:
+        * expected/dependencies/nmake/Makefile.foo__somelib.mak:
+        * expected/dependencies/vc6/dependencies.dsw:
+        * expected/dependencies/vc6/foo.dsp:
+        * expected/dependencies/vc6/foo__someexecutable.dsp:
+        * expected/dependencies/vc6/foo__somelib.dsp:
+        * expected/dependencies/vc7/dependencies.sln:
+        * expected/dependencies/vc7/foo.vcproj:
+        * expected/dependencies/vc7/foo__someexecutable.vcproj:
+        * expected/dependencies/vc7/foo__somelib.vcproj:
+        * expected/dependencies/vc71/dependencies.sln:
+        * expected/dependencies/vc71/foo.vcproj:
+        * expected/dependencies/vc71/foo__someexecutable.vcproj:
+        * expected/dependencies/vc71/foo__somelib.vcproj:
+        * expected/dependencies/vc8/dependencies.sln:
+        * expected/dependencies/vc8/foo.vcproj:
+        * expected/dependencies/vc8/foo__someexecutable.vcproj:
+        * expected/dependencies/vc8/foo__somelib.vcproj:
+        * expected/dependencies/wb26/foo/.project:
+        * expected/dependencies/wb26/foo/.wrmakefile:
+        * expected/dependencies/wb26/foo/.wrproject:
+        * expected/dependencies/wb26/foo__someexecutable:
+        * expected/dependencies/wb26/foo__someexecutable/.project:
+        * expected/dependencies/wb26/foo__someexecutable/.wrmakefile:
+        * expected/dependencies/wb26/foo__someexecutable/.wrproject:
+        * expected/dependencies/wb26/foo__somelib/.project:
+        * expected/dependencies/wb26/foo__somelib/.wrmakefile:
+        * expected/dependencies/wb26/foo__somelib/.wrproject:
+        * expected/dependencies/wb26/org.eclipse.core.resources.prefs:
+        * expected/dependencies/wb26/wb26projects.lst:
+        * expected/dependencies/wb30/org.eclipse.core.resources.prefs:
+        * expected/dependencies/wb30/wb30projects.lst:
+        * expected/dependencies/wb30/wb_foo/.project:
+        * expected/dependencies/wb30/wb_foo/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo/.wrproject:
+        * expected/dependencies/wb30/wb_foo__someexecutable:
+        * expected/dependencies/wb30/wb_foo__someexecutable/.cproject:
+        * expected/dependencies/wb30/wb_foo__someexecutable/.project:
+        * expected/dependencies/wb30/wb_foo__someexecutable/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__someexecutable/.wrproject:
+        * expected/dependencies/wb30/wb_foo__somelib/.cproject:
+        * expected/dependencies/wb30/wb_foo__somelib/.project:
+        * expected/dependencies/wb30/wb_foo__somelib/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__somelib/.wrproject:
+
+          Expected changes due to changes for foo.mpc.
+        
+        * expected/dependent_libs:
+        * expected/dependent_libs/automake:
+        * expected/dependent_libs/automake/Makefile.am:
+        * expected/dependent_libs/automake/configure.ac.Makefiles:
+        * expected/dependent_libs/em3:
+        * expected/dependent_libs/em3/dependent_libs.vcw:
+        * expected/dependent_libs/em3/foo.vcp:
+        * expected/dependent_libs/ghs:
+        * expected/dependent_libs/ghs/default.gpj:
+        * expected/dependent_libs/ghs/foo.gpj:
+        * expected/dependent_libs/gnuace:
+        * expected/dependent_libs/gnuace/GNUmakefile:
+        * expected/dependent_libs/gnuace/GNUmakefile.foo:
+        * expected/dependent_libs/make:
+        * expected/dependent_libs/make/Makefile:
+        * expected/dependent_libs/make/Makefile.foo:
+        * expected/dependent_libs/nmake:
+        * expected/dependent_libs/nmake/Makefile:
+        * expected/dependent_libs/nmake/Makefile.foo.mak:
+        * expected/dependent_libs/vc6:
+        * expected/dependent_libs/vc6/dependent_libs.dsw:
+        * expected/dependent_libs/vc6/foo.dsp:
+        * expected/dependent_libs/vc7:
+        * expected/dependent_libs/vc7/dependent_libs.sln:
+        * expected/dependent_libs/vc7/foo.vcproj:
+        * expected/dependent_libs/vc71:
+        * expected/dependent_libs/vc71/dependent_libs.sln:
+        * expected/dependent_libs/vc71/foo.vcproj:
+        * expected/dependent_libs/vc8:
+        * expected/dependent_libs/vc8/dependent_libs.sln:
+        * expected/dependent_libs/vc8/foo.vcproj:
+
+          Expected results for new dependent_libs test.
+        
+        * tests/dependencies/foo.mpc:
+        
+          Moved dependent_libs path testing to 
+          dependent_libs test and made changes so
+          that dependent_libs would be tested for
+          building.
+        
+        * tests/dependencies/somethingthatworks.cpp:
+
+          File to create a needed executable for building.
+        
+        * tests/dependent_libs:
+        * tests/dependent_libs/bar.ar:
+        * tests/dependent_libs/build_entry.txt:
+        * tests/dependent_libs/foo.ar:
+        * tests/dependent_libs/foo.cpp:
+        * tests/dependent_libs/foo.mpc:
+        * tests/dependent_libs/nospace.txt:
+
+          New test to just verify the handling of override
+          and spaces in the library name.
+        
+        * expected/dependencies/bmake/Makefile.foo__some2ndlib.bmak:
+        * expected/dependencies/bmake/Makefile.foo__some3rdlib.bmak:
+        * expected/dependencies/bmake/Makefile.foo__some4thlib.bmak:
+        * expected/dependencies/em3/foo__some2ndlib.vcp:
+        * expected/dependencies/em3/foo__some3rdlib.vcp:
+        * expected/dependencies/em3/foo__some4thlib.vcp:
+        * expected/dependencies/ghs/foo__some2ndlib.gpj:
+        * expected/dependencies/ghs/foo__some3rdlib.gpj:
+        * expected/dependencies/ghs/foo__some4thlib.gpj:
+        * expected/dependencies/gnuace/GNUmakefile.foo__some2ndlib:
+        * expected/dependencies/gnuace/GNUmakefile.foo__some3rdlib:
+        * expected/dependencies/gnuace/GNUmakefile.foo__some4thlib:
+        * expected/dependencies/html/foo__some2ndlib.html:
+        * expected/dependencies/html/foo__some3rdlib.html:
+        * expected/dependencies/html/foo__some4thlib.html:
+        * expected/dependencies/make/Makefile.foo__some2ndlib:
+        * expected/dependencies/make/Makefile.foo__some3rdlib:
+        * expected/dependencies/make/Makefile.foo__some4thlib:
+        * expected/dependencies/nmake/Makefile.foo__some2ndlib.mak:
+        * expected/dependencies/nmake/Makefile.foo__some3rdlib.mak:
+        * expected/dependencies/nmake/Makefile.foo__some4thlib.mak:
+        * expected/dependencies/vc6/foo__some2ndlib.dsp:
+        * expected/dependencies/vc6/foo__some3rdlib.dsp:
+        * expected/dependencies/vc6/foo__some4thlib.dsp:
+        * expected/dependencies/vc7/foo__some2ndlib.vcproj:
+        * expected/dependencies/vc7/foo__some3rdlib.vcproj:
+        * expected/dependencies/vc7/foo__some4thlib.vcproj:
+        * expected/dependencies/vc71/foo__some2ndlib.vcproj:
+        * expected/dependencies/vc71/foo__some3rdlib.vcproj:
+        * expected/dependencies/vc71/foo__some4thlib.vcproj:
+        * expected/dependencies/vc8/foo__some2ndlib.vcproj:
+        * expected/dependencies/vc8/foo__some3rdlib.vcproj:
+        * expected/dependencies/vc8/foo__some4thlib.vcproj:
+        * expected/dependencies/wb26/foo__some2ndlib:
+        * expected/dependencies/wb26/foo__some2ndlib/.project:
+        * expected/dependencies/wb26/foo__some2ndlib/.wrmakefile:
+        * expected/dependencies/wb26/foo__some2ndlib/.wrproject:
+        * expected/dependencies/wb26/foo__some3rdlib:
+        * expected/dependencies/wb26/foo__some3rdlib/.project:
+        * expected/dependencies/wb26/foo__some3rdlib/.wrmakefile:
+        * expected/dependencies/wb26/foo__some3rdlib/.wrproject:
+        * expected/dependencies/wb26/foo__some4thlib:
+        * expected/dependencies/wb26/foo__some4thlib/.project:
+        * expected/dependencies/wb26/foo__some4thlib/.wrmakefile:
+        * expected/dependencies/wb26/foo__some4thlib/.wrproject:
+        * expected/dependencies/wb30/wb_foo__some2ndlib:
+        * expected/dependencies/wb30/wb_foo__some2ndlib/.cproject:
+        * expected/dependencies/wb30/wb_foo__some2ndlib/.project:
+        * expected/dependencies/wb30/wb_foo__some2ndlib/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__some2ndlib/.wrproject:
+        * expected/dependencies/wb30/wb_foo__some3rdlib:
+        * expected/dependencies/wb30/wb_foo__some3rdlib/.cproject:
+        * expected/dependencies/wb30/wb_foo__some3rdlib/.project:
+        * expected/dependencies/wb30/wb_foo__some3rdlib/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__some3rdlib/.wrproject:
+        * expected/dependencies/wb30/wb_foo__some4thlib:
+        * expected/dependencies/wb30/wb_foo__some4thlib/.cproject:
+        * expected/dependencies/wb30/wb_foo__some4thlib/.project:
+        * expected/dependencies/wb30/wb_foo__some4thlib/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__some4thlib/.wrproject:
+
+          Removed these files.  Most dependent_libs testing moved
+          to dependent_libs test.
+
 Wed Aug 18 21:33:07 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * tests/dependencies/foo.mpc:
@@ -6,7 +203,7 @@ Wed Aug 18 21:33:07 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
           Added projects to build the dependent_libs, instead of
           relying on fake libraries (see removed files below) to
           allow dependencies test to compile.
-        
+
         * expected/dependencies/automake/Makefile.am:
         * expected/dependencies/bmake/Makefile.bmak:
         * expected/dependencies/bmake/Makefile.foo__some2ndlib.bmak:
@@ -103,7 +300,7 @@ Wed Aug 18 21:33:07 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
         * expected/dependencies/wb30/wb_foo__somelib/.project:
         * expected/dependencies/wb30/wb_foo__somelib/.wrmakefile:
         * expected/dependencies/wb30/wb_foo__somelib/.wrproject:
-        
+
           Added expected file changes and new files for added some*lib
           projects.
 

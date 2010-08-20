@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type bmake
+# /home/johnsonb/dev/TAO/spider1_5/ACE_wrappers//bin/mwc.pl -include config -type bmake
 #
 #----------------------------------------------------------------------------
 
@@ -15,33 +15,23 @@
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !endif
 
-all: foo foo__some2ndlib foo__some3rdlib foo__some4thlib foo__somelib
+all: foo__somelib foo__someexecutable foo
 
 clean generated realclean $(CUSTOM_TARGETS):
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak $(@)
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__some2ndlib.bmak $(@)
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__some3rdlib.bmak $(@)
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__some4thlib.bmak $(@)
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__somelib.bmak $(@)
-
-foo:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak all
-
-foo__some2ndlib:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__some2ndlib.bmak all
-
-foo__some3rdlib:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__some3rdlib.bmak all
-
-foo__some4thlib:
-	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__some4thlib.bmak all
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__someexecutable.bmak $(@)
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak $(@)
 
 foo__somelib:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__somelib.bmak all
 
+foo__someexecutable: foo__somelib
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__someexecutable.bmak all
+
+foo: foo__someexecutable
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak all
+
 project_name_list:
 	@echo foo
-	@echo foo__some2ndlib
-	@echo foo__some3rdlib
-	@echo foo__some4thlib
+	@echo foo__someexecutable
 	@echo foo__somelib

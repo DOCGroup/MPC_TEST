@@ -42,10 +42,10 @@ GENERATED_DIRTY =
 
 !IF  "$(CFG)" == "Win32 Debug"
 
-OUTDIR=.\lib
+OUTDIR=.\.libs
 INTDIR=Debug\foo__somelib\I386
 
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\lib\somelibd.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\.libs\somelibd.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -59,7 +59,7 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\somelibd.pdb"
-        -@del /f/q ".\lib\somelibd.dll"
+        -@del /f/q ".\.libs\somelibd.dll"
         -@del /f/q "$(OUTDIR)\somelibd.lib"
         -@del /f/q "$(OUTDIR)\somelibd.exp"
         -@del /f/q "$(OUTDIR)\somelibd.ilk"
@@ -77,22 +77,22 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll /debug /pdb:".\lib\somelibd.pdb" /machine:I386 /out:".\lib\somelibd.dll" /implib:"$(OUTDIR)\somelibd.lib"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll /debug /pdb:".\.libs\somelibd.pdb" /machine:I386 /out:".\.libs\somelibd.dll" /implib:"$(OUTDIR)\somelibd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\something.obj"
 
-".\lib\somelibd.dll" : $(DEF_FILE) $(LINK32_OBJS)
+".\.libs\somelibd.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\lib\somelibd.dll.manifest" mt.exe -manifest ".\lib\somelibd.dll.manifest" -outputresource:$@;2
+    if exist ".\.libs\somelibd.dll.manifest" mt.exe -manifest ".\.libs\somelibd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
-OUTDIR=.\lib
+OUTDIR=.\.libs
 INTDIR=Release\foo__somelib\I386
 
-ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\lib\somelib.dll"
+ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) ".\.libs\somelib.dll"
 
 DEPEND :
 !IF "$(DEPGEN)" == ""
@@ -105,7 +105,7 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\lib\somelib.dll"
+        -@del /f/q ".\.libs\somelib.dll"
         -@del /f/q "$(OUTDIR)\somelib.lib"
         -@del /f/q "$(OUTDIR)\somelib.exp"
         -@del /f/q "$(OUTDIR)\somelib.ilk"
@@ -123,19 +123,19 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 RSC=rc.exe
 
 LINK32=link.exe
-LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll  /machine:I386 /out:".\lib\somelib.dll" /implib:"$(OUTDIR)\somelib.lib"
+LINK32_FLAGS=advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /dll  /machine:I386 /out:".\.libs\somelib.dll" /implib:"$(OUTDIR)\somelib.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\something.obj"
 
-".\lib\somelib.dll" : $(DEF_FILE) $(LINK32_OBJS)
+".\.libs\somelib.dll" : $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\lib\somelib.dll.manifest" mt.exe -manifest ".\lib\somelib.dll.manifest" -outputresource:$@;2
+    if exist ".\.libs\somelib.dll.manifest" mt.exe -manifest ".\.libs\somelib.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
-OUTDIR=.\lib
+OUTDIR=.\.libs
 INTDIR=Static_Debug\foo__somelib\I386
 
 ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\somelibsd.lib"
@@ -154,7 +154,7 @@ REALCLEAN : CLEAN
         -@del /f/q "$(OUTDIR)\somelibsd.lib"
         -@del /f/q "$(OUTDIR)\somelibsd.exp"
         -@del /f/q "$(OUTDIR)\somelibsd.ilk"
-	-@del /f/q ".\lib\somelibsd.pdb"
+	-@del /f/q ".\.libs\somelibsd.pdb"
 
 "$(INTDIR)" :
     if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
@@ -162,13 +162,13 @@ REALCLEAN : CLEAN
     if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\lib\somelibsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\.libs\somelibsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:".\lib\somelibsd.lib"
+LINK32_FLAGS=/nologo /machine:I386 /out:".\.libs\somelibsd.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\something.obj"
 
@@ -180,7 +180,7 @@ LINK32_OBJS= \
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
-OUTDIR=.\lib
+OUTDIR=.\.libs
 INTDIR=Static_Release\foo__somelib\I386
 
 ALL : "$(INTDIR)" "$(OUTDIR)" DEPENDCHECK $(GENERATED_DIRTY) "$(OUTDIR)\somelibs.lib"
@@ -212,7 +212,7 @@ CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
 
 LINK32=link.exe -lib
-LINK32_FLAGS=/nologo /machine:I386 /out:".\lib\somelibs.lib"
+LINK32_FLAGS=/nologo /machine:I386 /out:".\.libs\somelibs.lib"
 LINK32_OBJS= \
 	"$(INTDIR)\something.obj"
 

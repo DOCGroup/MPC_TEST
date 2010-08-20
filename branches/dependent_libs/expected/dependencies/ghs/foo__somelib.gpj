@@ -1,7 +1,7 @@
 #!gbuild
 #primaryTarget=ppc_integrity.tgt
 	[Shared Object]
-	-o .\lib/libsomelib.so
+	-o .\.libs/libsomelib.so
 	-Ospeed
 	-OI
 	--exceptions

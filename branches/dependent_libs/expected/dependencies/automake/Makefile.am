@@ -6,8 +6,28 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type automake
+## /home/johnsonb/dev/TAO/spider1_5/ACE_wrappers//bin/mwc.pl -include config -type automake
 
+
+## Makefile.foo__somelib.am
+
+noinst_LTLIBRARIES = libsomelib.la
+
+libsomelib_la_SOURCES = \
+  something.cpp
+
+## Makefile.foo__someexecutable.am
+
+noinst_PROGRAMS = someExecutable
+
+someExecutable_SOURCES = \
+  somethingthatworks.cpp
+
+someExecutable_LDFLAGS = \
+  -L./.libs
+
+someExecutable_LDADD = \
+  libsomelib.la
 
 ## Makefile.foo.am
 
@@ -17,7 +37,7 @@ BUILT_SOURCES = \
 CLEANFILES = \
   bar.cr
 
-bar.cr: $(srcdir)/bar.ar nospace.txt space\ 1.txt lib/somelib.la lib/some\ 2nd\ lib.la lib/some\ 3rd\ lib.la lib/some4thlib.la
+bar.cr: $(srcdir)/bar.ar nospace.txt space\ 1.txt someExecutable ./.libs/libsomelib.la
 	echo  $(srcdir)/bar.ar > bar.cr
 
 BUILT_SOURCES += \
@@ -26,41 +46,13 @@ BUILT_SOURCES += \
 CLEANFILES += \
   foo.cr
 
-foo.cr: $(srcdir)/foo.ar space\ 3.txt nospace.txt space\ 1.txt space\ 2.txt lib/somelib.la lib/some\ 2nd\ lib.la
+foo.cr: $(srcdir)/foo.ar space\ 3.txt nospace.txt space\ 1.txt someExecutable space\ 2.txt ./.libs/libsomelib.la
 	echo  $(srcdir)/foo.ar > foo.cr
 
-noinst_LTLIBRARIES = libfoo.la
+noinst_LTLIBRARIES += libfoo.la
 
 libfoo_la_SOURCES = \
   foo.cpp
-
-## Makefile.foo__some2ndlib.am
-
-noinst_LTLIBRARIES += libsome\ 2nd\ lib.la
-
-libsome__2nd__lib_la_SOURCES = \
-  something.cpp
-
-## Makefile.foo__some3rdlib.am
-
-noinst_LTLIBRARIES += libsome\ 3rd\ lib.la
-
-libsome__3rd__lib_la_SOURCES = \
-  something.cpp
-
-## Makefile.foo__some4thlib.am
-
-noinst_LTLIBRARIES += libsome4thlib.la
-
-libsome4thlib_la_SOURCES = \
-  something.cpp
-
-## Makefile.foo__somelib.am
-
-noinst_LTLIBRARIES += libsomelib.la
-
-libsomelib_la_SOURCES = \
-  something.cpp
 
 
 ACLOCAL = @ACLOCAL@

@@ -34,7 +34,7 @@ RSC=rc.exe
 
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 1
-# PROP Output_Dir ".\lib"
+# PROP Output_Dir ".\.libs"
 # PROP Intermediate_Dir "Debug\foo__somelib"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
@@ -44,15 +44,15 @@ RSC=rc.exe
 # ADD MTL /D "_DEBUG" /nologo /mktyplib203 /win32
 # ADD RSC /l 0x409 /d _DEBUG
 BSC32=bscmake.exe
-# ADD BSC32 /nologo /o".\lib\somelib.bsc"
+# ADD BSC32 /nologo /o".\.libs\somelib.bsc"
 LINK32=link.exe
-# ADD LINK32 advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /pdb:".\lib\somelibd.pdb" /implib:".\lib\somelibd.lib" /dll /debug /machine:I386 /out:".\lib\somelibd.dll"
+# ADD LINK32 advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /pdb:".\.libs\somelibd.pdb" /implib:".\.libs\somelibd.lib" /dll /debug /machine:I386 /out:".\.libs\somelibd.dll"
 
 !ELSEIF  "$(CFG)" == "foo__somelib - Win32 Release"
 
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 0
-# PROP Output_Dir ".\lib"
+# PROP Output_Dir ".\.libs"
 # PROP Intermediate_Dir "Release\foo__somelib"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
@@ -62,9 +62,9 @@ LINK32=link.exe
 # ADD MTL /D "NDEBUG" /nologo /mktyplib203 /win32
 # ADD RSC /l 0x409 /d NDEBUG
 BSC32=bscmake.exe
-# ADD BSC32 /nologo /o".\lib\somelib.bsc"
+# ADD BSC32 /nologo /o".\.libs\somelib.bsc"
 LINK32=link.exe
-# ADD LINK32 advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /pdb:none /implib:".\lib\somelib.lib" /dll  /machine:I386 /out:".\lib\somelib.dll"
+# ADD LINK32 advapi32.lib user32.lib /INCREMENTAL:NO /libpath:"." /nologo /subsystem:windows /pdb:none /implib:".\.libs\somelib.lib" /dll  /machine:I386 /out:".\.libs\somelib.dll"
 
 !ENDIF
 
