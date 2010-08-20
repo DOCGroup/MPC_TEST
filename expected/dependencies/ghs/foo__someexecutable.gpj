@@ -1,0 +1,15 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Program]
+	-o ./someExecutable
+	-Ospeed
+	-OI
+	--exceptions
+	-L.
+	-L.\.libs
+	-lsomelib
+somethingthatworks.cpp
+nospace.txt		[Documentation]
+space 1.txt		[Documentation]
+space 2.txt		[Documentation]
+space 3.txt		[Documentation]

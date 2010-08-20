@@ -17,7 +17,7 @@
 		<link>
 			<name>something.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/dependencies/something.cpp</location>
+			<location>/home/johnsonb/dev/MPC_Dev/mpc_test2/tests/dependencies/something.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>

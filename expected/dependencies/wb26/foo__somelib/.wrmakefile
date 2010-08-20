@@ -10,7 +10,7 @@ ACE_ROOT := $(subst \,/,$(ACE_ROOT))
 TAO_ROOT := $(subst \,/,$(TAO_ROOT))
 CIAO_ROOT := $(subst \,/,$(CIAO_ROOT))
 HOST_ROOT := $(subst \,/,$(HOST_ROOT))
-ACE_LIBOUT := ./lib
+ACE_LIBOUT := ./.libs
 
 ACE_EXE_EXT = $(if $(filter PPC604gnu,$(BUILD_SPEC)),.out)$(if $(filter PPC603gnu,$(BUILD_SPEC)),.out)$(if $(filter PENTIUM4gnu,$(BUILD_SPEC)),.out)$(if $(filter PPC85XXgnu,$(BUILD_SPEC)),.out)
 ACE_TARGET_PREFIX = $(if $(filter PPC604gnu,$(BUILD_SPEC)),lib)$(if $(filter PPC603gnu,$(BUILD_SPEC)),lib)$(if $(filter PENTIUM4gnu,$(BUILD_SPEC)),lib)$(if $(filter PPC85XXgnu,$(BUILD_SPEC)),lib)
@@ -82,7 +82,7 @@ clean :: external_clean $(CLEAN_STEP) _clean
 
 # entry point for extending the build clean
 external_clean ::
-	$(TRACE_FLAG)cd ../.. ; rm -f ./lib/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)
+	$(TRACE_FLAG)cd ../.. ; rm -f ./.libs/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)
 	@echo ""
 
 

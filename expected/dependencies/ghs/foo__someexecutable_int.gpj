@@ -1,0 +1,4 @@
+#!gbuild
+	[INTEGRITY Application]
+foo__someexecutable.gpj		[Program]
+foo__someexecutable_int.int

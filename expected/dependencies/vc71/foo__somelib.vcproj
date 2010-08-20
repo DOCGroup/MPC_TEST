@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="foo__somelib"
-	ProjectGUID="{A15DA7AF-FECA-1BAD-609D-8A63C12F9383}"
+	ProjectGUID="{A15DA7AF-FECA-1BAD-609D-8A63541878F4}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -13,7 +13,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\lib"
+			OutputDirectory=".\.libs"
 			IntermediateDirectory="Debug\foo__somelib\I386"
 			ConfigurationType="2"
 			UseOfMFC="0"
@@ -50,7 +50,7 @@
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile="$(OutDir)\somelibd.pdb"
 				SubSystem="1"
-				ImportLibrary=".\lib\somelibd.lib"
+				ImportLibrary=".\.libs\somelibd.lib"
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"
@@ -80,7 +80,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\lib"
+			OutputDirectory=".\.libs"
 			IntermediateDirectory="Release\foo__somelib\I386"
 			ConfigurationType="2"
 			UseOfMFC="0"
@@ -115,7 +115,7 @@
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary=".\lib\somelib.lib"
+				ImportLibrary=".\.libs\somelib.lib"
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"

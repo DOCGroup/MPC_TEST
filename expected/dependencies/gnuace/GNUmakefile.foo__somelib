@@ -32,7 +32,7 @@ ACE_SHLIBS =
 
 PRJ_TYPE = library
 
-INSLIB ?= ./lib
+INSLIB ?= ./.libs
 ifeq ($(INSLIB),.)
   ifeq ($(CURDIR),)
     ifeq ($(PWD),)

@@ -8,7 +8,7 @@ ACE_ROOT := $(subst \,/,$(ACE_ROOT))
 TAO_ROOT := $(subst \,/,$(TAO_ROOT))
 CIAO_ROOT := $(subst \,/,$(CIAO_ROOT))
 HOST_ROOT := $(subst \,/,$(HOST_ROOT))
-ACE_LIBOUT := ./lib
+ACE_LIBOUT := ./.libs
 
 ACE_EXE_EXT = $(if $(filter Linux_gnu_native_3.x_4.x,$(BUILD_SPEC)),)$(if $(filter Windows_gnu_native_3.x_4.x,$(BUILD_SPEC)),.exe)
 
@@ -82,7 +82,7 @@ clean :: external_clean $(CLEAN_STEP) _clean
 
 # entry point for extending the build clean
 external_clean ::
-	$(TRACE_FLAG)cd ../.. ; rm -f ./lib/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)
+	$(TRACE_FLAG)cd ../.. ; rm -f ./.libs/$(ACE_TARGET_PREFIX)$(ACE_TARGET_NAME)$(ACE_TARGET_EXT)
 	@echo ""
 
 

@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="foo"
-	ProjectGUID="{D9047293-FECA-1BAD-609D-8A6318CB0137}"
+	ProjectGUID="{D9047293-FECA-1BAD-609D-8A63541878F4}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -164,7 +164,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on bar.ar"
 						CommandLine="echo  &quot;bar.ar&quot; &gt; &quot;bar.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt;lib\somelibd.dll;lib\some 2nd libd.dll;lib\some 3rd libd.dll;lib\some4thlibd.dll"
+						AdditionalDependencies="nospace.txt;space 1.txt;someExecutable.exe;.\.libs\somelibd.dll"
 						Outputs="bar.cr"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -174,7 +174,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on bar.ar"
 						CommandLine="echo  &quot;bar.ar&quot; &gt; &quot;bar.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt;lib\somelib.dll;lib\some 2nd lib.dll;lib\some 3rd lib.dll;lib\some4thlib.dll"
+						AdditionalDependencies="nospace.txt;space 1.txt;someExecutable.exe;.\.libs\somelib.dll"
 						Outputs="bar.cr"/>
 				</FileConfiguration>
 			</File>
@@ -187,7 +187,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on foo.ar"
 						CommandLine="echo  &quot;foo.ar&quot; &gt; &quot;foo.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt;space 2.txt;space 3.txt;lib\somelibd.dll;lib\some 2nd libd.dll"
+						AdditionalDependencies="nospace.txt;space 1.txt;someExecutable.exe;space 2.txt;space 3.txt;.\.libs\somelibd.dll"
 						Outputs="foo.cr"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -197,7 +197,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on foo.ar"
 						CommandLine="echo  &quot;foo.ar&quot; &gt; &quot;foo.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt;space 2.txt;space 3.txt;lib\somelib.dll;lib\some 2nd lib.dll"
+						AdditionalDependencies="nospace.txt;space 1.txt;someExecutable.exe;space 2.txt;space 3.txt;.\.libs\somelib.dll"
 						Outputs="foo.cr"/>
 				</FileConfiguration>
 			</File>

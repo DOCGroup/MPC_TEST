@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type nmake
+# /home/johnsonb/dev/TAO/spider1_5/ACE_wrappers//bin/mwc.pl -include config -type nmake
 #
 #----------------------------------------------------------------------------
 
@@ -20,43 +20,29 @@ CFG=Win32 Debug
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !ENDIF
 
-all: foo foo__some2ndlib foo__some3rdlib foo__some4thlib foo__somelib
+all: foo__somelib foo__someexecutable foo
 
 clean depend generated realclean $(CUSTOM_TARGETS):
-	@echo Project: Makefile.foo.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" $(@)
-	@echo Project: Makefile.foo__some2ndlib.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__some2ndlib.mak CFG="$(CFG)" $(@)
-	@echo Project: Makefile.foo__some3rdlib.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__some3rdlib.mak CFG="$(CFG)" $(@)
-	@echo Project: Makefile.foo__some4thlib.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__some4thlib.mak CFG="$(CFG)" $(@)
 	@echo Project: Makefile.foo__somelib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__somelib.mak CFG="$(CFG)" $(@)
-
-foo:
+	@echo Project: Makefile.foo__someexecutable.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__someexecutable.mak CFG="$(CFG)" $(@)
 	@echo Project: Makefile.foo.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" all
-
-foo__some2ndlib:
-	@echo Project: Makefile.foo__some2ndlib.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__some2ndlib.mak CFG="$(CFG)" all
-
-foo__some3rdlib:
-	@echo Project: Makefile.foo__some3rdlib.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__some3rdlib.mak CFG="$(CFG)" all
-
-foo__some4thlib:
-	@echo Project: Makefile.foo__some4thlib.mak
-	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__some4thlib.mak CFG="$(CFG)" all
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" $(@)
 
 foo__somelib:
 	@echo Project: Makefile.foo__somelib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__somelib.mak CFG="$(CFG)" all
 
+foo__someexecutable: foo__somelib
+	@echo Project: Makefile.foo__someexecutable.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__someexecutable.mak CFG="$(CFG)" all
+
+foo: foo__someexecutable
+	@echo Project: Makefile.foo.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" all
+
 project_name_list:
 	@echo foo
-	@echo foo__some2ndlib
-	@echo foo__some3rdlib
-	@echo foo__some4thlib
+	@echo foo__someexecutable
 	@echo foo__somelib
