@@ -78,6 +78,14 @@ LINK32=link.exe
 SOURCE="somethingthatworks.cpp"
 # End Source File
 # End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hh"
+# Begin Source File
+
+SOURCE="something_export.h"
+# End Source File
+# End Group
 # Begin Group "Documentation"
 
 # PROP Default_Filter ""

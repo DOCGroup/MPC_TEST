@@ -6,22 +6,29 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /home/johnsonb/dev/TAO/spider1_5/ACE_wrappers//bin/mwc.pl -include config -type automake
+## c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.foo__somelib.am
 
 noinst_LTLIBRARIES = libsomelib.la
 
+libsomelib_la_CPPFLAGS = \
+  -DSOMETHING_BUILD_DLL
+
 libsomelib_la_SOURCES = \
   something.cpp
+
+noinst_HEADERS = \
+  something_export.h
 
 ## Makefile.foo__someexecutable.am
 
 noinst_PROGRAMS = someExecutable
 
 someExecutable_SOURCES = \
-  somethingthatworks.cpp
+  somethingthatworks.cpp \
+  something_export.h
 
 someExecutable_LDFLAGS = \
   -L./.libs
@@ -53,6 +60,9 @@ noinst_LTLIBRARIES += libfoo.la
 
 libfoo_la_SOURCES = \
   foo.cpp
+
+noinst_HEADERS += \
+  something_export.h
 
 
 ACLOCAL = @ACLOCAL@

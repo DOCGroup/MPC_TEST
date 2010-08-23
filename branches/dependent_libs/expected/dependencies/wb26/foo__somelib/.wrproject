@@ -13,7 +13,7 @@
                 <stringAttribute value="LIBS"/>
                 <stringAttribute value="PARTIAL_LIBS"/>
             </listAttribute>
-            <stringAttribute key="BLD::Info|GlobalMacro|DEFINES" value=""/>
+            <stringAttribute key="BLD::Info|GlobalMacro|DEFINES" value="-DSOMETHING_BUILD_DLL "/>
             <stringAttribute key="BLD::Info|GlobalMacro|PROJECT_TYPE" value="DKM"/>
             <stringAttribute key="BLD::Info|GlobalMacro|EXPAND_DBG" value="0"/>
             <stringAttribute key="BLD::Info|GlobalMacro|LIBPATH" value="-L."/>

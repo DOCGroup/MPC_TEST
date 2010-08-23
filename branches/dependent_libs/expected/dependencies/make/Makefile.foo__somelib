@@ -39,6 +39,8 @@ SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)somelib$(LIBSUFFIX)$(SOEXT)
 SHFLAGS       = -shared
 SRC           = something.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
+DYNAMICFLAGS  = -DSOMETHING_BUILD_DLL
+STATICFLAGS   = -DSOMETHING_AS_STATIC_LIBS
 EXPORTFLAGS   = $(DYNAMICFLAGS)
 
 #----------------------------------------------------------------------------
