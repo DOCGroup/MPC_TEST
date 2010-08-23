@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="foo"
-	ProjectGUID="{D9047293-FECA-1BAD-609D-8A63541878F4}"
+	ProjectGUID="{D9047293-FECA-1BAD-609D-8A63C12F9383}"
 	RootNamespace="foo"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -352,6 +352,13 @@
 			Filter="cpp;cxx;cc;c;C">
 			<File
 				RelativePath="foo.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hh">
+			<File
+				RelativePath="something_export.h">
 			</File>
 		</Filter>
 		<Filter

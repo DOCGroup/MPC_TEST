@@ -1,3 +1,51 @@
+Mon Aug 23 21:29:19 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
+
+        * expected/dependencies/automake/Makefile.am:
+        * expected/dependencies/bmake/Makefile.foo__somelib.bmak:
+        * expected/dependencies/em3/foo.vcp:
+        * expected/dependencies/em3/foo__someexecutable.vcp:
+        * expected/dependencies/em3/foo__somelib.vcp:
+        * expected/dependencies/ghs/default.gpj:
+        * expected/dependencies/ghs/foo.gpj:
+        * expected/dependencies/ghs/foo__someexecutable.gpj:
+        * expected/dependencies/ghs/foo__somelib.gpj:
+        * expected/dependencies/gnuace/GNUmakefile.foo__somelib:
+        * expected/dependencies/html/foo.html:
+        * expected/dependencies/html/foo__someexecutable.html:
+        * expected/dependencies/html/foo__somelib.html:
+        * expected/dependencies/make/Makefile.foo__somelib:
+        * expected/dependencies/nmake/Makefile.foo__somelib.mak:
+        * expected/dependencies/vc6/foo.dsp:
+        * expected/dependencies/vc6/foo__someexecutable.dsp:
+        * expected/dependencies/vc6/foo__somelib.dsp:
+        * expected/dependencies/vc7/foo.vcproj:
+        * expected/dependencies/vc7/foo__someexecutable.vcproj:
+        * expected/dependencies/vc7/foo__somelib.vcproj:
+        * expected/dependencies/vc71/foo.vcproj:
+        * expected/dependencies/vc71/foo__someexecutable.vcproj:
+        * expected/dependencies/vc71/foo__somelib.vcproj:
+        * expected/dependencies/vc8/foo.vcproj:
+        * expected/dependencies/vc8/foo__someexecutable.vcproj:
+        * expected/dependencies/vc8/foo__somelib.vcproj:
+        * expected/dependencies/wb26/foo/.project:
+        * expected/dependencies/wb26/foo__someexecutable/.project:
+        * expected/dependencies/wb26/foo__somelib/.project:
+        * expected/dependencies/wb26/foo__somelib/.wrproject:
+        * expected/dependencies/wb26/wb26projects.lst:
+        * expected/dependencies/wb30/wb30projects.lst:
+        * expected/dependencies/wb30/wb_foo/.project:
+        * expected/dependencies/wb30/wb_foo__someexecutable/.project:
+        * expected/dependencies/wb30/wb_foo__somelib/.project:
+        * expected/dependencies/wb30/wb_foo__somelib/.wrproject:
+        
+          Expected changes due to foo.mpc changes.
+
+        * tests/dependencies/foo.mpc:
+        * tests/dependencies/something.cpp:
+        * tests/dependencies/something_export.h:
+        
+          Needed to add export code for building.
+
 Fri Aug 20 20:55:12 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>
 
         * expected/dependencies/automake/Makefile.am:
@@ -74,7 +122,7 @@ Fri Aug 20 20:55:12 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>
         * expected/dependencies/wb30/wb_foo__somelib/.wrproject:
 
           Expected changes due to changes for foo.mpc.
-        
+
         * expected/dependent_libs:
         * expected/dependent_libs/automake:
         * expected/dependent_libs/automake/Makefile.am:
@@ -108,18 +156,18 @@ Fri Aug 20 20:55:12 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>
         * expected/dependent_libs/vc8/foo.vcproj:
 
           Expected results for new dependent_libs test.
-        
+
         * tests/dependencies/foo.mpc:
-        
-          Moved dependent_libs path testing to 
+
+          Moved dependent_libs path testing to
           dependent_libs test and made changes so
           that dependent_libs would be tested for
           building.
-        
+
         * tests/dependencies/somethingthatworks.cpp:
 
           File to create a needed executable for building.
-        
+
         * tests/dependent_libs:
         * tests/dependent_libs/bar.ar:
         * tests/dependent_libs/build_entry.txt:
@@ -130,7 +178,7 @@ Fri Aug 20 20:55:12 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>
 
           New test to just verify the handling of override
           and spaces in the library name.
-        
+
         * expected/dependencies/bmake/Makefile.foo__some2ndlib.bmak:
         * expected/dependencies/bmake/Makefile.foo__some3rdlib.bmak:
         * expected/dependencies/bmake/Makefile.foo__some4thlib.bmak:

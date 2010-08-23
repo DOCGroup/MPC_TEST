@@ -6,7 +6,9 @@
 	-OI
 	--exceptions
 	-L.
+	-DSOMETHING_BUILD_DLL
 something.cpp
+something_export.h
 nospace.txt		[Documentation]
 space 1.txt		[Documentation]
 space 2.txt		[Documentation]

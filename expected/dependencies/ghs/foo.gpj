@@ -27,6 +27,7 @@ foo.cr
 	:preexecShell='cd . && echo  foo.ar > foo.cr'
 	:extraOutputFile=foo.cr
 foo.cpp
+something_export.h
 nospace.txt		[Documentation]
 space 1.txt		[Documentation]
 space 2.txt		[Documentation]

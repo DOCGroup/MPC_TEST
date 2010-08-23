@@ -7,7 +7,7 @@
                 <stringAttribute value="PROJECT_TYPE"/>
                 <stringAttribute value="DEFINES"/>
             </listAttribute>
-            <stringAttribute key="BLD::Info|GlobalMacro|DEFINES" value=""/>
+            <stringAttribute key="BLD::Info|GlobalMacro|DEFINES" value="-DSOMETHING_BUILD_DLL "/>
             <stringAttribute key="BLD::Info|GlobalMacro|PROJECT_TYPE" value=""/>
             <listAttribute key="BLD::Info|Incl|Linux_gnu_native_3.x_4.x">
             </listAttribute>

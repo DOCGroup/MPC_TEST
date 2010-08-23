@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="foo__someexecutable"
-	ProjectGUID="{30C3CEEB-FECA-1BAD-609D-8A63541878F4}"
+	ProjectGUID="{30C3CEEB-FECA-1BAD-609D-8A63C12F9383}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -148,6 +148,13 @@
 			Filter="cpp;cxx;cc;c;C">
 			<File
 				RelativePath="somethingthatworks.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hh">
+			<File
+				RelativePath="something_export.h">
 			</File>
 		</Filter>
 		<Filter

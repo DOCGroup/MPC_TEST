@@ -10,6 +10,7 @@ OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
 CFG_DIR      = Debug\\
 LIBMODIFIER  = _bd
 EXEMODIFIER  = 
+DYN_FLAGS    = -DSOMETHING_BUILD_DLL
 POSTLINKRM   = .tds
 !else
 !ifdef RELEASE
@@ -17,6 +18,7 @@ OCFLAGS      = -O2 -DNDEBUG
 CFG_DIR      = Release\\
 LIBMODIFIER  = _br
 EXEMODIFIER  = 
+DYN_FLAGS    = -DSOMETHING_BUILD_DLL
 POSTLINKRM   = .tds
 !else
 !ifdef STATIC_DEBUG
@@ -25,6 +27,7 @@ CFG_DIR      = Static_Debug\\
 LIBMODIFIER  = _bsd
 EXEMODIFIER  = 
 STATIC_CFG   = 1
+STATIC_FLAGS = -DSOMETHING_AS_STATIC_LIBS
 !else
 !ifdef STATIC_RELEASE
 OCFLAGS      = -O2 -DNDEBUG
@@ -32,6 +35,7 @@ CFG_DIR      = Static_Release\\
 LIBMODIFIER  = _bsr
 EXEMODIFIER  = 
 STATIC_CFG   = 1
+STATIC_FLAGS = -DSOMETHING_AS_STATIC_LIBS
 !else
 !error You must define one of these valid configurations: DEBUG RELEASE STATIC_DEBUG STATIC_RELEASE
 !endif

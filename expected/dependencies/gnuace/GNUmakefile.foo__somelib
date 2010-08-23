@@ -86,6 +86,14 @@ LDLIBPATH     = -L.
 else
 LDFLAGS      += -L.
 endif
+ifeq ($(shared_libs),1)
+  ifneq ($(SHLIB),)
+    CPPFLAGS += -DSOMETHING_BUILD_DLL
+  endif
+endif
+ifeq ($(static_libs),1)
+  CPPFLAGS += -DSOMETHING_AS_STATIC_LIBS
+endif
 
 #----------------------------------------------------------------------------
 #       Local targets
