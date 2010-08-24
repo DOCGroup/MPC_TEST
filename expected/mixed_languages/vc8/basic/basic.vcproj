@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="basic"
-	ProjectGUID="{190232C5-FECA-1BAD-609D-8A6314D04FCA}"
+	ProjectGUID="{190232C5-FECA-1BAD-609D-8A63006465F3}"
 	RootNamespace="basic"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -350,12 +350,12 @@
 	</Configurations>
 	<References>
 		<ProjectReference
-			ReferencedProjectIdentifier="{790410FF-FECA-1BAD-4657-8A65914D04F6}"
-			RelativePathToProject="../base/base.vcproj"
+			ReferencedProjectIdentifier="{790410FF-FECA-1BAD-4657-8A6500064655}"
+			RelativePathToProject="..\base\base.vcproj"
 		/>
 		<ProjectReference
-			ReferencedProjectIdentifier="{28202AFF-FECA-1BAD-E652-8C264D0745C1}"
-			RelativePathToProject="../csharp/csharp.csproj"
+			ReferencedProjectIdentifier="{28202AFF-FECA-1BAD-E652-8C260645E650}"
+			RelativePathToProject="..\csharp\csharp.csproj"
 		/>
 	</References>
 	<Files>

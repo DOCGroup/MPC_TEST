@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "another", "another\another.vcxproj", "{773C78EB-FECA-1BAD-2E20-EDEB67882E22}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo", "c++\foo.vcxproj", "{10B43656-FECA-1BAD-609D-8A630000619B}"
+EndProject
+Project("{E6FDF86B-F3D1-11D4-8576-0002A516ECE8}") = "j", "java\j.vjsproj", "{90D474F2-FECA-1BAD-0068-8A630006C601}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Debug|Any CPU.Build.0 = Debug|Win32
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Debug|Win32.ActiveCfg = Debug|Win32
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Debug|Win32.Build.0 = Debug|Win32
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Debug|x64.ActiveCfg = Debug|x64
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Debug|x64.Build.0 = Debug|x64
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Release|Any CPU.ActiveCfg = Release|Win32
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Release|Any CPU.Build.0 = Release|Win32
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Release|Win32.ActiveCfg = Release|Win32
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Release|Win32.Build.0 = Release|Win32
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Release|x64.ActiveCfg = Release|x64
+		{773C78EB-FECA-1BAD-2E20-EDEB67882E22}.Release|x64.Build.0 = Release|x64
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Debug|Any CPU.Build.0 = Debug|Win32
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Debug|Win32.Build.0 = Debug|Win32
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Debug|x64.ActiveCfg = Debug|x64
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Debug|x64.Build.0 = Debug|x64
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Release|Any CPU.ActiveCfg = Release|Win32
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Release|Any CPU.Build.0 = Release|Win32
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Release|Win32.ActiveCfg = Release|Win32
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Release|Win32.Build.0 = Release|Win32
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Release|x64.ActiveCfg = Release|x64
+		{10B43656-FECA-1BAD-609D-8A630000619B}.Release|x64.Build.0 = Release|x64
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Debug|Win32.Build.0 = Debug|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Debug|x64.Build.0 = Debug|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Release|Win32.ActiveCfg = Release|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Release|Win32.Build.0 = Release|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Release|x64.ActiveCfg = Release|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Release|x64.Build.0 = Release|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D474F2-FECA-1BAD-0068-8A630006C601}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

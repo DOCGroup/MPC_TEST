@@ -3,7 +3,7 @@
     <ProjectType>Local</ProjectType>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B8447291-FECA-1BAD-67BB-8A6382EBAF77}</ProjectGuid>
+    <ProjectGuid>{B84472E1-FECA-1BAD-67BB-8A6307582455}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <AssemblyKeyContainerName>
@@ -15,8 +15,7 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Library</OutputType>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace>aly</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject></StartupObject>
     <ReferencePath>.</ReferencePath>
@@ -73,7 +72,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="cras.csproj">
-      <Project>{1844709C-FECA-1BAD-4461-8A6582EBAF77}</Project>
+      <Project>{184410DC-FECA-1BAD-4461-8A6507582455}</Project>
       <Name>cras</Name>
     </ProjectReference>
   </ItemGroup>
