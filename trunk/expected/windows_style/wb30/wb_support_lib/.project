@@ -19,22 +19,22 @@
 		<link>
 			<name>arch.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/windows_style/arch.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/windows_style/arch.cpp</location>
 		</link>
 		<link>
 			<name>foo.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/windows_style/foo.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/windows_style/foo.cpp</location>
 		</link>
                 <link>
                         <name>bar.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/windows_style/bar.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/windows_style/bar.h</location>
                 </link>
                 <link>
                         <name>basic_export.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/windows_style/basic_export.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/windows_style/basic_export.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

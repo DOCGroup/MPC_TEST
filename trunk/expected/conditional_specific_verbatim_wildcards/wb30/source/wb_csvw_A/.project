@@ -19,17 +19,17 @@
 		<link>
 			<name>bleer.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/bleer.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/bleer.cpp</location>
 		</link>
 		<link>
 			<name>byion.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/byion.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/byion.cpp</location>
 		</link>
                 <link>
                         <name>byion.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/byion.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/byion.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

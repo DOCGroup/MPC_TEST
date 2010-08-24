@@ -17,9 +17,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>/tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo.cpp</name>
+			<name>C:/tao_builds/MPC_TEST/tests/more_options/c++/down/foo.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/more_options/c++/down/foo.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>

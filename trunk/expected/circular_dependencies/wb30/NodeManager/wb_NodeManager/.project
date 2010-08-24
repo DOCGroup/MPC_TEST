@@ -24,7 +24,7 @@
 		<link>
 			<name>one.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/circular_dependencies/NodeManager/one.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/circular_dependencies/NodeManager/one.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>

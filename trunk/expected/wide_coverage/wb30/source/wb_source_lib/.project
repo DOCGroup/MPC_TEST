@@ -22,77 +22,77 @@
 		<link>
 			<name>TheCheat.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/TheCheat.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/TheCheat.cpp</location>
 		</link>
 		<link>
 			<name>cre/o.le/more_names.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/cre/o.le/more_names.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/cre/o.le/more_names.cpp</location>
 		</link>
 		<link>
 			<name>names.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/names.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/names.cpp</location>
 		</link>
 		<link>
 			<name>qwee.cxx</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/qwee.cxx</location>
+			<location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/qwee.cxx</location>
 		</link>
                 <link>
                         <name>TheCheat.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/TheCheat.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/TheCheat.h</location>
                 </link>
                 <link>
                         <name>cre/o.le/more_names.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/cre/o.le/more_names.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/cre/o.le/more_names.h</location>
                 </link>
                 <link>
                         <name>moop.hxx</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/moop.hxx</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/moop.hxx</location>
                 </link>
                 <link>
                         <name>names.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/names.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/names.h</location>
                 </link>
                 <link>
                         <name>source_lib_pch.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/source_lib_pch.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/source_lib_pch.h</location>
                 </link>
                 <link>
                         <name>weer.inl</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/weer.inl</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/weer.inl</location>
                 </link>
                 <link>
                         <name>qwee_T.C</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/qwee_T.C</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/qwee_T.C</location>
                 </link>
                 <link>
                         <name>more_names.key</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/more_names.key</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/more_names.key</location>
                 </link>
                 <link>
                         <name>names.key</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/names.key</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/names.key</location>
                 </link>
                 <link>
                         <name>TheCheat.r</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/TheCheat.r</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/TheCheat.r</location>
                 </link>
                 <link>
                         <name>mondo/all.mondo</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/mondo/all.mondo</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/mondo/all.mondo</location>
                 </link>
 	</linkedResources>
 </projectDescription>

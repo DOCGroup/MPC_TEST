@@ -22,32 +22,32 @@
 		<link>
 			<name>exe/main.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/exe/main.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/exe/main.cpp</location>
 		</link>
 		<link>
 			<name>exe/use_more_names/use_more_names.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/exe/use_more_names/use_more_names.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/exe/use_more_names/use_more_names.cpp</location>
 		</link>
 		<link>
 			<name>exe/use_names/use_names.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/exe/use_names/use_names.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/exe/use_names/use_names.cpp</location>
 		</link>
                 <link>
                         <name>exe/use_more_names/use_more_names.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/exe/use_more_names/use_more_names.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/exe/use_more_names/use_more_names.h</location>
                 </link>
                 <link>
                         <name>exe/use_names/use_names.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/exe/use_names/use_names.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/exe/use_names/use_names.h</location>
                 </link>
                 <link>
                         <name>Foolish/foolish.simple</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/source/Foolish/foolish.simple</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/source/Foolish/foolish.simple</location>
                 </link>
 	</linkedResources>
 </projectDescription>

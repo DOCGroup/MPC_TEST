@@ -23,7 +23,7 @@
 		<link>
 			<name>./houses/simple.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/wider_coverage/houses/simple.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/wider_coverage/houses/simple.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>

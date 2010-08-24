@@ -19,22 +19,22 @@
 		<link>
 			<name>fire.crap.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/custom_generates_custom/src/fire.crap.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/custom_generates_custom/src/fire.crap.cpp</location>
 		</link>
                 <link>
                         <name>fire.crap.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/custom_generates_custom/src/fire.crap.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/custom_generates_custom/src/fire.crap.h</location>
                 </link>
                 <link>
                         <name>fire.crap.r</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/custom_generates_custom/src/fire.crap.r</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/custom_generates_custom/src/fire.crap.r</location>
                 </link>
                 <link>
                         <name>fire.ts</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/custom_generates_custom/src/fire.ts</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/custom_generates_custom/src/fire.ts</location>
                 </link>
 	</linkedResources>
 </projectDescription>

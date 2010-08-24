@@ -19,17 +19,17 @@
 		<link>
 			<name>Bar.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/psuedo_replacement/Bar.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/psuedo_replacement/Bar.cpp</location>
 		</link>
                 <link>
                         <name>Bar.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/psuedo_replacement/Bar.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/psuedo_replacement/Bar.h</location>
                 </link>
                 <link>
                         <name>Bar.adl</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/psuedo_replacement/Bar.adl</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/psuedo_replacement/Bar.adl</location>
                 </link>
 	</linkedResources>
 </projectDescription>
