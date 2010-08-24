@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="o"
-	ProjectGUID="{D904749C-FECA-1BAD-006D-8A633C01B20E}"
+	ProjectGUID="{D904749C-FECA-1BAD-006D-8A630000006F}"
 	RootNamespace="o"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -352,8 +352,8 @@
 	</Configurations>
 	<References>
 		<ProjectReference
-			ReferencedProjectIdentifier="{C904749C-FECA-1BAD-006C-8A633C01B20F}"
-			RelativePathToProject="../n/n.vcproj"
+			ReferencedProjectIdentifier="{C904749C-FECA-1BAD-006C-8A630000006E}"
+			RelativePathToProject="..\n\n.vcproj"
 		/>
 	</References>
 	<Files>

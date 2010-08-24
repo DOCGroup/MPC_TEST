@@ -1,3 +1,30 @@
+Tue Aug 24 20:50:45 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * utils/add_expected_directories.sh:
+
+          "svn add" should not ignore any commonly-ignored files like vcproj.
+
+        * expected/mixed_languages/vc8/csharp/csharp.csproj:
+        * expected/mixed_languages/vc8/basic/basic.vcproj:
+        * expected/webapp/vc8/source/aly.csproj:
+        * expected/webapp/vc8/source/cras.csproj:
+        * expected/wider_coverage/vc8/Some_Test_Simple_Lib.vcproj:
+        * expected/wider_coverage/vc8/Some_Test_Other_Lib.vcproj:
+        * expected/wider_coverage/vc8/simple.vcproj:
+        * expected/MultiWS/vc8/Multiws/src/bar_testing.vcproj:
+        * expected/mixed_languages_refs/vc8/z/z.csproj:
+        * expected/mixed_languages_refs/vc8/o/o.vcproj:
+        * expected/more_options/vc8/c++/foo.vcproj:
+        * expected/MultiWS/vc71/Multiws/src/bar_testing.vcproj:
+        * expected/MultiWS/vc7/Multiws/src/bar_testing.vcproj:
+
+          Updated expected results for vc7,vc71,vc8 for recent changes to MPC.
+
+        * expected/*/vc9/*:
+        * expected/*/vc10/*:
+
+          Added expected results for vc9,vc10.
+
 Tue Aug 24 14:02:18 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/*/wb30/*:

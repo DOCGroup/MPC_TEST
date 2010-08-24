@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Zar Files">
+      <UniqueIdentifier>{6790FA5F-FECA-1BAD-605D-8A6307582455}</UniqueIdentifier>
+      <Extensions>zar</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="that.zar">
+      <Filter>Zar Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="this.zar">
+      <Filter>Zar Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

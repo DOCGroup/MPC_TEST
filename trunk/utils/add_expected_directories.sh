@@ -11,7 +11,7 @@ for i in *; do
     if [ "$i" != ".svn" ]; then
       if [ ! -e "$i/.svn" ]; then
         echo "Adding directory: $i"
-        svn add $i
+        svn --config-option config:miscellany:global-ignores= add $i
         (cd $i; $0 propset)
       else
         if [ "$1" = "propset" ]; then

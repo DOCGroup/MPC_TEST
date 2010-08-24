@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="bar"
-	ProjectGUID="{21263024-FECA-1BAD-6460-8A637B8F2384}"
+	ProjectGUID="{21263024-FECA-1BAD-6460-8A632E01CE78}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
