@@ -22,37 +22,37 @@
 		<link>
 			<name>byion.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/byion.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/byion.cpp</location>
 		</link>
 		<link>
 			<name>conditional/unix.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/conditional/unix.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/conditional/unix.cpp</location>
 		</link>
 		<link>
 			<name>moop.cxx</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/moop.cxx</location>
+			<location>C:/tao_builds/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/moop.cxx</location>
 		</link>
 		<link>
 			<name>ploor.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/ploor.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/ploor.cpp</location>
 		</link>
 		<link>
 			<name>qwaaa.c</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/qwaaa.c</location>
+			<location>C:/tao_builds/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/qwaaa.c</location>
 		</link>
                 <link>
                         <name>byion.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/byion.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/byion.h</location>
                 </link>
                 <link>
                         <name>qwaaa.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/qwaaa.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/conditional_specific_verbatim_wildcards/source/qwaaa.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

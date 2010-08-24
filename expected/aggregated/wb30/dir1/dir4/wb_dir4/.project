@@ -19,7 +19,7 @@
 		<link>
 			<name>foo.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/aggregated/dir1/dir4/foo.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/aggregated/dir1/dir4/foo.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>

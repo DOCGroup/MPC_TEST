@@ -384,6 +384,7 @@ SOURCE="TheCheat.cpp"
 "$(INTDIR)\TheCheat.obj" : $(SOURCE)
 	$(CPP) $(CPP_PCH) $(CPP_COMMON) /Fo"$(INTDIR)\TheCheat.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="more_names.key"
 
 InputPath=more_names.key
@@ -441,6 +442,185 @@ InputPath=mondo\all.mondo
 	type ".\qwee.cxx" >> temporary.src
         move /y temporary.src ".\qwee.cxx"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="more_names.key"
+
+InputPath=more_names.key
+
+"cre\o.le\more_names.cpp" "cre\o.le\more_names.h" : $(SOURCE)  "..\bin\generator.exe"
+	<<tempfile.bat
+	@echo off
+	PATH=%PATH%;..\lib
+        if not exist cre\o.le mkdir cre\o.le
+	..\bin\generator -o cre/o.le "$(InputPath)"
+	echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated.
+	echo #include "source_lib_pch.h" > temporary.src
+	type "cre\o.le\more_names.cpp" >> temporary.src
+        move /y temporary.src "cre\o.le\more_names.cpp"
+<<
+
+SOURCE="names.key"
+
+InputPath=names.key
+
+"names.cpp" "names.h" : $(SOURCE)  "something" "..\bin\generator.exe"
+	<<tempfile.bat
+	@echo off
+	PATH=%PATH%;..\lib
+	..\bin\generator -n names "$(InputPath)"
+	echo names.cpp and names.h have been generated.
+	echo #include "source_lib_pch.h" > temporary.src
+	type "names.cpp" >> temporary.src
+        move /y temporary.src "names.cpp"
+<<
+
+SOURCE="TheCheat.r"
+
+InputPath=TheCheat.r
+
+"TheCheat.cpp" "TheCheat.h" : $(SOURCE)  "..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\cppgen.pl  "$(InputPath)" -o "TheCheat.cpp" "TheCheat.h"
+	echo #include "source_lib_pch.h" > temporary.src
+	type "TheCheat.cpp" >> temporary.src
+        move /y temporary.src "TheCheat.cpp"
+<<
+
+SOURCE="mondo\all.mondo"
+
+InputPath=mondo\all.mondo
+
+".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl" : $(SOURCE)  "..\mondo\mondo.pl" "..\mondo\modules\ReaderGen.pm"
+	<<tempfile.bat
+	@echo off
+        if not exist . mkdir .
+	perl ..\mondo\mondo.pl -fake "$(InputPath)"
+	echo #include "source_lib_pch.h" > temporary.src
+	type ".\qwee.cxx" >> temporary.src
+        move /y temporary.src ".\qwee.cxx"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="more_names.key"
+
+InputPath=more_names.key
+
+"cre\o.le\more_names.cpp" "cre\o.le\more_names.h" : $(SOURCE)  "..\bin\generator.exe"
+	<<tempfile.bat
+	@echo off
+	PATH=%PATH%;..\lib
+        if not exist cre\o.le mkdir cre\o.le
+	..\bin\generator -o cre/o.le "$(InputPath)"
+	echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated.
+	echo #include "source_lib_pch.h" > temporary.src
+	type "cre\o.le\more_names.cpp" >> temporary.src
+        move /y temporary.src "cre\o.le\more_names.cpp"
+<<
+
+SOURCE="names.key"
+
+InputPath=names.key
+
+"names.cpp" "names.h" : $(SOURCE)  "something" "..\bin\generator.exe"
+	<<tempfile.bat
+	@echo off
+	PATH=%PATH%;..\lib
+	..\bin\generator -n names "$(InputPath)"
+	echo names.cpp and names.h have been generated.
+	echo #include "source_lib_pch.h" > temporary.src
+	type "names.cpp" >> temporary.src
+        move /y temporary.src "names.cpp"
+<<
+
+SOURCE="TheCheat.r"
+
+InputPath=TheCheat.r
+
+"TheCheat.cpp" "TheCheat.h" : $(SOURCE)  "..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\cppgen.pl  "$(InputPath)" -o "TheCheat.cpp" "TheCheat.h"
+	echo #include "source_lib_pch.h" > temporary.src
+	type "TheCheat.cpp" >> temporary.src
+        move /y temporary.src "TheCheat.cpp"
+<<
+
+SOURCE="mondo\all.mondo"
+
+InputPath=mondo\all.mondo
+
+".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl" : $(SOURCE)  "..\mondo\mondo.pl" "..\mondo\modules\ReaderGen.pm"
+	<<tempfile.bat
+	@echo off
+        if not exist . mkdir .
+	perl ..\mondo\mondo.pl -fake "$(InputPath)"
+	echo #include "source_lib_pch.h" > temporary.src
+	type ".\qwee.cxx" >> temporary.src
+        move /y temporary.src ".\qwee.cxx"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="more_names.key"
+
+InputPath=more_names.key
+
+"cre\o.le\more_names.cpp" "cre\o.le\more_names.h" : $(SOURCE)  "..\bin\generator.exe"
+	<<tempfile.bat
+	@echo off
+	PATH=%PATH%;..\lib
+        if not exist cre\o.le mkdir cre\o.le
+	..\bin\generator -o cre/o.le "$(InputPath)"
+	echo cre\o.le\more_names.cpp and cre\o.le\more_names.h have been generated.
+	echo #include "source_lib_pch.h" > temporary.src
+	type "cre\o.le\more_names.cpp" >> temporary.src
+        move /y temporary.src "cre\o.le\more_names.cpp"
+<<
+
+SOURCE="names.key"
+
+InputPath=names.key
+
+"names.cpp" "names.h" : $(SOURCE)  "something" "..\bin\generator.exe"
+	<<tempfile.bat
+	@echo off
+	PATH=%PATH%;..\lib
+	..\bin\generator -n names "$(InputPath)"
+	echo names.cpp and names.h have been generated.
+	echo #include "source_lib_pch.h" > temporary.src
+	type "names.cpp" >> temporary.src
+        move /y temporary.src "names.cpp"
+<<
+
+SOURCE="TheCheat.r"
+
+InputPath=TheCheat.r
+
+"TheCheat.cpp" "TheCheat.h" : $(SOURCE)  "..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\cppgen.pl  "$(InputPath)" -o "TheCheat.cpp" "TheCheat.h"
+	echo #include "source_lib_pch.h" > temporary.src
+	type "TheCheat.cpp" >> temporary.src
+        move /y temporary.src "TheCheat.cpp"
+<<
+
+SOURCE="mondo\all.mondo"
+
+InputPath=mondo\all.mondo
+
+".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl" : $(SOURCE)  "..\mondo\mondo.pl" "..\mondo\modules\ReaderGen.pm"
+	<<tempfile.bat
+	@echo off
+        if not exist . mkdir .
+	perl ..\mondo\mondo.pl -fake "$(InputPath)"
+	echo #include "source_lib_pch.h" > temporary.src
+	type ".\qwee.cxx" >> temporary.src
+        move /y temporary.src ".\qwee.cxx"
+<<
+
+!ENDIF
 
 
 !ENDIF

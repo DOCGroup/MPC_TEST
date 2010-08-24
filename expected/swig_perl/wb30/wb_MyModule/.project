@@ -19,27 +19,27 @@
 		<link>
 			<name>MyModule_wrap.cxx</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/swig_perl/MyModule_wrap.cxx</location>
+			<location>C:/tao_builds/MPC_TEST/tests/swig_perl/MyModule_wrap.cxx</location>
 		</link>
 		<link>
 			<name>hello.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/swig_perl/hello.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/swig_perl/hello.cpp</location>
 		</link>
                 <link>
                         <name>hello.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/swig_perl/hello.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/swig_perl/hello.h</location>
                 </link>
                 <link>
                         <name>MyModule.i</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/swig_perl/MyModule.i</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/swig_perl/MyModule.i</location>
                 </link>
                 <link>
                         <name>MyModule.i</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/swig_perl/MyModule.i</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/swig_perl/MyModule.i</location>
                 </link>
 	</linkedResources>
 </projectDescription>

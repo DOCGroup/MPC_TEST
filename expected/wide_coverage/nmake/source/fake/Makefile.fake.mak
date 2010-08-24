@@ -280,6 +280,7 @@ SOURCE="other.cpp"
 "$(INTDIR)\other.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\other.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="..\..\other\other.r"
 
 InputPath=..\..\other\other.r
@@ -290,6 +291,44 @@ InputPath=..\..\other\other.r
         if not exist . mkdir .
 	perl ..\..\bin\cppgen.pl  "$(InputPath)" -o ".\other.cpp" ".\other.h"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="..\..\other\other.r"
+
+InputPath=..\..\other\other.r
+
+".\other.cpp" ".\other.h" : $(SOURCE)  "..\..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+        if not exist . mkdir .
+	perl ..\..\bin\cppgen.pl  "$(InputPath)" -o ".\other.cpp" ".\other.h"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="..\..\other\other.r"
+
+InputPath=..\..\other\other.r
+
+".\other.cpp" ".\other.h" : $(SOURCE)  "..\..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+        if not exist . mkdir .
+	perl ..\..\bin\cppgen.pl  "$(InputPath)" -o ".\other.cpp" ".\other.h"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="..\..\other\other.r"
+
+InputPath=..\..\other\other.r
+
+".\other.cpp" ".\other.h" : $(SOURCE)  "..\..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+        if not exist . mkdir .
+	perl ..\..\bin\cppgen.pl  "$(InputPath)" -o ".\other.cpp" ".\other.h"
+<<
+
+!ENDIF
 
 
 !ENDIF

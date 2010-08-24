@@ -289,6 +289,7 @@ SOURCE="other.cpp"
 "$(INTDIR)\other.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\other.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="clown.r"
 
 InputPath=clown.r
@@ -298,6 +299,41 @@ InputPath=clown.r
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "clown.cpp" "clown.h"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="clown.r"
+
+InputPath=clown.r
+
+"clown.cpp" "clown.h" : $(SOURCE)  "..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\cppgen.pl  "$(InputPath)" -o "clown.cpp" "clown.h"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="clown.r"
+
+InputPath=clown.r
+
+"clown.cpp" "clown.h" : $(SOURCE)  "..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\cppgen.pl  "$(InputPath)" -o "clown.cpp" "clown.h"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="clown.r"
+
+InputPath=clown.r
+
+"clown.cpp" "clown.h" : $(SOURCE)  "..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\cppgen.pl  "$(InputPath)" -o "clown.cpp" "clown.h"
+<<
+
+!ENDIF
 
 
 !ENDIF

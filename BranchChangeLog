@@ -1,3 +1,569 @@
+Tue Aug 24 18:43:21 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
+
+        * .:
+        * BranchChangeLog:
+        * ChangeLog:
+
+        * expected/MultiWS/wb30/Multiws/src/wb_bar_testing/.project:
+
+        * expected/MultiWS/wb30/Multiws/src/wb_foo_testing/.project:
+
+        * expected/aggregated/wb30/dir1/dir2/wb_foo/.project:
+
+        * expected/aggregated/wb30/dir1/dir4/wb_dir4/.project:
+
+        * expected/aggregated/wb30/dir1/dir5/wb_dir5/.project:
+
+        * expected/aggregated/wb30/dir2/wb_another/.project:
+
+        * expected/aggregated_env/wb26/a/aa/.project:
+
+        * expected/aggregated_env/wb30/a/wb_aa/.project:
+
+        * expected/backwards/wb30/wb_foo/.project:
+
+        * expected/buildflags/wb30/source/wb_bfs_exe/.project:
+
+        * expected/buildflags/wb30/source/wb_bfs_lib/.project:
+
+        * expected/circular_dependencies/wb30/DomainApplicationManager/wb_DomainApplicationManager/.project:
+
+        * expected/circular_dependencies/wb30/NodeApplication/wb_NodeApplication/.project:
+
+        * expected/circular_dependencies/wb30/NodeApplication/wb_RTNA_Configurator/.project:
+
+        * expected/circular_dependencies/wb30/NodeApplicationManager/wb_NodeApplicationManager/.project:
+
+        * expected/circular_dependencies/wb30/NodeManager/wb_Monitor_Monitorlib/.project:
+
+        * expected/circular_dependencies/wb30/NodeManager/wb_NodeManager/.project:
+
+        * expected/circular_dependencies/wb30/NodeManager/wb_NodeManager_stub/.project:
+
+        * expected/circular_dependencies/wb30/NodeManager/wb_lib/.project:
+
+        * expected/circular_dependencies/wb30/TargetManager/wb_CIAO_TargetManager_exec/.project:
+
+        * expected/circular_dependencies/wb30/TargetManager/wb_CIAO_TargetManager_stub/.project:
+
+        * expected/circular_dependencies/wb30/TargetManager/wb_CIAO_TargetManager_svnt/.project:
+
+        * expected/circular_dependencies/wb30/TargetManager/wb_TMClient/.project:
+
+        * expected/command_helper/nmake/Makefile.simple.mak:
+
+        * expected/command_helper/wb30/wb_simple/.project:
+
+        * expected/conditional_specific_verbatim_wildcards/wb30/source/wb_csvw_A/.project:
+
+        * expected/conditional_specific_verbatim_wildcards/wb30/source/wb_csvw_B/.project:
+
+        * expected/conditional_specific_verbatim_wildcards/wb30/source/wb_csvw_C/.project:
+
+        * expected/conditional_specific_verbatim_wildcards/wb30/source/wb_csvw_D/.project:
+
+        * expected/conditional_specific_verbatim_wildcards/wb30/source/wb_csvw_E/.project:
+
+        * expected/custom_generates_custom/nmake/src/Makefile.src.mak:
+
+        * expected/custom_generates_custom/wb30/src/wb_src/.project:
+
+        * expected/dependencies/nmake/Makefile.foo.mak:
+
+        * expected/dependencies/wb26/foo/.project:
+
+        * expected/dependencies/wb26/foo__someexecutable/.project:
+
+        * expected/dependencies/wb26/foo__somelib/.project:
+
+        * expected/dependencies/wb26/wb26projects.lst:
+
+        * expected/dependencies/wb30/wb30projects.lst:
+
+        * expected/dependencies/wb30/wb_foo/.project:
+
+        * expected/dependencies/wb30/wb_foo__someexecutable/.project:
+
+        * expected/dependencies/wb30/wb_foo__somelib/.project:
+
+        * expected/dependent_libs/nmake/Makefile.foo.mak:
+
+        * expected/exclude/wb30/one/three/wb_three/.project:
+
+        * expected/exclude/wb30/two/wb_two/.project:
+
+        * expected/features_custom_only/nmake/source/Makefile.fco.mak:
+        * expected/features_custom_only/nmake/source/Makefile.other.mak:
+
+        * expected/features_custom_only/wb30/source/wb_fco/.project:
+
+        * expected/features_custom_only/wb30/source/wb_fco_use/.project:
+
+        * expected/features_custom_only/wb30/source/wb_other/.project:
+
+        * expected/flex_bison/nmake/Makefile.flex_bison.mak:
+
+        * expected/flex_bison/wb30/wb_flex_bison/.project:
+
+        * expected/grouping/nmake/source/Makefile.grouping_A.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_B.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_C.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_D.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_E.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_F.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_G.mak:
+
+        * expected/grouping/wb30/source/wb_grouping_A/.project:
+
+        * expected/grouping/wb30/source/wb_grouping_B/.project:
+
+        * expected/grouping/wb30/source/wb_grouping_C/.project:
+
+        * expected/grouping/wb30/source/wb_grouping_D/.project:
+
+        * expected/grouping/wb30/source/wb_grouping_E/.project:
+
+        * expected/grouping/wb30/source/wb_grouping_F/.project:
+
+        * expected/grouping/wb30/source/wb_grouping_G/.project:
+
+        * expected/implicit_projects/wb30/source/one/wb_one/.project:
+
+        * expected/implicit_projects/wb30/source/two/wb_two/.project:
+
+        * expected/implicit_resources:
+
+        * expected/implicit_resources/automake:
+
+        * expected/implicit_resources/automake/Makefile.am:
+        * expected/implicit_resources/automake/configure.ac.Makefiles:
+        * expected/implicit_resources/automake/dir1:
+
+        * expected/implicit_resources/automake/dir1/Makefile.am:
+
+        * expected/implicit_resources/automake/dir3:
+
+        * expected/implicit_resources/automake/dir3/Makefile.am:
+
+        * expected/implicit_resources/bcb2007:
+
+        * expected/implicit_resources/bcb2007/dir1:
+
+        * expected/implicit_resources/bcb2007/dir1/dir1.cbproj:
+
+        * expected/implicit_resources/bcb2007/dir3:
+
+        * expected/implicit_resources/bcb2007/dir3/dir3.cbproj:
+
+        * expected/implicit_resources/bcb2007/implicit_resources.groupproj:
+
+        * expected/implicit_resources/bcb2009:
+
+        * expected/implicit_resources/bcb2009/dir1:
+
+        * expected/implicit_resources/bcb2009/dir1/dir1.cbproj:
+
+        * expected/implicit_resources/bcb2009/dir3:
+
+        * expected/implicit_resources/bcb2009/dir3/dir3.cbproj:
+
+        * expected/implicit_resources/bcb2009/implicit_resources.groupproj:
+
+        * expected/implicit_resources/bds4:
+
+        * expected/implicit_resources/bds4/dir1:
+
+        * expected/implicit_resources/bds4/dir1/dir1.bdsproj:
+
+        * expected/implicit_resources/bds4/dir3:
+
+        * expected/implicit_resources/bds4/dir3/dir3.bdsproj:
+
+        * expected/implicit_resources/bds4/implicit_resources.bdsgroup:
+
+        * expected/implicit_resources/bmake:
+
+        * expected/implicit_resources/bmake/Makefile.bmak:
+        * expected/implicit_resources/bmake/dir1:
+
+        * expected/implicit_resources/bmake/dir1/Makefile.bmak:
+        * expected/implicit_resources/bmake/dir1/Makefile.dir1.bmak:
+
+        * expected/implicit_resources/bmake/dir3:
+
+        * expected/implicit_resources/bmake/dir3/Makefile.bmak:
+        * expected/implicit_resources/bmake/dir3/Makefile.dir3.bmak:
+
+        * expected/implicit_resources/cc:
+
+        * expected/implicit_resources/cc/dir1:
+
+        * expected/implicit_resources/cc/dir1/dir1.pjt:
+
+        * expected/implicit_resources/cc/dir3:
+
+        * expected/implicit_resources/cc/dir3/dir3.pjt:
+
+        * expected/implicit_resources/cc/implicit_resources.code_composer:
+
+        * expected/implicit_resources/cdt6:
+
+        * expected/implicit_resources/cdt6/cdt_workspace_implicit_resources.txt:
+        * expected/implicit_resources/cdt6/dir1:
+
+        * expected/implicit_resources/cdt6/dir1/cdt_dir1:
+
+        * expected/implicit_resources/cdt6/dir1/cdt_dir1/.cproject:
+        * expected/implicit_resources/cdt6/dir1/cdt_dir1/.project:
+        * expected/implicit_resources/cdt6/dir1/cdt_dir1/postbuild_linux_debug.sh:
+        * expected/implicit_resources/cdt6/dir1/cdt_dir1/postbuild_linux_release.sh:
+
+        * expected/implicit_resources/cdt6/dir3:
+
+        * expected/implicit_resources/cdt6/dir3/cdt_dir3:
+
+        * expected/implicit_resources/cdt6/dir3/cdt_dir3/.cproject:
+        * expected/implicit_resources/cdt6/dir3/cdt_dir3/.project:
+        * expected/implicit_resources/cdt6/dir3/cdt_dir3/postbuild_linux_debug.sh:
+        * expected/implicit_resources/cdt6/dir3/cdt_dir3/postbuild_linux_release.sh:
+
+        * expected/implicit_resources/em3:
+
+        * expected/implicit_resources/em3/dir1:
+
+        * expected/implicit_resources/em3/dir1/dir1.vcp:
+
+        * expected/implicit_resources/em3/dir3:
+
+        * expected/implicit_resources/em3/dir3/dir3.vcp:
+
+        * expected/implicit_resources/em3/implicit_resources.vcw:
+
+        * expected/implicit_resources/ghs:
+
+        * expected/implicit_resources/ghs/default.gpj:
+        * expected/implicit_resources/ghs/dir1:
+
+        * expected/implicit_resources/ghs/dir1/dir1.gpj:
+
+        * expected/implicit_resources/ghs/dir3:
+
+        * expected/implicit_resources/ghs/dir3/dir3.gpj:
+
+        * expected/implicit_resources/html:
+
+        * expected/implicit_resources/html/dir1:
+
+        * expected/implicit_resources/html/dir1/dir1.html:
+
+        * expected/implicit_resources/html/dir3:
+
+        * expected/implicit_resources/html/dir3/dir3.html:
+
+        * expected/implicit_resources/html/implicit_resources_workspace.html:
+
+        * expected/implicit_resources/make:
+
+        * expected/implicit_resources/make/Makefile:
+        * expected/implicit_resources/make/dir1:
+
+        * expected/implicit_resources/make/dir1/Makefile:
+        * expected/implicit_resources/make/dir1/Makefile.dir1:
+
+        * expected/implicit_resources/make/dir3:
+
+        * expected/implicit_resources/make/dir3/Makefile:
+        * expected/implicit_resources/make/dir3/Makefile.dir3:
+
+        * expected/implicit_resources/nmake:
+
+        * expected/implicit_resources/nmake/Makefile:
+        * expected/implicit_resources/nmake/dir1:
+
+        * expected/implicit_resources/nmake/dir1/Makefile:
+        * expected/implicit_resources/nmake/dir1/Makefile.dir1.mak:
+
+        * expected/implicit_resources/nmake/dir3:
+
+        * expected/implicit_resources/nmake/dir3/Makefile:
+        * expected/implicit_resources/nmake/dir3/Makefile.dir3.mak:
+
+        * expected/implicit_resources/sle:
+
+        * expected/implicit_resources/sle/dir1:
+
+        * expected/implicit_resources/sle/dir1/dir1.vpj:
+
+        * expected/implicit_resources/sle/dir3:
+
+        * expected/implicit_resources/sle/dir3/dir3.vpj:
+
+        * expected/implicit_resources/sle/implicit_resources.vpw:
+
+        * expected/implicit_resources/vc10:
+
+        * expected/implicit_resources/vc10/dir1:
+
+        * expected/implicit_resources/vc10/dir1/dir1.vcxproj:
+        * expected/implicit_resources/vc10/dir1/dir1.vcxproj.filters:
+
+        * expected/implicit_resources/vc10/dir3:
+
+        * expected/implicit_resources/vc10/dir3/dir3.vcxproj:
+        * expected/implicit_resources/vc10/dir3/dir3.vcxproj.filters:
+
+        * expected/implicit_resources/vc10/implicit_resources.sln:
+
+        * expected/implicit_resources/vc6:
+
+        * expected/implicit_resources/vc6/dir1:
+
+        * expected/implicit_resources/vc6/dir1/dir1.dsp:
+
+        * expected/implicit_resources/vc6/dir3:
+
+        * expected/implicit_resources/vc6/dir3/dir3.dsp:
+
+        * expected/implicit_resources/vc6/implicit_resources.dsw:
+
+        * expected/implicit_resources/vc7:
+
+        * expected/implicit_resources/vc7/dir1:
+
+        * expected/implicit_resources/vc7/dir1/dir1.vcproj:
+
+        * expected/implicit_resources/vc7/dir3:
+
+        * expected/implicit_resources/vc7/dir3/dir3.vcproj:
+
+        * expected/implicit_resources/vc7/implicit_resources.sln:
+
+        * expected/implicit_resources/vc71:
+
+        * expected/implicit_resources/vc71/dir1:
+
+        * expected/implicit_resources/vc71/dir1/dir1.vcproj:
+
+        * expected/implicit_resources/vc71/dir3:
+
+        * expected/implicit_resources/vc71/dir3/dir3.vcproj:
+
+        * expected/implicit_resources/vc71/implicit_resources.sln:
+
+        * expected/implicit_resources/vc8:
+
+        * expected/implicit_resources/vc8/dir1:
+
+        * expected/implicit_resources/vc8/dir1/dir1.vcproj:
+
+        * expected/implicit_resources/vc8/dir3:
+
+        * expected/implicit_resources/vc8/dir3/dir3.vcproj:
+
+        * expected/implicit_resources/vc8/implicit_resources.sln:
+
+        * expected/implicit_resources/vc9:
+
+        * expected/implicit_resources/vc9/dir1:
+
+        * expected/implicit_resources/vc9/dir1/dir1.vcproj:
+
+        * expected/implicit_resources/vc9/dir3:
+
+        * expected/implicit_resources/vc9/dir3/dir3.vcproj:
+
+        * expected/implicit_resources/vc9/implicit_resources.sln:
+
+        * expected/implicit_resources/wb26:
+
+        * expected/implicit_resources/wb26/dir1:
+
+        * expected/implicit_resources/wb26/dir1/dir1:
+
+        * expected/implicit_resources/wb26/dir1/dir1/.project:
+        * expected/implicit_resources/wb26/dir1/dir1/.wrmakefile:
+        * expected/implicit_resources/wb26/dir1/dir1/.wrproject:
+
+        * expected/implicit_resources/wb26/dir3:
+
+        * expected/implicit_resources/wb26/dir3/dir3:
+
+        * expected/implicit_resources/wb26/dir3/dir3/.project:
+        * expected/implicit_resources/wb26/dir3/dir3/.wrmakefile:
+        * expected/implicit_resources/wb26/dir3/dir3/.wrproject:
+
+        * expected/implicit_resources/wb26/org.eclipse.core.resources.prefs:
+        * expected/implicit_resources/wb26/wb26projects.lst:
+
+        * expected/implicit_resources/wb30:
+
+        * expected/implicit_resources/wb30/dir1:
+
+        * expected/implicit_resources/wb30/dir1/wb_dir1:
+
+        * expected/implicit_resources/wb30/dir1/wb_dir1/.cproject:
+        * expected/implicit_resources/wb30/dir1/wb_dir1/.project:
+        * expected/implicit_resources/wb30/dir1/wb_dir1/.wrmakefile:
+        * expected/implicit_resources/wb30/dir1/wb_dir1/.wrproject:
+
+        * expected/implicit_resources/wb30/dir3:
+
+        * expected/implicit_resources/wb30/dir3/wb_dir3:
+
+        * expected/implicit_resources/wb30/dir3/wb_dir3/.cproject:
+        * expected/implicit_resources/wb30/dir3/wb_dir3/.project:
+        * expected/implicit_resources/wb30/dir3/wb_dir3/.wrmakefile:
+        * expected/implicit_resources/wb30/dir3/wb_dir3/.wrproject:
+
+        * expected/implicit_resources/wb30/org.eclipse.core.resources.prefs:
+        * expected/implicit_resources/wb30/wb30projects.lst:
+
+        * expected/implicit_resources/wix:
+
+        * expected/implicit_resources/wix/dir1:
+
+        * expected/implicit_resources/wix/dir1/dir1.wxi:
+
+        * expected/implicit_resources/wix/dir3:
+
+        * expected/implicit_resources/wix/dir3/dir3.wxi:
+
+        * expected/implicit_resources/wix/implicit_resources.wxi:
+
+        * expected/mixed_languages/wb30/base/wb_base/.project:
+
+        * expected/mixed_languages/wb30/basic/wb_basic/.project:
+
+        * expected/mixed_languages_refs/wb30/n/wb_n/.project:
+
+        * expected/mixed_languages_refs/wb30/o/wb_o/.project:
+
+        * expected/mixed_languages_refs/wb30/r/wb_r/.project:
+
+        * expected/more_circular_dependencies/wb30/wb_Code/.project:
+
+        * expected/more_circular_dependencies/wb30/wb_Factory/.project:
+
+        * expected/more_circular_dependencies/wb30/wb_ROOT/.project:
+
+        * expected/more_circular_dependencies/wb30/wb_Set/.project:
+
+        * expected/more_options/nmake/c++/Makefile.foo.mak:
+
+        * expected/more_options/wb30/another/wb_another/.project:
+
+        * expected/more_options/wb30/c++/wb_foo/.project:
+        * expected/more_options/wb30/c++/wb_foo/.wrproject:
+
+        * expected/more_workspaces/wb26/src/src/.project:
+
+        * expected/more_workspaces/wb30/src/wb_src/.project:
+
+        * expected/multi_custom_mapping/nmake/Makefile.mpc_test.mak:
+
+        * expected/multi_custom_mapping/wb30/wb_mpc_test/.project:
+
+        * expected/multiple_define_customs/nmake/Makefile.foo.mak:
+
+        * expected/multiple_define_customs/wb30/wb_foo/.project:
+
+        * expected/no_workspace/nmake/src/Makefile.foo.mak:
+
+        * expected/options/wb30/source/wb_basic_Zargaflan/.project:
+
+        * expected/partial_implicit/nmake/explicit/Makefile.explicit.mak:
+
+        * expected/partial_implicit/wb30/explicit/wb_explicit/.project:
+
+        * expected/partial_implicit/wb30/implicit/wb_implicit/.project:
+
+        * expected/psuedo_replacement/nmake/Makefile.zz.mak:
+
+        * expected/psuedo_replacement/wb30/wb_zz/.project:
+
+        * expected/qt/nmake/Makefile.qt_uic_moc.mak:
+
+        * expected/qt/wb30/wb_qt_uic_moc/.project:
+
+        * expected/relative/wb30/build/wb_build_exe/.project:
+
+        * expected/relative/wb30/build/wb_build_lib/.project:
+
+        * expected/swig_perl/nmake/Makefile.MyModule.mak:
+
+        * expected/swig_perl/wb30/wb_MyModule/.project:
+
+        * expected/template_input/wb30/dll/wb_dll/.project:
+
+        * expected/template_input/wb30/dll_exe/wb_dll_exe/.project:
+
+        * expected/template_input/wb30/lib/wb_lib/.project:
+
+        * expected/template_input/wb30/lib_exe/wb_lib_exe/.project:
+
+        * expected/value_template/wb30/wb_foo_a/.project:
+
+        * expected/value_template/wb30/wb_foo_b/.project:
+
+        * expected/value_template/wb30/wb_foo_c/.project:
+
+        * expected/wide_coverage/nmake/source/Makefile.source.mak:
+        * expected/wide_coverage/nmake/source/Makefile.source_lib.mak:
+
+        * expected/wide_coverage/nmake/source/fake/Makefile.fake.mak:
+
+        * expected/wide_coverage/wb30/generator/wb_generator/.project:
+
+        * expected/wide_coverage/wb30/generator/wb_generator_be/.project:
+
+        * expected/wide_coverage/wb30/source/fake/wb_fake/.project:
+
+        * expected/wide_coverage/wb30/source/wb_source/.project:
+
+        * expected/wide_coverage/wb30/source/wb_source_lib/.project:
+
+        * expected/wider_coverage/wb30/wb_Some_Test_Other_Lib/.project:
+
+        * expected/wider_coverage/wb30/wb_Some_Test_Simple_Lib/.project:
+
+        * expected/wider_coverage/wb30/wb_simple/.project:
+
+        * expected/windows_style/wb30/sub/wb_sub/.project:
+
+        * expected/windows_style/wb30/wb_support_lib/.project:
+
+        * expected/workspaces/wb30/a/common/wb_common/.project:
+
+        * expected/workspaces/wb30/a/wb_a/.project:
+
+        * expected/workspaces/wb30/b/wb_b/.project:
+
+        * expected/workspaces/wb30/c/good/wb_good/.project:
+
+        * expected/workspaces/wb30/c/not_ghs/wb_not_ghs/.project:
+
+        * tests/implicit_resources:
+
+        * tests/implicit_resources/dir1:
+
+        * tests/implicit_resources/dir1/res.rc:
+        * tests/implicit_resources/dir1/src.cpp:
+
+        * tests/implicit_resources/dir2:
+
+        * tests/implicit_resources/dir2/res.rc:
+
+        * tests/implicit_resources/dir3:
+
+        * tests/implicit_resources/dir3/dir3.mpc:
+        * tests/implicit_resources/dir3/res.rc:
+
+        * tests/implicit_resources/implicit_resources.mwc:
+
+        * utils/add_expected_directories.sh:
+
+          Merging r205 through r213.
+
 Tue Aug 24 14:25:52 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>
 
         * expected/dependencies/automake/Makefile.am:

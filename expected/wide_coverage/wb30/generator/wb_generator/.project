@@ -22,12 +22,12 @@
 		<link>
 			<name>generator.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/generator/generator.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/wide_coverage/generator/generator.cpp</location>
 		</link>
                 <link>
                         <name>resource.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/generator/resource.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/generator/resource.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

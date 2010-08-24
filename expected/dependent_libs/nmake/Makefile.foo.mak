@@ -280,6 +280,28 @@ SOURCE="foo.cpp"
 "$(INTDIR)\foo.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\foo.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
+SOURCE="bar.ar"
+
+InputPath=bar.ar
+
+"bar.cr" : $(SOURCE)  "nospace.txt" "lib\somelibd.dll" "lib\some 2nd libd.dll" "lib\some 3rd libd.dll" "lib\some4thlibd.dll"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "bar.cr"
+<<
+
+SOURCE="foo.ar"
+
+InputPath=foo.ar
+
+"foo.cr" : $(SOURCE)  "nospace.txt" "lib\somelibd.dll" "lib\some 2nd libd.dll"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "foo.cr"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
 SOURCE="bar.ar"
 
 InputPath=bar.ar
@@ -299,6 +321,50 @@ InputPath=foo.ar
 	@echo off
 	echo  "$(InputPath)" > "foo.cr"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="bar.ar"
+
+InputPath=bar.ar
+
+"bar.cr" : $(SOURCE)  "nospace.txt"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "bar.cr"
+<<
+
+SOURCE="foo.ar"
+
+InputPath=foo.ar
+
+"foo.cr" : $(SOURCE)  "nospace.txt"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "foo.cr"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="bar.ar"
+
+InputPath=bar.ar
+
+"bar.cr" : $(SOURCE)  "nospace.txt"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "bar.cr"
+<<
+
+SOURCE="foo.ar"
+
+InputPath=foo.ar
+
+"foo.cr" : $(SOURCE)  "nospace.txt"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "foo.cr"
+<<
+
+!ENDIF
 
 
 !ENDIF

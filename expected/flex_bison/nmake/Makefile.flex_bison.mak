@@ -293,6 +293,7 @@ SOURCE="bus.tab.c"
 "$(INTDIR)\bus.tab.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\bus.tab.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="bus.l"
 
 InputPath=bus.l
@@ -312,6 +313,71 @@ InputPath=bus.y
 	@echo off
 	bison -d "$(InputPath)"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="bus.l"
+
+InputPath=bus.l
+
+"bus.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	flex -t "$(InputPath)" > "bus.cpp"
+<<
+
+SOURCE="bus.y"
+
+InputPath=bus.y
+
+"bus.tab.c" "bus.tab.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	bison -d "$(InputPath)"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="bus.l"
+
+InputPath=bus.l
+
+"bus.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	flex -t "$(InputPath)" > "bus.cpp"
+<<
+
+SOURCE="bus.y"
+
+InputPath=bus.y
+
+"bus.tab.c" "bus.tab.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	bison -d "$(InputPath)"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="bus.l"
+
+InputPath=bus.l
+
+"bus.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	flex -t "$(InputPath)" > "bus.cpp"
+<<
+
+SOURCE="bus.y"
+
+InputPath=bus.y
+
+"bus.tab.c" "bus.tab.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	bison -d "$(InputPath)"
+<<
+
+!ENDIF
 
 
 !ENDIF
