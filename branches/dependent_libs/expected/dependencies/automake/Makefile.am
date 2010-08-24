@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type automake
+## /home/johnsonb/dev/TAO/spider1_5/ACE_wrappers//bin/mwc.pl -include config -type automake
 
 
 ## Makefile.foo__somelib.am

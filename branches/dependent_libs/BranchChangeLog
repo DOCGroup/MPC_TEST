@@ -1,3 +1,28 @@
+Tue Aug 24 14:25:52 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>
+
+        * expected/dependencies/automake/Makefile.am:
+        * expected/dependencies/ghs/default.gpj:
+        * expected/dependencies/ghs/foo.gpj:
+        * expected/dependencies/ghs/foo__someexecutable.gpj:
+        * expected/dependencies/ghs/foo__somelib.gpj:
+        * expected/dependencies/gnuace/GNUmakefile.foo__somelib:
+        * expected/dependencies/html/foo.html:
+        * expected/dependencies/html/foo__someexecutable.html:
+        * expected/dependencies/html/foo__somelib.html:
+        * expected/dependencies/make/Makefile.foo__somelib:
+        * expected/dependencies/wb26/foo/.project:
+        * expected/dependencies/wb26/foo__someexecutable/.project:
+        * expected/dependencies/wb26/foo__somelib/.project:
+        * expected/dependencies/wb26/foo__somelib/.wrproject:
+        * expected/dependencies/wb26/wb26projects.lst:
+        * expected/dependencies/wb30/wb30projects.lst:
+        * expected/dependencies/wb30/wb_foo/.project:
+        * expected/dependencies/wb30/wb_foo__someexecutable/.project:
+        * expected/dependencies/wb30/wb_foo__somelib/.project:
+        * expected/dependencies/wb30/wb_foo__somelib/.wrproject:
+
+          Fixing test for passing on unix because of windows changes.
+
 Mon Aug 23 21:29:19 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * expected/dependencies/automake/Makefile.am:
@@ -37,13 +62,13 @@ Mon Aug 23 21:29:19 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
         * expected/dependencies/wb30/wb_foo__someexecutable/.project:
         * expected/dependencies/wb30/wb_foo__somelib/.project:
         * expected/dependencies/wb30/wb_foo__somelib/.wrproject:
-        
+
           Expected changes due to foo.mpc changes.
 
         * tests/dependencies/foo.mpc:
         * tests/dependencies/something.cpp:
         * tests/dependencies/something_export.h:
-        
+
           Needed to add export code for building.
 
 Fri Aug 20 20:55:12 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>

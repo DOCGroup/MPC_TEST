@@ -20,12 +20,12 @@
 		<link>
 			<name>somethingthatworks.cpp</name>
 			<type>1</type>
-			<location>C:/dev/mpc_test2/tests/dependencies/somethingthatworks.cpp</location>
+			<location>/home/johnsonb/dev/MPC_Dev/mpc_test2/tests/dependencies/somethingthatworks.cpp</location>
 		</link>
                 <link>
                         <name>something_export.h</name>
                         <type>1</type>
-                        <location>C:/dev/mpc_test2/tests/dependencies/something_export.h</location>
+                        <location>/home/johnsonb/dev/MPC_Dev/mpc_test2/tests/dependencies/something_export.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>
