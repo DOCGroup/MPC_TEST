@@ -289,6 +289,7 @@ SOURCE="MyModule_wrap.cxx"
 "$(INTDIR)\MyModule_wrap.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\MyModule_wrap.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="MyModule.i"
 
 InputPath=MyModule.i
@@ -298,6 +299,41 @@ InputPath=MyModule.i
 	@echo off
 	swig -perl -c++ "$(InputPath)"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="MyModule.i"
+
+InputPath=MyModule.i
+
+"MyModule.pm" "MyModule_wrap.cxx" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	swig -perl -c++ "$(InputPath)"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="MyModule.i"
+
+InputPath=MyModule.i
+
+"MyModule.pm" "MyModule_wrap.cxx" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	swig -perl -c++ "$(InputPath)"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="MyModule.i"
+
+InputPath=MyModule.i
+
+"MyModule.pm" "MyModule_wrap.cxx" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	swig -perl -c++ "$(InputPath)"
+<<
+
+!ENDIF
 
 
 !ENDIF

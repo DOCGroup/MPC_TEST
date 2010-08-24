@@ -280,6 +280,7 @@ SOURCE="Bar.cpp"
 "$(INTDIR)\Bar.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\Bar.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="Bar.adl"
 
 InputPath=Bar.adl
@@ -289,6 +290,41 @@ InputPath=Bar.adl
 	@echo off
 	perl "foo.pl" BarC.h -Abdul "$(InputPath)"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="Bar.adl"
+
+InputPath=Bar.adl
+
+"Bar.cpp" "Bar.h" : $(SOURCE)  "foo.pl"
+	<<tempfile.bat
+	@echo off
+	perl "foo.pl" BarC.h -Abdul "$(InputPath)"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="Bar.adl"
+
+InputPath=Bar.adl
+
+"Bar.cpp" "Bar.h" : $(SOURCE)  "foo.pl"
+	<<tempfile.bat
+	@echo off
+	perl "foo.pl" BarC.h -Abdul "$(InputPath)"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="Bar.adl"
+
+InputPath=Bar.adl
+
+"Bar.cpp" "Bar.h" : $(SOURCE)  "foo.pl"
+	<<tempfile.bat
+	@echo off
+	perl "foo.pl" BarC.h -Abdul "$(InputPath)"
+<<
+
+!ENDIF
 
 
 !ENDIF
