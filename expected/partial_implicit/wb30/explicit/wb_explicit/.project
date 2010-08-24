@@ -19,32 +19,32 @@
 		<link>
 			<name>down/crap.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/partial_implicit/explicit/down/crap.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/partial_implicit/explicit/down/crap.cpp</location>
 		</link>
 		<link>
 			<name>foo.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/partial_implicit/explicit/foo.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/partial_implicit/explicit/foo.cpp</location>
 		</link>
                 <link>
                         <name>down/crap.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/partial_implicit/explicit/down/crap.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/partial_implicit/explicit/down/crap.h</location>
                 </link>
                 <link>
                         <name>foo.h</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/partial_implicit/explicit/foo.h</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/partial_implicit/explicit/foo.h</location>
                 </link>
                 <link>
                         <name>down/crap.inl</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/partial_implicit/explicit/down/crap.inl</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/partial_implicit/explicit/down/crap.inl</location>
                 </link>
                 <link>
                         <name>crap.r</name>
                         <type>1</type>
-                        <location>/tao_builds/mitza/MPC_TEST/tests/partial_implicit/explicit/crap.r</location>
+                        <location>C:/tao_builds/MPC_TEST/tests/partial_implicit/explicit/crap.r</location>
                 </link>
 	</linkedResources>
 </projectDescription>

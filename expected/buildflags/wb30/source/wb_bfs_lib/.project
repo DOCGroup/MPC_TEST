@@ -19,32 +19,32 @@
 		<link>
 			<name>directory/gets_flags.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/buildflags/source/directory/gets_flags.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/buildflags/source/directory/gets_flags.cpp</location>
 		</link>
 		<link>
 			<name>five.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/buildflags/source/five.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/buildflags/source/five.cpp</location>
 		</link>
 		<link>
 			<name>four.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/buildflags/source/four.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/buildflags/source/four.cpp</location>
 		</link>
 		<link>
 			<name>one.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/buildflags/source/one.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/buildflags/source/one.cpp</location>
 		</link>
 		<link>
 			<name>three.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/buildflags/source/three.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/buildflags/source/three.cpp</location>
 		</link>
 		<link>
 			<name>two.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/buildflags/source/two.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/buildflags/source/two.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>

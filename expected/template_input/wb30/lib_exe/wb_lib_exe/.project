@@ -17,7 +17,7 @@
 		<link>
 			<name>foo.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/template_input/lib_exe/foo.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/template_input/lib_exe/foo.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>

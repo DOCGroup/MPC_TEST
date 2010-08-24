@@ -22,7 +22,7 @@
 		<link>
 			<name>foo.cpp</name>
 			<type>1</type>
-			<location>/tao_builds/mitza/MPC_TEST/tests/MultiWS/Multiws/src/foo.cpp</location>
+			<location>C:/tao_builds/MPC_TEST/tests/MultiWS/Multiws/src/foo.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>
