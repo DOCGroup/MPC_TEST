@@ -8,7 +8,7 @@
 # This file should be placed in the .metadata/.plugins/org.eclipse.core.runtime/.settings directory
 #
 # MPC Command:
-# c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type wb26
+# /home/johnsonb/dev/TAO/spider1_5/ACE_wrappers//bin/mwc.pl -include config -type wb26
 #----------------------------------------------------------------------------
 version=1
 eclipse.preferences.version=1

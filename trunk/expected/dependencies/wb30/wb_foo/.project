@@ -22,22 +22,22 @@
 		<link>
 			<name>foo.cpp</name>
 			<type>1</type>
-			<location>C:/dev/mpc_changes/mpc_test/tests/dependencies/foo.cpp</location>
+			<location>/home/johnsonb/dev/MPC_Dev/mpc_test_trunk/tests/dependencies/foo.cpp</location>
 		</link>
                 <link>
                         <name>something_export.h</name>
                         <type>1</type>
-                        <location>C:/dev/mpc_changes/mpc_test/tests/dependencies/something_export.h</location>
+                        <location>/home/johnsonb/dev/MPC_Dev/mpc_test_trunk/tests/dependencies/something_export.h</location>
                 </link>
                 <link>
                         <name>bar.ar</name>
                         <type>1</type>
-                        <location>C:/dev/mpc_changes/mpc_test/tests/dependencies/bar.ar</location>
+                        <location>/home/johnsonb/dev/MPC_Dev/mpc_test_trunk/tests/dependencies/bar.ar</location>
                 </link>
                 <link>
                         <name>foo.ar</name>
                         <type>1</type>
-                        <location>C:/dev/mpc_changes/mpc_test/tests/dependencies/foo.ar</location>
+                        <location>/home/johnsonb/dev/MPC_Dev/mpc_test_trunk/tests/dependencies/foo.ar</location>
                 </link>
 	</linkedResources>
 </projectDescription>
