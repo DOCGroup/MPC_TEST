@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake
+# c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type nmake
 #
 #----------------------------------------------------------------------------
 
@@ -20,15 +20,29 @@ CFG=Win32 Debug
 CUSTOM_TARGETS=_EMPTY_TARGET_
 !ENDIF
 
-all: foo
+all: foo__somelib foo__someexecutable foo
 
 clean depend generated realclean $(CUSTOM_TARGETS):
+	@echo Project: Makefile.foo__somelib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__somelib.mak CFG="$(CFG)" $(@)
+	@echo Project: Makefile.foo__someexecutable.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__someexecutable.mak CFG="$(CFG)" $(@)
 	@echo Project: Makefile.foo.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" $(@)
 
-foo:
+foo__somelib:
+	@echo Project: Makefile.foo__somelib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__somelib.mak CFG="$(CFG)" all
+
+foo__someexecutable: foo__somelib
+	@echo Project: Makefile.foo__someexecutable.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__someexecutable.mak CFG="$(CFG)" all
+
+foo: foo__someexecutable
 	@echo Project: Makefile.foo.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" all
 
 project_name_list:
 	@echo foo
+	@echo foo__someexecutable
+	@echo foo__somelib

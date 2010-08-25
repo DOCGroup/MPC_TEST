@@ -1,3 +1,53 @@
+Wed Aug 25 21:54:48 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
+
+        * expected/dependencies/automake/Makefile.am:
+
+        * expected/dependencies/bmake/Makefile.bmak:
+
+        * expected/dependencies/em3/dependencies.vcw:
+
+        * expected/dependencies/gnuace/GNUmakefile:
+        * expected/dependencies/gnuace/GNUmakefile.foo:
+
+        * expected/dependencies/html/dependencies_workspace.html:
+
+        * expected/dependencies/make/Makefile:
+
+        * expected/dependencies/nmake/Makefile:
+
+        * expected/dependencies/vc10/dependencies.sln:
+
+        * expected/dependencies/vc6/dependencies.dsw:
+
+        * expected/dependencies/vc7/dependencies.sln:
+
+        * expected/dependencies/vc71/dependencies.sln:
+
+        * expected/dependencies/vc8/dependencies.sln:
+
+        * expected/dependencies/vc9/dependencies.sln:
+
+        * expected/dependencies/wb26/foo/.project:
+
+        * expected/dependencies/wb26/foo__someexecutable/.project:
+
+        * expected/dependencies/wb26/foo__somelib/.project:
+
+        * expected/dependencies/wb26/org.eclipse.core.resources.prefs:
+        * expected/dependencies/wb26/wb26projects.lst:
+
+        * expected/dependencies/wb30/org.eclipse.core.resources.prefs:
+        * expected/dependencies/wb30/wb30projects.lst:
+
+        * expected/dependencies/wb30/wb_foo/.project:
+
+        * expected/dependencies/wb30/wb_foo__someexecutable/.project:
+
+        * expected/dependencies/wb30/wb_foo__somelib/.project:
+        
+          Merges for octet-stream files in dependencies were incorrect.
+          This has the dependent_libs keyword generated changes.
+
 Wed Aug 25 21:37:37 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * .:
@@ -195,11 +245,11 @@ Wed Aug 25 21:37:37 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
         * tests/dependent_libs/foo.mpc:
         * tests/dependent_libs/nospace.txt:
 
-          Merged changes from branch "dependent_libs".  Added 
+          Merged changes from branch "dependent_libs".  Added
           the keyword dependent_libs to dependencies/foo.mpc
           to verify that the output compiled.  Added dependent_libs
           test to test each path for the keyword in the templates.
-        
+
 Tue Aug 24 20:50:45 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * utils/add_expected_directories.sh:

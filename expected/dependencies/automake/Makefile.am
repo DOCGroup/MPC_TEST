@@ -9,6 +9,33 @@
 ## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
 
 
+## Makefile.foo__somelib.am
+
+noinst_LTLIBRARIES = libsomelib.la
+
+libsomelib_la_CPPFLAGS = \
+  -DSOMETHING_BUILD_DLL
+
+libsomelib_la_SOURCES = \
+  something.cpp
+
+noinst_HEADERS = \
+  something_export.h
+
+## Makefile.foo__someexecutable.am
+
+noinst_PROGRAMS = someExecutable
+
+someExecutable_SOURCES = \
+  somethingthatworks.cpp \
+  something_export.h
+
+someExecutable_LDFLAGS = \
+  -L./.libs
+
+someExecutable_LDADD = \
+  libsomelib.la
+
 ## Makefile.foo.am
 
 BUILT_SOURCES = \
@@ -17,7 +44,7 @@ BUILT_SOURCES = \
 CLEANFILES = \
   bar.cr
 
-bar.cr: $(srcdir)/bar.ar nospace.txt space\ 1.txt
+bar.cr: $(srcdir)/bar.ar nospace.txt space\ 1.txt someExecutable ./.libs/libsomelib.la
 	echo  $(srcdir)/bar.ar > bar.cr
 
 BUILT_SOURCES += \
@@ -26,13 +53,16 @@ BUILT_SOURCES += \
 CLEANFILES += \
   foo.cr
 
-foo.cr: $(srcdir)/foo.ar space\ 3.txt nospace.txt space\ 1.txt space\ 2.txt
+foo.cr: $(srcdir)/foo.ar space\ 3.txt nospace.txt space\ 1.txt someExecutable space\ 2.txt ./.libs/libsomelib.la
 	echo  $(srcdir)/foo.ar > foo.cr
 
-noinst_LTLIBRARIES = libfoo.la
+noinst_LTLIBRARIES += libfoo.la
 
 libfoo_la_SOURCES = \
   foo.cpp
+
+noinst_HEADERS += \
+  something_export.h
 
 
 ACLOCAL = @ACLOCAL@
