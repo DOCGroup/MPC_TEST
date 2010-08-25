@@ -17,12 +17,12 @@
 		<link>
 			<name>something.cpp</name>
 			<type>1</type>
-			<location>C:/dev/mpc_changes/mpc_test/tests/dependencies/something.cpp</location>
+			<location>/home/johnsonb/dev/MPC_Dev/mpc_test_trunk/tests/dependencies/something.cpp</location>
 		</link>
                 <link>
                         <name>something_export.h</name>
                         <type>1</type>
-                        <location>C:/dev/mpc_changes/mpc_test/tests/dependencies/something_export.h</location>
+                        <location>/home/johnsonb/dev/MPC_Dev/mpc_test_trunk/tests/dependencies/something_export.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

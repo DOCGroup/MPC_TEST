@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type make
+# /home/johnsonb/dev/TAO/spider1_5/ACE_wrappers//bin/mwc.pl -include config -type make
 #
 #----------------------------------------------------------------------------
 

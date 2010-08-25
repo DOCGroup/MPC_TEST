@@ -1,3 +1,32 @@
+Wed Aug 25 22:45:57 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>
+
+        * expected/dependencies/ghs/foo.gpj:
+
+        * expected/dependencies/html/dependencies_workspace.html:
+
+        * expected/dependencies/make/Makefile:
+
+        * expected/dependencies/wb26/foo/.project:
+
+        * expected/dependencies/wb26/foo__someexecutable/.project:
+
+        * expected/dependencies/wb26/foo__somelib/.project:
+
+        * expected/dependencies/wb26/org.eclipse.core.resources.prefs:
+        * expected/dependencies/wb26/wb26projects.lst:
+
+        * expected/dependencies/wb30/org.eclipse.core.resources.prefs:
+
+        * expected/dependencies/wb30/wb_foo/.project:
+
+        * expected/dependencies/wb30/wb_foo__someexecutable/.project:
+
+        * expected/dependencies/wb30/wb_foo__somelib/.project:
+
+        * expected/dependent_libs/ghs/foo.gpj:
+        
+          Fixing line ending problems on linux.
+
 Wed Aug 25 21:54:48 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * expected/dependencies/automake/Makefile.am:
@@ -44,7 +73,7 @@ Wed Aug 25 21:54:48 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
         * expected/dependencies/wb30/wb_foo__someexecutable/.project:
 
         * expected/dependencies/wb30/wb_foo__somelib/.project:
-        
+
           Merges for octet-stream files in dependencies were incorrect.
           This has the dependent_libs keyword generated changes.
 
