@@ -1,3 +1,949 @@
+Wed Aug 25 14:56:28 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
+
+        * .:
+        * ChangeLog:
+
+        * expected/MultiWS/vc10:
+
+        * expected/MultiWS/vc10/Multiws:
+
+        * expected/MultiWS/vc10/Multiws/All_Multiws_testing.sln:
+        * expected/MultiWS/vc10/Multiws/Multiws_testing.sln:
+        * expected/MultiWS/vc10/Multiws/src:
+
+        * expected/MultiWS/vc10/Multiws/src/bar_testing.vcxproj:
+        * expected/MultiWS/vc10/Multiws/src/bar_testing.vcxproj.filters:
+        * expected/MultiWS/vc10/Multiws/src/foo_testing.vcxproj:
+        * expected/MultiWS/vc10/Multiws/src/foo_testing.vcxproj.filters:
+
+        * expected/MultiWS/vc7/Multiws/src/bar_testing.vcproj:
+
+        * expected/MultiWS/vc71/Multiws/src/bar_testing.vcproj:
+
+        * expected/MultiWS/vc8/Multiws/src/bar_testing.vcproj:
+
+        * expected/MultiWS/vc9:
+
+        * expected/MultiWS/vc9/Multiws:
+
+        * expected/MultiWS/vc9/Multiws/All_Multiws_testing.sln:
+        * expected/MultiWS/vc9/Multiws/Multiws_testing.sln:
+        * expected/MultiWS/vc9/Multiws/src:
+
+        * expected/MultiWS/vc9/Multiws/src/bar_testing.vcproj:
+        * expected/MultiWS/vc9/Multiws/src/foo_testing.vcproj:
+
+        * expected/aggregated/vc10:
+
+        * expected/aggregated/vc10/aggregated.sln:
+        * expected/aggregated/vc10/dir1:
+
+        * expected/aggregated/vc10/dir1/dir2:
+
+        * expected/aggregated/vc10/dir1/dir2/foo.vcxproj:
+        * expected/aggregated/vc10/dir1/dir2/foo.vcxproj.filters:
+
+        * expected/aggregated/vc10/dir1/dir4:
+
+        * expected/aggregated/vc10/dir1/dir4/dir4.vcxproj:
+        * expected/aggregated/vc10/dir1/dir4/dir4.vcxproj.filters:
+
+        * expected/aggregated/vc10/dir1/dir5:
+
+        * expected/aggregated/vc10/dir1/dir5/dir5.vcxproj:
+        * expected/aggregated/vc10/dir1/dir5/dir5.vcxproj.filters:
+
+        * expected/aggregated/vc10/dir2:
+
+        * expected/aggregated/vc10/dir2/another.vcxproj:
+        * expected/aggregated/vc10/dir2/another.vcxproj.filters:
+
+        * expected/aggregated/vc9:
+
+        * expected/aggregated/vc9/aggregated.sln:
+        * expected/aggregated/vc9/dir1:
+
+        * expected/aggregated/vc9/dir1/dir2:
+
+        * expected/aggregated/vc9/dir1/dir2/foo.vcproj:
+
+        * expected/aggregated/vc9/dir1/dir4:
+
+        * expected/aggregated/vc9/dir1/dir4/dir4.vcproj:
+
+        * expected/aggregated/vc9/dir1/dir5:
+
+        * expected/aggregated/vc9/dir1/dir5/dir5.vcproj:
+
+        * expected/aggregated/vc9/dir2:
+
+        * expected/aggregated/vc9/dir2/another.vcproj:
+
+        * expected/aggregated_env/vc10/a/aa.vcxproj:
+        * expected/aggregated_env/vc10/a/aa.vcxproj.filters:
+
+        * expected/backwards/vc10:
+
+        * expected/backwards/vc10/down:
+
+        * expected/backwards/vc10/down/two:
+
+        * expected/backwards/vc10/down/two/two.sln:
+
+        * expected/backwards/vc10/foo.vcxproj:
+        * expected/backwards/vc10/foo.vcxproj.filters:
+
+        * expected/backwards/vc9:
+
+        * expected/backwards/vc9/down:
+
+        * expected/backwards/vc9/down/two:
+
+        * expected/backwards/vc9/down/two/two.sln:
+
+        * expected/backwards/vc9/foo.vcproj:
+
+        * expected/buildflags/vc10:
+
+        * expected/buildflags/vc10/buildflags.sln:
+        * expected/buildflags/vc10/source:
+
+        * expected/buildflags/vc10/source/bfs_exe.ins:
+        * expected/buildflags/vc10/source/bfs_exe.vcxproj:
+        * expected/buildflags/vc10/source/bfs_exe.vcxproj.filters:
+        * expected/buildflags/vc10/source/bfs_lib.ins:
+        * expected/buildflags/vc10/source/bfs_lib.vcxproj:
+        * expected/buildflags/vc10/source/bfs_lib.vcxproj.filters:
+
+        * expected/buildflags/vc9:
+
+        * expected/buildflags/vc9/buildflags.sln:
+        * expected/buildflags/vc9/source:
+
+        * expected/buildflags/vc9/source/bfs_exe.ins:
+        * expected/buildflags/vc9/source/bfs_exe.vcproj:
+        * expected/buildflags/vc9/source/bfs_lib.ins:
+        * expected/buildflags/vc9/source/bfs_lib.vcproj:
+
+        * expected/circular_dependencies/vc10:
+
+        * expected/circular_dependencies/vc10/DomainApplicationManager:
+
+        * expected/circular_dependencies/vc10/DomainApplicationManager/DomainApplicationManager.vcxproj:
+        * expected/circular_dependencies/vc10/DomainApplicationManager/DomainApplicationManager.vcxproj.filters:
+
+        * expected/circular_dependencies/vc10/NodeApplication:
+
+        * expected/circular_dependencies/vc10/NodeApplication/NodeApplication.vcxproj:
+        * expected/circular_dependencies/vc10/NodeApplication/NodeApplication.vcxproj.filters:
+        * expected/circular_dependencies/vc10/NodeApplication/RTNA_Configurator.vcxproj:
+        * expected/circular_dependencies/vc10/NodeApplication/RTNA_Configurator.vcxproj.filters:
+
+        * expected/circular_dependencies/vc10/NodeApplicationManager:
+
+        * expected/circular_dependencies/vc10/NodeApplicationManager/NodeApplicationManager.vcxproj:
+        * expected/circular_dependencies/vc10/NodeApplicationManager/NodeApplicationManager.vcxproj.filters:
+
+        * expected/circular_dependencies/vc10/NodeManager:
+
+        * expected/circular_dependencies/vc10/NodeManager/Monitor_Monitorlib.vcxproj:
+        * expected/circular_dependencies/vc10/NodeManager/Monitor_Monitorlib.vcxproj.filters:
+        * expected/circular_dependencies/vc10/NodeManager/NodeManager.vcxproj:
+        * expected/circular_dependencies/vc10/NodeManager/NodeManager.vcxproj.filters:
+        * expected/circular_dependencies/vc10/NodeManager/NodeManager_stub.vcxproj:
+        * expected/circular_dependencies/vc10/NodeManager/NodeManager_stub.vcxproj.filters:
+        * expected/circular_dependencies/vc10/NodeManager/lib.vcxproj:
+        * expected/circular_dependencies/vc10/NodeManager/lib.vcxproj.filters:
+
+        * expected/circular_dependencies/vc10/TargetManager:
+
+        * expected/circular_dependencies/vc10/TargetManager/CIAO_TargetManager_exec.vcxproj:
+        * expected/circular_dependencies/vc10/TargetManager/CIAO_TargetManager_exec.vcxproj.filters:
+        * expected/circular_dependencies/vc10/TargetManager/CIAO_TargetManager_stub.vcxproj:
+        * expected/circular_dependencies/vc10/TargetManager/CIAO_TargetManager_stub.vcxproj.filters:
+        * expected/circular_dependencies/vc10/TargetManager/CIAO_TargetManager_svnt.vcxproj:
+        * expected/circular_dependencies/vc10/TargetManager/CIAO_TargetManager_svnt.vcxproj.filters:
+        * expected/circular_dependencies/vc10/TargetManager/TMClient.vcxproj:
+        * expected/circular_dependencies/vc10/TargetManager/TMClient.vcxproj.filters:
+
+        * expected/circular_dependencies/vc10/circular_dependencies.sln:
+
+        * expected/circular_dependencies/vc9:
+
+        * expected/circular_dependencies/vc9/DomainApplicationManager:
+
+        * expected/circular_dependencies/vc9/DomainApplicationManager/DomainApplicationManager.vcproj:
+
+        * expected/circular_dependencies/vc9/NodeApplication:
+
+        * expected/circular_dependencies/vc9/NodeApplication/NodeApplication.vcproj:
+        * expected/circular_dependencies/vc9/NodeApplication/RTNA_Configurator.vcproj:
+
+        * expected/circular_dependencies/vc9/NodeApplicationManager:
+
+        * expected/circular_dependencies/vc9/NodeApplicationManager/NodeApplicationManager.vcproj:
+
+        * expected/circular_dependencies/vc9/NodeManager:
+
+        * expected/circular_dependencies/vc9/NodeManager/Monitor_Monitorlib.vcproj:
+        * expected/circular_dependencies/vc9/NodeManager/NodeManager.vcproj:
+        * expected/circular_dependencies/vc9/NodeManager/NodeManager_stub.vcproj:
+        * expected/circular_dependencies/vc9/NodeManager/lib.vcproj:
+
+        * expected/circular_dependencies/vc9/TargetManager:
+
+        * expected/circular_dependencies/vc9/TargetManager/CIAO_TargetManager_exec.vcproj:
+        * expected/circular_dependencies/vc9/TargetManager/CIAO_TargetManager_stub.vcproj:
+        * expected/circular_dependencies/vc9/TargetManager/CIAO_TargetManager_svnt.vcproj:
+        * expected/circular_dependencies/vc9/TargetManager/TMClient.vcproj:
+
+        * expected/circular_dependencies/vc9/circular_dependencies.sln:
+
+        * expected/command_helper/vc10:
+
+        * expected/command_helper/vc10/simple.vcxproj:
+        * expected/command_helper/vc10/simple.vcxproj.filters:
+
+        * expected/command_helper/vc9:
+
+        * expected/command_helper/vc9/simple.vcproj:
+
+        * expected/conditional_specific_verbatim_wildcards/vc10:
+
+        * expected/conditional_specific_verbatim_wildcards/vc10/conditional_specific_verbatim_wildcards.sln:
+        * expected/conditional_specific_verbatim_wildcards/vc10/source:
+
+        * expected/conditional_specific_verbatim_wildcards/vc10/source/csvw_A.vcxproj:
+        * expected/conditional_specific_verbatim_wildcards/vc10/source/csvw_A.vcxproj.filters:
+        * expected/conditional_specific_verbatim_wildcards/vc10/source/csvw_B.vcxproj:
+        * expected/conditional_specific_verbatim_wildcards/vc10/source/csvw_B.vcxproj.filters:
+        * expected/conditional_specific_verbatim_wildcards/vc10/source/csvw_C.vcxproj:
+        * expected/conditional_specific_verbatim_wildcards/vc10/source/csvw_C.vcxproj.filters:
+        * expected/conditional_specific_verbatim_wildcards/vc10/source/csvw_D.vcxproj:
+        * expected/conditional_specific_verbatim_wildcards/vc10/source/csvw_D.vcxproj.filters:
+        * expected/conditional_specific_verbatim_wildcards/vc10/source/csvw_E.vcxproj:
+        * expected/conditional_specific_verbatim_wildcards/vc10/source/csvw_E.vcxproj.filters:
+
+        * expected/conditional_specific_verbatim_wildcards/vc9:
+
+        * expected/conditional_specific_verbatim_wildcards/vc9/conditional_specific_verbatim_wildcards.sln:
+        * expected/conditional_specific_verbatim_wildcards/vc9/source:
+
+        * expected/conditional_specific_verbatim_wildcards/vc9/source/csvw_A.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc9/source/csvw_B.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc9/source/csvw_C.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc9/source/csvw_D.vcproj:
+        * expected/conditional_specific_verbatim_wildcards/vc9/source/csvw_E.vcproj:
+
+        * expected/custom_generates_custom/vc10:
+
+        * expected/custom_generates_custom/vc10/custom_generates_custom.sln:
+        * expected/custom_generates_custom/vc10/src:
+
+        * expected/custom_generates_custom/vc10/src/src.vcxproj:
+        * expected/custom_generates_custom/vc10/src/src.vcxproj.filters:
+
+        * expected/custom_generates_custom/vc9:
+
+        * expected/custom_generates_custom/vc9/custom_generates_custom.sln:
+        * expected/custom_generates_custom/vc9/src:
+
+        * expected/custom_generates_custom/vc9/src/src.vcproj:
+
+        * expected/dependencies/vc10:
+
+        * expected/dependencies/vc10/dependencies.sln:
+        * expected/dependencies/vc10/foo.vcxproj:
+        * expected/dependencies/vc10/foo.vcxproj.filters:
+
+        * expected/dependencies/vc9:
+
+        * expected/dependencies/vc9/dependencies.sln:
+        * expected/dependencies/vc9/foo.vcproj:
+
+        * expected/exclude/vc10:
+
+        * expected/exclude/vc10/exclude.sln:
+        * expected/exclude/vc10/one:
+
+        * expected/exclude/vc10/one/one.sln:
+        * expected/exclude/vc10/one/three:
+
+        * expected/exclude/vc10/one/three/three.vcxproj:
+        * expected/exclude/vc10/one/three/three.vcxproj.filters:
+
+        * expected/exclude/vc10/two:
+
+        * expected/exclude/vc10/two/two.vcxproj:
+        * expected/exclude/vc10/two/two.vcxproj.filters:
+
+        * expected/exclude/vc9:
+
+        * expected/exclude/vc9/exclude.sln:
+        * expected/exclude/vc9/one:
+
+        * expected/exclude/vc9/one/one.sln:
+        * expected/exclude/vc9/one/three:
+
+        * expected/exclude/vc9/one/three/three.vcproj:
+
+        * expected/exclude/vc9/two:
+
+        * expected/exclude/vc9/two/two.vcproj:
+
+        * expected/features_custom_only/vc10:
+
+        * expected/features_custom_only/vc10/features_custom_only.sln:
+        * expected/features_custom_only/vc10/source:
+
+        * expected/features_custom_only/vc10/source/fco.vcxproj:
+        * expected/features_custom_only/vc10/source/fco.vcxproj.filters:
+        * expected/features_custom_only/vc10/source/fco_use.vcxproj:
+        * expected/features_custom_only/vc10/source/fco_use.vcxproj.filters:
+        * expected/features_custom_only/vc10/source/other.vcxproj:
+        * expected/features_custom_only/vc10/source/other.vcxproj.filters:
+
+        * expected/features_custom_only/vc9:
+
+        * expected/features_custom_only/vc9/features_custom_only.sln:
+        * expected/features_custom_only/vc9/source:
+
+        * expected/features_custom_only/vc9/source/fco.vcproj:
+        * expected/features_custom_only/vc9/source/fco_use.vcproj:
+        * expected/features_custom_only/vc9/source/other.vcproj:
+
+        * expected/flex_bison/vc10:
+
+        * expected/flex_bison/vc10/flex_bison.sln:
+        * expected/flex_bison/vc10/flex_bison.vcxproj:
+        * expected/flex_bison/vc10/flex_bison.vcxproj.filters:
+
+        * expected/flex_bison/vc9:
+
+        * expected/flex_bison/vc9/flex_bison.sln:
+        * expected/flex_bison/vc9/flex_bison.vcproj:
+
+        * expected/grouping/vc10:
+
+        * expected/grouping/vc10/grouping.sln:
+        * expected/grouping/vc10/source:
+
+        * expected/grouping/vc10/source/grouping_A.vcxproj:
+        * expected/grouping/vc10/source/grouping_A.vcxproj.filters:
+        * expected/grouping/vc10/source/grouping_B.vcxproj:
+        * expected/grouping/vc10/source/grouping_B.vcxproj.filters:
+        * expected/grouping/vc10/source/grouping_C.vcxproj:
+        * expected/grouping/vc10/source/grouping_C.vcxproj.filters:
+        * expected/grouping/vc10/source/grouping_D.vcxproj:
+        * expected/grouping/vc10/source/grouping_D.vcxproj.filters:
+        * expected/grouping/vc10/source/grouping_E.vcxproj:
+        * expected/grouping/vc10/source/grouping_E.vcxproj.filters:
+        * expected/grouping/vc10/source/grouping_F.vcxproj:
+        * expected/grouping/vc10/source/grouping_F.vcxproj.filters:
+        * expected/grouping/vc10/source/grouping_G.vcxproj:
+        * expected/grouping/vc10/source/grouping_G.vcxproj.filters:
+
+        * expected/grouping/vc9:
+
+        * expected/grouping/vc9/grouping.sln:
+        * expected/grouping/vc9/source:
+
+        * expected/grouping/vc9/source/grouping_A.vcproj:
+        * expected/grouping/vc9/source/grouping_B.vcproj:
+        * expected/grouping/vc9/source/grouping_C.vcproj:
+        * expected/grouping/vc9/source/grouping_D.vcproj:
+        * expected/grouping/vc9/source/grouping_E.vcproj:
+        * expected/grouping/vc9/source/grouping_F.vcproj:
+        * expected/grouping/vc9/source/grouping_G.vcproj:
+
+        * expected/implicit_projects/vc10:
+
+        * expected/implicit_projects/vc10/implicit_projects.sln:
+        * expected/implicit_projects/vc10/source:
+
+        * expected/implicit_projects/vc10/source/one:
+
+        * expected/implicit_projects/vc10/source/one/one.vcxproj:
+        * expected/implicit_projects/vc10/source/one/one.vcxproj.filters:
+
+        * expected/implicit_projects/vc10/source/two:
+
+        * expected/implicit_projects/vc10/source/two/two.vcxproj:
+        * expected/implicit_projects/vc10/source/two/two.vcxproj.filters:
+
+        * expected/implicit_projects/vc9:
+
+        * expected/implicit_projects/vc9/implicit_projects.sln:
+        * expected/implicit_projects/vc9/source:
+
+        * expected/implicit_projects/vc9/source/one:
+
+        * expected/implicit_projects/vc9/source/one/one.vcproj:
+
+        * expected/implicit_projects/vc9/source/two:
+
+        * expected/implicit_projects/vc9/source/two/two.vcproj:
+
+        * expected/implicit_resources/vc10/dir1/dir1.vcxproj:
+
+        * expected/implicit_resources/vc10/dir3/dir3.vcxproj:
+
+        * expected/java/vc10:
+
+        * expected/java/vc10/java_java.sln:
+        * expected/java/vc10/java_java.vjsproj:
+
+        * expected/java/vc9:
+
+        * expected/java/vc9/java_java.sln:
+        * expected/java/vc9/java_java.vjsproj:
+
+        * expected/mixed_languages/vc10:
+
+        * expected/mixed_languages/vc10/base:
+
+        * expected/mixed_languages/vc10/base/base.vcxproj:
+        * expected/mixed_languages/vc10/base/base.vcxproj.filters:
+
+        * expected/mixed_languages/vc10/basic:
+
+        * expected/mixed_languages/vc10/basic/basic.vcxproj:
+        * expected/mixed_languages/vc10/basic/basic.vcxproj.filters:
+
+        * expected/mixed_languages/vc10/csharp:
+
+        * expected/mixed_languages/vc10/csharp/csharp.csproj:
+
+        * expected/mixed_languages/vc10/mixed_languages.sln:
+
+        * expected/mixed_languages/vc8/basic/basic.vcproj:
+
+        * expected/mixed_languages/vc8/csharp/csharp.csproj:
+
+        * expected/mixed_languages/vc9:
+
+        * expected/mixed_languages/vc9/base:
+
+        * expected/mixed_languages/vc9/base/base.vcproj:
+
+        * expected/mixed_languages/vc9/basic:
+
+        * expected/mixed_languages/vc9/basic/basic.vcproj:
+
+        * expected/mixed_languages/vc9/csharp:
+
+        * expected/mixed_languages/vc9/csharp/csharp.csproj:
+
+        * expected/mixed_languages/vc9/mixed_languages.sln:
+
+        * expected/mixed_languages_refs/vc10:
+
+        * expected/mixed_languages_refs/vc10/mixed_languages_refs.sln:
+        * expected/mixed_languages_refs/vc10/n:
+
+        * expected/mixed_languages_refs/vc10/n/n.vcxproj:
+        * expected/mixed_languages_refs/vc10/n/n.vcxproj.filters:
+
+        * expected/mixed_languages_refs/vc10/o:
+
+        * expected/mixed_languages_refs/vc10/o/o.vcxproj:
+        * expected/mixed_languages_refs/vc10/o/o.vcxproj.filters:
+
+        * expected/mixed_languages_refs/vc10/r:
+
+        * expected/mixed_languages_refs/vc10/r/r.vcxproj:
+        * expected/mixed_languages_refs/vc10/r/r.vcxproj.filters:
+
+        * expected/mixed_languages_refs/vc10/z:
+
+        * expected/mixed_languages_refs/vc10/z/z.csproj:
+
+        * expected/mixed_languages_refs/vc8/o/o.vcproj:
+
+        * expected/mixed_languages_refs/vc8/z/z.csproj:
+
+        * expected/mixed_languages_refs/vc9:
+
+        * expected/mixed_languages_refs/vc9/mixed_languages_refs.sln:
+        * expected/mixed_languages_refs/vc9/n:
+
+        * expected/mixed_languages_refs/vc9/n/n.vcproj:
+
+        * expected/mixed_languages_refs/vc9/o:
+
+        * expected/mixed_languages_refs/vc9/o/o.vcproj:
+
+        * expected/mixed_languages_refs/vc9/r:
+
+        * expected/mixed_languages_refs/vc9/r/r.vcproj:
+
+        * expected/mixed_languages_refs/vc9/z:
+
+        * expected/mixed_languages_refs/vc9/z/z.csproj:
+
+        * expected/more_circular_dependencies/vc10:
+
+        * expected/more_circular_dependencies/vc10/Code.vcxproj:
+        * expected/more_circular_dependencies/vc10/Code.vcxproj.filters:
+        * expected/more_circular_dependencies/vc10/Factory.vcxproj:
+        * expected/more_circular_dependencies/vc10/Factory.vcxproj.filters:
+        * expected/more_circular_dependencies/vc10/ROOT.vcxproj:
+        * expected/more_circular_dependencies/vc10/ROOT.vcxproj.filters:
+        * expected/more_circular_dependencies/vc10/Set.vcxproj:
+        * expected/more_circular_dependencies/vc10/Set.vcxproj.filters:
+        * expected/more_circular_dependencies/vc10/more_circular_dependencies.sln:
+
+        * expected/more_circular_dependencies/vc9:
+
+        * expected/more_circular_dependencies/vc9/Code.vcproj:
+        * expected/more_circular_dependencies/vc9/Factory.vcproj:
+        * expected/more_circular_dependencies/vc9/ROOT.vcproj:
+        * expected/more_circular_dependencies/vc9/Set.vcproj:
+        * expected/more_circular_dependencies/vc9/more_circular_dependencies.sln:
+
+        * expected/more_options/vc10:
+
+        * expected/more_options/vc10/another:
+
+        * expected/more_options/vc10/another/another.vcxproj:
+        * expected/more_options/vc10/another/another.vcxproj.filters:
+
+        * expected/more_options/vc10/c++:
+
+        * expected/more_options/vc10/c++/foo.vcxproj:
+        * expected/more_options/vc10/c++/foo.vcxproj.filters:
+
+        * expected/more_options/vc10/java:
+
+        * expected/more_options/vc10/java/j.vjsproj:
+
+        * expected/more_options/vc10/more_options.sln:
+
+        * expected/more_options/vc8/c++/foo.vcproj:
+
+        * expected/more_options/vc9:
+
+        * expected/more_options/vc9/another:
+
+        * expected/more_options/vc9/another/another.vcproj:
+
+        * expected/more_options/vc9/c++:
+
+        * expected/more_options/vc9/c++/foo.vcproj:
+
+        * expected/more_options/vc9/java:
+
+        * expected/more_options/vc9/java/j.vjsproj:
+
+        * expected/more_options/vc9/more_options.sln:
+
+        * expected/more_workspaces/vc10:
+
+        * expected/more_workspaces/vc10/first_more_workspaces.sln:
+        * expected/more_workspaces/vc10/second.sln:
+        * expected/more_workspaces/vc10/src:
+
+        * expected/more_workspaces/vc10/src/src.vcxproj:
+        * expected/more_workspaces/vc10/src/src.vcxproj.filters:
+
+        * expected/more_workspaces/vc9:
+
+        * expected/more_workspaces/vc9/first_more_workspaces.sln:
+        * expected/more_workspaces/vc9/second.sln:
+        * expected/more_workspaces/vc9/src:
+
+        * expected/more_workspaces/vc9/src/src.vcproj:
+
+        * expected/multi_custom_mapping/vc10:
+
+        * expected/multi_custom_mapping/vc10/mpc_test.vcxproj:
+        * expected/multi_custom_mapping/vc10/mpc_test.vcxproj.filters:
+        * expected/multi_custom_mapping/vc10/multi_custom_mapping.sln:
+
+        * expected/multi_custom_mapping/vc9:
+
+        * expected/multi_custom_mapping/vc9/mpc_test.vcproj:
+        * expected/multi_custom_mapping/vc9/multi_custom_mapping.sln:
+
+        * expected/multiple_define_customs/vc10:
+
+        * expected/multiple_define_customs/vc10/foo.vcxproj:
+        * expected/multiple_define_customs/vc10/foo.vcxproj.filters:
+        * expected/multiple_define_customs/vc10/multiple_define_customs.sln:
+
+        * expected/multiple_define_customs/vc9:
+
+        * expected/multiple_define_customs/vc9/foo.vcproj:
+        * expected/multiple_define_customs/vc9/multiple_define_customs.sln:
+
+        * expected/no_workspace/vc10:
+
+        * expected/no_workspace/vc10/src:
+
+        * expected/no_workspace/vc10/src/foo.vcxproj:
+        * expected/no_workspace/vc10/src/foo.vcxproj.filters:
+
+        * expected/no_workspace/vc9:
+
+        * expected/no_workspace/vc9/src:
+
+        * expected/no_workspace/vc9/src/foo.vcproj:
+
+        * expected/options/vc10:
+
+        * expected/options/vc10/options_Zargaflan.sln:
+        * expected/options/vc10/source:
+
+        * expected/options/vc10/source/basic_Zargaflan.ins:
+        * expected/options/vc10/source/basic_Zargaflan.vcxproj:
+        * expected/options/vc10/source/basic_Zargaflan.vcxproj.filters:
+        * expected/options/vc10/source/source_Zargaflan.sln:
+
+        * expected/options/vc9:
+
+        * expected/options/vc9/options_Zargaflan.sln:
+        * expected/options/vc9/source:
+
+        * expected/options/vc9/source/basic_Zargaflan.ins:
+        * expected/options/vc9/source/basic_Zargaflan.vcproj:
+        * expected/options/vc9/source/source_Zargaflan.sln:
+
+        * expected/partial_implicit/vc10:
+
+        * expected/partial_implicit/vc10/explicit:
+
+        * expected/partial_implicit/vc10/explicit/explicit.vcxproj:
+        * expected/partial_implicit/vc10/explicit/explicit.vcxproj.filters:
+
+        * expected/partial_implicit/vc10/implicit:
+
+        * expected/partial_implicit/vc10/implicit/implicit.vcxproj:
+        * expected/partial_implicit/vc10/implicit/implicit.vcxproj.filters:
+
+        * expected/partial_implicit/vc10/partial_implicit.sln:
+
+        * expected/partial_implicit/vc9:
+
+        * expected/partial_implicit/vc9/explicit:
+
+        * expected/partial_implicit/vc9/explicit/explicit.vcproj:
+
+        * expected/partial_implicit/vc9/implicit:
+
+        * expected/partial_implicit/vc9/implicit/implicit.vcproj:
+
+        * expected/partial_implicit/vc9/partial_implicit.sln:
+
+        * expected/psuedo_replacement/vc10:
+
+        * expected/psuedo_replacement/vc10/psuedo_replacement.sln:
+        * expected/psuedo_replacement/vc10/zz.vcxproj:
+        * expected/psuedo_replacement/vc10/zz.vcxproj.filters:
+
+        * expected/psuedo_replacement/vc9:
+
+        * expected/psuedo_replacement/vc9/psuedo_replacement.sln:
+        * expected/psuedo_replacement/vc9/zz.vcproj:
+
+        * expected/qt/vc10:
+
+        * expected/qt/vc10/qt.sln:
+        * expected/qt/vc10/qt_uic_moc.vcxproj:
+        * expected/qt/vc10/qt_uic_moc.vcxproj.filters:
+
+        * expected/qt/vc9:
+
+        * expected/qt/vc9/qt.sln:
+        * expected/qt/vc9/qt_uic_moc.vcproj:
+
+        * expected/relative/vc10:
+
+        * expected/relative/vc10/build:
+
+        * expected/relative/vc10/build/build_exe.vcxproj:
+        * expected/relative/vc10/build/build_exe.vcxproj.filters:
+        * expected/relative/vc10/build/build_lib.vcxproj:
+        * expected/relative/vc10/build/build_lib.vcxproj.filters:
+
+        * expected/relative/vc10/relative.sln:
+
+        * expected/relative/vc9:
+
+        * expected/relative/vc9/build:
+
+        * expected/relative/vc9/build/build_exe.vcproj:
+        * expected/relative/vc9/build/build_lib.vcproj:
+
+        * expected/relative/vc9/relative.sln:
+
+        * expected/swig_perl/vc10:
+
+        * expected/swig_perl/vc10/MyModule.vcxproj:
+        * expected/swig_perl/vc10/MyModule.vcxproj.filters:
+        * expected/swig_perl/vc10/swig_perl.sln:
+
+        * expected/swig_perl/vc9:
+
+        * expected/swig_perl/vc9/MyModule.vcproj:
+        * expected/swig_perl/vc9/swig_perl.sln:
+
+        * expected/template/vc10:
+
+        * expected/template/vc10/src:
+
+        * expected/template/vc10/src/src.vcxproj.filters:
+
+        * expected/template/vc9:
+
+        * expected/template/vc9/src:
+
+        * expected/template/vc9/src/src.vcproj:
+
+        * expected/template/vc9/template.sln:
+
+        * expected/template_input/vc10:
+
+        * expected/template_input/vc10/dll:
+
+        * expected/template_input/vc10/dll/dll.html:
+        * expected/template_input/vc10/dll/dll.vcxproj:
+        * expected/template_input/vc10/dll/dll.vcxproj.filters:
+
+        * expected/template_input/vc10/dll_exe:
+
+        * expected/template_input/vc10/dll_exe/dll_exe.html:
+        * expected/template_input/vc10/dll_exe/dll_exe.vcxproj:
+        * expected/template_input/vc10/dll_exe/dll_exe.vcxproj.filters:
+
+        * expected/template_input/vc10/lib:
+
+        * expected/template_input/vc10/lib/lib.html:
+        * expected/template_input/vc10/lib/lib.vcxproj:
+        * expected/template_input/vc10/lib/lib.vcxproj.filters:
+
+        * expected/template_input/vc10/lib_exe:
+
+        * expected/template_input/vc10/lib_exe/lib_exe.html:
+        * expected/template_input/vc10/lib_exe/lib_exe.vcxproj:
+        * expected/template_input/vc10/lib_exe/lib_exe.vcxproj.filters:
+
+        * expected/template_input/vc10/template_input.sln:
+        * expected/template_input/vc10/template_input_workspace.html:
+
+        * expected/template_input/vc9:
+
+        * expected/template_input/vc9/dll:
+
+        * expected/template_input/vc9/dll/dll.html:
+        * expected/template_input/vc9/dll/dll.vcproj:
+
+        * expected/template_input/vc9/dll_exe:
+
+        * expected/template_input/vc9/dll_exe/dll_exe.html:
+        * expected/template_input/vc9/dll_exe/dll_exe.vcproj:
+
+        * expected/template_input/vc9/lib:
+
+        * expected/template_input/vc9/lib/lib.html:
+        * expected/template_input/vc9/lib/lib.vcproj:
+
+        * expected/template_input/vc9/lib_exe:
+
+        * expected/template_input/vc9/lib_exe/lib_exe.html:
+        * expected/template_input/vc9/lib_exe/lib_exe.vcproj:
+
+        * expected/template_input/vc9/template_input.sln:
+        * expected/template_input/vc9/template_input_workspace.html:
+
+        * expected/value_template/vc10:
+
+        * expected/value_template/vc10/foo_a.vcxproj:
+        * expected/value_template/vc10/foo_a.vcxproj.filters:
+        * expected/value_template/vc10/foo_b.vcxproj:
+        * expected/value_template/vc10/foo_b.vcxproj.filters:
+        * expected/value_template/vc10/foo_c.vcxproj:
+        * expected/value_template/vc10/foo_c.vcxproj.filters:
+        * expected/value_template/vc10/value_template.sln:
+
+        * expected/value_template/vc9:
+
+        * expected/value_template/vc9/foo_a.vcproj:
+        * expected/value_template/vc9/foo_b.vcproj:
+        * expected/value_template/vc9/foo_c.vcproj:
+        * expected/value_template/vc9/value_template.sln:
+
+        * expected/webapp/vc10:
+
+        * expected/webapp/vc10/source:
+
+        * expected/webapp/vc10/source/aly.csproj:
+        * expected/webapp/vc10/source/cras.csproj:
+
+        * expected/webapp/vc10/webapp.sln:
+
+        * expected/webapp/vc8/source/aly.csproj:
+        * expected/webapp/vc8/source/cras.csproj:
+
+        * expected/webapp/vc9:
+
+        * expected/webapp/vc9/source:
+
+        * expected/webapp/vc9/source/aly.csproj:
+        * expected/webapp/vc9/source/cras.csproj:
+
+        * expected/webapp/vc9/webapp.sln:
+
+        * expected/wide_coverage/vc10:
+
+        * expected/wide_coverage/vc10/generator:
+
+        * expected/wide_coverage/vc10/generator/generator.vcxproj:
+        * expected/wide_coverage/vc10/generator/generator.vcxproj.filters:
+        * expected/wide_coverage/vc10/generator/generator_be.vcxproj:
+        * expected/wide_coverage/vc10/generator/generator_be.vcxproj.filters:
+
+        * expected/wide_coverage/vc10/source:
+
+        * expected/wide_coverage/vc10/source/fake:
+
+        * expected/wide_coverage/vc10/source/fake/fake.vcxproj:
+        * expected/wide_coverage/vc10/source/fake/fake.vcxproj.filters:
+
+        * expected/wide_coverage/vc10/source/source.vcxproj:
+        * expected/wide_coverage/vc10/source/source.vcxproj.filters:
+        * expected/wide_coverage/vc10/source/source_lib.vcxproj:
+        * expected/wide_coverage/vc10/source/source_lib.vcxproj.filters:
+
+        * expected/wide_coverage/vc10/wide_coverage.sln:
+
+        * expected/wide_coverage/vc9:
+
+        * expected/wide_coverage/vc9/generator:
+
+        * expected/wide_coverage/vc9/generator/generator.vcproj:
+        * expected/wide_coverage/vc9/generator/generator_be.vcproj:
+
+        * expected/wide_coverage/vc9/source:
+
+        * expected/wide_coverage/vc9/source/fake:
+
+        * expected/wide_coverage/vc9/source/fake/fake.vcproj:
+
+        * expected/wide_coverage/vc9/source/source.vcproj:
+        * expected/wide_coverage/vc9/source/source_lib.vcproj:
+
+        * expected/wide_coverage/vc9/wide_coverage.sln:
+
+        * expected/wider_coverage/vc10:
+
+        * expected/wider_coverage/vc10/Some_Test_Other_Lib.ins:
+        * expected/wider_coverage/vc10/Some_Test_Other_Lib.vcxproj:
+        * expected/wider_coverage/vc10/Some_Test_Other_Lib.vcxproj.filters:
+        * expected/wider_coverage/vc10/Some_Test_Simple_Lib.ins:
+        * expected/wider_coverage/vc10/Some_Test_Simple_Lib.vcxproj:
+        * expected/wider_coverage/vc10/Some_Test_Simple_Lib.vcxproj.filters:
+        * expected/wider_coverage/vc10/simple.ins:
+        * expected/wider_coverage/vc10/simple.vcxproj:
+        * expected/wider_coverage/vc10/simple.vcxproj.filters:
+        * expected/wider_coverage/vc10/wider_coverage.dot:
+        * expected/wider_coverage/vc10/wider_coverage.sln:
+
+        * expected/wider_coverage/vc8/Some_Test_Other_Lib.vcproj:
+        * expected/wider_coverage/vc8/Some_Test_Simple_Lib.vcproj:
+        * expected/wider_coverage/vc8/simple.vcproj:
+
+        * expected/wider_coverage/vc9:
+
+        * expected/wider_coverage/vc9/Some_Test_Other_Lib.ins:
+        * expected/wider_coverage/vc9/Some_Test_Other_Lib.vcproj:
+        * expected/wider_coverage/vc9/Some_Test_Simple_Lib.ins:
+        * expected/wider_coverage/vc9/Some_Test_Simple_Lib.vcproj:
+        * expected/wider_coverage/vc9/simple.ins:
+        * expected/wider_coverage/vc9/simple.vcproj:
+        * expected/wider_coverage/vc9/wider_coverage.dot:
+        * expected/wider_coverage/vc9/wider_coverage.sln:
+
+        * expected/windows_style/vc10:
+
+        * expected/windows_style/vc10/sub:
+
+        * expected/windows_style/vc10/sub/sub.vcxproj:
+        * expected/windows_style/vc10/sub/sub.vcxproj.filters:
+
+        * expected/windows_style/vc10/support_lib.vcxproj:
+        * expected/windows_style/vc10/support_lib.vcxproj.filters:
+        * expected/windows_style/vc10/windows_style.sln:
+
+        * expected/windows_style/vc9:
+
+        * expected/windows_style/vc9/sub:
+
+        * expected/windows_style/vc9/sub/sub.vcproj:
+
+        * expected/windows_style/vc9/support_lib.vcproj:
+        * expected/windows_style/vc9/windows_style.sln:
+
+        * expected/workspaces/vc10:
+
+        * expected/workspaces/vc10/a:
+
+        * expected/workspaces/vc10/a/a.sln:
+        * expected/workspaces/vc10/a/a.vcxproj:
+        * expected/workspaces/vc10/a/a.vcxproj.filters:
+        * expected/workspaces/vc10/a/common:
+
+        * expected/workspaces/vc10/a/common/common.vcxproj:
+        * expected/workspaces/vc10/a/common/common.vcxproj.filters:
+
+        * expected/workspaces/vc10/b:
+
+        * expected/workspaces/vc10/b/b.sln:
+        * expected/workspaces/vc10/b/b.vcxproj:
+        * expected/workspaces/vc10/b/b.vcxproj.filters:
+
+        * expected/workspaces/vc10/c:
+
+        * expected/workspaces/vc10/c/c.sln:
+        * expected/workspaces/vc10/c/good:
+
+        * expected/workspaces/vc10/c/good/good.vcxproj:
+        * expected/workspaces/vc10/c/good/good.vcxproj.filters:
+
+        * expected/workspaces/vc10/c/not_ghs:
+
+        * expected/workspaces/vc10/c/not_ghs/not_ghs.vcxproj:
+        * expected/workspaces/vc10/c/not_ghs/not_ghs.vcxproj.filters:
+
+        * expected/workspaces/vc9:
+
+        * expected/workspaces/vc9/a:
+
+        * expected/workspaces/vc9/a/a.sln:
+        * expected/workspaces/vc9/a/a.vcproj:
+        * expected/workspaces/vc9/a/common:
+
+        * expected/workspaces/vc9/a/common/common.vcproj:
+
+        * expected/workspaces/vc9/b:
+
+        * expected/workspaces/vc9/b/b.sln:
+        * expected/workspaces/vc9/b/b.vcproj:
+
+        * expected/workspaces/vc9/c:
+
+        * expected/workspaces/vc9/c/c.sln:
+        * expected/workspaces/vc9/c/good:
+
+        * expected/workspaces/vc9/c/good/good.vcproj:
+
+        * expected/workspaces/vc9/c/not_ghs:
+
+        * expected/workspaces/vc9/c/not_ghs/not_ghs.vcproj:
+
+        * utils/add_expected_directories.sh:
+        
+          Merging r213 through r215.
+
 Tue Aug 24 18:43:21 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * .:

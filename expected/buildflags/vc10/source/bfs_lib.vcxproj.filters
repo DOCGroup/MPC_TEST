@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Inside">
+      <UniqueIdentifier>{04F95F25-FECA-1BAD-6411-8A6307582455}</UniqueIdentifier>
+      <Extensions>cpp;cxx;cc;c;C</Extensions>
+    </Filter>
+    <Filter Include="Outside">
+      <UniqueIdentifier>{48235F25-FECA-1BAD-6411-8A6307582455}</UniqueIdentifier>
+      <Extensions>cpp;cxx;cc;c;C</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B1F27843-FECA-1BAD-6411-8A6307582455}</UniqueIdentifier>
+      <Extensions>cpp;cxx;cc;c;C</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="four.cpp">
+      <Filter>Inside</Filter>
+    </ClCompile>
+    <ClCompile Include="two.cpp">
+      <Filter>Inside</Filter>
+    </ClCompile>
+    <ClCompile Include="five.cpp">
+      <Filter>Outside</Filter>
+    </ClCompile>
+    <ClCompile Include="directory\gets_flags.cpp">
+      <Filter>default_group</Filter>
+    </ClCompile>
+    <ClCompile Include="one.cpp">
+      <Filter>default_group</Filter>
+    </ClCompile>
+    <ClCompile Include="three.cpp">
+      <Filter>default_group</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

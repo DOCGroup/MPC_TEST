@@ -3,7 +3,7 @@
     <ProjectType>Local</ProjectType>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8844749D-FECA-1BAD-0078-8A633C01B21B}</ProjectGuid>
+    <ProjectGuid>{8844749D-FECA-1BAD-0078-8A630000007A}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <AssemblyKeyContainerName>
@@ -15,8 +15,7 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Exe</OutputType>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace>z</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject></StartupObject>
     <ReferencePath>.</ReferencePath>
@@ -72,12 +71,12 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../n/n.vcproj">
-      <Project>{C904749C-FECA-1BAD-006C-8A633C01B20F}</Project>
+    <ProjectReference Include="..\n\n.vcproj">
+      <Project>{C904749C-FECA-1BAD-006C-8A630000006E}</Project>
       <Name>n</Name>
     </ProjectReference>
-    <ProjectReference Include="../o/o.vcproj">
-      <Project>{D904749C-FECA-1BAD-006D-8A633C01B20E}</Project>
+    <ProjectReference Include="..\o\o.vcproj">
+      <Project>{D904749C-FECA-1BAD-006D-8A630000006F}</Project>
       <Name>o</Name>
     </ProjectReference>
   </ItemGroup>
