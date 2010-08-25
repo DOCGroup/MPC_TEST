@@ -12,7 +12,7 @@ bar.cr
 	:dependsRelative=space 1.txt
 	:dependsRelative=someExecutable
 	:dependsRelative=bar.ar
-	:dependsRelative=.\\.libs\\libsomelib.so
+	:dependsRelative=.\\.libs/libsomelib.so
 	:preexecShell='cd . && echo  bar.ar > bar.cr'
 	:extraOutputFile=bar.cr
 foo.ar		[Text]
@@ -23,7 +23,7 @@ foo.cr
 	:dependsRelative=space 2.txt
 	:dependsRelative=foo.ar
 	:dependsRelative=space 3.txt
-	:dependsRelative=.\\.libs\\libsomelib.so
+	:dependsRelative=.\\.libs/libsomelib.so
 	:preexecShell='cd . && echo  foo.ar > foo.cr'
 	:extraOutputFile=foo.cr
 foo.cpp
