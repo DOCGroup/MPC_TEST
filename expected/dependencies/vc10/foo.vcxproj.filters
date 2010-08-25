@@ -2,21 +2,30 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{B1F27843-FECA-1BAD-609D-8A6300000000}</UniqueIdentifier>
+      <UniqueIdentifier>{B1F27843-FECA-1BAD-609D-8A630000002E}</UniqueIdentifier>
       <Extensions>cpp;cxx;cc;c;C</Extensions>
     </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{06319535-FECA-1BAD-609D-8A630000002E}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hh</Extensions>
+    </Filter>
     <Filter Include="Foo Files">
-      <UniqueIdentifier>{9A90FA43-FECA-1BAD-609D-8A6300000000}</UniqueIdentifier>
+      <UniqueIdentifier>{9A90FA43-FECA-1BAD-609D-8A630000002E}</UniqueIdentifier>
       <Extensions>ar</Extensions>
     </Filter>
     <Filter Include="Documentation">
-      <UniqueIdentifier>{B14BBA74-FECA-1BAD-609D-8A6300000000}</UniqueIdentifier>
+      <UniqueIdentifier>{B14BBA74-FECA-1BAD-609D-8A630000002E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="foo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="something_export.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="bar.ar">

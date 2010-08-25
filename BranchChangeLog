@@ -1,3 +1,100 @@
+Wed Aug 25 17:50:34 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
+
+        * expected/MultiWS/wb30/Multiws/wb30projects.lst:
+
+        * expected/aggregated/wb30/wb30projects.lst:
+
+        * expected/aggregated_env/vc10/t/c/d/d.sln:
+
+        * expected/aggregated_env/wb26/t/c/d/wb26projects.lst:
+
+        * expected/aggregated_env/wb30/t/c/d/wb30projects.lst:
+
+        * expected/backwards/wb30/down/two/wb30projects.lst:
+
+        * expected/buildflags/wb30/wb30projects.lst:
+
+        * expected/circular_dependencies/wb30/wb30projects.lst:
+
+        * expected/conditional_specific_verbatim_wildcards/wb30/wb30projects.lst:
+
+        * expected/custom_generates_custom/wb30/wb30projects.lst:
+
+        * expected/dependencies/vc10/dependencies.sln:
+        * expected/dependencies/vc10/foo.vcxproj:
+        * expected/dependencies/vc10/foo.vcxproj.filters:
+
+        * expected/dependencies/vc9/dependencies.sln:
+        * expected/dependencies/vc9/foo.vcproj:
+
+        * expected/exclude/wb30/one/wb30projects.lst:
+
+        * expected/exclude/wb30/wb30projects.lst:
+
+        * expected/features_custom_only/wb30/wb30projects.lst:
+
+        * expected/flex_bison/wb30/wb30projects.lst:
+
+        * expected/grouping/wb30/wb30projects.lst:
+
+        * expected/implicit_projects/wb30/wb30projects.lst:
+
+        * expected/implicit_resources/vc10/implicit_resources.sln:
+
+        * expected/mixed_languages/wb30/wb30projects.lst:
+
+        * expected/mixed_languages_refs/wb30/wb30projects.lst:
+
+        * expected/more_circular_dependencies/wb30/wb30projects.lst:
+
+        * expected/more_options/wb30/c++/wb_foo/.wrproject:
+
+        * expected/more_options/wb30/wb30projects.lst:
+
+        * expected/more_workspaces/wb26/src/src/.project:
+
+        * expected/more_workspaces/wb26/wb26projects.lst:
+
+        * expected/more_workspaces/wb30/wb30projects.lst:
+
+        * expected/multi_custom_mapping/wb30/wb30projects.lst:
+
+        * expected/multiple_define_customs/wb30/wb30projects.lst:
+
+        * expected/options/wb30/source/wb30projects.lst:
+
+        * expected/options/wb30/source/wb_basic_Zargaflan/wb30projects.lst:
+
+        * expected/options/wb30/wb30projects.lst:
+
+        * expected/partial_implicit/wb30/wb30projects.lst:
+
+        * expected/psuedo_replacement/wb30/wb30projects.lst:
+
+        * expected/qt/wb30/wb30projects.lst:
+
+        * expected/relative/wb30/wb30projects.lst:
+
+        * expected/swig_perl/wb30/wb30projects.lst:
+
+        * expected/template_input/wb30/wb30projects.lst:
+
+        * expected/value_template/wb30/wb30projects.lst:
+
+        * expected/wide_coverage/wb30/wb30projects.lst:
+
+        * expected/wider_coverage/wb30/wb30projects.lst:
+
+        * expected/windows_style/wb30/wb30projects.lst:
+
+        * expected/workspaces/wb30/a/wb30projects.lst:
+
+        * expected/workspaces/wb30/b/wb30projects.lst:
+
+        * expected/workspaces/wb30/c/wb30projects.lst:
+        
+          More corrections after merge from trunk.
+
 Wed Aug 25 14:56:28 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * .:
@@ -941,7 +1038,7 @@ Wed Aug 25 14:56:28 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
         * expected/workspaces/vc9/c/not_ghs/not_ghs.vcproj:
 
         * utils/add_expected_directories.sh:
-        
+
           Merging r213 through r215.
 
 Tue Aug 24 18:43:21 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
