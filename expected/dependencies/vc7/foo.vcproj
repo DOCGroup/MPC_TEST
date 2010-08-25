@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="foo"
-	ProjectGUID="{D9047293-FECA-1BAD-609D-8A6318CB0137}"
+	ProjectGUID="{D9047293-FECA-1BAD-609D-8A63C12F9383}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -153,6 +153,13 @@
 			</File>
 		</Filter>
 		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hh">
+			<File
+				RelativePath="something_export.h">
+			</File>
+		</Filter>
+		<Filter
 			Name="Foo Files"
 			Filter="ar">
 			<File
@@ -164,7 +171,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on bar.ar"
 						CommandLine="echo  &quot;bar.ar&quot; &gt; &quot;bar.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt"
+						AdditionalDependencies="nospace.txt;space 1.txt;someExecutable.exe;.\.libs\somelibd.dll"
 						Outputs="bar.cr"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -174,7 +181,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on bar.ar"
 						CommandLine="echo  &quot;bar.ar&quot; &gt; &quot;bar.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt"
+						AdditionalDependencies="nospace.txt;space 1.txt;someExecutable.exe;.\.libs\somelib.dll"
 						Outputs="bar.cr"/>
 				</FileConfiguration>
 			</File>
@@ -187,7 +194,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on foo.ar"
 						CommandLine="echo  &quot;foo.ar&quot; &gt; &quot;foo.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt;space 2.txt;space 3.txt"
+						AdditionalDependencies="nospace.txt;space 1.txt;someExecutable.exe;space 2.txt;space 3.txt;.\.libs\somelibd.dll"
 						Outputs="foo.cr"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -197,7 +204,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking echo on foo.ar"
 						CommandLine="echo  &quot;foo.ar&quot; &gt; &quot;foo.cr&quot;"
-						AdditionalDependencies="nospace.txt;space 1.txt;space 2.txt;space 3.txt"
+						AdditionalDependencies="nospace.txt;space 1.txt;someExecutable.exe;space 2.txt;space 3.txt;.\.libs\somelib.dll"
 						Outputs="foo.cr"/>
 				</FileConfiguration>
 			</File>

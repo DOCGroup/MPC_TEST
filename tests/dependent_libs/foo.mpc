@@ -1,0 +1,24 @@
+project {
+  Define_Custom(foo) {
+    command = echo
+    dependent = nospace.txt
+    dependent_libs = lib/somelib "lib/some 2nd lib"
+    output_option = <%gt%>
+    inputext = .ar
+    generic_outputext = .cr
+  }
+
+  Source_Files {
+    foo.cpp
+  }
+
+  FOO_Files {
+    foo.ar
+  }
+
+  FOO_Files {
+    dependent_libs += "lib/some 3rd lib" lib/some4thlib
+    bar.ar
+  }
+}
+

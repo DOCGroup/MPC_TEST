@@ -309,6 +309,7 @@ SOURCE="exe\use_names\use_names.cpp"
 	@if not exist "$(INTDIR)\exe\use_names\$(NULL)" mkdir "$(INTDIR)\exe\use_names\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\exe\use_names\use_names.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="Foolish/foolish.simple"
 
 InputPath=Foolish/foolish.simple
@@ -318,6 +319,41 @@ InputPath=Foolish/foolish.simple
 	@echo off
 	echo Generated from "$(InputPath)" > "Foolish\foolish.txt"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="Foolish/foolish.simple"
+
+InputPath=Foolish/foolish.simple
+
+"Foolish\foolish.txt" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo Generated from "$(InputPath)" > "Foolish\foolish.txt"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="Foolish/foolish.simple"
+
+InputPath=Foolish/foolish.simple
+
+"Foolish\foolish.txt" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo Generated from "$(InputPath)" > "Foolish\foolish.txt"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="Foolish/foolish.simple"
+
+InputPath=Foolish/foolish.simple
+
+"Foolish\foolish.txt" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo Generated from "$(InputPath)" > "Foolish\foolish.txt"
+<<
+
+!ENDIF
 
 
 !ENDIF

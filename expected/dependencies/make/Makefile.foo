@@ -58,10 +58,10 @@ $(LIB): $(OBJS)
 SPACE           = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY = bar.cr foo.cr
 
-bar.cr: bar.ar nospace.txt space\ 1.txt
+bar.cr: bar.ar nospace.txt space\ 1.txt someExecutable ./.libs/$(LIBPREFIX)somelib$(LIBSUFFIX)$(SOEXT)
 	echo  bar.ar > "$@"
 
-foo.cr: foo.ar space\ 3.txt nospace.txt space\ 1.txt space\ 2.txt
+foo.cr: foo.ar space\ 3.txt nospace.txt space\ 1.txt someExecutable space\ 2.txt ./.libs/$(LIBPREFIX)somelib$(LIBSUFFIX)$(SOEXT)
 	echo  foo.ar > "$@"
 
 .PRECIOUS: $(GENERATED_DIRTY)

@@ -272,6 +272,12 @@ SOURCE="foo.cpp"
 "$(INTDIR)\foo.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\foo.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
+!ELSEIF  "$(CFG)" == "Win32 Release"
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+!ENDIF
+
 
 !ENDIF
 

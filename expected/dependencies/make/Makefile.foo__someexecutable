@@ -1,0 +1,72 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+CC            = gcc
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"." -L"./.libs"
+CCC           = $(CXX)
+MAKEFILE      = Makefile.foo__someexecutable
+DEPENDENCIES  = .depend.$(MAKEFILE)
+BTARGETDIR    = ./
+BIN           = $(BTARGETDIR)someExecutable$(EXESUFFIX)$(EXEEXT)
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+EXEEXT        = 
+LIBPREFIX     = lib
+LIBSUFFIX     = 
+GENFLAGS      = -O
+LDLIBS        = -l"somelib$(LIBSUFFIX)" -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
+OBJS          = somethingthatworks$(OBJEXT)
+SRC           = somethingthatworks.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+EXPORTFLAGS   = 
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(BIN)
+
+$(BIN): $(OBJS)
+	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
+	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+somethingthatworks$(OBJEXT): somethingthatworks.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) somethingthatworks.cpp
+
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(BIN)
+
+#----------------------------------------------------------------------------
+#       Dependencies
+#----------------------------------------------------------------------------
+
+$(DEPENDENCIES):
+	@$(TOUCH) $(DEPENDENCIES)
+
+depend:
+	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+
+include $(DEPENDENCIES)

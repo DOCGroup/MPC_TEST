@@ -1,3 +1,205 @@
+Wed Aug 25 21:37:37 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
+
+        * .:
+        * BranchChangeLog:
+
+        * expected/command_helper/nmake/Makefile.simple.mak:
+
+        * expected/custom_generates_custom/nmake/src/Makefile.src.mak:
+
+        * expected/dependencies/bmake/Makefile.foo__someexecutable.bmak:
+        * expected/dependencies/bmake/Makefile.foo__somelib.bmak:
+
+        * expected/dependencies/em3/foo.vcp:
+        * expected/dependencies/em3/foo__someexecutable.vcp:
+        * expected/dependencies/em3/foo__somelib.vcp:
+
+        * expected/dependencies/ghs/default.gpj:
+        * expected/dependencies/ghs/foo.gpj:
+        * expected/dependencies/ghs/foo__someexecutable.gpj:
+        * expected/dependencies/ghs/foo__someexecutable_int.gpj:
+        * expected/dependencies/ghs/foo__someexecutable_int.int:
+        * expected/dependencies/ghs/foo__somelib.gpj:
+
+        * expected/dependencies/gnuace/GNUmakefile.foo__someexecutable:
+        * expected/dependencies/gnuace/GNUmakefile.foo__somelib:
+
+        * expected/dependencies/html/foo.html:
+        * expected/dependencies/html/foo__someexecutable.html:
+        * expected/dependencies/html/foo__somelib.html:
+
+        * expected/dependencies/make/Makefile.foo:
+        * expected/dependencies/make/Makefile.foo__someexecutable:
+        * expected/dependencies/make/Makefile.foo__somelib:
+
+        * expected/dependencies/nmake/Makefile.foo.mak:
+        * expected/dependencies/nmake/Makefile.foo__someexecutable.mak:
+        * expected/dependencies/nmake/Makefile.foo__somelib.mak:
+
+        * expected/dependencies/vc10/foo.vcxproj:
+        * expected/dependencies/vc10/foo.vcxproj.filters:
+
+        * expected/dependencies/vc6/foo.dsp:
+        * expected/dependencies/vc6/foo__someexecutable.dsp:
+        * expected/dependencies/vc6/foo__somelib.dsp:
+
+        * expected/dependencies/vc7/foo.vcproj:
+        * expected/dependencies/vc7/foo__someexecutable.vcproj:
+        * expected/dependencies/vc7/foo__somelib.vcproj:
+
+        * expected/dependencies/vc71/foo.vcproj:
+        * expected/dependencies/vc71/foo__someexecutable.vcproj:
+        * expected/dependencies/vc71/foo__somelib.vcproj:
+
+        * expected/dependencies/vc8/foo.vcproj:
+        * expected/dependencies/vc8/foo__someexecutable.vcproj:
+        * expected/dependencies/vc8/foo__somelib.vcproj:
+
+        * expected/dependencies/vc9/foo.vcproj:
+
+        * expected/dependencies/wb26/foo/.project:
+        * expected/dependencies/wb26/foo/.wrmakefile:
+        * expected/dependencies/wb26/foo/.wrproject:
+
+        * expected/dependencies/wb26/foo__someexecutable:
+
+        * expected/dependencies/wb26/foo__someexecutable/.project:
+        * expected/dependencies/wb26/foo__someexecutable/.wrmakefile:
+        * expected/dependencies/wb26/foo__someexecutable/.wrproject:
+
+        * expected/dependencies/wb26/foo__somelib:
+
+        * expected/dependencies/wb26/foo__somelib/.project:
+        * expected/dependencies/wb26/foo__somelib/.wrmakefile:
+        * expected/dependencies/wb26/foo__somelib/.wrproject:
+
+        * expected/dependencies/wb30/wb_foo/.project:
+        * expected/dependencies/wb30/wb_foo/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo/.wrproject:
+
+        * expected/dependencies/wb30/wb_foo__someexecutable:
+
+        * expected/dependencies/wb30/wb_foo__someexecutable/.cproject:
+        * expected/dependencies/wb30/wb_foo__someexecutable/.project:
+        * expected/dependencies/wb30/wb_foo__someexecutable/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__someexecutable/.wrproject:
+
+        * expected/dependencies/wb30/wb_foo__somelib:
+
+        * expected/dependencies/wb30/wb_foo__somelib/.cproject:
+        * expected/dependencies/wb30/wb_foo__somelib/.project:
+        * expected/dependencies/wb30/wb_foo__somelib/.wrmakefile:
+        * expected/dependencies/wb30/wb_foo__somelib/.wrproject:
+
+        * expected/dependent_libs:
+
+        * expected/dependent_libs/automake:
+
+        * expected/dependent_libs/automake/Makefile.am:
+        * expected/dependent_libs/automake/configure.ac.Makefiles:
+
+        * expected/dependent_libs/em3:
+
+        * expected/dependent_libs/em3/dependent_libs.vcw:
+        * expected/dependent_libs/em3/foo.vcp:
+
+        * expected/dependent_libs/ghs:
+
+        * expected/dependent_libs/ghs/default.gpj:
+        * expected/dependent_libs/ghs/foo.gpj:
+
+        * expected/dependent_libs/gnuace:
+
+        * expected/dependent_libs/gnuace/GNUmakefile:
+        * expected/dependent_libs/gnuace/GNUmakefile.foo:
+
+        * expected/dependent_libs/make:
+
+        * expected/dependent_libs/make/Makefile:
+        * expected/dependent_libs/make/Makefile.foo:
+
+        * expected/dependent_libs/nmake:
+
+        * expected/dependent_libs/nmake/Makefile:
+        * expected/dependent_libs/nmake/Makefile.foo.mak:
+
+        * expected/dependent_libs/vc6:
+
+        * expected/dependent_libs/vc6/dependent_libs.dsw:
+        * expected/dependent_libs/vc6/foo.dsp:
+
+        * expected/dependent_libs/vc7:
+
+        * expected/dependent_libs/vc7/dependent_libs.sln:
+        * expected/dependent_libs/vc7/foo.vcproj:
+
+        * expected/dependent_libs/vc71:
+
+        * expected/dependent_libs/vc71/dependent_libs.sln:
+        * expected/dependent_libs/vc71/foo.vcproj:
+
+        * expected/dependent_libs/vc8:
+
+        * expected/dependent_libs/vc8/dependent_libs.sln:
+        * expected/dependent_libs/vc8/foo.vcproj:
+
+        * expected/features_custom_only/nmake/source/Makefile.fco.mak:
+        * expected/features_custom_only/nmake/source/Makefile.other.mak:
+
+        * expected/flex_bison/nmake/Makefile.flex_bison.mak:
+
+        * expected/grouping/nmake/source/Makefile.grouping_A.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_B.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_C.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_D.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_E.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_F.mak:
+        * expected/grouping/nmake/source/Makefile.grouping_G.mak:
+
+        * expected/more_options/nmake/c++/Makefile.foo.mak:
+
+        * expected/more_options/wb30/c++/wb_foo/.wrproject:
+
+        * expected/more_workspaces/wb26/src/src/.project:
+
+        * expected/multi_custom_mapping/nmake/Makefile.mpc_test.mak:
+
+        * expected/multiple_define_customs/nmake/Makefile.foo.mak:
+
+        * expected/no_workspace/nmake/src/Makefile.foo.mak:
+
+        * expected/partial_implicit/nmake/explicit/Makefile.explicit.mak:
+
+        * expected/psuedo_replacement/nmake/Makefile.zz.mak:
+
+        * expected/qt/nmake/Makefile.qt_uic_moc.mak:
+
+        * expected/swig_perl/nmake/Makefile.MyModule.mak:
+
+        * expected/wide_coverage/nmake/source/Makefile.source.mak:
+        * expected/wide_coverage/nmake/source/Makefile.source_lib.mak:
+
+        * expected/wide_coverage/nmake/source/fake/Makefile.fake.mak:
+
+        * tests/dependencies/foo.mpc:
+        * tests/dependencies/something.cpp:
+        * tests/dependencies/something_export.h:
+        * tests/dependencies/somethingthatworks.cpp:
+
+        * tests/dependent_libs:
+
+        * tests/dependent_libs/bar.ar:
+        * tests/dependent_libs/build_entry.txt:
+        * tests/dependent_libs/foo.ar:
+        * tests/dependent_libs/foo.cpp:
+        * tests/dependent_libs/foo.mpc:
+        * tests/dependent_libs/nospace.txt:
+
+          Merged changes from branch "dependent_libs".  Added 
+          the keyword dependent_libs to dependencies/foo.mpc
+          to verify that the output compiled.  Added dependent_libs
+          test to test each path for the keyword in the templates.
+        
 Tue Aug 24 20:50:45 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * utils/add_expected_directories.sh:

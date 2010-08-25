@@ -17,7 +17,7 @@
 		<link>
 			<name>foo.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/more_workspaces/src/foo.cpp</location>
+			<location>C:/dev/mpc_test2/tests/more_workspaces/src/foo.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>

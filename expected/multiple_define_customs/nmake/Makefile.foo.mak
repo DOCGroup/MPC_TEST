@@ -301,6 +301,7 @@ SOURCE="FooTypeSupportImpl.cpp"
 "$(INTDIR)\FooTypeSupportImpl.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\FooTypeSupportImpl.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="Foo.idl"
 
 InputPath=Foo.idl
@@ -320,6 +321,71 @@ InputPath=Foo.idl
 	@echo off
 	perl zzz.pl  "$(InputPath)"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="Foo.idl"
+
+InputPath=Foo.idl
+
+"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	perl foo.pl  "$(InputPath)"
+<<
+
+SOURCE="Foo.idl"
+
+InputPath=Foo.idl
+
+"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	perl zzz.pl  "$(InputPath)"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="Foo.idl"
+
+InputPath=Foo.idl
+
+"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	perl foo.pl  "$(InputPath)"
+<<
+
+SOURCE="Foo.idl"
+
+InputPath=Foo.idl
+
+"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	perl zzz.pl  "$(InputPath)"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="Foo.idl"
+
+InputPath=Foo.idl
+
+"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	perl foo.pl  "$(InputPath)"
+<<
+
+SOURCE="Foo.idl"
+
+InputPath=Foo.idl
+
+"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	perl zzz.pl  "$(InputPath)"
+<<
+
+!ENDIF
 
 
 !ENDIF

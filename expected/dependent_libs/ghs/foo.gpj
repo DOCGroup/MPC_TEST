@@ -1,0 +1,29 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+	[Shared Object]
+	-o ./libfoo.so
+	-Ospeed
+	-OI
+	--exceptions
+	-L.
+bar.ar		[Text]
+bar.cr
+	:dependsRelative=nospace.txt
+	:dependsRelative=bar.ar
+	:dependsRelative=lib/libsomelib.so
+	:dependsRelative=lib/libsome 2nd lib.so
+	:dependsRelative=lib/libsome 3rd lib.so
+	:dependsRelative=lib/libsome4thlib.so
+	:preexecShell='cd . && echo  bar.ar > bar.cr'
+	:extraOutputFile=bar.cr
+foo.ar		[Text]
+foo.cr
+	:dependsRelative=nospace.txt
+	:dependsRelative=foo.ar
+	:dependsRelative=lib/libsomelib.so
+	:dependsRelative=lib/libsome 2nd lib.so
+	:preexecShell='cd . && echo  foo.ar > foo.cr'
+	:extraOutputFile=foo.cr
+foo.cpp
+build_entry.txt		[Documentation]
+nospace.txt		[Documentation]

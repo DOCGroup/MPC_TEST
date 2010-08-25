@@ -280,11 +280,12 @@ SOURCE="foo.cpp"
 "$(INTDIR)\foo.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\foo.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="bar.ar"
 
 InputPath=bar.ar
 
-"bar.cr" : $(SOURCE)  "nospace.txt" "space 1.txt"
+"bar.cr" : $(SOURCE)  "nospace.txt" "space 1.txt" "someExecutable.exe" ".\.libs\somelibd.dll"
 	<<tempfile.bat
 	@echo off
 	echo  "$(InputPath)" > "bar.cr"
@@ -294,11 +295,76 @@ SOURCE="foo.ar"
 
 InputPath=foo.ar
 
-"foo.cr" : $(SOURCE)  "space 3.txt" "nospace.txt" "space 1.txt" "space 2.txt"
+"foo.cr" : $(SOURCE)  "space 3.txt" "nospace.txt" "space 1.txt" "someExecutable.exe" "space 2.txt" ".\.libs\somelibd.dll"
 	<<tempfile.bat
 	@echo off
 	echo  "$(InputPath)" > "foo.cr"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="bar.ar"
+
+InputPath=bar.ar
+
+"bar.cr" : $(SOURCE)  "nospace.txt" "space 1.txt" "someExecutable.exe" ".\.libs\somelib.dll"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "bar.cr"
+<<
+
+SOURCE="foo.ar"
+
+InputPath=foo.ar
+
+"foo.cr" : $(SOURCE)  "space 3.txt" "nospace.txt" "space 1.txt" "someExecutable.exe" "space 2.txt" ".\.libs\somelib.dll"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "foo.cr"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="bar.ar"
+
+InputPath=bar.ar
+
+"bar.cr" : $(SOURCE)  "nospace.txt" "space 1.txt" "someExecutable.exe"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "bar.cr"
+<<
+
+SOURCE="foo.ar"
+
+InputPath=foo.ar
+
+"foo.cr" : $(SOURCE)  "space 3.txt" "nospace.txt" "space 1.txt" "someExecutable.exe" "space 2.txt"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "foo.cr"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="bar.ar"
+
+InputPath=bar.ar
+
+"bar.cr" : $(SOURCE)  "nospace.txt" "space 1.txt" "someExecutable.exe"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "bar.cr"
+<<
+
+SOURCE="foo.ar"
+
+InputPath=foo.ar
+
+"foo.cr" : $(SOURCE)  "space 3.txt" "nospace.txt" "space 1.txt" "someExecutable.exe" "space 2.txt"
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "foo.cr"
+<<
+
+!ENDIF
 
 
 !ENDIF

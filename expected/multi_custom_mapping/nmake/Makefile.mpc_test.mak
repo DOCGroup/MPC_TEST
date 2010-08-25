@@ -226,6 +226,7 @@ CLEAN :
 !ENDIF
 
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" || "$(CFG)" == "Win32 Static Debug" || "$(CFG)" == "Win32 Static Release" 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="foo.mco"
 
 InputPath=foo.mco
@@ -245,6 +246,71 @@ InputPath=foo.mco
 	@echo off
 	echo "int main(){}" -b "$(InputPath)" > "foo_script2.cpp"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="foo.mco"
+
+InputPath=foo.mco
+
+"foo.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo "int main(){}" -a -O "$(InputPath)" > "foo.cpp"
+<<
+
+SOURCE="foo.mco"
+
+InputPath=foo.mco
+
+"foo_script2.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo "int main(){}" -b "$(InputPath)" > "foo_script2.cpp"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="foo.mco"
+
+InputPath=foo.mco
+
+"foo.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo "int main(){}" -a "$(InputPath)" > "foo.cpp"
+<<
+
+SOURCE="foo.mco"
+
+InputPath=foo.mco
+
+"foo_script2.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo "int main(){}" -b "$(InputPath)" > "foo_script2.cpp"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="foo.mco"
+
+InputPath=foo.mco
+
+"foo.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo "int main(){}" -a "$(InputPath)" > "foo.cpp"
+<<
+
+SOURCE="foo.mco"
+
+InputPath=foo.mco
+
+"foo_script2.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo "int main(){}" -b "$(InputPath)" > "foo_script2.cpp"
+<<
+
+!ENDIF
 
 
 !ENDIF

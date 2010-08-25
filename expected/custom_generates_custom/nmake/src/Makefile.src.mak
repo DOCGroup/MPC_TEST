@@ -284,6 +284,7 @@ SOURCE="fire.crap.cpp"
 "$(INTDIR)\fire.crap.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\fire.crap.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="fire.crap.r"
 
 InputPath=fire.crap.r
@@ -303,6 +304,71 @@ InputPath=fire.ts
 	@echo off
 	echo  "$(InputPath)" > "fire.crap.r"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="fire.crap.r"
+
+InputPath=fire.crap.r
+
+"fire.crap.cpp" "fire.crap.h" : $(SOURCE)  "..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\cppgen.pl  "$(InputPath)" -o "fire.crap.cpp" "fire.crap.h"
+<<
+
+SOURCE="fire.ts"
+
+InputPath=fire.ts
+
+"fire.crap.r" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "fire.crap.r"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="fire.crap.r"
+
+InputPath=fire.crap.r
+
+"fire.crap.cpp" "fire.crap.h" : $(SOURCE)  "..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\cppgen.pl  "$(InputPath)" -o "fire.crap.cpp" "fire.crap.h"
+<<
+
+SOURCE="fire.ts"
+
+InputPath=fire.ts
+
+"fire.crap.r" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "fire.crap.r"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="fire.crap.r"
+
+InputPath=fire.crap.r
+
+"fire.crap.cpp" "fire.crap.h" : $(SOURCE)  "..\bin\cppgen.pl"
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\cppgen.pl  "$(InputPath)" -o "fire.crap.cpp" "fire.crap.h"
+<<
+
+SOURCE="fire.ts"
+
+InputPath=fire.ts
+
+"fire.crap.r" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	echo  "$(InputPath)" > "fire.crap.r"
+<<
+
+!ENDIF
 
 
 !ENDIF

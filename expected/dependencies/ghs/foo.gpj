@@ -10,19 +10,24 @@ bar.ar		[Text]
 bar.cr
 	:dependsRelative=nospace.txt
 	:dependsRelative=space 1.txt
+	:dependsRelative=someExecutable
 	:dependsRelative=bar.ar
+	:dependsRelative=.\\.libs/libsomelib.so
 	:preexecShell='cd . && echo  bar.ar > bar.cr'
 	:extraOutputFile=bar.cr
 foo.ar		[Text]
 foo.cr
 	:dependsRelative=nospace.txt
 	:dependsRelative=space 1.txt
+	:dependsRelative=someExecutable
 	:dependsRelative=space 2.txt
 	:dependsRelative=foo.ar
 	:dependsRelative=space 3.txt
+	:dependsRelative=.\\.libs/libsomelib.so
 	:preexecShell='cd . && echo  foo.ar > foo.cr'
 	:extraOutputFile=foo.cr
 foo.cpp
+something_export.h
 nospace.txt		[Documentation]
 space 1.txt		[Documentation]
 space 2.txt		[Documentation]
