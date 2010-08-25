@@ -7,6 +7,16 @@ primaryTarget=ppc_integrity.tgt
 	-language=cxx
 	--long_long
 	--new_style_casts
+foo__somelib.gpj		[Shared Object]
+	-pic
+	-object_dir=./.shobj
+	-L.
+	-DSOMETHING_BUILD_DLL
+foo__someexecutable_int.gpj		[INTEGRITY Application]
+	-object_dir=./.obj
+	-L.
+	-L.\.libs
+	-lsomelib
 foo.gpj		[Shared Object]
 	-pic
 	-object_dir=./.shobj

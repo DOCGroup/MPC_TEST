@@ -302,6 +302,7 @@ SOURCE="main.cpp"
 "$(INTDIR)\main.obj" : $(SOURCE)
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\main.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="demo.ui"
 
 InputPath=demo.ui
@@ -331,6 +332,101 @@ InputPath=demo.h
 	@echo off
 	$(QTDIR)\bin\moc  "$(InputPath)" -o "demo_moc.cpp"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="demo.ui"
+
+InputPath=demo.ui
+
+"demo.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	$(QTDIR)\bin\uic  "$(InputPath)" -o "demo.h"
+<<
+
+SOURCE="demo.ui"
+
+InputPath=demo.ui
+
+"demo.cpp" : $(SOURCE)  "demo.h"
+	<<tempfile.bat
+	@echo off
+	$(QTDIR)\bin\uic -impl "demo.h" "$(InputPath)" -o "demo.cpp"
+<<
+
+SOURCE="demo.h"
+
+InputPath=demo.h
+
+"demo_moc.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	$(QTDIR)\bin\moc  "$(InputPath)" -o "demo_moc.cpp"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="demo.ui"
+
+InputPath=demo.ui
+
+"demo.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	$(QTDIR)\bin\uic  "$(InputPath)" -o "demo.h"
+<<
+
+SOURCE="demo.ui"
+
+InputPath=demo.ui
+
+"demo.cpp" : $(SOURCE)  "demo.h"
+	<<tempfile.bat
+	@echo off
+	$(QTDIR)\bin\uic -impl "demo.h" "$(InputPath)" -o "demo.cpp"
+<<
+
+SOURCE="demo.h"
+
+InputPath=demo.h
+
+"demo_moc.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	$(QTDIR)\bin\moc  "$(InputPath)" -o "demo_moc.cpp"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="demo.ui"
+
+InputPath=demo.ui
+
+"demo.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	$(QTDIR)\bin\uic  "$(InputPath)" -o "demo.h"
+<<
+
+SOURCE="demo.ui"
+
+InputPath=demo.ui
+
+"demo.cpp" : $(SOURCE)  "demo.h"
+	<<tempfile.bat
+	@echo off
+	$(QTDIR)\bin\uic -impl "demo.h" "$(InputPath)" -o "demo.cpp"
+<<
+
+SOURCE="demo.h"
+
+InputPath=demo.h
+
+"demo_moc.cpp" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	$(QTDIR)\bin\moc  "$(InputPath)" -o "demo_moc.cpp"
+<<
+
+!ENDIF
 
 
 !ENDIF

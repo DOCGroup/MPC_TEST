@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectName>foo</ProjectName>
-    <ProjectGuid>{10B43656-FECA-1BAD-609D-8A6300000000}</ProjectGuid>
+    <ProjectGuid>{10B43656-FECA-1BAD-609D-8A630000002E}</ProjectGuid>
     <RootNamespace>foo</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
@@ -263,41 +263,44 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="something_export.h" />
+  </ItemGroup>
+  <ItemGroup>
     <CustomBuild Include="bar.ar">
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo  &quot;bar.ar&quot; &gt; &quot;bar.cr&quot;</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking echo on bar.ar</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">bar.cr</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">nospace.txt;space 1.txt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">nospace.txt;space 1.txt;someExecutable.exe;.\.libs\somelibd.dll</AdditionalInputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo  &quot;bar.ar&quot; &gt; &quot;bar.cr&quot;</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking echo on bar.ar</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">bar.cr</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">nospace.txt;space 1.txt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">nospace.txt;space 1.txt;someExecutable.exe;.\.libs\somelib.dll</AdditionalInputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">echo  &quot;bar.ar&quot; &gt; &quot;bar.cr&quot;</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking echo on bar.ar</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">bar.cr</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nospace.txt;space 1.txt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nospace.txt;space 1.txt;someExecutable.exe;.\.libs\somelibd.dll</AdditionalInputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">echo  &quot;bar.ar&quot; &gt; &quot;bar.cr&quot;</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking echo on bar.ar</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">bar.cr</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nospace.txt;space 1.txt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nospace.txt;space 1.txt;someExecutable.exe;.\.libs\somelib.dll</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="foo.ar">
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo  &quot;foo.ar&quot; &gt; &quot;foo.cr&quot;</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking echo on foo.ar</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">foo.cr</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">nospace.txt;space 1.txt;space 2.txt;space 3.txt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">nospace.txt;space 1.txt;someExecutable.exe;space 2.txt;space 3.txt;.\.libs\somelibd.dll</AdditionalInputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo  &quot;foo.ar&quot; &gt; &quot;foo.cr&quot;</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking echo on foo.ar</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">foo.cr</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">nospace.txt;space 1.txt;space 2.txt;space 3.txt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">nospace.txt;space 1.txt;someExecutable.exe;space 2.txt;space 3.txt;.\.libs\somelib.dll</AdditionalInputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">echo  &quot;foo.ar&quot; &gt; &quot;foo.cr&quot;</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking echo on foo.ar</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">foo.cr</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nospace.txt;space 1.txt;space 2.txt;space 3.txt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nospace.txt;space 1.txt;someExecutable.exe;space 2.txt;space 3.txt;.\.libs\somelibd.dll</AdditionalInputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">echo  &quot;foo.ar&quot; &gt; &quot;foo.cr&quot;</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking echo on foo.ar</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">foo.cr</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nospace.txt;space 1.txt;space 2.txt;space 3.txt</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nospace.txt;space 1.txt;someExecutable.exe;space 2.txt;space 3.txt;.\.libs\somelib.dll</AdditionalInputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

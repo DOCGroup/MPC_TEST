@@ -52,7 +52,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "\home\elliottc\current\MPC\test\tests\more_options\c++\down\foo.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "C:\dev\mpc_test2\tests\more_options\c++\down\foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -99,7 +99,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "\home\elliottc\current\MPC\test\tests\more_options\c++\down\foo.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "C:\dev\mpc_test2\tests\more_options\c++\down\foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -176,7 +176,7 @@ CLEAN :
 !ENDIF
 
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" 
-SOURCE="\home\elliottc\current\MPC\test\tests\more_options\c++\down\foo.cpp"
+SOURCE="C:\dev\mpc_test2\tests\more_options\c++\down\foo.cpp"
 
 "$(INTDIR)\down\foo.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\down\$(NULL)" mkdir "$(INTDIR)\down\"

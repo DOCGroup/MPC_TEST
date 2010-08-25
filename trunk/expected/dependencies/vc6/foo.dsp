@@ -80,6 +80,14 @@ LINK32=link.exe
 SOURCE="foo.cpp"
 # End Source File
 # End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hh"
+# Begin Source File
+
+SOURCE="something_export.h"
+# End Source File
+# End Group
 # Begin Group "Documentation"
 
 # PROP Default_Filter ""
@@ -109,7 +117,7 @@ SOURCE="bar.ar"
 
 !IF  "$(CFG)" == "foo - Win32 Debug"
 
-USERDEP__bar="nospace.txt" "space 1.txt"
+USERDEP__bar="nospace.txt" "space 1.txt" "someExecutable.exe" ".\.libs\somelibd.dll"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking echo on $(InputPath)
 InputPath="bar.ar"
@@ -123,7 +131,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 Release"
 
-USERDEP__bar="nospace.txt" "space 1.txt"
+USERDEP__bar="nospace.txt" "space 1.txt" "someExecutable.exe" ".\.libs\somelib.dll"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking echo on $(InputPath)
 InputPath="bar.ar"
@@ -144,7 +152,7 @@ SOURCE="foo.ar"
 
 !IF  "$(CFG)" == "foo - Win32 Debug"
 
-USERDEP__foo="nospace.txt" "space 1.txt" "space 2.txt" "space 3.txt"
+USERDEP__foo="nospace.txt" "space 1.txt" "someExecutable.exe" "space 2.txt" "space 3.txt" ".\.libs\somelibd.dll"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking echo on $(InputPath)
 InputPath="foo.ar"
@@ -158,7 +166,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 Release"
 
-USERDEP__foo="nospace.txt" "space 1.txt" "space 2.txt" "space 3.txt"
+USERDEP__foo="nospace.txt" "space 1.txt" "someExecutable.exe" "space 2.txt" "space 3.txt" ".\.libs\somelib.dll"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking echo on $(InputPath)
 InputPath="foo.ar"

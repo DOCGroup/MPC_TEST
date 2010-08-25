@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wrxml>
     <properties platform="" root="1" type="ApplicationProject"/>
+    <subprojects>
+        <subproject project="/wb_foo__someexecutable"/>
+    </subprojects>
     <attributes>
         <mapAttribute>
             <listAttribute key="BLD::Info|GlobalMacros">

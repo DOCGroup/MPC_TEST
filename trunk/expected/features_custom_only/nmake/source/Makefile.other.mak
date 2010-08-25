@@ -311,6 +311,7 @@ SOURCE="other\zar_otherB.cpp"
 	@if not exist "$(INTDIR)\other\$(NULL)" mkdir "$(INTDIR)\other\"
 	$(CPP) $(CPP_COMMON) /Fo"$(INTDIR)\other\zar_otherB.obj" $(SOURCE)
 
+!IF  "$(CFG)" == "Win32 Debug"
 SOURCE="other\other.poo"
 
 InputPath=other\other.poo
@@ -320,6 +321,41 @@ InputPath=other\other.poo
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GX -Sc "$(InputPath)"
 <<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+SOURCE="other\other.poo"
+
+InputPath=other\other.poo
+
+"other\zar_otherA.cpp" "other\zar_otherA.h" "other\zar_otherA.inl" "other\zar_otherB.cpp" "other\zar_otherB.h" "other\zar_otherB.inl" "other\zar_otherC.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GX -Sc "$(InputPath)"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Debug"
+SOURCE="other\other.poo"
+
+InputPath=other\other.poo
+
+"other\zar_otherA.cpp" "other\zar_otherA.h" "other\zar_otherA.inl" "other\zar_otherB.cpp" "other\zar_otherB.h" "other\zar_otherB.inl" "other\zar_otherC.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GX -Sc "$(InputPath)"
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Static Release"
+SOURCE="other\other.poo"
+
+InputPath=other\other.poo
+
+"other\zar_otherA.cpp" "other\zar_otherA.h" "other\zar_otherA.inl" "other\zar_otherB.cpp" "other\zar_otherB.h" "other\zar_otherB.inl" "other\zar_otherC.h" : $(SOURCE) 
+	<<tempfile.bat
+	@echo off
+	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GX -Sc "$(InputPath)"
+<<
+
+!ENDIF
 
 
 !ENDIF
