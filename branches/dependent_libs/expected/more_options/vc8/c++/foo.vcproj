@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="foo"
-	ProjectGUID="{D9047293-FECA-1BAD-609D-8A633DA6931A}"
+	ProjectGUID="{D9047293-FECA-1BAD-609D-8A630000619B}"
 	RootNamespace="foo"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -351,7 +351,7 @@
 			Name="Source Files"
 			Filter="cpp;cxx;cc;c;C">
 			<File
-				RelativePath="\home\elliottc\current\MPC\test\tests\more_options\c++\down\foo.cpp">
+				RelativePath="\tao_builds\mitza\MPC_TEST\tests\more_options\c++\down\foo.cpp">
 			</File>
 		</Filter>
 	</Files>
