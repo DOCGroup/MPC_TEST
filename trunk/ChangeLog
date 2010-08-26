@@ -1,3 +1,10 @@
+Thu Aug 26 21:08:49 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/MultiWS/bmake/Multiws/src/Makefile.bar_testing.bmak:
+        * expected/MultiWS/vc8/Multiws/src/bar_testing.vcproj:
+
+          Fixed line endings and svn properties.
+
 Thu Aug 26 20:28:03 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/MultiWS/em3/Multiws/src/bar_testing.vcp:
