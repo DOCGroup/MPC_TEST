@@ -1,3 +1,11 @@
+Thu Aug 26 14:10:35 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/*/wb30/*:
+        * expected/*/wb26/*:
+
+          Fixed bad line endings from
+          Tue Aug 24 14:02:18 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
 Wed Aug 25 22:45:57 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>
 
         * expected/dependencies/ghs/foo.gpj:
@@ -24,7 +32,7 @@ Wed Aug 25 22:45:57 UTC 2010  Brian Johnson  <johnson_b@ociweb.com>
         * expected/dependencies/wb30/wb_foo__somelib/.project:
 
         * expected/dependent_libs/ghs/foo.gpj:
-        
+
           Fixing line ending problems on linux.
 
 Wed Aug 25 21:54:48 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
