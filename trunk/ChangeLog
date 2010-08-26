@@ -1,3 +1,25 @@
+Thu Aug 26 20:28:03 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/MultiWS/em3/Multiws/src/bar_testing.vcp:
+        * expected/MultiWS/html/Multiws/src/bar_testing.html:
+        * expected/MultiWS/nmake/Multiws/src/Makefile.bar_testing.mak:
+        * expected/MultiWS/vc6/Multiws/src/bar_testing.dsp:
+        * expected/MultiWS/vc7/Multiws/src/bar_testing.vcproj:
+        * expected/MultiWS/vc71/Multiws/src/bar_testing.vcproj:
+
+          Fixed line endings and svn properties.
+
+        * expected/wider_coverage/vc8/Some_Test_Other_Lib.vcproj:
+        * expected/wider_coverage/vc8/Some_Test_Simple_Lib.vcproj:
+        * expected/wider_coverage/vc8/simple.vcproj:
+
+          Re-generated with correct ACE_ROOT set.
+
+        * run_tests.pl:
+
+          Don't skip ACE_HAS_MFC lines when doing --expected.
+          Added vc10 project file names to the list of files to clean.
+
 Thu Aug 26 15:11:00 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/implicit_resources/gnuace:

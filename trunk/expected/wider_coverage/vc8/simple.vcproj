@@ -222,7 +222,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories="houses,houses\of,houses\of\the,houses\of\the\holy"
-				PreprocessorDefinitions="NDEBUG;_AFXDLL;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS"
+				PreprocessorDefinitions="NDEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS"
 				RuntimeLibrary="0"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -233,7 +233,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;_AFXDLL"
+				PreprocessorDefinitions="NDEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER"
 				Culture="1033"
 				AdditionalIncludeDirectories="houses,houses\of,houses\of\the,houses\of\the\holy"
 			/>
@@ -307,7 +307,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="houses,houses\of,houses\of\the,houses\of\the\holy"
-				PreprocessorDefinitions="_DEBUG;_AFXDLL;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS"
+				PreprocessorDefinitions="_DEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
@@ -321,7 +321,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;_AFXDLL"
+				PreprocessorDefinitions="_DEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER"
 				Culture="1033"
 				AdditionalIncludeDirectories="houses,houses\of,houses\of\the,houses\of\the\holy"
 			/>
@@ -564,7 +564,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				AdditionalIncludeDirectories="houses,houses\of,houses\of\the,houses\of\the\holy"
-				PreprocessorDefinitions="NDEBUG;_AFXDLL;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
+				PreprocessorDefinitions="NDEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				RuntimeLibrary="0"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -575,7 +575,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;_AFXDLL;_WIN64"
+				PreprocessorDefinitions="NDEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories="houses,houses\of,houses\of\the,houses\of\the\holy"
 			/>
@@ -650,7 +650,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="houses,houses\of,houses\of\the,houses\of\the\holy"
-				PreprocessorDefinitions="_DEBUG;_AFXDLL;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
+				PreprocessorDefinitions="_DEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
@@ -664,7 +664,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;_AFXDLL;_WIN64"
+				PreprocessorDefinitions="_DEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories="houses,houses\of,houses\of\the,houses\of\the\holy"
 			/>

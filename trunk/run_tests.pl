@@ -158,7 +158,8 @@ sub compare {
             last;
           }
           elsif ($lines[$i] ne $line) {
-            if ($lines[$i] !~ /ACE_HAS_MFC=1/ && $line !~ /$mpcre/) {
+            if (($lines[$i] !~ /ACE_HAS_MFC=1/ || $cr_expect)
+                && $line !~ /$mpcre/) {
               diff_files($left, $right, $i, $lines[$i], $line) if ($show);
               $different = 1;
               last;
@@ -661,9 +662,12 @@ sub to_be_cleaned {
    /^GNUmakefile.*\z/s ||
    /^.*\.sln\z/s ||
    /^.*\.vcproj\z/s ||
+   /^.*\.vcxproj\z/s ||
+   /^.*\.vcxproj\.filters\z/s ||
    /^.*\.ds.?\z/s ||
    /^.*\.ncb\z/s ||
    /^.*\.suo\z/s ||
+   /^.*\.sdf\z/s ||
    /^.*\.bor\z/s ||
    /^.*\.opt\z/s ||
    /^.*\.plg\z/s ||
@@ -1020,7 +1024,8 @@ else {
               $amount = int($amount / 2);
             }
 
-            print SAVEERR '', ('=' x $amount), " $dir ", ('=' x $amount), "\n";
+            print SAVEERR '', ('=' x $amount), " $dir ",
+              ('=' x $amount), (((length $dir) % 2) ? '=' : ''), "\n";
             my $mwc = '';
             if (-r "$full/$dir.mwc") {
               $mwc = "$dir.mwc";
