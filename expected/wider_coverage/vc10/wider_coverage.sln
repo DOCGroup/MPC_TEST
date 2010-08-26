@@ -7,7 +7,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/MPC/mwc.pl -include config -type vc10 -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
+# /tao_builds/taoadmin/1.5a/ACE_wrappers/bin/mwc.pl -include config -type vc10 -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Some_Test_Other_Lib", "Some_Test_Other_Lib.vcxproj", "{34B1F818-FECA-1BAD-9A98-A44400000000}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Some_Test_Simple_Lib", "Some_Test_Simple_Lib.vcxproj", "{1435AFD4-FECA-1BAD-9DAF-2CC300000000}"
