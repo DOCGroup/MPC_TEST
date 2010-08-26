@@ -274,13 +274,13 @@
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <AdditionalIncludeDirectories>houses;houses\of;houses\of\the;houses\of\the\holy;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NDEBUG;_AFXDLL;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>NDEBUG;_AFXDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>1033</Culture>
       <AdditionalIncludeDirectories>houses;houses\of;houses\of\the;houses\of\the\holy;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
@@ -316,14 +316,14 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>houses;houses\of;houses\of\the;houses\of\the\holy;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;_AFXDLL;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_AFXDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>1033</Culture>
       <AdditionalIncludeDirectories>houses;houses\of;houses\of\the;houses\of\the\holy;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
@@ -456,13 +456,13 @@
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <AdditionalIncludeDirectories>houses;houses\of;houses\of\the;houses\of\the\holy;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NDEBUG;_AFXDLL;WIN32;_WINDOWS;_AMD64_;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_WINDOWS;_AMD64_;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>NDEBUG;_AFXDLL;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>1033</Culture>
       <AdditionalIncludeDirectories>houses;houses\of;houses\of\the;houses\of\the\holy;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
@@ -505,14 +505,14 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>houses;houses\of;houses\of\the;houses\of\the\holy;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;_AFXDLL;WIN32;_WINDOWS;_AMD64_;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_WINDOWS;_AMD64_;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_AFXDLL;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_AFXDLL;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>1033</Culture>
       <AdditionalIncludeDirectories>houses;houses\of;houses\of\the;houses\of\the\holy;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>

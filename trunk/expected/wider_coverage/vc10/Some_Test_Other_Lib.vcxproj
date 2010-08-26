@@ -257,13 +257,13 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>1033</Culture>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
@@ -290,14 +290,14 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>1033</Culture>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
@@ -405,13 +405,13 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>NDEBUG;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>1033</Culture>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
@@ -444,14 +444,14 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ACE_HAS_MFC=1;ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>1033</Culture>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
