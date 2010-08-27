@@ -66,9 +66,9 @@ GENERATED_DIRTY = $(addprefix ../../, bar.cr foo.cr)
 generate_sources :: $(GENERATED_DIRTY)
 
 
-$(addprefix ../../,bar.cr): $(foreach pre,bar.ar nospace.txt space\ 1.txt someExecutable,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+$(addprefix ../../,bar.cr): $(foreach pre,bar.ar nospace.txt space\ 1.txt someExecutable ./.libs/somelib ./.libs/somelib,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
 	$(TRACE_FLAG)cd ../.. ; echo  bar.ar > bar.cr
-$(addprefix ../../,foo.cr): $(foreach pre,foo.ar space\ 3.txt nospace.txt space\ 1.txt someExecutable space\ 2.txt,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+$(addprefix ../../,foo.cr): $(foreach pre,foo.ar space\ 3.txt nospace.txt space\ 1.txt someExecutable space\ 2.txt ./.libs/somelib ./.libs/somelib,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
 	$(TRACE_FLAG)cd ../.. ; echo  foo.ar > foo.cr
 
 DIR_PREFIX = foo/$(BUILD_SPEC)
