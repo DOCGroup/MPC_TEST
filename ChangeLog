@@ -1,8 +1,18 @@
+Sat Aug 28 04:21:56 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
+
+        * expected/dependencies/vc10/foo__someexecutable.vcxproj:
+        * expected/dependencies/vc10/foo__someexecutable.vcxproj.filters:
+        * expected/dependencies/vc10/foo__somelib.vcxproj:
+        * expected/dependencies/vc10/foo__somelib.vcxproj.filters:
+
+          Missed adding files for vc10 dependencies added during 
+          dependent_libs keyword addition.
+        
 Fri Aug 27 21:32:26 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * expected/dependencies/wb26/foo/.wrmakefile:
         * expected/dependencies/wb30/wb_foo/.wrmakefile:
-        
+
           Changes in expected due to addition of dependent_libs
           to wb26.
 
