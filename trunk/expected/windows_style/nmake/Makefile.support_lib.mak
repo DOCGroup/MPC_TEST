@@ -59,15 +59,15 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\support_libd.pdb"
-        -@del /f/q "lib\support_libd.dll"
-        -@del /f/q "$(OUTDIR)\support_libd.lib"
-        -@del /f/q "$(OUTDIR)\support_libd.exp"
-        -@del /f/q "$(OUTDIR)\support_libd.ilk"
+	-@del /f/q "lib\support_libd.dll"
+	-@del /f/q "$(OUTDIR)\support_libd.lib"
+	-@del /f/q "$(OUTDIR)\support_libd.exp"
+	-@del /f/q "$(OUTDIR)\support_libd.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\support_lib\$(NULL)" mkdir "Debug\support_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\support_lib\$(NULL)" mkdir "Debug\support_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /D BASIC_BUILD_DLL  /FD /c
@@ -83,10 +83,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "lib\support_libd.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "lib\support_libd.dll.manifest" mt.exe -manifest "lib\support_libd.dll.manifest" -outputresource:$@;2
+	if exist "lib\support_libd.dll.manifest" mt.exe -manifest "lib\support_libd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -106,15 +106,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "lib\support_lib.dll"
-        -@del /f/q "$(OUTDIR)\support_lib.lib"
-        -@del /f/q "$(OUTDIR)\support_lib.exp"
-        -@del /f/q "$(OUTDIR)\support_lib.ilk"
+	-@del /f/q "lib\support_lib.dll"
+	-@del /f/q "$(OUTDIR)\support_lib.lib"
+	-@del /f/q "$(OUTDIR)\support_lib.exp"
+	-@del /f/q "$(OUTDIR)\support_lib.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\support_lib\$(NULL)" mkdir "Release\support_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\support_lib\$(NULL)" mkdir "Release\support_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D BASIC_BUILD_DLL  /FD /c
@@ -130,10 +130,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "lib\support_lib.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "lib\support_lib.dll.manifest" mt.exe -manifest "lib\support_lib.dll.manifest" -outputresource:$@;2
+	if exist "lib\support_lib.dll.manifest" mt.exe -manifest "lib\support_lib.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -153,15 +153,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\support_libsd.lib"
-        -@del /f/q "$(OUTDIR)\support_libsd.exp"
-        -@del /f/q "$(OUTDIR)\support_libsd.ilk"
+	-@del /f/q "$(OUTDIR)\support_libsd.lib"
+	-@del /f/q "$(OUTDIR)\support_libsd.exp"
+	-@del /f/q "$(OUTDIR)\support_libsd.ilk"
 	-@del /f/q "lib\support_libsd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\support_lib\$(NULL)" mkdir "Static_Debug\support_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\support_lib\$(NULL)" mkdir "Static_Debug\support_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd"lib\support_libsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D BASIC_AS_STATIC_LIBS  /FD /c
@@ -176,10 +176,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\support_libsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\support_libsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\support_libsd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\support_libsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\support_libsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -199,14 +199,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\support_libs.lib"
-        -@del /f/q "$(OUTDIR)\support_libs.exp"
-        -@del /f/q "$(OUTDIR)\support_libs.ilk"
+	-@del /f/q "$(OUTDIR)\support_libs.lib"
+	-@del /f/q "$(OUTDIR)\support_libs.exp"
+	-@del /f/q "$(OUTDIR)\support_libs.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\support_lib\$(NULL)" mkdir "Static_Release\support_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\support_lib\$(NULL)" mkdir "Static_Release\support_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D BASIC_AS_STATIC_LIBS  /FD /c
@@ -221,10 +221,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\support_libs.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\support_libs.lib.manifest" mt.exe -manifest "$(OUTDIR)\support_libs.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\support_libs.lib.manifest" mt.exe -manifest "$(OUTDIR)\support_libs.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -232,35 +232,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

@@ -59,17 +59,17 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\MyModule.pdb"
-        -@del /f/q ".\MyModule.dll"
-        -@del /f/q "$(OUTDIR)\MyModule.lib"
-        -@del /f/q "$(OUTDIR)\MyModule.exp"
-        -@del /f/q "$(OUTDIR)\MyModule.ilk"
-        -@del /f/q "MyModule.pm"
-        -@del /f/q "MyModule_wrap.cxx"
+	-@del /f/q ".\MyModule.dll"
+	-@del /f/q "$(OUTDIR)\MyModule.lib"
+	-@del /f/q "$(OUTDIR)\MyModule.exp"
+	-@del /f/q "$(OUTDIR)\MyModule.ilk"
+	-@del /f/q "MyModule.pm"
+	-@del /f/q "MyModule_wrap.cxx"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\MyModule\$(NULL)" mkdir "Debug\MyModule"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\MyModule\$(NULL)" mkdir "Debug\MyModule"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(PERL5_INCLUDE)\." /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -85,10 +85,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\MyModule_wrap.obj"
 
 ".\MyModule.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\MyModule.dll.manifest" mt.exe -manifest ".\MyModule.dll.manifest" -outputresource:$@;2
+	if exist ".\MyModule.dll.manifest" mt.exe -manifest ".\MyModule.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -108,17 +108,17 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\MyModule.dll"
-        -@del /f/q "$(OUTDIR)\MyModule.lib"
-        -@del /f/q "$(OUTDIR)\MyModule.exp"
-        -@del /f/q "$(OUTDIR)\MyModule.ilk"
-        -@del /f/q "MyModule.pm"
-        -@del /f/q "MyModule_wrap.cxx"
+	-@del /f/q ".\MyModule.dll"
+	-@del /f/q "$(OUTDIR)\MyModule.lib"
+	-@del /f/q "$(OUTDIR)\MyModule.exp"
+	-@del /f/q "$(OUTDIR)\MyModule.ilk"
+	-@del /f/q "MyModule.pm"
+	-@del /f/q "MyModule_wrap.cxx"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\MyModule\$(NULL)" mkdir "Release\MyModule"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\MyModule\$(NULL)" mkdir "Release\MyModule"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(PERL5_INCLUDE)\." /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -134,10 +134,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\MyModule_wrap.obj"
 
 ".\MyModule.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\MyModule.dll.manifest" mt.exe -manifest ".\MyModule.dll.manifest" -outputresource:$@;2
+	if exist ".\MyModule.dll.manifest" mt.exe -manifest ".\MyModule.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -157,17 +157,17 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\MyModule.lib"
-        -@del /f/q "$(OUTDIR)\MyModule.exp"
-        -@del /f/q "$(OUTDIR)\MyModule.ilk"
+	-@del /f/q "$(OUTDIR)\MyModule.lib"
+	-@del /f/q "$(OUTDIR)\MyModule.exp"
+	-@del /f/q "$(OUTDIR)\MyModule.ilk"
 	-@del /f/q ".\MyModule.pdb"
-        -@del /f/q "MyModule.pm"
-        -@del /f/q "MyModule_wrap.cxx"
+	-@del /f/q "MyModule.pm"
+	-@del /f/q "MyModule_wrap.cxx"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\MyModule\$(NULL)" mkdir "Static_Debug\MyModule"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\MyModule\$(NULL)" mkdir "Static_Debug\MyModule"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\MyModule.pdb" /I "$(PERL5_INCLUDE)\." /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -182,10 +182,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\MyModule_wrap.obj"
 
 "$(OUTDIR)\MyModule.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\MyModule.lib.manifest" mt.exe -manifest "$(OUTDIR)\MyModule.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\MyModule.lib.manifest" mt.exe -manifest "$(OUTDIR)\MyModule.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -205,16 +205,16 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\MyModule.lib"
-        -@del /f/q "$(OUTDIR)\MyModule.exp"
-        -@del /f/q "$(OUTDIR)\MyModule.ilk"
-        -@del /f/q "MyModule.pm"
-        -@del /f/q "MyModule_wrap.cxx"
+	-@del /f/q "$(OUTDIR)\MyModule.lib"
+	-@del /f/q "$(OUTDIR)\MyModule.exp"
+	-@del /f/q "$(OUTDIR)\MyModule.ilk"
+	-@del /f/q "MyModule.pm"
+	-@del /f/q "MyModule_wrap.cxx"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\MyModule\$(NULL)" mkdir "Static_Release\MyModule"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\MyModule\$(NULL)" mkdir "Static_Release\MyModule"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(PERL5_INCLUDE)\." /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -229,10 +229,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\MyModule_wrap.obj"
 
 "$(OUTDIR)\MyModule.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\MyModule.lib.manifest" mt.exe -manifest "$(OUTDIR)\MyModule.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\MyModule.lib.manifest" mt.exe -manifest "$(OUTDIR)\MyModule.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -240,35 +240,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -295,7 +295,7 @@ SOURCE="MyModule.i"
 InputPath=MyModule.i
 
 "MyModule.pm" "MyModule_wrap.cxx" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-swig_files-MyModule_i.bat
 	@echo off
 	swig -perl -c++ "$(InputPath)"
 <<
@@ -306,7 +306,7 @@ SOURCE="MyModule.i"
 InputPath=MyModule.i
 
 "MyModule.pm" "MyModule_wrap.cxx" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-swig_files-MyModule_i.bat
 	@echo off
 	swig -perl -c++ "$(InputPath)"
 <<
@@ -317,7 +317,7 @@ SOURCE="MyModule.i"
 InputPath=MyModule.i
 
 "MyModule.pm" "MyModule_wrap.cxx" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-swig_files-MyModule_i.bat
 	@echo off
 	swig -perl -c++ "$(InputPath)"
 <<
@@ -328,7 +328,7 @@ SOURCE="MyModule.i"
 InputPath=MyModule.i
 
 "MyModule.pm" "MyModule_wrap.cxx" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-swig_files-MyModule_i.bat
 	@echo off
 	swig -perl -c++ "$(InputPath)"
 <<

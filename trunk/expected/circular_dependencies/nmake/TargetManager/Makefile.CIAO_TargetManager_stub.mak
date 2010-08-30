@@ -58,15 +58,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\TargetManager_stubd.lib"
-        -@del /f/q "$(OUTDIR)\TargetManager_stubd.exp"
-        -@del /f/q "$(OUTDIR)\TargetManager_stubd.ilk"
+	-@del /f/q "$(OUTDIR)\TargetManager_stubd.lib"
+	-@del /f/q "$(OUTDIR)\TargetManager_stubd.exp"
+	-@del /f/q "$(OUTDIR)\TargetManager_stubd.ilk"
 	-@del /f/q ".\TargetManager_stubd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\CIAO_TargetManager_stub\$(NULL)" mkdir "Debug\CIAO_TargetManager_stub"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\CIAO_TargetManager_stub\$(NULL)" mkdir "Debug\CIAO_TargetManager_stub"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd".\TargetManager_stubd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -80,10 +80,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\TargetManager_stubd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\TargetManager_stubd.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_stubd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\TargetManager_stubd.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_stubd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -103,14 +103,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\TargetManager_stub.lib"
-        -@del /f/q "$(OUTDIR)\TargetManager_stub.exp"
-        -@del /f/q "$(OUTDIR)\TargetManager_stub.ilk"
+	-@del /f/q "$(OUTDIR)\TargetManager_stub.lib"
+	-@del /f/q "$(OUTDIR)\TargetManager_stub.exp"
+	-@del /f/q "$(OUTDIR)\TargetManager_stub.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\CIAO_TargetManager_stub\$(NULL)" mkdir "Release\CIAO_TargetManager_stub"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\CIAO_TargetManager_stub\$(NULL)" mkdir "Release\CIAO_TargetManager_stub"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -124,10 +124,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\TargetManager_stub.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\TargetManager_stub.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_stub.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\TargetManager_stub.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_stub.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -147,15 +147,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\TargetManager_stubsd.lib"
-        -@del /f/q "$(OUTDIR)\TargetManager_stubsd.exp"
-        -@del /f/q "$(OUTDIR)\TargetManager_stubsd.ilk"
+	-@del /f/q "$(OUTDIR)\TargetManager_stubsd.lib"
+	-@del /f/q "$(OUTDIR)\TargetManager_stubsd.exp"
+	-@del /f/q "$(OUTDIR)\TargetManager_stubsd.ilk"
 	-@del /f/q ".\TargetManager_stubsd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\CIAO_TargetManager_stub\$(NULL)" mkdir "Static_Debug\CIAO_TargetManager_stub"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\CIAO_TargetManager_stub\$(NULL)" mkdir "Static_Debug\CIAO_TargetManager_stub"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\TargetManager_stubsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -169,10 +169,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\TargetManager_stubsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\TargetManager_stubsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_stubsd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\TargetManager_stubsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_stubsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -192,14 +192,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\TargetManager_stubs.lib"
-        -@del /f/q "$(OUTDIR)\TargetManager_stubs.exp"
-        -@del /f/q "$(OUTDIR)\TargetManager_stubs.ilk"
+	-@del /f/q "$(OUTDIR)\TargetManager_stubs.lib"
+	-@del /f/q "$(OUTDIR)\TargetManager_stubs.exp"
+	-@del /f/q "$(OUTDIR)\TargetManager_stubs.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\CIAO_TargetManager_stub\$(NULL)" mkdir "Static_Release\CIAO_TargetManager_stub"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\CIAO_TargetManager_stub\$(NULL)" mkdir "Static_Release\CIAO_TargetManager_stub"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -213,10 +213,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\TargetManager_stubs.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\TargetManager_stubs.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_stubs.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\TargetManager_stubs.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_stubs.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -224,35 +224,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

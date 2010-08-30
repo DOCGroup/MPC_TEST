@@ -60,13 +60,13 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\fooz.pdb"
-        -@del /f/q "$(INSTALLDIR)\fooz.exe"
-        -@del /f/q "$(INSTALLDIR)\fooz.ilk"
+	-@del /f/q "$(INSTALLDIR)\fooz.exe"
+	-@del /f/q "$(INSTALLDIR)\fooz.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\bfs_exe\$(NULL)" mkdir "Debug\bfs_exe"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\bfs_exe\$(NULL)" mkdir "Debug\bfs_exe"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -82,10 +82,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foozb.obj"
 
 "$(INSTALLDIR)\fooz.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\fooz.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\fooz.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\fooz.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\fooz.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -106,13 +106,13 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\fooz.exe"
-        -@del /f/q "$(INSTALLDIR)\fooz.ilk"
+	-@del /f/q "$(INSTALLDIR)\fooz.exe"
+	-@del /f/q "$(INSTALLDIR)\fooz.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\bfs_exe\$(NULL)" mkdir "Release\bfs_exe"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\bfs_exe\$(NULL)" mkdir "Release\bfs_exe"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -128,10 +128,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foozb.obj"
 
 "$(INSTALLDIR)\fooz.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\fooz.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\fooz.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\fooz.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\fooz.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -153,13 +153,13 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\fooz.pdb"
-        -@del /f/q "$(INSTALLDIR)\fooz.exe"
-        -@del /f/q "$(INSTALLDIR)\fooz.ilk"
+	-@del /f/q "$(INSTALLDIR)\fooz.exe"
+	-@del /f/q "$(INSTALLDIR)\fooz.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\bfs_exe\$(NULL)" mkdir "Static_Debug\bfs_exe"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\bfs_exe\$(NULL)" mkdir "Static_Debug\bfs_exe"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -175,10 +175,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foozb.obj"
 
 "$(INSTALLDIR)\fooz.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\fooz.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\fooz.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\fooz.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\fooz.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -199,13 +199,13 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\fooz.exe"
-        -@del /f/q "$(INSTALLDIR)\fooz.ilk"
+	-@del /f/q "$(INSTALLDIR)\fooz.exe"
+	-@del /f/q "$(INSTALLDIR)\fooz.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\bfs_exe\$(NULL)" mkdir "Static_Release\bfs_exe"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\bfs_exe\$(NULL)" mkdir "Static_Release\bfs_exe"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -221,10 +221,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foozb.obj"
 
 "$(INSTALLDIR)\fooz.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\fooz.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\fooz.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\fooz.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\fooz.exe.manifest" -outputresource:$@;1
 
 !ENDIF
 
@@ -232,35 +232,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

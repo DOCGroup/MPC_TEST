@@ -58,16 +58,16 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\d.lib"
-        -@del /f/q "$(OUTDIR)\d.exp"
-        -@del /f/q "$(OUTDIR)\d.ilk"
-        -@del /f/q "foo.cpp"
-        -@del /f/q "foo_script2.cpp"
+	-@del /f/q "$(OUTDIR)\d.lib"
+	-@del /f/q "$(OUTDIR)\d.exp"
+	-@del /f/q "$(OUTDIR)\d.ilk"
+	-@del /f/q "foo.cpp"
+	-@del /f/q "foo_script2.cpp"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\mpc_test\$(NULL)" mkdir "Debug\mpc_test"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\mpc_test\$(NULL)" mkdir "Debug\mpc_test"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -95,16 +95,16 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\.lib"
-        -@del /f/q "$(OUTDIR)\.exp"
-        -@del /f/q "$(OUTDIR)\.ilk"
-        -@del /f/q "foo.cpp"
-        -@del /f/q "foo_script2.cpp"
+	-@del /f/q "$(OUTDIR)\.lib"
+	-@del /f/q "$(OUTDIR)\.exp"
+	-@del /f/q "$(OUTDIR)\.ilk"
+	-@del /f/q "foo.cpp"
+	-@del /f/q "foo_script2.cpp"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\mpc_test\$(NULL)" mkdir "Release\mpc_test"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\mpc_test\$(NULL)" mkdir "Release\mpc_test"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -133,13 +133,13 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q ".\sd.pdb"
-        -@del /f/q "foo.cpp"
-        -@del /f/q "foo_script2.cpp"
+	-@del /f/q "foo.cpp"
+	-@del /f/q "foo_script2.cpp"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\mpc_test\$(NULL)" mkdir "Static_Debug\mpc_test"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\mpc_test\$(NULL)" mkdir "Static_Debug\mpc_test"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\sd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -166,13 +166,13 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "foo.cpp"
-        -@del /f/q "foo_script2.cpp"
+	-@del /f/q "foo.cpp"
+	-@del /f/q "foo_script2.cpp"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\mpc_test\$(NULL)" mkdir "Static_Release\mpc_test"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\mpc_test\$(NULL)" mkdir "Static_Release\mpc_test"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -187,35 +187,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -232,7 +232,7 @@ SOURCE="foo.mco"
 InputPath=foo.mco
 
 "foo.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-script1_files-foo_mco.bat
 	@echo off
 	echo "int main(){}" -a "$(InputPath)" > "foo.cpp"
 <<
@@ -242,7 +242,7 @@ SOURCE="foo.mco"
 InputPath=foo.mco
 
 "foo_script2.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-script2_files-foo_mco.bat
 	@echo off
 	echo "int main(){}" -b "$(InputPath)" > "foo_script2.cpp"
 <<
@@ -253,7 +253,7 @@ SOURCE="foo.mco"
 InputPath=foo.mco
 
 "foo.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-script1_files-foo_mco.bat
 	@echo off
 	echo "int main(){}" -a -O "$(InputPath)" > "foo.cpp"
 <<
@@ -263,7 +263,7 @@ SOURCE="foo.mco"
 InputPath=foo.mco
 
 "foo_script2.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-script2_files-foo_mco.bat
 	@echo off
 	echo "int main(){}" -b "$(InputPath)" > "foo_script2.cpp"
 <<
@@ -274,7 +274,7 @@ SOURCE="foo.mco"
 InputPath=foo.mco
 
 "foo.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-script1_files-foo_mco.bat
 	@echo off
 	echo "int main(){}" -a "$(InputPath)" > "foo.cpp"
 <<
@@ -284,7 +284,7 @@ SOURCE="foo.mco"
 InputPath=foo.mco
 
 "foo_script2.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-script2_files-foo_mco.bat
 	@echo off
 	echo "int main(){}" -b "$(InputPath)" > "foo_script2.cpp"
 <<
@@ -295,7 +295,7 @@ SOURCE="foo.mco"
 InputPath=foo.mco
 
 "foo.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-script1_files-foo_mco.bat
 	@echo off
 	echo "int main(){}" -a "$(InputPath)" > "foo.cpp"
 <<
@@ -305,7 +305,7 @@ SOURCE="foo.mco"
 InputPath=foo.mco
 
 "foo_script2.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-script2_files-foo_mco.bat
 	@echo off
 	echo "int main(){}" -b "$(InputPath)" > "foo_script2.cpp"
 <<

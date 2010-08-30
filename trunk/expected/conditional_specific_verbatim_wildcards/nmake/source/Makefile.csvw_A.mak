@@ -59,15 +59,15 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\csvw_Ad.pdb"
-        -@del /f/q "bin\csvw_Ad.dll"
-        -@del /f/q "$(OUTDIR)\csvw_Ad.lib"
-        -@del /f/q "$(OUTDIR)\csvw_Ad.exp"
-        -@del /f/q "$(OUTDIR)\csvw_Ad.ilk"
+	-@del /f/q "bin\csvw_Ad.dll"
+	-@del /f/q "$(OUTDIR)\csvw_Ad.lib"
+	-@del /f/q "$(OUTDIR)\csvw_Ad.exp"
+	-@del /f/q "$(OUTDIR)\csvw_Ad.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\csvw_A\$(NULL)" mkdir "Debug\csvw_A"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\csvw_A\$(NULL)" mkdir "Debug\csvw_A"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -83,10 +83,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\byion.obj"
 
 "bin\csvw_Ad.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "bin\csvw_Ad.dll.manifest" mt.exe -manifest "bin\csvw_Ad.dll.manifest" -outputresource:$@;2
+	if exist "bin\csvw_Ad.dll.manifest" mt.exe -manifest "bin\csvw_Ad.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -106,15 +106,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "bin\csvw_A.dll"
-        -@del /f/q "$(OUTDIR)\csvw_A.lib"
-        -@del /f/q "$(OUTDIR)\csvw_A.exp"
-        -@del /f/q "$(OUTDIR)\csvw_A.ilk"
+	-@del /f/q "bin\csvw_A.dll"
+	-@del /f/q "$(OUTDIR)\csvw_A.lib"
+	-@del /f/q "$(OUTDIR)\csvw_A.exp"
+	-@del /f/q "$(OUTDIR)\csvw_A.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\csvw_A\$(NULL)" mkdir "Release\csvw_A"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\csvw_A\$(NULL)" mkdir "Release\csvw_A"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -130,10 +130,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\byion.obj"
 
 "bin\csvw_A.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "bin\csvw_A.dll.manifest" mt.exe -manifest "bin\csvw_A.dll.manifest" -outputresource:$@;2
+	if exist "bin\csvw_A.dll.manifest" mt.exe -manifest "bin\csvw_A.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -153,15 +153,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\csvw_Asd.lib"
-        -@del /f/q "$(OUTDIR)\csvw_Asd.exp"
-        -@del /f/q "$(OUTDIR)\csvw_Asd.ilk"
+	-@del /f/q "$(OUTDIR)\csvw_Asd.lib"
+	-@del /f/q "$(OUTDIR)\csvw_Asd.exp"
+	-@del /f/q "$(OUTDIR)\csvw_Asd.ilk"
 	-@del /f/q "lib\csvw_Asd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\csvw_A\$(NULL)" mkdir "Static_Debug\csvw_A"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\csvw_A\$(NULL)" mkdir "Static_Debug\csvw_A"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd"lib\csvw_Asd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -176,10 +176,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\byion.obj"
 
 "$(OUTDIR)\csvw_Asd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\csvw_Asd.lib.manifest" mt.exe -manifest "$(OUTDIR)\csvw_Asd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\csvw_Asd.lib.manifest" mt.exe -manifest "$(OUTDIR)\csvw_Asd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -199,14 +199,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\csvw_As.lib"
-        -@del /f/q "$(OUTDIR)\csvw_As.exp"
-        -@del /f/q "$(OUTDIR)\csvw_As.ilk"
+	-@del /f/q "$(OUTDIR)\csvw_As.lib"
+	-@del /f/q "$(OUTDIR)\csvw_As.exp"
+	-@del /f/q "$(OUTDIR)\csvw_As.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\csvw_A\$(NULL)" mkdir "Static_Release\csvw_A"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\csvw_A\$(NULL)" mkdir "Static_Release\csvw_A"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -221,10 +221,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\byion.obj"
 
 "$(OUTDIR)\csvw_As.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\csvw_As.lib.manifest" mt.exe -manifest "$(OUTDIR)\csvw_As.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\csvw_As.lib.manifest" mt.exe -manifest "$(OUTDIR)\csvw_As.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -232,35 +232,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

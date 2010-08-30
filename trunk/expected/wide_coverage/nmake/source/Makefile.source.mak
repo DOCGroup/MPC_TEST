@@ -60,14 +60,14 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\main_testd.pdb"
-        -@del /f/q "$(INSTALLDIR)\main_testd.exe"
-        -@del /f/q "$(INSTALLDIR)\main_testd.ilk"
-        -@del /f/q "Foolish\foolish.txt"
+	-@del /f/q "$(INSTALLDIR)\main_testd.exe"
+	-@del /f/q "$(INSTALLDIR)\main_testd.ilk"
+	-@del /f/q "Foolish\foolish.txt"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\source\$(NULL)" mkdir "Debug\source"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\source\$(NULL)" mkdir "Debug\source"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
@@ -84,10 +84,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
 "$(INSTALLDIR)\main_testd.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main_testd.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_testd.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\main_testd.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_testd.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
@@ -111,14 +111,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\main_test.exe"
-        -@del /f/q "$(INSTALLDIR)\main_test.ilk"
-        -@del /f/q "Foolish\foolish.txt"
+	-@del /f/q "$(INSTALLDIR)\main_test.exe"
+	-@del /f/q "$(INSTALLDIR)\main_test.ilk"
+	-@del /f/q "Foolish\foolish.txt"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\source\$(NULL)" mkdir "Release\source"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\source\$(NULL)" mkdir "Release\source"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
@@ -135,10 +135,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
 "$(INSTALLDIR)\main_test.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main_test.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_test.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\main_test.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_test.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
@@ -163,14 +163,14 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\main_testsd.pdb"
-        -@del /f/q "$(INSTALLDIR)\main_testsd.exe"
-        -@del /f/q "$(INSTALLDIR)\main_testsd.ilk"
-        -@del /f/q "Foolish\foolish.txt"
+	-@del /f/q "$(INSTALLDIR)\main_testsd.exe"
+	-@del /f/q "$(INSTALLDIR)\main_testsd.ilk"
+	-@del /f/q "Foolish\foolish.txt"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\source\$(NULL)" mkdir "Static_Debug\source"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\source\$(NULL)" mkdir "Static_Debug\source"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
@@ -187,10 +187,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
 "$(INSTALLDIR)\main_testsd.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main_testsd.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_testsd.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\main_testsd.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_testsd.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
@@ -214,14 +214,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\main_tests.exe"
-        -@del /f/q "$(INSTALLDIR)\main_tests.ilk"
-        -@del /f/q "Foolish\foolish.txt"
+	-@del /f/q "$(INSTALLDIR)\main_tests.exe"
+	-@del /f/q "$(INSTALLDIR)\main_tests.ilk"
+	-@del /f/q "Foolish\foolish.txt"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\source\$(NULL)" mkdir "Static_Release\source"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\source\$(NULL)" mkdir "Static_Release\source"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
@@ -238,10 +238,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\exe\use_names\use_names.obj"
 
 "$(INSTALLDIR)\main_tests.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main_tests.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_tests.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\main_tests.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main_tests.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo main_test has been built
@@ -252,35 +252,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -315,7 +315,7 @@ SOURCE="Foolish/foolish.simple"
 InputPath=Foolish/foolish.simple
 
 "Foolish\foolish.txt" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-simple_files-Foolish_foolish_simple.bat
 	@echo off
 	echo Generated from "$(InputPath)" > "Foolish\foolish.txt"
 <<
@@ -326,7 +326,7 @@ SOURCE="Foolish/foolish.simple"
 InputPath=Foolish/foolish.simple
 
 "Foolish\foolish.txt" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-simple_files-Foolish_foolish_simple.bat
 	@echo off
 	echo Generated from "$(InputPath)" > "Foolish\foolish.txt"
 <<
@@ -337,7 +337,7 @@ SOURCE="Foolish/foolish.simple"
 InputPath=Foolish/foolish.simple
 
 "Foolish\foolish.txt" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-simple_files-Foolish_foolish_simple.bat
 	@echo off
 	echo Generated from "$(InputPath)" > "Foolish\foolish.txt"
 <<
@@ -348,7 +348,7 @@ SOURCE="Foolish/foolish.simple"
 InputPath=Foolish/foolish.simple
 
 "Foolish\foolish.txt" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-simple_files-Foolish_foolish_simple.bat
 	@echo off
 	echo Generated from "$(InputPath)" > "Foolish\foolish.txt"
 <<

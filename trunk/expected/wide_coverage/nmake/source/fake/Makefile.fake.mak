@@ -59,17 +59,17 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\faked.pdb"
-        -@del /f/q ".\faked.dll"
-        -@del /f/q "$(OUTDIR)\faked.lib"
-        -@del /f/q "$(OUTDIR)\faked.exp"
-        -@del /f/q "$(OUTDIR)\faked.ilk"
-        -@del /f/q ".\other.cpp"
-        -@del /f/q ".\other.h"
+	-@del /f/q ".\faked.dll"
+	-@del /f/q "$(OUTDIR)\faked.lib"
+	-@del /f/q "$(OUTDIR)\faked.exp"
+	-@del /f/q "$(OUTDIR)\faked.ilk"
+	-@del /f/q ".\other.cpp"
+	-@del /f/q ".\other.h"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\fake\$(NULL)" mkdir "Debug\fake"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\fake\$(NULL)" mkdir "Debug\fake"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -84,10 +84,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other.obj"
 
 ".\faked.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\faked.dll.manifest" mt.exe -manifest ".\faked.dll.manifest" -outputresource:$@;2
+	if exist ".\faked.dll.manifest" mt.exe -manifest ".\faked.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -107,17 +107,17 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\fake.dll"
-        -@del /f/q "$(OUTDIR)\fake.lib"
-        -@del /f/q "$(OUTDIR)\fake.exp"
-        -@del /f/q "$(OUTDIR)\fake.ilk"
-        -@del /f/q ".\other.cpp"
-        -@del /f/q ".\other.h"
+	-@del /f/q ".\fake.dll"
+	-@del /f/q "$(OUTDIR)\fake.lib"
+	-@del /f/q "$(OUTDIR)\fake.exp"
+	-@del /f/q "$(OUTDIR)\fake.ilk"
+	-@del /f/q ".\other.cpp"
+	-@del /f/q ".\other.h"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\fake\$(NULL)" mkdir "Release\fake"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\fake\$(NULL)" mkdir "Release\fake"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -132,10 +132,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other.obj"
 
 ".\fake.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\fake.dll.manifest" mt.exe -manifest ".\fake.dll.manifest" -outputresource:$@;2
+	if exist ".\fake.dll.manifest" mt.exe -manifest ".\fake.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -155,17 +155,17 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\fakesd.lib"
-        -@del /f/q "$(OUTDIR)\fakesd.exp"
-        -@del /f/q "$(OUTDIR)\fakesd.ilk"
+	-@del /f/q "$(OUTDIR)\fakesd.lib"
+	-@del /f/q "$(OUTDIR)\fakesd.exp"
+	-@del /f/q "$(OUTDIR)\fakesd.ilk"
 	-@del /f/q ".\fakesd.pdb"
-        -@del /f/q ".\other.cpp"
-        -@del /f/q ".\other.h"
+	-@del /f/q ".\other.cpp"
+	-@del /f/q ".\other.h"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\fake\$(NULL)" mkdir "Static_Debug\fake"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\fake\$(NULL)" mkdir "Static_Debug\fake"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\fakesd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -179,10 +179,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other.obj"
 
 "$(OUTDIR)\fakesd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\fakesd.lib.manifest" mt.exe -manifest "$(OUTDIR)\fakesd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\fakesd.lib.manifest" mt.exe -manifest "$(OUTDIR)\fakesd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -202,16 +202,16 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\fakes.lib"
-        -@del /f/q "$(OUTDIR)\fakes.exp"
-        -@del /f/q "$(OUTDIR)\fakes.ilk"
-        -@del /f/q ".\other.cpp"
-        -@del /f/q ".\other.h"
+	-@del /f/q "$(OUTDIR)\fakes.lib"
+	-@del /f/q "$(OUTDIR)\fakes.exp"
+	-@del /f/q "$(OUTDIR)\fakes.ilk"
+	-@del /f/q ".\other.cpp"
+	-@del /f/q ".\other.h"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\fake\$(NULL)" mkdir "Static_Release\fake"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\fake\$(NULL)" mkdir "Static_Release\fake"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -225,10 +225,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other.obj"
 
 "$(OUTDIR)\fakes.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\fakes.lib.manifest" mt.exe -manifest "$(OUTDIR)\fakes.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\fakes.lib.manifest" mt.exe -manifest "$(OUTDIR)\fakes.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -236,35 +236,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -286,7 +286,7 @@ SOURCE="..\..\other\other.r"
 InputPath=..\..\other\other.r
 
 ".\other.cpp" ".\other.h" : $(SOURCE)  "..\..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-cppgen_files-______other_other_r.bat
 	@echo off
         if not exist . mkdir .
 	perl ..\..\bin\cppgen.pl  "$(InputPath)" -o ".\other.cpp" ".\other.h"
@@ -298,7 +298,7 @@ SOURCE="..\..\other\other.r"
 InputPath=..\..\other\other.r
 
 ".\other.cpp" ".\other.h" : $(SOURCE)  "..\..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Release-cppgen_files-______other_other_r.bat
 	@echo off
         if not exist . mkdir .
 	perl ..\..\bin\cppgen.pl  "$(InputPath)" -o ".\other.cpp" ".\other.h"
@@ -310,7 +310,7 @@ SOURCE="..\..\other\other.r"
 InputPath=..\..\other\other.r
 
 ".\other.cpp" ".\other.h" : $(SOURCE)  "..\..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-cppgen_files-______other_other_r.bat
 	@echo off
         if not exist . mkdir .
 	perl ..\..\bin\cppgen.pl  "$(InputPath)" -o ".\other.cpp" ".\other.h"
@@ -322,7 +322,7 @@ SOURCE="..\..\other\other.r"
 InputPath=..\..\other\other.r
 
 ".\other.cpp" ".\other.h" : $(SOURCE)  "..\..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-cppgen_files-______other_other_r.bat
 	@echo off
         if not exist . mkdir .
 	perl ..\..\bin\cppgen.pl  "$(InputPath)" -o ".\other.cpp" ".\other.h"

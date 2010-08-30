@@ -60,16 +60,16 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\main.pdb"
-        -@del /f/q "$(INSTALLDIR)\main.exe"
-        -@del /f/q "$(INSTALLDIR)\main.ilk"
-        -@del /f/q "demo.h"
-        -@del /f/q "demo.cpp"
-        -@del /f/q "demo_moc.cpp"
+	-@del /f/q "$(INSTALLDIR)\main.exe"
+	-@del /f/q "$(INSTALLDIR)\main.ilk"
+	-@del /f/q "demo.h"
+	-@del /f/q "demo.cpp"
+	-@del /f/q "demo_moc.cpp"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\qt_uic_moc\$(NULL)" mkdir "Debug\qt_uic_moc"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\qt_uic_moc\$(NULL)" mkdir "Debug\qt_uic_moc"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(QTDIR)\include" /D _DEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
@@ -86,10 +86,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\main.obj"
 
 "$(INSTALLDIR)\main.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\main.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -110,16 +110,16 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\main.exe"
-        -@del /f/q "$(INSTALLDIR)\main.ilk"
-        -@del /f/q "demo.h"
-        -@del /f/q "demo.cpp"
-        -@del /f/q "demo_moc.cpp"
+	-@del /f/q "$(INSTALLDIR)\main.exe"
+	-@del /f/q "$(INSTALLDIR)\main.ilk"
+	-@del /f/q "demo.h"
+	-@del /f/q "demo.cpp"
+	-@del /f/q "demo_moc.cpp"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\qt_uic_moc\$(NULL)" mkdir "Release\qt_uic_moc"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\qt_uic_moc\$(NULL)" mkdir "Release\qt_uic_moc"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(QTDIR)\include" /D NDEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
@@ -136,10 +136,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\main.obj"
 
 "$(INSTALLDIR)\main.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\main.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -161,16 +161,16 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\main.pdb"
-        -@del /f/q "$(INSTALLDIR)\main.exe"
-        -@del /f/q "$(INSTALLDIR)\main.ilk"
-        -@del /f/q "demo.h"
-        -@del /f/q "demo.cpp"
-        -@del /f/q "demo_moc.cpp"
+	-@del /f/q "$(INSTALLDIR)\main.exe"
+	-@del /f/q "$(INSTALLDIR)\main.ilk"
+	-@del /f/q "demo.h"
+	-@del /f/q "demo.cpp"
+	-@del /f/q "demo_moc.cpp"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\qt_uic_moc\$(NULL)" mkdir "Static_Debug\qt_uic_moc"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\qt_uic_moc\$(NULL)" mkdir "Static_Debug\qt_uic_moc"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(QTDIR)\include" /D _DEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
@@ -187,10 +187,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\main.obj"
 
 "$(INSTALLDIR)\main.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\main.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -211,16 +211,16 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\main.exe"
-        -@del /f/q "$(INSTALLDIR)\main.ilk"
-        -@del /f/q "demo.h"
-        -@del /f/q "demo.cpp"
-        -@del /f/q "demo_moc.cpp"
+	-@del /f/q "$(INSTALLDIR)\main.exe"
+	-@del /f/q "$(INSTALLDIR)\main.ilk"
+	-@del /f/q "demo.h"
+	-@del /f/q "demo.cpp"
+	-@del /f/q "demo_moc.cpp"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\qt_uic_moc\$(NULL)" mkdir "Static_Release\qt_uic_moc"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\qt_uic_moc\$(NULL)" mkdir "Static_Release\qt_uic_moc"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(QTDIR)\include" /D NDEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
@@ -237,10 +237,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\main.obj"
 
 "$(INSTALLDIR)\main.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\main.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\main.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\main.exe.manifest" -outputresource:$@;1
 
 !ENDIF
 
@@ -248,35 +248,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -308,7 +308,7 @@ SOURCE="demo.ui"
 InputPath=demo.ui
 
 "demo.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-uic_files-demo_ui.bat
 	@echo off
 	$(QTDIR)\bin\uic  "$(InputPath)" -o "demo.h"
 <<
@@ -318,7 +318,7 @@ SOURCE="demo.ui"
 InputPath=demo.ui
 
 "demo.cpp" : $(SOURCE)  "demo.h"
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-uic_impl_files-demo_ui.bat
 	@echo off
 	$(QTDIR)\bin\uic -impl "demo.h" "$(InputPath)" -o "demo.cpp"
 <<
@@ -328,7 +328,7 @@ SOURCE="demo.h"
 InputPath=demo.h
 
 "demo_moc.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-moc_files-demo_h.bat
 	@echo off
 	$(QTDIR)\bin\moc  "$(InputPath)" -o "demo_moc.cpp"
 <<
@@ -339,7 +339,7 @@ SOURCE="demo.ui"
 InputPath=demo.ui
 
 "demo.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-uic_files-demo_ui.bat
 	@echo off
 	$(QTDIR)\bin\uic  "$(InputPath)" -o "demo.h"
 <<
@@ -349,7 +349,7 @@ SOURCE="demo.ui"
 InputPath=demo.ui
 
 "demo.cpp" : $(SOURCE)  "demo.h"
-	<<tempfile.bat
+	<<tempfile-Win32-Release-uic_impl_files-demo_ui.bat
 	@echo off
 	$(QTDIR)\bin\uic -impl "demo.h" "$(InputPath)" -o "demo.cpp"
 <<
@@ -359,7 +359,7 @@ SOURCE="demo.h"
 InputPath=demo.h
 
 "demo_moc.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-moc_files-demo_h.bat
 	@echo off
 	$(QTDIR)\bin\moc  "$(InputPath)" -o "demo_moc.cpp"
 <<
@@ -370,7 +370,7 @@ SOURCE="demo.ui"
 InputPath=demo.ui
 
 "demo.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-uic_files-demo_ui.bat
 	@echo off
 	$(QTDIR)\bin\uic  "$(InputPath)" -o "demo.h"
 <<
@@ -380,7 +380,7 @@ SOURCE="demo.ui"
 InputPath=demo.ui
 
 "demo.cpp" : $(SOURCE)  "demo.h"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-uic_impl_files-demo_ui.bat
 	@echo off
 	$(QTDIR)\bin\uic -impl "demo.h" "$(InputPath)" -o "demo.cpp"
 <<
@@ -390,7 +390,7 @@ SOURCE="demo.h"
 InputPath=demo.h
 
 "demo_moc.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-moc_files-demo_h.bat
 	@echo off
 	$(QTDIR)\bin\moc  "$(InputPath)" -o "demo_moc.cpp"
 <<
@@ -401,7 +401,7 @@ SOURCE="demo.ui"
 InputPath=demo.ui
 
 "demo.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-uic_files-demo_ui.bat
 	@echo off
 	$(QTDIR)\bin\uic  "$(InputPath)" -o "demo.h"
 <<
@@ -411,7 +411,7 @@ SOURCE="demo.ui"
 InputPath=demo.ui
 
 "demo.cpp" : $(SOURCE)  "demo.h"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-uic_impl_files-demo_ui.bat
 	@echo off
 	$(QTDIR)\bin\uic -impl "demo.h" "$(InputPath)" -o "demo.cpp"
 <<
@@ -421,7 +421,7 @@ SOURCE="demo.h"
 InputPath=demo.h
 
 "demo_moc.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-moc_files-demo_h.bat
 	@echo off
 	$(QTDIR)\bin\moc  "$(InputPath)" -o "demo_moc.cpp"
 <<

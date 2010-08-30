@@ -58,15 +58,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratord.lib"
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratord.exp"
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratord.ilk"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratord.lib"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratord.exp"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratord.ilk"
 	-@del /f/q ".\CIAO_RTNA_Configuratord.pdb"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\RTNA_Configurator\$(NULL)" mkdir "Debug\RTNA_Configurator"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\RTNA_Configurator\$(NULL)" mkdir "Debug\RTNA_Configurator"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd".\CIAO_RTNA_Configuratord.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -80,10 +80,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\CIAO_RTNA_Configuratord.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\CIAO_RTNA_Configuratord.lib.manifest" mt.exe -manifest "$(OUTDIR)\CIAO_RTNA_Configuratord.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\CIAO_RTNA_Configuratord.lib.manifest" mt.exe -manifest "$(OUTDIR)\CIAO_RTNA_Configuratord.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -103,14 +103,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurator.lib"
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurator.exp"
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurator.ilk"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurator.lib"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurator.exp"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurator.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\RTNA_Configurator\$(NULL)" mkdir "Release\RTNA_Configurator"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\RTNA_Configurator\$(NULL)" mkdir "Release\RTNA_Configurator"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -124,10 +124,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\CIAO_RTNA_Configurator.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\CIAO_RTNA_Configurator.lib.manifest" mt.exe -manifest "$(OUTDIR)\CIAO_RTNA_Configurator.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\CIAO_RTNA_Configurator.lib.manifest" mt.exe -manifest "$(OUTDIR)\CIAO_RTNA_Configurator.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -147,15 +147,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratorsd.lib"
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratorsd.exp"
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratorsd.ilk"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratorsd.lib"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratorsd.exp"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configuratorsd.ilk"
 	-@del /f/q ".\CIAO_RTNA_Configuratorsd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\RTNA_Configurator\$(NULL)" mkdir "Static_Debug\RTNA_Configurator"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\RTNA_Configurator\$(NULL)" mkdir "Static_Debug\RTNA_Configurator"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\CIAO_RTNA_Configuratorsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -169,10 +169,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\CIAO_RTNA_Configuratorsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\CIAO_RTNA_Configuratorsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\CIAO_RTNA_Configuratorsd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\CIAO_RTNA_Configuratorsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\CIAO_RTNA_Configuratorsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -192,14 +192,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurators.lib"
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurators.exp"
-        -@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurators.ilk"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurators.lib"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurators.exp"
+	-@del /f/q "$(OUTDIR)\CIAO_RTNA_Configurators.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\RTNA_Configurator\$(NULL)" mkdir "Static_Release\RTNA_Configurator"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\RTNA_Configurator\$(NULL)" mkdir "Static_Release\RTNA_Configurator"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -213,10 +213,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\CIAO_RTNA_Configurators.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\CIAO_RTNA_Configurators.lib.manifest" mt.exe -manifest "$(OUTDIR)\CIAO_RTNA_Configurators.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\CIAO_RTNA_Configurators.lib.manifest" mt.exe -manifest "$(OUTDIR)\CIAO_RTNA_Configurators.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -224,35 +224,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

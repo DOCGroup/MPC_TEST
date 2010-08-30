@@ -60,15 +60,15 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\G.pdb"
-        -@del /f/q "$(INSTALLDIR)\G.exe"
-        -@del /f/q "$(INSTALLDIR)\G.ilk"
-        -@del /f/q "clown.cpp"
-        -@del /f/q "clown.h"
+	-@del /f/q "$(INSTALLDIR)\G.exe"
+	-@del /f/q "$(INSTALLDIR)\G.ilk"
+	-@del /f/q "clown.cpp"
+	-@del /f/q "clown.h"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\grouping_G\$(NULL)" mkdir "Debug\grouping_G"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\grouping_G\$(NULL)" mkdir "Debug\grouping_G"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -85,10 +85,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other.obj"
 
 "$(INSTALLDIR)\G.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\G.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\G.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\G.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\G.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -109,15 +109,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\G.exe"
-        -@del /f/q "$(INSTALLDIR)\G.ilk"
-        -@del /f/q "clown.cpp"
-        -@del /f/q "clown.h"
+	-@del /f/q "$(INSTALLDIR)\G.exe"
+	-@del /f/q "$(INSTALLDIR)\G.ilk"
+	-@del /f/q "clown.cpp"
+	-@del /f/q "clown.h"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\grouping_G\$(NULL)" mkdir "Release\grouping_G"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\grouping_G\$(NULL)" mkdir "Release\grouping_G"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -134,10 +134,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other.obj"
 
 "$(INSTALLDIR)\G.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\G.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\G.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\G.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\G.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -159,15 +159,15 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\G.pdb"
-        -@del /f/q "$(INSTALLDIR)\G.exe"
-        -@del /f/q "$(INSTALLDIR)\G.ilk"
-        -@del /f/q "clown.cpp"
-        -@del /f/q "clown.h"
+	-@del /f/q "$(INSTALLDIR)\G.exe"
+	-@del /f/q "$(INSTALLDIR)\G.ilk"
+	-@del /f/q "clown.cpp"
+	-@del /f/q "clown.h"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\grouping_G\$(NULL)" mkdir "Static_Debug\grouping_G"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\grouping_G\$(NULL)" mkdir "Static_Debug\grouping_G"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -184,10 +184,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other.obj"
 
 "$(INSTALLDIR)\G.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\G.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\G.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\G.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\G.exe.manifest" -outputresource:$@;1
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -208,15 +208,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\G.exe"
-        -@del /f/q "$(INSTALLDIR)\G.ilk"
-        -@del /f/q "clown.cpp"
-        -@del /f/q "clown.h"
+	-@del /f/q "$(INSTALLDIR)\G.exe"
+	-@del /f/q "$(INSTALLDIR)\G.ilk"
+	-@del /f/q "clown.cpp"
+	-@del /f/q "clown.h"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\grouping_G\$(NULL)" mkdir "Static_Release\grouping_G"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\grouping_G\$(NULL)" mkdir "Static_Release\grouping_G"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -233,10 +233,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other.obj"
 
 "$(INSTALLDIR)\G.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\G.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\G.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\G.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\G.exe.manifest" -outputresource:$@;1
 
 !ENDIF
 
@@ -244,35 +244,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -305,7 +305,7 @@ SOURCE="clown.r"
 InputPath=clown.r
 
 "clown.cpp" "clown.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-cppgen_files-clown_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "clown.cpp" "clown.h"
 <<
@@ -316,7 +316,7 @@ SOURCE="clown.r"
 InputPath=clown.r
 
 "clown.cpp" "clown.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Release-cppgen_files-clown_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "clown.cpp" "clown.h"
 <<
@@ -327,7 +327,7 @@ SOURCE="clown.r"
 InputPath=clown.r
 
 "clown.cpp" "clown.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-cppgen_files-clown_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "clown.cpp" "clown.h"
 <<
@@ -338,7 +338,7 @@ SOURCE="clown.r"
 InputPath=clown.r
 
 "clown.cpp" "clown.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-cppgen_files-clown_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "clown.cpp" "clown.h"
 <<

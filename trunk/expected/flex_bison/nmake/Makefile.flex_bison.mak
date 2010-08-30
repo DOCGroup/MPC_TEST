@@ -59,18 +59,18 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\busd.pdb"
-        -@del /f/q ".\busd.dll"
-        -@del /f/q "$(OUTDIR)\busd.lib"
-        -@del /f/q "$(OUTDIR)\busd.exp"
-        -@del /f/q "$(OUTDIR)\busd.ilk"
-        -@del /f/q "bus.cpp"
-        -@del /f/q "bus.tab.c"
-        -@del /f/q "bus.tab.h"
+	-@del /f/q ".\busd.dll"
+	-@del /f/q "$(OUTDIR)\busd.lib"
+	-@del /f/q "$(OUTDIR)\busd.exp"
+	-@del /f/q "$(OUTDIR)\busd.ilk"
+	-@del /f/q "bus.cpp"
+	-@del /f/q "bus.tab.c"
+	-@del /f/q "bus.tab.h"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\flex_bison\$(NULL)" mkdir "Debug\flex_bison"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\flex_bison\$(NULL)" mkdir "Debug\flex_bison"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /O /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -86,10 +86,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\bus.tab.obj"
 
 ".\busd.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\busd.dll.manifest" mt.exe -manifest ".\busd.dll.manifest" -outputresource:$@;2
+	if exist ".\busd.dll.manifest" mt.exe -manifest ".\busd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -109,18 +109,18 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\bus.dll"
-        -@del /f/q "$(OUTDIR)\bus.lib"
-        -@del /f/q "$(OUTDIR)\bus.exp"
-        -@del /f/q "$(OUTDIR)\bus.ilk"
-        -@del /f/q "bus.cpp"
-        -@del /f/q "bus.tab.c"
-        -@del /f/q "bus.tab.h"
+	-@del /f/q ".\bus.dll"
+	-@del /f/q "$(OUTDIR)\bus.lib"
+	-@del /f/q "$(OUTDIR)\bus.exp"
+	-@del /f/q "$(OUTDIR)\bus.ilk"
+	-@del /f/q "bus.cpp"
+	-@del /f/q "bus.tab.c"
+	-@del /f/q "bus.tab.h"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\flex_bison\$(NULL)" mkdir "Release\flex_bison"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\flex_bison\$(NULL)" mkdir "Release\flex_bison"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /O /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -136,10 +136,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\bus.tab.obj"
 
 ".\bus.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\bus.dll.manifest" mt.exe -manifest ".\bus.dll.manifest" -outputresource:$@;2
+	if exist ".\bus.dll.manifest" mt.exe -manifest ".\bus.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -159,18 +159,18 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\bussd.lib"
-        -@del /f/q "$(OUTDIR)\bussd.exp"
-        -@del /f/q "$(OUTDIR)\bussd.ilk"
+	-@del /f/q "$(OUTDIR)\bussd.lib"
+	-@del /f/q "$(OUTDIR)\bussd.exp"
+	-@del /f/q "$(OUTDIR)\bussd.ilk"
 	-@del /f/q ".\bussd.pdb"
-        -@del /f/q "bus.cpp"
-        -@del /f/q "bus.tab.c"
-        -@del /f/q "bus.tab.h"
+	-@del /f/q "bus.cpp"
+	-@del /f/q "bus.tab.c"
+	-@del /f/q "bus.tab.h"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\flex_bison\$(NULL)" mkdir "Static_Debug\flex_bison"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\flex_bison\$(NULL)" mkdir "Static_Debug\flex_bison"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /O /Fd".\bussd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -185,10 +185,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\bus.tab.obj"
 
 "$(OUTDIR)\bussd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\bussd.lib.manifest" mt.exe -manifest "$(OUTDIR)\bussd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\bussd.lib.manifest" mt.exe -manifest "$(OUTDIR)\bussd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -208,17 +208,17 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\buss.lib"
-        -@del /f/q "$(OUTDIR)\buss.exp"
-        -@del /f/q "$(OUTDIR)\buss.ilk"
-        -@del /f/q "bus.cpp"
-        -@del /f/q "bus.tab.c"
-        -@del /f/q "bus.tab.h"
+	-@del /f/q "$(OUTDIR)\buss.lib"
+	-@del /f/q "$(OUTDIR)\buss.exp"
+	-@del /f/q "$(OUTDIR)\buss.ilk"
+	-@del /f/q "bus.cpp"
+	-@del /f/q "bus.tab.c"
+	-@del /f/q "bus.tab.h"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\flex_bison\$(NULL)" mkdir "Static_Release\flex_bison"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\flex_bison\$(NULL)" mkdir "Static_Release\flex_bison"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /O /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -233,10 +233,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\bus.tab.obj"
 
 "$(OUTDIR)\buss.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\buss.lib.manifest" mt.exe -manifest "$(OUTDIR)\buss.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\buss.lib.manifest" mt.exe -manifest "$(OUTDIR)\buss.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -244,35 +244,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -299,7 +299,7 @@ SOURCE="bus.l"
 InputPath=bus.l
 
 "bus.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-flex_files-bus_l.bat
 	@echo off
 	flex -t "$(InputPath)" > "bus.cpp"
 <<
@@ -309,7 +309,7 @@ SOURCE="bus.y"
 InputPath=bus.y
 
 "bus.tab.c" "bus.tab.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-bison_files-bus_y.bat
 	@echo off
 	bison -d "$(InputPath)"
 <<
@@ -320,7 +320,7 @@ SOURCE="bus.l"
 InputPath=bus.l
 
 "bus.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-flex_files-bus_l.bat
 	@echo off
 	flex -t "$(InputPath)" > "bus.cpp"
 <<
@@ -330,7 +330,7 @@ SOURCE="bus.y"
 InputPath=bus.y
 
 "bus.tab.c" "bus.tab.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-bison_files-bus_y.bat
 	@echo off
 	bison -d "$(InputPath)"
 <<
@@ -341,7 +341,7 @@ SOURCE="bus.l"
 InputPath=bus.l
 
 "bus.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-flex_files-bus_l.bat
 	@echo off
 	flex -t "$(InputPath)" > "bus.cpp"
 <<
@@ -351,7 +351,7 @@ SOURCE="bus.y"
 InputPath=bus.y
 
 "bus.tab.c" "bus.tab.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-bison_files-bus_y.bat
 	@echo off
 	bison -d "$(InputPath)"
 <<
@@ -362,7 +362,7 @@ SOURCE="bus.l"
 InputPath=bus.l
 
 "bus.cpp" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-flex_files-bus_l.bat
 	@echo off
 	flex -t "$(InputPath)" > "bus.cpp"
 <<
@@ -372,7 +372,7 @@ SOURCE="bus.y"
 InputPath=bus.y
 
 "bus.tab.c" "bus.tab.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-bison_files-bus_y.bat
 	@echo off
 	bison -d "$(InputPath)"
 <<

@@ -58,33 +58,33 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\d.lib"
-        -@del /f/q "$(OUTDIR)\d.exp"
-        -@del /f/q "$(OUTDIR)\d.ilk"
-        -@del /f/q "zar_thatA.cpp"
-        -@del /f/q "zar_thatA.h"
-        -@del /f/q "zar_thatA.inl"
-        -@del /f/q "zar_thatB.cpp"
-        -@del /f/q "zar_thatB.h"
-        -@del /f/q "zar_thatB.inl"
-        -@del /f/q "zar_thatC.cpp"
-        -@del /f/q "zar_thatC.h"
-        -@del /f/q "zar_thisA.cpp"
-        -@del /f/q "zar_thisA.h"
-        -@del /f/q "zar_thisA.inl"
-        -@del /f/q "zar_thisB.cpp"
-        -@del /f/q "zar_thisB.h"
-        -@del /f/q "zar_thisB.inl"
-        -@del /f/q "zar_thisB_T.cpp"
-        -@del /f/q "zar_thisB_T.h"
-        -@del /f/q "zar_thisB_T.inl"
-        -@del /f/q "zar_thisC.cpp"
-        -@del /f/q "zar_thisC.h"
+	-@del /f/q "$(OUTDIR)\d.lib"
+	-@del /f/q "$(OUTDIR)\d.exp"
+	-@del /f/q "$(OUTDIR)\d.ilk"
+	-@del /f/q "zar_thatA.cpp"
+	-@del /f/q "zar_thatA.h"
+	-@del /f/q "zar_thatA.inl"
+	-@del /f/q "zar_thatB.cpp"
+	-@del /f/q "zar_thatB.h"
+	-@del /f/q "zar_thatB.inl"
+	-@del /f/q "zar_thatC.cpp"
+	-@del /f/q "zar_thatC.h"
+	-@del /f/q "zar_thisA.cpp"
+	-@del /f/q "zar_thisA.h"
+	-@del /f/q "zar_thisA.inl"
+	-@del /f/q "zar_thisB.cpp"
+	-@del /f/q "zar_thisB.h"
+	-@del /f/q "zar_thisB.inl"
+	-@del /f/q "zar_thisB_T.cpp"
+	-@del /f/q "zar_thisB_T.h"
+	-@del /f/q "zar_thisB_T.inl"
+	-@del /f/q "zar_thisC.cpp"
+	-@del /f/q "zar_thisC.h"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\fco\$(NULL)" mkdir "Debug\fco"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\fco\$(NULL)" mkdir "Debug\fco"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -112,33 +112,33 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\.lib"
-        -@del /f/q "$(OUTDIR)\.exp"
-        -@del /f/q "$(OUTDIR)\.ilk"
-        -@del /f/q "zar_thatA.cpp"
-        -@del /f/q "zar_thatA.h"
-        -@del /f/q "zar_thatA.inl"
-        -@del /f/q "zar_thatB.cpp"
-        -@del /f/q "zar_thatB.h"
-        -@del /f/q "zar_thatB.inl"
-        -@del /f/q "zar_thatC.cpp"
-        -@del /f/q "zar_thatC.h"
-        -@del /f/q "zar_thisA.cpp"
-        -@del /f/q "zar_thisA.h"
-        -@del /f/q "zar_thisA.inl"
-        -@del /f/q "zar_thisB.cpp"
-        -@del /f/q "zar_thisB.h"
-        -@del /f/q "zar_thisB.inl"
-        -@del /f/q "zar_thisB_T.cpp"
-        -@del /f/q "zar_thisB_T.h"
-        -@del /f/q "zar_thisB_T.inl"
-        -@del /f/q "zar_thisC.cpp"
-        -@del /f/q "zar_thisC.h"
+	-@del /f/q "$(OUTDIR)\.lib"
+	-@del /f/q "$(OUTDIR)\.exp"
+	-@del /f/q "$(OUTDIR)\.ilk"
+	-@del /f/q "zar_thatA.cpp"
+	-@del /f/q "zar_thatA.h"
+	-@del /f/q "zar_thatA.inl"
+	-@del /f/q "zar_thatB.cpp"
+	-@del /f/q "zar_thatB.h"
+	-@del /f/q "zar_thatB.inl"
+	-@del /f/q "zar_thatC.cpp"
+	-@del /f/q "zar_thatC.h"
+	-@del /f/q "zar_thisA.cpp"
+	-@del /f/q "zar_thisA.h"
+	-@del /f/q "zar_thisA.inl"
+	-@del /f/q "zar_thisB.cpp"
+	-@del /f/q "zar_thisB.h"
+	-@del /f/q "zar_thisB.inl"
+	-@del /f/q "zar_thisB_T.cpp"
+	-@del /f/q "zar_thisB_T.h"
+	-@del /f/q "zar_thisB_T.inl"
+	-@del /f/q "zar_thisC.cpp"
+	-@del /f/q "zar_thisC.h"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\fco\$(NULL)" mkdir "Release\fco"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\fco\$(NULL)" mkdir "Release\fco"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -167,30 +167,30 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q ".\sd.pdb"
-        -@del /f/q "zar_thatA.cpp"
-        -@del /f/q "zar_thatA.h"
-        -@del /f/q "zar_thatA.inl"
-        -@del /f/q "zar_thatB.cpp"
-        -@del /f/q "zar_thatB.h"
-        -@del /f/q "zar_thatB.inl"
-        -@del /f/q "zar_thatC.cpp"
-        -@del /f/q "zar_thatC.h"
-        -@del /f/q "zar_thisA.cpp"
-        -@del /f/q "zar_thisA.h"
-        -@del /f/q "zar_thisA.inl"
-        -@del /f/q "zar_thisB.cpp"
-        -@del /f/q "zar_thisB.h"
-        -@del /f/q "zar_thisB.inl"
-        -@del /f/q "zar_thisB_T.cpp"
-        -@del /f/q "zar_thisB_T.h"
-        -@del /f/q "zar_thisB_T.inl"
-        -@del /f/q "zar_thisC.cpp"
-        -@del /f/q "zar_thisC.h"
+	-@del /f/q "zar_thatA.cpp"
+	-@del /f/q "zar_thatA.h"
+	-@del /f/q "zar_thatA.inl"
+	-@del /f/q "zar_thatB.cpp"
+	-@del /f/q "zar_thatB.h"
+	-@del /f/q "zar_thatB.inl"
+	-@del /f/q "zar_thatC.cpp"
+	-@del /f/q "zar_thatC.h"
+	-@del /f/q "zar_thisA.cpp"
+	-@del /f/q "zar_thisA.h"
+	-@del /f/q "zar_thisA.inl"
+	-@del /f/q "zar_thisB.cpp"
+	-@del /f/q "zar_thisB.h"
+	-@del /f/q "zar_thisB.inl"
+	-@del /f/q "zar_thisB_T.cpp"
+	-@del /f/q "zar_thisB_T.h"
+	-@del /f/q "zar_thisB_T.inl"
+	-@del /f/q "zar_thisC.cpp"
+	-@del /f/q "zar_thisC.h"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\fco\$(NULL)" mkdir "Static_Debug\fco"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\fco\$(NULL)" mkdir "Static_Debug\fco"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\sd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -217,30 +217,30 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "zar_thatA.cpp"
-        -@del /f/q "zar_thatA.h"
-        -@del /f/q "zar_thatA.inl"
-        -@del /f/q "zar_thatB.cpp"
-        -@del /f/q "zar_thatB.h"
-        -@del /f/q "zar_thatB.inl"
-        -@del /f/q "zar_thatC.cpp"
-        -@del /f/q "zar_thatC.h"
-        -@del /f/q "zar_thisA.cpp"
-        -@del /f/q "zar_thisA.h"
-        -@del /f/q "zar_thisA.inl"
-        -@del /f/q "zar_thisB.cpp"
-        -@del /f/q "zar_thisB.h"
-        -@del /f/q "zar_thisB.inl"
-        -@del /f/q "zar_thisB_T.cpp"
-        -@del /f/q "zar_thisB_T.h"
-        -@del /f/q "zar_thisB_T.inl"
-        -@del /f/q "zar_thisC.cpp"
-        -@del /f/q "zar_thisC.h"
+	-@del /f/q "zar_thatA.cpp"
+	-@del /f/q "zar_thatA.h"
+	-@del /f/q "zar_thatA.inl"
+	-@del /f/q "zar_thatB.cpp"
+	-@del /f/q "zar_thatB.h"
+	-@del /f/q "zar_thatB.inl"
+	-@del /f/q "zar_thatC.cpp"
+	-@del /f/q "zar_thatC.h"
+	-@del /f/q "zar_thisA.cpp"
+	-@del /f/q "zar_thisA.h"
+	-@del /f/q "zar_thisA.inl"
+	-@del /f/q "zar_thisB.cpp"
+	-@del /f/q "zar_thisB.h"
+	-@del /f/q "zar_thisB.inl"
+	-@del /f/q "zar_thisB_T.cpp"
+	-@del /f/q "zar_thisB_T.h"
+	-@del /f/q "zar_thisB_T.inl"
+	-@del /f/q "zar_thisC.cpp"
+	-@del /f/q "zar_thisC.h"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\fco\$(NULL)" mkdir "Static_Release\fco"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\fco\$(NULL)" mkdir "Static_Release\fco"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -255,35 +255,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -300,7 +300,7 @@ SOURCE="that.zar"
 InputPath=that.zar
 
 "zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" "zar_thatC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-zar_files-that_zar.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc "$(InputPath)"
 <<
@@ -310,7 +310,7 @@ SOURCE="this.zar"
 InputPath=this.zar
 
 "zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp" "zar_thisC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-zar_files-this_zar.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA "$(InputPath)"
 <<
@@ -321,7 +321,7 @@ SOURCE="that.zar"
 InputPath=that.zar
 
 "zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" "zar_thatC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-zar_files-that_zar.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc "$(InputPath)"
 <<
@@ -331,7 +331,7 @@ SOURCE="this.zar"
 InputPath=this.zar
 
 "zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp" "zar_thisC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-zar_files-this_zar.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA "$(InputPath)"
 <<
@@ -342,7 +342,7 @@ SOURCE="that.zar"
 InputPath=that.zar
 
 "zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" "zar_thatC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-zar_files-that_zar.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc "$(InputPath)"
 <<
@@ -352,7 +352,7 @@ SOURCE="this.zar"
 InputPath=this.zar
 
 "zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp" "zar_thisC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-zar_files-this_zar.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA "$(InputPath)"
 <<
@@ -363,7 +363,7 @@ SOURCE="that.zar"
 InputPath=that.zar
 
 "zar_thatA.cpp" "zar_thatA.h" "zar_thatA.inl" "zar_thatB.cpp" "zar_thatB.h" "zar_thatB.inl" "zar_thatC.cpp" "zar_thatC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-zar_files-that_zar.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA -Sc "$(InputPath)"
 <<
@@ -373,7 +373,7 @@ SOURCE="this.zar"
 InputPath=this.zar
 
 "zar_thisA.cpp" "zar_thisA.h" "zar_thisA.inl" "zar_thisB.cpp" "zar_thisB.h" "zar_thisB.inl" "zar_thisB_T.cpp" "zar_thisB_T.h" "zar_thisB_T.inl" "zar_thisC.cpp" "zar_thisC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-zar_files-this_zar.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GA "$(InputPath)"
 <<

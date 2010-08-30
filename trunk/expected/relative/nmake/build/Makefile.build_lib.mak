@@ -59,15 +59,15 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\build_libd.pdb"
-        -@del /f/q ".\build_libd.dll"
-        -@del /f/q "$(OUTDIR)\build_libd.lib"
-        -@del /f/q "$(OUTDIR)\build_libd.exp"
-        -@del /f/q "$(OUTDIR)\build_libd.ilk"
+	-@del /f/q ".\build_libd.dll"
+	-@del /f/q "$(OUTDIR)\build_libd.lib"
+	-@del /f/q "$(OUTDIR)\build_libd.exp"
+	-@del /f/q "$(OUTDIR)\build_libd.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\build_lib\$(NULL)" mkdir "Debug\build_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\build_lib\$(NULL)" mkdir "Debug\build_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -86,10 +86,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\lower\bar.obj"
 
 ".\build_libd.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\build_libd.dll.manifest" mt.exe -manifest ".\build_libd.dll.manifest" -outputresource:$@;2
+	if exist ".\build_libd.dll.manifest" mt.exe -manifest ".\build_libd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -109,15 +109,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\build_lib.dll"
-        -@del /f/q "$(OUTDIR)\build_lib.lib"
-        -@del /f/q "$(OUTDIR)\build_lib.exp"
-        -@del /f/q "$(OUTDIR)\build_lib.ilk"
+	-@del /f/q ".\build_lib.dll"
+	-@del /f/q "$(OUTDIR)\build_lib.lib"
+	-@del /f/q "$(OUTDIR)\build_lib.exp"
+	-@del /f/q "$(OUTDIR)\build_lib.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\build_lib\$(NULL)" mkdir "Release\build_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\build_lib\$(NULL)" mkdir "Release\build_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -136,10 +136,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\lower\bar.obj"
 
 ".\build_lib.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\build_lib.dll.manifest" mt.exe -manifest ".\build_lib.dll.manifest" -outputresource:$@;2
+	if exist ".\build_lib.dll.manifest" mt.exe -manifest ".\build_lib.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -159,15 +159,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\build_libsd.lib"
-        -@del /f/q "$(OUTDIR)\build_libsd.exp"
-        -@del /f/q "$(OUTDIR)\build_libsd.ilk"
+	-@del /f/q "$(OUTDIR)\build_libsd.lib"
+	-@del /f/q "$(OUTDIR)\build_libsd.exp"
+	-@del /f/q "$(OUTDIR)\build_libsd.ilk"
 	-@del /f/q ".\build_libsd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\build_lib\$(NULL)" mkdir "Static_Debug\build_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\build_lib\$(NULL)" mkdir "Static_Debug\build_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\build_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -184,10 +184,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\lower\bar.obj"
 
 "$(OUTDIR)\build_libsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\build_libsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\build_libsd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\build_libsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\build_libsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -207,14 +207,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\build_libs.lib"
-        -@del /f/q "$(OUTDIR)\build_libs.exp"
-        -@del /f/q "$(OUTDIR)\build_libs.ilk"
+	-@del /f/q "$(OUTDIR)\build_libs.lib"
+	-@del /f/q "$(OUTDIR)\build_libs.exp"
+	-@del /f/q "$(OUTDIR)\build_libs.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\build_lib\$(NULL)" mkdir "Static_Release\build_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\build_lib\$(NULL)" mkdir "Static_Release\build_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -231,10 +231,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\lower\bar.obj"
 
 "$(OUTDIR)\build_libs.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\build_libs.lib.manifest" mt.exe -manifest "$(OUTDIR)\build_libs.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\build_libs.lib.manifest" mt.exe -manifest "$(OUTDIR)\build_libs.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -242,35 +242,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -288,7 +288,7 @@ SOURCE="..\src\zzz_pch.cpp"
 CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
 "$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE)
-        @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
+	@if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\dotdot\src\zzz_pch.obj" $(SOURCE)
 <<
@@ -298,7 +298,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDI
 CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
 "$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE)
-        @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
+	@if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\dotdot\src\zzz_pch.obj" $(SOURCE)
 <<
@@ -308,7 +308,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32
 CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\build_libsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
 "$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE)
-        @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
+	@if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\dotdot\src\zzz_pch.obj" $(SOURCE)
 <<
@@ -318,7 +318,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\build
 CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\dotdot\src\zzz_pch.pch" /Yc"..\src\zzz_pch.h" /FD /c
 
 "$(INTDIR)\dotdot\src\zzz_pch.obj" "$(INTDIR)\dotdot\src\zzz_pch.pch" : $(SOURCE)
-        @if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
+	@if not exist "$(INTDIR)\dotdot\src\$(NULL)" mkdir "$(INTDIR)\dotdot\src\"
 	$(CPP) @<<
   $(CPP_SWITCHES) /Fo"$(INTDIR)\dotdot\src\zzz_pch.obj" $(SOURCE)
 <<

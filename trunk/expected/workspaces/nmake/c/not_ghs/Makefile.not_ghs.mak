@@ -59,15 +59,15 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\not_ghsd.pdb"
-        -@del /f/q ".\not_ghsd.dll"
-        -@del /f/q "$(OUTDIR)\not_ghsd.lib"
-        -@del /f/q "$(OUTDIR)\not_ghsd.exp"
-        -@del /f/q "$(OUTDIR)\not_ghsd.ilk"
+	-@del /f/q ".\not_ghsd.dll"
+	-@del /f/q "$(OUTDIR)\not_ghsd.lib"
+	-@del /f/q "$(OUTDIR)\not_ghsd.exp"
+	-@del /f/q "$(OUTDIR)\not_ghsd.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\not_ghs\$(NULL)" mkdir "Debug\not_ghs"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\not_ghs\$(NULL)" mkdir "Debug\not_ghs"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(SOMETHING)" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -82,10 +82,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 ".\not_ghsd.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\not_ghsd.dll.manifest" mt.exe -manifest ".\not_ghsd.dll.manifest" -outputresource:$@;2
+	if exist ".\not_ghsd.dll.manifest" mt.exe -manifest ".\not_ghsd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -105,15 +105,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\not_ghs.dll"
-        -@del /f/q "$(OUTDIR)\not_ghs.lib"
-        -@del /f/q "$(OUTDIR)\not_ghs.exp"
-        -@del /f/q "$(OUTDIR)\not_ghs.ilk"
+	-@del /f/q ".\not_ghs.dll"
+	-@del /f/q "$(OUTDIR)\not_ghs.lib"
+	-@del /f/q "$(OUTDIR)\not_ghs.exp"
+	-@del /f/q "$(OUTDIR)\not_ghs.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\not_ghs\$(NULL)" mkdir "Release\not_ghs"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\not_ghs\$(NULL)" mkdir "Release\not_ghs"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(SOMETHING)" /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -128,10 +128,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 ".\not_ghs.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\not_ghs.dll.manifest" mt.exe -manifest ".\not_ghs.dll.manifest" -outputresource:$@;2
+	if exist ".\not_ghs.dll.manifest" mt.exe -manifest ".\not_ghs.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -151,15 +151,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\not_ghssd.lib"
-        -@del /f/q "$(OUTDIR)\not_ghssd.exp"
-        -@del /f/q "$(OUTDIR)\not_ghssd.ilk"
+	-@del /f/q "$(OUTDIR)\not_ghssd.lib"
+	-@del /f/q "$(OUTDIR)\not_ghssd.exp"
+	-@del /f/q "$(OUTDIR)\not_ghssd.ilk"
 	-@del /f/q ".\not_ghssd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\not_ghs\$(NULL)" mkdir "Static_Debug\not_ghs"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\not_ghs\$(NULL)" mkdir "Static_Debug\not_ghs"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\not_ghssd.pdb" /I "$(SOMETHING)" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -173,10 +173,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\not_ghssd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\not_ghssd.lib.manifest" mt.exe -manifest "$(OUTDIR)\not_ghssd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\not_ghssd.lib.manifest" mt.exe -manifest "$(OUTDIR)\not_ghssd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -196,14 +196,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\not_ghss.lib"
-        -@del /f/q "$(OUTDIR)\not_ghss.exp"
-        -@del /f/q "$(OUTDIR)\not_ghss.ilk"
+	-@del /f/q "$(OUTDIR)\not_ghss.lib"
+	-@del /f/q "$(OUTDIR)\not_ghss.exp"
+	-@del /f/q "$(OUTDIR)\not_ghss.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\not_ghs\$(NULL)" mkdir "Static_Release\not_ghs"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\not_ghs\$(NULL)" mkdir "Static_Release\not_ghs"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(SOMETHING)" /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -217,10 +217,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\not_ghss.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\not_ghss.lib.manifest" mt.exe -manifest "$(OUTDIR)\not_ghss.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\not_ghss.lib.manifest" mt.exe -manifest "$(OUTDIR)\not_ghss.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -228,35 +228,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

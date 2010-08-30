@@ -58,26 +58,26 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\source_lib.lib"
-        -@del /f/q "$(OUTDIR)\source_lib.exp"
-        -@del /f/q "$(OUTDIR)\source_lib.ilk"
+	-@del /f/q "$(OUTDIR)\source_lib.lib"
+	-@del /f/q "$(OUTDIR)\source_lib.exp"
+	-@del /f/q "$(OUTDIR)\source_lib.ilk"
 	-@del /f/q "..\lib\source_lib.pdb"
-        -@del /f/q "cre\o.le\more_names.cpp"
-        -@del /f/q "cre\o.le\more_names.h"
-        -@del /f/q "names.cpp"
-        -@del /f/q "names.h"
-        -@del /f/q "TheCheat.cpp"
-        -@del /f/q "TheCheat.h"
-        -@del /f/q ".\bar.txt"
-        -@del /f/q ".\moop.hxx"
-        -@del /f/q ".\qwee.cxx"
-        -@del /f/q ".\qwee_T.C"
-        -@del /f/q ".\weer.inl"
+	-@del /f/q "cre\o.le\more_names.cpp"
+	-@del /f/q "cre\o.le\more_names.h"
+	-@del /f/q "names.cpp"
+	-@del /f/q "names.h"
+	-@del /f/q "TheCheat.cpp"
+	-@del /f/q "TheCheat.h"
+	-@del /f/q ".\bar.txt"
+	-@del /f/q ".\moop.hxx"
+	-@del /f/q ".\qwee.cxx"
+	-@del /f/q ".\qwee_T.C"
+	-@del /f/q ".\weer.inl"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\source_lib\$(NULL)" mkdir "Static_Debug\source_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\source_lib\$(NULL)" mkdir "Static_Debug\source_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -95,10 +95,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\TheCheat.obj"
 
 "$(OUTDIR)\source_lib.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -118,25 +118,25 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\source_lib.lib"
-        -@del /f/q "$(OUTDIR)\source_lib.exp"
-        -@del /f/q "$(OUTDIR)\source_lib.ilk"
-        -@del /f/q "cre\o.le\more_names.cpp"
-        -@del /f/q "cre\o.le\more_names.h"
-        -@del /f/q "names.cpp"
-        -@del /f/q "names.h"
-        -@del /f/q "TheCheat.cpp"
-        -@del /f/q "TheCheat.h"
-        -@del /f/q ".\bar.txt"
-        -@del /f/q ".\moop.hxx"
-        -@del /f/q ".\qwee.cxx"
-        -@del /f/q ".\qwee_T.C"
-        -@del /f/q ".\weer.inl"
+	-@del /f/q "$(OUTDIR)\source_lib.lib"
+	-@del /f/q "$(OUTDIR)\source_lib.exp"
+	-@del /f/q "$(OUTDIR)\source_lib.ilk"
+	-@del /f/q "cre\o.le\more_names.cpp"
+	-@del /f/q "cre\o.le\more_names.h"
+	-@del /f/q "names.cpp"
+	-@del /f/q "names.h"
+	-@del /f/q "TheCheat.cpp"
+	-@del /f/q "TheCheat.h"
+	-@del /f/q ".\bar.txt"
+	-@del /f/q ".\moop.hxx"
+	-@del /f/q ".\qwee.cxx"
+	-@del /f/q ".\qwee_T.C"
+	-@del /f/q ".\weer.inl"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\source_lib\$(NULL)" mkdir "Static_Release\source_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\source_lib\$(NULL)" mkdir "Static_Release\source_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -154,10 +154,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\TheCheat.obj"
 
 "$(OUTDIR)\source_lib.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -177,26 +177,26 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\source_lib.lib"
-        -@del /f/q "$(OUTDIR)\source_lib.exp"
-        -@del /f/q "$(OUTDIR)\source_lib.ilk"
+	-@del /f/q "$(OUTDIR)\source_lib.lib"
+	-@del /f/q "$(OUTDIR)\source_lib.exp"
+	-@del /f/q "$(OUTDIR)\source_lib.ilk"
 	-@del /f/q "..\lib\source_lib.pdb"
-        -@del /f/q "cre\o.le\more_names.cpp"
-        -@del /f/q "cre\o.le\more_names.h"
-        -@del /f/q "names.cpp"
-        -@del /f/q "names.h"
-        -@del /f/q "TheCheat.cpp"
-        -@del /f/q "TheCheat.h"
-        -@del /f/q ".\bar.txt"
-        -@del /f/q ".\moop.hxx"
-        -@del /f/q ".\qwee.cxx"
-        -@del /f/q ".\qwee_T.C"
-        -@del /f/q ".\weer.inl"
+	-@del /f/q "cre\o.le\more_names.cpp"
+	-@del /f/q "cre\o.le\more_names.h"
+	-@del /f/q "names.cpp"
+	-@del /f/q "names.h"
+	-@del /f/q "TheCheat.cpp"
+	-@del /f/q "TheCheat.h"
+	-@del /f/q ".\bar.txt"
+	-@del /f/q ".\moop.hxx"
+	-@del /f/q ".\qwee.cxx"
+	-@del /f/q ".\qwee_T.C"
+	-@del /f/q ".\weer.inl"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\source_lib\$(NULL)" mkdir "Static_Debug\source_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\source_lib\$(NULL)" mkdir "Static_Debug\source_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd"..\lib\source_lib.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -214,10 +214,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\TheCheat.obj"
 
 "$(OUTDIR)\source_lib.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -237,25 +237,25 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\source_lib.lib"
-        -@del /f/q "$(OUTDIR)\source_lib.exp"
-        -@del /f/q "$(OUTDIR)\source_lib.ilk"
-        -@del /f/q "cre\o.le\more_names.cpp"
-        -@del /f/q "cre\o.le\more_names.h"
-        -@del /f/q "names.cpp"
-        -@del /f/q "names.h"
-        -@del /f/q "TheCheat.cpp"
-        -@del /f/q "TheCheat.h"
-        -@del /f/q ".\bar.txt"
-        -@del /f/q ".\moop.hxx"
-        -@del /f/q ".\qwee.cxx"
-        -@del /f/q ".\qwee_T.C"
-        -@del /f/q ".\weer.inl"
+	-@del /f/q "$(OUTDIR)\source_lib.lib"
+	-@del /f/q "$(OUTDIR)\source_lib.exp"
+	-@del /f/q "$(OUTDIR)\source_lib.ilk"
+	-@del /f/q "cre\o.le\more_names.cpp"
+	-@del /f/q "cre\o.le\more_names.h"
+	-@del /f/q "names.cpp"
+	-@del /f/q "names.h"
+	-@del /f/q "TheCheat.cpp"
+	-@del /f/q "TheCheat.h"
+	-@del /f/q ".\bar.txt"
+	-@del /f/q ".\moop.hxx"
+	-@del /f/q ".\qwee.cxx"
+	-@del /f/q ".\qwee_T.C"
+	-@del /f/q ".\weer.inl"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\source_lib\$(NULL)" mkdir "Static_Release\source_lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\source_lib\$(NULL)" mkdir "Static_Release\source_lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -273,10 +273,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\TheCheat.obj"
 
 "$(OUTDIR)\source_lib.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\source_lib.lib.manifest" mt.exe -manifest "$(OUTDIR)\source_lib.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -284,35 +284,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -390,7 +390,7 @@ SOURCE="more_names.key"
 InputPath=more_names.key
 
 "cre\o.le\more_names.cpp" "cre\o.le\more_names.h" : $(SOURCE)  "..\bin\generator.exe"
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-gen_files-more_names_key.bat
 	@echo off
 	PATH=%PATH%;..\lib
         if not exist cre\o.le mkdir cre\o.le
@@ -406,7 +406,7 @@ SOURCE="names.key"
 InputPath=names.key
 
 "names.cpp" "names.h" : $(SOURCE)  "something" "..\bin\generator.exe"
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-gen_files-names_key.bat
 	@echo off
 	PATH=%PATH%;..\lib
 	..\bin\generator -n names "$(InputPath)"
@@ -421,7 +421,7 @@ SOURCE="TheCheat.r"
 InputPath=TheCheat.r
 
 "TheCheat.cpp" "TheCheat.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-cppgen_files-TheCheat_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "TheCheat.cpp" "TheCheat.h"
 	echo #include "source_lib_pch.h" > temporary.src
@@ -434,7 +434,7 @@ SOURCE="mondo\all.mondo"
 InputPath=mondo\all.mondo
 
 ".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl" : $(SOURCE)  "..\mondo\mondo.pl" "..\mondo\modules\ReaderGen.pm"
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-mondo_files-mondo_all_mondo.bat
 	@echo off
         if not exist . mkdir .
 	perl ..\mondo\mondo.pl -fake "$(InputPath)"
@@ -449,7 +449,7 @@ SOURCE="more_names.key"
 InputPath=more_names.key
 
 "cre\o.le\more_names.cpp" "cre\o.le\more_names.h" : $(SOURCE)  "..\bin\generator.exe"
-	<<tempfile.bat
+	<<tempfile-Win32-Release-gen_files-more_names_key.bat
 	@echo off
 	PATH=%PATH%;..\lib
         if not exist cre\o.le mkdir cre\o.le
@@ -465,7 +465,7 @@ SOURCE="names.key"
 InputPath=names.key
 
 "names.cpp" "names.h" : $(SOURCE)  "something" "..\bin\generator.exe"
-	<<tempfile.bat
+	<<tempfile-Win32-Release-gen_files-names_key.bat
 	@echo off
 	PATH=%PATH%;..\lib
 	..\bin\generator -n names "$(InputPath)"
@@ -480,7 +480,7 @@ SOURCE="TheCheat.r"
 InputPath=TheCheat.r
 
 "TheCheat.cpp" "TheCheat.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Release-cppgen_files-TheCheat_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "TheCheat.cpp" "TheCheat.h"
 	echo #include "source_lib_pch.h" > temporary.src
@@ -493,7 +493,7 @@ SOURCE="mondo\all.mondo"
 InputPath=mondo\all.mondo
 
 ".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl" : $(SOURCE)  "..\mondo\mondo.pl" "..\mondo\modules\ReaderGen.pm"
-	<<tempfile.bat
+	<<tempfile-Win32-Release-mondo_files-mondo_all_mondo.bat
 	@echo off
         if not exist . mkdir .
 	perl ..\mondo\mondo.pl -fake "$(InputPath)"
@@ -508,7 +508,7 @@ SOURCE="more_names.key"
 InputPath=more_names.key
 
 "cre\o.le\more_names.cpp" "cre\o.le\more_names.h" : $(SOURCE)  "..\bin\generator.exe"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-gen_files-more_names_key.bat
 	@echo off
 	PATH=%PATH%;..\lib
         if not exist cre\o.le mkdir cre\o.le
@@ -524,7 +524,7 @@ SOURCE="names.key"
 InputPath=names.key
 
 "names.cpp" "names.h" : $(SOURCE)  "something" "..\bin\generator.exe"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-gen_files-names_key.bat
 	@echo off
 	PATH=%PATH%;..\lib
 	..\bin\generator -n names "$(InputPath)"
@@ -539,7 +539,7 @@ SOURCE="TheCheat.r"
 InputPath=TheCheat.r
 
 "TheCheat.cpp" "TheCheat.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-cppgen_files-TheCheat_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "TheCheat.cpp" "TheCheat.h"
 	echo #include "source_lib_pch.h" > temporary.src
@@ -552,7 +552,7 @@ SOURCE="mondo\all.mondo"
 InputPath=mondo\all.mondo
 
 ".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl" : $(SOURCE)  "..\mondo\mondo.pl" "..\mondo\modules\ReaderGen.pm"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-mondo_files-mondo_all_mondo.bat
 	@echo off
         if not exist . mkdir .
 	perl ..\mondo\mondo.pl -fake "$(InputPath)"
@@ -567,7 +567,7 @@ SOURCE="more_names.key"
 InputPath=more_names.key
 
 "cre\o.le\more_names.cpp" "cre\o.le\more_names.h" : $(SOURCE)  "..\bin\generator.exe"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-gen_files-more_names_key.bat
 	@echo off
 	PATH=%PATH%;..\lib
         if not exist cre\o.le mkdir cre\o.le
@@ -583,7 +583,7 @@ SOURCE="names.key"
 InputPath=names.key
 
 "names.cpp" "names.h" : $(SOURCE)  "something" "..\bin\generator.exe"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-gen_files-names_key.bat
 	@echo off
 	PATH=%PATH%;..\lib
 	..\bin\generator -n names "$(InputPath)"
@@ -598,7 +598,7 @@ SOURCE="TheCheat.r"
 InputPath=TheCheat.r
 
 "TheCheat.cpp" "TheCheat.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-cppgen_files-TheCheat_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "TheCheat.cpp" "TheCheat.h"
 	echo #include "source_lib_pch.h" > temporary.src
@@ -611,7 +611,7 @@ SOURCE="mondo\all.mondo"
 InputPath=mondo\all.mondo
 
 ".\bar.txt" ".\moop.hxx" ".\qwee.cxx" ".\qwee_T.C" ".\weer.inl" : $(SOURCE)  "..\mondo\mondo.pl" "..\mondo\modules\ReaderGen.pm"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-mondo_files-mondo_all_mondo.bat
 	@echo off
         if not exist . mkdir .
 	perl ..\mondo\mondo.pl -fake "$(InputPath)"

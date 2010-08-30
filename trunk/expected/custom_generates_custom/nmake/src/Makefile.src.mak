@@ -59,18 +59,18 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\srcd.pdb"
-        -@del /f/q ".\srcd.dll"
-        -@del /f/q "$(OUTDIR)\srcd.lib"
-        -@del /f/q "$(OUTDIR)\srcd.exp"
-        -@del /f/q "$(OUTDIR)\srcd.ilk"
-        -@del /f/q "fire.crap.cpp"
-        -@del /f/q "fire.crap.h"
-        -@del /f/q "fire.crap.r"
+	-@del /f/q ".\srcd.dll"
+	-@del /f/q "$(OUTDIR)\srcd.lib"
+	-@del /f/q "$(OUTDIR)\srcd.exp"
+	-@del /f/q "$(OUTDIR)\srcd.ilk"
+	-@del /f/q "fire.crap.cpp"
+	-@del /f/q "fire.crap.h"
+	-@del /f/q "fire.crap.r"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\src\$(NULL)" mkdir "Debug\src"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\src\$(NULL)" mkdir "Debug\src"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -85,10 +85,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\fire.crap.obj"
 
 ".\srcd.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\srcd.dll.manifest" mt.exe -manifest ".\srcd.dll.manifest" -outputresource:$@;2
+	if exist ".\srcd.dll.manifest" mt.exe -manifest ".\srcd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -108,18 +108,18 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\src.dll"
-        -@del /f/q "$(OUTDIR)\src.lib"
-        -@del /f/q "$(OUTDIR)\src.exp"
-        -@del /f/q "$(OUTDIR)\src.ilk"
-        -@del /f/q "fire.crap.cpp"
-        -@del /f/q "fire.crap.h"
-        -@del /f/q "fire.crap.r"
+	-@del /f/q ".\src.dll"
+	-@del /f/q "$(OUTDIR)\src.lib"
+	-@del /f/q "$(OUTDIR)\src.exp"
+	-@del /f/q "$(OUTDIR)\src.ilk"
+	-@del /f/q "fire.crap.cpp"
+	-@del /f/q "fire.crap.h"
+	-@del /f/q "fire.crap.r"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\src\$(NULL)" mkdir "Release\src"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\src\$(NULL)" mkdir "Release\src"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -134,10 +134,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\fire.crap.obj"
 
 ".\src.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\src.dll.manifest" mt.exe -manifest ".\src.dll.manifest" -outputresource:$@;2
+	if exist ".\src.dll.manifest" mt.exe -manifest ".\src.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -157,18 +157,18 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\srcsd.lib"
-        -@del /f/q "$(OUTDIR)\srcsd.exp"
-        -@del /f/q "$(OUTDIR)\srcsd.ilk"
+	-@del /f/q "$(OUTDIR)\srcsd.lib"
+	-@del /f/q "$(OUTDIR)\srcsd.exp"
+	-@del /f/q "$(OUTDIR)\srcsd.ilk"
 	-@del /f/q ".\srcsd.pdb"
-        -@del /f/q "fire.crap.cpp"
-        -@del /f/q "fire.crap.h"
-        -@del /f/q "fire.crap.r"
+	-@del /f/q "fire.crap.cpp"
+	-@del /f/q "fire.crap.h"
+	-@del /f/q "fire.crap.r"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\src\$(NULL)" mkdir "Static_Debug\src"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\src\$(NULL)" mkdir "Static_Debug\src"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\srcsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -182,10 +182,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\fire.crap.obj"
 
 "$(OUTDIR)\srcsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\srcsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\srcsd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\srcsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\srcsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -205,17 +205,17 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\srcs.lib"
-        -@del /f/q "$(OUTDIR)\srcs.exp"
-        -@del /f/q "$(OUTDIR)\srcs.ilk"
-        -@del /f/q "fire.crap.cpp"
-        -@del /f/q "fire.crap.h"
-        -@del /f/q "fire.crap.r"
+	-@del /f/q "$(OUTDIR)\srcs.lib"
+	-@del /f/q "$(OUTDIR)\srcs.exp"
+	-@del /f/q "$(OUTDIR)\srcs.ilk"
+	-@del /f/q "fire.crap.cpp"
+	-@del /f/q "fire.crap.h"
+	-@del /f/q "fire.crap.r"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\src\$(NULL)" mkdir "Static_Release\src"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\src\$(NULL)" mkdir "Static_Release\src"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -229,10 +229,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\fire.crap.obj"
 
 "$(OUTDIR)\srcs.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\srcs.lib.manifest" mt.exe -manifest "$(OUTDIR)\srcs.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\srcs.lib.manifest" mt.exe -manifest "$(OUTDIR)\srcs.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -240,35 +240,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -290,7 +290,7 @@ SOURCE="fire.crap.r"
 InputPath=fire.crap.r
 
 "fire.crap.cpp" "fire.crap.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-cppgen_files-fire_crap_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "fire.crap.cpp" "fire.crap.h"
 <<
@@ -300,7 +300,7 @@ SOURCE="fire.ts"
 InputPath=fire.ts
 
 "fire.crap.r" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-rgen_files-fire_ts.bat
 	@echo off
 	echo  "$(InputPath)" > "fire.crap.r"
 <<
@@ -311,7 +311,7 @@ SOURCE="fire.crap.r"
 InputPath=fire.crap.r
 
 "fire.crap.cpp" "fire.crap.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Release-cppgen_files-fire_crap_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "fire.crap.cpp" "fire.crap.h"
 <<
@@ -321,7 +321,7 @@ SOURCE="fire.ts"
 InputPath=fire.ts
 
 "fire.crap.r" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-rgen_files-fire_ts.bat
 	@echo off
 	echo  "$(InputPath)" > "fire.crap.r"
 <<
@@ -332,7 +332,7 @@ SOURCE="fire.crap.r"
 InputPath=fire.crap.r
 
 "fire.crap.cpp" "fire.crap.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-cppgen_files-fire_crap_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "fire.crap.cpp" "fire.crap.h"
 <<
@@ -342,7 +342,7 @@ SOURCE="fire.ts"
 InputPath=fire.ts
 
 "fire.crap.r" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-rgen_files-fire_ts.bat
 	@echo off
 	echo  "$(InputPath)" > "fire.crap.r"
 <<
@@ -353,7 +353,7 @@ SOURCE="fire.crap.r"
 InputPath=fire.crap.r
 
 "fire.crap.cpp" "fire.crap.h" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-cppgen_files-fire_crap_r.bat
 	@echo off
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "fire.crap.cpp" "fire.crap.h"
 <<
@@ -363,7 +363,7 @@ SOURCE="fire.ts"
 InputPath=fire.ts
 
 "fire.crap.r" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-rgen_files-fire_ts.bat
 	@echo off
 	echo  "$(InputPath)" > "fire.crap.r"
 <<

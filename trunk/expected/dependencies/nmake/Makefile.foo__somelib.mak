@@ -59,15 +59,15 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\somelibd.pdb"
-        -@del /f/q ".\.libs\somelibd.dll"
-        -@del /f/q "$(OUTDIR)\somelibd.lib"
-        -@del /f/q "$(OUTDIR)\somelibd.exp"
-        -@del /f/q "$(OUTDIR)\somelibd.ilk"
+	-@del /f/q ".\.libs\somelibd.dll"
+	-@del /f/q "$(OUTDIR)\somelibd.lib"
+	-@del /f/q "$(OUTDIR)\somelibd.exp"
+	-@del /f/q "$(OUTDIR)\somelibd.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\foo__somelib\$(NULL)" mkdir "Debug\foo__somelib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\foo__somelib\$(NULL)" mkdir "Debug\foo__somelib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /D SOMETHING_BUILD_DLL  /FD /c
@@ -82,10 +82,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\something.obj"
 
 ".\.libs\somelibd.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\.libs\somelibd.dll.manifest" mt.exe -manifest ".\.libs\somelibd.dll.manifest" -outputresource:$@;2
+	if exist ".\.libs\somelibd.dll.manifest" mt.exe -manifest ".\.libs\somelibd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -105,15 +105,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\.libs\somelib.dll"
-        -@del /f/q "$(OUTDIR)\somelib.lib"
-        -@del /f/q "$(OUTDIR)\somelib.exp"
-        -@del /f/q "$(OUTDIR)\somelib.ilk"
+	-@del /f/q ".\.libs\somelib.dll"
+	-@del /f/q "$(OUTDIR)\somelib.lib"
+	-@del /f/q "$(OUTDIR)\somelib.exp"
+	-@del /f/q "$(OUTDIR)\somelib.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\foo__somelib\$(NULL)" mkdir "Release\foo__somelib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\foo__somelib\$(NULL)" mkdir "Release\foo__somelib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D SOMETHING_BUILD_DLL  /FD /c
@@ -128,10 +128,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\something.obj"
 
 ".\.libs\somelib.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\.libs\somelib.dll.manifest" mt.exe -manifest ".\.libs\somelib.dll.manifest" -outputresource:$@;2
+	if exist ".\.libs\somelib.dll.manifest" mt.exe -manifest ".\.libs\somelib.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -151,15 +151,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\somelibsd.lib"
-        -@del /f/q "$(OUTDIR)\somelibsd.exp"
-        -@del /f/q "$(OUTDIR)\somelibsd.ilk"
+	-@del /f/q "$(OUTDIR)\somelibsd.lib"
+	-@del /f/q "$(OUTDIR)\somelibsd.exp"
+	-@del /f/q "$(OUTDIR)\somelibsd.ilk"
 	-@del /f/q ".\.libs\somelibsd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\foo__somelib\$(NULL)" mkdir "Static_Debug\foo__somelib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\foo__somelib\$(NULL)" mkdir "Static_Debug\foo__somelib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\.libs\somelibsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D SOMETHING_AS_STATIC_LIBS  /FD /c
@@ -173,10 +173,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\something.obj"
 
 "$(OUTDIR)\somelibsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\somelibsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\somelibsd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\somelibsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\somelibsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -196,14 +196,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\somelibs.lib"
-        -@del /f/q "$(OUTDIR)\somelibs.exp"
-        -@del /f/q "$(OUTDIR)\somelibs.ilk"
+	-@del /f/q "$(OUTDIR)\somelibs.lib"
+	-@del /f/q "$(OUTDIR)\somelibs.exp"
+	-@del /f/q "$(OUTDIR)\somelibs.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\foo__somelib\$(NULL)" mkdir "Static_Release\foo__somelib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\foo__somelib\$(NULL)" mkdir "Static_Release\foo__somelib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D SOMETHING_AS_STATIC_LIBS  /FD /c
@@ -217,10 +217,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\something.obj"
 
 "$(OUTDIR)\somelibs.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\somelibs.lib.manifest" mt.exe -manifest "$(OUTDIR)\somelibs.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\somelibs.lib.manifest" mt.exe -manifest "$(OUTDIR)\somelibs.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -228,35 +228,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
