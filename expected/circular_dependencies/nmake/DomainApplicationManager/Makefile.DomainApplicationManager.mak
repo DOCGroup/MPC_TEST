@@ -58,15 +58,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\DomainApplicationManagerd.lib"
-        -@del /f/q "$(OUTDIR)\DomainApplicationManagerd.exp"
-        -@del /f/q "$(OUTDIR)\DomainApplicationManagerd.ilk"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManagerd.lib"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManagerd.exp"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManagerd.ilk"
 	-@del /f/q ".\DomainApplicationManagerd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\DomainApplicationManager\$(NULL)" mkdir "Debug\DomainApplicationManager"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\DomainApplicationManager\$(NULL)" mkdir "Debug\DomainApplicationManager"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd".\DomainApplicationManagerd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -80,10 +80,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\DomainApplicationManagerd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\DomainApplicationManagerd.lib.manifest" mt.exe -manifest "$(OUTDIR)\DomainApplicationManagerd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\DomainApplicationManagerd.lib.manifest" mt.exe -manifest "$(OUTDIR)\DomainApplicationManagerd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -103,14 +103,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\DomainApplicationManager.lib"
-        -@del /f/q "$(OUTDIR)\DomainApplicationManager.exp"
-        -@del /f/q "$(OUTDIR)\DomainApplicationManager.ilk"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManager.lib"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManager.exp"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManager.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\DomainApplicationManager\$(NULL)" mkdir "Release\DomainApplicationManager"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\DomainApplicationManager\$(NULL)" mkdir "Release\DomainApplicationManager"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -124,10 +124,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\DomainApplicationManager.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\DomainApplicationManager.lib.manifest" mt.exe -manifest "$(OUTDIR)\DomainApplicationManager.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\DomainApplicationManager.lib.manifest" mt.exe -manifest "$(OUTDIR)\DomainApplicationManager.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -147,15 +147,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\DomainApplicationManagersd.lib"
-        -@del /f/q "$(OUTDIR)\DomainApplicationManagersd.exp"
-        -@del /f/q "$(OUTDIR)\DomainApplicationManagersd.ilk"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManagersd.lib"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManagersd.exp"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManagersd.ilk"
 	-@del /f/q ".\DomainApplicationManagersd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\DomainApplicationManager\$(NULL)" mkdir "Static_Debug\DomainApplicationManager"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\DomainApplicationManager\$(NULL)" mkdir "Static_Debug\DomainApplicationManager"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\DomainApplicationManagersd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -169,10 +169,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\DomainApplicationManagersd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\DomainApplicationManagersd.lib.manifest" mt.exe -manifest "$(OUTDIR)\DomainApplicationManagersd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\DomainApplicationManagersd.lib.manifest" mt.exe -manifest "$(OUTDIR)\DomainApplicationManagersd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -192,14 +192,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\DomainApplicationManagers.lib"
-        -@del /f/q "$(OUTDIR)\DomainApplicationManagers.exp"
-        -@del /f/q "$(OUTDIR)\DomainApplicationManagers.ilk"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManagers.lib"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManagers.exp"
+	-@del /f/q "$(OUTDIR)\DomainApplicationManagers.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\DomainApplicationManager\$(NULL)" mkdir "Static_Release\DomainApplicationManager"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\DomainApplicationManager\$(NULL)" mkdir "Static_Release\DomainApplicationManager"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -213,10 +213,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\DomainApplicationManagers.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\DomainApplicationManagers.lib.manifest" mt.exe -manifest "$(OUTDIR)\DomainApplicationManagers.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\DomainApplicationManagers.lib.manifest" mt.exe -manifest "$(OUTDIR)\DomainApplicationManagers.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -224,35 +224,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

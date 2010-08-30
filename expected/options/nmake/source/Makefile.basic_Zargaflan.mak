@@ -60,13 +60,13 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\basic.pdb"
-        -@del /f/q "$(INSTALLDIR)\basic.exe"
-        -@del /f/q "$(INSTALLDIR)\basic.ilk"
+	-@del /f/q "$(INSTALLDIR)\basic.exe"
+	-@del /f/q "$(INSTALLDIR)\basic.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\basic_Zargaflan\$(NULL)" mkdir "Debug\basic_Zargaflan"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\basic_Zargaflan\$(NULL)" mkdir "Debug\basic_Zargaflan"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I ".." /D _DEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -81,10 +81,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\basic.obj"
 
 "$(INSTALLDIR)\basic.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo Hello There
@@ -108,13 +108,13 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\basic.exe"
-        -@del /f/q "$(INSTALLDIR)\basic.ilk"
+	-@del /f/q "$(INSTALLDIR)\basic.exe"
+	-@del /f/q "$(INSTALLDIR)\basic.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\basic_Zargaflan\$(NULL)" mkdir "Release\basic_Zargaflan"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\basic_Zargaflan\$(NULL)" mkdir "Release\basic_Zargaflan"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I ".." /D NDEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -129,10 +129,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\basic.obj"
 
 "$(INSTALLDIR)\basic.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo Hello There
@@ -157,13 +157,13 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\basic.pdb"
-        -@del /f/q "$(INSTALLDIR)\basic.exe"
-        -@del /f/q "$(INSTALLDIR)\basic.ilk"
+	-@del /f/q "$(INSTALLDIR)\basic.exe"
+	-@del /f/q "$(INSTALLDIR)\basic.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\basic_Zargaflan\$(NULL)" mkdir "Static_Debug\basic_Zargaflan"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\basic_Zargaflan\$(NULL)" mkdir "Static_Debug\basic_Zargaflan"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I ".." /D _DEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -178,10 +178,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\basic.obj"
 
 "$(INSTALLDIR)\basic.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo Hello There
@@ -205,13 +205,13 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\basic.exe"
-        -@del /f/q "$(INSTALLDIR)\basic.ilk"
+	-@del /f/q "$(INSTALLDIR)\basic.exe"
+	-@del /f/q "$(INSTALLDIR)\basic.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\basic_Zargaflan\$(NULL)" mkdir "Static_Release\basic_Zargaflan"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\basic_Zargaflan\$(NULL)" mkdir "Static_Release\basic_Zargaflan"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I ".." /D NDEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -226,10 +226,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\basic.obj"
 
 "$(INSTALLDIR)\basic.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\basic.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\basic.exe.manifest" -outputresource:$@;1
 
 __postbuild__:
 	@echo Hello There
@@ -240,35 +240,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

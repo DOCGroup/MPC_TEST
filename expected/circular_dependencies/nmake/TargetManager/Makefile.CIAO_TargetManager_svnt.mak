@@ -58,15 +58,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\TargetManager_svntd.lib"
-        -@del /f/q "$(OUTDIR)\TargetManager_svntd.exp"
-        -@del /f/q "$(OUTDIR)\TargetManager_svntd.ilk"
+	-@del /f/q "$(OUTDIR)\TargetManager_svntd.lib"
+	-@del /f/q "$(OUTDIR)\TargetManager_svntd.exp"
+	-@del /f/q "$(OUTDIR)\TargetManager_svntd.ilk"
 	-@del /f/q ".\TargetManager_svntd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\CIAO_TargetManager_svnt\$(NULL)" mkdir "Debug\CIAO_TargetManager_svnt"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\CIAO_TargetManager_svnt\$(NULL)" mkdir "Debug\CIAO_TargetManager_svnt"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd".\TargetManager_svntd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -80,10 +80,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\TargetManager_svntd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\TargetManager_svntd.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_svntd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\TargetManager_svntd.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_svntd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -103,14 +103,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\TargetManager_svnt.lib"
-        -@del /f/q "$(OUTDIR)\TargetManager_svnt.exp"
-        -@del /f/q "$(OUTDIR)\TargetManager_svnt.ilk"
+	-@del /f/q "$(OUTDIR)\TargetManager_svnt.lib"
+	-@del /f/q "$(OUTDIR)\TargetManager_svnt.exp"
+	-@del /f/q "$(OUTDIR)\TargetManager_svnt.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\CIAO_TargetManager_svnt\$(NULL)" mkdir "Release\CIAO_TargetManager_svnt"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\CIAO_TargetManager_svnt\$(NULL)" mkdir "Release\CIAO_TargetManager_svnt"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -124,10 +124,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\TargetManager_svnt.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\TargetManager_svnt.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_svnt.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\TargetManager_svnt.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_svnt.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -147,15 +147,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\TargetManager_svntsd.lib"
-        -@del /f/q "$(OUTDIR)\TargetManager_svntsd.exp"
-        -@del /f/q "$(OUTDIR)\TargetManager_svntsd.ilk"
+	-@del /f/q "$(OUTDIR)\TargetManager_svntsd.lib"
+	-@del /f/q "$(OUTDIR)\TargetManager_svntsd.exp"
+	-@del /f/q "$(OUTDIR)\TargetManager_svntsd.ilk"
 	-@del /f/q ".\TargetManager_svntsd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\CIAO_TargetManager_svnt\$(NULL)" mkdir "Static_Debug\CIAO_TargetManager_svnt"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\CIAO_TargetManager_svnt\$(NULL)" mkdir "Static_Debug\CIAO_TargetManager_svnt"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\TargetManager_svntsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -169,10 +169,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\TargetManager_svntsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\TargetManager_svntsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_svntsd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\TargetManager_svntsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_svntsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -192,14 +192,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\TargetManager_svnts.lib"
-        -@del /f/q "$(OUTDIR)\TargetManager_svnts.exp"
-        -@del /f/q "$(OUTDIR)\TargetManager_svnts.ilk"
+	-@del /f/q "$(OUTDIR)\TargetManager_svnts.lib"
+	-@del /f/q "$(OUTDIR)\TargetManager_svnts.exp"
+	-@del /f/q "$(OUTDIR)\TargetManager_svnts.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\CIAO_TargetManager_svnt\$(NULL)" mkdir "Static_Release\CIAO_TargetManager_svnt"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\CIAO_TargetManager_svnt\$(NULL)" mkdir "Static_Release\CIAO_TargetManager_svnt"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -213,10 +213,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\TargetManager_svnts.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\TargetManager_svnts.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_svnts.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\TargetManager_svnts.lib.manifest" mt.exe -manifest "$(OUTDIR)\TargetManager_svnts.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -224,35 +224,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

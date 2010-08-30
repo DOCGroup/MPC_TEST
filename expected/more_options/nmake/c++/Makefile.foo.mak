@@ -52,20 +52,20 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "C:\dev\mpc_test2\tests\more_options\c++\down\foo.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "C:\tao_builds\MPC_TEST\tests\more_options\c++\down\foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\food.pdb"
-        -@del /f/q ".\food.dll"
-        -@del /f/q "$(OUTDIR)\food.lib"
-        -@del /f/q "$(OUTDIR)\food.exp"
-        -@del /f/q "$(OUTDIR)\food.ilk"
+	-@del /f/q ".\food.dll"
+	-@del /f/q "$(OUTDIR)\food.lib"
+	-@del /f/q "$(OUTDIR)\food.exp"
+	-@del /f/q "$(OUTDIR)\food.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\foo\$(NULL)" mkdir "Debug\foo"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\foo\$(NULL)" mkdir "Debug\foo"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -80,10 +80,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\down\foo.obj"
 
 ".\food.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\food.dll.manifest" mt.exe -manifest ".\food.dll.manifest" -outputresource:$@;2
+	if exist ".\food.dll.manifest" mt.exe -manifest ".\food.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -99,19 +99,19 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "C:\dev\mpc_test2\tests\more_options\c++\down\foo.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "C:\tao_builds\MPC_TEST\tests\more_options\c++\down\foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\foo.dll"
-        -@del /f/q "$(OUTDIR)\foo.lib"
-        -@del /f/q "$(OUTDIR)\foo.exp"
-        -@del /f/q "$(OUTDIR)\foo.ilk"
+	-@del /f/q ".\foo.dll"
+	-@del /f/q "$(OUTDIR)\foo.lib"
+	-@del /f/q "$(OUTDIR)\foo.exp"
+	-@del /f/q "$(OUTDIR)\foo.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\foo\$(NULL)" mkdir "Release\foo"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\foo\$(NULL)" mkdir "Release\foo"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -126,10 +126,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\down\foo.obj"
 
 ".\foo.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\foo.dll.manifest" mt.exe -manifest ".\foo.dll.manifest" -outputresource:$@;2
+	if exist ".\foo.dll.manifest" mt.exe -manifest ".\foo.dll.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -137,35 +137,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -176,7 +176,7 @@ CLEAN :
 !ENDIF
 
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" 
-SOURCE="C:\dev\mpc_test2\tests\more_options\c++\down\foo.cpp"
+SOURCE="C:\tao_builds\MPC_TEST\tests\more_options\c++\down\foo.cpp"
 
 "$(INTDIR)\down\foo.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\down\$(NULL)" mkdir "$(INTDIR)\down\"

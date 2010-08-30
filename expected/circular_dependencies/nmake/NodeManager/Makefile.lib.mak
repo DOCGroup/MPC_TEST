@@ -58,15 +58,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\NodeManagerd.lib"
-        -@del /f/q "$(OUTDIR)\NodeManagerd.exp"
-        -@del /f/q "$(OUTDIR)\NodeManagerd.ilk"
+	-@del /f/q "$(OUTDIR)\NodeManagerd.lib"
+	-@del /f/q "$(OUTDIR)\NodeManagerd.exp"
+	-@del /f/q "$(OUTDIR)\NodeManagerd.ilk"
 	-@del /f/q ".\NodeManagerd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\lib\$(NULL)" mkdir "Debug\lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\lib\$(NULL)" mkdir "Debug\lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd".\NodeManagerd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -80,10 +80,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
 "$(OUTDIR)\NodeManagerd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\NodeManagerd.lib.manifest" mt.exe -manifest "$(OUTDIR)\NodeManagerd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\NodeManagerd.lib.manifest" mt.exe -manifest "$(OUTDIR)\NodeManagerd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -103,14 +103,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\NodeManager.lib"
-        -@del /f/q "$(OUTDIR)\NodeManager.exp"
-        -@del /f/q "$(OUTDIR)\NodeManager.ilk"
+	-@del /f/q "$(OUTDIR)\NodeManager.lib"
+	-@del /f/q "$(OUTDIR)\NodeManager.exp"
+	-@del /f/q "$(OUTDIR)\NodeManager.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\lib\$(NULL)" mkdir "Release\lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\lib\$(NULL)" mkdir "Release\lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -124,10 +124,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
 "$(OUTDIR)\NodeManager.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\NodeManager.lib.manifest" mt.exe -manifest "$(OUTDIR)\NodeManager.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\NodeManager.lib.manifest" mt.exe -manifest "$(OUTDIR)\NodeManager.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -147,15 +147,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\NodeManagersd.lib"
-        -@del /f/q "$(OUTDIR)\NodeManagersd.exp"
-        -@del /f/q "$(OUTDIR)\NodeManagersd.ilk"
+	-@del /f/q "$(OUTDIR)\NodeManagersd.lib"
+	-@del /f/q "$(OUTDIR)\NodeManagersd.exp"
+	-@del /f/q "$(OUTDIR)\NodeManagersd.ilk"
 	-@del /f/q ".\NodeManagersd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\lib\$(NULL)" mkdir "Static_Debug\lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\lib\$(NULL)" mkdir "Static_Debug\lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\NodeManagersd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -169,10 +169,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
 "$(OUTDIR)\NodeManagersd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\NodeManagersd.lib.manifest" mt.exe -manifest "$(OUTDIR)\NodeManagersd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\NodeManagersd.lib.manifest" mt.exe -manifest "$(OUTDIR)\NodeManagersd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -192,14 +192,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\NodeManagers.lib"
-        -@del /f/q "$(OUTDIR)\NodeManagers.exp"
-        -@del /f/q "$(OUTDIR)\NodeManagers.ilk"
+	-@del /f/q "$(OUTDIR)\NodeManagers.lib"
+	-@del /f/q "$(OUTDIR)\NodeManagers.exp"
+	-@del /f/q "$(OUTDIR)\NodeManagers.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\lib\$(NULL)" mkdir "Static_Release\lib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\lib\$(NULL)" mkdir "Static_Release\lib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -213,10 +213,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\two.obj"
 
 "$(OUTDIR)\NodeManagers.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\NodeManagers.lib.manifest" mt.exe -manifest "$(OUTDIR)\NodeManagers.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\NodeManagers.lib.manifest" mt.exe -manifest "$(OUTDIR)\NodeManagers.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -224,35 +224,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

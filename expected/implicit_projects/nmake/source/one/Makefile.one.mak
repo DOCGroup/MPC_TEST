@@ -58,15 +58,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\oned.lib"
-        -@del /f/q "$(OUTDIR)\oned.exp"
-        -@del /f/q "$(OUTDIR)\oned.ilk"
+	-@del /f/q "$(OUTDIR)\oned.lib"
+	-@del /f/q "$(OUTDIR)\oned.exp"
+	-@del /f/q "$(OUTDIR)\oned.ilk"
 	-@del /f/q "..\..\lib\oned.pdb"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\one\$(NULL)" mkdir "Debug\one"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\one\$(NULL)" mkdir "Debug\one"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"..\..\lib\oned.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D FAILURE_TRIGGER  /FD /c
@@ -80,10 +80,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\oned.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\oned.lib.manifest" mt.exe -manifest "$(OUTDIR)\oned.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\oned.lib.manifest" mt.exe -manifest "$(OUTDIR)\oned.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -103,14 +103,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\one.lib"
-        -@del /f/q "$(OUTDIR)\one.exp"
-        -@del /f/q "$(OUTDIR)\one.ilk"
+	-@del /f/q "$(OUTDIR)\one.lib"
+	-@del /f/q "$(OUTDIR)\one.exp"
+	-@del /f/q "$(OUTDIR)\one.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\one\$(NULL)" mkdir "Release\one"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\one\$(NULL)" mkdir "Release\one"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FAILURE_TRIGGER  /FD /c
@@ -124,10 +124,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\one.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\one.lib.manifest" mt.exe -manifest "$(OUTDIR)\one.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\one.lib.manifest" mt.exe -manifest "$(OUTDIR)\one.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -147,15 +147,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\onesd.lib"
-        -@del /f/q "$(OUTDIR)\onesd.exp"
-        -@del /f/q "$(OUTDIR)\onesd.ilk"
+	-@del /f/q "$(OUTDIR)\onesd.lib"
+	-@del /f/q "$(OUTDIR)\onesd.exp"
+	-@del /f/q "$(OUTDIR)\onesd.ilk"
 	-@del /f/q "..\..\lib\onesd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\one\$(NULL)" mkdir "Static_Debug\one"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\one\$(NULL)" mkdir "Static_Debug\one"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd"..\..\lib\onesd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D FAILURE_TRIGGER  /FD /c
@@ -169,10 +169,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\onesd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\onesd.lib.manifest" mt.exe -manifest "$(OUTDIR)\onesd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\onesd.lib.manifest" mt.exe -manifest "$(OUTDIR)\onesd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -192,14 +192,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\ones.lib"
-        -@del /f/q "$(OUTDIR)\ones.exp"
-        -@del /f/q "$(OUTDIR)\ones.ilk"
+	-@del /f/q "$(OUTDIR)\ones.lib"
+	-@del /f/q "$(OUTDIR)\ones.exp"
+	-@del /f/q "$(OUTDIR)\ones.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\one\$(NULL)" mkdir "Static_Release\one"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\one\$(NULL)" mkdir "Static_Release\one"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D FAILURE_TRIGGER  /FD /c
@@ -213,10 +213,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\ones.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\ones.lib.manifest" mt.exe -manifest "$(OUTDIR)\ones.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\ones.lib.manifest" mt.exe -manifest "$(OUTDIR)\ones.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -224,35 +224,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

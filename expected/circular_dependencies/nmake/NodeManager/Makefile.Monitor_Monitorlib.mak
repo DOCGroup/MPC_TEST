@@ -58,15 +58,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\ciaomonlibd.lib"
-        -@del /f/q "$(OUTDIR)\ciaomonlibd.exp"
-        -@del /f/q "$(OUTDIR)\ciaomonlibd.ilk"
+	-@del /f/q "$(OUTDIR)\ciaomonlibd.lib"
+	-@del /f/q "$(OUTDIR)\ciaomonlibd.exp"
+	-@del /f/q "$(OUTDIR)\ciaomonlibd.ilk"
 	-@del /f/q ".\ciaomonlibd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\Monitor_Monitorlib\$(NULL)" mkdir "Debug\Monitor_Monitorlib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\Monitor_Monitorlib\$(NULL)" mkdir "Debug\Monitor_Monitorlib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd".\ciaomonlibd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -80,10 +80,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\ciaomonlibd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\ciaomonlibd.lib.manifest" mt.exe -manifest "$(OUTDIR)\ciaomonlibd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\ciaomonlibd.lib.manifest" mt.exe -manifest "$(OUTDIR)\ciaomonlibd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -103,14 +103,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\ciaomonlib.lib"
-        -@del /f/q "$(OUTDIR)\ciaomonlib.exp"
-        -@del /f/q "$(OUTDIR)\ciaomonlib.ilk"
+	-@del /f/q "$(OUTDIR)\ciaomonlib.lib"
+	-@del /f/q "$(OUTDIR)\ciaomonlib.exp"
+	-@del /f/q "$(OUTDIR)\ciaomonlib.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\Monitor_Monitorlib\$(NULL)" mkdir "Release\Monitor_Monitorlib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\Monitor_Monitorlib\$(NULL)" mkdir "Release\Monitor_Monitorlib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -124,10 +124,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\ciaomonlib.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\ciaomonlib.lib.manifest" mt.exe -manifest "$(OUTDIR)\ciaomonlib.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\ciaomonlib.lib.manifest" mt.exe -manifest "$(OUTDIR)\ciaomonlib.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -147,15 +147,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\ciaomonlibsd.lib"
-        -@del /f/q "$(OUTDIR)\ciaomonlibsd.exp"
-        -@del /f/q "$(OUTDIR)\ciaomonlibsd.ilk"
+	-@del /f/q "$(OUTDIR)\ciaomonlibsd.lib"
+	-@del /f/q "$(OUTDIR)\ciaomonlibsd.exp"
+	-@del /f/q "$(OUTDIR)\ciaomonlibsd.ilk"
 	-@del /f/q ".\ciaomonlibsd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\Monitor_Monitorlib\$(NULL)" mkdir "Static_Debug\Monitor_Monitorlib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\Monitor_Monitorlib\$(NULL)" mkdir "Static_Debug\Monitor_Monitorlib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\ciaomonlibsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -169,10 +169,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\ciaomonlibsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\ciaomonlibsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\ciaomonlibsd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\ciaomonlibsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\ciaomonlibsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -192,14 +192,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\ciaomonlibs.lib"
-        -@del /f/q "$(OUTDIR)\ciaomonlibs.exp"
-        -@del /f/q "$(OUTDIR)\ciaomonlibs.ilk"
+	-@del /f/q "$(OUTDIR)\ciaomonlibs.lib"
+	-@del /f/q "$(OUTDIR)\ciaomonlibs.exp"
+	-@del /f/q "$(OUTDIR)\ciaomonlibs.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\Monitor_Monitorlib\$(NULL)" mkdir "Static_Release\Monitor_Monitorlib"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\Monitor_Monitorlib\$(NULL)" mkdir "Static_Release\Monitor_Monitorlib"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -213,10 +213,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\ciaomonlibs.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\ciaomonlibs.lib.manifest" mt.exe -manifest "$(OUTDIR)\ciaomonlibs.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\ciaomonlibs.lib.manifest" mt.exe -manifest "$(OUTDIR)\ciaomonlibs.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -224,35 +224,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

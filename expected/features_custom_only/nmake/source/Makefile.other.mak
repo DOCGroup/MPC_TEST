@@ -59,22 +59,22 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\otherd.pdb"
-        -@del /f/q ".\otherd.dll"
-        -@del /f/q "$(OUTDIR)\otherd.lib"
-        -@del /f/q "$(OUTDIR)\otherd.exp"
-        -@del /f/q "$(OUTDIR)\otherd.ilk"
-        -@del /f/q "other\zar_otherA.cpp"
-        -@del /f/q "other\zar_otherA.h"
-        -@del /f/q "other\zar_otherA.inl"
-        -@del /f/q "other\zar_otherB.cpp"
-        -@del /f/q "other\zar_otherB.h"
-        -@del /f/q "other\zar_otherB.inl"
-        -@del /f/q "other\zar_otherC.h"
+	-@del /f/q ".\otherd.dll"
+	-@del /f/q "$(OUTDIR)\otherd.lib"
+	-@del /f/q "$(OUTDIR)\otherd.exp"
+	-@del /f/q "$(OUTDIR)\otherd.ilk"
+	-@del /f/q "other\zar_otherA.cpp"
+	-@del /f/q "other\zar_otherA.h"
+	-@del /f/q "other\zar_otherA.inl"
+	-@del /f/q "other\zar_otherB.cpp"
+	-@del /f/q "other\zar_otherB.h"
+	-@del /f/q "other\zar_otherB.inl"
+	-@del /f/q "other\zar_otherC.h"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\other\$(NULL)" mkdir "Debug\other"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\other\$(NULL)" mkdir "Debug\other"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -90,10 +90,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other\zar_otherB.obj"
 
 ".\otherd.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\otherd.dll.manifest" mt.exe -manifest ".\otherd.dll.manifest" -outputresource:$@;2
+	if exist ".\otherd.dll.manifest" mt.exe -manifest ".\otherd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -113,22 +113,22 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\other.dll"
-        -@del /f/q "$(OUTDIR)\other.lib"
-        -@del /f/q "$(OUTDIR)\other.exp"
-        -@del /f/q "$(OUTDIR)\other.ilk"
-        -@del /f/q "other\zar_otherA.cpp"
-        -@del /f/q "other\zar_otherA.h"
-        -@del /f/q "other\zar_otherA.inl"
-        -@del /f/q "other\zar_otherB.cpp"
-        -@del /f/q "other\zar_otherB.h"
-        -@del /f/q "other\zar_otherB.inl"
-        -@del /f/q "other\zar_otherC.h"
+	-@del /f/q ".\other.dll"
+	-@del /f/q "$(OUTDIR)\other.lib"
+	-@del /f/q "$(OUTDIR)\other.exp"
+	-@del /f/q "$(OUTDIR)\other.ilk"
+	-@del /f/q "other\zar_otherA.cpp"
+	-@del /f/q "other\zar_otherA.h"
+	-@del /f/q "other\zar_otherA.inl"
+	-@del /f/q "other\zar_otherB.cpp"
+	-@del /f/q "other\zar_otherB.h"
+	-@del /f/q "other\zar_otherB.inl"
+	-@del /f/q "other\zar_otherC.h"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\other\$(NULL)" mkdir "Release\other"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\other\$(NULL)" mkdir "Release\other"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -144,10 +144,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other\zar_otherB.obj"
 
 ".\other.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\other.dll.manifest" mt.exe -manifest ".\other.dll.manifest" -outputresource:$@;2
+	if exist ".\other.dll.manifest" mt.exe -manifest ".\other.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -167,22 +167,22 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\othersd.lib"
-        -@del /f/q "$(OUTDIR)\othersd.exp"
-        -@del /f/q "$(OUTDIR)\othersd.ilk"
+	-@del /f/q "$(OUTDIR)\othersd.lib"
+	-@del /f/q "$(OUTDIR)\othersd.exp"
+	-@del /f/q "$(OUTDIR)\othersd.ilk"
 	-@del /f/q ".\othersd.pdb"
-        -@del /f/q "other\zar_otherA.cpp"
-        -@del /f/q "other\zar_otherA.h"
-        -@del /f/q "other\zar_otherA.inl"
-        -@del /f/q "other\zar_otherB.cpp"
-        -@del /f/q "other\zar_otherB.h"
-        -@del /f/q "other\zar_otherB.inl"
-        -@del /f/q "other\zar_otherC.h"
+	-@del /f/q "other\zar_otherA.cpp"
+	-@del /f/q "other\zar_otherA.h"
+	-@del /f/q "other\zar_otherA.inl"
+	-@del /f/q "other\zar_otherB.cpp"
+	-@del /f/q "other\zar_otherB.h"
+	-@del /f/q "other\zar_otherB.inl"
+	-@del /f/q "other\zar_otherC.h"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\other\$(NULL)" mkdir "Static_Debug\other"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\other\$(NULL)" mkdir "Static_Debug\other"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\othersd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -197,10 +197,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other\zar_otherB.obj"
 
 "$(OUTDIR)\othersd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\othersd.lib.manifest" mt.exe -manifest "$(OUTDIR)\othersd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\othersd.lib.manifest" mt.exe -manifest "$(OUTDIR)\othersd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -220,21 +220,21 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\others.lib"
-        -@del /f/q "$(OUTDIR)\others.exp"
-        -@del /f/q "$(OUTDIR)\others.ilk"
-        -@del /f/q "other\zar_otherA.cpp"
-        -@del /f/q "other\zar_otherA.h"
-        -@del /f/q "other\zar_otherA.inl"
-        -@del /f/q "other\zar_otherB.cpp"
-        -@del /f/q "other\zar_otherB.h"
-        -@del /f/q "other\zar_otherB.inl"
-        -@del /f/q "other\zar_otherC.h"
+	-@del /f/q "$(OUTDIR)\others.lib"
+	-@del /f/q "$(OUTDIR)\others.exp"
+	-@del /f/q "$(OUTDIR)\others.ilk"
+	-@del /f/q "other\zar_otherA.cpp"
+	-@del /f/q "other\zar_otherA.h"
+	-@del /f/q "other\zar_otherA.inl"
+	-@del /f/q "other\zar_otherB.cpp"
+	-@del /f/q "other\zar_otherB.h"
+	-@del /f/q "other\zar_otherB.inl"
+	-@del /f/q "other\zar_otherC.h"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\other\$(NULL)" mkdir "Static_Release\other"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\other\$(NULL)" mkdir "Static_Release\other"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -249,10 +249,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\other\zar_otherB.obj"
 
 "$(OUTDIR)\others.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\others.lib.manifest" mt.exe -manifest "$(OUTDIR)\others.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\others.lib.manifest" mt.exe -manifest "$(OUTDIR)\others.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -260,35 +260,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -317,7 +317,7 @@ SOURCE="other\other.poo"
 InputPath=other\other.poo
 
 "other\zar_otherA.cpp" "other\zar_otherA.h" "other\zar_otherA.inl" "other\zar_otherB.cpp" "other\zar_otherB.h" "other\zar_otherB.inl" "other\zar_otherC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-zar_files-other_other_poo.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GX -Sc "$(InputPath)"
 <<
@@ -328,7 +328,7 @@ SOURCE="other\other.poo"
 InputPath=other\other.poo
 
 "other\zar_otherA.cpp" "other\zar_otherA.h" "other\zar_otherA.inl" "other\zar_otherB.cpp" "other\zar_otherB.h" "other\zar_otherB.inl" "other\zar_otherC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Release-zar_files-other_other_poo.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GX -Sc "$(InputPath)"
 <<
@@ -339,7 +339,7 @@ SOURCE="other\other.poo"
 InputPath=other\other.poo
 
 "other\zar_otherA.cpp" "other\zar_otherA.h" "other\zar_otherA.inl" "other\zar_otherB.cpp" "other\zar_otherB.h" "other\zar_otherB.inl" "other\zar_otherC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-zar_files-other_other_poo.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GX -Sc "$(InputPath)"
 <<
@@ -350,7 +350,7 @@ SOURCE="other\other.poo"
 InputPath=other\other.poo
 
 "other\zar_otherA.cpp" "other\zar_otherA.h" "other\zar_otherA.inl" "other\zar_otherB.cpp" "other\zar_otherB.h" "other\zar_otherB.inl" "other\zar_otherC.h" : $(SOURCE) 
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-zar_files-other_other_poo.bat
 	@echo off
 	perl ..\bin\exercise.pl $(CLO_ZARFLAGS) -GX -Sc "$(InputPath)"
 <<

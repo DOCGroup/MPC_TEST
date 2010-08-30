@@ -794,6 +794,11 @@ sub run_test {
     $popt =~ s/\s+$//;
     close($fh);
   }
+
+  # Configure cdt6 to work as if it's on linux, even if running on Win32
+  $ENV{MPC_CDT_PLATFORMS} = 'linux';
+  $ENV{MPC_CDT_HOST_WIN32} = 0;
+
   my $CMD = -e 'MPC_ONLY' ? $MPC : $MWC;
   my $ret = system("$^X $popt " .
                    ($coverage ? "-MDevel::Cover=-db,$orig/cover_db " : '') .

@@ -59,19 +59,19 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\explicitd.pdb"
-        -@del /f/q ".\explicitd.dll"
-        -@del /f/q "$(OUTDIR)\explicitd.lib"
-        -@del /f/q "$(OUTDIR)\explicitd.exp"
-        -@del /f/q "$(OUTDIR)\explicitd.ilk"
-        -@del /f/q "down\crap.cpp"
-        -@del /f/q "down\crap.h"
-        -@del /f/q "down\crap.inl"
+	-@del /f/q ".\explicitd.dll"
+	-@del /f/q "$(OUTDIR)\explicitd.lib"
+	-@del /f/q "$(OUTDIR)\explicitd.exp"
+	-@del /f/q "$(OUTDIR)\explicitd.ilk"
+	-@del /f/q "down\crap.cpp"
+	-@del /f/q "down\crap.h"
+	-@del /f/q "down\crap.inl"
 	-rmdir /s/q down
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\explicit\$(NULL)" mkdir "Debug\explicit"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\explicit\$(NULL)" mkdir "Debug\explicit"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -87,10 +87,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 ".\explicitd.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\explicitd.dll.manifest" mt.exe -manifest ".\explicitd.dll.manifest" -outputresource:$@;2
+	if exist ".\explicitd.dll.manifest" mt.exe -manifest ".\explicitd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -110,19 +110,19 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\explicit.dll"
-        -@del /f/q "$(OUTDIR)\explicit.lib"
-        -@del /f/q "$(OUTDIR)\explicit.exp"
-        -@del /f/q "$(OUTDIR)\explicit.ilk"
-        -@del /f/q "down\crap.cpp"
-        -@del /f/q "down\crap.h"
-        -@del /f/q "down\crap.inl"
+	-@del /f/q ".\explicit.dll"
+	-@del /f/q "$(OUTDIR)\explicit.lib"
+	-@del /f/q "$(OUTDIR)\explicit.exp"
+	-@del /f/q "$(OUTDIR)\explicit.ilk"
+	-@del /f/q "down\crap.cpp"
+	-@del /f/q "down\crap.h"
+	-@del /f/q "down\crap.inl"
 	-rmdir /s/q down
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\explicit\$(NULL)" mkdir "Release\explicit"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\explicit\$(NULL)" mkdir "Release\explicit"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -138,10 +138,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 ".\explicit.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\explicit.dll.manifest" mt.exe -manifest ".\explicit.dll.manifest" -outputresource:$@;2
+	if exist ".\explicit.dll.manifest" mt.exe -manifest ".\explicit.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -161,19 +161,19 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\explicitsd.lib"
-        -@del /f/q "$(OUTDIR)\explicitsd.exp"
-        -@del /f/q "$(OUTDIR)\explicitsd.ilk"
+	-@del /f/q "$(OUTDIR)\explicitsd.lib"
+	-@del /f/q "$(OUTDIR)\explicitsd.exp"
+	-@del /f/q "$(OUTDIR)\explicitsd.ilk"
 	-@del /f/q ".\explicitsd.pdb"
-        -@del /f/q "down\crap.cpp"
-        -@del /f/q "down\crap.h"
-        -@del /f/q "down\crap.inl"
+	-@del /f/q "down\crap.cpp"
+	-@del /f/q "down\crap.h"
+	-@del /f/q "down\crap.inl"
 	-rmdir /s/q down
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\explicit\$(NULL)" mkdir "Static_Debug\explicit"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\explicit\$(NULL)" mkdir "Static_Debug\explicit"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\explicitsd.pdb" /I "." /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -188,10 +188,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\explicitsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\explicitsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\explicitsd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\explicitsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\explicitsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -211,18 +211,18 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\explicits.lib"
-        -@del /f/q "$(OUTDIR)\explicits.exp"
-        -@del /f/q "$(OUTDIR)\explicits.ilk"
-        -@del /f/q "down\crap.cpp"
-        -@del /f/q "down\crap.h"
-        -@del /f/q "down\crap.inl"
+	-@del /f/q "$(OUTDIR)\explicits.lib"
+	-@del /f/q "$(OUTDIR)\explicits.exp"
+	-@del /f/q "$(OUTDIR)\explicits.ilk"
+	-@del /f/q "down\crap.cpp"
+	-@del /f/q "down\crap.h"
+	-@del /f/q "down\crap.inl"
 	-rmdir /s/q down
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\explicit\$(NULL)" mkdir "Static_Release\explicit"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\explicit\$(NULL)" mkdir "Static_Release\explicit"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -237,10 +237,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\explicits.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\explicits.lib.manifest" mt.exe -manifest "$(OUTDIR)\explicits.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\explicits.lib.manifest" mt.exe -manifest "$(OUTDIR)\explicits.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -248,35 +248,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
@@ -304,7 +304,7 @@ SOURCE="crap.r"
 InputPath=crap.r
 
 "down\crap.cpp" "down\crap.h" "down\crap.inl" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Debug-cppgen_files-crap_r.bat
 	@echo off
         if not exist down mkdir down
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "down\crap.cpp" "down\crap.h" "down\crap.inl"
@@ -316,7 +316,7 @@ SOURCE="crap.r"
 InputPath=crap.r
 
 "down\crap.cpp" "down\crap.h" "down\crap.inl" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Release-cppgen_files-crap_r.bat
 	@echo off
         if not exist down mkdir down
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "down\crap.cpp" "down\crap.h" "down\crap.inl"
@@ -328,7 +328,7 @@ SOURCE="crap.r"
 InputPath=crap.r
 
 "down\crap.cpp" "down\crap.h" "down\crap.inl" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Debug-cppgen_files-crap_r.bat
 	@echo off
         if not exist down mkdir down
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "down\crap.cpp" "down\crap.h" "down\crap.inl"
@@ -340,7 +340,7 @@ SOURCE="crap.r"
 InputPath=crap.r
 
 "down\crap.cpp" "down\crap.h" "down\crap.inl" : $(SOURCE)  "..\bin\cppgen.pl"
-	<<tempfile.bat
+	<<tempfile-Win32-Static_Release-cppgen_files-crap_r.bat
 	@echo off
         if not exist down mkdir down
 	perl ..\bin\cppgen.pl  "$(InputPath)" -o "down\crap.cpp" "down\crap.h" "down\crap.inl"

@@ -59,15 +59,15 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\goodd.pdb"
-        -@del /f/q ".\goodd.dll"
-        -@del /f/q "$(OUTDIR)\goodd.lib"
-        -@del /f/q "$(OUTDIR)\goodd.exp"
-        -@del /f/q "$(OUTDIR)\goodd.ilk"
+	-@del /f/q ".\goodd.dll"
+	-@del /f/q "$(OUTDIR)\goodd.lib"
+	-@del /f/q "$(OUTDIR)\goodd.exp"
+	-@del /f/q "$(OUTDIR)\goodd.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\good\$(NULL)" mkdir "Debug\good"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\good\$(NULL)" mkdir "Debug\good"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(SOMETHING)" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -82,10 +82,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 ".\goodd.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\goodd.dll.manifest" mt.exe -manifest ".\goodd.dll.manifest" -outputresource:$@;2
+	if exist ".\goodd.dll.manifest" mt.exe -manifest ".\goodd.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -105,15 +105,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\good.dll"
-        -@del /f/q "$(OUTDIR)\good.lib"
-        -@del /f/q "$(OUTDIR)\good.exp"
-        -@del /f/q "$(OUTDIR)\good.ilk"
+	-@del /f/q ".\good.dll"
+	-@del /f/q "$(OUTDIR)\good.lib"
+	-@del /f/q "$(OUTDIR)\good.exp"
+	-@del /f/q "$(OUTDIR)\good.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\good\$(NULL)" mkdir "Release\good"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\good\$(NULL)" mkdir "Release\good"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(SOMETHING)" /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -128,10 +128,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 ".\good.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\good.dll.manifest" mt.exe -manifest ".\good.dll.manifest" -outputresource:$@;2
+	if exist ".\good.dll.manifest" mt.exe -manifest ".\good.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -151,15 +151,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\goodsd.lib"
-        -@del /f/q "$(OUTDIR)\goodsd.exp"
-        -@del /f/q "$(OUTDIR)\goodsd.ilk"
+	-@del /f/q "$(OUTDIR)\goodsd.lib"
+	-@del /f/q "$(OUTDIR)\goodsd.exp"
+	-@del /f/q "$(OUTDIR)\goodsd.ilk"
 	-@del /f/q ".\goodsd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\good\$(NULL)" mkdir "Static_Debug\good"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\good\$(NULL)" mkdir "Static_Debug\good"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\goodsd.pdb" /I "$(SOMETHING)" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -173,10 +173,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\goodsd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\goodsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\goodsd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\goodsd.lib.manifest" mt.exe -manifest "$(OUTDIR)\goodsd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -196,14 +196,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\goods.lib"
-        -@del /f/q "$(OUTDIR)\goods.exp"
-        -@del /f/q "$(OUTDIR)\goods.ilk"
+	-@del /f/q "$(OUTDIR)\goods.lib"
+	-@del /f/q "$(OUTDIR)\goods.exp"
+	-@del /f/q "$(OUTDIR)\goods.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\good\$(NULL)" mkdir "Static_Release\good"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\good\$(NULL)" mkdir "Static_Release\good"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(SOMETHING)" /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
@@ -217,10 +217,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 "$(OUTDIR)\goods.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\goods.lib.manifest" mt.exe -manifest "$(OUTDIR)\goods.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\goods.lib.manifest" mt.exe -manifest "$(OUTDIR)\goods.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -228,35 +228,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

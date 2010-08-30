@@ -59,15 +59,15 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\fco_used.pdb"
-        -@del /f/q ".\fco_used.dll"
-        -@del /f/q "$(OUTDIR)\fco_used.lib"
-        -@del /f/q "$(OUTDIR)\fco_used.exp"
-        -@del /f/q "$(OUTDIR)\fco_used.ilk"
+	-@del /f/q ".\fco_used.dll"
+	-@del /f/q "$(OUTDIR)\fco_used.lib"
+	-@del /f/q "$(OUTDIR)\fco_used.exp"
+	-@del /f/q "$(OUTDIR)\fco_used.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\fco_use\$(NULL)" mkdir "Debug\fco_use"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\fco_use\$(NULL)" mkdir "Debug\fco_use"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /D THAT_THERE_MACRO  /FD /c
@@ -83,10 +83,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\zar_thisC.obj"
 
 ".\fco_used.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\fco_used.dll.manifest" mt.exe -manifest ".\fco_used.dll.manifest" -outputresource:$@;2
+	if exist ".\fco_used.dll.manifest" mt.exe -manifest ".\fco_used.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -106,15 +106,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\fco_use.dll"
-        -@del /f/q "$(OUTDIR)\fco_use.lib"
-        -@del /f/q "$(OUTDIR)\fco_use.exp"
-        -@del /f/q "$(OUTDIR)\fco_use.ilk"
+	-@del /f/q ".\fco_use.dll"
+	-@del /f/q "$(OUTDIR)\fco_use.lib"
+	-@del /f/q "$(OUTDIR)\fco_use.exp"
+	-@del /f/q "$(OUTDIR)\fco_use.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\fco_use\$(NULL)" mkdir "Release\fco_use"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\fco_use\$(NULL)" mkdir "Release\fco_use"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D THAT_THERE_MACRO  /FD /c
@@ -130,10 +130,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\zar_thisC.obj"
 
 ".\fco_use.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\fco_use.dll.manifest" mt.exe -manifest ".\fco_use.dll.manifest" -outputresource:$@;2
+	if exist ".\fco_use.dll.manifest" mt.exe -manifest ".\fco_use.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
@@ -153,15 +153,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\fco_usesd.lib"
-        -@del /f/q "$(OUTDIR)\fco_usesd.exp"
-        -@del /f/q "$(OUTDIR)\fco_usesd.ilk"
+	-@del /f/q "$(OUTDIR)\fco_usesd.lib"
+	-@del /f/q "$(OUTDIR)\fco_usesd.exp"
+	-@del /f/q "$(OUTDIR)\fco_usesd.ilk"
 	-@del /f/q ".\fco_usesd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\fco_use\$(NULL)" mkdir "Static_Debug\fco_use"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\fco_use\$(NULL)" mkdir "Static_Debug\fco_use"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\fco_usesd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D THAT_THERE_MACRO  /FD /c
@@ -176,10 +176,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\zar_thisC.obj"
 
 "$(OUTDIR)\fco_usesd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\fco_usesd.lib.manifest" mt.exe -manifest "$(OUTDIR)\fco_usesd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\fco_usesd.lib.manifest" mt.exe -manifest "$(OUTDIR)\fco_usesd.lib.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
@@ -199,14 +199,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\fco_uses.lib"
-        -@del /f/q "$(OUTDIR)\fco_uses.exp"
-        -@del /f/q "$(OUTDIR)\fco_uses.ilk"
+	-@del /f/q "$(OUTDIR)\fco_uses.lib"
+	-@del /f/q "$(OUTDIR)\fco_uses.exp"
+	-@del /f/q "$(OUTDIR)\fco_uses.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\fco_use\$(NULL)" mkdir "Static_Release\fco_use"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\fco_use\$(NULL)" mkdir "Static_Release\fco_use"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D THAT_THERE_MACRO  /FD /c
@@ -221,10 +221,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\zar_thisC.obj"
 
 "$(OUTDIR)\fco_uses.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\fco_uses.lib.manifest" mt.exe -manifest "$(OUTDIR)\fco_uses.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\fco_uses.lib.manifest" mt.exe -manifest "$(OUTDIR)\fco_uses.lib.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -232,35 +232,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

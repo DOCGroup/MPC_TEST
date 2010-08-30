@@ -59,15 +59,15 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(OUTDIR)\generator_bed.pdb"
-        -@del /f/q "..\lib\generator_bed.dll"
-        -@del /f/q "$(OUTDIR)\generator_bed.lib"
-        -@del /f/q "$(OUTDIR)\generator_bed.exp"
-        -@del /f/q "$(OUTDIR)\generator_bed.ilk"
+	-@del /f/q "..\lib\generator_bed.dll"
+	-@del /f/q "$(OUTDIR)\generator_bed.lib"
+	-@del /f/q "$(OUTDIR)\generator_bed.exp"
+	-@del /f/q "$(OUTDIR)\generator_bed.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\generator_be\$(NULL)" mkdir "Debug\generator_be"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\generator_be\$(NULL)" mkdir "Debug\generator_be"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS /D GENERATOR_BE_BUILD_DLL  /FD /c
@@ -82,10 +82,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator_be.obj"
 
 "..\lib\generator_bed.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "..\lib\generator_bed.dll.manifest" mt.exe -manifest "..\lib\generator_bed.dll.manifest" -outputresource:$@;2
+	if exist "..\lib\generator_bed.dll.manifest" mt.exe -manifest "..\lib\generator_bed.dll.manifest" -outputresource:$@;2
 
 __prebuild__:
 	@echo Building generator_be
@@ -108,15 +108,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "..\lib\generator_be.dll"
-        -@del /f/q "$(OUTDIR)\generator_be.lib"
-        -@del /f/q "$(OUTDIR)\generator_be.exp"
-        -@del /f/q "$(OUTDIR)\generator_be.ilk"
+	-@del /f/q "..\lib\generator_be.dll"
+	-@del /f/q "$(OUTDIR)\generator_be.lib"
+	-@del /f/q "$(OUTDIR)\generator_be.exp"
+	-@del /f/q "$(OUTDIR)\generator_be.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\generator_be\$(NULL)" mkdir "Release\generator_be"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\generator_be\$(NULL)" mkdir "Release\generator_be"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D GENERATOR_BE_BUILD_DLL  /FD /c
@@ -131,10 +131,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator_be.obj"
 
 "..\lib\generator_be.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "..\lib\generator_be.dll.manifest" mt.exe -manifest "..\lib\generator_be.dll.manifest" -outputresource:$@;2
+	if exist "..\lib\generator_be.dll.manifest" mt.exe -manifest "..\lib\generator_be.dll.manifest" -outputresource:$@;2
 
 __prebuild__:
 	@echo Building generator_be
@@ -157,15 +157,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\generator_besd.lib"
-        -@del /f/q "$(OUTDIR)\generator_besd.exp"
-        -@del /f/q "$(OUTDIR)\generator_besd.ilk"
+	-@del /f/q "$(OUTDIR)\generator_besd.lib"
+	-@del /f/q "$(OUTDIR)\generator_besd.exp"
+	-@del /f/q "$(OUTDIR)\generator_besd.ilk"
 	-@del /f/q "..\lib\generator_besd.pdb"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\generator_be\$(NULL)" mkdir "Static_Debug\generator_be"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\generator_be\$(NULL)" mkdir "Static_Debug\generator_be"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd"..\lib\generator_besd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS /D GENERATOR_BE_AS_STATIC_LIBS  /FD /c
@@ -179,10 +179,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator_be.obj"
 
 "$(OUTDIR)\generator_besd.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\generator_besd.lib.manifest" mt.exe -manifest "$(OUTDIR)\generator_besd.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\generator_besd.lib.manifest" mt.exe -manifest "$(OUTDIR)\generator_besd.lib.manifest" -outputresource:$@;2
 
 __prebuild__:
 	@echo Building generator_be
@@ -205,14 +205,14 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(OUTDIR)\generator_bes.lib"
-        -@del /f/q "$(OUTDIR)\generator_bes.exp"
-        -@del /f/q "$(OUTDIR)\generator_bes.ilk"
+	-@del /f/q "$(OUTDIR)\generator_bes.lib"
+	-@del /f/q "$(OUTDIR)\generator_bes.exp"
+	-@del /f/q "$(OUTDIR)\generator_bes.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\generator_be\$(NULL)" mkdir "Static_Release\generator_be"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\generator_be\$(NULL)" mkdir "Static_Release\generator_be"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS /D GENERATOR_BE_AS_STATIC_LIBS  /FD /c
@@ -226,10 +226,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator_be.obj"
 
 "$(OUTDIR)\generator_bes.lib" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(OUTDIR)\generator_bes.lib.manifest" mt.exe -manifest "$(OUTDIR)\generator_bes.lib.manifest" -outputresource:$@;2
+	if exist "$(OUTDIR)\generator_bes.lib.manifest" mt.exe -manifest "$(OUTDIR)\generator_bes.lib.manifest" -outputresource:$@;2
 
 __prebuild__:
 	@echo Building generator_be
@@ -240,35 +240,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

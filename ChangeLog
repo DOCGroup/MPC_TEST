@@ -1,3 +1,14 @@
+Mon Aug 30 19:29:31 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/*/nmake/*:
+
+          Re-generated nmake results based on the MPC change:
+          Mon Aug 30 19:21:23 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * run_tests.pl:
+
+          Set environment variables to force -type cdt6 into Linux mode.
+
 Mon Aug 30 18:39:12 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/implicit_resources/cdt6/dir3/cdt_dir3/.cproject:

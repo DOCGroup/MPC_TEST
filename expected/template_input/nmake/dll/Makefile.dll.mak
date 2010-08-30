@@ -65,15 +65,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\dlld.dll"
-        -@del /f/q "$(OUTDIR)\dlld.lib"
-        -@del /f/q "$(OUTDIR)\dlld.exp"
-        -@del /f/q "$(OUTDIR)\dlld.ilk"
+	-@del /f/q ".\dlld.dll"
+	-@del /f/q "$(OUTDIR)\dlld.lib"
+	-@del /f/q "$(OUTDIR)\dlld.exp"
+	-@del /f/q "$(OUTDIR)\dlld.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\dll\$(NULL)" mkdir "Debug\dll"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\dll\$(NULL)" mkdir "Debug\dll"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/nologo /Ob0  /I "crapday" /I ".." /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /c
@@ -88,10 +88,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 ".\dlld.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\dlld.dll.manifest" mt.exe -manifest ".\dlld.dll.manifest" -outputresource:$@;2
+	if exist ".\dlld.dll.manifest" mt.exe -manifest ".\dlld.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
@@ -111,15 +111,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\dll.dll"
-        -@del /f/q "$(OUTDIR)\dll.lib"
-        -@del /f/q "$(OUTDIR)\dll.exp"
-        -@del /f/q "$(OUTDIR)\dll.ilk"
+	-@del /f/q ".\dll.dll"
+	-@del /f/q "$(OUTDIR)\dll.lib"
+	-@del /f/q "$(OUTDIR)\dll.exp"
+	-@del /f/q "$(OUTDIR)\dll.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\dll\$(NULL)" mkdir "Release\dll"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\dll\$(NULL)" mkdir "Release\dll"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/nologo /O2  /I "crapday" /I ".." /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /c
@@ -134,10 +134,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 ".\dll.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\dll.dll.manifest" mt.exe -manifest ".\dll.dll.manifest" -outputresource:$@;2
+	if exist ".\dll.dll.manifest" mt.exe -manifest ".\dll.dll.manifest" -outputresource:$@;2
 
 !ENDIF
 !IF  "$(CFG)" == "x64 Debug"
@@ -158,15 +158,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\dlld.dll"
-        -@del /f/q "$(OUTDIR)\dlld.lib"
-        -@del /f/q "$(OUTDIR)\dlld.exp"
-        -@del /f/q "$(OUTDIR)\dlld.ilk"
+	-@del /f/q ".\dlld.dll"
+	-@del /f/q "$(OUTDIR)\dlld.lib"
+	-@del /f/q "$(OUTDIR)\dlld.exp"
+	-@del /f/q "$(OUTDIR)\dlld.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\dll\$(NULL)" mkdir "Debug\dll"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\dll\$(NULL)" mkdir "Debug\dll"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/nologo /Ob0  /I "crapday" /I ".." /D _DEBUG /D _AMD64_ /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _WIN64  /FD /c
@@ -181,10 +181,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 ".\dlld.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\dlld.dll.manifest" mt.exe -manifest ".\dlld.dll.manifest" -outputresource:$@;2
+	if exist ".\dlld.dll.manifest" mt.exe -manifest ".\dlld.dll.manifest" -outputresource:$@;2
 
 !ELSEIF  "$(CFG)" == "x64 Release"
 
@@ -204,15 +204,15 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q ".\dll.dll"
-        -@del /f/q "$(OUTDIR)\dll.lib"
-        -@del /f/q "$(OUTDIR)\dll.exp"
-        -@del /f/q "$(OUTDIR)\dll.ilk"
+	-@del /f/q ".\dll.dll"
+	-@del /f/q "$(OUTDIR)\dll.lib"
+	-@del /f/q "$(OUTDIR)\dll.exp"
+	-@del /f/q "$(OUTDIR)\dll.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\dll\$(NULL)" mkdir "Release\dll"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\dll\$(NULL)" mkdir "Release\dll"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/nologo /O2  /I "crapday" /I ".." /D NDEBUG /D _AMD64_ /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _WIN64  /FD /c
@@ -227,10 +227,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\foo.obj"
 
 ".\dll.dll" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist ".\dll.dll.manifest" mt.exe -manifest ".\dll.dll.manifest" -outputresource:$@;2
+	if exist ".\dll.dll.manifest" mt.exe -manifest ".\dll.dll.manifest" -outputresource:$@;2
 
 !ENDIF
 
@@ -238,35 +238,35 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 

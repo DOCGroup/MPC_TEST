@@ -60,13 +60,13 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\generator.pdb"
-        -@del /f/q "$(INSTALLDIR)\generator.exe"
-        -@del /f/q "$(INSTALLDIR)\generator.ilk"
+	-@del /f/q "$(INSTALLDIR)\generator.exe"
+	-@del /f/q "$(INSTALLDIR)\generator.ilk"
 
 "$(INTDIR)" :
-    if not exist "Debug\$(NULL)" mkdir "Debug"
-    if not exist "Debug\generator\$(NULL)" mkdir "Debug\generator"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Debug\$(NULL)" mkdir "Debug"
+	if not exist "Debug\generator\$(NULL)" mkdir "Debug\generator"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -82,10 +82,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator.obj"
 
 "$(INSTALLDIR)\generator.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
 __prebuild__:
 	@echo Building generator
@@ -109,13 +109,13 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\generator.exe"
-        -@del /f/q "$(INSTALLDIR)\generator.ilk"
+	-@del /f/q "$(INSTALLDIR)\generator.exe"
+	-@del /f/q "$(INSTALLDIR)\generator.ilk"
 
 "$(INTDIR)" :
-    if not exist "Release\$(NULL)" mkdir "Release"
-    if not exist "Release\generator\$(NULL)" mkdir "Release\generator"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Release\$(NULL)" mkdir "Release"
+	if not exist "Release\generator\$(NULL)" mkdir "Release\generator"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _CONSOLE  /FD /c
@@ -131,10 +131,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator.obj"
 
 "$(INSTALLDIR)\generator.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
 __prebuild__:
 	@echo Building generator
@@ -159,13 +159,13 @@ DEPEND :
 
 REALCLEAN : CLEAN
 	-@del /f/q "$(INSTALLDIR)\generator.pdb"
-        -@del /f/q "$(INSTALLDIR)\generator.exe"
-        -@del /f/q "$(INSTALLDIR)\generator.ilk"
+	-@del /f/q "$(INSTALLDIR)\generator.exe"
+	-@del /f/q "$(INSTALLDIR)\generator.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
-    if not exist "Static_Debug\generator\$(NULL)" mkdir "Static_Debug\generator"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Debug\$(NULL)" mkdir "Static_Debug"
+	if not exist "Static_Debug\generator\$(NULL)" mkdir "Static_Debug\generator"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _CONSOLE /D GENERATOR_BE_AS_STATIC_LIBS  /FD /c
@@ -181,10 +181,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator.obj"
 
 "$(INSTALLDIR)\generator.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
 __prebuild__:
 	@echo Building generator
@@ -208,13 +208,13 @@ DEPEND :
 !ENDIF
 
 REALCLEAN : CLEAN
-        -@del /f/q "$(INSTALLDIR)\generator.exe"
-        -@del /f/q "$(INSTALLDIR)\generator.ilk"
+	-@del /f/q "$(INSTALLDIR)\generator.exe"
+	-@del /f/q "$(INSTALLDIR)\generator.ilk"
 
 "$(INTDIR)" :
-    if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
-    if not exist "Static_Release\generator\$(NULL)" mkdir "Static_Release\generator"
-    if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
+	if not exist "Static_Release\$(NULL)" mkdir "Static_Release"
+	if not exist "Static_Release\generator\$(NULL)" mkdir "Static_Release\generator"
+	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
 CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _CONSOLE /D GENERATOR_BE_AS_STATIC_LIBS  /FD /c
@@ -230,10 +230,10 @@ LINK32_OBJS= \
 	"$(INTDIR)\generator.obj"
 
 "$(INSTALLDIR)\generator.exe" : $(DEF_FILE) $(LINK32_OBJS)
-    $(LINK32) @<<
+	$(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
-    if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
+	if exist "$(INSTALLDIR)\generator.exe.manifest" mt.exe -manifest "$(INSTALLDIR)\generator.exe.manifest" -outputresource:$@;1
 
 __prebuild__:
 	@echo Building generator
@@ -244,38 +244,38 @@ CLEAN :
 	-@del /f/s/q "$(INTDIR)"
 
 "$(INSTALLDIR)" :
-    if not exist "$(INSTALLDIR)\$(NULL)" mkdir "$(INSTALLDIR)"
+	if not exist "$(INSTALLDIR)\$(NULL)" mkdir "$(INSTALLDIR)"
 
 "$(OUTDIR)" :
-    if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
+	if not exist "$(OUTDIR)\$(NULL)" mkdir "$(OUTDIR)"
 
 .c{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.obj::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .c{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cpp{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
 .cxx{$(INTDIR)}.sbr::
-   $(CPP) @<<
+	$(CPP) @<<
    $(CPP_PROJ) $<
 <<
 
