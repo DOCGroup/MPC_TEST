@@ -1,3 +1,15 @@
+Mon Aug 30 21:47:57 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/conditional_specific_verbatim_wildcards/vc10/*:
+        * expected/conditional_specific_verbatim_wildcards/vc9/*:
+
+          Re-generated based on the change below:
+
+        * tests/conditional_specific_verbatim_wildcards/source/csvw.mpc:
+
+          Use prop:windows instead of listing individual types, this accounts
+          for vc9 and vc10 which were previously excluded.
+
 Mon Aug 30 19:29:31 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/*/nmake/*:
