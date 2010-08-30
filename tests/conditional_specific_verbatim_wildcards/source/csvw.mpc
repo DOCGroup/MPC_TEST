@@ -47,14 +47,14 @@ project(*B) {
 
   Source_Files {
     ! *b*.c*
-    conditional(bmake, cbx, em3, nmake, vc6, vc7, vc71, vc8) {
+    conditional(prop:windows) {
       conditional/windows.cpp
     } else {
       conditional/unix.cpp
     }
   }
 
-  specific(bmake, cbx, em3, nmake, vc6, vc7, vc71, vc8) {
+  specific(prop:windows) {
     macros += ONLY_WINDOWS
   } else {
     macros += ONLY_MAKE ONLY_UNIX
@@ -73,12 +73,12 @@ project(*C) {
 
   Source_Files {
     !  bleer.cpp
-    conditional(!bmake, !cbx, !em3, !nmake, !vc6, !vc7, !vc71, !vc8) {
+    conditional(!prop:windows) {
       conditional/unix.cpp
     }
   }
 
-  specific(!bmake, !cbx, !em3, !nmake, !vc6, !vc7, !vc71, !vc8) {
+  specific(!prop:windows) {
     macros += ONLY_MAKE ONLY_UNIX
   }
 }

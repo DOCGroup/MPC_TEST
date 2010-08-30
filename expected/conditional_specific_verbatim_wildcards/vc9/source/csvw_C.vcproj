@@ -51,7 +51,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;ONLY_MAKE;ONLY_UNIX"
+				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -65,7 +65,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;ONLY_MAKE;ONLY_UNIX"
+				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
 				AdditionalIncludeDirectories=""
 			/>
@@ -131,7 +131,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;ONLY_MAKE;ONLY_UNIX"
+				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -142,7 +142,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;ONLY_MAKE;ONLY_UNIX"
+				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
 				AdditionalIncludeDirectories=""
 			/>
@@ -210,7 +210,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;ONLY_MAKE;ONLY_UNIX"
+				PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -224,7 +224,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;ONLY_MAKE;ONLY_UNIX;_WIN64"
+				PreprocessorDefinitions="_DEBUG;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=""
 			/>
@@ -291,7 +291,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64;ONLY_MAKE;ONLY_UNIX"
+				PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
 				WarningLevel="3"
@@ -302,7 +302,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;ONLY_MAKE;ONLY_UNIX;_WIN64"
+				PreprocessorDefinitions="NDEBUG;_WIN64"
 				Culture="1033"
 				AdditionalIncludeDirectories=""
 			/>
@@ -348,9 +348,6 @@
 			Filter="cpp;cxx;cc;c;C">
 			<File
 				RelativePath="byion.cpp">
-			</File>
-			<File
-				RelativePath="conditional\unix.cpp">
 			</File>
 			<File
 				RelativePath="moop.cxx">

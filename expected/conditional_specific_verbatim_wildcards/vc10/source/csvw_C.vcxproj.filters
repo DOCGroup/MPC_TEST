@@ -14,9 +14,6 @@
     <ClCompile Include="byion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="conditional\unix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="moop.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
