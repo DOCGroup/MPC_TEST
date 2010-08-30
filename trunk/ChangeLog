@@ -1,3 +1,11 @@
+Mon Aug 30 18:39:12 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/implicit_resources/cdt6/dir3/cdt_dir3/.cproject:
+        * tests/implicit_resources/additional_options.txt:
+
+          Added -value_template use_threads=1 for cdt6 to work-around bug
+          #3880, and re-generated the expected output.
+
 Sat Aug 28 04:21:56 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * expected/dependencies/vc10/foo__someexecutable.vcxproj:
@@ -5,9 +13,9 @@ Sat Aug 28 04:21:56 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
         * expected/dependencies/vc10/foo__somelib.vcxproj:
         * expected/dependencies/vc10/foo__somelib.vcxproj.filters:
 
-          Missed adding files for vc10 dependencies added during 
+          Missed adding files for vc10 dependencies added during
           dependent_libs keyword addition.
-        
+
 Fri Aug 27 21:32:26 UTC 2010  Brian Johnson  <johnsonb@ociweb.com>
 
         * expected/dependencies/wb26/foo/.wrmakefile:
