@@ -1,3 +1,10 @@
+Tue Aug 31 14:26:03 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * run_tests.pl:
+
+          Moved setting the MPC_CDT_* environment variables to the
+          determine_setup() perl function.
+
 Tue Aug 31 14:14:11 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * run_tests.pl:
