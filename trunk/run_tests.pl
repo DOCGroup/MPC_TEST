@@ -770,6 +770,7 @@ sub run_test {
   }
   $ENV{TEST_ROOT} = getcwd();
   $fh = new FileHandle('environment.txt');
+  my %saveenv;
   if (defined $fh) {
      while(<$fh>) {
       if ($_ =~ /(\w+)\s*=\s*(.*)$/) {
@@ -782,7 +783,10 @@ sub run_test {
         ## empty, it will not show up as a set variable.
         $val = '""' if ($^O eq 'MSWin32' && $val eq '');
 
-        $ENV{$name} = $val;
+        if (!defined $ENV{$name} || $ENV{$name} ne $val) {
+          $saveenv{$name} = $ENV{$name};
+          $ENV{$name} = $val;
+        }
       }
     }
     close($fh);
@@ -857,6 +861,15 @@ sub run_test {
   }
 
   $SIG{INT} = $defsigint if (defined $defsigint);
+
+  for my $name (keys %saveenv) {
+    if (defined $saveenv{$name}) {
+      $ENV{$name} = $saveenv{$name};
+    }
+    else {
+      delete $ENV{$name};
+    }
+  }
 
   return $status;
 }
