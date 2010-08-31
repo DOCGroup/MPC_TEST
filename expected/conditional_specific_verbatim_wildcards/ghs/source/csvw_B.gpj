@@ -8,7 +8,7 @@
 	-Lsource
 	-DONLY_MAKE
 	-DONLY_UNIX
-conditional\unix.cpp
+conditional/unix.cpp
 moop.cxx
 ploor.cpp
 qwaaa.c

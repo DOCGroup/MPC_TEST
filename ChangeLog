@@ -1,3 +1,18 @@
+Tue Aug 31 14:14:11 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * run_tests.pl:
+
+          Save and restore changed environment variables from environment.txt.
+          This prevents one test from interfering with all subsequent tests.
+
+        * tests/conditional_specific_verbatim_wildcards/environment.txt:
+
+          Set MPC_GHS_UNIX=1 so ghs is treated a Unix for this test.
+
+        * expected/conditional_specific_verbatim_wildcards/ghs/source/*.gpj:
+
+          Re-generated for the above change.
+
 Mon Aug 30 21:47:57 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/conditional_specific_verbatim_wildcards/vc10/*:
