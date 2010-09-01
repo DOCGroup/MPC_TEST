@@ -120,7 +120,7 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) other/other.poo -nt other/zar_otherA.cpp 2> /dev/null && $(TEST_EXE) other/other.poo -nt other/zar_otherA.h 2> /dev/null && $(TEST_EXE) other/other.poo -nt other/zar_otherA.inl 2> /dev/null && $(TEST_EXE) other/other.poo -nt other/zar_otherB.cpp 2> /dev/null && $(TEST_EXE) other/other.poo -nt other/zar_otherB.h 2> /dev/null && $(TEST_EXE) other/other.poo -nt other/zar_otherB.inl 2> /dev/null && $(TEST_EXE) other/other.poo -nt other/zar_otherC.h 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) other/other.poo -nt other/zar_otherA.cpp 2> /dev/null || $(TEST_EXE) other/other.poo -nt other/zar_otherA.h 2> /dev/null || $(TEST_EXE) other/other.poo -nt other/zar_otherA.inl 2> /dev/null || $(TEST_EXE) other/other.poo -nt other/zar_otherB.cpp 2> /dev/null || $(TEST_EXE) other/other.poo -nt other/zar_otherB.h 2> /dev/null || $(TEST_EXE) other/other.poo -nt other/zar_otherB.inl 2> /dev/null || $(TEST_EXE) other/other.poo -nt other/zar_otherC.h 2> /dev/null || echo 0),)
       .NOTPARALLEL:
     endif
   else
@@ -131,6 +131,7 @@ else
 endif
 other/zar_otherA.cpp other/zar_otherA.h other/zar_otherA.inl other/zar_otherB.cpp other/zar_otherB.h other/zar_otherB.inl other/zar_otherC.h: other/other.poo
 	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GX -Sc other/other.poo
+
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)

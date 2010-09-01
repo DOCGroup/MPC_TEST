@@ -121,14 +121,15 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) crap.r -nt down/crap.cpp 2> /dev/null && $(TEST_EXE) crap.r -nt down/crap.h 2> /dev/null && $(TEST_EXE) crap.r -nt down/crap.inl 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) crap.r -nt down/crap.cpp 2> /dev/null || $(TEST_EXE) crap.r -nt down/crap.h 2> /dev/null || $(TEST_EXE) crap.r -nt down/crap.inl 2> /dev/null || echo 0),)
       .NOTPARALLEL:
+
     else
       ## By this point, all of the generated files are here and up-to-date
       ## with respect to the source file.  Now we need to make sure that
       ## they are up-to-date with respect to the generation tool.  If the tool
       ## is newer than the generated files, then we need the special rule.
-      ifneq ($(shell $(TEST_EXE) "../bin/cppgen.pl" -nt "down/crap.cpp" 2> /dev/null && $(TEST_EXE) "../bin/cppgen.pl" -nt "down/crap.h" 2> /dev/null && $(TEST_EXE) "../bin/cppgen.pl" -nt "down/crap.inl" 2> /dev/null && echo 0),)
+      ifeq ($(shell $(TEST_EXE) "../bin/cppgen.pl" -nt "down/crap.cpp" 2> /dev/null || $(TEST_EXE) "../bin/cppgen.pl" -nt "down/crap.h" 2> /dev/null || $(TEST_EXE) "../bin/cppgen.pl" -nt "down/crap.inl" 2> /dev/null || echo 0),)
         .NOTPARALLEL:
       endif
     endif
@@ -141,6 +142,7 @@ endif
 down/crap.cpp down/crap.h down/crap.inl: crap.r ../bin/cppgen.pl
 	$(MKDIR) down
 	perl ../bin/cppgen.pl  crap.r -o $@
+
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)

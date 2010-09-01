@@ -102,7 +102,7 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) that.zar -nt zar_thatA.cpp 2> /dev/null && $(TEST_EXE) that.zar -nt zar_thatA.h 2> /dev/null && $(TEST_EXE) that.zar -nt zar_thatA.inl 2> /dev/null && $(TEST_EXE) that.zar -nt zar_thatB.cpp 2> /dev/null && $(TEST_EXE) that.zar -nt zar_thatB.h 2> /dev/null && $(TEST_EXE) that.zar -nt zar_thatB.inl 2> /dev/null && $(TEST_EXE) that.zar -nt zar_thatC.cpp 2> /dev/null && $(TEST_EXE) that.zar -nt zar_thatC.h 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) that.zar -nt zar_thatA.cpp 2> /dev/null || $(TEST_EXE) that.zar -nt zar_thatA.h 2> /dev/null || $(TEST_EXE) that.zar -nt zar_thatA.inl 2> /dev/null || $(TEST_EXE) that.zar -nt zar_thatB.cpp 2> /dev/null || $(TEST_EXE) that.zar -nt zar_thatB.h 2> /dev/null || $(TEST_EXE) that.zar -nt zar_thatB.inl 2> /dev/null || $(TEST_EXE) that.zar -nt zar_thatC.cpp 2> /dev/null || $(TEST_EXE) that.zar -nt zar_thatC.h 2> /dev/null || echo 0),)
       .NOTPARALLEL:
     endif
   else
@@ -113,6 +113,7 @@ else
 endif
 zar_thatA.cpp zar_thatA.h zar_thatA.inl zar_thatB.cpp zar_thatB.h zar_thatB.inl zar_thatC.cpp zar_thatC.h: that.zar
 	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA -Sc that.zar
+
 
 GENERATED_DIRTY += zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h
 OBJS_DEPEND_ON_GENERATED = 1
@@ -127,7 +128,7 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) this.zar -nt zar_thisA.cpp 2> /dev/null && $(TEST_EXE) this.zar -nt zar_thisA.h 2> /dev/null && $(TEST_EXE) this.zar -nt zar_thisA.inl 2> /dev/null && $(TEST_EXE) this.zar -nt zar_thisB.cpp 2> /dev/null && $(TEST_EXE) this.zar -nt zar_thisB.h 2> /dev/null && $(TEST_EXE) this.zar -nt zar_thisB.inl 2> /dev/null && $(TEST_EXE) this.zar -nt zar_thisB_T.cpp 2> /dev/null && $(TEST_EXE) this.zar -nt zar_thisB_T.h 2> /dev/null && $(TEST_EXE) this.zar -nt zar_thisB_T.inl 2> /dev/null && $(TEST_EXE) this.zar -nt zar_thisC.cpp 2> /dev/null && $(TEST_EXE) this.zar -nt zar_thisC.h 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) this.zar -nt zar_thisA.cpp 2> /dev/null || $(TEST_EXE) this.zar -nt zar_thisA.h 2> /dev/null || $(TEST_EXE) this.zar -nt zar_thisA.inl 2> /dev/null || $(TEST_EXE) this.zar -nt zar_thisB.cpp 2> /dev/null || $(TEST_EXE) this.zar -nt zar_thisB.h 2> /dev/null || $(TEST_EXE) this.zar -nt zar_thisB.inl 2> /dev/null || $(TEST_EXE) this.zar -nt zar_thisB_T.cpp 2> /dev/null || $(TEST_EXE) this.zar -nt zar_thisB_T.h 2> /dev/null || $(TEST_EXE) this.zar -nt zar_thisB_T.inl 2> /dev/null || $(TEST_EXE) this.zar -nt zar_thisC.cpp 2> /dev/null || $(TEST_EXE) this.zar -nt zar_thisC.h 2> /dev/null || echo 0),)
       .NOTPARALLEL:
     endif
   else
@@ -138,6 +139,7 @@ else
 endif
 zar_thisA.cpp zar_thisA.h zar_thisA.inl zar_thisB.cpp zar_thisB.h zar_thisB.inl zar_thisB_T.cpp zar_thisB_T.h zar_thisB_T.inl zar_thisC.cpp zar_thisC.h: this.zar
 	perl ../bin/exercise.pl $(CLO_ZARFLAGS) -GA this.zar
+
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)

@@ -135,7 +135,7 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) MyModule.i -nt MyModule.pm 2> /dev/null && $(TEST_EXE) MyModule.i -nt MyModule_wrap.cxx 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) MyModule.i -nt MyModule.pm 2> /dev/null || $(TEST_EXE) MyModule.i -nt MyModule_wrap.cxx 2> /dev/null || echo 0),)
       .NOTPARALLEL:
     endif
   else
@@ -146,6 +146,7 @@ else
 endif
 MyModule.pm MyModule_wrap.cxx: MyModule.i
 	swig -perl -c++ MyModule.i
+
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)

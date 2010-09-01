@@ -143,11 +143,13 @@ SomeSortOfTypedefHelper.class: SomeSortOfTypedefHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar SomeSortOfTypedefHelper.java
 	mkdir -p classes/. 2> /dev/null ; cp -f SomeSortOfTypedefHelper.class classes/. > /dev/null
 
+
 GENERATED_DIRTY += simple/ArrayBounds.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/ArrayBounds.class: simple/ArrayBounds.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/ArrayBounds.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/ArrayBounds.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/EnumArrayHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -155,11 +157,13 @@ simple/EnumArrayHelper.class: simple/EnumArrayHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/EnumArrayHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumArrayHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/EnumArrayHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/EnumArrayHolder.class: simple/EnumArrayHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/EnumArrayHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumArrayHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/EnumSeqHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -167,11 +171,13 @@ simple/EnumSeqHelper.class: simple/EnumSeqHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/EnumSeqHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumSeqHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/EnumSeqHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/EnumSeqHolder.class: simple/EnumSeqHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/EnumSeqHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/EnumSeqHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/Local2.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -179,11 +185,13 @@ simple/Local2.class: simple/Local2.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/Local2Helper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/Local2Helper.class: simple/Local2Helper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2Helper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2Helper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/Local2Holder.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -191,11 +199,13 @@ simple/Local2Holder.class: simple/Local2Holder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2Holder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2Holder.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/Local2Operations.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/Local2Operations.class: simple/Local2Operations.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2Operations.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2Operations.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/Local2SeqHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -203,11 +213,13 @@ simple/Local2SeqHelper.class: simple/Local2SeqHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2SeqHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2SeqHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/Local2SeqHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/Local2SeqHolder.class: simple/Local2SeqHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local2SeqHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local2SeqHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/Local3.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -215,11 +227,13 @@ simple/Local3.class: simple/Local3.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local3.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/Local3Helper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/Local3Helper.class: simple/Local3Helper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local3Helper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3Helper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/Local3Holder.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -227,11 +241,13 @@ simple/Local3Holder.class: simple/Local3Holder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local3Holder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3Holder.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/Local3Operations.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/Local3Operations.class: simple/Local3Operations.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/Local3Operations.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/Local3Operations.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/LongSeqSeqHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -239,11 +255,13 @@ simple/LongSeqSeqHelper.class: simple/LongSeqSeqHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/LongSeqSeqHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/LongSeqSeqHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/LongSeqSeqHolder.class: simple/LongSeqSeqHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/LongSeqSeqHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/LongSeqSeqSeqHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -251,11 +269,13 @@ simple/LongSeqSeqSeqHelper.class: simple/LongSeqSeqSeqHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/LongSeqSeqSeqHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqSeqHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/LongSeqSeqSeqHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/LongSeqSeqSeqHolder.class: simple/LongSeqSeqSeqHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/LongSeqSeqSeqHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/LongSeqSeqSeqHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/SeqOfTypedefedLongHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -263,11 +283,13 @@ simple/SeqOfTypedefedLongHelper.class: simple/SeqOfTypedefedLongHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/SeqOfTypedefedLongHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/SeqOfTypedefedLongHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/SeqOfTypedefedLongHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/SeqOfTypedefedLongHolder.class: simple/SeqOfTypedefedLongHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/SeqOfTypedefedLongHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/SeqOfTypedefedLongHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/StringSeqHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -275,11 +297,13 @@ simple/StringSeqHelper.class: simple/StringSeqHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/StringSeqHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/StringSeqHolder.class: simple/StringSeqHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/StringSeqSeqHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -287,11 +311,13 @@ simple/StringSeqSeqHelper.class: simple/StringSeqSeqHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqSeqHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/StringSeqSeqHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/StringSeqSeqHolder.class: simple/StringSeqSeqHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqSeqHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/StringSeqSeqSeqHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -299,11 +325,13 @@ simple/StringSeqSeqSeqHelper.class: simple/StringSeqSeqSeqHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqSeqSeqHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqSeqHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/StringSeqSeqSeqHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/StringSeqSeqSeqHolder.class: simple/StringSeqSeqSeqHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StringSeqSeqSeqHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StringSeqSeqSeqHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/StructWithObjref.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -311,11 +339,13 @@ simple/StructWithObjref.class: simple/StructWithObjref.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StructWithObjref.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StructWithObjref.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/StructWithObjrefHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/StructWithObjrefHelper.class: simple/StructWithObjrefHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StructWithObjrefHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StructWithObjrefHelper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/StructWithObjrefHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -323,11 +353,13 @@ simple/StructWithObjrefHolder.class: simple/StructWithObjrefHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/StructWithObjrefHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/StructWithObjrefHolder.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TIMESTAMP_INVALID_NSEC.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TIMESTAMP_INVALID_NSEC.class: simple/TIMESTAMP_INVALID_NSEC.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TIMESTAMP_INVALID_NSEC.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TIMESTAMP_INVALID_NSEC.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestArrayTypedef2Helper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -335,11 +367,13 @@ simple/TestArrayTypedef2Helper.class: simple/TestArrayTypedef2Helper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestArrayTypedef2Helper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestArrayTypedef2Helper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestArrayTypedefHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestArrayTypedefHelper.class: simple/TestArrayTypedefHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestArrayTypedefHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestArrayTypedefHelper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestArrayTypedefHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -347,11 +381,13 @@ simple/TestArrayTypedefHolder.class: simple/TestArrayTypedefHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestArrayTypedefHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestArrayTypedefHolder.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestConstBool.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestConstBool.class: simple/TestConstBool.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstBool.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstBool.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestConstDouble.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -359,11 +395,13 @@ simple/TestConstDouble.class: simple/TestConstDouble.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstDouble.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstDouble.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestConstFloat.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestConstFloat.class: simple/TestConstFloat.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstFloat.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstFloat.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestConstLong.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -371,11 +409,13 @@ simple/TestConstLong.class: simple/TestConstLong.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstLong.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstLong.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestConstString.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestConstString.class: simple/TestConstString.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstString.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstString.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestConstTypedef.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -383,11 +423,13 @@ simple/TestConstTypedef.class: simple/TestConstTypedef.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestConstTypedef.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestConstTypedef.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestEnum.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestEnum.class: simple/TestEnum.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestEnum.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestEnum.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestEnumHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -395,11 +437,13 @@ simple/TestEnumHelper.class: simple/TestEnumHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestEnumHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestEnumHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestEnumHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestEnumHolder.class: simple/TestEnumHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestEnumHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestEnumHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestInterf.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -407,11 +451,13 @@ simple/TestInterf.class: simple/TestInterf.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestInterf2.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestInterf2.class: simple/TestInterf2.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf2.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestInterf2Helper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -419,11 +465,13 @@ simple/TestInterf2Helper.class: simple/TestInterf2Helper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf2Helper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2Helper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestInterf2Holder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestInterf2Holder.class: simple/TestInterf2Holder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf2Holder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2Holder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestInterf2Operations.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -431,11 +479,13 @@ simple/TestInterf2Operations.class: simple/TestInterf2Operations.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf2Operations.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf2Operations.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestInterf3.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestInterf3.class: simple/TestInterf3.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf3.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestInterf3Helper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -443,11 +493,13 @@ simple/TestInterf3Helper.class: simple/TestInterf3Helper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf3Helper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3Helper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestInterf3Holder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestInterf3Holder.class: simple/TestInterf3Holder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf3Holder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3Holder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestInterf3Operations.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -455,11 +507,13 @@ simple/TestInterf3Operations.class: simple/TestInterf3Operations.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterf3Operations.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterf3Operations.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestInterfHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestInterfHelper.class: simple/TestInterfHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterfHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterfHelper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestInterfHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -467,11 +521,13 @@ simple/TestInterfHolder.class: simple/TestInterfHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterfHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterfHolder.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestInterfOperations.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestInterfOperations.class: simple/TestInterfOperations.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestInterfOperations.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestInterfOperations.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestLI.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -479,11 +535,13 @@ simple/TestLI.class: simple/TestLI.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestLI.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLI.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestLIHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestLIHelper.class: simple/TestLIHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestLIHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLIHelper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestLIHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -491,11 +549,13 @@ simple/TestLIHolder.class: simple/TestLIHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestLIHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLIHolder.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestLIOperations.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestLIOperations.class: simple/TestLIOperations.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestLIOperations.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestLIOperations.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestNestedStruct.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -503,11 +563,13 @@ simple/TestNestedStruct.class: simple/TestNestedStruct.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestNestedStruct.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestNestedStruct.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestNestedStructHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestNestedStructHelper.class: simple/TestNestedStructHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestNestedStructHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestNestedStructHelper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestNestedStructHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -515,11 +577,13 @@ simple/TestNestedStructHolder.class: simple/TestNestedStructHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestNestedStructHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestNestedStructHolder.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestSeqTypedefHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestSeqTypedefHelper.class: simple/TestSeqTypedefHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestSeqTypedefHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestSeqTypedefHelper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestSeqTypedefHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -527,11 +591,13 @@ simple/TestSeqTypedefHolder.class: simple/TestSeqTypedefHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestSeqTypedefHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestSeqTypedefHolder.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestStringArrayHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestStringArrayHelper.class: simple/TestStringArrayHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStringArrayHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStringArrayHelper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestStringArrayHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -539,11 +605,13 @@ simple/TestStringArrayHolder.class: simple/TestStringArrayHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStringArrayHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStringArrayHolder.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestStruct.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestStruct.class: simple/TestStruct.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStruct.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStruct.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestStructArrayHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -551,11 +619,13 @@ simple/TestStructArrayHelper.class: simple/TestStructArrayHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructArrayHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructArrayHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestStructArrayHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestStructArrayHolder.class: simple/TestStructArrayHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructArrayHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructArrayHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestStructHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -563,11 +633,13 @@ simple/TestStructHelper.class: simple/TestStructHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestStructHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestStructHolder.class: simple/TestStructHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestStructSequenceHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -575,11 +647,13 @@ simple/TestStructSequenceHelper.class: simple/TestStructSequenceHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructSequenceHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructSequenceHelper.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestStructSequenceHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestStructSequenceHolder.class: simple/TestStructSequenceHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructSequenceHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructSequenceHolder.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestStructWithEnum.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -587,11 +661,13 @@ simple/TestStructWithEnum.class: simple/TestStructWithEnum.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructWithEnum.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructWithEnum.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestStructWithEnumHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestStructWithEnumHelper.class: simple/TestStructWithEnumHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructWithEnumHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructWithEnumHelper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/TestStructWithEnumHolder.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -599,11 +675,13 @@ simple/TestStructWithEnumHolder.class: simple/TestStructWithEnumHolder.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestStructWithEnumHolder.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestStructWithEnumHolder.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/TestTypedefHelper.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/TestTypedefHelper.class: simple/TestTypedefHelper.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/TestTypedefHelper.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/TestTypedefHelper.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/_Local2LocalBase.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -611,11 +689,13 @@ simple/_Local2LocalBase.class: simple/_Local2LocalBase.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_Local2LocalBase.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local2LocalBase.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/_Local2TAOPeer.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/_Local2TAOPeer.class: simple/_Local2TAOPeer.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_Local2TAOPeer.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local2TAOPeer.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/_Local3LocalBase.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -623,11 +703,13 @@ simple/_Local3LocalBase.class: simple/_Local3LocalBase.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_Local3LocalBase.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local3LocalBase.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/_Local3TAOPeer.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/_Local3TAOPeer.class: simple/_Local3TAOPeer.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_Local3TAOPeer.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_Local3TAOPeer.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/_TestInterf2Stub.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -635,11 +717,13 @@ simple/_TestInterf2Stub.class: simple/_TestInterf2Stub.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_TestInterf2Stub.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestInterf2Stub.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/_TestInterf3Stub.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/_TestInterf3Stub.class: simple/_TestInterf3Stub.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_TestInterf3Stub.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestInterf3Stub.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += simple/_TestInterfStub.class
 OBJS_DEPEND_ON_GENERATED = 1
@@ -647,17 +731,20 @@ simple/_TestInterfStub.class: simple/_TestInterfStub.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_TestInterfStub.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestInterfStub.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/_TestLILocalBase.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/_TestLILocalBase.class: simple/_TestLILocalBase.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_TestLILocalBase.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestLILocalBase.class classes/simple > /dev/null
 
+
 GENERATED_DIRTY += simple/_TestLITAOPeer.class
 OBJS_DEPEND_ON_GENERATED = 1
 simple/_TestLITAOPeer.class: simple/_TestLITAOPeer.java
 	"$(JAVA_HOME)/bin/javac" -sourcepath . -classpath $(IDL2JNI_ROOT)/lib/i2jrt.jar simple/_TestLITAOPeer.java
 	mkdir -p classes/simple 2> /dev/null ; cp -f simple/_TestLITAOPeer.class classes/simple > /dev/null
+
 
 GENERATED_DIRTY += SomeSortOfTypedefHelper.java otherJC.cpp otherJC.h otherJS.cpp otherJS.h
 OBJS_DEPEND_ON_GENERATED = 1
@@ -672,14 +759,15 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) other.idl -nt SomeSortOfTypedefHelper.java 2> /dev/null && $(TEST_EXE) other.idl -nt otherJC.cpp 2> /dev/null && $(TEST_EXE) other.idl -nt otherJC.h 2> /dev/null && $(TEST_EXE) other.idl -nt otherJS.cpp 2> /dev/null && $(TEST_EXE) other.idl -nt otherJS.h 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) other.idl -nt SomeSortOfTypedefHelper.java 2> /dev/null || $(TEST_EXE) other.idl -nt otherJC.cpp 2> /dev/null || $(TEST_EXE) other.idl -nt otherJC.h 2> /dev/null || $(TEST_EXE) other.idl -nt otherJS.cpp 2> /dev/null || $(TEST_EXE) other.idl -nt otherJS.h 2> /dev/null || echo 0),)
       .NOTPARALLEL:
+
     else
       ## By this point, all of the generated files are here and up-to-date
       ## with respect to the source file.  Now we need to make sure that
       ## they are up-to-date with respect to the generation tool.  If the tool
       ## is newer than the generated files, then we need the special rule.
-      ifneq ($(shell $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "SomeSortOfTypedefHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherJC.cpp" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherJC.h" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherJS.cpp" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherJS.h" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "SomeSortOfTypedefHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherJC.cpp" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherJC.h" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherJS.cpp" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherJS.h" 2> /dev/null && echo 0),)
+      ifeq ($(shell $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "SomeSortOfTypedefHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherJC.cpp" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherJC.h" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherJS.cpp" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherJS.h" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "SomeSortOfTypedefHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherJC.cpp" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherJC.h" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherJS.cpp" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherJS.h" 2> /dev/null || echo 0),)
         .NOTPARALLEL:
       endif
     endif
@@ -692,6 +780,7 @@ endif
 SomeSortOfTypedefHelper.java otherJC.cpp otherJC.h otherJS.cpp otherJS.h: other.idl simpleJC.h $(subst $(SPACE),\$(SPACE),$(IDL2JNI_ROOT)/bin/idl2jni) SomeSortOfTypedefHelper.java
 	$(IDL2JNI_ROOT)/bin/idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 other.idl
 	echo Input: other
+
 
 GENERATED_DIRTY += otherTypeSupportJC.cpp otherTypeSupportJC.h otherTypeSupportJS.cpp otherTypeSupportJS.h
 OBJS_DEPEND_ON_GENERATED = 1
@@ -706,14 +795,15 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) otherTypeSupport.idl -nt otherTypeSupportJC.cpp 2> /dev/null && $(TEST_EXE) otherTypeSupport.idl -nt otherTypeSupportJC.h 2> /dev/null && $(TEST_EXE) otherTypeSupport.idl -nt otherTypeSupportJS.cpp 2> /dev/null && $(TEST_EXE) otherTypeSupport.idl -nt otherTypeSupportJS.h 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) otherTypeSupport.idl -nt otherTypeSupportJC.cpp 2> /dev/null || $(TEST_EXE) otherTypeSupport.idl -nt otherTypeSupportJC.h 2> /dev/null || $(TEST_EXE) otherTypeSupport.idl -nt otherTypeSupportJS.cpp 2> /dev/null || $(TEST_EXE) otherTypeSupport.idl -nt otherTypeSupportJS.h 2> /dev/null || echo 0),)
       .NOTPARALLEL:
+
     else
       ## By this point, all of the generated files are here and up-to-date
       ## with respect to the source file.  Now we need to make sure that
       ## they are up-to-date with respect to the generation tool.  If the tool
       ## is newer than the generated files, then we need the special rule.
-      ifneq ($(shell $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherTypeSupportJC.cpp" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherTypeSupportJC.h" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherTypeSupportJS.cpp" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherTypeSupportJS.h" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherTypeSupportJC.cpp" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherTypeSupportJC.h" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherTypeSupportJS.cpp" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherTypeSupportJS.h" 2> /dev/null && echo 0),)
+      ifeq ($(shell $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherTypeSupportJC.cpp" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherTypeSupportJC.h" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherTypeSupportJS.cpp" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "otherTypeSupportJS.h" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherTypeSupportJC.cpp" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherTypeSupportJC.h" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherTypeSupportJS.cpp" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "otherTypeSupportJS.h" 2> /dev/null || echo 0),)
         .NOTPARALLEL:
       endif
     endif
@@ -726,6 +816,7 @@ endif
 otherTypeSupportJC.cpp otherTypeSupportJC.h otherTypeSupportJS.cpp otherTypeSupportJS.h: otherTypeSupport.idl $(subst $(SPACE),\$(SPACE),$(IDL2JNI_ROOT)/bin/idl2jni) SomeSortOfTypedefHelper.java
 	$(IDL2JNI_ROOT)/bin/idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 otherTypeSupport.idl
 	echo Input: otherTypeSupport
+
 
 GENERATED_DIRTY += simple/ArrayBounds.java simple/EnumArrayHelper.java simple/EnumArrayHolder.java simple/EnumSeqHelper.java simple/EnumSeqHolder.java simple/Local2.java simple/Local2Helper.java simple/Local2Holder.java simple/Local2Operations.java simple/Local2SeqHelper.java simple/Local2SeqHolder.java simple/Local3.java simple/Local3Helper.java simple/Local3Holder.java simple/Local3Operations.java simple/LongSeqSeqHelper.java simple/LongSeqSeqHolder.java simple/LongSeqSeqSeqHelper.java simple/LongSeqSeqSeqHolder.java simple/SeqOfTypedefedLongHelper.java simple/SeqOfTypedefedLongHolder.java simple/StringSeqHelper.java simple/StringSeqHolder.java simple/StringSeqSeqHelper.java simple/StringSeqSeqHolder.java simple/StringSeqSeqSeqHelper.java simple/StringSeqSeqSeqHolder.java simple/StructWithObjref.java simple/StructWithObjrefHelper.java simple/StructWithObjrefHolder.java simple/TIMESTAMP_INVALID_NSEC.java simple/TestArrayTypedef2Helper.java simple/TestArrayTypedefHelper.java simple/TestArrayTypedefHolder.java simple/TestConstBool.java simple/TestConstDouble.java simple/TestConstFloat.java simple/TestConstLong.java simple/TestConstString.java simple/TestConstTypedef.java simple/TestEnum.java simple/TestEnumHelper.java simple/TestEnumHolder.java simple/TestInterf.java simple/TestInterf2.java simple/TestInterf2Helper.java simple/TestInterf2Holder.java simple/TestInterf2Operations.java simple/TestInterf3.java simple/TestInterf3Helper.java simple/TestInterf3Holder.java simple/TestInterf3Operations.java simple/TestInterfHelper.java simple/TestInterfHolder.java simple/TestInterfOperations.java simple/TestLI.java simple/TestLIHelper.java simple/TestLIHolder.java simple/TestLIOperations.java simple/TestNestedStruct.java simple/TestNestedStructHelper.java simple/TestNestedStructHolder.java simple/TestSeqTypedefHelper.java simple/TestSeqTypedefHolder.java simple/TestStringArrayHelper.java simple/TestStringArrayHolder.java simple/TestStruct.java simple/TestStructArrayHelper.java simple/TestStructArrayHolder.java simple/TestStructHelper.java simple/TestStructHolder.java simple/TestStructSequenceHelper.java simple/TestStructSequenceHolder.java simple/TestStructWithEnum.java simple/TestStructWithEnumHelper.java simple/TestStructWithEnumHolder.java simple/TestTypedefHelper.java simple/_Local2LocalBase.java simple/_Local2TAOPeer.java simple/_Local3LocalBase.java simple/_Local3TAOPeer.java simple/_TestInterf2Stub.java simple/_TestInterf3Stub.java simple/_TestInterfStub.java simple/_TestLILocalBase.java simple/_TestLITAOPeer.java simpleJC.cpp simpleJC.h simpleJS.h
 OBJS_DEPEND_ON_GENERATED = 1
@@ -740,14 +831,15 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) simple.idl -nt simple/ArrayBounds.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/EnumArrayHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/EnumArrayHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/EnumSeqHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/EnumSeqHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/Local2.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/Local2Helper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/Local2Holder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/Local2Operations.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/Local2SeqHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/Local2SeqHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/Local3.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/Local3Helper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/Local3Holder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/Local3Operations.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/LongSeqSeqHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/LongSeqSeqHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/LongSeqSeqSeqHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/LongSeqSeqSeqHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/SeqOfTypedefedLongHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/SeqOfTypedefedLongHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/StringSeqHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/StringSeqHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/StringSeqSeqHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/StringSeqSeqHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/StringSeqSeqSeqHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/StringSeqSeqSeqHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/StructWithObjref.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/StructWithObjrefHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/StructWithObjrefHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TIMESTAMP_INVALID_NSEC.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestArrayTypedef2Helper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestArrayTypedefHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestArrayTypedefHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestConstBool.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestConstDouble.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestConstFloat.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestConstLong.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestConstString.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestConstTypedef.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestEnum.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestEnumHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestEnumHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterf.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterf2.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterf2Helper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterf2Holder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterf2Operations.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterf3.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterf3Helper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterf3Holder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterf3Operations.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterfHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterfHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestInterfOperations.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestLI.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestLIHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestLIHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestLIOperations.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestNestedStruct.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestNestedStructHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestNestedStructHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestSeqTypedefHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestSeqTypedefHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStringArrayHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStringArrayHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStruct.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStructArrayHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStructArrayHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStructHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStructHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStructSequenceHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStructSequenceHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStructWithEnum.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStructWithEnumHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestStructWithEnumHolder.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/TestTypedefHelper.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/_Local2LocalBase.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/_Local2TAOPeer.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/_Local3LocalBase.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/_Local3TAOPeer.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/_TestInterf2Stub.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/_TestInterf3Stub.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/_TestInterfStub.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/_TestLILocalBase.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simple/_TestLITAOPeer.java 2> /dev/null && $(TEST_EXE) simple.idl -nt simpleJC.cpp 2> /dev/null && $(TEST_EXE) simple.idl -nt simpleJC.h 2> /dev/null && $(TEST_EXE) simple.idl -nt simpleJS.h 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) simple.idl -nt simple/ArrayBounds.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/EnumArrayHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/EnumArrayHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/EnumSeqHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/EnumSeqHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/Local2.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/Local2Helper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/Local2Holder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/Local2Operations.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/Local2SeqHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/Local2SeqHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/Local3.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/Local3Helper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/Local3Holder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/Local3Operations.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/LongSeqSeqHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/LongSeqSeqHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/LongSeqSeqSeqHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/LongSeqSeqSeqHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/SeqOfTypedefedLongHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/SeqOfTypedefedLongHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/StringSeqHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/StringSeqHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/StringSeqSeqHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/StringSeqSeqHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/StringSeqSeqSeqHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/StringSeqSeqSeqHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/StructWithObjref.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/StructWithObjrefHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/StructWithObjrefHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TIMESTAMP_INVALID_NSEC.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestArrayTypedef2Helper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestArrayTypedefHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestArrayTypedefHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestConstBool.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestConstDouble.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestConstFloat.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestConstLong.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestConstString.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestConstTypedef.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestEnum.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestEnumHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestEnumHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterf.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterf2.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterf2Helper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterf2Holder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterf2Operations.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterf3.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterf3Helper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterf3Holder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterf3Operations.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterfHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterfHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestInterfOperations.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestLI.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestLIHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestLIHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestLIOperations.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestNestedStruct.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestNestedStructHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestNestedStructHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestSeqTypedefHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestSeqTypedefHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStringArrayHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStringArrayHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStruct.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStructArrayHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStructArrayHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStructHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStructHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStructSequenceHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStructSequenceHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStructWithEnum.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStructWithEnumHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestStructWithEnumHolder.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/TestTypedefHelper.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/_Local2LocalBase.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/_Local2TAOPeer.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/_Local3LocalBase.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/_Local3TAOPeer.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/_TestInterf2Stub.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/_TestInterf3Stub.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/_TestInterfStub.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/_TestLILocalBase.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simple/_TestLITAOPeer.java 2> /dev/null || $(TEST_EXE) simple.idl -nt simpleJC.cpp 2> /dev/null || $(TEST_EXE) simple.idl -nt simpleJC.h 2> /dev/null || $(TEST_EXE) simple.idl -nt simpleJS.h 2> /dev/null || echo 0),)
       .NOTPARALLEL:
+
     else
       ## By this point, all of the generated files are here and up-to-date
       ## with respect to the source file.  Now we need to make sure that
       ## they are up-to-date with respect to the generation tool.  If the tool
       ## is newer than the generated files, then we need the special rule.
-      ifneq ($(shell $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/ArrayBounds.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/EnumArrayHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/EnumArrayHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/EnumSeqHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/EnumSeqHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2Helper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2Holder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2Operations.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2SeqHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2SeqHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local3.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local3Helper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local3Holder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local3Operations.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/LongSeqSeqHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/LongSeqSeqHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/LongSeqSeqSeqHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/LongSeqSeqSeqHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/SeqOfTypedefedLongHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/SeqOfTypedefedLongHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqSeqHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqSeqHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqSeqSeqHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqSeqSeqHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StructWithObjref.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StructWithObjrefHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StructWithObjrefHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TIMESTAMP_INVALID_NSEC.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestArrayTypedef2Helper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestArrayTypedefHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestArrayTypedefHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstBool.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstDouble.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstFloat.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstLong.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstString.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstTypedef.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestEnum.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestEnumHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestEnumHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf2.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf2Helper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf2Holder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf2Operations.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf3.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf3Helper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf3Holder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf3Operations.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterfHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterfHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterfOperations.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestLI.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestLIHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestLIHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestLIOperations.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestNestedStruct.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestNestedStructHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestNestedStructHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestSeqTypedefHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestSeqTypedefHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStringArrayHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStringArrayHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStruct.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructArrayHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructArrayHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructSequenceHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructSequenceHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructWithEnum.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructWithEnumHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructWithEnumHolder.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestTypedefHelper.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_Local2LocalBase.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_Local2TAOPeer.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_Local3LocalBase.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_Local3TAOPeer.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_TestInterf2Stub.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_TestInterf3Stub.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_TestInterfStub.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_TestLILocalBase.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_TestLITAOPeer.java" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simpleJC.cpp" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simpleJC.h" 2> /dev/null && $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simpleJS.h" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/ArrayBounds.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/EnumArrayHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/EnumArrayHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/EnumSeqHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/EnumSeqHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2Helper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2Holder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2Operations.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2SeqHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2SeqHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local3.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local3Helper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local3Holder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local3Operations.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/LongSeqSeqHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/LongSeqSeqHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/LongSeqSeqSeqHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/LongSeqSeqSeqHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/SeqOfTypedefedLongHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/SeqOfTypedefedLongHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqSeqHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqSeqHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqSeqSeqHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqSeqSeqHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StructWithObjref.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StructWithObjrefHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StructWithObjrefHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TIMESTAMP_INVALID_NSEC.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestArrayTypedef2Helper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestArrayTypedefHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestArrayTypedefHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstBool.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstDouble.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstFloat.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstLong.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstString.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstTypedef.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestEnum.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestEnumHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestEnumHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf2.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf2Helper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf2Holder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf2Operations.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf3.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf3Helper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf3Holder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf3Operations.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterfHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterfHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterfOperations.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestLI.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestLIHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestLIHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestLIOperations.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestNestedStruct.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestNestedStructHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestNestedStructHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestSeqTypedefHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestSeqTypedefHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStringArrayHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStringArrayHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStruct.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructArrayHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructArrayHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructSequenceHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructSequenceHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructWithEnum.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructWithEnumHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructWithEnumHolder.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestTypedefHelper.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_Local2LocalBase.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_Local2TAOPeer.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_Local3LocalBase.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_Local3TAOPeer.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_TestInterf2Stub.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_TestInterf3Stub.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_TestInterfStub.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_TestLILocalBase.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_TestLITAOPeer.java" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simpleJC.cpp" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simpleJC.h" 2> /dev/null && $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simpleJS.h" 2> /dev/null && echo 0),)
+      ifeq ($(shell $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/ArrayBounds.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/EnumArrayHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/EnumArrayHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/EnumSeqHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/EnumSeqHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2Helper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2Holder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2Operations.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2SeqHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local2SeqHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local3.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local3Helper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local3Holder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/Local3Operations.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/LongSeqSeqHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/LongSeqSeqHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/LongSeqSeqSeqHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/LongSeqSeqSeqHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/SeqOfTypedefedLongHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/SeqOfTypedefedLongHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqSeqHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqSeqHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqSeqSeqHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StringSeqSeqSeqHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StructWithObjref.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StructWithObjrefHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/StructWithObjrefHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TIMESTAMP_INVALID_NSEC.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestArrayTypedef2Helper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestArrayTypedefHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestArrayTypedefHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstBool.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstDouble.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstFloat.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstLong.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstString.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestConstTypedef.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestEnum.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestEnumHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestEnumHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf2.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf2Helper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf2Holder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf2Operations.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf3.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf3Helper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf3Holder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterf3Operations.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterfHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterfHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestInterfOperations.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestLI.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestLIHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestLIHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestLIOperations.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestNestedStruct.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestNestedStructHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestNestedStructHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestSeqTypedefHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestSeqTypedefHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStringArrayHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStringArrayHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStruct.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructArrayHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructArrayHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructSequenceHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructSequenceHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructWithEnum.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructWithEnumHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestStructWithEnumHolder.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/TestTypedefHelper.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_Local2LocalBase.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_Local2TAOPeer.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_Local3LocalBase.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_Local3TAOPeer.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_TestInterf2Stub.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_TestInterf3Stub.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_TestInterfStub.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_TestLILocalBase.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simple/_TestLITAOPeer.java" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simpleJC.cpp" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simpleJC.h" 2> /dev/null || $(TEST_EXE) "$(IDL2JNI_ROOT)/bin/idl2jni" -nt "simpleJS.h" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/ArrayBounds.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/EnumArrayHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/EnumArrayHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/EnumSeqHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/EnumSeqHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2Helper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2Holder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2Operations.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2SeqHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local2SeqHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local3.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local3Helper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local3Holder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/Local3Operations.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/LongSeqSeqHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/LongSeqSeqHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/LongSeqSeqSeqHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/LongSeqSeqSeqHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/SeqOfTypedefedLongHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/SeqOfTypedefedLongHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqSeqHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqSeqHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqSeqSeqHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StringSeqSeqSeqHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StructWithObjref.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StructWithObjrefHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/StructWithObjrefHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TIMESTAMP_INVALID_NSEC.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestArrayTypedef2Helper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestArrayTypedefHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestArrayTypedefHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstBool.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstDouble.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstFloat.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstLong.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstString.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestConstTypedef.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestEnum.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestEnumHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestEnumHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf2.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf2Helper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf2Holder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf2Operations.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf3.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf3Helper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf3Holder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterf3Operations.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterfHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterfHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestInterfOperations.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestLI.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestLIHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestLIHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestLIOperations.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestNestedStruct.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestNestedStructHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestNestedStructHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestSeqTypedefHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestSeqTypedefHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStringArrayHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStringArrayHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStruct.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructArrayHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructArrayHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructSequenceHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructSequenceHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructWithEnum.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructWithEnumHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestStructWithEnumHolder.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/TestTypedefHelper.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_Local2LocalBase.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_Local2TAOPeer.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_Local3LocalBase.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_Local3TAOPeer.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_TestInterf2Stub.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_TestInterf3Stub.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_TestInterfStub.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_TestLILocalBase.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simple/_TestLITAOPeer.java" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simpleJC.cpp" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simpleJC.h" 2> /dev/null || $(TEST_EXE) "SomeSortOfTypedefHelper.java" -nt "simpleJS.h" 2> /dev/null || echo 0),)
         .NOTPARALLEL:
       endif
     endif
@@ -760,6 +852,7 @@ endif
 simple/ArrayBounds.java simple/EnumArrayHelper.java simple/EnumArrayHolder.java simple/EnumSeqHelper.java simple/EnumSeqHolder.java simple/Local2.java simple/Local2Helper.java simple/Local2Holder.java simple/Local2Operations.java simple/Local2SeqHelper.java simple/Local2SeqHolder.java simple/Local3.java simple/Local3Helper.java simple/Local3Holder.java simple/Local3Operations.java simple/LongSeqSeqHelper.java simple/LongSeqSeqHolder.java simple/LongSeqSeqSeqHelper.java simple/LongSeqSeqSeqHolder.java simple/SeqOfTypedefedLongHelper.java simple/SeqOfTypedefedLongHolder.java simple/StringSeqHelper.java simple/StringSeqHolder.java simple/StringSeqSeqHelper.java simple/StringSeqSeqHolder.java simple/StringSeqSeqSeqHelper.java simple/StringSeqSeqSeqHolder.java simple/StructWithObjref.java simple/StructWithObjrefHelper.java simple/StructWithObjrefHolder.java simple/TIMESTAMP_INVALID_NSEC.java simple/TestArrayTypedef2Helper.java simple/TestArrayTypedefHelper.java simple/TestArrayTypedefHolder.java simple/TestConstBool.java simple/TestConstDouble.java simple/TestConstFloat.java simple/TestConstLong.java simple/TestConstString.java simple/TestConstTypedef.java simple/TestEnum.java simple/TestEnumHelper.java simple/TestEnumHolder.java simple/TestInterf.java simple/TestInterf2.java simple/TestInterf2Helper.java simple/TestInterf2Holder.java simple/TestInterf2Operations.java simple/TestInterf3.java simple/TestInterf3Helper.java simple/TestInterf3Holder.java simple/TestInterf3Operations.java simple/TestInterfHelper.java simple/TestInterfHolder.java simple/TestInterfOperations.java simple/TestLI.java simple/TestLIHelper.java simple/TestLIHolder.java simple/TestLIOperations.java simple/TestNestedStruct.java simple/TestNestedStructHelper.java simple/TestNestedStructHolder.java simple/TestSeqTypedefHelper.java simple/TestSeqTypedefHolder.java simple/TestStringArrayHelper.java simple/TestStringArrayHolder.java simple/TestStruct.java simple/TestStructArrayHelper.java simple/TestStructArrayHolder.java simple/TestStructHelper.java simple/TestStructHolder.java simple/TestStructSequenceHelper.java simple/TestStructSequenceHolder.java simple/TestStructWithEnum.java simple/TestStructWithEnumHelper.java simple/TestStructWithEnumHolder.java simple/TestTypedefHelper.java simple/_Local2LocalBase.java simple/_Local2TAOPeer.java simple/_Local3LocalBase.java simple/_Local3TAOPeer.java simple/_TestInterf2Stub.java simple/_TestInterf3Stub.java simple/_TestInterfStub.java simple/_TestLILocalBase.java simple/_TestLITAOPeer.java simpleJC.cpp simpleJC.h simpleJS.h: simple.idl $(subst $(SPACE),\$(SPACE),$(IDL2JNI_ROOT)/bin/idl2jni) SomeSortOfTypedefHelper.java
 	$(IDL2JNI_ROOT)/bin/idl2jni -DUSE_LOCAL -DIDL2JNI_VERSION=1.0 simple.idl
 	echo Input: simple
+
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)
