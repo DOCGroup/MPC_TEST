@@ -1,3 +1,26 @@
+Wed Sep  1 18:58:43 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/command_helper/gnuace/GNUmakefile.simple:
+        * expected/custom_generates_custom/gnuace/src/GNUmakefile.src:
+        * expected/features_custom_only/gnuace/source/GNUmakefile.fco:
+        * expected/features_custom_only/gnuace/source/GNUmakefile.other:
+        * expected/flex_bison/gnuace/GNUmakefile.flex_bison:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_A:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_B:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_C:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_D:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_E:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_F:
+        * expected/grouping/gnuace/source/GNUmakefile.grouping_G:
+        * expected/multiple_define_customs/gnuace/GNUmakefile.foo:
+        * expected/partial_implicit/gnuace/explicit/GNUmakefile.explicit:
+        * expected/psuedo_replacement/gnuace/GNUmakefile.zz:
+        * expected/swig_perl/gnuace/GNUmakefile.MyModule:
+        * expected/wide_coverage/gnuace/source/GNUmakefile.source_lib:
+        * expected/wide_coverage/gnuace/source/fake/GNUmakefile.fake:
+
+          New test results based on latest gnu.mpd changes.
+
 Tue Aug 31 14:26:03 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * run_tests.pl:

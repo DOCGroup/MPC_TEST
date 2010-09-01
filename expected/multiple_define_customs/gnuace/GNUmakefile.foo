@@ -118,7 +118,7 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) Foo.idl -nt FooTypeSupportImpl.cpp 2> /dev/null && $(TEST_EXE) Foo.idl -nt FooTypeSupportImpl.h 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) Foo.idl -nt FooTypeSupportImpl.cpp 2> /dev/null || $(TEST_EXE) Foo.idl -nt FooTypeSupportImpl.h 2> /dev/null || echo 0),)
       .NOTPARALLEL:
     endif
   else
@@ -129,6 +129,7 @@ else
 endif
 FooTypeSupportImpl.cpp FooTypeSupportImpl.h: Foo.idl
 	perl foo.pl  Foo.idl
+
 
 GENERATED_DIRTY += FooD.cpp FooD.h FooD.idl
 OBJS_DEPEND_ON_GENERATED = 1
@@ -143,7 +144,7 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) Foo.idl -nt FooD.cpp 2> /dev/null && $(TEST_EXE) Foo.idl -nt FooD.h 2> /dev/null && $(TEST_EXE) Foo.idl -nt FooD.idl 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) Foo.idl -nt FooD.cpp 2> /dev/null || $(TEST_EXE) Foo.idl -nt FooD.h 2> /dev/null || $(TEST_EXE) Foo.idl -nt FooD.idl 2> /dev/null || echo 0),)
       .NOTPARALLEL:
     endif
   else
@@ -154,6 +155,7 @@ else
 endif
 FooD.cpp FooD.h FooD.idl: Foo.idl
 	perl zzz.pl  Foo.idl
+
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)

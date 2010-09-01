@@ -121,14 +121,15 @@ ifeq ($(wildcard $(GENERATED_DIRTY)), $(GENERATED_DIRTY))
     ## If all of the generated files are there, then we need to check
     ## and make sure that the generated files are up-to-date.  If they are not
     ## then we need the special rule.
-    ifneq ($(shell $(TEST_EXE) clown.r -nt clown.cpp 2> /dev/null && $(TEST_EXE) clown.r -nt clown.h 2> /dev/null && echo 0),)
+    ifeq ($(shell $(TEST_EXE) clown.r -nt clown.cpp 2> /dev/null || $(TEST_EXE) clown.r -nt clown.h 2> /dev/null || echo 0),)
       .NOTPARALLEL:
+
     else
       ## By this point, all of the generated files are here and up-to-date
       ## with respect to the source file.  Now we need to make sure that
       ## they are up-to-date with respect to the generation tool.  If the tool
       ## is newer than the generated files, then we need the special rule.
-      ifneq ($(shell $(TEST_EXE) "../bin/cppgen.pl" -nt "clown.cpp" 2> /dev/null && $(TEST_EXE) "../bin/cppgen.pl" -nt "clown.h" 2> /dev/null && echo 0),)
+      ifeq ($(shell $(TEST_EXE) "../bin/cppgen.pl" -nt "clown.cpp" 2> /dev/null || $(TEST_EXE) "../bin/cppgen.pl" -nt "clown.h" 2> /dev/null || echo 0),)
         .NOTPARALLEL:
       endif
     endif
@@ -140,6 +141,7 @@ else
 endif
 clown.cpp clown.h: clown.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  clown.r -o $@
+
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)
