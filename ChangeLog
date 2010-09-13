@@ -1,3 +1,20 @@
+Mon Sep 13 21:59:09 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/mixed_languages/vc10/csharp/csharp.csproj:
+        * expected/mixed_languages/vc8/csharp/csharp.csproj:
+        * expected/mixed_languages/vc9/csharp/csharp.csproj:
+        * expected/mixed_languages_refs/vc10/z/z.csproj:
+        * expected/mixed_languages_refs/vc8/z/z.csproj:
+        * expected/mixed_languages_refs/vc9/z/z.csproj:
+        * expected/webapp/vc10/source/aly.csproj:
+        * expected/webapp/vc10/source/cras.csproj:
+        * expected/webapp/vc8/source/aly.csproj:
+        * expected/webapp/vc8/source/cras.csproj:
+        * expected/webapp/vc9/source/aly.csproj:
+        * expected/webapp/vc9/source/cras.csproj:
+
+          New test results based on latest vc8csharp.mpd changes.
+
 Mon Sep 13 20:35:35 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/*/gnuace/*:
