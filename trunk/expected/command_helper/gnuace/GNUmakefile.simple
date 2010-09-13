@@ -880,3 +880,5 @@ all: __postbuild__
 __postbuild__:
 	@"$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 
+ifeq (,1)
+endif

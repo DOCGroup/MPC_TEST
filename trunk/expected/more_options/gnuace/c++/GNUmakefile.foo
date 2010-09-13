@@ -23,9 +23,9 @@ SHLIB_UNCHECKED  = libfoo.$(SOEXT)
 SHLIB            = $(SHLIB_UNCHECKED)
 
 FILES = \
-  /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
+  /tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo.cpp
 
-VPATH = .:/home/elliottc/current/MPC/test/tests/more_options/c++/down
+VPATH = .:/tao_builds/mitza/MPC_TEST/tests/more_options/c++/down
 
 #----------------------------------------------------------------------------
 #       Include macros and targets
@@ -105,3 +105,5 @@ endif
 __prebuild__:
 	@-:
 
+ifeq (,1)
+endif

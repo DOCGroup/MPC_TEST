@@ -93,9 +93,11 @@ GENERATED_DIRTY += foo.cpp
 foo.cpp: foo.mco
 	echo "int main(){}" -a foo.mco > $@
 
+
 GENERATED_DIRTY += foo_script2.cpp
 foo_script2.cpp: foo.mco
 	echo "int main(){}" -b foo.mco > $@
+
 
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)
@@ -111,3 +113,5 @@ endif
 __prebuild__:
 	@-:
 
+ifeq (,1)
+endif
