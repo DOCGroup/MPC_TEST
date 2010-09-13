@@ -170,3 +170,5 @@ ifeq ($(swig_perl),1)
 	@-:
 endif
 
+ifeq (,1)
+endif

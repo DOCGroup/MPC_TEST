@@ -133,3 +133,5 @@ ifeq ($(rtti),1)
 	@echo Building generator_be
 endif
 
+ifeq (,1)
+endif

@@ -103,3 +103,5 @@ endif
 __prebuild__:
 	@-:
 
+ifeq (,1)
+endif

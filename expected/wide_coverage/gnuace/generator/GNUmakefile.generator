@@ -150,3 +150,5 @@ ifeq ($(rtti),1)
 	@echo Building generator
 endif
 
+ifeq (,1)
+endif

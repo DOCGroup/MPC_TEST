@@ -188,3 +188,5 @@ ifeq ($(bison),1)
 endif
 endif
 
+ifeq (,1)
+endif

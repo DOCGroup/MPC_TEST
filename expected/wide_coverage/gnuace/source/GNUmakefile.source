@@ -140,6 +140,7 @@ OBJS_DEPEND_ON_GENERATED = 1
 Foolish/foolish.txt: Foolish/foolish.simple
 	echo Generated from Foolish/foolish.simple > $@
 
+
 ifneq ($(GENERATED_DIRTY),)
 .PRECIOUS: $(GENERATED_DIRTY)
 ## If the generated files are anything but source files, we need to
@@ -180,3 +181,5 @@ ifneq ($(mfc),1)
 	@echo main_test has been built
 endif
 
+ifeq (,1)
+endif
