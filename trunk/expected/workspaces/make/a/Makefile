@@ -14,7 +14,7 @@
 
 all: a common-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.a $(@)
 	@cd common && $(MAKE) -f Makefile.common $(@)
 

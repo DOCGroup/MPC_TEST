@@ -63,12 +63,14 @@ generated: $(GENERATED_DIRTY)
 factory$(OBJEXT): factory.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) factory.cpp
 
-
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

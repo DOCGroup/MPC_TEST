@@ -438,22 +438,17 @@ simple_pch$(OBJEXT): simple_pch.cpp
 otherJC$(OBJEXT): otherJC.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) otherJC.cpp
 
-
 otherJS$(OBJEXT): otherJS.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) otherJS.cpp
-
 
 otherTypeSupportJC$(OBJEXT): otherTypeSupportJC.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) otherTypeSupportJC.cpp
 
-
 otherTypeSupportJS$(OBJEXT): otherTypeSupportJS.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) otherTypeSupportJS.cpp
 
-
 simpleJC$(OBJEXT): simpleJC.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) simpleJC.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
@@ -463,6 +458,9 @@ realclean: clean
 	-$(RM) $(SHLIB).1.66530.5b $(SHLIB) $(LIB)
 	-$(RM) $(GENERATED_DIRTY)
 	-rm -rf classes ./simple.jar ; rm -rf simple
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 __prebuild__:
 	@mkdir -p classes 2> /dev/null || cat /dev/null > /dev/null

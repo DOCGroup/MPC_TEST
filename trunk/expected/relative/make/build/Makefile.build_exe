@@ -52,24 +52,23 @@ generated: $(GENERATED_DIRTY)
 ../src/foo$(OBJEXT): ../src/foo.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ../src/foo.cpp
 
-
 bar$(OBJEXT): bar.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) bar.cpp
-
 
 lower/bar$(OBJEXT): lower/bar.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) lower/bar.cpp
 
-
 other$(OBJEXT): other.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) other.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(BIN)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

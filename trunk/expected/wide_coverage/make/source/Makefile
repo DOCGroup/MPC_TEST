@@ -14,7 +14,7 @@
 
 all: source_lib source fake-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.source_lib $(@)
 	@$(MAKE) -f Makefile.source $(@)
 	@cd fake && $(MAKE) -f Makefile.fake $(@)

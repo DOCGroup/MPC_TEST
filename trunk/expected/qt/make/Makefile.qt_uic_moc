@@ -67,14 +67,11 @@ generated: $(GENERATED_DIRTY)
 demo$(OBJEXT): demo.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) demo.cpp
 
-
 demo_moc$(OBJEXT): demo_moc.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) demo_moc.cpp
 
-
 main$(OBJEXT): main.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) main.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
@@ -82,6 +79,9 @@ clean:
 realclean: clean
 	-$(RM) $(BIN)
 	-$(RM) $(GENERATED_DIRTY)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

@@ -71,10 +71,8 @@ generated: $(GENERATED_DIRTY)
 other/zar_otherA$(OBJEXT): other/zar_otherA.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) other/zar_otherA.cpp
 
-
 other/zar_otherB$(OBJEXT): other/zar_otherB.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) other/zar_otherB.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
@@ -82,6 +80,9 @@ clean:
 realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
 	-$(RM) $(GENERATED_DIRTY)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

@@ -7,14 +7,14 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /home/johnsonb/dev/TAO/spider1_5/ACE_wrappers//bin/mwc.pl -include config -type make
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make
 #
 #----------------------------------------------------------------------------
 
 
 all: foo__somelib foo__someexecutable foo
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.foo__somelib $(@)
 	@$(MAKE) -f Makefile.foo__someexecutable $(@)
 	@$(MAKE) -f Makefile.foo $(@)

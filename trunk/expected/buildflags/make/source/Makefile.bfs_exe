@@ -52,16 +52,17 @@ generated: $(GENERATED_DIRTY)
 fooza$(OBJEXT): fooza.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) fooza.cpp
 
-
 foozb$(OBJEXT): foozb.cpp
 	$(COMPILE.cc) -Trogdor $(EXPORTFLAGS) $(OUTPUT_OPTION) foozb.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(BIN)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

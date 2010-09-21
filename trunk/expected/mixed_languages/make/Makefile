@@ -14,7 +14,7 @@
 
 all: base-target csharp-target basic-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd base && $(MAKE) -f Makefile.base $(@)
 	@cd csharp && $(MAKE) -f Makefile.csharp $(@)
 	@cd basic && $(MAKE) -f Makefile.basic $(@)

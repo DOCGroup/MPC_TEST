@@ -90,12 +90,14 @@ generated: $(GENERATED_DIRTY)
 foo$(OBJEXT): foo.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) foo.cpp
 
-
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(BIN)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies
@@ -194,12 +196,14 @@ generated: $(GENERATED_DIRTY)
 foo$(OBJEXT): foo.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) foo.cpp
 
-
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(BIN)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

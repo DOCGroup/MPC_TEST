@@ -14,7 +14,7 @@
 
 all: Code Set ROOT Factory
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.Code $(@)
 	@$(MAKE) -f Makefile.Set $(@)
 	@$(MAKE) -f Makefile.ROOT $(@)

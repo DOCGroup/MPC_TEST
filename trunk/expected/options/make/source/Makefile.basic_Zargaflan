@@ -54,12 +54,14 @@ zeep/basic$(OBJEXT): basic.cpp
 	@$(TESTDIRSTART) "zeep/." $(TESTDIREND) $(MKDIR) "zeep/."
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) basic.cpp
 
-
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(BIN)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 __postbuild__:
 	@echo Hello There

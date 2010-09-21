@@ -14,7 +14,7 @@
 
 all: dll_exe
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.dll_exe $(@)
 
 .PHONY: dll_exe

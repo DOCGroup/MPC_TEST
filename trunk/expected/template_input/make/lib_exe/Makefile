@@ -14,7 +14,7 @@
 
 all: lib_exe
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.lib_exe $(@)
 
 .PHONY: lib_exe

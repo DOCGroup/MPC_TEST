@@ -1,3 +1,13 @@
+Tue Sep 21 18:10:34 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/make/*:
+
+          Updated to reflect my change from Fri Sep 17 11:25:48 UTC 2010.
+
+        * run_tests.pl:
+
+          Elaborated on the --coverage option.
+
 Mon Sep 13 21:59:09 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/mixed_languages/vc10/csharp/csharp.csproj:

@@ -62,14 +62,11 @@ generated: $(GENERATED_DIRTY)
 alternate/foo$(OBJEXT): alternate/foo.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) alternate/foo.cpp
 
-
 clown$(OBJEXT): clown.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) clown.cpp
 
-
 other$(OBJEXT): other.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) other.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
@@ -77,6 +74,9 @@ clean:
 realclean: clean
 	-$(RM) $(BIN)
 	-$(RM) $(GENERATED_DIRTY)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

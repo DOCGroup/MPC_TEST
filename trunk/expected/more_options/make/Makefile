@@ -1,7 +1,7 @@
 
 all: another-target foo j
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd another && $(MAKE) -f Makefile.another $(@)
 	@cd c++ && $(MAKE) -f Makefile.foo $(@)
 	@cd java && $(MAKE) -f Makefile.j $(@)

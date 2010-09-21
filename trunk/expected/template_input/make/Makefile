@@ -14,7 +14,7 @@
 
 all: dll-target dll_exe-target lib-target lib_exe-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd dll && $(MAKE) -f Makefile.dll $(@)
 	@cd dll_exe && $(MAKE) -f Makefile.dll_exe $(@)
 	@cd lib && $(MAKE) -f Makefile.lib $(@)

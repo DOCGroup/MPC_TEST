@@ -14,7 +14,7 @@
 
 all: foo dir4-target dir5-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd dir2 && $(MAKE) -f Makefile.foo $(@)
 	@cd dir4 && $(MAKE) -f Makefile.dir4 $(@)
 	@cd dir5 && $(MAKE) -f Makefile.dir5 $(@)

@@ -52,24 +52,23 @@ generated: $(GENERATED_DIRTY)
 conditional/unix$(OBJEXT): conditional/unix.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) conditional/unix.cpp
 
-
 moop$(OBJEXT): moop.cxx
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) moop.cxx
-
 
 ploor$(OBJEXT): ploor.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ploor.cpp
 
-
 qwaaa$(OBJEXT): qwaaa.c
 	$(COMPILE.c) $(EXPORTFLAGS) $(OUTPUT_OPTION) qwaaa.c
-
 
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(BIN)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

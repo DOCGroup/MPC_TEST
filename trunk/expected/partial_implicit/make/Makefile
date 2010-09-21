@@ -14,7 +14,7 @@
 
 all: explicit-target implicit-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd explicit && $(MAKE) -f Makefile.explicit $(@)
 	@cd implicit && $(MAKE) -f Makefile.implicit $(@)
 

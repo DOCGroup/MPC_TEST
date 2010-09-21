@@ -61,20 +61,20 @@ generated: $(GENERATED_DIRTY)
 bleer$(OBJEXT): bleer.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) bleer.cpp
 
-
 byion$(OBJEXT): byion.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) byion.cpp
 
-
 conditional/unix$(OBJEXT): conditional/unix.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) conditional/unix.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 other:
 	echo This is a custom target

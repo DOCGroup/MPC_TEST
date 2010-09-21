@@ -14,7 +14,7 @@
 
 all: flex_bison
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.flex_bison $(@)
 
 .PHONY: flex_bison

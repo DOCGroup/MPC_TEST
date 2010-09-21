@@ -7,14 +7,14 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /home/elliottc/current/MPC/mwc.pl -include config -type make
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -relative TEST_ROOT=.
 #
 #----------------------------------------------------------------------------
 
 
 all: src-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd src && $(MAKE) -f Makefile.src $(@)
 
 .PHONY: src-target
