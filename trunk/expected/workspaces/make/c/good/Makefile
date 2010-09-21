@@ -7,14 +7,14 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -recurse
+# /home/elliottc/current/MPC/mwc.pl -include config -type make -recurse
 #
 #----------------------------------------------------------------------------
 
 
 all: good
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.good $(@)
 
 .PHONY: good
