@@ -1,3 +1,11 @@
+Tue Sep 21 18:19:31 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/workspaces/make/c/Makefile:
+        * expected/workspaces/make/c/good/Makefile:
+        * expected/workspaces/make/c/good/Makefile.good:
+
+          Reverted a local change in my MPC workspace and regenerated.
+
 Tue Sep 21 18:10:34 UTC 2010  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/make/*:
