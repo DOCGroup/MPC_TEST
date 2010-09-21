@@ -7,14 +7,14 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/MPC/mwc.pl -include config -type make implicit_resources.mwc
+# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -value_template use_threads=1 implicit_resources.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: dir3
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.dir3 $(@)
 
 .PHONY: dir3

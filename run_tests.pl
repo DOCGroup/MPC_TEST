@@ -422,7 +422,6 @@ sub buildit {
       else {
         system("cd $dir; ($cmd && ./configure)");
       }
-        
 
       ## Find the automake generated makefile
       my $mfile;
@@ -955,7 +954,8 @@ my %options = ('expected'  => \$cr_expect,
 my %desc    = ('expected' => 'Create expected results for all of the ' .
                              'tests',
                'break'    => 'Break on the first test failure',
-               'coverage' => 'Enable coverage statistics collection',
+               'coverage' => 'Enable coverage statistics collection.  This ' .
+                             'option implies --nobuild.',
                'diffcmd'  => 'Provide the full path to an alternate ' .
                              'diff command',
                'nobuild'  => 'Do not build any of the tests',

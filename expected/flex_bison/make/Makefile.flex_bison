@@ -74,10 +74,8 @@ generated: $(GENERATED_DIRTY)
 bus$(OBJEXT): bus.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) bus.cpp
 
-
 bus.tab$(OBJEXT): bus.tab.c
 	$(COMPILE.c) $(EXPORTFLAGS) $(OUTPUT_OPTION) bus.tab.c
-
 
 clean:
 	-$(RM) $(OBJS)
@@ -85,6 +83,9 @@ clean:
 realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
 	-$(RM) $(GENERATED_DIRTY)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

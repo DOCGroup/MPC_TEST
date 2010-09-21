@@ -62,16 +62,13 @@ generated: $(GENERATED_DIRTY)
 	@$(TESTDIRSTART) ".obj/exe" $(TESTDIREND) $(MKDIR) ".obj/exe"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/main.cpp
 
-
 .obj/exe/use_more_names/use_more_names$(OBJEXT): exe/use_more_names/use_more_names.cpp
 	@$(TESTDIRSTART) ".obj/exe/use_more_names" $(TESTDIREND) $(MKDIR) ".obj/exe/use_more_names"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/use_more_names/use_more_names.cpp
 
-
 .obj/exe/use_names/use_names$(OBJEXT): exe/use_names/use_names.cpp
 	@$(TESTDIRSTART) ".obj/exe/use_names" $(TESTDIREND) $(MKDIR) ".obj/exe/use_names"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) exe/use_names/use_names.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
@@ -80,6 +77,9 @@ realclean: clean
 	-$(RM) $(BIN)
 	-$(RM) $(GENERATED_DIRTY)
 	-$(RM) .obj/
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 __postbuild__:
 	@echo main_test has been built

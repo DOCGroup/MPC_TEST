@@ -14,7 +14,7 @@
 
 all: cras aly
 
-bundle clean depend generated realclean $(CUSTOM_TARGETS):
+bundle clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.cras $(@)
 	@$(MAKE) -f Makefile.aly $(@)
 

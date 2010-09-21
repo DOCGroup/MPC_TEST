@@ -14,7 +14,7 @@
 
 all: one-target two-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd one && $(MAKE) -f Makefile.one $(@)
 	@cd two && $(MAKE) -f Makefile.two $(@)
 

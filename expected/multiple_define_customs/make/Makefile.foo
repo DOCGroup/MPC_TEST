@@ -75,10 +75,8 @@ generated: $(GENERATED_DIRTY)
 FooD$(OBJEXT): FooD.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) FooD.cpp
 
-
 FooTypeSupportImpl$(OBJEXT): FooTypeSupportImpl.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) FooTypeSupportImpl.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
@@ -86,6 +84,9 @@ clean:
 realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
 	-$(RM) $(GENERATED_DIRTY)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

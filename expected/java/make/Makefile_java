@@ -14,7 +14,7 @@
 
 all: java_java
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.java_java $(@)
 
 .PHONY: java_java

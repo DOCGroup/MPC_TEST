@@ -53,12 +53,14 @@ generated: $(GENERATED_DIRTY)
 two$(OBJEXT): two.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) two.cpp
 
-
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

@@ -14,7 +14,7 @@
 
 all: foo_a foo_b foo_c
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.foo_a $(@)
 	@$(MAKE) -f Makefile.foo_b $(@)
 	@$(MAKE) -f Makefile.foo_c $(@)

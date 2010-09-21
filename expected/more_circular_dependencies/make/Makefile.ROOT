@@ -63,12 +63,14 @@ generated: $(GENERATED_DIRTY)
 root$(OBJEXT): root.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) root.cpp
 
-
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

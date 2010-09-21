@@ -14,7 +14,7 @@
 
 all: Some_Test_Other_Lib Some_Test_Simple_Lib simple
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.Some_Test_Other_Lib $(@)
 	@$(MAKE) -f Makefile.Some_Test_Simple_Lib $(@)
 	@$(MAKE) -f Makefile.simple $(@)

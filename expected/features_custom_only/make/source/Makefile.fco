@@ -63,6 +63,9 @@ realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
 	-$(RM) $(GENERATED_DIRTY)
 
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
+
 #----------------------------------------------------------------------------
 #       Dependencies
 #----------------------------------------------------------------------------

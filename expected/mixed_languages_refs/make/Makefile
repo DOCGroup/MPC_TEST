@@ -14,7 +14,7 @@
 
 all: n-target r-target o-target z-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd n && $(MAKE) -f Makefile.n $(@)
 	@cd r && $(MAKE) -f Makefile.r $(@)
 	@cd o && $(MAKE) -f Makefile.o $(@)

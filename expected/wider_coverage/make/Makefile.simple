@@ -57,13 +57,15 @@ generated: $(GENERATED_DIRTY)
 ./houses/simple$(OBJEXT): ./houses/simple.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ./houses/simple.cpp
 
-
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(BIN)
 	-echo It is clean. ; echo Really, it is.
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

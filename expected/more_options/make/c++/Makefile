@@ -1,7 +1,7 @@
 
 all: foo
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.foo $(@)
 
 .PHONY: foo

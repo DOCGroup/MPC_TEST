@@ -14,7 +14,7 @@
 
 all: not_ghs
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.not_ghs $(@)
 
 .PHONY: not_ghs

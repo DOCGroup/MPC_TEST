@@ -14,7 +14,7 @@
 
 all: dir4
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.dir4 $(@)
 
 .PHONY: dir4

@@ -51,12 +51,14 @@ generated: $(GENERATED_DIRTY)
 simple$(OBJEXT): simple.java
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) simple.java
 
-
 clean:
 	-$(RM) $(OBJS)
 
 realclean: clean
 	-$(RM) $(BIN)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

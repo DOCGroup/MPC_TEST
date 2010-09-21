@@ -70,10 +70,8 @@ generated: $(GENERATED_DIRTY)
 MyModule_wrap$(OBJEXT): MyModule_wrap.cxx
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) MyModule_wrap.cxx
 
-
 hello$(OBJEXT): hello.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) hello.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
@@ -81,6 +79,9 @@ clean:
 realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
 	-$(RM) $(GENERATED_DIRTY)
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies

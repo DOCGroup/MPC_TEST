@@ -14,7 +14,7 @@
 
 all: implicit
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.implicit $(@)
 
 .PHONY: implicit

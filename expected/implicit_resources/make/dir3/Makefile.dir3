@@ -64,6 +64,9 @@ clean:
 realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
 
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
+
 #----------------------------------------------------------------------------
 #       Dependencies
 #----------------------------------------------------------------------------

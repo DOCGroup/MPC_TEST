@@ -12,20 +12,14 @@
 #----------------------------------------------------------------------------
 
 
-all: good-target not_ghs-target
+all: not_ghs-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
-	@cd good && $(MAKE) -f Makefile.good $(@)
+clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd not_ghs && $(MAKE) -f Makefile.not_ghs $(@)
-
-.PHONY: good-target
-good-target:
-	@cd good && $(MAKE) -f Makefile.good generated all
 
 .PHONY: not_ghs-target
 not_ghs-target:
 	@cd not_ghs && $(MAKE) -f Makefile.not_ghs generated all
 
 project_name_list:
-	@echo good-target
 	@echo not_ghs-target

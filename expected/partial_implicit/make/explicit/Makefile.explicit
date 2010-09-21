@@ -72,10 +72,8 @@ generated: $(GENERATED_DIRTY)
 down/crap$(OBJEXT): down/crap.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) down/crap.cpp
 
-
 foo$(OBJEXT): foo.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) foo.cpp
-
 
 clean:
 	-$(RM) $(OBJS)
@@ -84,6 +82,9 @@ realclean: clean
 	-$(RM) $(SHLIB) $(LIB)
 	-$(RM) $(GENERATED_DIRTY)
 	-rm -rf down
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 #----------------------------------------------------------------------------
 #       Dependencies
