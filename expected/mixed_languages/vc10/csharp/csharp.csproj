@@ -78,6 +78,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="floop.resx">
     </EmbeddedResource>
+    <EmbeddedResource Include="embres.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

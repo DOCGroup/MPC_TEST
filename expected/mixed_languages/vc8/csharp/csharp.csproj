@@ -83,6 +83,7 @@
       <SubType>Designer</SubType>
       <DependentUpon>floop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="embres.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
