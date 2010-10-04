@@ -11,4 +11,7 @@ project(csharp) {
       floop.Designer.cs
     }
   }
+  Embedded_Resource_Files {
+    embres.xml
+  }
 }
