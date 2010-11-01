@@ -9,17 +9,13 @@
       <UniqueIdentifier>{06319535-FECA-1BAD-9CF0-099500000000}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hh</Extensions>
     </Filter>
-    <Filter Include="Uic Files">
-      <UniqueIdentifier>{F690FA50-FECA-1BAD-9CF0-099500000000}</UniqueIdentifier>
-      <Extensions>ui</Extensions>
-    </Filter>
-    <Filter Include="Uic Impl Files">
-      <UniqueIdentifier>{6EAF93D9-FECA-1BAD-9CF0-099500000000}</UniqueIdentifier>
-      <Extensions>ui</Extensions>
-    </Filter>
     <Filter Include="Moc Files">
       <UniqueIdentifier>{9690FA48-FECA-1BAD-9CF0-099500000000}</UniqueIdentifier>
       <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Uic And Uic Impl Files">
+      <UniqueIdentifier>{7690FAA1-FECA-1BAD-9CF0-099500000000}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
     </Filter>
     <Filter Include="Documentation">
       <UniqueIdentifier>{B14BBA74-FECA-1BAD-9CF0-099500000000}</UniqueIdentifier>
@@ -42,18 +38,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="demo.ui">
-      <Filter>Uic Files</Filter>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="demo.ui">
-      <Filter>Uic Impl Files</Filter>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
     <CustomBuild Include="demo.h">
       <Filter>Moc Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="demo.ui">
+      <Filter>Uic And Uic Impl Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

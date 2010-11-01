@@ -274,42 +274,6 @@
     <ClInclude Include="demo.h" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="demo.ui">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic  &quot;demo.ui&quot; -o &quot;demo.h&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking $(QTDIR)\bin\uic on demo.ui</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">demo.h</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic  &quot;demo.ui&quot; -o &quot;demo.h&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking $(QTDIR)\bin\uic on demo.ui</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">demo.h</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic  &quot;demo.ui&quot; -o &quot;demo.h&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking $(QTDIR)\bin\uic on demo.ui</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">demo.h</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic  &quot;demo.ui&quot; -o &quot;demo.h&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking $(QTDIR)\bin\uic on demo.ui</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">demo.h</Outputs>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="demo.ui">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic -impl &quot;demo.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking $(QTDIR)\bin\uic on demo.ui</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">demo.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">demo.h</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic -impl &quot;demo.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking $(QTDIR)\bin\uic on demo.ui</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">demo.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">demo.h</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic -impl &quot;demo.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking $(QTDIR)\bin\uic on demo.ui</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">demo.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">demo.h</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic -impl &quot;demo.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking $(QTDIR)\bin\uic on demo.ui</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">demo.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">demo.h</AdditionalInputs>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
     <CustomBuild Include="demo.h">
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc  &quot;demo.h&quot; -o &quot;demo_moc.cpp&quot;</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking $(QTDIR)\bin\moc on demo.h</Message>
@@ -323,6 +287,26 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc  &quot;demo.h&quot; -o &quot;demo_moc.cpp&quot;</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking $(QTDIR)\bin\moc on demo.h</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">demo_moc.cpp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="demo.ui">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic -impl &quot;.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot; &amp;&amp; $(QTDIR)\bin\uic -impl &quot;.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking $(QTDIR)\bin\uic and $(QTDIR)\bin\uic on demo.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">demo.cpp;demo.h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">demo.exe;demo.h</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic -impl &quot;.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot; &amp;&amp; $(QTDIR)\bin\uic -impl &quot;.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking $(QTDIR)\bin\uic and $(QTDIR)\bin\uic on demo.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">demo.cpp;demo.h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">demo.exe;demo.h</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic -impl &quot;.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot; &amp;&amp; $(QTDIR)\bin\uic -impl &quot;.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking $(QTDIR)\bin\uic and $(QTDIR)\bin\uic on demo.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">demo.cpp;demo.h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">demo.exe;demo.h</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic -impl &quot;.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot; &amp;&amp; $(QTDIR)\bin\uic -impl &quot;.h&quot; &quot;demo.ui&quot; -o &quot;demo.cpp&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking $(QTDIR)\bin\uic and $(QTDIR)\bin\uic on demo.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">demo.cpp;demo.h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">demo.exe;demo.h</AdditionalInputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

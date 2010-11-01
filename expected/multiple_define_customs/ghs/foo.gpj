@@ -9,12 +9,14 @@
 Foo.idl		[Text]
 FooTypeSupportImpl.cpp
 	:dependsRelative=Foo.idl
+	:dependsRelative=dep1
 	:preexecShell='cd . && perl foo.pl  Foo.idl'
 	:extraOutputFile=FooTypeSupportImpl.cpp
 	:extraOutputFile=FooTypeSupportImpl.h
 Foo.idl		[Text]
 FooD.cpp
 	:dependsRelative=Foo.idl
+	:dependsRelative=dep2
 	:preexecShell='cd . && perl zzz.pl  Foo.idl'
 	:extraOutputFile=FooD.cpp
 	:extraOutputFile=FooD.h

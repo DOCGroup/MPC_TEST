@@ -9,12 +9,8 @@
       <UniqueIdentifier>{06319535-FECA-1BAD-609D-8A6300000000}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hh</Extensions>
     </Filter>
-    <Filter Include="Typesupport Files">
-      <UniqueIdentifier>{B7B4DD38-FECA-1BAD-609D-8A6300000000}</UniqueIdentifier>
-      <Extensions>idl</Extensions>
-    </Filter>
-    <Filter Include="Ddsidl Files">
-      <UniqueIdentifier>{2996D97C-FECA-1BAD-609D-8A6300000000}</UniqueIdentifier>
+    <Filter Include="Ddsidl And Typesupport Files">
+      <UniqueIdentifier>{9E257F97-FECA-1BAD-609D-8A6300000000}</UniqueIdentifier>
       <Extensions>idl</Extensions>
     </Filter>
   </ItemGroup>
@@ -36,12 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Foo.idl">
-      <Filter>Typesupport Files</Filter>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Foo.idl">
-      <Filter>Ddsidl Files</Filter>
+      <Filter>Ddsidl And Typesupport Files</Filter>
     </CustomBuild>
   </ItemGroup>
 </Project>

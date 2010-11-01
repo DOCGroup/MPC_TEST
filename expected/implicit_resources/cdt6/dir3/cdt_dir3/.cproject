@@ -7,105 +7,195 @@
 
     <cconfiguration id="mpc.generated.config.linux.debug">
       <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="mpc.generated.config.linux.debug" moduleId="org.eclipse.cdt.core.settings" name="linux-debug">
-<externalSettings/>
-<extensions>
-<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
-<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-</extensions>
-</storageModule>
-
-<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+        <externalSettings/>
+        <extensions>
+          <extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+          <extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+          <extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+          <extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+        </extensions>
+      </storageModule>
+      <storageModule moduleId="cdtBuildSystem" version="4.0.0">
 <configuration
-   
-   artifactExtension="so"
-   
-   artifactName="dir3"
-   description=""
-   id="mpc.generated.config.linux.debug"
-   name="linux-debug"
-      buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib"
-   buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
-   cleanCommand="rm -rf"
-   parent="cdt.managedbuild.config.gnu.so.debug"
-   prebuildStep=""
-   
-   postbuildStep="sh ../postbuild_linux_debug.sh"
+  artifactExtension="so"
+  artifactName="dir3"
+  description=""
+  id="mpc.generated.config.linux.debug"
+  name="linux-debug"
+  buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib"
+  buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+  cleanCommand="rm -rf"
+  parent="cdt.managedbuild.config.gnu.so.debug"
+  prebuildStep=""
+  postbuildStep="sh ../postbuild_linux_debug.sh"
 >
-<folderInfo id="mpc.generated.config.linux.debug"  name="/" resourcePath="">
-<toolChain
-   id="mpc.generated.toolchain.linux.debug"
-   name="linux Default"
-   nonInternalBuilderId="cdt.managedbuild.target.gnu.builder.so.debug"
-   superClass="cdt.managedbuild.toolchain.gnu.so.debug"
->
-<targetPlatform
-  id="mpc.generated.target.platform.linux.so.debug"
-  name="debug Platform"
-  superClass="cdt.managedbuild.target.gnu.platform.so.debug"/>
-<builder
-  id="org.eclipse.cdt.internal.builder.dir3"
-  autoBuildTarget="all"
-  cleanBuildTarget="clean"
-  incrementalBuildTarget="all"
-  keepEnvironmentInBuildfile="false"
-    buildPath="${workspace_loc:/dir3/debug}"
-  managedBuildOn="true" name="CDT Internal Builder"
-  superClass="org.eclipse.cdt.build.core.internal.builder"
+  <folderInfo id="mpc.generated.config.linux.debug" name="/" resourcePath="">
+    <toolChain
+      id="mpc.generated.toolchain.linux.debug"
+      name="linux Default"
+      nonInternalBuilderId="cdt.managedbuild.target.gnu.builder.so.debug"
+      superClass="cdt.managedbuild.toolchain.gnu.so.debug">
+      <targetPlatform
+        id="mpc.generated.target.platform.linux.so.debug"
+        name="debug Platform"
+        superClass="cdt.managedbuild.target.gnu.platform.so.debug"/>
+      <builder
+        id="org.eclipse.cdt.internal.builder.dir3"
+        autoBuildTarget="all"
+        cleanBuildTarget="clean"
+        incrementalBuildTarget="all"
+        keepEnvironmentInBuildfile="false"
+        buildPath="${workspace_loc:/dir3/debug}"
+        managedBuildOn="true" name="CDT Internal Builder"
+        superClass="org.eclipse.cdt.build.core.internal.builder"
+      />
+<tool
+  id="cdt.managedbuild.tool.gnu.c.linker.so.debug.1311461244"
+  name="GNU C Linker"
+  superClass="cdt.managedbuild.tool.gnu.c.linker.so.debug">
+  <option
+    defaultValue="true"
+    id="gnu.c.link.so.debug.option.shared.1"
+    name="Shared/Dynamic"
+    superClass="gnu.c.link.so.debug.option.shared" valueType="boolean"
   />
-<tool  id="cdt.managedbuild.tool.gnu.c.linker.so.debug.1311461244" name="GNU C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.debug">
-<option defaultValue="true" id="gnu.c.link.so.debug.option.shared.1" name="Shared/Dynamic" superClass="gnu.c.link.so.debug.option.shared" valueType="boolean"/>
 </tool>
-<tool  id="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.335515345" name="GNU C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug">
-<option id="mpc.generated.link.libpaths.1" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-<listOptionValue builtIn="false" value="../../."/>
-<listOptionValue builtIn="false" value="../.././linux-debug"/>
-</option>
-<option id="mpc.generated.link.option.libs.1" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
-<listOptionValue builtIn="false" value="rt"/>
-<listOptionValue builtIn="false" value="dl"/>
-</option>
-<option id="mpc.generated.linkflags.1" superClass="gnu.cpp.link.option.flags" value=" -pthread" valueType="string"/>
-<option defaultValue="true" id="gnu.cpp.link.so.debug.option.shared.1" name="Shared/Dynamic" superClass="gnu.cpp.link.so.debug.option.shared" valueType="boolean"/>
-<inputType id="cdt.managedbuild.tool.cpp.linker.input.415890365" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
-<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
-<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-</inputType>
-<outputType id="mpc.generated.cpp.linker.output.so.1" outputPrefix="lib" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.output"/>
+<tool
+  id="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.335515345"
+  name="GNU C++ Linker"
+  superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug">
+  <option
+    id="mpc.generated.link.libpaths.1"
+    superClass="gnu.cpp.link.option.paths"
+    valueType="libPaths">
+    <listOptionValue builtIn="false" value="../../."/>
+    <listOptionValue builtIn="false" value="../.././linux-debug"/>
+  </option>
+  <option
+    id="mpc.generated.link.option.libs.1"
+    name="Libraries (-l)"
+    superClass="gnu.cpp.link.option.libs"
+    valueType="libs">
+    <listOptionValue builtIn="false" value="rt"/>
+    <listOptionValue builtIn="false" value="dl"/>
+  </option>
+  <option
+    id="mpc.generated.linkflags.1"
+    superClass="gnu.cpp.link.option.flags"
+    value=" -pthread"
+    valueType="string"
+  />
+  <option
+    defaultValue="true"
+    id="gnu.cpp.link.so.debug.option.shared.1"
+    name="Shared/Dynamic"
+    superClass="gnu.cpp.link.so.debug.option.shared"
+    valueType="boolean"
+  />
+  <inputType
+    id="cdt.managedbuild.tool.cpp.linker.input.415890365"
+    superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+    <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+    <additionalInput kind="additionalinput" paths="$(LIBS)"/>
+  </inputType>
+  <outputType id="mpc.generated.cpp.linker.output.so.1" outputPrefix="lib" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.output"/>
 </tool>
-<tool  id="cdt.managedbuild.tool.gnu.assembler.so.debug.897965604" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.so.debug">
-<inputType id="cdt.managedbuild.tool.gnu.assembler.input.706221217" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+<tool
+  id="cdt.managedbuild.tool.gnu.assembler.so.debug.897965604"
+  name="GCC Assembler"
+  superClass="cdt.managedbuild.tool.gnu.assembler.so.debug">
+  <inputType
+    id="cdt.managedbuild.tool.gnu.assembler.input.706221217"
+    superClass="cdt.managedbuild.tool.gnu.assembler.input"
+  />
 </tool>
-<tool  id="cdt.managedbuild.tool.gnu.archiver.base.134329701" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
-<tool  id="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug.1373363011" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug">
-<option id="mpc.generated.cc.include.paths.1" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-</option>
-<option id="gnu.cpp.compiler.option.other.other.375481234" superClass="gnu.cpp.compiler.option.other.other" value="-c  -pthread -fPIC" valueType="string"/>
-<option id="gnu.cpp.compiler.so.debug.option.optimization.level.886842330" name="Optimization Level" superClass="gnu.cpp.compiler.so.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
-<option id="gnu.cpp.compiler.so.debug.option.debugging.level.63360527" name="Debug Level" superClass="gnu.cpp.compiler.so.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
-<option id="gnu.cpp.compiler.option.preprocessor.def.1310953196" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
-
-
-</option>
+<tool
+  id="cdt.managedbuild.tool.gnu.archiver.base.134329701"
+  name="GCC Archiver"
+  superClass="cdt.managedbuild.tool.gnu.archiver.base"
+/>
+<tool
+  id="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug.1373363011"
+  name="GCC C++ Compiler"
+  superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug">
+  <option
+    id="mpc.generated.cc.include.paths.1"
+    superClass="gnu.cpp.compiler.option.include.paths"
+    valueType="includePath">
+  </option>
+  <option
+    id="gnu.cpp.compiler.option.other.other.375481234"
+    superClass="gnu.cpp.compiler.option.other.other"
+    value="-c  -pthread -fPIC"
+    valueType="string"
+  />
+  <option
+    id="gnu.cpp.compiler.so.debug.option.optimization.level.886842330"
+    name="Optimization Level"
+    superClass="gnu.cpp.compiler.so.debug.option.optimization.level"
+    value="gnu.cpp.compiler.optimization.level.none"
+    valueType="enumerated"
+  />
+  <option
+    id="gnu.cpp.compiler.so.debug.option.debugging.level.63360527"
+    name="Debug Level"
+    superClass="gnu.cpp.compiler.so.debug.option.debugging.level"
+    value="gnu.cpp.compiler.debugging.level.max"
+    valueType="enumerated"
+  />
+  <option
+    id="gnu.cpp.compiler.option.preprocessor.def.1310953196"
+    superClass="gnu.cpp.compiler.option.preprocessor.def"
+    valueType="definedSymbols">
+  </option>
 <!--
 <option id="gnu.cpp.compiler.option.preprocessor.undef.1618336754" superClass="gnu.cpp.compiler.option.preprocessor.undef" valueType="undefDefinedSymbols">
 <listOptionValue builtIn="false" value="blah"/>
 </option>
 -->
-<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1095450641" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+  <inputType
+    id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1095450641"
+    superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"
+  />
 </tool>
-<tool  id="cdt.managedbuild.tool.gnu.c.compiler.so.debug.1634417374" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.debug">
-<option id="mpc.generated.c.compiler.option.include.paths.1" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-</option>
-<option id="gnu.c.compiler.so.debug.option.optimization.level.1822406061" name="Optimization Level" superClass="gnu.c.compiler.so.debug.option.optimization.level" value="gnu.c.optimization.level.none" valueType="enumerated"/>
-<option id="gnu.c.compiler.so.debug.option.debugging.level.1766929" name="Debug Level" superClass="gnu.c.compiler.so.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
-<option id="gnu.c.compiler.miscoptions.linux.debug" superClass="gnu.c.compiler.option.misc.other" value="-c -fmessage-length=0 " valueType="string"/>
-<option id="gnu.c.compiler.option.preprocessor.def.linux.debug" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
-
-
-</option>
-<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1596535093" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+<tool
+  id="cdt.managedbuild.tool.gnu.c.compiler.so.debug.1634417374"
+  name="GCC C Compiler"
+  superClass="cdt.managedbuild.tool.gnu.c.compiler.so.debug">
+  <option
+    id="mpc.generated.c.compiler.option.include.paths.1"
+    superClass="gnu.c.compiler.option.include.paths"
+    valueType="includePath">
+  </option>
+  <option
+    id="gnu.c.compiler.so.debug.option.optimization.level.1822406061"
+    name="Optimization Level"
+    superClass="gnu.c.compiler.so.debug.option.optimization.level"
+    value="gnu.c.optimization.level.none"
+    valueType="enumerated"
+  />
+  <option
+    id="gnu.c.compiler.so.debug.option.debugging.level.1766929"
+    name="Debug Level"
+    superClass="gnu.c.compiler.so.debug.option.debugging.level"
+    value="gnu.c.debugging.level.max"
+    valueType="enumerated"
+  />
+  <option
+    id="gnu.c.compiler.miscoptions.linux.debug"
+    superClass="gnu.c.compiler.option.misc.other"
+    value="-c -fmessage-length=0 "
+    valueType="string"
+  />
+  <option
+    id="gnu.c.compiler.option.preprocessor.def.linux.debug"
+    superClass="gnu.c.compiler.option.preprocessor.def.symbols"
+    valueType="definedSymbols">
+  </option>
+  <inputType
+    id="cdt.managedbuild.tool.gnu.c.compiler.input.1596535093"
+    superClass="cdt.managedbuild.tool.gnu.c.compiler.input"
+  />
 </tool>
 
 </toolChain>
@@ -127,105 +217,195 @@
 
     <cconfiguration id="mpc.generated.config.linux.release">
       <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="mpc.generated.config.linux.release" moduleId="org.eclipse.cdt.core.settings" name="linux-release">
-<externalSettings/>
-<extensions>
-<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
-<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-</extensions>
-</storageModule>
-
-<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+        <externalSettings/>
+        <extensions>
+          <extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+          <extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+          <extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+          <extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+        </extensions>
+      </storageModule>
+      <storageModule moduleId="cdtBuildSystem" version="4.0.0">
 <configuration
-   
-   artifactExtension="so"
-   
-   artifactName="dir3"
-   description=""
-   id="mpc.generated.config.linux.release"
-   name="linux-release"
-      buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib"
-   buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
-   cleanCommand="rm -rf"
-   parent="cdt.managedbuild.config.gnu.so.release"
-   prebuildStep=""
-   
-   postbuildStep="sh ../postbuild_linux_release.sh"
+  artifactExtension="so"
+  artifactName="dir3"
+  description=""
+  id="mpc.generated.config.linux.release"
+  name="linux-release"
+  buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib"
+  buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+  cleanCommand="rm -rf"
+  parent="cdt.managedbuild.config.gnu.so.release"
+  prebuildStep=""
+  postbuildStep="sh ../postbuild_linux_release.sh"
 >
-<folderInfo id="mpc.generated.config.linux.release"  name="/" resourcePath="">
-<toolChain
-   id="mpc.generated.toolchain.linux.release"
-   name="linux Default"
-   nonInternalBuilderId="cdt.managedbuild.target.gnu.builder.so.release"
-   superClass="cdt.managedbuild.toolchain.gnu.so.release"
->
-<targetPlatform
-  id="mpc.generated.target.platform.linux.so.release"
-  name="release Platform"
-  superClass="cdt.managedbuild.target.gnu.platform.so.release"/>
-<builder
-  id="org.eclipse.cdt.internal.builder.dir3"
-  autoBuildTarget="all"
-  cleanBuildTarget="clean"
-  incrementalBuildTarget="all"
-  keepEnvironmentInBuildfile="false"
-    buildPath="${workspace_loc:/dir3/release}"
-  managedBuildOn="true" name="CDT Internal Builder"
-  superClass="org.eclipse.cdt.build.core.internal.builder"
+  <folderInfo id="mpc.generated.config.linux.release" name="/" resourcePath="">
+    <toolChain
+      id="mpc.generated.toolchain.linux.release"
+      name="linux Default"
+      nonInternalBuilderId="cdt.managedbuild.target.gnu.builder.so.release"
+      superClass="cdt.managedbuild.toolchain.gnu.so.release">
+      <targetPlatform
+        id="mpc.generated.target.platform.linux.so.release"
+        name="release Platform"
+        superClass="cdt.managedbuild.target.gnu.platform.so.release"/>
+      <builder
+        id="org.eclipse.cdt.internal.builder.dir3"
+        autoBuildTarget="all"
+        cleanBuildTarget="clean"
+        incrementalBuildTarget="all"
+        keepEnvironmentInBuildfile="false"
+        buildPath="${workspace_loc:/dir3/release}"
+        managedBuildOn="true" name="CDT Internal Builder"
+        superClass="org.eclipse.cdt.build.core.internal.builder"
+      />
+<tool
+  id="cdt.managedbuild.tool.gnu.c.linker.so.release.1311461244"
+  name="GNU C Linker"
+  superClass="cdt.managedbuild.tool.gnu.c.linker.so.release">
+  <option
+    defaultValue="true"
+    id="gnu.c.link.so.debug.option.shared.1"
+    name="Shared/Dynamic"
+    superClass="gnu.c.link.so.debug.option.shared" valueType="boolean"
   />
-<tool  id="cdt.managedbuild.tool.gnu.c.linker.so.release.1311461244" name="GNU C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.release">
-<option defaultValue="true" id="gnu.c.link.so.debug.option.shared.1" name="Shared/Dynamic" superClass="gnu.c.link.so.debug.option.shared" valueType="boolean"/>
 </tool>
-<tool  id="cdt.managedbuild.tool.gnu.cpp.linker.so.release.335515345" name="GNU C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.release">
-<option id="mpc.generated.link.libpaths.1" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-<listOptionValue builtIn="false" value="../../."/>
-<listOptionValue builtIn="false" value="../.././linux-release"/>
-</option>
-<option id="mpc.generated.link.option.libs.1" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
-<listOptionValue builtIn="false" value="rt"/>
-<listOptionValue builtIn="false" value="dl"/>
-</option>
-<option id="mpc.generated.linkflags.1" superClass="gnu.cpp.link.option.flags" value=" -pthread" valueType="string"/>
-<option defaultValue="true" id="gnu.cpp.link.so.debug.option.shared.1" name="Shared/Dynamic" superClass="gnu.cpp.link.so.debug.option.shared" valueType="boolean"/>
-<inputType id="cdt.managedbuild.tool.cpp.linker.input.415890365" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
-<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
-<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-</inputType>
-<outputType id="mpc.generated.cpp.linker.output.so.1" outputPrefix="lib" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.output"/>
+<tool
+  id="cdt.managedbuild.tool.gnu.cpp.linker.so.release.335515345"
+  name="GNU C++ Linker"
+  superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.release">
+  <option
+    id="mpc.generated.link.libpaths.1"
+    superClass="gnu.cpp.link.option.paths"
+    valueType="libPaths">
+    <listOptionValue builtIn="false" value="../../."/>
+    <listOptionValue builtIn="false" value="../.././linux-release"/>
+  </option>
+  <option
+    id="mpc.generated.link.option.libs.1"
+    name="Libraries (-l)"
+    superClass="gnu.cpp.link.option.libs"
+    valueType="libs">
+    <listOptionValue builtIn="false" value="rt"/>
+    <listOptionValue builtIn="false" value="dl"/>
+  </option>
+  <option
+    id="mpc.generated.linkflags.1"
+    superClass="gnu.cpp.link.option.flags"
+    value=" -pthread"
+    valueType="string"
+  />
+  <option
+    defaultValue="true"
+    id="gnu.cpp.link.so.debug.option.shared.1"
+    name="Shared/Dynamic"
+    superClass="gnu.cpp.link.so.debug.option.shared"
+    valueType="boolean"
+  />
+  <inputType
+    id="cdt.managedbuild.tool.cpp.linker.input.415890365"
+    superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+    <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+    <additionalInput kind="additionalinput" paths="$(LIBS)"/>
+  </inputType>
+  <outputType id="mpc.generated.cpp.linker.output.so.1" outputPrefix="lib" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.output"/>
 </tool>
-<tool  id="cdt.managedbuild.tool.gnu.assembler.so.release.897965604" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.so.release">
-<inputType id="cdt.managedbuild.tool.gnu.assembler.input.706221217" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+<tool
+  id="cdt.managedbuild.tool.gnu.assembler.so.release.897965604"
+  name="GCC Assembler"
+  superClass="cdt.managedbuild.tool.gnu.assembler.so.release">
+  <inputType
+    id="cdt.managedbuild.tool.gnu.assembler.input.706221217"
+    superClass="cdt.managedbuild.tool.gnu.assembler.input"
+  />
 </tool>
-<tool  id="cdt.managedbuild.tool.gnu.archiver.base.134329701" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
-<tool  id="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1373363011" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.release">
-<option id="mpc.generated.cc.include.paths.1" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-</option>
-<option id="gnu.cpp.compiler.option.other.other.375481234" superClass="gnu.cpp.compiler.option.other.other" value="-c  -pthread -fPIC" valueType="string"/>
-<option id="gnu.cpp.compiler.so.release.option.optimization.level.886842330" name="Optimization Level" superClass="gnu.cpp.compiler.so.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.max" valueType="enumerated"/>
-<option id="gnu.cpp.compiler.so.release.option.debugging.level.63360527" name="Debug Level" superClass="gnu.cpp.compiler.so.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
-<option id="gnu.cpp.compiler.option.preprocessor.def.1310953196" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
-
-
-</option>
+<tool
+  id="cdt.managedbuild.tool.gnu.archiver.base.134329701"
+  name="GCC Archiver"
+  superClass="cdt.managedbuild.tool.gnu.archiver.base"
+/>
+<tool
+  id="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1373363011"
+  name="GCC C++ Compiler"
+  superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.release">
+  <option
+    id="mpc.generated.cc.include.paths.1"
+    superClass="gnu.cpp.compiler.option.include.paths"
+    valueType="includePath">
+  </option>
+  <option
+    id="gnu.cpp.compiler.option.other.other.375481234"
+    superClass="gnu.cpp.compiler.option.other.other"
+    value="-c  -pthread -fPIC"
+    valueType="string"
+  />
+  <option
+    id="gnu.cpp.compiler.so.release.option.optimization.level.886842330"
+    name="Optimization Level"
+    superClass="gnu.cpp.compiler.so.release.option.optimization.level"
+    value="gnu.cpp.compiler.optimization.level.max"
+    valueType="enumerated"
+  />
+  <option
+    id="gnu.cpp.compiler.so.release.option.debugging.level.63360527"
+    name="Debug Level"
+    superClass="gnu.cpp.compiler.so.release.option.debugging.level"
+    value="gnu.cpp.compiler.debugging.level.none"
+    valueType="enumerated"
+  />
+  <option
+    id="gnu.cpp.compiler.option.preprocessor.def.1310953196"
+    superClass="gnu.cpp.compiler.option.preprocessor.def"
+    valueType="definedSymbols">
+  </option>
 <!--
 <option id="gnu.cpp.compiler.option.preprocessor.undef.1618336754" superClass="gnu.cpp.compiler.option.preprocessor.undef" valueType="undefDefinedSymbols">
 <listOptionValue builtIn="false" value="blah"/>
 </option>
 -->
-<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1095450641" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+  <inputType
+    id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1095450641"
+    superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"
+  />
 </tool>
-<tool  id="cdt.managedbuild.tool.gnu.c.compiler.so.release.1634417374" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.release">
-<option id="mpc.generated.c.compiler.option.include.paths.1" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-</option>
-<option id="gnu.c.compiler.so.release.option.optimization.level.1822406061" name="Optimization Level" superClass="gnu.c.compiler.so.release.option.optimization.level" value="gnu.c.optimization.level.max" valueType="enumerated"/>
-<option id="gnu.c.compiler.so.release.option.debugging.level.1766929" name="Debug Level" superClass="gnu.c.compiler.so.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
-<option id="gnu.c.compiler.miscoptions.linux.release" superClass="gnu.c.compiler.option.misc.other" value="-c -fmessage-length=0 " valueType="string"/>
-<option id="gnu.c.compiler.option.preprocessor.def.linux.release" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
-
-
-</option>
-<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1596535093" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+<tool
+  id="cdt.managedbuild.tool.gnu.c.compiler.so.release.1634417374"
+  name="GCC C Compiler"
+  superClass="cdt.managedbuild.tool.gnu.c.compiler.so.release">
+  <option
+    id="mpc.generated.c.compiler.option.include.paths.1"
+    superClass="gnu.c.compiler.option.include.paths"
+    valueType="includePath">
+  </option>
+  <option
+    id="gnu.c.compiler.so.release.option.optimization.level.1822406061"
+    name="Optimization Level"
+    superClass="gnu.c.compiler.so.release.option.optimization.level"
+    value="gnu.c.optimization.level.max"
+    valueType="enumerated"
+  />
+  <option
+    id="gnu.c.compiler.so.release.option.debugging.level.1766929"
+    name="Debug Level"
+    superClass="gnu.c.compiler.so.release.option.debugging.level"
+    value="gnu.c.debugging.level.none"
+    valueType="enumerated"
+  />
+  <option
+    id="gnu.c.compiler.miscoptions.linux.release"
+    superClass="gnu.c.compiler.option.misc.other"
+    value="-c -fmessage-length=0 "
+    valueType="string"
+  />
+  <option
+    id="gnu.c.compiler.option.preprocessor.def.linux.release"
+    superClass="gnu.c.compiler.option.preprocessor.def.symbols"
+    valueType="definedSymbols">
+  </option>
+  <inputType
+    id="cdt.managedbuild.tool.gnu.c.compiler.input.1596535093"
+    superClass="cdt.managedbuild.tool.gnu.c.compiler.input"
+  />
 </tool>
 
 </toolChain>
@@ -246,7 +426,6 @@
 
 
 
-
 </storageModule>
 <storageModule moduleId="cdtBuildSystem" version="4.0.0">
 <project
@@ -255,4 +434,3 @@
   projectType="cdt.managedbuild.target.gnu.so"/>
 </storageModule>
 </cproject>
-

@@ -254,34 +254,18 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="foo.mco">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking echo &quot;int main(){}&quot; on foo.mco</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">foo.cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo &quot;int main(){}&quot; -a -O &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking echo &quot;int main(){}&quot; on foo.mco</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">foo.cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking echo &quot;int main(){}&quot; on foo.mco</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">foo.cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">echo &quot;int main(){}&quot; -a -O &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking echo &quot;int main(){}&quot; on foo.mco</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">foo.cpp</Outputs>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="foo.mco">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo &quot;int main(){}&quot; -b &quot;foo.mco&quot; &gt; &quot;foo_script2.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking echo &quot;int main(){}&quot; on foo.mco</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">foo_script2.cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo &quot;int main(){}&quot; -b &quot;foo.mco&quot; &gt; &quot;foo_script2.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking echo &quot;int main(){}&quot; on foo.mco</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">foo_script2.cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">echo &quot;int main(){}&quot; -b &quot;foo.mco&quot; &gt; &quot;foo_script2.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking echo &quot;int main(){}&quot; on foo.mco</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">foo_script2.cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">echo &quot;int main(){}&quot; -b &quot;foo.mco&quot; &gt; &quot;foo_script2.cpp&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking echo &quot;int main(){}&quot; on foo.mco</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">foo_script2.cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot; &amp;&amp; echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking echo &quot;int main(){}&quot; and echo &quot;int main(){}&quot; on foo.mco</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">foo.cpp;foo_script2.cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot; &amp;&amp; echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking echo &quot;int main(){}&quot; and echo &quot;int main(){}&quot; on foo.mco</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">foo.cpp;foo_script2.cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot; &amp;&amp; echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking echo &quot;int main(){}&quot; and echo &quot;int main(){}&quot; on foo.mco</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">foo.cpp;foo_script2.cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot; &amp;&amp; echo &quot;int main(){}&quot; -a &quot;foo.mco&quot; &gt; &quot;foo.cpp&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking echo &quot;int main(){}&quot; and echo &quot;int main(){}&quot; on foo.mco</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">foo.cpp;foo_script2.cpp</Outputs>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

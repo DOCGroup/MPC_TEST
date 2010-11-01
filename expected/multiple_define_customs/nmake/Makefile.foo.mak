@@ -306,7 +306,7 @@ SOURCE="Foo.idl"
 
 InputPath=Foo.idl
 
-"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE) 
+"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE)  "dep1"
 	<<tempfile-Win32-Debug-typesupport_files-Foo_idl.bat
 	@echo off
 	perl foo.pl  "$(InputPath)"
@@ -316,7 +316,7 @@ SOURCE="Foo.idl"
 
 InputPath=Foo.idl
 
-"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE) 
+"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE)  "dep2"
 	<<tempfile-Win32-Debug-ddsidl_files-Foo_idl.bat
 	@echo off
 	perl zzz.pl  "$(InputPath)"
@@ -327,7 +327,7 @@ SOURCE="Foo.idl"
 
 InputPath=Foo.idl
 
-"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE) 
+"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE)  "dep1"
 	<<tempfile-Win32-Release-typesupport_files-Foo_idl.bat
 	@echo off
 	perl foo.pl  "$(InputPath)"
@@ -337,7 +337,7 @@ SOURCE="Foo.idl"
 
 InputPath=Foo.idl
 
-"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE) 
+"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE)  "dep2"
 	<<tempfile-Win32-Release-ddsidl_files-Foo_idl.bat
 	@echo off
 	perl zzz.pl  "$(InputPath)"
@@ -348,7 +348,7 @@ SOURCE="Foo.idl"
 
 InputPath=Foo.idl
 
-"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE) 
+"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE)  "dep1"
 	<<tempfile-Win32-Static_Debug-typesupport_files-Foo_idl.bat
 	@echo off
 	perl foo.pl  "$(InputPath)"
@@ -358,7 +358,7 @@ SOURCE="Foo.idl"
 
 InputPath=Foo.idl
 
-"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE) 
+"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE)  "dep2"
 	<<tempfile-Win32-Static_Debug-ddsidl_files-Foo_idl.bat
 	@echo off
 	perl zzz.pl  "$(InputPath)"
@@ -369,7 +369,7 @@ SOURCE="Foo.idl"
 
 InputPath=Foo.idl
 
-"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE) 
+"FooTypeSupportImpl.cpp" "FooTypeSupportImpl.h" : $(SOURCE)  "dep1"
 	<<tempfile-Win32-Static_Release-typesupport_files-Foo_idl.bat
 	@echo off
 	perl foo.pl  "$(InputPath)"
@@ -379,7 +379,7 @@ SOURCE="Foo.idl"
 
 InputPath=Foo.idl
 
-"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE) 
+"FooD.cpp" "FooD.h" "FooD.idl" : $(SOURCE)  "dep2"
 	<<tempfile-Win32-Static_Release-ddsidl_files-Foo_idl.bat
 	@echo off
 	perl zzz.pl  "$(InputPath)"

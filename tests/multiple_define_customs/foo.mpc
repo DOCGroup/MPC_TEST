@@ -19,10 +19,10 @@ project {
   }
 
   TypeSupport_Files {
-    Foo.idl
+    Foo.idl << dep1
   }
 
   DDSIDL_Files {
-    Foo.idl
+    Foo.idl << dep2
   }
 }

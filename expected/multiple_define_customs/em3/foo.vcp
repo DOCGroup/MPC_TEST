@@ -246,6 +246,7 @@ SOURCE="Foo.idl"
 
 !IF  "$(CFG)" == "foo - Win32 (WCE ARM) Debug"
 
+USERDEP__Foo="dep1"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl foo.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -262,6 +263,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 (WCE ARM) Release"
 
+USERDEP__Foo="dep1"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl foo.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -279,6 +281,7 @@ BuildCmds= \
 !ENDIF
 !IF  "$(CFG)" == "foo - Win32 (WCE ARMV4) Debug"
 
+USERDEP__Foo="dep1"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl foo.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -295,6 +298,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 (WCE ARMV4) Release"
 
+USERDEP__Foo="dep1"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl foo.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -312,6 +316,7 @@ BuildCmds= \
 !ENDIF
 !IF  "$(CFG)" == "foo - Win32 (WCE emulator) Debug"
 
+USERDEP__Foo="dep1"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl foo.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -328,6 +333,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 (WCE emulator) Release"
 
+USERDEP__Foo="dep1"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl foo.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -345,6 +351,7 @@ BuildCmds= \
 !ENDIF
 !IF  "$(CFG)" == "foo - Win32 (WCE x86) Debug"
 
+USERDEP__Foo="dep1"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl foo.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -361,6 +368,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 (WCE x86) Release"
 
+USERDEP__Foo="dep1"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl foo.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -388,6 +396,7 @@ SOURCE="Foo.idl"
 
 !IF  "$(CFG)" == "foo - Win32 (WCE ARM) Debug"
 
+USERDEP__Foo="dep2"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl zzz.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -407,6 +416,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 (WCE ARM) Release"
 
+USERDEP__Foo="dep2"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl zzz.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -427,6 +437,7 @@ BuildCmds= \
 !ENDIF
 !IF  "$(CFG)" == "foo - Win32 (WCE ARMV4) Debug"
 
+USERDEP__Foo="dep2"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl zzz.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -446,6 +457,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 (WCE ARMV4) Release"
 
+USERDEP__Foo="dep2"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl zzz.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -466,6 +478,7 @@ BuildCmds= \
 !ENDIF
 !IF  "$(CFG)" == "foo - Win32 (WCE emulator) Debug"
 
+USERDEP__Foo="dep2"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl zzz.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -485,6 +498,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 (WCE emulator) Release"
 
+USERDEP__Foo="dep2"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl zzz.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -505,6 +519,7 @@ BuildCmds= \
 !ENDIF
 !IF  "$(CFG)" == "foo - Win32 (WCE x86) Debug"
 
+USERDEP__Foo="dep2"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl zzz.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -524,6 +539,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 (WCE x86) Release"
 
+USERDEP__Foo="dep2"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl zzz.pl on $(InputPath)
 InputPath="Foo.idl"
