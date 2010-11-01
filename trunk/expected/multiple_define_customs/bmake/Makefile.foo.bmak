@@ -118,10 +118,10 @@ $(OUTPUTDIR)$(NAME)$(LIB_EXT): $(OBJFILES)
 !endif
 
 GENERATED_DIRTY = FooTypeSupportImpl.cpp FooTypeSupportImpl.h FooD.cpp FooD.h FooD.idl
-FooTypeSupportImpl.cpp FooTypeSupportImpl.h: Foo.idl
+FooTypeSupportImpl.cpp FooTypeSupportImpl.h: Foo.idl dep1
 	perl foo.pl  Foo.idl
 
-FooD.cpp FooD.h FooD.idl: Foo.idl
+FooD.cpp FooD.h FooD.idl: Foo.idl dep2
 	perl zzz.pl  Foo.idl
 
 $(OBJFILES): $(GENERATED_DIRTY)

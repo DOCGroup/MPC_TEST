@@ -67,11 +67,11 @@ generate_sources :: $(GENERATED_DIRTY)
 
 
 .NOTPARALLEL:
-$(addprefix ../../,FooTypeSupportImpl.cpp FooTypeSupportImpl.h): $(foreach pre,Foo.idl,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+$(addprefix ../../,FooTypeSupportImpl.cpp FooTypeSupportImpl.h): $(foreach pre,Foo.idl dep1,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
 	$(TRACE_FLAG)cd ../.. ; perl foo.pl  Foo.idl
 
 .NOTPARALLEL:
-$(addprefix ../../,FooD.cpp FooD.h FooD.idl): $(foreach pre,Foo.idl,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
+$(addprefix ../../,FooD.cpp FooD.h FooD.idl): $(foreach pre,Foo.idl dep2,$(call ADD_EXT,$(call CUST_PRE,$(pre))))
 	$(TRACE_FLAG)cd ../.. ; perl zzz.pl  Foo.idl
 
 DIR_PREFIX = wb_foo/$(BUILD_SPEC)

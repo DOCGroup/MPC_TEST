@@ -1,3 +1,22 @@
+Mon Nov  1 19:05:32 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/implicit_resources/cdt6/dir1/cdt_dir1/.cproject:
+        * expected/implicit_resources/cdt6/dir3/cdt_dir3/.cproject:
+        * expected/multi_custom_mapping/vc10/mpc_test.vcxproj:
+        * expected/multi_custom_mapping/vc10/mpc_test.vcxproj.filters:
+        * expected/qt/vc10/qt_uic_moc.vcxproj:
+        * expected/qt/vc10/qt_uic_moc.vcxproj.filters:
+
+          Updated to reflect my MPC change from Mon Nov  1 18:21:59 UTC 2010.
+
+        * tests/multiple_define_customs/dep1:
+        * tests/multiple_define_customs/dep2:
+        * tests/multiple_define_customs/foo.mpc:
+        * expected/multiple_define_customs/*:
+
+          Extended this test to use explicit dependencies (<<) on the custom
+          type input files.
+
 Mon Oct  4 15:38:38 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/mixed_languages/vc10/csharp/csharp.csproj:

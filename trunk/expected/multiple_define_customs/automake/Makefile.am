@@ -6,7 +6,7 @@
 ## this file will be lost the next time it is generated.
 ##
 ## MPC Command:
-## /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type automake
+## /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -type automake
 
 
 ## Makefile.foo.am
@@ -22,7 +22,7 @@ CLEANFILES = \
 
 FooTypeSupportImpl.cpp FooTypeSupportImpl.h: Foo-stamp
 
-Foo-stamp: $(srcdir)/Foo.idl
+Foo-stamp: $(srcdir)/Foo.idl dep1
 	perl foo.pl  $(srcdir)/Foo.idl
 	@touch "$@"
 
@@ -39,7 +39,7 @@ CLEANFILES += \
 
 FooD.cpp FooD.h FooD.idl: Foo-stamp1
 
-Foo-stamp1: $(srcdir)/Foo.idl
+Foo-stamp1: $(srcdir)/Foo.idl dep2
 	perl zzz.pl  $(srcdir)/Foo.idl
 	@touch "$@"
 

@@ -270,34 +270,22 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Foo.idl">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">perl foo.pl  &quot;Foo.idl&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking perl foo.pl on Foo.idl</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FooTypeSupportImpl.cpp;FooTypeSupportImpl.h</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">perl foo.pl  &quot;Foo.idl&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking perl foo.pl on Foo.idl</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FooTypeSupportImpl.cpp;FooTypeSupportImpl.h</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">perl foo.pl  &quot;Foo.idl&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking perl foo.pl on Foo.idl</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FooTypeSupportImpl.cpp;FooTypeSupportImpl.h</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">perl foo.pl  &quot;Foo.idl&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking perl foo.pl on Foo.idl</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FooTypeSupportImpl.cpp;FooTypeSupportImpl.h</Outputs>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Foo.idl">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">perl zzz.pl  &quot;Foo.idl&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking perl zzz.pl on Foo.idl</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FooD.cpp;FooD.h;FooD.idl</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">perl zzz.pl  &quot;Foo.idl&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking perl zzz.pl on Foo.idl</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FooD.cpp;FooD.h;FooD.idl</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">perl zzz.pl  &quot;Foo.idl&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking perl zzz.pl on Foo.idl</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FooD.cpp;FooD.h;FooD.idl</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">perl zzz.pl  &quot;Foo.idl&quot;</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking perl zzz.pl on Foo.idl</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FooD.cpp;FooD.h;FooD.idl</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">perl zzz.pl  &quot;Foo.idl&quot; &amp;&amp; perl foo.pl  &quot;Foo.idl&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Invoking perl zzz.pl and perl foo.pl on Foo.idl</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FooD.cpp;FooD.h;FooD.idl;FooTypeSupportImpl.cpp;FooTypeSupportImpl.h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">dep2;dep1</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">perl zzz.pl  &quot;Foo.idl&quot; &amp;&amp; perl foo.pl  &quot;Foo.idl&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Invoking perl zzz.pl and perl foo.pl on Foo.idl</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FooD.cpp;FooD.h;FooD.idl;FooTypeSupportImpl.cpp;FooTypeSupportImpl.h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">dep2;dep1</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">perl zzz.pl  &quot;Foo.idl&quot; &amp;&amp; perl foo.pl  &quot;Foo.idl&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Invoking perl zzz.pl and perl foo.pl on Foo.idl</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FooD.cpp;FooD.h;FooD.idl;FooTypeSupportImpl.cpp;FooTypeSupportImpl.h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">dep2;dep1</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">perl zzz.pl  &quot;Foo.idl&quot; &amp;&amp; perl foo.pl  &quot;Foo.idl&quot;</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Invoking perl zzz.pl and perl foo.pl on Foo.idl</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FooD.cpp;FooD.h;FooD.idl;FooTypeSupportImpl.cpp;FooTypeSupportImpl.h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dep2;dep1</AdditionalInputs>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

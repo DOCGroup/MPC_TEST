@@ -105,6 +105,7 @@ SOURCE="Foo.idl"
 
 !IF  "$(CFG)" == "foo - Win32 Debug"
 
+USERDEP__Foo="dep1"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl foo.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -121,6 +122,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 Release"
 
+USERDEP__Foo="dep1"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl foo.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -148,6 +150,7 @@ SOURCE="Foo.idl"
 
 !IF  "$(CFG)" == "foo - Win32 Debug"
 
+USERDEP__Foo="dep2"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl zzz.pl on $(InputPath)
 InputPath="Foo.idl"
@@ -167,6 +170,7 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "foo - Win32 Release"
 
+USERDEP__Foo="dep2"
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Invoking perl zzz.pl on $(InputPath)
 InputPath="Foo.idl"

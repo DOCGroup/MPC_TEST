@@ -379,6 +379,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking perl foo.pl on Foo.idl"
 						CommandLine="perl foo.pl  &quot;Foo.idl&quot;"
+						AdditionalDependencies="dep1"
 						Outputs="FooTypeSupportImpl.cpp;FooTypeSupportImpl.h"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -388,6 +389,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking perl foo.pl on Foo.idl"
 						CommandLine="perl foo.pl  &quot;Foo.idl&quot;"
+						AdditionalDependencies="dep1"
 						Outputs="FooTypeSupportImpl.cpp;FooTypeSupportImpl.h"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -397,6 +399,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking perl foo.pl on Foo.idl"
 						CommandLine="perl foo.pl  &quot;Foo.idl&quot;"
+						AdditionalDependencies="dep1"
 						Outputs="FooTypeSupportImpl.cpp;FooTypeSupportImpl.h"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -406,6 +409,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking perl foo.pl on Foo.idl"
 						CommandLine="perl foo.pl  &quot;Foo.idl&quot;"
+						AdditionalDependencies="dep1"
 						Outputs="FooTypeSupportImpl.cpp;FooTypeSupportImpl.h"/>
 				</FileConfiguration>
 			</File>
@@ -422,6 +426,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking perl zzz.pl on Foo.idl"
 						CommandLine="perl zzz.pl  &quot;Foo.idl&quot;"
+						AdditionalDependencies="dep2"
 						Outputs="FooD.cpp;FooD.h;FooD.idl"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -431,6 +436,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking perl zzz.pl on Foo.idl"
 						CommandLine="perl zzz.pl  &quot;Foo.idl&quot;"
+						AdditionalDependencies="dep2"
 						Outputs="FooD.cpp;FooD.h;FooD.idl"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -440,6 +446,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking perl zzz.pl on Foo.idl"
 						CommandLine="perl zzz.pl  &quot;Foo.idl&quot;"
+						AdditionalDependencies="dep2"
 						Outputs="FooD.cpp;FooD.h;FooD.idl"/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -449,6 +456,7 @@
 						Name="VCCustomBuildTool"
 						Description="Invoking perl zzz.pl on Foo.idl"
 						CommandLine="perl zzz.pl  &quot;Foo.idl&quot;"
+						AdditionalDependencies="dep2"
 						Outputs="FooD.cpp;FooD.h;FooD.idl"/>
 				</FileConfiguration>
 			</File>
