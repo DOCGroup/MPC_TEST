@@ -1,3 +1,10 @@
+Mon Nov  1 19:14:54 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/multiple_define_customs/cdt6:
+        * expected/multiple_define_customs/cdt7:
+
+          Added expected results for cdt6 and cdt7, for this one test.
+
 Mon Nov  1 19:05:32 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/implicit_resources/cdt6/dir1/cdt_dir1/.cproject:
