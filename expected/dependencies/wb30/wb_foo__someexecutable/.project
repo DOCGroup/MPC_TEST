@@ -22,12 +22,12 @@
 		<link>
 			<name>somethingthatworks.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/dependencies/somethingthatworks.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/dependencies/somethingthatworks.cpp</location>
 		</link>
                 <link>
                         <name>something_export.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/dependencies/something_export.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/dependencies/something_export.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

@@ -19,42 +19,42 @@
 		<link>
 			<name>other/zar_otherA.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/other/zar_otherA.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/other/zar_otherA.cpp</location>
 		</link>
 		<link>
 			<name>other/zar_otherB.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/other/zar_otherB.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/other/zar_otherB.cpp</location>
 		</link>
                 <link>
                         <name>other/zar_otherA.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/other/zar_otherA.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/other/zar_otherA.h</location>
                 </link>
                 <link>
                         <name>other/zar_otherB.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/other/zar_otherB.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/other/zar_otherB.h</location>
                 </link>
                 <link>
                         <name>other/zar_otherC.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/other/zar_otherC.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/other/zar_otherC.h</location>
                 </link>
                 <link>
                         <name>other/zar_otherA.inl</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/other/zar_otherA.inl</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/other/zar_otherA.inl</location>
                 </link>
                 <link>
                         <name>other/zar_otherB.inl</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/other/zar_otherB.inl</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/other/zar_otherB.inl</location>
                 </link>
                 <link>
                         <name>other/other.poo</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/other/other.poo</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/other/other.poo</location>
                 </link>
 	</linkedResources>
 </projectDescription>

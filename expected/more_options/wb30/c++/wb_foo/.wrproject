@@ -137,7 +137,7 @@
                 </mapAttribute>
             </attributes>
             <contents>
-                <file name="/wb_foo/C:/tao_builds/MPC_TEST/tests/more_options/c++/down/foo.cpp"/>
+                <file name="/wb_foo//tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo.cpp"/>
             </contents>
         </buildtarget>
         <buildtarget buildtool="C++-Linker" name="foo" passed="true" targetname="foo_Windows-gnu-native-3.x-4.x">
@@ -149,7 +149,7 @@
                 </mapAttribute>
             </attributes>
             <contents>
-                <file name="/wb_foo/C:/tao_builds/MPC_TEST/tests/more_options/c++/down/foo.cpp"/>
+                <file name="/wb_foo//tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo.cpp"/>
             </contents>
         </buildtarget>
     </buildtargets>

@@ -19,12 +19,12 @@
 		<link>
 			<name>foo.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/implicit_projects/source/one/foo.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/implicit_projects/source/one/foo.cpp</location>
 		</link>
                 <link>
                         <name>foo.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/implicit_projects/source/one/foo.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/implicit_projects/source/one/foo.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

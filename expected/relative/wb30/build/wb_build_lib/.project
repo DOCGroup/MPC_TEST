@@ -22,22 +22,22 @@
 		<link>
 			<name>../src/foo.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/relative/src/foo.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/relative/src/foo.cpp</location>
 		</link>
 		<link>
 			<name>bar.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/relative/build/bar.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/relative/build/bar.cpp</location>
 		</link>
 		<link>
 			<name>lower/bar.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/relative/build/lower/bar.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/relative/build/lower/bar.cpp</location>
 		</link>
                 <link>
                         <name>../src/zzz_pch.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/relative/src/zzz_pch.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/relative/src/zzz_pch.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

@@ -19,32 +19,32 @@
 		<link>
 			<name>FooD.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/multiple_define_customs/FooD.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/multiple_define_customs/FooD.cpp</location>
 		</link>
 		<link>
 			<name>FooTypeSupportImpl.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/multiple_define_customs/FooTypeSupportImpl.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/multiple_define_customs/FooTypeSupportImpl.cpp</location>
 		</link>
                 <link>
                         <name>FooD.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/multiple_define_customs/FooD.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/multiple_define_customs/FooD.h</location>
                 </link>
                 <link>
                         <name>FooTypeSupportImpl.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/multiple_define_customs/FooTypeSupportImpl.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/multiple_define_customs/FooTypeSupportImpl.h</location>
                 </link>
                 <link>
                         <name>Foo.idl</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/multiple_define_customs/Foo.idl</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/multiple_define_customs/Foo.idl</location>
                 </link>
                 <link>
                         <name>Foo.idl</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/multiple_define_customs/Foo.idl</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/multiple_define_customs/Foo.idl</location>
                 </link>
 	</linkedResources>
 </projectDescription>

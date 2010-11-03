@@ -19,27 +19,27 @@
 		<link>
 			<name>bus.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/flex_bison/bus.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/flex_bison/bus.cpp</location>
 		</link>
 		<link>
 			<name>bus.tab.c</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/flex_bison/bus.tab.c</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/flex_bison/bus.tab.c</location>
 		</link>
                 <link>
                         <name>bus.tab.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/flex_bison/bus.tab.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/flex_bison/bus.tab.h</location>
                 </link>
                 <link>
                         <name>bus.l</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/flex_bison/bus.l</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/flex_bison/bus.l</location>
                 </link>
                 <link>
                         <name>bus.y</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/flex_bison/bus.y</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/flex_bison/bus.y</location>
                 </link>
 	</linkedResources>
 </projectDescription>

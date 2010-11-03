@@ -19,12 +19,12 @@
                 <link>
                         <name>foo.mco</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/multi_custom_mapping/foo.mco</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/multi_custom_mapping/foo.mco</location>
                 </link>
                 <link>
                         <name>foo.mco</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/multi_custom_mapping/foo.mco</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/multi_custom_mapping/foo.mco</location>
                 </link>
 	</linkedResources>
 </projectDescription>

@@ -22,7 +22,7 @@
 		<link>
 			<name>simple_lib.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/wider_coverage/simple_lib.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/wider_coverage/simple_lib.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>
