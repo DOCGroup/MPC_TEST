@@ -10,12 +10,12 @@ CIAO_ROOT := $(subst \,/,$(CIAO_ROOT))
 HOST_ROOT := $(subst \,/,$(HOST_ROOT))
 ACE_LIBOUT := .
 
-ACE_EXE_EXT = $(if $(filter Linux_gnu_native_3.x_4.x,$(BUILD_SPEC)),)$(if $(filter Windows_gnu_native_3.x_4.x,$(BUILD_SPEC)),.exe)
+ACE_EXE_EXT = $(if $(filter Linux-gnu-native-3.x-4.x,$(BUILD_SPEC)),)$(if $(filter Windows-gnu-native-3.x-4.x,$(BUILD_SPEC)),.exe)
 
 ACE_TARGET_DIR = $(ACE_TARGET_NAME)_$(BUILD_SPEC)
-ACE_TARGET_PREFIX = $(if $(filter Linux_gnu_native_3.x_4.x,$(BUILD_SPEC)),lib)$(if $(filter Windows_gnu_native_3.x_4.x,$(BUILD_SPEC)),)
+ACE_TARGET_PREFIX = $(if $(filter Linux-gnu-native-3.x-4.x,$(BUILD_SPEC)),lib)$(if $(filter Windows-gnu-native-3.x-4.x,$(BUILD_SPEC)),)
 ACE_TARGET_NAME := Code
-ACE_TARGET_EXT = $(if $(filter Linux_gnu_native_3.x_4.x,$(BUILD_SPEC)),.so)$(if $(filter Windows_gnu_native_3.x_4.x,$(BUILD_SPEC)),.dll)
+ACE_TARGET_EXT = $(if $(filter Linux-gnu-native-3.x-4.x,$(BUILD_SPEC)),.so)$(if $(filter Windows-gnu-native-3.x-4.x,$(BUILD_SPEC)),.dll)
 PROJECT_TARGET = $(filter %$(ACE_TARGET_EXT),$(PROJECT_TARGETS))
 ACE_TARGET_DIR ?= $(ACE_TARGET_NAME)
 
