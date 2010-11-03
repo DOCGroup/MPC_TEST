@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="Debug_AnyCPU_z">
+    <ComponentGroup Id="ComponentGroup.Debug_AnyCPU_foo">
+      <ComponentRef Id="Debug_AnyCPU_foo.exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+      <Component Id="Debug_AnyCPU_foo.exe" Guid="*">
+        <File Id="Debug_AnyCPU_foo.exe"
+           Name="foo.exe"
+           Source="./Debug/foo.exe"
+           DiskId="1" />
+      </Component>
+
+
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment Id="Release_AnyCPU_z">
+    <ComponentGroup Id="ComponentGroup.Release_AnyCPU_foo">
+      <ComponentRef Id="Release_AnyCPU_foo.exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+      <Component Id="Release_AnyCPU_foo.exe" Guid="*">
+        <File Id="Release_AnyCPU_foo.exe"
+           Name="foo.exe"
+           Source="./Release/foo.exe"
+           DiskId="1" />
+      </Component>
+
+
+    </DirectoryRef>
+  </Fragment>
+
+</Include>
