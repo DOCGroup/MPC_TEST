@@ -19,37 +19,37 @@
 		<link>
 			<name>alternate/foo.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/grouping/source/alternate/foo.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/grouping/source/alternate/foo.cpp</location>
 		</link>
 		<link>
 			<name>clown.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/grouping/source/clown.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/grouping/source/clown.cpp</location>
 		</link>
 		<link>
 			<name>other.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/grouping/source/other.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/grouping/source/other.cpp</location>
 		</link>
                 <link>
                         <name>clown.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/grouping/source/clown.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/grouping/source/clown.h</location>
                 </link>
                 <link>
                         <name>other.inl</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/grouping/source/other.inl</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/grouping/source/other.inl</location>
                 </link>
                 <link>
                         <name>zzz.inl</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/grouping/source/zzz.inl</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/grouping/source/zzz.inl</location>
                 </link>
                 <link>
                         <name>clown.r</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/grouping/source/clown.r</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/grouping/source/clown.r</location>
                 </link>
 	</linkedResources>
 </projectDescription>

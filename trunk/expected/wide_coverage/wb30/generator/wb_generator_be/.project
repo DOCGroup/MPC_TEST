@@ -19,17 +19,17 @@
 		<link>
 			<name>generator_be.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/wide_coverage/generator/generator_be.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/generator/generator_be.cpp</location>
 		</link>
                 <link>
                         <name>generator_be.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/generator/generator_be.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/generator/generator_be.h</location>
                 </link>
                 <link>
                         <name>generator_be_export.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/wide_coverage/generator/generator_be_export.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/wide_coverage/generator/generator_be_export.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

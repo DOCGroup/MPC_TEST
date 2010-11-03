@@ -19,12 +19,12 @@
                 <link>
                         <name>that.zar</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/that.zar</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/that.zar</location>
                 </link>
                 <link>
                         <name>this.zar</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/this.zar</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/this.zar</location>
                 </link>
 	</linkedResources>
 </projectDescription>

@@ -22,42 +22,42 @@
 		<link>
 			<name>zar_thatB.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/zar_thatB.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/zar_thatB.cpp</location>
 		</link>
 		<link>
 			<name>zar_thisC.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/zar_thisC.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/zar_thisC.cpp</location>
 		</link>
                 <link>
                         <name>zar_thatB.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/zar_thatB.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/zar_thatB.h</location>
                 </link>
                 <link>
                         <name>zar_thisB_T.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/zar_thisB_T.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/zar_thisB_T.h</location>
                 </link>
                 <link>
                         <name>zar_thisC.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/zar_thisC.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/zar_thisC.h</location>
                 </link>
                 <link>
                         <name>zar_thatB.inl</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/zar_thatB.inl</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/zar_thatB.inl</location>
                 </link>
                 <link>
                         <name>zar_thisB_T.inl</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/zar_thisB_T.inl</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/zar_thisB_T.inl</location>
                 </link>
                 <link>
                         <name>zar_thisB_T.cpp</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/features_custom_only/source/zar_thisB_T.cpp</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/features_custom_only/source/zar_thisB_T.cpp</location>
                 </link>
 	</linkedResources>
 </projectDescription>

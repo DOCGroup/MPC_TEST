@@ -19,37 +19,37 @@
 		<link>
 			<name>demo.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/qt/demo.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/qt/demo.cpp</location>
 		</link>
 		<link>
 			<name>demo_moc.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/qt/demo_moc.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/qt/demo_moc.cpp</location>
 		</link>
 		<link>
 			<name>main.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/qt/main.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/qt/main.cpp</location>
 		</link>
                 <link>
                         <name>demo.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/qt/demo.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/qt/demo.h</location>
                 </link>
                 <link>
                         <name>demo.ui</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/qt/demo.ui</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/qt/demo.ui</location>
                 </link>
                 <link>
                         <name>demo.ui</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/qt/demo.ui</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/qt/demo.ui</location>
                 </link>
                 <link>
                         <name>demo.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/qt/demo.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/qt/demo.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

@@ -23,27 +23,27 @@
 		<link>
 			<name>set.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/more_circular_dependencies/set.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/more_circular_dependencies/set.cpp</location>
 		</link>
                 <link>
                         <name>code_export.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/more_circular_dependencies/code_export.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/more_circular_dependencies/code_export.h</location>
                 </link>
                 <link>
                         <name>factory_export.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/more_circular_dependencies/factory_export.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/more_circular_dependencies/factory_export.h</location>
                 </link>
                 <link>
                         <name>root_export.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/more_circular_dependencies/root_export.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/more_circular_dependencies/root_export.h</location>
                 </link>
                 <link>
                         <name>set_export.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/more_circular_dependencies/set_export.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/more_circular_dependencies/set_export.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

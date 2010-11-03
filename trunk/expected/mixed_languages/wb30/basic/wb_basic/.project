@@ -22,22 +22,22 @@
 		<link>
 			<name>arch.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/mixed_languages/basic/arch.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/mixed_languages/basic/arch.cpp</location>
 		</link>
 		<link>
 			<name>foo.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/mixed_languages/basic/foo.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/mixed_languages/basic/foo.cpp</location>
 		</link>
                 <link>
                         <name>bar.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/mixed_languages/basic/bar.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/mixed_languages/basic/bar.h</location>
                 </link>
                 <link>
                         <name>basic_export.h</name>
                         <type>1</type>
-                        <location>C:/tao_builds/MPC_TEST/tests/mixed_languages/basic/basic_export.h</location>
+                        <location>/tao_builds/mitza/MPC_TEST/tests/mixed_languages/basic/basic_export.h</location>
                 </link>
 	</linkedResources>
 </projectDescription>

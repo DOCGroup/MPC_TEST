@@ -19,12 +19,12 @@
 		<link>
 			<name>fooza.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/buildflags/source/fooza.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/buildflags/source/fooza.cpp</location>
 		</link>
 		<link>
 			<name>foozb.cpp</name>
 			<type>1</type>
-			<location>C:/tao_builds/MPC_TEST/tests/buildflags/source/foozb.cpp</location>
+			<location>/tao_builds/mitza/MPC_TEST/tests/buildflags/source/foozb.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>
