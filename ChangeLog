@@ -1,3 +1,11 @@
+Wed Nov  3 18:56:20 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/mixed_languages_refs/wix/mixed_languages_refs.wxi:
+        * expected/mixed_languages_refs/wix/z:
+        * expected/mixed_languages_refs/wix/z/z.wxi:
+
+          C# language is now generated in -type wix.
+
 Wed Nov  3 14:49:20 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/*/wb30/*:
