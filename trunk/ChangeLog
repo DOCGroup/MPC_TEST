@@ -1,3 +1,9 @@
+Thu Nov  4 17:51:19 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/mixed_languages_refs/gnuace/o/GNUmakefile.o:
+
+          Adding file which should have been added before.
+
 Wed Nov  3 18:56:20 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/mixed_languages_refs/wix/mixed_languages_refs.wxi:
