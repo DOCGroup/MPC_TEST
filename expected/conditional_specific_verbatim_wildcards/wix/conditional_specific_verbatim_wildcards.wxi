@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include source/csvw_A.wxi ?>
+  <?include source/csvw_B.wxi ?>
+  <?include source/csvw_C.wxi ?>
+  <?include source/csvw_D.wxi ?>
+  <?include source/csvw_E.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="conditional_specific_verbatim_wildcards">
+      <ComponentGroupRef Id="ComponentGroup.csvw_A" />
+      <ComponentGroupRef Id="ComponentGroup.csvw_B" />
+      <ComponentGroupRef Id="ComponentGroup.csvw_C" />
+      <ComponentGroupRef Id="ComponentGroup.csvw_D" />
+      <ComponentGroupRef Id="ComponentGroup.csvw_E" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

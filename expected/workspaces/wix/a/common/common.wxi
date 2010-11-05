@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="common">
+    <ComponentGroup Id="ComponentGroup.common">
+      <ComponentRef Id="common.common.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="common.common.dll" Guid="*">
+          <File Id="common_common_dll"
+                Name="common.dll"
+                Source="./common.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

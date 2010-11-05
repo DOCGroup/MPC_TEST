@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include base/base.wxi ?>
+  <?include csharp/csharp.wxi ?>
+  <?include basic/basic.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="mixed_languages">
+      <ComponentGroupRef Id="ComponentGroup.base" />
+      <ComponentGroupRef Id="ComponentGroup.csharp" />
+      <ComponentGroupRef Id="ComponentGroup.basic" />
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="MainGroup.Debug_AnyCPU_csharp">
+      <ComponentGroupRef Id="ComponentGroup.Debug_AnyCPU_csharp" />
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="MainGroup.Release_AnyCPU_csharp">
+      <ComponentGroupRef Id="ComponentGroup.Release_AnyCPU_csharp" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

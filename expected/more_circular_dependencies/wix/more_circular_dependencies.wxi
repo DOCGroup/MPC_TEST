@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include Code.wxi ?>
+  <?include Set.wxi ?>
+  <?include ROOT.wxi ?>
+  <?include Factory.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="more_circular_dependencies">
+      <ComponentGroupRef Id="ComponentGroup.Code" />
+      <ComponentGroupRef Id="ComponentGroup.Set" />
+      <ComponentGroupRef Id="ComponentGroup.ROOT" />
+      <ComponentGroupRef Id="ComponentGroup.Factory" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="ROOT">
+    <ComponentGroup Id="ComponentGroup.ROOT">
+      <ComponentRef Id="ROOT.ROOT.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="ROOT.ROOT.dll" Guid="*">
+          <File Id="ROOT_ROOT_dll"
+                Name="ROOT.dll"
+                Source="./ROOT.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

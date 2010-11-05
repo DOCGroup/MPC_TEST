@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include dir1/dir2/foo.wxi ?>
+  <?include dir1/dir4/dir4.wxi ?>
+  <?include dir1/dir5/dir5.wxi ?>
+  <?include dir2/another.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="aggregated">
+      <ComponentGroupRef Id="ComponentGroup.foo" />
+      <ComponentGroupRef Id="ComponentGroup.dir4" />
+      <ComponentGroupRef Id="ComponentGroup.dir5" />
+      <ComponentGroupRef Id="ComponentGroup.another" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include src/foo_testing.wxi ?>
+  <?include src/bar_testing.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="All_Multiws">
+      <ComponentGroupRef Id="ComponentGroup.foo" />
+      <ComponentGroupRef Id="ComponentGroup.bar" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

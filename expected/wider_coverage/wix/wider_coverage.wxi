@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include Some_Test_Other_Lib.wxi ?>
+  <?include Some_Test_Simple_Lib.wxi ?>
+  <?include simple.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="wider_coverage">
+      <ComponentGroupRef Id="ComponentGroup.Some_Test_Other_Lib" />
+      <ComponentGroupRef Id="ComponentGroup.Some_Test_Simple_Lib" />
+      <ComponentGroupRef Id="ComponentGroup.simple" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

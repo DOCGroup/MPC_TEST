@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="generator_be">
+    <ComponentGroup Id="ComponentGroup.generator_be">
+      <ComponentRef Id="generator_be.generator_be.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="generator_be.generator_be.dll" Guid="*">
+          <File Id="generator_be_generator_be_dll"
+                Name="generator_be.dll"
+                Source="$(env.TEST_ROOT)/lib/generator_be.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

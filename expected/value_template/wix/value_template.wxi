@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include foo_a.wxi ?>
+  <?include foo_b.wxi ?>
+  <?include foo_c.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="value_template">
+      <ComponentGroupRef Id="ComponentGroup.foo_a" />
+      <ComponentGroupRef Id="ComponentGroup.foo_b" />
+      <ComponentGroupRef Id="ComponentGroup.foo_c" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

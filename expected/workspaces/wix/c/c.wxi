@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include good/good.wxi ?>
+  <?include not_ghs/not_ghs.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="c">
+      <ComponentGroupRef Id="ComponentGroup.good" />
+      <ComponentGroupRef Id="ComponentGroup.not_ghs" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

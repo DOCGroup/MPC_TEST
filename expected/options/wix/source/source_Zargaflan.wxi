@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include basic_Zargaflan.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="source">
+      <ComponentGroupRef Id="ComponentGroup.basic_Zargaflan" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

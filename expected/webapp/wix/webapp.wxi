@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include source/cras.wxi ?>
+  <?include source/aly.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="webapp">
+      <ComponentGroupRef Id="ComponentGroup.cras" />
+      <ComponentGroupRef Id="ComponentGroup.aly" />
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="MainGroup.Debug_AnyCPU_aly">
+      <ComponentGroupRef Id="ComponentGroup.Debug_AnyCPU_aly" />
+      <ComponentGroupRef Id="ComponentGroup.Debug_AnyCPU_cras" />
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="MainGroup.Release_AnyCPU_aly">
+      <ComponentGroupRef Id="ComponentGroup.Release_AnyCPU_aly" />
+      <ComponentGroupRef Id="ComponentGroup.Release_AnyCPU_cras" />
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="MainGroup.Debug_AnyCPU_cras">
+      <ComponentGroupRef Id="ComponentGroup.Debug_AnyCPU_cras" />
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="MainGroup.Release_AnyCPU_cras">
+      <ComponentGroupRef Id="ComponentGroup.Release_AnyCPU_cras" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

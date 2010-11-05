@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include dll/dll.wxi ?>
+  <?include dll_exe/dll_exe.wxi ?>
+  <?include lib/lib.wxi ?>
+  <?include lib_exe/lib_exe.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="template_input">
+      <ComponentGroupRef Id="ComponentGroup.dll" />
+      <ComponentGroupRef Id="ComponentGroup.dll_exe" />
+      <ComponentGroupRef Id="ComponentGroup.lib" />
+      <ComponentGroupRef Id="ComponentGroup.lib_exe" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

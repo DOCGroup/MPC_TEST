@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="sub">
+    <ComponentGroup Id="ComponentGroup.sub">
+      <ComponentRef Id="sub.sub.exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="sub.sub.exe" Guid="*">
+          <File Id="sub_sub_exe"
+                Name="sub.exe"
+                Source="/sub.exe"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

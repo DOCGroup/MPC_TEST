@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="Factory">
+    <ComponentGroup Id="ComponentGroup.Factory">
+      <ComponentRef Id="Factory.Factory.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="Factory.Factory.dll" Guid="*">
+          <File Id="Factory_Factory_dll"
+                Name="Factory.dll"
+                Source="./Factory.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

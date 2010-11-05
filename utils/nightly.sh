@@ -36,4 +36,5 @@ cd $MPC_ROOT
 svn update | grep -v '^[\?GA]' | grep -v 'Update to' | grep -v 'At revision'
 
 cd test
+svn update | grep -v '^[\?GA]' | grep -v 'Update to' | grep -v 'At revision'
 ./run_tests.pl --quiet --output pick_me_up_Linux

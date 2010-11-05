@@ -1,6 +1,10 @@
 project {
   after += cras
 
+  specific(wix) {
+    make_group = 1
+  } 
+
   Source_Files {
     cras.cs
   }

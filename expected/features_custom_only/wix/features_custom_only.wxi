@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include source/fco.wxi ?>
+  <?include source/fco_use.wxi ?>
+  <?include source/other.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="features_custom_only">
+      <ComponentGroupRef Id="ComponentGroup.fco" />
+      <ComponentGroupRef Id="ComponentGroup.fco_use" />
+      <ComponentGroupRef Id="ComponentGroup.other" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

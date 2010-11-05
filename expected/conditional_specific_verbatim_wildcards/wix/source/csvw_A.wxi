@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="csvw_A">
+    <ComponentGroup Id="ComponentGroup.csvw_A">
+      <ComponentRef Id="csvw_A.csvw_A.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="csvw_A.csvw_A.dll" Guid="*">
+          <File Id="csvw_A_csvw_A_dll"
+                Name="csvw_A.dll"
+                Source="bin/csvw_A.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

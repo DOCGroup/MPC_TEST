@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="foo__somelib">
+    <ComponentGroup Id="ComponentGroup.foo__somelib">
+      <ComponentRef Id="foo__somelib.somelib.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="foo__somelib.somelib.dll" Guid="*">
+          <File Id="foo__somelib_somelib_dll"
+                Name="somelib.dll"
+                Source="$(env.TEST_ROOT)/.libs/somelib.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="Some_Test_Other_Lib">
+    <ComponentGroup Id="ComponentGroup.Some_Test_Other_Lib">
+      <ComponentRef Id="Some_Test_Other_Lib..exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="Some_Test_Other_Lib..exe" Guid="*">
+          <File Id="Some_Test_Other_Lib__exe"
+                Name=".exe"
+                Source="./.exe"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

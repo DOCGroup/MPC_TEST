@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="support_lib">
+    <ComponentGroup Id="ComponentGroup.support_lib">
+      <ComponentRef Id="support_lib.support_lib.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="support_lib.support_lib.dll" Guid="*">
+          <File Id="support_lib_support_lib_dll"
+                Name="support_lib.dll"
+                Source="lib/support_lib.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

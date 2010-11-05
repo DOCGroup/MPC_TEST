@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="grouping_F">
+    <ComponentGroup Id="ComponentGroup.grouping_F">
+      <ComponentRef Id="grouping_F.F.exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="grouping_F.F.exe" Guid="*">
+          <File Id="grouping_F_F_exe"
+                Name="F.exe"
+                Source="/F.exe"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include MyModule.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="swig_perl">
+      <ComponentGroupRef Id="ComponentGroup.MyModule" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>
