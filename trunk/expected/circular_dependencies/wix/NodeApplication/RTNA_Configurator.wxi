@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="RTNA_Configurator">
+    <ComponentGroup Id="ComponentGroup.RTNA_Configurator">
+      <ComponentRef Id="RTNA_Configurator..exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="RTNA_Configurator..exe" Guid="*">
+          <File Id="RTNA_Configurator__exe"
+                Name=".exe"
+                Source="./.exe"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

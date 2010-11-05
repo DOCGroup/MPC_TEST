@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include a.wxi ?>
+  <?include common/common.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="a">
+      <ComponentGroupRef Id="ComponentGroup.a" />
+      <ComponentGroupRef Id="ComponentGroup.common" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

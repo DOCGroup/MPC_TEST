@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="not_ghs">
+    <ComponentGroup Id="ComponentGroup.not_ghs">
+      <ComponentRef Id="not_ghs.not_ghs.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="not_ghs.not_ghs.dll" Guid="*">
+          <File Id="not_ghs_not_ghs_dll"
+                Name="not_ghs.dll"
+                Source="./not_ghs.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

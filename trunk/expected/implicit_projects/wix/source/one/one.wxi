@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="one">
+    <ComponentGroup Id="ComponentGroup.one">
+      <ComponentRef Id="one..exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="one..exe" Guid="*">
+          <File Id="one__exe"
+                Name=".exe"
+                Source="$(env.TEST_ROOT)/lib/.exe"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

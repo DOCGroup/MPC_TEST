@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="implicit">
+    <ComponentGroup Id="ComponentGroup.implicit">
+      <ComponentRef Id="implicit.implicit.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="implicit.implicit.dll" Guid="*">
+          <File Id="implicit_implicit_dll"
+                Name="implicit.dll"
+                Source="./implicit.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

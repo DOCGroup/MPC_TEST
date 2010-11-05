@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="NodeManager">
+    <ComponentGroup Id="ComponentGroup.NodeManager">
+      <ComponentRef Id="NodeManager.one.exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="NodeManager.one.exe" Guid="*">
+          <File Id="NodeManager_one_exe"
+                Name="one.exe"
+                Source="/one.exe"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

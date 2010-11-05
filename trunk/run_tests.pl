@@ -1026,6 +1026,7 @@ else {
     if (opendir($fh, $testdir)) {
       my %dirs;
       my %tonly;
+      my $finished;
       my $columns = (defined $ENV{COLUMNS} ? $ENV{COLUMNS} : 80);
       @dirs{@dirs} = ();
       @tonly{@tonly} = ();
@@ -1059,6 +1060,7 @@ else {
                 if ($ret) {
                   print SAVEERR "MPC generation for $type $failed.\n";
                   if ($br_error) {
+                    $finished = 1;
                     last;
                   }
                 }
@@ -1074,7 +1076,7 @@ else {
                             "build on at least one platform.\n";
             }
           }
-          if ($br_error) {
+          if ($finished) {
             last;
           }
         }

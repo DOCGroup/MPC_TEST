@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include foo__somelib.wxi ?>
+  <?include foo__someexecutable.wxi ?>
+  <?include foo.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="dependencies">
+      <ComponentGroupRef Id="ComponentGroup.foo__somelib" />
+      <ComponentGroupRef Id="ComponentGroup.foo__someexecutable" />
+      <ComponentGroupRef Id="ComponentGroup.foo" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

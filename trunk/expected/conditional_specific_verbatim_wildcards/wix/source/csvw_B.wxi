@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="csvw_B">
+    <ComponentGroup Id="ComponentGroup.csvw_B">
+      <ComponentRef Id="csvw_B.bdog.exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="csvw_B.bdog.exe" Guid="*">
+          <File Id="csvw_B_bdog_exe"
+                Name="bdog.exe"
+                Source="/bdog.exe"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include source/one/one.wxi ?>
+  <?include source/two/two.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="implicit_projects">
+      <ComponentGroupRef Id="ComponentGroup.one" />
+      <ComponentGroupRef Id="ComponentGroup.two" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

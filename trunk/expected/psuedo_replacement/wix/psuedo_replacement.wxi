@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include zz.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="psuedo_replacement">
+      <ComponentGroupRef Id="ComponentGroup.zz" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

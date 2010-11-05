@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include source/grouping_A.wxi ?>
+  <?include source/grouping_B.wxi ?>
+  <?include source/grouping_C.wxi ?>
+  <?include source/grouping_D.wxi ?>
+  <?include source/grouping_E.wxi ?>
+  <?include source/grouping_F.wxi ?>
+  <?include source/grouping_G.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="grouping">
+      <ComponentGroupRef Id="ComponentGroup.grouping_A" />
+      <ComponentGroupRef Id="ComponentGroup.grouping_B" />
+      <ComponentGroupRef Id="ComponentGroup.grouping_C" />
+      <ComponentGroupRef Id="ComponentGroup.grouping_D" />
+      <ComponentGroupRef Id="ComponentGroup.grouping_E" />
+      <ComponentGroupRef Id="ComponentGroup.grouping_F" />
+      <ComponentGroupRef Id="ComponentGroup.grouping_G" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

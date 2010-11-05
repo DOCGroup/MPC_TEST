@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="Monitor_Monitorlib">
+    <ComponentGroup Id="ComponentGroup.Monitor_Monitorlib">
+      <ComponentRef Id="Monitor_Monitorlib..exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="Monitor_Monitorlib..exe" Guid="*">
+          <File Id="Monitor_Monitorlib__exe"
+                Name=".exe"
+                Source="./.exe"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include mpc_test.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="multi_custom_mapping">
+      <ComponentGroupRef Id="ComponentGroup.mpc_test" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

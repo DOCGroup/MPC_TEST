@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include two/two.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="exclude">
+      <ComponentGroupRef Id="ComponentGroup.two" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

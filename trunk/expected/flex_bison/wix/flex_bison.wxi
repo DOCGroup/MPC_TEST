@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include flex_bison.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="flex_bison">
+      <ComponentGroupRef Id="ComponentGroup.flex_bison" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

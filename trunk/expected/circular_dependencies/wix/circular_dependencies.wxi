@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include NodeManager/NodeManager_stub.wxi ?>
+  <?include DomainApplicationManager/DomainApplicationManager.wxi ?>
+  <?include NodeApplication/NodeApplication.wxi ?>
+  <?include NodeApplication/RTNA_Configurator.wxi ?>
+  <?include NodeApplicationManager/NodeApplicationManager.wxi ?>
+  <?include NodeManager/Monitor_Monitorlib.wxi ?>
+  <?include TargetManager/CIAO_TargetManager_stub.wxi ?>
+  <?include NodeManager/NodeManager.wxi ?>
+  <?include NodeManager/lib.wxi ?>
+  <?include TargetManager/CIAO_TargetManager_svnt.wxi ?>
+  <?include TargetManager/CIAO_TargetManager_exec.wxi ?>
+  <?include TargetManager/TMClient.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="circular_dependencies">
+      <ComponentGroupRef Id="ComponentGroup.NodeManager_stub" />
+      <ComponentGroupRef Id="ComponentGroup.DomainApplicationManager" />
+      <ComponentGroupRef Id="ComponentGroup.NodeApplication" />
+      <ComponentGroupRef Id="ComponentGroup.RTNA_Configurator" />
+      <ComponentGroupRef Id="ComponentGroup.NodeApplicationManager" />
+      <ComponentGroupRef Id="ComponentGroup.Monitor_Monitorlib" />
+      <ComponentGroupRef Id="ComponentGroup.CIAO_TargetManager_stub" />
+      <ComponentGroupRef Id="ComponentGroup.NodeManager" />
+      <ComponentGroupRef Id="ComponentGroup.lib" />
+      <ComponentGroupRef Id="ComponentGroup.CIAO_TargetManager_svnt" />
+      <ComponentGroupRef Id="ComponentGroup.CIAO_TargetManager_exec" />
+      <ComponentGroupRef Id="ComponentGroup.TMClient" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

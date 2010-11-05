@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="build_lib">
+    <ComponentGroup Id="ComponentGroup.build_lib">
+      <ComponentRef Id="build_lib.build_lib.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="build_lib.build_lib.dll" Guid="*">
+          <File Id="build_lib_build_lib_dll"
+                Name="build_lib.dll"
+                Source="./build_lib.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

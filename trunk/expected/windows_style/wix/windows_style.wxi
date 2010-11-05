@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include support_lib.wxi ?>
+  <?include sub/sub.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="windows_style">
+      <ComponentGroupRef Id="ComponentGroup.support_lib" />
+      <ComponentGroupRef Id="ComponentGroup.sub" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

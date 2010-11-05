@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include build/build_exe.wxi ?>
+  <?include build/build_lib.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="relative">
+      <ComponentGroupRef Id="ComponentGroup.build_exe" />
+      <ComponentGroupRef Id="ComponentGroup.build_lib" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="fake">
+    <ComponentGroup Id="ComponentGroup.fake">
+      <ComponentRef Id="fake.fake.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="fake.fake.dll" Guid="*">
+          <File Id="fake_fake_dll"
+                Name="fake.dll"
+                Source="./fake.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

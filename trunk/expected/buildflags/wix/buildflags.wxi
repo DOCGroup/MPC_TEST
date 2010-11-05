@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include source/bfs_exe.wxi ?>
+  <?include source/bfs_lib.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="buildflags">
+      <ComponentGroupRef Id="ComponentGroup.bfs_exe" />
+      <ComponentGroupRef Id="ComponentGroup.bfs_lib" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

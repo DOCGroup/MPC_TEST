@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="two">
+    <ComponentGroup Id="ComponentGroup.two">
+      <ComponentRef Id="two.two.exe" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="two.two.exe" Guid="*">
+          <File Id="two_two_exe"
+                Name="two.exe"
+                Source="/two.exe"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="Debug_AnyCPU_cras">
+    <ComponentGroup Id="ComponentGroup.Debug_AnyCPU_cras">
+      <ComponentRef Id="Debug_AnyCPU_cras.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+      <Component Id="Debug_AnyCPU_cras.dll" Guid="*">
+        <File Id="Debug_AnyCPU_cras.dll"
+           Name="cras.dll"
+           Source="/home/elliottc/current/MPC/test/tests/webapp/source/./Debug/cras.dll"
+           DiskId="1" />
+      </Component>
+
+
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment Id="Release_AnyCPU_cras">
+    <ComponentGroup Id="ComponentGroup.Release_AnyCPU_cras">
+      <ComponentRef Id="Release_AnyCPU_cras.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+      <Component Id="Release_AnyCPU_cras.dll" Guid="*">
+        <File Id="Release_AnyCPU_cras.dll"
+           Name="cras.dll"
+           Source="/home/elliottc/current/MPC/test/tests/webapp/source/./Release/cras.dll"
+           DiskId="1" />
+      </Component>
+
+
+    </DirectoryRef>
+  </Fragment>
+
+</Include>

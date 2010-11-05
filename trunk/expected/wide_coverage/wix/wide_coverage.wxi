@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Include>
+  <?include generator/generator_be.wxi ?>
+  <?include generator/generator.wxi ?>
+  <?include source/fake/fake.wxi ?>
+  <?include source/source_lib.wxi ?>
+  <?include source/source.wxi ?>
+
+  <Fragment>
+    <ComponentGroup Id="wide_coverage">
+      <ComponentGroupRef Id="ComponentGroup.generator_be" />
+      <ComponentGroupRef Id="ComponentGroup.generator" />
+      <ComponentGroupRef Id="ComponentGroup.fake" />
+      <ComponentGroupRef Id="ComponentGroup.source_lib" />
+      <ComponentGroupRef Id="ComponentGroup.source" />
+    </ComponentGroup>
+  </Fragment>
+
+</Include>

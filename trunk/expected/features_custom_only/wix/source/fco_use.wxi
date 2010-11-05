@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Include>
+  <Fragment Id="fco_use">
+    <ComponentGroup Id="ComponentGroup.fco_use">
+      <ComponentRef Id="fco_use.fco_use.dll" />
+    </ComponentGroup>
+
+    <DirectoryRef Id="INSTALLDIR">
+        <Component Id="fco_use.fco_use.dll" Guid="*">
+          <File Id="fco_use_fco_use_dll"
+                Name="fco_use.dll"
+                Source="./fco_use.dll"
+                DiskId="1" />
+        </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>
