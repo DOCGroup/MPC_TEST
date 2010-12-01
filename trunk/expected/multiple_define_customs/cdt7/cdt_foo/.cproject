@@ -100,7 +100,7 @@
     <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
     <additionalInput kind="additionalinput" paths="$(LIBS)"/>
   </inputType>
-  <outputType id="mpc.generated.cpp.linker.output.so.1" outputPrefix="lib" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.output"/>
+  <outputType id="mpc.generated.cpp.linker.output.so.1" outputPrefix="lib" superClass="cdt.managedbuild.tool.gnu.cpp.linker.output"/>
 </tool>
 <tool
   id="cdt.managedbuild.tool.gnu.assembler.so.debug.897965604"
@@ -341,7 +341,7 @@
     <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
     <additionalInput kind="additionalinput" paths="$(LIBS)"/>
   </inputType>
-  <outputType id="mpc.generated.cpp.linker.output.so.1" outputPrefix="lib" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.output"/>
+  <outputType id="mpc.generated.cpp.linker.output.so.1" outputPrefix="lib" superClass="cdt.managedbuild.tool.gnu.cpp.linker.output"/>
 </tool>
 <tool
   id="cdt.managedbuild.tool.gnu.assembler.so.release.897965604"
