@@ -36,7 +36,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectName>Some_Test_Other_Lib</ProjectName>
-    <ProjectGuid>{34B1F818-FECA-1BAD-9A98-A44400000000}</ProjectGuid>
+    <ProjectGuid>{34B1F818-FECA-1BAD-9A98-A4440000002E}</ProjectGuid>
     <RootNamespace>Some_Test_Other_Lib</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
@@ -122,56 +122,56 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Static_Debug\Some_Test_Other_Lib\I386\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">other_libsd</TargetName>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Static_Release\Some_Test_Other_Lib\I386\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"></TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">other_libs</TargetName>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <OutDir Condition="'$(Configuration)|$(Platform)'=='MFC Release|Win32'">.\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MFC Release|Win32'">Static_MFC_Release\Some_Test_Other_Lib\I386\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MFC Release|Win32'">false</LinkIncremental>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='MFC Release|Win32'"></TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MFC Release|Win32'">other_libmfcs</TargetName>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='MFC Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='MFC Release|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='MFC Release|Win32'" />
     <OutDir Condition="'$(Configuration)|$(Platform)'=='MFC Debug|Win32'">.\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MFC Debug|Win32'">Static_MFC_Debug\Some_Test_Other_Lib\I386\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MFC Debug|Win32'">true</LinkIncremental>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='MFC Debug|Win32'"></TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MFC Debug|Win32'">other_libmfcsd</TargetName>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='MFC Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='MFC Debug|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='MFC Debug|Win32'" />
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Static_Debug\Some_Test_Other_Lib\AMD64\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">other_libsd</TargetName>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Static_Release\Some_Test_Other_Lib\AMD64\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">other_libs</TargetName>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
     <OutDir Condition="'$(Configuration)|$(Platform)'=='MFC Release|x64'">.\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MFC Release|x64'">Static_MFC_Release\Some_Test_Other_Lib\AMD64\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MFC Release|x64'">false</LinkIncremental>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='MFC Release|x64'"></TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MFC Release|x64'">other_libmfcs</TargetName>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='MFC Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='MFC Release|x64'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='MFC Release|x64'" />
     <OutDir Condition="'$(Configuration)|$(Platform)'=='MFC Debug|x64'">.\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MFC Debug|x64'">Static_MFC_Debug\Some_Test_Other_Lib\AMD64\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MFC Debug|x64'">true</LinkIncremental>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='MFC Debug|x64'"></TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MFC Debug|x64'">other_libmfcsd</TargetName>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='MFC Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='MFC Debug|x64'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='MFC Debug|x64'" />
