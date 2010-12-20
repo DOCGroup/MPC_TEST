@@ -1,3 +1,17 @@
+Mon Dec 20 18:57:26 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/circular_dependencies/vc10/*/*:
+        * expected/implicit_projects/vc10/source/one/one.vcxproj:
+        * expected/more_workspaces/vc10/src/src.vcxproj:
+        * expected/template_input/vc10/lib/lib.vcxproj:
+        * expected/wide_coverage/vc10/source/source_lib.vcxproj:
+        * expected/wider_coverage/vc10/*:
+
+          Re-generated after the MPC commit: Mon Dec 20 18:55:04 UTC 2010. 
+
+        * run_tests.pl:
+          Typo in usage message.
+
 Wed Dec  1 21:33:19 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/implicit_resources/cdt6/dir1/cdt_dir1/.cproject:

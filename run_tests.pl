@@ -955,7 +955,7 @@ my %desc    = ('expected' => 'Create expected results for all of the ' .
                              'tests',
                'break'    => 'Break on the first test failure',
                'coverage' => 'Enable coverage statistics collection.  This ' .
-                             'option implies --nobuild.',
+                             'option implies --nobuild',
                'diffcmd'  => 'Provide the full path to an alternate ' .
                              'diff command',
                'nobuild'  => 'Do not build any of the tests',
