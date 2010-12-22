@@ -1,8 +1,23 @@
 workspace {
+
   cmdline += -value_project macros+=NEEDED_BY_ALL
+
+  specific(make) {
+    cmdline += -value_project macros+=NEEDED_BY_MAKE
+  }
+
   dir2/dir2.mwc
+
   aggregated_scope {
     cmdline += -value_project macros+=NEEDED_BY_SOME
     dir1/bar.mwc
+  }
+
+  specific(rpmspec) {
+    rpm_description = For MPC Testing
+    rpm_summary = aggregated test
+    rpm_group = N/A
+    rpm_releasenumber = 1
+    rpm_version = 0.1
   }
 }
