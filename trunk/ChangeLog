@@ -1,3 +1,37 @@
+Wed Dec 22 17:41:51 UTC 2010  Adam Mitz  <mitza@ociweb.com>
+
+        * README:
+
+          typo fix
+
+        * tests/aggregated/aggregated.mwc:
+
+          Extended this test to use workspace-scoped specifics.
+
+        * expected/aggregated/make/dir1/dir2/Makefile.foo:
+        * expected/aggregated/make/dir1/dir4/Makefile.dir4:
+        * expected/aggregated/make/dir1/dir5/Makefile.dir5:
+        * expected/aggregated/make/dir2/Makefile.another:
+
+          Re-generated for the above change.
+
+        * expected/aggregated/rpmspec:
+        * expected/aggregated_env/rpmspec:
+        * expected/buildflags/rpmspec:
+        * expected/conditional_specific_verbatim_wildcards/rpmspec:
+        * expected/options/rpmspec:
+        * expected/wider_coverage/rpmspec:
+
+          Added expected results for -type rpmspec.
+
+        * run_tests.pl:
+
+          Ignore timestamp lines during comparison.
+
+        * .cvsignore:
+
+          Removed this file.
+
 Mon Dec 20 18:57:26 UTC 2010  Adam Mitz  <mitza@ociweb.com>
 
         * expected/circular_dependencies/vc10/*/*:
@@ -7,7 +41,7 @@ Mon Dec 20 18:57:26 UTC 2010  Adam Mitz  <mitza@ociweb.com>
         * expected/wide_coverage/vc10/source/source_lib.vcxproj:
         * expected/wider_coverage/vc10/*:
 
-          Re-generated after the MPC commit: Mon Dec 20 18:55:04 UTC 2010. 
+          Re-generated after the MPC commit: Mon Dec 20 18:55:04 UTC 2010.
 
         * run_tests.pl:
           Typo in usage message.

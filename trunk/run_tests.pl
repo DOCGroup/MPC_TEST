@@ -22,6 +22,7 @@ use File::Path;
 use File::Spec;
 use File::Basename;
 use File::Find;
+use POSIX qw(strftime);
 
 my $basePath = $FindBin::Bin;
 unshift(@INC, $basePath . '/modules');
@@ -121,6 +122,7 @@ sub compare {
   my $lh = new FileHandle();
   my $rh = new FileHandle();
   my $different = 1;
+  my $now = strftime '%a %b %d %Y', localtime;
 
   if (open($lh, $left)) {
     my @lines;
@@ -145,12 +147,13 @@ sub compare {
         }
 
         ## Don't compare things that are likely to change.  This
-        ## currently includes MPC command line, CVS Id tags, GUID's
+        ## currently includes MPC command line, CVS Id tags, GUID's, timestamps,
         ## and html references.  Due to expansion of environment
         ## variables containing full paths, we're skipping lines that
         ## contain the current working directory.
         if ($line !~ /mwc\.pl/ && $line !~ /\$Id[:\$]/ &&
             $line !~ /[\da-f]+\-[\da-f]+\-/i && $line !~ /a\s+href=/i &&
+            $line !~ /\b$now \d{2}:\d{2}:\d{2}\b/ &&
             $line !~ /^ProjectDir=/ && ($line !~ /$cwdre/ || $cr_expect)) {
           if (!defined $lines[$i]) {
             diff_files($left, $right, $i, $lines[$i], $line) if ($show);
