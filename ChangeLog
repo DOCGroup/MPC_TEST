@@ -1,3 +1,75 @@
+Tue Apr  5 14:27:35 UTC 2011  Don Hudson  <hudsond@ociweb.com>
+
+        * expected/MultiWS/html/Multiws/src/bar_testing.html:
+        * expected/MultiWS/html/Multiws/src/foo_testing.html:
+        * expected/aggregated/rpmspec/dir1/bar.spec:
+        * expected/aggregated/rpmspec/dir2/dir2.spec:
+        * expected/aggregated_env/rpmspec/t/i/i.spec:
+        * expected/buildflags/html/source/bfs_exe.html:
+        * expected/buildflags/html/source/bfs_lib.html:
+        * expected/buildflags/html/source/bfs_lib.ins:
+        * expected/circular_dependencies/html/NodeApplication/NodeApplication.html:
+        * expected/circular_dependencies/html/NodeApplication/RTNA_Configurator.html:
+        * expected/circular_dependencies/html/NodeManager/Monitor_Monitorlib.html:
+        * expected/circular_dependencies/html/NodeManager/NodeManager.html:
+        * expected/circular_dependencies/html/NodeManager/NodeManager_stub.html:
+        * expected/circular_dependencies/html/NodeManager/lib.html:
+        * expected/circular_dependencies/html/TargetManager/CIAO_TargetManager_exec.html:
+        * expected/circular_dependencies/html/TargetManager/CIAO_TargetManager_stub.html:
+        * expected/circular_dependencies/html/TargetManager/CIAO_TargetManager_svnt.html:
+        * expected/circular_dependencies/html/TargetManager/TMClient.html:
+        * expected/command_helper/bmake/Makefile.simple.bmak:
+        * expected/command_helper/em3/simple.vcp:
+        * expected/command_helper/ghs/simple.gpj:
+        * expected/command_helper/gnuace/GNUmakefile.simple:
+        * expected/command_helper/html/simple.html:
+        * expected/command_helper/make/Makefile.simple:
+        * expected/command_helper/nmake/Makefile.simple.mak:
+        * expected/command_helper/sle/simple.vpj:
+        * expected/command_helper/vc10/simple.vcxproj:
+        * expected/command_helper/vc10/simple.vcxproj.filters:
+        * expected/command_helper/vc6/simple.dsp:
+        * expected/command_helper/vc7/simple.vcproj:
+        * expected/command_helper/vc71/simple.vcproj:
+        * expected/command_helper/vc8/simple.vcproj:
+        * expected/command_helper/vc9/simple.vcproj:
+        * expected/command_helper/wb30/wb_simple/.wrmakefile:
+        * expected/command_helper/wb30/wb_simple/.wrproject:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_A.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_B.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_C.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_D.html:
+        * expected/conditional_specific_verbatim_wildcards/html/source/csvw_E.html:
+        * expected/dependencies/html/foo.html:
+        * expected/dependencies/html/foo__someexecutable.html:
+        * expected/dependencies/html/foo__somelib.html:
+        * expected/features_custom_only/html/source/fco.html:
+        * expected/features_custom_only/html/source/fco_use.html:
+        * expected/grouping/html/source/grouping_A.html:
+        * expected/grouping/html/source/grouping_B.html:
+        * expected/grouping/html/source/grouping_C.html:
+        * expected/grouping/html/source/grouping_D.html:
+        * expected/grouping/html/source/grouping_E.html:
+        * expected/grouping/html/source/grouping_F.html:
+        * expected/more_workspaces/html/src/src.html:
+        * expected/multiple_define_customs/html/foo.html:
+        * expected/relative/html/build/build_exe.html:
+        * expected/relative/html/build/build_lib.html:
+        * expected/value_template/html/foo_a.html:
+        * expected/value_template/html/foo_b.html:
+        * expected/value_template/html/foo_c.html:
+        * expected/wide_coverage/html/generator/generator.html:
+        * expected/wide_coverage/html/generator/generator_be.html:
+        * expected/wider_coverage/gnuace/GNUmakefile:
+        * expected/wider_coverage/html/Some_Test_Other_Lib.html:
+        * expected/wider_coverage/html/Some_Test_Other_Lib.ins:
+        * expected/wider_coverage/html/Some_Test_Simple_Lib.html:
+        * expected/wider_coverage/html/Some_Test_Simple_Lib.ins:
+        * expected/wider_coverage/html/simple.html:
+        * expected/wider_coverage/html/wider_coverage_workspace.html:
+
+          Changed line feeds to UNIX format.
+
 Tue Apr  5 12:57:23 UTC 2011  Don Hudson  <hudsond@ociweb.com>
 
         * README:
@@ -13,14 +85,14 @@ Tue Apr  5 12:57:23 UTC 2011  Don Hudson  <hudsond@ociweb.com>
         * config/MPC.cfg:
 
           Added file.  Default MPC.cfg for MPC_TEST.  Does not include TAO_ROOT/DDS_ROOT/CIAO_ROOT
-          references as these can cause some test results to change on systems where 
+          references as these can cause some test results to change on systems where
           these are defined.  Turned on info logging.
 
         * config/html.mpb:
 
           Added file.  Excludes .html files from Documentation Files for html project
           type.  Needed for the case where there are multiple projects in the same directory,
-          otherwise generated html will be added to the document files for the second and 
+          otherwise generated html will be added to the document files for the second and
           subsequent projects that are processed, which is indeterminate.
 
         * expected/MultiWS/html/Multiws/src/bar_testing.html:
@@ -93,7 +165,7 @@ Tue Apr  5 12:57:23 UTC 2011  Don Hudson  <hudsond@ociweb.com>
 
         * expected/wider_coverage/gnuace/GNUmakefile:
 
-          Result updated because link file was missing from file, but wasn't 
+          Result updated because link file was missing from file, but wasn't
           doesn't caught because it doesn't cause the regression test to fail.
 
         * run_tests.pl:
@@ -146,7 +218,7 @@ Tue Apr  5 12:57:23 UTC 2011  Don Hudson  <hudsond@ociweb.com>
         * tests/command_helper/additional_options.txt:
 
           Corrected erroneous use of -value_tempate with -value_project.
-          This was causing a warning and bad test results. 
+          This was causing a warning and bad test results.
 
         * tests/command_helper/config/idl2jni.mpb:
 
