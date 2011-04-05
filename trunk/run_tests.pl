@@ -771,6 +771,14 @@ sub run_test {
     close($fh);
   }
   $ENV{TEST_ROOT} = getcwd();
+
+  if (-e "./config/MPC.cfg" || -e "./config/MPC_PHONY.cfg") {
+    $ENV{TEST_MPC_CONFIG} = getcwd() . "/config";
+  }
+  else {
+    $ENV{TEST_MPC_CONFIG} = "$orig/config";
+  }
+    
   $fh = new FileHandle('environment.txt');
   my %saveenv;
   if (defined $fh) {
@@ -804,7 +812,7 @@ sub run_test {
   my $CMD = -e 'MPC_ONLY' ? $MPC : $MWC;
   my $ret = system("$^X $popt " .
                    ($coverage ? "-MDevel::Cover=-db,$orig/cover_db " : '') .
-                   "$CMD -include $cfg -type $type $add $mwc");
+                   "$CMD -include $cfg -include $orig/config -type $type $add $mwc");
   chdir($orig);
 
   ## A signal killed mwc.pl
@@ -1047,16 +1055,30 @@ else {
               $amount = int($amount / 2);
             }
 
-            print SAVEERR '', ('=' x $amount), " $dir ",
-              ('=' x $amount), (((length $dir) % 2) ? '=' : ''), "\n";
+            my $test_heading = '' . ('=' x $amount) . " $dir " . ('=' x $amount) . (((length $dir) % 2) ? '=' : '') . "\n";
+            print SAVEERR $test_heading;
+            print STDOUT $test_heading;
             my $mwc = '';
             if (-r "$full/$dir.mwc") {
               $mwc = "$dir.mwc";
             }
             $one_built = 0;
+
             foreach my $type (@types) {
               if (!defined $tonly[0] || exists $tonly{$type}) {
                 File::Find::find({wanted => \&to_be_cleaned}, $full);
+
+                $amount = $columns - 4 - length($type);
+                if ($amount < 0) {
+                  $amount = 1;
+                }
+                else {
+                  $amount = int($amount / 2);
+                }
+                my $type_heading = (' ' x ($amount / 2)) . ('=' x ($amount / 2)) . " $type " . ('=' x ($amount / 2)) 
+                    . (((length $type) % 2) ? '=' : '') . (' ' x ($amount / 2)) . "\n";
+                print STDOUT $type_heading;
+
                 my $ret = run_test($full, $mwc, 'config',
                                    "$expectdir/$dir", $type, 0);
                 $status += $ret;

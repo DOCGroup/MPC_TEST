@@ -8,7 +8,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type gnuace -into here/.. -value_template "configurations='MFC Release' 'MFC Debug'" wider_coverage.mwc
+# e:\progra~1\tao-1_5_6\ACE/bin/mwc.pl -include config -type gnuace -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file non_existent_features_file_should_be_ignored -features non_existent_feature_should_be_ignored wider_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ Some_Test_Other_Lib:
 	@$(MAKE) -f GNUmakefile.Some_Test_Other_Lib all
 
 .PHONY: Some_Test_Simple_Lib
-Some_Test_Simple_Lib:
+Some_Test_Simple_Lib: Some_Test_Other_Lib
 	@$(MAKE) -f GNUmakefile.Some_Test_Simple_Lib all
 
 .PHONY: simple

@@ -1,4 +1,4 @@
-project(*exe) {
+project(*exe) : html {
   exename = fooz
   Source_Files {
     fooza.cpp
@@ -9,7 +9,7 @@ project(*exe) {
   }
 }
 
-project(*lib) {
+project(*lib) : html {
   install = ../lib
   sharedname = bfs
 

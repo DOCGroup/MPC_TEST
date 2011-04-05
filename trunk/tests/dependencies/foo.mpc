@@ -1,4 +1,4 @@
-project {
+project : html {
   after       += *_someexecutable
   
   Define_Custom(foo) {
@@ -24,7 +24,7 @@ project {
   }
 }
 
-project(*_somelib) {
+project(*_somelib) : html {
   sharedname   = somelib
   libout       = $(TEST_ROOT)/.libs
   dynamicflags += SOMETHING_BUILD_DLL
@@ -35,7 +35,7 @@ project(*_somelib) {
   }
 }
 
-project(*_someexecutable) {
+project(*_someexecutable) : html {
   exename = someExecutable
   libs   += somelib
   libpaths += $(TEST_ROOT)/.libs

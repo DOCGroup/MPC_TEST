@@ -20,6 +20,9 @@ AutoReqProv: no
 %doc
 %config
 
+%pre
+
+
 %post
 
 

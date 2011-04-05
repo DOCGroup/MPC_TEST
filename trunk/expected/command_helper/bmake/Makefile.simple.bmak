@@ -104,6 +104,9 @@ CFLAGS = \
          -a8 \
          -DWIN32 \
          -D_WINDOWS \
+         -I"$(IDL2JNI_ROOT)\runtime" \
+         -I"$(JAVA_HOME)\include" \
+         -I"$(JAVA_HOME)\include\$(JAVA_PLATFORM)" \
          -I"something" \
          $(PCH_CFLAGS) \
          $(VCL_CFLAGS)

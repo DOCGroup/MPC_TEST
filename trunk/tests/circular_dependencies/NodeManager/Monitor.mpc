@@ -1,4 +1,4 @@
-project(*monitorlib) {
+project(*monitorlib) : html {
   after += TargetManager_stub
   sharedname =
   staticname = ciaomonlib

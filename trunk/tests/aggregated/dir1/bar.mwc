@@ -12,7 +12,7 @@ workspace {
   exclude(!automake, !bds, !bmake, !cc, !em3, !ghs, !gnuace, !html, !make, !nmake, !sle, !vc6, !vc7, !vc71, !vc8) {
     cmdline += -value_project macros+=REQUIRED
     other {
-      cmdline += -value_project macros+=ALSO_REQUIRED -include $PWD/other
+      cmdline += -value_project macros+=ALSO_REQUIRED -include "$PWD/other"
       dir2
     }
     dir5

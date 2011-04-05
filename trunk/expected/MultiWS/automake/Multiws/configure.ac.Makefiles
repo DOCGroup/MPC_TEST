@@ -1,2 +1,0 @@
-AC_CONFIG_FILES([ Makefile_testing ])
-AC_CONFIG_FILES([ src/Makefile_testing ])

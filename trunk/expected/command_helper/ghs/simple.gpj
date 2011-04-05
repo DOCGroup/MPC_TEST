@@ -10,6 +10,7 @@
 	-I$(IDL2JNI_ROOT)\runtime
 	-I$(JAVA_HOME)\include
 	-I$(JAVA_HOME)\include\$(JAVA_PLATFORM)
+	-Isomething
 	-L.
 	-L$(IDL2JNI_ROOT)\lib
 	-lidl2jni_runtime

@@ -1,4 +1,4 @@
-project(TMClient) {
+project(TMClient) : html {
   after += CIAO_TargetManager_stub
   sharedname =
 }

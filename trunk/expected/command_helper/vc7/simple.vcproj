@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="simple"
-	ProjectGUID="{79718EF0-FECA-1BAD-A6A7-8D3CEAC67AC0}"
+	ProjectGUID="{79718EF0-FECA-1BAD-A6A7-8D3C0000002E}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -22,7 +22,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="something"
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"
                                 PreprocessorDefinitions="USING_PCH;_DEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
@@ -81,7 +81,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="something"/>
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"/>
 			<Tool
 				Name="VCWebServiceProxyGeneratorTool"/>
 			<Tool
@@ -98,7 +98,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="3"
-				AdditionalIncludeDirectories="something"
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"
                                 PreprocessorDefinitions="USING_PCH;NDEBUG;WIN32;_WINDOWS"
 				MinimalRebuild="FALSE"
 				ExceptionHandling="TRUE"
@@ -155,7 +155,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="something"/>
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"/>
 			<Tool
 				Name="VCWebServiceProxyGeneratorTool"/>
 			<Tool

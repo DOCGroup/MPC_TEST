@@ -6,12 +6,12 @@ project {
     inputext -= .joe, .jim
 
     optional(resource_outputext) {
-      commandflags(-good && -bad ^^ -dumb) = .resource
+      commandflags(-good && -bad && !-dumb) = .resource
     }
     optional(documentation_outputext) {
-      commandflags(-good && -bad && ) = .rtf
-      commandflags(&& -flair) += .rol
-      commandflags(-good && -bad && ) += .blue
+      commandflags(-good && -bad) = .rtf
+      commandflags(-flair) += .rol
+      commandflags(-good && -bad) += .blue
     }
   }
 

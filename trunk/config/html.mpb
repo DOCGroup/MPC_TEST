@@ -1,0 +1,10 @@
+project {
+  // Required for project type html for the case where there
+  // are multiple projects in the same directory, otherwise
+  // generated html will be added to the document files for the
+  // second and subsequent projects that are processed, which 
+  // is indeterminate.
+  Documentation_Files {
+    ^*.html
+  }
+}

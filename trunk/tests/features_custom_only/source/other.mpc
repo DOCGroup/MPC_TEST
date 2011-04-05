@@ -1,4 +1,4 @@
-project: custom_exercise {
+project: custom_exercise, html {
   ZAR_Files {
     commandflags += -GX -Sc
     other/other.poo

@@ -1,4 +1,19 @@
 workspace {
   cmdline += -value_project macros+=NEEDED_BY_NONE
   another.mpc
+  
+  specific(rpmspec) {
+    rpm_description += \n {
+      ""
+      ""
+      "   This is additional description."
+    }
+    rpm_summary = Summary for dir2.
+
+    rpm_releasenumber = 7
+    rpm_version = 0.2
+
+    // Override to blank
+    rpm_pre_cmd =
+  }
 }

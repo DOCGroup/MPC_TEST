@@ -6,18 +6,38 @@ workspace {
     cmdline += -value_project macros+=NEEDED_BY_MAKE
   }
 
+  // Put rpmspec stuff before the other workspaces so they can override.
+  specific(rpmspec) {
+    rpm_description = \n {
+      "For MPC Testing"
+      ""
+      "   This is a multiline description."
+    }
+    rpm_summary = {
+      aggregated test. \
+      // Comment line
+
+
+      This is a continuation line.
+    }
+    rpm_group = Development/Libraries/C and C++
+    rpm_url = http:\/\/www.cs.wustl.edu/~schmidt/ACE.html
+    rpm_releasenumber = 1
+    rpm_version = 0.1
+
+    rpm_pre_cmd = \sn {
+getent group tao >/dev/null || /usr/sbin/groupadd -r tao
+getent passwd tao >/dev/null || \
+/usr/sbin/useradd -r -g tao -d %{_sysconfdir}/tao -s /sbin/nologin \
+    -c "TAO Services" tao
+exit 0
+    }
+  }    
+  
   dir2/dir2.mwc
 
   aggregated_scope {
     cmdline += -value_project macros+=NEEDED_BY_SOME
     dir1/bar.mwc
-  }
-
-  specific(rpmspec) {
-    rpm_description = For MPC Testing
-    rpm_summary = aggregated test
-    rpm_group = N/A
-    rpm_releasenumber = 1
-    rpm_version = 0.1
   }
 }

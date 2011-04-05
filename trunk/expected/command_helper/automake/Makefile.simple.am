@@ -1107,6 +1107,9 @@ simple-stamp: $(srcdir)/simple.idl $(IDL2JNI_ROOT)/bin/idl2jni SomeSortOfTypedef
 noinst_LTLIBRARIES += libweird$$name.la
 
 libweird__name_la_CPPFLAGS = \
+  -I$(IDL2JNI_ROOT)/runtime \
+  -I$(JAVA_HOME)/include \
+  -I$(JAVA_HOME)/include/$(JAVA_PLATFORM) \
   -Isomething
 
 libweird__name_la_SOURCES = \

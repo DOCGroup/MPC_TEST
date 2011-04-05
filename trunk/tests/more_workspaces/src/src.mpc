@@ -1,4 +1,4 @@
-project {
+project : html {
   Source_Files {
     ^*poo.cpp
   }

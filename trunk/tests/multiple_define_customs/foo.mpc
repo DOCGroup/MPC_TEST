@@ -18,6 +18,10 @@ project {
     generic_outputext = D.idl
   }
 
+  Documentation_Files {
+  	!environment.txt
+  }
+  
   TypeSupport_Files {
     Foo.idl << dep1
   }

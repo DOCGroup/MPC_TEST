@@ -54,7 +54,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"something" -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.simple.dep" "otherJC.cpp" "otherJS.cpp" "otherTypeSupportJC.cpp" "otherTypeSupportJS.cpp" "simpleJC.cpp" "simple_pch.cpp"
+	$(DEPGEN) -I"$(IDL2JNI_ROOT)\runtime" -I"$(JAVA_HOME)\include" -I"$(JAVA_HOME)\include\$(JAVA_PLATFORM)" -I"something" -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.simple.dep" "otherJC.cpp" "otherJS.cpp" "otherTypeSupportJC.cpp" "otherTypeSupportJS.cpp" "simpleJC.cpp" "simple_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -256,7 +256,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "something" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
 CPP_PCH=/D USING_PCH /Yu"simple_pch.h" /Fp"$(INTDIR)\simple_pch.pch"
 CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
@@ -298,7 +298,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"something" -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.simple.dep" "otherJC.cpp" "otherJS.cpp" "otherTypeSupportJC.cpp" "otherTypeSupportJS.cpp" "simpleJC.cpp" "simple_pch.cpp"
+	$(DEPGEN) -I"$(IDL2JNI_ROOT)\runtime" -I"$(JAVA_HOME)\include" -I"$(JAVA_HOME)\include\$(JAVA_PLATFORM)" -I"something" -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.simple.dep" "otherJC.cpp" "otherJS.cpp" "otherTypeSupportJC.cpp" "otherTypeSupportJS.cpp" "simpleJC.cpp" "simple_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -499,7 +499,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "something" /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
 CPP_PCH=/D USING_PCH /Yu"simple_pch.h" /Fp"$(INTDIR)\simple_pch.pch"
 CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
@@ -541,7 +541,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"something" -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.simple.dep" "otherJC.cpp" "otherJS.cpp" "otherTypeSupportJC.cpp" "otherTypeSupportJS.cpp" "simpleJC.cpp" "simple_pch.cpp"
+	$(DEPGEN) -I"$(IDL2JNI_ROOT)\runtime" -I"$(JAVA_HOME)\include" -I"$(JAVA_HOME)\include\$(JAVA_PLATFORM)" -I"something" -D_DEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.simple.dep" "otherJC.cpp" "otherJS.cpp" "otherTypeSupportJC.cpp" "otherTypeSupportJS.cpp" "simpleJC.cpp" "simple_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -742,7 +742,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\weird$$namesd.pdb" /I "something" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\weird$$namesd.pdb" /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
 CPP_PCH=/D USING_PCH /Yu"simple_pch.h" /Fp"$(INTDIR)\simple_pch.pch"
 CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
@@ -783,7 +783,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -I"something" -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.simple.dep" "otherJC.cpp" "otherJS.cpp" "otherTypeSupportJC.cpp" "otherTypeSupportJS.cpp" "simpleJC.cpp" "simple_pch.cpp"
+	$(DEPGEN) -I"$(IDL2JNI_ROOT)\runtime" -I"$(JAVA_HOME)\include" -I"$(JAVA_HOME)\include\$(JAVA_PLATFORM)" -I"something" -DNDEBUG -DWIN32 -D_WINDOWS -DUSING_PCH -f "Makefile.simple.dep" "otherJC.cpp" "otherJS.cpp" "otherTypeSupportJC.cpp" "otherTypeSupportJS.cpp" "simpleJC.cpp" "simple_pch.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -983,7 +983,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "something" /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
 CPP_PCH=/D USING_PCH /Yu"simple_pch.h" /Fp"$(INTDIR)\simple_pch.pch"
 CPP_PROJ=$(CPP_COMMON) $(CPP_PCH) /Fo"$(INTDIR)\\"
 
@@ -1059,7 +1059,7 @@ SOURCE="simple_pch.cpp"
 
 !IF  "$(CFG)" == "Win32 Debug"
 
-CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "something" /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\simple_pch.pch" /Yc"simple_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\simple_pch.pch" /Yc"simple_pch.h" /FD /c
 
 "$(INTDIR)\simple_pch.obj" "$(INTDIR)\simple_pch.pch" : $(SOURCE)
 	$(CPP) @<<
@@ -1068,7 +1068,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDI
 
 !ELSEIF  "$(CFG)" == "Win32 Release"
 
-CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "something" /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\simple_pch.pch" /Yc"simple_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\simple_pch.pch" /Yc"simple_pch.h" /FD /c
 
 "$(INTDIR)\simple_pch.obj" "$(INTDIR)\simple_pch.pch" : $(SOURCE)
 	$(CPP) @<<
@@ -1077,7 +1077,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "something" /D NDEBUG 
 
 !ELSEIF  "$(CFG)" == "Win32 Static Debug"
 
-CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\weird$$namesd.pdb" /I "something" /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\simple_pch.pch" /Yc"simple_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\weird$$namesd.pdb" /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\simple_pch.pch" /Yc"simple_pch.h" /FD /c
 
 "$(INTDIR)\simple_pch.obj" "$(INTDIR)\simple_pch.pch" : $(SOURCE)
 	$(CPP) @<<
@@ -1086,7 +1086,7 @@ CPP_SWITCHES=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\weird
 
 !ELSEIF  "$(CFG)" == "Win32 Static Release"
 
-CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "something" /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\simple_pch.pch" /Yc"simple_pch.h" /FD /c
+CPP_SWITCHES=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Fp"$(INTDIR)\simple_pch.pch" /Yc"simple_pch.h" /FD /c
 
 "$(INTDIR)\simple_pch.obj" "$(INTDIR)\simple_pch.pch" : $(SOURCE)
 	$(CPP) @<<
