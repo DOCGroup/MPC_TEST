@@ -38,11 +38,11 @@ RSC=rc.exe
 # PROP Intermediate_Dir "Debug\simple"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD CPP /nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"Debug\simple/" /I "something" /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"simple_pch.h" /Fp"Debug\simple\simple_pch.pch" /FD /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /GX /Zi /MDd /GR /Gy /Fd"Debug\simple/" /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _DEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"simple_pch.h" /Fp"Debug\simple\simple_pch.pch" /FD /c
 # SUBTRACT CPP /Fr /YX
 
 # ADD MTL /D "_DEBUG" /nologo /mktyplib203 /win32
-# ADD RSC /l 0x409 /d _DEBUG /i "something"
+# ADD RSC /l 0x409 /d _DEBUG /i "$(IDL2JNI_ROOT)\runtime" /i "$(JAVA_HOME)\include" /i "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /i "something"
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\weird$name.bsc"
 LINK32=link.exe
@@ -60,11 +60,11 @@ PostBuild_Cmds="$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 # PROP Intermediate_Dir "Release\simple"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD CPP /nologo /O2 /W3 /GX /MD /GR /I "something" /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"simple_pch.h" /Fp"Release\simple\simple_pch.pch" /FD /c
+# ADD CPP /nologo /O2 /W3 /GX /MD /GR /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D NDEBUG /D WIN32 /D _WINDOWS /D USING_PCH /Yu"simple_pch.h" /Fp"Release\simple\simple_pch.pch" /FD /c
 # SUBTRACT CPP /YX
 
 # ADD MTL /D "NDEBUG" /nologo /mktyplib203 /win32
-# ADD RSC /l 0x409 /d NDEBUG /i "something"
+# ADD RSC /l 0x409 /d NDEBUG /i "$(IDL2JNI_ROOT)\runtime" /i "$(JAVA_HOME)\include" /i "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /i "something"
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\weird$name.bsc"
 LINK32=link.exe

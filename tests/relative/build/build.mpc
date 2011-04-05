@@ -1,4 +1,4 @@
-project(*lib) {
+project(*lib) : html {
   after     += *exe
   includes  += .
   pch_header = ../src/zzz_pch.h
@@ -23,7 +23,7 @@ project(*lib) {
   }
 }
 
-project(*exe) {
+project(*exe) : html {
   includes += .
   verbatim(gnuace, macros) {
     VDIR=.exe/

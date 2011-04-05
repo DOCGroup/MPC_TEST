@@ -1,8 +1,8 @@
-project(*A): cppgen {
+project(*A): cppgen, html {
   exename = A
 }
 
-project(*B): cppgen {
+project(*B): cppgen, html {
   exename = B
   CPPGEN_Files {
     carnival {
@@ -11,7 +11,7 @@ project(*B): cppgen {
   }
 }
 
-project(*C): cppgen {
+project(*C): cppgen, html {
   exename = C
   CPPGEN_Files {
     clown.r
@@ -23,7 +23,7 @@ project(*C): cppgen {
   }
 }
 
-project(*D): cppgen {
+project(*D): cppgen, html {
   exename = D
   CPPGEN_Files {
     carnival {
@@ -37,7 +37,7 @@ project(*D): cppgen {
   }
 }
 
-project(*E): cppgen {
+project(*E): cppgen, html {
   exename = E
   CPPGEN_Files {
     clown.r
@@ -47,7 +47,7 @@ project(*E): cppgen {
   }
 }
 
-project(*F): cppgen {
+project(*F): cppgen, html {
   exename = F
   CPPGEN_Files {
     carnival {
@@ -59,7 +59,7 @@ project(*F): cppgen {
   }
 }
 
-project(*G): cppgen {
+project(*G): cppgen, html {
   exename = G
   CPPGEN_Files {
     carnival {
@@ -81,4 +81,3 @@ project(*G): cppgen {
     }
   }
 }
-

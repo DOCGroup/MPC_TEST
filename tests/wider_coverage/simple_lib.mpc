@@ -1,4 +1,4 @@
-project(some_Test*): ghs_base {
+project(some_Test*): ghs_base, html {
   staticname = \
     simple_lib
   after += Some_Test_Other_Lib

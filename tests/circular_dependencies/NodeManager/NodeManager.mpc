@@ -1,4 +1,4 @@
-project (NodeManager_stub) {
+project (NodeManager_stub) : html {
   sharedname =
   staticname = NodeManager_stub
   Source_Files {
@@ -6,14 +6,14 @@ project (NodeManager_stub) {
   }
 }
 
-project(NodeManager) {
+project(NodeManager) : html {
   after += NodeApplicationManager NodeManager_stub CIAO_TargetManager_stub
   Source_Files {
     one.cpp
   }
 }
 
-project(lib) {
+project(lib) : html {
   sharedname =
   staticname = NodeManager
   after += NodeApplicationManager NodeManager_stub CIAO_TargetManager_stub

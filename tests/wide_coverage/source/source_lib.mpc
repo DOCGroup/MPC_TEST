@@ -1,4 +1,4 @@
-project: generator_base, test_base, cppgen, mondo_base {
+project: generator_base, test_base, cppgen, mondo_base, html {
   sharedname   =
   staticname   = source_lib
   includes    += .

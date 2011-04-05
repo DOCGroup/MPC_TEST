@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="simple"
-	ProjectGUID="{79718EF0-FECA-1BAD-A6A7-8D3C00000000}"
+	ProjectGUID="{79718EF0-FECA-1BAD-A6A7-8D3C0000002E}"
 	RootNamespace="simple"
 	Keyword="Win32Proj"
 	SignManifests="true"
@@ -52,7 +52,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="something"
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"
 				PreprocessorDefinitions="USING_PCH;_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
@@ -71,7 +71,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="something"
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -143,7 +143,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				AdditionalIncludeDirectories="something"
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"
 				PreprocessorDefinitions="USING_PCH;NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
@@ -159,7 +159,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="something"
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -233,7 +233,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="something"
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"
 				PreprocessorDefinitions="USING_PCH;_DEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
@@ -252,7 +252,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG;_WIN64"
 				Culture="1033"
-				AdditionalIncludeDirectories="something"
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -325,7 +325,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				AdditionalIncludeDirectories="something"
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"
 				PreprocessorDefinitions="USING_PCH;NDEBUG;WIN32;_WINDOWS;_CRT_NONSTDC_NO_WARNINGS;_AMD64_;_WIN64"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"
@@ -341,7 +341,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG;_WIN64"
 				Culture="1033"
-				AdditionalIncludeDirectories="something"
+				AdditionalIncludeDirectories="$(IDL2JNI_ROOT)\runtime,$(JAVA_HOME)\include,$(JAVA_HOME)\include\$(JAVA_PLATFORM),something"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"

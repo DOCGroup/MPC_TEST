@@ -1,4 +1,4 @@
-project(*be): test_base {
+project(*be): test_base, html {
   requires     += rtti
   staticflags  += GENERATOR_BE_AS_STATIC_LIBS
   dynamicflags += GENERATOR_BE_BUILD_DLL
@@ -16,7 +16,7 @@ project(*be): test_base {
 }
 
 
-project: test_base {
+project: test_base, html {
   after       += *be
   requires    += rtti
   install      = $(TEST_ROOT)/bin

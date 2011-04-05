@@ -1,11 +1,11 @@
-project(*a) {
+project(*a) : html {
   specific {
     compile_flags  = -A
     compile_flags += -B
   }
 }
 
-project(*b) {
+project(*b) : html {
   specific {
     win_version  = 6.66
     win_version += 4.44
@@ -13,7 +13,7 @@ project(*b) {
   }
 }
 
-project(*c) {
+project(*c) : html {
   includes += Bigbam
   specific {
     Debug::defines  = poo

@@ -118,7 +118,7 @@ LDLIBPATH     = -L. -L$(IDL2JNI_ROOT)/lib
 else
 LDFLAGS      += -L. -L$(IDL2JNI_ROOT)/lib
 endif
-CPPFLAGS     += -Isomething
+CPPFLAGS     += -I$(IDL2JNI_ROOT)/runtime -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/$(JAVA_PLATFORM) -Isomething
 
 #----------------------------------------------------------------------------
 #       Local targets

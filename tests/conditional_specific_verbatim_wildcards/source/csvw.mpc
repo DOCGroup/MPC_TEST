@@ -1,4 +1,4 @@
-project(*A) {
+project(*A) : html {
   dllout  = bin
   libout  = lib
 
@@ -40,7 +40,7 @@ project(*A) {
   }
 }
 
-project(*B) {
+project(*B) : html {
   exename = bdog
   dllout  = bin
   libout  = lib
@@ -61,7 +61,7 @@ project(*B) {
   }
 }
 
-project(*C) {
+project(*C) : html {
   exename = cdog
   dllout  = bin
   libout  = lib
@@ -83,7 +83,7 @@ project(*C) {
   }
 }
 
-project(*D) {
+project(*D) : html {
   exename = ddog
   dllout  = bin
   libout  = lib
@@ -103,7 +103,7 @@ project(*D) {
   }
 }
 
-project(*E) {
+project(*E) : html {
   dllout = bin
   libout = lib
 

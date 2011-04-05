@@ -13,9 +13,15 @@
             <stringAttribute key="BLD::Info|GlobalMacro|DEFINES" value="-DUSING_PCH "/>
             <stringAttribute key="BLD::Info|GlobalMacro|PROJECT_TYPE" value=""/>
             <listAttribute key="BLD::Info|Incl|Linux-gnu-native-3.x-4.x">
+                <stringAttribute value="-I$(IDL2JNI_ROOT)/runtime"/>
+                <stringAttribute value="-I$(JAVA_HOME)/include"/>
+                <stringAttribute value="-I$(JAVA_HOME)/include/$(JAVA_PLATFORM)"/>
                 <stringAttribute value="-I../../something"/>
             </listAttribute>
             <listAttribute key="BLD::Info|Incl|Windows-gnu-native-3.x-4.x">
+                <stringAttribute value="-I$(IDL2JNI_ROOT)/runtime"/>
+                <stringAttribute value="-I$(JAVA_HOME)/include"/>
+                <stringAttribute value="-I$(JAVA_HOME)/include/$(JAVA_PLATFORM)"/>
                 <stringAttribute value="-I../../something"/>
             </listAttribute>
             <listAttribute key="BLD::Info|Macros">

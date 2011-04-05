@@ -14,16 +14,6 @@ project: java {
 
 
   // This Define_Custom makes use of $(IDL2JNI_ROOT)/modules/IDL2JNIHelper.pm
-
-  // When this code is moved into DDS, IDL2JNIHelper.pm will go in to
-  // $(DDS_ROOT)/MPC/modules and in all 3 versions of ACE+TAO,
-  // $(ACE_ROOT)/bin/MakeProjectCreator/config/MPC.cfg will be edited to add
-  // ", $DDS_ROOT/MPC" to the dynamic_types line and to remove
-  // $DDS_ROOT/MPC/config from the includes line.
-
-  // While this code is still outside of DDS, edit your MPC.cfg file in
-  // $(ACE_ROOT)/bin/MakeProjectCreator/config so that the dynamic_types line
-  // has ", $IDL2JNI_ROOT". 
   Define_Custom(Idl2Jni) {
     automatic_in  = 1
     automatic_out = 1

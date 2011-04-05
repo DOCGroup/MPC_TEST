@@ -48,9 +48,9 @@ CFG=simple - Win32 (WCE ARM) Debug
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /i "something" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /i "$(IDL2JNI_ROOT)\runtime" /i "$(JAVA_HOME)\include" /i "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /i "something" /r
 CPP=clarm.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\simple\ARM/"  /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D USING_PCH /Yu"simple_pch.h" /Fp"Debug\simple\ARM\simple_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\simple\ARM/"  /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D USING_PCH /Yu"simple_pch.h" /Fp"Debug\simple\ARM\simple_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\weird$name.bsc"
@@ -72,9 +72,9 @@ PostBuild_Cmds="$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /i "something" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /i "$(IDL2JNI_ROOT)\runtime" /i "$(JAVA_HOME)\include" /i "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /i "something" /r
 CPP=clarm.exe
-# ADD CPP /nologo /O2 /W3 /GR  /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D USING_PCH /Yu"simple_pch.h" /Fp"Release\simple\ARM\simple_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR  /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D USING_PCH /Yu"simple_pch.h" /Fp"Release\simple\ARM\simple_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\weird$name.bsc"
@@ -97,9 +97,9 @@ PostBuild_Cmds="$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /i "something" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /i "$(IDL2JNI_ROOT)\runtime" /i "$(JAVA_HOME)\include" /i "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /i "something" /r
 CPP=clarm.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\simple\ARM/" /QRxscale /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4 /D USING_PCH /Yu"simple_pch.h" /Fp"Debug\simple\ARM\simple_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\simple\ARM/" /QRxscale /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4 /D USING_PCH /Yu"simple_pch.h" /Fp"Debug\simple\ARM\simple_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\weird$name.bsc"
@@ -121,9 +121,9 @@ PostBuild_Cmds="$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /i "something" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d ARM /d _ARM_ /d ARMV4 /i "$(IDL2JNI_ROOT)\runtime" /i "$(JAVA_HOME)\include" /i "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /i "something" /r
 CPP=clarm.exe
-# ADD CPP /nologo /O2 /W3 /GR /QRxscale /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4 /D USING_PCH /Yu"simple_pch.h" /Fp"Release\simple\ARM\simple_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR /QRxscale /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D ARM /D _ARM_ /D ARMV4 /D USING_PCH /Yu"simple_pch.h" /Fp"Release\simple\ARM\simple_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\weird$name.bsc"
@@ -146,9 +146,9 @@ PostBuild_Cmds="$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /i "something" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /i "$(IDL2JNI_ROOT)\runtime" /i "$(JAVA_HOME)\include" /i "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /i "something" /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\simple\IX86/"  /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"simple_pch.h" /Fp"Debug\simple\IX86\simple_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\simple\IX86/"  /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"simple_pch.h" /Fp"Debug\simple\IX86\simple_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\weird$name.bsc"
@@ -170,9 +170,9 @@ PostBuild_Cmds="$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /i "something" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /i "$(IDL2JNI_ROOT)\runtime" /i "$(JAVA_HOME)\include" /i "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /i "something" /r
 CPP=cl.exe
-# ADD CPP /nologo /O2 /W3 /GR  /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"simple_pch.h" /Fp"Release\simple\IX86\simple_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR  /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"simple_pch.h" /Fp"Release\simple\IX86\simple_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\weird$name.bsc"
@@ -195,9 +195,9 @@ PostBuild_Cmds="$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /i "something" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d _DEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /i "$(IDL2JNI_ROOT)\runtime" /i "$(JAVA_HOME)\include" /i "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /i "something" /r
 CPP=cl.exe
-# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\simple\IX86/"  /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"simple_pch.h" /Fp"Debug\simple\IX86\simple_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /Ob0 /W3 /Gm /Zi /GR /Gy /Fd"Debug\simple\IX86/"  /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D _DEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"simple_pch.h" /Fp"Debug\simple\IX86\simple_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /Fr /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\weird$name.bsc"
@@ -219,9 +219,9 @@ PostBuild_Cmds="$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 RSC=rc.exe
-# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /i "something" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "$(CePlatform)" /d NDEBUG /d UNICODE /d _UNICODE /d _i386_ /d _X86_ /d x86 /i "$(IDL2JNI_ROOT)\runtime" /i "$(JAVA_HOME)\include" /i "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /i "something" /r
 CPP=cl.exe
-# ADD CPP /nologo /O2 /W3 /GR  /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"simple_pch.h" /Fp"Release\simple\IX86\simple_pch.pch"  /FD /Gy /c
+# ADD CPP /nologo /O2 /W3 /GR  /I "$(IDL2JNI_ROOT)\runtime" /I "$(JAVA_HOME)\include" /I "$(JAVA_HOME)\include\$(JAVA_PLATFORM)" /I "something" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D NDEBUG /D UNICODE /D _UNICODE /D _i386_ /D _X86_ /D x86 /D USING_PCH /Yu"simple_pch.h" /Fp"Release\simple\IX86\simple_pch.pch"  /FD /Gy /c
 # SUBTRACT CPP /YX
 BSC32=bscmake.exe
 # ADD BSC32 /nologo /o".\weird$name.bsc"

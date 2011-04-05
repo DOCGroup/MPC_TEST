@@ -3,10 +3,22 @@ Running the tests
 
 Before running the tests you should have the $MPC_ROOT environment variable
 set or have the $ACE_ROOT environment variable set with MPC checked out into
-$ACE_ROOT.  Run run_tests.pl to run all of the MPC tests.  The run_tests.pl
-script will generate all of the supported MPC project types and attempt to
-build at least one of the project types in order to ensure that things get
-generated correctly after the project has been built.  A warning will be
+$ACE_ROOT. $QTDIR and $PERL5_INCLUDE should also be set under UNIX as some of
+the tests need them to build.  
+
+Also, you can optionally add a file base.cfg to $MPC_ROOT/config with content: 
+$TEST_ROOT = $TEST_MPC_CONFIG.  The run_tests.pl script will then set
+$TEST_MPC_CONFIG so each test uses either the MPC.cfg in MPC_TEST/config, 
+one in $TEST_ROOT/config if it exists, or the one in $MPC_ROOT/config if 
+$TEST_ROOT/config contains MPC_PHONY.cfg instead of MPC.cfg.  This is optional
+because of the need to add a file to MPC.  Therefore, tests should use this
+feature to enhance tests, logging, etc., but lack of a base.cfg shouldn't cause 
+a test to fail.
+
+Run run_tests.pl to run all of the MPC tests.  
+The run_tests.pl script will generate all of the supported MPC project types 
+and attempt to build at least one of the project types in order to ensure that
+things get generated correctly after the project has been built.  A warning will be
 printed if it is unable to build for at least one project type.
 
 Adding a new test
@@ -38,7 +50,7 @@ return/line feed combination under Windows subversion.
       test.  The file has the format of <mpc type>: [build file name].  If
       [build file name] is empty, the workspace will not be built for the
       specified mpc type.
-   h) If any files in the test need modification after MPC genertation there
+   h) If any files in the test need modification after MPC generation there
       should be one or more files ending in .patch containing patch
       information.  The patch utility is run with the -p0 option.
    i) If the test needs to run anything, a run_test.pl should be

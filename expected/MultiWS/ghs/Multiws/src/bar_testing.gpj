@@ -1,9 +1,0 @@
-#!gbuild
-#primaryTarget=ppc_integrity.tgt
-	[Shared Object]
-	-o Multiws/src/libbar.so
-	-Ospeed
-	-OI
-	--exceptions
-	-LMultiws/src
-foo.cpp
