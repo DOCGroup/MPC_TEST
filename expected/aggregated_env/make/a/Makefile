@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make t/c/d/d.mwc
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make t/c/d/d.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: aa
 aa:
-	@$(MAKE) -f Makefile.aa generated all
+	@$(MAKE) -f Makefile.aa all
 
 project_name_list:
 	@echo aa

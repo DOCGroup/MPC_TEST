@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make partial_implicit.mwc
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make partial_implicit.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: implicit
 implicit:
-	@$(MAKE) -f Makefile.implicit generated all
+	@$(MAKE) -f Makefile.implicit all
 
 project_name_list:
 	@echo implicit

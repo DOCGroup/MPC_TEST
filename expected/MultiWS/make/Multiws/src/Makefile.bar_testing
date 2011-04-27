@@ -1,9 +1,6 @@
 #----------------------------------------------------------------------------
 #       Macros
 #----------------------------------------------------------------------------
-CFG = Debug
-
-ifeq ($(CFG), Debug)
 CC            = gcc
 CXX           = g++
 LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
@@ -16,48 +13,7 @@ COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
-MAKEFILE      = Makefile.foo
-DEPENDENCIES  = .depend.$(MAKEFILE)
-LTARGETDIR    = ./
-CAT           = cat
-MV            = mv -f
-RM            = rm -rf
-CP            = cp -p
-NUL           = /dev/null
-MKDIR         = mkdir -p
-TESTDIRSTART  = test -d
-TESTDIREND    = ||
-TOUCH         = touch
-EXEEXT        = 
-LIBPREFIX     = lib
-LIBSUFFIX     = d
-GENFLAGS      = -g
-LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = /tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo$(OBJEXT)
-AREXT         = .a
-LIB           = $(LTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(AREXT)
-SOEXT         = .so
-SHTARGETDIR   = ./
-SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(SOEXT)
-SHFLAGS       = -shared
-SRC           = /tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo.cpp
-LINK.cc       = $(LD) $(LDFLAGS)
-EXPORTFLAGS   = $(DYNAMICFLAGS)
-endif
-ifeq ($(CFG), Release)
-CC            = gcc
-CXX           = g++
-LD            = $(CXX) $(CCFLAGS) $(CPPFLAGS)
-AR            = ar
-PICFLAGS      = -fPIC
-CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
-OBJEXT        = .o
-OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
-COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
-LDFLAGS       = -L"."
-CCC           = $(CXX)
-MAKEFILE      = Makefile.foo
+MAKEFILE      = Makefile.bar_testing
 DEPENDENCIES  = .depend.$(MAKEFILE)
 LTARGETDIR    = ./
 CAT           = cat
@@ -74,17 +30,16 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = /tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo$(OBJEXT)
+OBJS          = foo$(OBJEXT)
 AREXT         = .a
-LIB           = $(LTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(AREXT)
+LIB           = $(LTARGETDIR)$(LIBPREFIX)bar$(LIBSUFFIX)$(AREXT)
 SOEXT         = .so
 SHTARGETDIR   = ./
-SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(SOEXT)
+SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)bar$(LIBSUFFIX)$(SOEXT)
 SHFLAGS       = -shared
-SRC           = /tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo.cpp
+SRC           = foo.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(DYNAMICFLAGS)
-endif
 
 #----------------------------------------------------------------------------
 #       Local targets
@@ -103,8 +58,8 @@ $(LIB): $(OBJS)
 generated: $(GENERATED_DIRTY)
 	@-:
 
-/tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo$(OBJEXT): /tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) /tao_builds/mitza/MPC_TEST/tests/more_options/c++/down/foo.cpp
+foo$(OBJEXT): foo.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) foo.cpp
 
 clean:
 	-$(RM) $(OBJS)
@@ -123,6 +78,6 @@ $(DEPENDENCIES):
 	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
-	-/tao_builds/mitza/MPC/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
 include $(DEPENDENCIES)

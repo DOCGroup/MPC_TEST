@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -recurse -genins
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -recurse -genins
 #
 #----------------------------------------------------------------------------
 
@@ -20,11 +20,11 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: bfs_exe
 bfs_exe:
-	@$(MAKE) -f Makefile.bfs_exe generated all
+	@$(MAKE) -f Makefile.bfs_exe all
 
 .PHONY: bfs_lib
 bfs_lib:
-	@$(MAKE) -f Makefile.bfs_lib generated all
+	@$(MAKE) -f Makefile.bfs_lib all
 
 project_name_list:
 	@echo bfs_exe

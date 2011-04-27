@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make
 #
 #----------------------------------------------------------------------------
 
@@ -30,51 +30,51 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: NodeManager_stub
 NodeManager_stub:
-	@cd NodeManager && $(MAKE) -f Makefile.NodeManager_stub generated all
+	@cd NodeManager && $(MAKE) -f Makefile.NodeManager_stub all
 
 .PHONY: DomainApplicationManager-target
 DomainApplicationManager-target: NodeManager_stub
-	@cd DomainApplicationManager && $(MAKE) -f Makefile.DomainApplicationManager generated all
+	@cd DomainApplicationManager && $(MAKE) -f Makefile.DomainApplicationManager all
 
 .PHONY: NodeApplication-target
 NodeApplication-target:
-	@cd NodeApplication && $(MAKE) -f Makefile.NodeApplication generated all
+	@cd NodeApplication && $(MAKE) -f Makefile.NodeApplication all
 
 .PHONY: RTNA_Configurator
 RTNA_Configurator:
-	@cd NodeApplication && $(MAKE) -f Makefile.RTNA_Configurator generated all
+	@cd NodeApplication && $(MAKE) -f Makefile.RTNA_Configurator all
 
 .PHONY: NodeApplicationManager-target
 NodeApplicationManager-target:
-	@cd NodeApplicationManager && $(MAKE) -f Makefile.NodeApplicationManager generated all
+	@cd NodeApplicationManager && $(MAKE) -f Makefile.NodeApplicationManager all
 
 .PHONY: Monitor_Monitorlib
 Monitor_Monitorlib:
-	@cd NodeManager && $(MAKE) -f Makefile.Monitor_Monitorlib generated all
+	@cd NodeManager && $(MAKE) -f Makefile.Monitor_Monitorlib all
 
 .PHONY: CIAO_TargetManager_stub
 CIAO_TargetManager_stub:
-	@cd TargetManager && $(MAKE) -f Makefile.CIAO_TargetManager_stub generated all
+	@cd TargetManager && $(MAKE) -f Makefile.CIAO_TargetManager_stub all
 
 .PHONY: NodeManager-target
 NodeManager-target: NodeManager_stub NodeApplicationManager-target CIAO_TargetManager_stub
-	@cd NodeManager && $(MAKE) -f Makefile.NodeManager generated all
+	@cd NodeManager && $(MAKE) -f Makefile.NodeManager all
 
 .PHONY: lib
 lib: NodeManager_stub NodeApplicationManager-target CIAO_TargetManager_stub
-	@cd NodeManager && $(MAKE) -f Makefile.lib generated all
+	@cd NodeManager && $(MAKE) -f Makefile.lib all
 
 .PHONY: CIAO_TargetManager_svnt
 CIAO_TargetManager_svnt: CIAO_TargetManager_stub
-	@cd TargetManager && $(MAKE) -f Makefile.CIAO_TargetManager_svnt generated all
+	@cd TargetManager && $(MAKE) -f Makefile.CIAO_TargetManager_svnt all
 
 .PHONY: CIAO_TargetManager_exec
 CIAO_TargetManager_exec: DomainApplicationManager-target CIAO_TargetManager_svnt
-	@cd TargetManager && $(MAKE) -f Makefile.CIAO_TargetManager_exec generated all
+	@cd TargetManager && $(MAKE) -f Makefile.CIAO_TargetManager_exec all
 
 .PHONY: TMClient
 TMClient: CIAO_TargetManager_stub
-	@cd TargetManager && $(MAKE) -f Makefile.TMClient generated all
+	@cd TargetManager && $(MAKE) -f Makefile.TMClient all
 
 project_name_list:
 	@echo DomainApplicationManager-target

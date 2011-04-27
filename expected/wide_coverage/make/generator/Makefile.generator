@@ -47,7 +47,7 @@ $(BIN): $(OBJS)
 	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
-generated: $(GENERATED_DIRTY)
+generated: __prebuild__ $(GENERATED_DIRTY)
 	@-:
 
 .obj/generator$(OBJEXT): generator.cpp

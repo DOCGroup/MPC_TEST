@@ -61,7 +61,7 @@ $(LIB): $(OBJS)
 	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
 	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
 
-generated: $(GENERATED_DIRTY)
+generated: __prebuild__ $(GENERATED_DIRTY)
 	@-:
 
 .obj/generator_be$(OBJEXT): generator_be.cpp

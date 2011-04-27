@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -21,15 +21,15 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: Some_Test_Other_Lib
 Some_Test_Other_Lib:
-	@$(MAKE) -f Makefile.Some_Test_Other_Lib generated all
+	@$(MAKE) -f Makefile.Some_Test_Other_Lib all
 
 .PHONY: Some_Test_Simple_Lib
 Some_Test_Simple_Lib: Some_Test_Other_Lib
-	@$(MAKE) -f Makefile.Some_Test_Simple_Lib generated all
+	@$(MAKE) -f Makefile.Some_Test_Simple_Lib all
 
 .PHONY: simple
 simple: Some_Test_Other_Lib Some_Test_Simple_Lib
-	@$(MAKE) -f Makefile.simple generated all
+	@$(MAKE) -f Makefile.simple all
 
 project_name_list:
 	@echo Some_Test_Other_Lib

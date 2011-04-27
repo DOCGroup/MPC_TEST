@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,19 +22,19 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: dll-target
 dll-target:
-	@cd dll && $(MAKE) -f Makefile.dll generated all
+	@cd dll && $(MAKE) -f Makefile.dll all
 
 .PHONY: dll_exe-target
 dll_exe-target:
-	@cd dll_exe && $(MAKE) -f Makefile.dll_exe generated all
+	@cd dll_exe && $(MAKE) -f Makefile.dll_exe all
 
 .PHONY: lib-target
 lib-target:
-	@cd lib && $(MAKE) -f Makefile.lib generated all
+	@cd lib && $(MAKE) -f Makefile.lib all
 
 .PHONY: lib_exe-target
 lib_exe-target:
-	@cd lib_exe && $(MAKE) -f Makefile.lib_exe generated all
+	@cd lib_exe && $(MAKE) -f Makefile.lib_exe all
 
 project_name_list:
 	@echo dll-target

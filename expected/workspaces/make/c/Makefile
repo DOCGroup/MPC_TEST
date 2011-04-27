@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /home/elliottc/current/MPC/mwc.pl -include config -type make -recurse
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -recurse
 #
 #----------------------------------------------------------------------------
 
@@ -20,11 +20,11 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: good-target
 good-target:
-	@cd good && $(MAKE) -f Makefile.good generated all
+	@cd good && $(MAKE) -f Makefile.good all
 
 .PHONY: not_ghs-target
 not_ghs-target:
-	@cd not_ghs && $(MAKE) -f Makefile.not_ghs generated all
+	@cd not_ghs && $(MAKE) -f Makefile.not_ghs all
 
 project_name_list:
 	@echo good-target

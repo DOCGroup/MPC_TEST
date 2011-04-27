@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -gfeature_file config/ace.features -recurse -name_modifier "*_testing"
 #
 #----------------------------------------------------------------------------
 
 
-all: lib
+all: foo bar
 
 clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
-	@$(MAKE) -f Makefile.lib $(@)
+	@$(MAKE) -f Makefile.foo_testing $(@)
+	@$(MAKE) -f Makefile.bar_testing $(@)
 
-.PHONY: lib
-lib:
-	@$(MAKE) -f Makefile.lib all
+.PHONY: foo
+foo:
+	@$(MAKE) -f Makefile.foo_testing all
+
+.PHONY: bar
+bar: foo
+	@$(MAKE) -f Makefile.bar_testing all
 
 project_name_list:
-	@echo lib
+	@echo bar
+	@echo foo

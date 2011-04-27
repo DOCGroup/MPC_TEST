@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make grouping.mwc
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make grouping.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -25,31 +25,31 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: grouping_A
 grouping_A:
-	@$(MAKE) -f Makefile.grouping_A generated all
+	@$(MAKE) -f Makefile.grouping_A all
 
 .PHONY: grouping_B
 grouping_B:
-	@$(MAKE) -f Makefile.grouping_B generated all
+	@$(MAKE) -f Makefile.grouping_B all
 
 .PHONY: grouping_C
 grouping_C:
-	@$(MAKE) -f Makefile.grouping_C generated all
+	@$(MAKE) -f Makefile.grouping_C all
 
 .PHONY: grouping_D
 grouping_D:
-	@$(MAKE) -f Makefile.grouping_D generated all
+	@$(MAKE) -f Makefile.grouping_D all
 
 .PHONY: grouping_E
 grouping_E:
-	@$(MAKE) -f Makefile.grouping_E generated all
+	@$(MAKE) -f Makefile.grouping_E all
 
 .PHONY: grouping_F
 grouping_F:
-	@$(MAKE) -f Makefile.grouping_F generated all
+	@$(MAKE) -f Makefile.grouping_F all
 
 .PHONY: grouping_G
 grouping_G:
-	@$(MAKE) -f Makefile.grouping_G generated all
+	@$(MAKE) -f Makefile.grouping_G all
 
 project_name_list:
 	@echo grouping_A

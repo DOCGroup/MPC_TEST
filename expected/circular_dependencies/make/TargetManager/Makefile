@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make
 #
 #----------------------------------------------------------------------------
 
@@ -22,19 +22,19 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: CIAO_TargetManager_stub
 CIAO_TargetManager_stub:
-	@$(MAKE) -f Makefile.CIAO_TargetManager_stub generated all
+	@$(MAKE) -f Makefile.CIAO_TargetManager_stub all
 
 .PHONY: CIAO_TargetManager_svnt
 CIAO_TargetManager_svnt: CIAO_TargetManager_stub
-	@$(MAKE) -f Makefile.CIAO_TargetManager_svnt generated all
+	@$(MAKE) -f Makefile.CIAO_TargetManager_svnt all
 
 .PHONY: CIAO_TargetManager_exec
 CIAO_TargetManager_exec: CIAO_TargetManager_svnt
-	@$(MAKE) -f Makefile.CIAO_TargetManager_exec generated all
+	@$(MAKE) -f Makefile.CIAO_TargetManager_exec all
 
 .PHONY: TMClient
 TMClient: CIAO_TargetManager_stub
-	@$(MAKE) -f Makefile.TMClient generated all
+	@$(MAKE) -f Makefile.TMClient all
 
 project_name_list:
 	@echo CIAO_TargetManager_exec

@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -base different -features FaKe=0 -genins -hierarchy -make_coexistence -name_modifier "*_Zargaflan" -apply_project -relative TEST_ROOT=. -static -value_project "postbuild  +=  echo Hello There" -value_template "targetoutdir  =   zeep/" -gfeature_file config/features -relative_file config/relative
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -base different -features FaKe=0 -genins -hierarchy -make_coexistence -name_modifier "*_Zargaflan" -apply_project -relative TEST_ROOT=. -static -value_project "postbuild  +=  echo Hello There" -value_template "targetoutdir  =   zeep/" -gfeature_file config/features -relative_file config/relative
 #
 #----------------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: basic_Zargaflan
 basic_Zargaflan:
-	@cd source && $(MAKE) -f Makefile.basic_Zargaflan generated all
+	@cd source && $(MAKE) -f Makefile.basic_Zargaflan all
 
 project_name_list:
 	@echo basic_Zargaflan

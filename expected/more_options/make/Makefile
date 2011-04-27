@@ -8,15 +8,15 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: another-target
 another-target:
-	@cd another && $(MAKE) -f Makefile.another generated all
+	@cd another && $(MAKE) -f Makefile.another all
 
 .PHONY: foo
 foo:
-	@cd c++ && $(MAKE) -f Makefile.foo generated all
+	@cd c++ && $(MAKE) -f Makefile.foo all
 
 .PHONY: j
 j:
-	@cd java && $(MAKE) -f Makefile.j generated all
+	@cd java && $(MAKE) -f Makefile.j all
 
 project_name_list:
 	@echo another-target

@@ -78,6 +78,6 @@ $(DEPENDENCIES):
 	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
-	-/home/elliottc/current/MPC/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+	-/tao_builds/mitza/MPC/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
 include $(DEPENDENCIES)

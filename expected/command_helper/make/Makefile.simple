@@ -428,7 +428,7 @@ simple/ArrayBounds.java simple/EnumArrayHelper.java simple/EnumArrayHolder.java 
 .PRECIOUS: $(GENERATED_DIRTY)
 $(OBJS): $(GENERATED_DIRTY)
 
-generated: $(GENERATED_DIRTY)
+generated: __prebuild__ $(GENERATED_DIRTY)
 	@-:
 
 simple_pch$(OBJEXT): simple_pch.cpp

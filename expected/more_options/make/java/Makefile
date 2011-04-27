@@ -6,7 +6,7 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: j
 j:
-	@$(MAKE) -f Makefile.j generated all
+	@$(MAKE) -f Makefile.j all
 
 project_name_list:
 	@echo j
