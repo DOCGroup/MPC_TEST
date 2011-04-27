@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -features qt=1
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -features qt=1
 #
 #----------------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: qt_uic_moc
 qt_uic_moc:
-	@$(MAKE) -f Makefile.qt_uic_moc generated all
+	@$(MAKE) -f Makefile.qt_uic_moc all
 
 project_name_list:
 	@echo qt_uic_moc

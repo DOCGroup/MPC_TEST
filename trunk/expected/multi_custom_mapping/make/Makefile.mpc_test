@@ -42,6 +42,8 @@ EXPORTFLAGS   = $(STATICFLAGS)
 SPACE           = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY = foo.cpp foo_script2.cpp
 
+all: $(GENERATED_DIRTY)
+
 foo.cpp: foo.mco
 	echo "int main(){}" -a foo.mco > "$@"
 
@@ -49,7 +51,6 @@ foo_script2.cpp: foo.mco
 	echo "int main(){}" -b foo.mco > "$@"
 
 .PRECIOUS: $(GENERATED_DIRTY)
-all: $(GENERATED_DIRTY)
 
 generated: $(GENERATED_DIRTY)
 	@-:

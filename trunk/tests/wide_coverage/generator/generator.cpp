@@ -2,6 +2,8 @@
 #include <sys/stat.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include <string>
 
 #if defined(WIN32)

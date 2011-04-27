@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make conditional_specific_verbatim_wildcards.mwc
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make conditional_specific_verbatim_wildcards.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -23,23 +23,23 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: csvw_A
 csvw_A:
-	@cd source && $(MAKE) -f Makefile.csvw_A generated all
+	@cd source && $(MAKE) -f Makefile.csvw_A all
 
 .PHONY: csvw_B
 csvw_B:
-	@cd source && $(MAKE) -f Makefile.csvw_B generated all
+	@cd source && $(MAKE) -f Makefile.csvw_B all
 
 .PHONY: csvw_C
 csvw_C: csvw_B
-	@cd source && $(MAKE) -f Makefile.csvw_C generated all
+	@cd source && $(MAKE) -f Makefile.csvw_C all
 
 .PHONY: csvw_D
 csvw_D: csvw_C
-	@cd source && $(MAKE) -f Makefile.csvw_D generated all
+	@cd source && $(MAKE) -f Makefile.csvw_D all
 
 .PHONY: csvw_E
 csvw_E:
-	@cd source && $(MAKE) -f Makefile.csvw_E generated all
+	@cd source && $(MAKE) -f Makefile.csvw_E all
 
 project_name_list:
 	@echo csvw_A

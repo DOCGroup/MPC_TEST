@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make
 #
 #----------------------------------------------------------------------------
 
@@ -22,19 +22,19 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: Monitor_Monitorlib
 Monitor_Monitorlib:
-	@$(MAKE) -f Makefile.Monitor_Monitorlib generated all
+	@$(MAKE) -f Makefile.Monitor_Monitorlib all
 
 .PHONY: NodeManager_stub
 NodeManager_stub:
-	@$(MAKE) -f Makefile.NodeManager_stub generated all
+	@$(MAKE) -f Makefile.NodeManager_stub all
 
 .PHONY: NodeManager
 NodeManager: NodeManager_stub
-	@$(MAKE) -f Makefile.NodeManager generated all
+	@$(MAKE) -f Makefile.NodeManager all
 
 .PHONY: lib
 lib: NodeManager_stub
-	@$(MAKE) -f Makefile.lib generated all
+	@$(MAKE) -f Makefile.lib all
 
 project_name_list:
 	@echo Monitor_Monitorlib

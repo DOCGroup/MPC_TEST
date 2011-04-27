@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make -features rtti=1 wide_coverage.mwc
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -features rtti=1 wide_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -23,23 +23,23 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: generator_be
 generator_be:
-	@cd generator && $(MAKE) -f Makefile.generator_be generated all
+	@cd generator && $(MAKE) -f Makefile.generator_be all
 
 .PHONY: generator-target
 generator-target: generator_be
-	@cd generator && $(MAKE) -f Makefile.generator generated all
+	@cd generator && $(MAKE) -f Makefile.generator all
 
 .PHONY: source_lib
 source_lib: generator-target
-	@cd source && $(MAKE) -f Makefile.source_lib generated all
+	@cd source && $(MAKE) -f Makefile.source_lib all
 
 .PHONY: source-target
 source-target: source_lib
-	@cd source && $(MAKE) -f Makefile.source generated all
+	@cd source && $(MAKE) -f Makefile.source all
 
 .PHONY: fake
 fake:
-	@cd source/fake && $(MAKE) -f Makefile.fake generated all
+	@cd source/fake && $(MAKE) -f Makefile.fake all
 
 project_name_list:
 	@echo generator-target

@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type make aggregated.mwc
+# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make aggregated.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,19 +22,19 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 
 .PHONY: foo
 foo:
-	@cd dir1/dir2 && $(MAKE) -f Makefile.foo generated all
+	@cd dir1/dir2 && $(MAKE) -f Makefile.foo all
 
 .PHONY: dir4
 dir4:
-	@cd dir1/dir4 && $(MAKE) -f Makefile.dir4 generated all
+	@cd dir1/dir4 && $(MAKE) -f Makefile.dir4 all
 
 .PHONY: dir5
 dir5:
-	@cd dir1/dir5 && $(MAKE) -f Makefile.dir5 generated all
+	@cd dir1/dir5 && $(MAKE) -f Makefile.dir5 all
 
 .PHONY: another
 another:
-	@cd dir2 && $(MAKE) -f Makefile.another generated all
+	@cd dir2 && $(MAKE) -f Makefile.another all
 
 project_name_list:
 	@echo foo

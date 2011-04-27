@@ -1,3 +1,20 @@
+Wed Apr 27 14:43:25 UTC 2011  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/MultiWS/make:
+
+          Added expected results for -type make and the MultiWS test.
+
+        * expected/*/make/**/Makefile*:
+
+          Updated to account for MPC changes:
+          Wed Apr 27 14:07:44 UTC 2011  Adam Mitz  <mitza@ociweb.com>
+          Wed Apr 27 14:31:56 UTC 2011  Adam Mitz  <mitza@ociweb.com>
+
+        * tests/wide_coverage/generator/generator.cpp:
+
+          Added #includes for C standard library headers.  Some compiler
+          versions are more strict about which #includes must be used.
+
 Tue Apr  5 17:23:14 UTC 2011  Don Hudson  <hudsond@ociweb.com>
 
         * expected/command_helper/bmake/Makefile.simple.bmak:
