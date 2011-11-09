@@ -2,16 +2,7 @@
 <Include>
   <Fragment Id="mpc_test">
     <ComponentGroup Id="ComponentGroup.mpc_test">
-      <ComponentRef Id="mpc_test..exe" />
     </ComponentGroup>
 
-    <DirectoryRef Id="INSTALLDIR">
-        <Component Id="mpc_test..exe" Guid="*">
-          <File Id="mpc_test__exe"
-                Name=".exe"
-                Source="/.exe"
-                DiskId="1" />
-        </Component>
-    </DirectoryRef>
   </Fragment>
 </Include>
