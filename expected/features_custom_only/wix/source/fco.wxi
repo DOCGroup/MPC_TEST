@@ -2,16 +2,7 @@
 <Include>
   <Fragment Id="fco">
     <ComponentGroup Id="ComponentGroup.fco">
-      <ComponentRef Id="fco..exe" />
     </ComponentGroup>
 
-    <DirectoryRef Id="INSTALLDIR">
-        <Component Id="fco..exe" Guid="*">
-          <File Id="fco__exe"
-                Name=".exe"
-                Source="/.exe"
-                DiskId="1" />
-        </Component>
-    </DirectoryRef>
   </Fragment>
 </Include>
