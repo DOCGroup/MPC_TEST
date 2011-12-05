@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -57,6 +57,7 @@ $(LIB): $(OBJS)
 
 SPACE           = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY = Bar.cpp Bar.h
+
 
 .NOTPARALLEL:
 Bar.cpp Bar.h: Bar.adl foo.pl

@@ -1,3 +1,13 @@
+Mon Dec  5 15:22:49 UTC 2011  Chad Elliott  <elliott_c@ociweb.com>
+
+        * expected/*/Makefile.*:
+
+          Update for my most recent set of changes.
+
+        * utils/nightly.sh:
+
+          Allow passing options.
+
 Wed Nov  9 16:08:42 UTC 2011  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/features_custom_only/wix/source/fco.wxi:
