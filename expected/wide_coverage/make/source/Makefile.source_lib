@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -DUSING_PCH -D_REENTRANT -I"."
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"." -L"../lib"
 CCC           = $(CXX)
@@ -49,6 +49,7 @@ $(LIB): $(OBJS)
 SPACE           = $(should_be_unset) $(should_be_unset)
 GENERATED_DIRTY = cre/o.le/more_names.cpp cre/o.le/more_names.h names.cpp names.h TheCheat.cpp TheCheat.h ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl
 
+
 .NOTPARALLEL:
 cre/o.le/more_names.cpp cre/o.le/more_names.h: more_names.key ../bin/generator
 	@$(TESTDIRSTART) "cre/o.le" $(TESTDIREND) $(MKDIR) "cre/o.le"
@@ -56,16 +57,19 @@ cre/o.le/more_names.cpp cre/o.le/more_names.h: more_names.key ../bin/generator
 	echo cre/o.le/more_names.cpp and cre/o.le/more_names.h have been generated.
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) cre/o.le/more_names.cpp >> temp.$$$$ && $(MV) temp.$$$$ cre/o.le/more_names.cpp
 
+
 .NOTPARALLEL:
 names.cpp names.h: names.key something ../bin/generator
 	../bin/generator -n names names.key
 	echo names.cpp and names.h have been generated.
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) names.cpp >> temp.$$$$ && $(MV) temp.$$$$ names.cpp
 
+
 .NOTPARALLEL:
 TheCheat.cpp TheCheat.h: TheCheat.r ../bin/cppgen.pl
 	perl ../bin/cppgen.pl  TheCheat.r -o "$@"
 	@echo '#include "source_lib_pch.h"' > temp.$$$$ && $(CAT) TheCheat.cpp >> temp.$$$$ && $(MV) temp.$$$$ TheCheat.cpp
+
 
 .NOTPARALLEL:
 ./bar.txt ./moop.hxx ./qwee.cxx ./qwee_T.C ./weer.inl: mondo/all.mondo ../mondo/mondo.pl ../mondo/modules/ReaderGen.pm

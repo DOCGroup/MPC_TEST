@@ -9,7 +9,7 @@ PICFLAGS      = -fPIC
 CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -O -D_REENTRANT
 OBJEXT        = .o
 OUTPUT_OPTION = -o "$@"
-COMPILE.c     = $(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -c
+COMPILE.c     = $(CC) $(CFLAGS) $(CPPFLAGS) -c
 COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
 LDFLAGS       = -L"."
 CCC           = $(CXX)
@@ -60,6 +60,7 @@ GENERATED_DIRTY = bus.cpp bus.tab.c bus.tab.h
 
 bus.cpp: bus.l
 	flex -t bus.l > "$@"
+
 
 .NOTPARALLEL:
 bus.tab.c bus.tab.h: bus.y
