@@ -1,3 +1,11 @@
+Tue Feb 21 20:24:25 UTC 2012  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/relative/vc10/build/build_exe.vcxproj:
+        * expected/relative/vc10/build/build_lib.vcxproj:
+
+          Updated to work with the following MPC change:
+          Tue Feb 21 20:13:24 UTC 2012  Adam Mitz  <mitza@ociweb.com>
+
 Mon Dec  5 15:22:49 UTC 2011  Chad Elliott  <elliott_c@ociweb.com>
 
         * expected/*/Makefile.*:
