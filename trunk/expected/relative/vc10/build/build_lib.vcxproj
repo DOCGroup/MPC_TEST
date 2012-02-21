@@ -286,6 +286,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="lower\bar.cpp">
+      <ObjectFileName>$(IntDir)\%(Filename)2.obj</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
