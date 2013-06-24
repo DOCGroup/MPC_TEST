@@ -33,16 +33,17 @@ LIBPREFIX     = lib
 LIBSUFFIX     = d
 GENFLAGS      = -g
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo$(OBJEXT)
+OBJS          = /home/SCOTTRADEDEV/dev_amitz/MPC_TEST/tests/more_options/c++/down/foo$(OBJEXT)
 AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(AREXT)
 SOEXT         = .so
 SHTARGETDIR   = ./
 SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(SOEXT)
 SHFLAGS       = -shared
-SRC           = /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
+SRC           = /home/SCOTTRADEDEV/dev_amitz/MPC_TEST/tests/more_options/c++/down/foo.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(DYNAMICFLAGS)
+DEPLIBS       = $(foreach lib, , $(foreach libpath, ., $(wildcard $(libpath)/lib$(lib).a)))
 endif
 ifeq ($(CFG), Release)
 CC            = gcc
@@ -74,16 +75,17 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo$(OBJEXT)
+OBJS          = /home/SCOTTRADEDEV/dev_amitz/MPC_TEST/tests/more_options/c++/down/foo$(OBJEXT)
 AREXT         = .a
 LIB           = $(LTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(AREXT)
 SOEXT         = .so
 SHTARGETDIR   = ./
 SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)foo$(LIBSUFFIX)$(SOEXT)
 SHFLAGS       = -shared
-SRC           = /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
+SRC           = /home/SCOTTRADEDEV/dev_amitz/MPC_TEST/tests/more_options/c++/down/foo.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(DYNAMICFLAGS)
+DEPLIBS       = $(foreach lib, , $(foreach libpath, ., $(wildcard $(libpath)/lib$(lib).a)))
 endif
 
 #----------------------------------------------------------------------------
@@ -92,7 +94,7 @@ endif
 
 all: $(SHLIB)
 
-$(SHLIB): $(OBJS)
+$(SHLIB): $(OBJS) $(DEPLIBS)
 	@$(TESTDIRSTART) "$(SHTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(SHTARGETDIR)"
 	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
@@ -103,8 +105,8 @@ $(LIB): $(OBJS)
 generated: $(GENERATED_DIRTY)
 	@-:
 
-/home/elliottc/current/MPC/test/tests/more_options/c++/down/foo$(OBJEXT): /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) /home/elliottc/current/MPC/test/tests/more_options/c++/down/foo.cpp
+/home/SCOTTRADEDEV/dev_amitz/MPC_TEST/tests/more_options/c++/down/foo$(OBJEXT): /home/SCOTTRADEDEV/dev_amitz/MPC_TEST/tests/more_options/c++/down/foo.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) /home/SCOTTRADEDEV/dev_amitz/MPC_TEST/tests/more_options/c++/down/foo.cpp
 
 clean:
 	-$(RM) $(OBJS)
@@ -123,6 +125,6 @@ $(DEPENDENCIES):
 	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
-	-/home/elliottc/current/MPC/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+	-/home/SCOTTRADEDEV/dev_amitz/MPC/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
-include $(DEPENDENCIES)
+-include $(DEPENDENCIES)

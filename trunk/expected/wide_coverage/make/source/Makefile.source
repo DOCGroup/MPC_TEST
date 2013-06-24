@@ -35,6 +35,7 @@ OBJS          = .obj/exe/main$(OBJEXT) .obj/exe/use_more_names/use_more_names$(O
 SRC           = exe/main.cpp exe/use_more_names/use_more_names.cpp exe/use_names/use_names.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = 
+DEPLIBS       = $(foreach lib, source_lib$(LIBSUFFIX) , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
 
 #----------------------------------------------------------------------------
 #       Local targets
@@ -42,7 +43,7 @@ EXPORTFLAGS   =
 
 all: $(BIN) __postbuild__
 
-$(BIN): $(OBJS)
+$(BIN): $(OBJS) $(DEPLIBS)
 	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
@@ -81,7 +82,7 @@ realclean: clean
 check-syntax:
 	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
-__postbuild__:
+__postbuild__: $(BIN)
 	@echo main_test has been built
 
 #----------------------------------------------------------------------------
@@ -94,4 +95,4 @@ $(DEPENDENCIES):
 depend:
 	-VDIR=.obj/ $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
-include $(DEPENDENCIES)
+-include $(DEPENDENCIES)

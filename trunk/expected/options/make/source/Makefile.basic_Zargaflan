@@ -63,7 +63,7 @@ realclean: clean
 check-syntax:
 	$(COMPILE.cc) $(EXPORTFLAGS) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
-__postbuild__:
+__postbuild__: $(BIN)
 	@echo Hello There
 
 #----------------------------------------------------------------------------
@@ -76,4 +76,4 @@ $(DEPENDENCIES):
 depend:
 	-VDIR=zeep/ $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
-include $(DEPENDENCIES)
+-include $(DEPENDENCIES)

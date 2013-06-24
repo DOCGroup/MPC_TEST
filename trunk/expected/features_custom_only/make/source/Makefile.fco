@@ -79,4 +79,4 @@ $(DEPENDENCIES):
 depend:
 	@-:
 
-include $(DEPENDENCIES)
+-include $(DEPENDENCIES)

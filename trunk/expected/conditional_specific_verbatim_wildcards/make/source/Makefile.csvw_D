@@ -35,6 +35,7 @@ OBJS          = conditional/every$(OBJEXT) moop$(OBJEXT) qwaaa$(OBJEXT)
 SRC           = conditional/every.cpp moop.cxx qwaaa.c
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = 
+DEPLIBS       = $(foreach lib, , $(foreach libpath, ., $(wildcard $(libpath)/lib$(lib).a)))
 
 #----------------------------------------------------------------------------
 #       Local targets
@@ -42,7 +43,7 @@ EXPORTFLAGS   =
 
 all: $(BIN)
 
-$(BIN): $(OBJS)
+$(BIN): $(OBJS) $(DEPLIBS)
 	@$(TESTDIRSTART) "$(BTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(BTARGETDIR)"
 	$(LINK.cc) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
@@ -77,4 +78,4 @@ $(DEPENDENCIES):
 depend:
 	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
-include $(DEPENDENCIES)
+-include $(DEPENDENCIES)

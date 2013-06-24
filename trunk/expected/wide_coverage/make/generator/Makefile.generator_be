@@ -43,6 +43,7 @@ LINK.cc       = $(LD) $(LDFLAGS)
 DYNAMICFLAGS  = -DGENERATOR_BE_BUILD_DLL
 STATICFLAGS   = -DGENERATOR_BE_AS_STATIC_LIBS
 EXPORTFLAGS   = $(DYNAMICFLAGS)
+DEPLIBS       = $(foreach lib, , $(foreach libpath, . ../lib, $(wildcard $(libpath)/lib$(lib).a)))
 
 #----------------------------------------------------------------------------
 #       Local targets
@@ -53,7 +54,7 @@ all: __prebuild__ $(SHLIB).1.0.0 $(SHLIB)
 $(SHLIB):
 	cd $(SHTARGETDIR) && ln -s $(SHLIB_BASE).1.0.0 $(SHLIB_BASE)
 
-$(SHLIB).1.0.0: $(OBJS)
+$(SHLIB).1.0.0: $(OBJS) $(DEPLIBS)
 	@$(TESTDIRSTART) "$(SHTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(SHTARGETDIR)"
 	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
@@ -91,4 +92,4 @@ $(DEPENDENCIES):
 depend:
 	-VDIR=.obj/ $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
-include $(DEPENDENCIES)
+-include $(DEPENDENCIES)

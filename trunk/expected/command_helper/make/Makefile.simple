@@ -41,6 +41,7 @@ SHFLAGS       = -shared
 SRC           = simple_pch.cpp otherJC.cpp otherJS.cpp otherTypeSupportJC.cpp otherTypeSupportJS.cpp simpleJC.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(DYNAMICFLAGS)
+DEPLIBS       = $(foreach lib, idl2jni_runtime$(LIBSUFFIX) , $(foreach libpath, . $(IDL2JNI_ROOT)/lib, $(wildcard $(libpath)/lib$(lib).a)))
 
 #----------------------------------------------------------------------------
 #       Local targets
@@ -51,7 +52,7 @@ all: __prebuild__ $(SHLIB).1.66530.5b $(SHLIB) __postbuild__
 $(SHLIB):
 	cd $(SHTARGETDIR) && ln -s $(SHLIB_BASE).1.66530.5b $(SHLIB_BASE)
 
-$(SHLIB).1.66530.5b: $(OBJS)
+$(SHLIB).1.66530.5b: $(OBJS) $(DEPLIBS)
 	@$(TESTDIRSTART) "$(SHTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(SHTARGETDIR)"
 	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
@@ -468,7 +469,7 @@ check-syntax:
 __prebuild__:
 	@mkdir -p classes 2> /dev/null || cat /dev/null > /dev/null
 
-__postbuild__:
+__postbuild__: $(SHLIB).1.66530.5b $(SHLIB) $(LIB)
 	@"$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 
 #----------------------------------------------------------------------------
@@ -481,4 +482,4 @@ $(DEPENDENCIES):
 depend:
 	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
-include $(DEPENDENCIES)
+-include $(DEPENDENCIES)

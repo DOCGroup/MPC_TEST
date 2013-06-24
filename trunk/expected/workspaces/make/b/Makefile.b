@@ -40,6 +40,7 @@ SHFLAGS       = -shared
 SRC           = b.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(DYNAMICFLAGS)
+DEPLIBS       = $(foreach lib, , $(foreach libpath, ., $(wildcard $(libpath)/lib$(lib).a)))
 
 #----------------------------------------------------------------------------
 #       Local targets
@@ -47,7 +48,7 @@ EXPORTFLAGS   = $(DYNAMICFLAGS)
 
 all: $(SHLIB)
 
-$(SHLIB): $(OBJS)
+$(SHLIB): $(OBJS) $(DEPLIBS)
 	@$(TESTDIRSTART) "$(SHTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(SHTARGETDIR)"
 	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
@@ -80,4 +81,4 @@ $(DEPENDENCIES):
 depend:
 	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
-include $(DEPENDENCIES)
+-include $(DEPENDENCIES)
