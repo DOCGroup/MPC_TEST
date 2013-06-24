@@ -38,7 +38,7 @@ OBJS          = ./houses/simple$(OBJEXT)
 SRC           = ./houses/simple.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = $(STATICFLAGS)
-DEPLIBS       = $(foreach lib, other_lib simple_lib , $(foreach libpath, . non_existent, $(wildcard $(libpath)/lib$(lib).a)))
+DEPLIBS       = $(foreach lib, other_lib$(LIBSUFFIX) simple_lib$(LIBSUFFIX) , $(foreach libpath, . non_existent, $(wildcard $(libpath)/lib$(lib).a)))
 endif
 
 #----------------------------------------------------------------------------
@@ -77,4 +77,4 @@ $(DEPENDENCIES):
 depend:
 	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
-include $(DEPENDENCIES)
+-include $(DEPENDENCIES)

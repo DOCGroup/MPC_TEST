@@ -43,6 +43,7 @@ LINK.cc       = $(LD) $(LDFLAGS)
 DYNAMICFLAGS  = -DBASIC_BUILD_DLL
 STATICFLAGS   = -DBASIC_AS_STATIC_LIBS
 EXPORTFLAGS   = $(DYNAMICFLAGS)
+DEPLIBS       = $(foreach lib, , $(foreach libpath, ., $(wildcard $(libpath)/lib$(lib).a)))
 
 #----------------------------------------------------------------------------
 #       Local targets
@@ -53,7 +54,7 @@ all: $(SHLIB).5.3.15 $(SHLIB)
 $(SHLIB):
 	cd $(SHTARGETDIR) && ln -s $(SHLIB_BASE).5.3.15 $(SHLIB_BASE)
 
-$(SHLIB).5.3.15: $(OBJS)
+$(SHLIB).5.3.15: $(OBJS) $(DEPLIBS)
 	@$(TESTDIRSTART) "$(SHTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(SHTARGETDIR)"
 	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
 
@@ -89,4 +90,4 @@ $(DEPENDENCIES):
 depend:
 	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
-include $(DEPENDENCIES)
+-include $(DEPENDENCIES)
