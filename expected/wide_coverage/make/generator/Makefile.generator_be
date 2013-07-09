@@ -66,7 +66,7 @@ generated: __prebuild__ $(GENERATED_DIRTY)
 	@-:
 
 .obj/generator_be$(OBJEXT): generator_be.cpp
-	@$(TESTDIRSTART) ".obj/." $(TESTDIREND) $(MKDIR) ".obj/."
+	@$(TESTDIRSTART) ".obj/" $(TESTDIREND) $(MKDIR) ".obj/"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) generator_be.cpp
 
 clean:
@@ -90,6 +90,6 @@ $(DEPENDENCIES):
 	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
-	-VDIR=.obj/ $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+	-VDIR='.obj/' $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
 -include $(DEPENDENCIES)

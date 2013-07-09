@@ -1,3 +1,13 @@
+Tue Jul  9 15:15:12 UTC 2013  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/wide_coverage/make/source/Makefile.source_lib:
+        * expected/wide_coverage/make/source/Makefile.source:
+        * expected/wide_coverage/make/generator/Makefile.generator:
+        * expected/wide_coverage/make/generator/Makefile.generator_be:
+        * expected/options/make/source/Makefile.basic_Zargaflan:
+
+          Updated for MPC r2143: Tue Jul  9 15:06:50 UTC 2013  Adam Mitz
+
 Mon Jun 24 19:39:08 UTC 2013  Adam Mitz  <mitza@ociweb.com>
 
         * expected/**/make/Makefile.*:

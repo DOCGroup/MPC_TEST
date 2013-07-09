@@ -51,7 +51,7 @@ generated: $(GENERATED_DIRTY)
 	@-:
 
 zeep/basic$(OBJEXT): basic.cpp
-	@$(TESTDIRSTART) "zeep/." $(TESTDIREND) $(MKDIR) "zeep/."
+	@$(TESTDIRSTART) "zeep/" $(TESTDIREND) $(MKDIR) "zeep/"
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) basic.cpp
 
 clean:
@@ -74,6 +74,6 @@ $(DEPENDENCIES):
 	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
-	-VDIR=zeep/ $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
+	-VDIR='zeep/' $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
 
 -include $(DEPENDENCIES)
