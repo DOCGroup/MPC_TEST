@@ -72,8 +72,6 @@ __prebuild__:
 #       Dependencies
 #----------------------------------------------------------------------------
 
-$(DEPENDENCIES):
-	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
 	-VDIR='.obj/' $(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)

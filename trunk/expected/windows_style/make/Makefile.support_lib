@@ -80,8 +80,6 @@ check-syntax:
 #       Dependencies
 #----------------------------------------------------------------------------
 
-$(DEPENDENCIES):
-	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
 	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)
