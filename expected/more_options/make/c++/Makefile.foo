@@ -121,8 +121,6 @@ check-syntax:
 #       Dependencies
 #----------------------------------------------------------------------------
 
-$(DEPENDENCIES):
-	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
 	-/home/SCOTTRADEDEV/dev_amitz/MPC/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)

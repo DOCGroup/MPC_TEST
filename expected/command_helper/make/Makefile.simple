@@ -476,8 +476,6 @@ __postbuild__: $(SHLIB).1.66530.5b $(SHLIB) $(LIB)
 #       Dependencies
 #----------------------------------------------------------------------------
 
-$(DEPENDENCIES):
-	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
 	-$(MPC_ROOT)/depgen.pl  $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -f $(DEPENDENCIES) $(SRC) 2> $(NUL)

@@ -1,3 +1,9 @@
+Mon Aug 19 09:55:47 CDT 2013  Adam Mitz  <mitza@ociweb.com>
+
+        * expected/*/make/**/Makefile.*:
+
+          Updated for MPC r2148: Mon Aug 19 09:52:47 CDT 2013  Adam Mitz
+
 Tue Jul  9 15:15:12 UTC 2013  Adam Mitz  <mitza@ociweb.com>
 
         * expected/wide_coverage/make/source/Makefile.source_lib:

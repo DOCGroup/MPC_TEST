@@ -72,8 +72,6 @@ check-syntax:
 #       Dependencies
 #----------------------------------------------------------------------------
 
-$(DEPENDENCIES):
-	@$(TOUCH) $(DEPENDENCIES)
 
 depend:
 	@-:
