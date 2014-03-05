@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make mixed_languages.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make mixed_languages.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: base-target csharp-target basic-target
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: base-target-depend csharp-target-depend basic-target-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd base && $(MAKE) -f Makefile.base $(@)
 	@cd csharp && $(MAKE) -f Makefile.csharp $(@)
 	@cd basic && $(MAKE) -f Makefile.basic $(@)
@@ -23,13 +25,25 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 base-target:
 	@cd base && $(MAKE) -f Makefile.base all
 
+.PHONY: base-target-depend
+base-target-depend:
+	@cd base && $(MAKE) -f Makefile.base depend
+
 .PHONY: csharp-target
 csharp-target:
 	@cd csharp && $(MAKE) -f Makefile.csharp all
 
+.PHONY: csharp-target-depend
+csharp-target-depend:
+	@cd csharp && $(MAKE) -f Makefile.csharp depend
+
 .PHONY: basic-target
 basic-target: base-target csharp-target
 	@cd basic && $(MAKE) -f Makefile.basic all
+
+.PHONY: basic-target-depend
+basic-target-depend:
+	@cd basic && $(MAKE) -f Makefile.basic depend
 
 project_name_list:
 	@echo base-target

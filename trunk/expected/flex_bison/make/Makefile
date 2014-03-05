@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make
 #
 #----------------------------------------------------------------------------
 
 
 all: flex_bison
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: flex_bison-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.flex_bison $(@)
 
 .PHONY: flex_bison
 flex_bison:
 	@$(MAKE) -f Makefile.flex_bison all
+
+.PHONY: flex_bison-depend
+flex_bison-depend:
+	@$(MAKE) -f Makefile.flex_bison depend
 
 project_name_list:
 	@echo flex_bison

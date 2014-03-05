@@ -9,13 +9,19 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: another
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: another-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.another.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.another.mak CFG="$(CFG)" $(@)
 
 another:
 	@echo Project: Makefile.another.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.another.mak CFG="$(CFG)" all
+
+another-depend:
+	@echo Project: Makefile.another.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.another.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo another

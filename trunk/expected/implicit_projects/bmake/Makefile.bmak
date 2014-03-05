@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake implicit_projects.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake implicit_projects.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -17,6 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: one two
 
+depend: one-depend two-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak $(@)"
 	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak $(@)"
@@ -24,8 +26,14 @@ clean generated realclean $(CUSTOM_TARGETS):
 one:
 	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak all"
 
+one-depend:
+	$(COMSPEC) /c "cd source\one &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.one.bmak depend"
+
 two: one
 	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak all"
+
+two-depend:
+	$(COMSPEC) /c "cd source\two &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.two.bmak depend"
 
 project_name_list:
 	@echo one

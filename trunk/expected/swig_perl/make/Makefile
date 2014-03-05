@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -value_template use_lib_modifier= swig_perl.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -value_template use_lib_modifier= swig_perl.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: MyModule
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: MyModule-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.MyModule $(@)
 
 .PHONY: MyModule
 MyModule:
 	@$(MAKE) -f Makefile.MyModule all
+
+.PHONY: MyModule-depend
+MyModule-depend:
+	@$(MAKE) -f Makefile.MyModule depend
 
 project_name_list:
 	@echo MyModule

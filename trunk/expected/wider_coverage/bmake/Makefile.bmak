@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -17,6 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: Some_Test_Other_Lib Some_Test_Simple_Lib simple
 
+depend: Some_Test_Other_Lib-depend Some_Test_Simple_Lib-depend simple-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.Some_Test_Other_Lib.bmak $(@)
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.Some_Test_Simple_Lib.bmak $(@)
@@ -25,11 +27,20 @@ clean generated realclean $(CUSTOM_TARGETS):
 Some_Test_Other_Lib:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.Some_Test_Other_Lib.bmak all
 
+Some_Test_Other_Lib-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.Some_Test_Other_Lib.bmak depend
+
 Some_Test_Simple_Lib: Some_Test_Other_Lib
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.Some_Test_Simple_Lib.bmak all
 
+Some_Test_Simple_Lib-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.Some_Test_Simple_Lib.bmak depend
+
 simple: Some_Test_Other_Lib Some_Test_Simple_Lib
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.simple.bmak all
+
+simple-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.simple.bmak depend
 
 project_name_list:
 	@echo Some_Test_Other_Lib

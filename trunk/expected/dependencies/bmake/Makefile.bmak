@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /home/johnsonb/dev/TAO/spider1_5/ACE_wrappers//bin/mwc.pl -include config -type bmake
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake
 #
 #----------------------------------------------------------------------------
 
@@ -17,6 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: foo__somelib foo__someexecutable foo
 
+depend: foo__somelib-depend foo__someexecutable-depend foo-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__somelib.bmak $(@)
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__someexecutable.bmak $(@)
@@ -25,11 +27,20 @@ clean generated realclean $(CUSTOM_TARGETS):
 foo__somelib:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__somelib.bmak all
 
+foo__somelib-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__somelib.bmak depend
+
 foo__someexecutable: foo__somelib
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__someexecutable.bmak all
 
+foo__someexecutable-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo__someexecutable.bmak depend
+
 foo: foo__someexecutable
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak all
+
+foo-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak depend
 
 project_name_list:
 	@echo foo

@@ -76,7 +76,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /Ob0  /I "crapday" /I ".." /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /c
+CPP_COMMON=/nologo /Ob0  /I "crapday" /I ".." /D _DEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -122,7 +122,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /O2  /I "crapday" /I ".." /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /FD /c
+CPP_COMMON=/nologo /O2  /I "crapday" /I ".." /D NDEBUG /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -169,7 +169,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /Ob0  /I "crapday" /I ".." /D _DEBUG /D _AMD64_ /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _WIN64  /FD /c
+CPP_COMMON=/nologo /Ob0  /I "crapday" /I ".." /D _DEBUG /D _AMD64_ /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _WIN64  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -215,7 +215,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/nologo /O2  /I "crapday" /I ".." /D NDEBUG /D _AMD64_ /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _WIN64  /FD /c
+CPP_COMMON=/nologo /O2  /I "crapday" /I ".." /D NDEBUG /D _AMD64_ /D WIN32 /D _WINDOWS /D _CRT_NONSTDC_NO_WARNINGS /D _WIN64  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 

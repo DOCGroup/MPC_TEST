@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake implicit_projects.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake implicit_projects.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: one two
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: one-depend two-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@cd source/one
 	@echo Directory: source/one
 	@echo Project: Makefile.one.mak
@@ -41,11 +43,25 @@ one:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.one.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
+one-depend:
+	@cd source/one
+	@echo Directory: source/one
+	@echo Project: Makefile.one.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.one.mak CFG="$(CFG)" depend
+	@cd $(MAKEDIR)
+
 two: one
 	@cd source/two
 	@echo Directory: source/two
 	@echo Project: Makefile.two.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.two.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+two-depend:
+	@cd source/two
+	@echo Directory: source/two
+	@echo Project: Makefile.two.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.two.mak CFG="$(CFG)" depend
 	@cd $(MAKEDIR)
 
 project_name_list:

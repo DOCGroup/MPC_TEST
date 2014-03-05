@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: Code Set ROOT Factory
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: Code-depend Set-depend ROOT-depend Factory-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.Code.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.Code.mak CFG="$(CFG)" $(@)
 	@echo Project: Makefile.Set.mak
@@ -36,17 +38,33 @@ Code:
 	@echo Project: Makefile.Code.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.Code.mak CFG="$(CFG)" all
 
+Code-depend:
+	@echo Project: Makefile.Code.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Code.mak CFG="$(CFG)" depend
+
 Set:
 	@echo Project: Makefile.Set.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.Set.mak CFG="$(CFG)" all
+
+Set-depend:
+	@echo Project: Makefile.Set.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Set.mak CFG="$(CFG)" depend
 
 ROOT:
 	@echo Project: Makefile.ROOT.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.ROOT.mak CFG="$(CFG)" all
 
+ROOT-depend:
+	@echo Project: Makefile.ROOT.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.ROOT.mak CFG="$(CFG)" depend
+
 Factory: Code Set ROOT
 	@echo Project: Makefile.Factory.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.Factory.mak CFG="$(CFG)" all
+
+Factory-depend:
+	@echo Project: Makefile.Factory.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Factory.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo Code

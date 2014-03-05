@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -recurse
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -recurse
 #
 #----------------------------------------------------------------------------
 
 
 all: not_ghs
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: not_ghs-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.not_ghs $(@)
 
 .PHONY: not_ghs
 not_ghs:
 	@$(MAKE) -f Makefile.not_ghs all
+
+.PHONY: not_ghs-depend
+not_ghs-depend:
+	@$(MAKE) -f Makefile.not_ghs depend
 
 project_name_list:
 	@echo not_ghs

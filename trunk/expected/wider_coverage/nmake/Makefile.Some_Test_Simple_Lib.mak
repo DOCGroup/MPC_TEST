@@ -71,7 +71,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd".\simple_libd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd".\simple_libd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -115,7 +115,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -160,7 +160,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\simple_libsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /GR /Gy /MDd /Fd".\simple_libsd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -204,7 +204,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -234,7 +234,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DACE_HAS_MFC=1 -DACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER -DWIN32 -D_WINDOWS -f "Makefile.Some_Test_Simple_Lib.dep" "simple_lib.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.Some_Test_Simple_Lib.dep" "simple_lib.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -248,7 +248,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D ACE_HAS_MFC=1 /D ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -278,7 +278,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DACE_HAS_MFC=1 -DACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER -DWIN32 -D_WINDOWS -f "Makefile.Some_Test_Simple_Lib.dep" "simple_lib.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.Some_Test_Simple_Lib.dep" "simple_lib.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -293,7 +293,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd".\simple_libmfcd.pdb" /D _DEBUG /D ACE_HAS_MFC=1 /D ACE_DOESNT_INSTANTIATE_NONSTATIC_OBJECT_MANAGER /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd".\simple_libmfcd.pdb" /D _DEBUG /D WIN32 /D _WINDOWS  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 

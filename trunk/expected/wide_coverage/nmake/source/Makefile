@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -features rtti=1 wide_coverage.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake -features rtti=1 wide_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: source_lib source fake-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: source_lib-depend source-depend fake-target-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.source_lib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.source_lib.mak CFG="$(CFG)" $(@)
 	@echo Project: Makefile.source.mak
@@ -37,15 +39,30 @@ source_lib:
 	@echo Project: Makefile.source_lib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.source_lib.mak CFG="$(CFG)" all
 
+source_lib-depend:
+	@echo Project: Makefile.source_lib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.source_lib.mak CFG="$(CFG)" depend
+
 source: source_lib
 	@echo Project: Makefile.source.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.source.mak CFG="$(CFG)" all
+
+source-depend:
+	@echo Project: Makefile.source.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.source.mak CFG="$(CFG)" depend
 
 fake-target:
 	@cd fake
 	@echo Directory: fake
 	@echo Project: Makefile.fake.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.fake.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+fake-target-depend:
+	@cd fake
+	@echo Directory: fake
+	@echo Project: Makefile.fake.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fake.mak CFG="$(CFG)" depend
 	@cd $(MAKEDIR)
 
 project_name_list:

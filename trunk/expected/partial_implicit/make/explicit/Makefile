@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make partial_implicit.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make partial_implicit.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: explicit
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: explicit-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.explicit $(@)
 
 .PHONY: explicit
 explicit:
 	@$(MAKE) -f Makefile.explicit all
+
+.PHONY: explicit-depend
+explicit-depend:
+	@$(MAKE) -f Makefile.explicit depend
 
 project_name_list:
 	@echo explicit

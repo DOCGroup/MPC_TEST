@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: dll-target dll_exe-target lib-target lib_exe-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: dll-target-depend dll_exe-target-depend lib-target-depend lib_exe-target-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@cd dll
 	@echo Directory: dll
 	@echo Project: Makefile.dll.mak
@@ -51,11 +53,25 @@ dll-target:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.dll.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
+dll-target-depend:
+	@cd dll
+	@echo Directory: dll
+	@echo Project: Makefile.dll.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dll.mak CFG="$(CFG)" depend
+	@cd $(MAKEDIR)
+
 dll_exe-target:
 	@cd dll_exe
 	@echo Directory: dll_exe
 	@echo Project: Makefile.dll_exe.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.dll_exe.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+dll_exe-target-depend:
+	@cd dll_exe
+	@echo Directory: dll_exe
+	@echo Project: Makefile.dll_exe.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dll_exe.mak CFG="$(CFG)" depend
 	@cd $(MAKEDIR)
 
 lib-target:
@@ -65,11 +81,25 @@ lib-target:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
+lib-target-depend:
+	@cd lib
+	@echo Directory: lib
+	@echo Project: Makefile.lib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib.mak CFG="$(CFG)" depend
+	@cd $(MAKEDIR)
+
 lib_exe-target:
 	@cd lib_exe
 	@echo Directory: lib_exe
 	@echo Project: Makefile.lib_exe.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib_exe.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+lib_exe-target-depend:
+	@cd lib_exe
+	@echo Directory: lib_exe
+	@echo Project: Makefile.lib_exe.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib_exe.mak CFG="$(CFG)" depend
 	@cd $(MAKEDIR)
 
 project_name_list:

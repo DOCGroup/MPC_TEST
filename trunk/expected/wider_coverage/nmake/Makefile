@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: Some_Test_Other_Lib Some_Test_Simple_Lib simple
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: Some_Test_Other_Lib-depend Some_Test_Simple_Lib-depend simple-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.Some_Test_Other_Lib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.Some_Test_Other_Lib.mak CFG="$(CFG)" $(@)
 	@echo Project: Makefile.Some_Test_Simple_Lib.mak
@@ -34,13 +36,25 @@ Some_Test_Other_Lib:
 	@echo Project: Makefile.Some_Test_Other_Lib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.Some_Test_Other_Lib.mak CFG="$(CFG)" all
 
+Some_Test_Other_Lib-depend:
+	@echo Project: Makefile.Some_Test_Other_Lib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Some_Test_Other_Lib.mak CFG="$(CFG)" depend
+
 Some_Test_Simple_Lib: Some_Test_Other_Lib
 	@echo Project: Makefile.Some_Test_Simple_Lib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.Some_Test_Simple_Lib.mak CFG="$(CFG)" all
 
+Some_Test_Simple_Lib-depend:
+	@echo Project: Makefile.Some_Test_Simple_Lib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.Some_Test_Simple_Lib.mak CFG="$(CFG)" depend
+
 simple: Some_Test_Other_Lib Some_Test_Simple_Lib
 	@echo Project: Makefile.simple.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.simple.mak CFG="$(CFG)" all
+
+simple-depend:
+	@echo Project: Makefile.simple.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.simple.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo Some_Test_Other_Lib

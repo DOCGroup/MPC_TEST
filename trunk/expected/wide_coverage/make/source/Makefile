@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -features rtti=1 wide_coverage.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -features rtti=1 wide_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: source_lib source fake-target
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: source_lib-depend source-depend fake-target-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.source_lib $(@)
 	@$(MAKE) -f Makefile.source $(@)
 	@cd fake && $(MAKE) -f Makefile.fake $(@)
@@ -23,13 +25,25 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 source_lib:
 	@$(MAKE) -f Makefile.source_lib all
 
+.PHONY: source_lib-depend
+source_lib-depend:
+	@$(MAKE) -f Makefile.source_lib depend
+
 .PHONY: source
 source: source_lib
 	@$(MAKE) -f Makefile.source all
 
+.PHONY: source-depend
+source-depend:
+	@$(MAKE) -f Makefile.source depend
+
 .PHONY: fake-target
 fake-target:
 	@cd fake && $(MAKE) -f Makefile.fake all
+
+.PHONY: fake-target-depend
+fake-target-depend:
+	@cd fake && $(MAKE) -f Makefile.fake depend
 
 project_name_list:
 	@echo source

@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake t/c/d/d.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake t/c/d/d.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,13 +22,19 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: aa
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: aa-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.aa.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.aa.mak CFG="$(CFG)" $(@)
 
 aa:
 	@echo Project: Makefile.aa.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.aa.mak CFG="$(CFG)" all
+
+aa-depend:
+	@echo Project: Makefile.aa.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.aa.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo aa

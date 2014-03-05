@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/MPC/mwc.pl -include config -type bmake implicit_resources.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake -value_template use_threads=1 implicit_resources.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -17,6 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: dir1 dir3
 
+depend: dir1-depend dir3-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(COMSPEC) /c "cd dir1 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir1.bmak $(@)"
 	$(COMSPEC) /c "cd dir3 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir3.bmak $(@)"
@@ -24,8 +26,14 @@ clean generated realclean $(CUSTOM_TARGETS):
 dir1:
 	$(COMSPEC) /c "cd dir1 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir1.bmak all"
 
+dir1-depend:
+	$(COMSPEC) /c "cd dir1 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir1.bmak depend"
+
 dir3:
 	$(COMSPEC) /c "cd dir3 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir3.bmak all"
+
+dir3-depend:
+	$(COMSPEC) /c "cd dir3 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir3.bmak depend"
 
 project_name_list:
 	@echo dir1

@@ -64,13 +64,6 @@
         <stopOnError>false</stopOnError>
         <useDefaultCommand>false</useDefaultCommand>
       </target>
-      <target name="depend" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-        <buildCommand>make</buildCommand>
-        <buildArguments></buildArguments>
-        <buildTarget>depend</buildTarget>  
-        <stopOnError>false</stopOnError>
-        <useDefaultCommand>false</useDefaultCommand>
-      </target>
       <target name="generated" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
         <buildCommand>make</buildCommand>
         <buildArguments></buildArguments>

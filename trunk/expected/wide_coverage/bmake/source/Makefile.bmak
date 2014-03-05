@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake -features rtti=1 wide_coverage.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake -features rtti=1 wide_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -17,6 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: source_lib source fake
 
+depend: source_lib-depend source-depend fake-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.source_lib.bmak $(@)
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.source.bmak $(@)
@@ -25,11 +27,20 @@ clean generated realclean $(CUSTOM_TARGETS):
 source_lib:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.source_lib.bmak all
 
+source_lib-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.source_lib.bmak depend
+
 source: source_lib
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.source.bmak all
 
+source-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.source.bmak depend
+
 fake:
 	$(COMSPEC) /c "cd fake &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.fake.bmak all"
+
+fake-depend:
+	$(COMSPEC) /c "cd fake &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.fake.bmak depend"
 
 project_name_list:
 	@echo source

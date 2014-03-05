@@ -72,7 +72,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(QTDIR)\include" /D _DEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(QTDIR)\include" /D _DEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -122,7 +122,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(QTDIR)\include" /D NDEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(QTDIR)\include" /D NDEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -173,7 +173,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(QTDIR)\include" /D _DEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "$(QTDIR)\include" /D _DEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -223,7 +223,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(QTDIR)\include" /D NDEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "$(QTDIR)\include" /D NDEBUG /D WIN32 /D _CONSOLE /D QT_THREAD_SUPPORT  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 

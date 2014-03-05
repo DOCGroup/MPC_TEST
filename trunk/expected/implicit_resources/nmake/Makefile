@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/MPC/mwc.pl -include config -type nmake implicit_resources.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake -value_template use_threads=1 implicit_resources.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: dir1-target dir3-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: dir1-target-depend dir3-target-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@cd dir1
 	@echo Directory: dir1
 	@echo Project: Makefile.dir1.mak
@@ -41,11 +43,25 @@ dir1-target:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir1.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
+dir1-target-depend:
+	@cd dir1
+	@echo Directory: dir1
+	@echo Project: Makefile.dir1.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir1.mak CFG="$(CFG)" depend
+	@cd $(MAKEDIR)
+
 dir3-target:
 	@cd dir3
 	@echo Directory: dir3
 	@echo Project: Makefile.dir3.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir3.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+dir3-target-depend:
+	@cd dir3
+	@echo Directory: dir3
+	@echo Project: Makefile.dir3.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir3.mak CFG="$(CFG)" depend
 	@cd $(MAKEDIR)
 
 project_name_list:

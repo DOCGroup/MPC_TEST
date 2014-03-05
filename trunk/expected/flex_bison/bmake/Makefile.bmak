@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake
 #
 #----------------------------------------------------------------------------
 
@@ -17,11 +17,16 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: flex_bison
 
+depend: flex_bison-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.flex_bison.bmak $(@)
 
 flex_bison:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.flex_bison.bmak all
+
+flex_bison-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.flex_bison.bmak depend
 
 project_name_list:
 	@echo flex_bison

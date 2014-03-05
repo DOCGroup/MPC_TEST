@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -recurse
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -recurse
 #
 #----------------------------------------------------------------------------
 
 
 all: common
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: common-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.common $(@)
 
 .PHONY: common
 common:
 	@$(MAKE) -f Makefile.common all
+
+.PHONY: common-depend
+common-depend:
+	@$(MAKE) -f Makefile.common depend
 
 project_name_list:
 	@echo common

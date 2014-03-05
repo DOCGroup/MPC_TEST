@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: dll-target dll_exe-target lib-target lib_exe-target
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: dll-target-depend dll_exe-target-depend lib-target-depend lib_exe-target-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd dll && $(MAKE) -f Makefile.dll $(@)
 	@cd dll_exe && $(MAKE) -f Makefile.dll_exe $(@)
 	@cd lib && $(MAKE) -f Makefile.lib $(@)
@@ -24,17 +26,33 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 dll-target:
 	@cd dll && $(MAKE) -f Makefile.dll all
 
+.PHONY: dll-target-depend
+dll-target-depend:
+	@cd dll && $(MAKE) -f Makefile.dll depend
+
 .PHONY: dll_exe-target
 dll_exe-target:
 	@cd dll_exe && $(MAKE) -f Makefile.dll_exe all
+
+.PHONY: dll_exe-target-depend
+dll_exe-target-depend:
+	@cd dll_exe && $(MAKE) -f Makefile.dll_exe depend
 
 .PHONY: lib-target
 lib-target:
 	@cd lib && $(MAKE) -f Makefile.lib all
 
+.PHONY: lib-target-depend
+lib-target-depend:
+	@cd lib && $(MAKE) -f Makefile.lib depend
+
 .PHONY: lib_exe-target
 lib_exe-target:
 	@cd lib_exe && $(MAKE) -f Makefile.lib_exe all
+
+.PHONY: lib_exe-target-depend
+lib_exe-target-depend:
+	@cd lib_exe && $(MAKE) -f Makefile.lib_exe depend
 
 project_name_list:
 	@echo dll-target

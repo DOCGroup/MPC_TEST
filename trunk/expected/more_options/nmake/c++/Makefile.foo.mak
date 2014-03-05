@@ -52,7 +52,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "C:\tao_builds\MPC_TEST\tests\more_options\c++\down\foo.cpp"
+	$(DEPGEN) -D_DEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "\home\SCOTTRADEDEV\dev_amitz\MPC_TEST\tests\more_options\c++\down\foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -68,7 +68,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /D _DEBUG /D WIN32 /D _WINDOWS  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -99,7 +99,7 @@ DEPEND :
 	@echo to the full path of MPC.  You can download MPC from
 	@echo http://www.ociweb.com/products/mpc/down.html
 !ELSE
-	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "C:\tao_builds\MPC_TEST\tests\more_options\c++\down\foo.cpp"
+	$(DEPGEN) -DNDEBUG -DWIN32 -D_WINDOWS -f "Makefile.foo.dep" "\home\SCOTTRADEDEV\dev_amitz\MPC_TEST\tests\more_options\c++\down\foo.cpp"
 !ENDIF
 
 REALCLEAN : CLEAN
@@ -114,7 +114,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /D NDEBUG /D WIN32 /D _WINDOWS  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -176,7 +176,7 @@ CLEAN :
 !ENDIF
 
 !IF "$(CFG)" == "Win32 Debug" || "$(CFG)" == "Win32 Release" 
-SOURCE="C:\tao_builds\MPC_TEST\tests\more_options\c++\down\foo.cpp"
+SOURCE="\home\SCOTTRADEDEV\dev_amitz\MPC_TEST\tests\more_options\c++\down\foo.cpp"
 
 "$(INTDIR)\down\foo.obj" : $(SOURCE)
 	@if not exist "$(INTDIR)\down\$(NULL)" mkdir "$(INTDIR)\down\"

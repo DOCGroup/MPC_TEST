@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -global custom_global.mpb -genins -gendot -for_eclipse -into here/.. -value_template "configurations+='MFC Release' 'MFC Debug'" -static -feature_file features -features crap wider_coverage.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: Some_Test_Other_Lib Some_Test_Simple_Lib simple
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: Some_Test_Other_Lib-depend Some_Test_Simple_Lib-depend simple-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.Some_Test_Other_Lib $(@)
 	@$(MAKE) -f Makefile.Some_Test_Simple_Lib $(@)
 	@$(MAKE) -f Makefile.simple $(@)
@@ -23,13 +25,25 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 Some_Test_Other_Lib:
 	@$(MAKE) -f Makefile.Some_Test_Other_Lib all
 
+.PHONY: Some_Test_Other_Lib-depend
+Some_Test_Other_Lib-depend:
+	@$(MAKE) -f Makefile.Some_Test_Other_Lib depend
+
 .PHONY: Some_Test_Simple_Lib
 Some_Test_Simple_Lib: Some_Test_Other_Lib
 	@$(MAKE) -f Makefile.Some_Test_Simple_Lib all
 
+.PHONY: Some_Test_Simple_Lib-depend
+Some_Test_Simple_Lib-depend:
+	@$(MAKE) -f Makefile.Some_Test_Simple_Lib depend
+
 .PHONY: simple
 simple: Some_Test_Other_Lib Some_Test_Simple_Lib
 	@$(MAKE) -f Makefile.simple all
+
+.PHONY: simple-depend
+simple-depend:
+	@$(MAKE) -f Makefile.simple depend
 
 project_name_list:
 	@echo Some_Test_Other_Lib

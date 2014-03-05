@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -value_template compile_flags=-g -value_template win_version+=5.55 -value_template win_version-=4.44 -value_project includes+=bam
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -value_template compile_flags=-g -value_template win_version+=5.55 -value_template win_version-=4.44 -value_project includes+=bam
 #
 #----------------------------------------------------------------------------
 
 
 all: foo_a foo_b foo_c
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: foo_a-depend foo_b-depend foo_c-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.foo_a $(@)
 	@$(MAKE) -f Makefile.foo_b $(@)
 	@$(MAKE) -f Makefile.foo_c $(@)
@@ -23,13 +25,25 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 foo_a:
 	@$(MAKE) -f Makefile.foo_a all
 
+.PHONY: foo_a-depend
+foo_a-depend:
+	@$(MAKE) -f Makefile.foo_a depend
+
 .PHONY: foo_b
 foo_b:
 	@$(MAKE) -f Makefile.foo_b all
 
+.PHONY: foo_b-depend
+foo_b-depend:
+	@$(MAKE) -f Makefile.foo_b depend
+
 .PHONY: foo_c
 foo_c:
 	@$(MAKE) -f Makefile.foo_c all
+
+.PHONY: foo_c-depend
+foo_c-depend:
+	@$(MAKE) -f Makefile.foo_c depend
 
 project_name_list:
 	@echo foo_a

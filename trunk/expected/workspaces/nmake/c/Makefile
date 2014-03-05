@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -recurse
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake -recurse
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: good-target not_ghs-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: good-target-depend not_ghs-target-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@cd good
 	@echo Directory: good
 	@echo Project: Makefile.good.mak
@@ -41,11 +43,25 @@ good-target:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.good.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
+good-target-depend:
+	@cd good
+	@echo Directory: good
+	@echo Project: Makefile.good.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.good.mak CFG="$(CFG)" depend
+	@cd $(MAKEDIR)
+
 not_ghs-target:
 	@cd not_ghs
 	@echo Directory: not_ghs
 	@echo Project: Makefile.not_ghs.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.not_ghs.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+not_ghs-target-depend:
+	@cd not_ghs
+	@echo Directory: not_ghs
+	@echo Project: Makefile.not_ghs.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.not_ghs.mak CFG="$(CFG)" depend
 	@cd $(MAKEDIR)
 
 project_name_list:

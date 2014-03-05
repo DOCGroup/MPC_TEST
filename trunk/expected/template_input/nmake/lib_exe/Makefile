@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake -type html -relative_file config/relative -gfeature_file config/features template_input.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,13 +22,19 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: lib_exe
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: lib_exe-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.lib_exe.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib_exe.mak CFG="$(CFG)" $(@)
 
 lib_exe:
 	@echo Project: Makefile.lib_exe.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib_exe.mak CFG="$(CFG)" all
+
+lib_exe-depend:
+	@echo Project: Makefile.lib_exe.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.lib_exe.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo lib_exe
