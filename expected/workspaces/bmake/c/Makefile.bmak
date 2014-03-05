@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake -recurse
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake -recurse
 #
 #----------------------------------------------------------------------------
 
@@ -17,6 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: good not_ghs
 
+depend: good-depend not_ghs-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(COMSPEC) /c "cd good &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.good.bmak $(@)"
 	$(COMSPEC) /c "cd not_ghs &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.not_ghs.bmak $(@)"
@@ -24,8 +26,14 @@ clean generated realclean $(CUSTOM_TARGETS):
 good:
 	$(COMSPEC) /c "cd good &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.good.bmak all"
 
+good-depend:
+	$(COMSPEC) /c "cd good &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.good.bmak depend"
+
 not_ghs:
 	$(COMSPEC) /c "cd not_ghs &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.not_ghs.bmak all"
+
+not_ghs-depend:
+	$(COMSPEC) /c "cd not_ghs &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.not_ghs.bmak depend"
 
 project_name_list:
 	@echo good

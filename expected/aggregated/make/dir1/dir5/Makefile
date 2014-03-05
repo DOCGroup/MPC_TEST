@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make aggregated.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make aggregated.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: dir5
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: dir5-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.dir5 $(@)
 
 .PHONY: dir5
 dir5:
 	@$(MAKE) -f Makefile.dir5 all
+
+.PHONY: dir5-depend
+dir5-depend:
+	@$(MAKE) -f Makefile.dir5 depend
 
 project_name_list:
 	@echo dir5

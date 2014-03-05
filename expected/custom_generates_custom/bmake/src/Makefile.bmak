@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /home/elliottc/current/MPC/mwc.pl -include config -type bmake
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake -relative TEST_ROOT=.
 #
 #----------------------------------------------------------------------------
 
@@ -17,11 +17,16 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: src
 
+depend: src-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.src.bmak $(@)
 
 src:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.src.bmak all
+
+src-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.src.bmak depend
 
 project_name_list:
 	@echo src

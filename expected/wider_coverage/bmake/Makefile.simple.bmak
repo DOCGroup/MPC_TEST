@@ -6,7 +6,8 @@
 #
 #----------------------------------------------------------------------------
 !ifdef DEBUG
-OCFLAGS      = -v -y -Od -vi- -k -D_DEBUG
+OCFLAGS32    = -v -y -Od -vi- -k -D_DEBUG
+OCFLAGS64    = -O3  -D_DEBUG
 CFG_DIR      = Static_Debug\\
 LIBMODIFIER  = _bsd
 EXEMODIFIER  = 
@@ -14,7 +15,8 @@ POSTLINKRM   = .tds
 EXEOUTPUTDIR = Static_Debug\\
 !else
 !ifdef RELEASE
-OCFLAGS      = -O2 -DNDEBUG
+OCFLAGS32    = -O1 -DNDEBUG
+OCFLAGS64    = -O2 -DNDEBUG
 CFG_DIR      = Static_Release\\
 LIBMODIFIER  = _bsr
 EXEMODIFIER  = 
@@ -38,23 +40,29 @@ CG_CFLAGS = -vG
 CG_LIB    = cg32.lib
 !endif
 
+OBJ_EXT      = .obj
+
 VCL_CFLAGS     = -D_NO_VCL
 STARTUP_LETTER = x
-STARTUP_OBJ    = c0$(STARTUP_LETTER)32$(UC_MAIN)$(OBJ_EXT)
+STARTUP_BITS   = 32
+STARTUP_OBJ    = c0$(STARTUP_LETTER)$(STARTUP_BITS)$(UC_MAIN)$(OBJ_EXT)
 
-OBJ_EXT      = .obj
 DLL_EXT      = .dll
 LIB_EXT      = .lib
 EXE_EXT      = .exe
-CC           = bcc32
-RC           = brcc32
-LINK         = ilink32
+CC32         = bcc32
+RC32         = brcc32
+LINK32       = ilink32
+CC64         = bcc64
+RC64         = brcc64
+LINK64       = ilink64
 TLIB         = tlib
 THREADFLAGS  = -tWM
 DLLFLAGS     = -Tpd -Gi -x -Gn -w-dup
 LIBFLAGS     = /C
 EXEFLAGS     = -Tpe -x -Gn
-WARNFLAGS    = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl
+WARNFLAGS32  = -w-rvl -w-rch -w-ccc -w-obs -w-aus -w-pia -w-inl -w-mls
+WARNFLAGS64  = 
 CCFLAGS      = -q -tWR -tWD
 
 INTERMEDIATE = $(CFG_DIR)$(UNICODE_DIR)simple
@@ -66,6 +74,7 @@ OBJFILES = \
            "$(INTERMEDIATE)\.\houses\simple$(OBJ_EXT)"
 
 LFLAGS   = \
+           -L"$(BDS)\lib\win32\release" -L"$(BDS)\lib\win32\debug" \
            -v \
            -L"." -j"." \
            -L"non_existent" -j"non_existent"
@@ -73,7 +82,8 @@ LFLAGS   = \
 LIBFILES = \
            simple_lib$(LIBMODIFIER)$(ULIBMODIFIER)$(LIB_EXT) \
            other_lib$(LIBMODIFIER)$(ULIBMODIFIER)$(LIB_EXT) \
-           $(CG_LIB) import32.lib cw32mti.lib ws2_32.lib
+           $(CG_LIB) ws2_32$(LIB_EXT) import32$(LIB_EXT) cw32mti$(LIB_EXT)
+
 
 !ifndef STATIC_CFG
 RESOURCE = \
@@ -101,52 +111,52 @@ OUTPUTDIR = $(EXEOUTPUTDIR)
 all: $(OUTPUTDIR)$(NAME)$(EXE_EXT)
 
 $(OUTPUTDIR)$(NAME)$(EXE_EXT): $(OBJFILES) $(RESOURCE)
-	@if not exist "$(OUTPUTDIR)" mkdir "$(OUTPUTDIR)"
-	$(LINK) @&&!
-	$(EXEFLAGS) $(LFLAGS) $(STARTUP_OBJ) $(OBJFILES), $(OUTPUTDIR)$(NAME)$(EXE_EXT),, $(LIBFILES),, $(RESOURCE)
+  @if not exist "$(OUTPUTDIR)" mkdir "$(OUTPUTDIR)"
+  $(LINK32) @&&!
+  $(EXEFLAGS) $(LFLAGS) $(STARTUP_OBJ) $(OBJFILES), $(OUTPUTDIR)$(NAME)$(EXE_EXT),, $(LIBFILES),, $(RESOURCE)
 !
 
 generated: $(GENERATED_DIRTY)
-	@-rem
+  @-rem
 
 .path$(OBJ_EXT) = $(INTERMEDIATE)
 
 .path.cpp = $(CPPDIR)
 .cpp$(OBJ_EXT):
-	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+  @if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
+        $(CC32) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS32) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS32) -c -n$(@D) $<
 
 .path.cxx = $(CPPDIR)
 .cxx$(OBJ_EXT):
-	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+  @if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
+        $(CC32) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS32) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS32) -c -n$(@D) $<
 
 .path.cc = $(CPPDIR)
 .cc$(OBJ_EXT):
-	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+  @if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
+        $(CC32) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS32) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS32) -c -n$(@D) $<
 
 .path.C = $(CPPDIR)
 .C$(OBJ_EXT):
-	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+  @if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
+        $(CC32) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS32) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS32) -c -n$(@D) $<
 
 .path.c = $(CPPDIR)
 .c$(OBJ_EXT):
-	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) $<
+  @if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
+        $(CC32) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS32) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS32) -c -n$(@D) $<
 
 "$(INTERMEDIATE)\.\houses\simple$(OBJ_EXT)":
-	@if not exist "$(INTERMEDIATE)\.\houses\" mkdir "$(INTERMEDIATE)\.\houses\"
-	$(CC) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS) -c -n$(@D) .\houses\simple.cpp
+  @if not exist "$(INTERMEDIATE)\.\houses\" mkdir "$(INTERMEDIATE)\.\houses\"
+  $(CC32) $(DYN_FLAGS) $(STATIC_FLAGS) $(OCFLAGS32) $(CG_CFLAGS) $(UC_CFLAGS) $(THREADFLAGS) $(CCFLAGS) $(CFLAGS) $(WARNFLAGS32) -c -n$(@D) .\houses\simple.cpp
 
 !ifndef STATIC_CFG
 .path.res = $(INTERMEDIATE)
 
 .path.rc = $(RESDIR)
 .rc.res:
-	@if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
-        $(RC) $(RC_FLAGS) -fo$@ $<
+  @if not exist "$(INTERMEDIATE)" mkdir "$(INTERMEDIATE)"
+        $(RC32) $(RC_FLAGS) -fo$@ $<
 
 !endif
 
@@ -156,5 +166,5 @@ clean:
 realclean: clean
         @del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" del "$(OUTPUTDIR)$(NAME)$(EXE_EXT)" 2>NUL
         @del "$(OUTPUTDIR)$(NAME)$(POSTLINKRM)" 2>NUL
-	-echo It is clean. & echo Really, it is.
+  -echo It is clean. & echo Really, it is.
 

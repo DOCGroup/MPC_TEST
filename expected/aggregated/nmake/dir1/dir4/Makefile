@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake aggregated.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake aggregated.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,13 +22,19 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: dir4
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: dir4-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.dir4.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir4.mak CFG="$(CFG)" $(@)
 
 dir4:
 	@echo Project: Makefile.dir4.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir4.mak CFG="$(CFG)" all
+
+dir4-depend:
+	@echo Project: Makefile.dir4.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir4.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo dir4

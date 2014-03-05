@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/MPC/mwc.pl -include config -type nmake implicit_resources.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake -value_template use_threads=1 implicit_resources.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,13 +22,19 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: dir1
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: dir1-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.dir1.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir1.mak CFG="$(CFG)" $(@)
 
 dir1:
 	@echo Project: Makefile.dir1.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir1.mak CFG="$(CFG)" all
+
+dir1-depend:
+	@echo Project: Makefile.dir1.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir1.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo dir1

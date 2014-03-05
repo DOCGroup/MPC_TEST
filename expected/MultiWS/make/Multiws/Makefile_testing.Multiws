@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -gfeature_file config/ace.features -recurse -name_modifier "*_testing"
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -gfeature_file config/ace.features -recurse -name_modifier "*_testing"
 #
 #----------------------------------------------------------------------------
 
 
 all: foo bar
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: foo-depend bar-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd src && $(MAKE) -f Makefile.foo_testing $(@)
 	@cd src && $(MAKE) -f Makefile.bar_testing $(@)
 
@@ -22,9 +24,17 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 foo:
 	@cd src && $(MAKE) -f Makefile.foo_testing all
 
+.PHONY: foo-depend
+foo-depend:
+	@cd src && $(MAKE) -f Makefile.foo_testing depend
+
 .PHONY: bar
 bar: foo
 	@cd src && $(MAKE) -f Makefile.bar_testing all
+
+.PHONY: bar-depend
+bar-depend:
+	@cd src && $(MAKE) -f Makefile.bar_testing depend
 
 project_name_list:
 	@echo bar

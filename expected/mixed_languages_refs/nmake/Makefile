@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake mixed_languages_refs.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake mixed_languages_refs.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: n-target r-target o-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: n-target-depend r-target-depend o-target-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@cd n
 	@echo Directory: n
 	@echo Project: Makefile.n.mak
@@ -46,6 +48,13 @@ n-target:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.n.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
+n-target-depend:
+	@cd n
+	@echo Directory: n
+	@echo Project: Makefile.n.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.n.mak CFG="$(CFG)" depend
+	@cd $(MAKEDIR)
+
 r-target:
 	@cd r
 	@echo Directory: r
@@ -53,11 +62,25 @@ r-target:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.r.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
+r-target-depend:
+	@cd r
+	@echo Directory: r
+	@echo Project: Makefile.r.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.r.mak CFG="$(CFG)" depend
+	@cd $(MAKEDIR)
+
 o-target: n-target r-target
 	@cd o
 	@echo Directory: o
 	@echo Project: Makefile.o.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.o.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+o-target-depend:
+	@cd o
+	@echo Directory: o
+	@echo Project: Makefile.o.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.o.mak CFG="$(CFG)" depend
 	@cd $(MAKEDIR)
 
 project_name_list:

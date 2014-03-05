@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -gfeature_file config/ace.features second.mwc more_workspaces.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -gfeature_file config/ace.features second.mwc more_workspaces.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: src-target
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: src-target-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd src && $(MAKE) -f Makefile.src $(@)
 
 .PHONY: src-target
 src-target:
 	@cd src && $(MAKE) -f Makefile.src all
+
+.PHONY: src-target-depend
+src-target-depend:
+	@cd src && $(MAKE) -f Makefile.src depend
 
 project_name_list:
 	@echo src-target

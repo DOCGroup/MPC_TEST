@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -value_template compile_flags=-g -value_template win_version+=5.55 -value_template win_version-=4.44 -value_project includes+=bam
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake -value_template compile_flags=-g -value_template win_version+=5.55 -value_template win_version-=4.44 -value_project includes+=bam
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: foo_a foo_b foo_c
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: foo_a-depend foo_b-depend foo_c-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.foo_a.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_a.mak CFG="$(CFG)" $(@)
 	@echo Project: Makefile.foo_b.mak
@@ -34,13 +36,25 @@ foo_a:
 	@echo Project: Makefile.foo_a.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_a.mak CFG="$(CFG)" all
 
+foo_a-depend:
+	@echo Project: Makefile.foo_a.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_a.mak CFG="$(CFG)" depend
+
 foo_b:
 	@echo Project: Makefile.foo_b.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_b.mak CFG="$(CFG)" all
 
+foo_b-depend:
+	@echo Project: Makefile.foo_b.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_b.mak CFG="$(CFG)" depend
+
 foo_c:
 	@echo Project: Makefile.foo_c.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_c.mak CFG="$(CFG)" all
+
+foo_c-depend:
+	@echo Project: Makefile.foo_c.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo_c.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo foo_a

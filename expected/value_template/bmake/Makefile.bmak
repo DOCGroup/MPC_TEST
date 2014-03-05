@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake -value_template compile_flags=-g -value_template win_version+=5.55 -value_template win_version-=4.44 -value_project includes+=bam
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake -value_template compile_flags=-g -value_template win_version+=5.55 -value_template win_version-=4.44 -value_project includes+=bam
 #
 #----------------------------------------------------------------------------
 
@@ -17,6 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: foo_a foo_b foo_c
 
+depend: foo_a-depend foo_b-depend foo_c-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo_a.bmak $(@)
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo_b.bmak $(@)
@@ -25,11 +27,20 @@ clean generated realclean $(CUSTOM_TARGETS):
 foo_a:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo_a.bmak all
 
+foo_a-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo_a.bmak depend
+
 foo_b:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo_b.bmak all
 
+foo_b-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo_b.bmak depend
+
 foo_c:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo_c.bmak all
+
+foo_c-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.foo_c.bmak depend
 
 project_name_list:
 	@echo foo_a

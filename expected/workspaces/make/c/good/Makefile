@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -recurse
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -recurse
 #
 #----------------------------------------------------------------------------
 
 
 all: good
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: good-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.good $(@)
 
 .PHONY: good
 good:
 	@$(MAKE) -f Makefile.good all
+
+.PHONY: good-depend
+good-depend:
+	@$(MAKE) -f Makefile.good depend
 
 project_name_list:
 	@echo good

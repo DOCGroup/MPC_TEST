@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake -recurse
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake -recurse
 #
 #----------------------------------------------------------------------------
 
@@ -22,13 +22,19 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: not_ghs
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: not_ghs-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.not_ghs.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.not_ghs.mak CFG="$(CFG)" $(@)
 
 not_ghs:
 	@echo Project: Makefile.not_ghs.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.not_ghs.mak CFG="$(CFG)" all
+
+not_ghs-depend:
+	@echo Project: Makefile.not_ghs.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.not_ghs.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo not_ghs

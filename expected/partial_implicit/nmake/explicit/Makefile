@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake partial_implicit.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake partial_implicit.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,13 +22,19 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: explicit
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: explicit-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.explicit.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.explicit.mak CFG="$(CFG)" $(@)
 
 explicit:
 	@echo Project: Makefile.explicit.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.explicit.mak CFG="$(CFG)" all
+
+explicit-depend:
+	@echo Project: Makefile.explicit.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.explicit.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo explicit

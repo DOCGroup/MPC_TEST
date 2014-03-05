@@ -70,7 +70,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -121,7 +121,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -173,7 +173,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /Ob0 /W3 /Gm /EHsc /Zi /MDd /GR /Gy /Fd"$(INTDIR)/" /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D _DEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 
@@ -224,7 +224,7 @@ REALCLEAN : CLEAN
 	if not exist "$(INTDIR)\$(NULL)" mkdir "$(INTDIR)"
 
 CPP=cl.exe
-CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /FD /c
+CPP_COMMON=/Zc:wchar_t /nologo /O2 /W3 /EHsc /MD /GR /I "." /I "\this\path" /I "Z:\that\path" /I "Here" /I "There" /D NDEBUG /D WIN32 /D _CONSOLE /D MACRO_TEST=\"a_string_with_no_spaces\"  /c
 
 CPP_PROJ=$(CPP_COMMON) /Fo"$(INTDIR)\\"
 

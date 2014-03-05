@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make mixed_languages_refs.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make mixed_languages_refs.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: z
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: z-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.z $(@)
 
 .PHONY: z
 z:
 	@$(MAKE) -f Makefile.z all
+
+.PHONY: z-depend
+z-depend:
+	@$(MAKE) -f Makefile.z depend
 
 project_name_list:
 	@echo z

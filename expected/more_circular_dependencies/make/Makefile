@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make
 #
 #----------------------------------------------------------------------------
 
 
 all: Code Set ROOT Factory
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: Code-depend Set-depend ROOT-depend Factory-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.Code $(@)
 	@$(MAKE) -f Makefile.Set $(@)
 	@$(MAKE) -f Makefile.ROOT $(@)
@@ -24,17 +26,33 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 Code:
 	@$(MAKE) -f Makefile.Code all
 
+.PHONY: Code-depend
+Code-depend:
+	@$(MAKE) -f Makefile.Code depend
+
 .PHONY: Set
 Set:
 	@$(MAKE) -f Makefile.Set all
+
+.PHONY: Set-depend
+Set-depend:
+	@$(MAKE) -f Makefile.Set depend
 
 .PHONY: ROOT
 ROOT:
 	@$(MAKE) -f Makefile.ROOT all
 
+.PHONY: ROOT-depend
+ROOT-depend:
+	@$(MAKE) -f Makefile.ROOT depend
+
 .PHONY: Factory
 Factory: Code Set ROOT
 	@$(MAKE) -f Makefile.Factory all
+
+.PHONY: Factory-depend
+Factory-depend:
+	@$(MAKE) -f Makefile.Factory depend
 
 project_name_list:
 	@echo Code

@@ -4,6 +4,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: another foo
 
+depend: another-depend foo-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(COMSPEC) /c "cd another &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.another.bmak $(@)"
 	$(COMSPEC) /c "cd c++ &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak $(@)"
@@ -11,8 +13,14 @@ clean generated realclean $(CUSTOM_TARGETS):
 another:
 	$(COMSPEC) /c "cd another &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.another.bmak all"
 
+another-depend:
+	$(COMSPEC) /c "cd another &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.another.bmak depend"
+
 foo:
 	$(COMSPEC) /c "cd c++ &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak all"
+
+foo-depend:
+	$(COMSPEC) /c "cd c++ &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak depend"
 
 project_name_list:
 	@echo another

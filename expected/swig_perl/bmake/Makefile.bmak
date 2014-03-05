@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake -features swig_perl=1
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake -value_template use_lib_modifier= swig_perl.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -17,11 +17,16 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: MyModule
 
+depend: MyModule-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.MyModule.bmak $(@)
 
 MyModule:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.MyModule.bmak all
+
+MyModule-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.MyModule.bmak depend
 
 project_name_list:
 	@echo MyModule

@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake -recurse
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake -recurse
 #
 #----------------------------------------------------------------------------
 
@@ -17,11 +17,16 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: not_ghs
 
+depend: not_ghs-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.not_ghs.bmak $(@)
 
 not_ghs:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.not_ghs.bmak all
+
+not_ghs-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.not_ghs.bmak depend
 
 project_name_list:
 	@echo not_ghs

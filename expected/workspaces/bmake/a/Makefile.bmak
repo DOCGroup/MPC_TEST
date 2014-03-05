@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake -recurse
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake -recurse
 #
 #----------------------------------------------------------------------------
 
@@ -17,6 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: a common
 
+depend: a-depend common-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.a.bmak $(@)
 	$(COMSPEC) /c "cd common &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.common.bmak $(@)"
@@ -24,8 +26,14 @@ clean generated realclean $(CUSTOM_TARGETS):
 a:
 	$(MAKE) -$(MAKEFLAGS) -f Makefile.a.bmak all
 
+a-depend:
+	$(MAKE) -$(MAKEFLAGS) -f Makefile.a.bmak depend
+
 common:
 	$(COMSPEC) /c "cd common &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.common.bmak all"
+
+common-depend:
+	$(COMSPEC) /c "cd common &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.common.bmak depend"
 
 project_name_list:
 	@echo a

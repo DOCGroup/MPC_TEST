@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake features_custom_only.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake features_custom_only.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: fco fco_use other
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: fco-depend fco_use-depend other-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.fco.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco.mak CFG="$(CFG)" $(@)
 	@echo Project: Makefile.fco_use.mak
@@ -34,13 +36,25 @@ fco:
 	@echo Project: Makefile.fco.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco.mak CFG="$(CFG)" all
 
+fco-depend:
+	@echo Project: Makefile.fco.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco.mak CFG="$(CFG)" depend
+
 fco_use: fco
 	@echo Project: Makefile.fco_use.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco_use.mak CFG="$(CFG)" all
 
+fco_use-depend:
+	@echo Project: Makefile.fco_use.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.fco_use.mak CFG="$(CFG)" depend
+
 other:
 	@echo Project: Makefile.other.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.other.mak CFG="$(CFG)" all
+
+other-depend:
+	@echo Project: Makefile.other.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.other.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo fco

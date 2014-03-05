@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type bmake aggregated.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type bmake aggregated.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -17,6 +17,8 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: foo dir4 dir5
 
+depend: foo-depend dir4-depend dir5-depend
+
 clean generated realclean $(CUSTOM_TARGETS):
 	$(COMSPEC) /c "cd dir2 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak $(@)"
 	$(COMSPEC) /c "cd dir4 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir4.bmak $(@)"
@@ -25,11 +27,20 @@ clean generated realclean $(CUSTOM_TARGETS):
 foo:
 	$(COMSPEC) /c "cd dir2 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak all"
 
+foo-depend:
+	$(COMSPEC) /c "cd dir2 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.foo.bmak depend"
+
 dir4:
 	$(COMSPEC) /c "cd dir4 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir4.bmak all"
 
+dir4-depend:
+	$(COMSPEC) /c "cd dir4 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir4.bmak depend"
+
 dir5:
 	$(COMSPEC) /c "cd dir5 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir5.bmak all"
+
+dir5-depend:
+	$(COMSPEC) /c "cd dir5 &$(__TRICK_BORLAND_MAKE__)& $(MAKE) -$(MAKEFLAGS) -f Makefile.dir5.bmak depend"
 
 project_name_list:
 	@echo foo

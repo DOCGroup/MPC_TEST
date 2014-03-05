@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# c:\dev\TAO\1_5\ACE_wrappers/bin/mwc.pl -include config -type nmake
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: foo__somelib foo__someexecutable foo
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: foo__somelib-depend foo__someexecutable-depend foo-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@echo Project: Makefile.foo__somelib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__somelib.mak CFG="$(CFG)" $(@)
 	@echo Project: Makefile.foo__someexecutable.mak
@@ -34,13 +36,25 @@ foo__somelib:
 	@echo Project: Makefile.foo__somelib.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__somelib.mak CFG="$(CFG)" all
 
+foo__somelib-depend:
+	@echo Project: Makefile.foo__somelib.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__somelib.mak CFG="$(CFG)" depend
+
 foo__someexecutable: foo__somelib
 	@echo Project: Makefile.foo__someexecutable.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__someexecutable.mak CFG="$(CFG)" all
 
+foo__someexecutable-depend:
+	@echo Project: Makefile.foo__someexecutable.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo__someexecutable.mak CFG="$(CFG)" depend
+
 foo: foo__someexecutable
 	@echo Project: Makefile.foo.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" all
+
+foo-depend:
+	@echo Project: Makefile.foo.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" depend
 
 project_name_list:
 	@echo foo

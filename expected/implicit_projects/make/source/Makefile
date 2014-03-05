@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make implicit_projects.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make implicit_projects.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: one-target two-target
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: one-target-depend two-target-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd one && $(MAKE) -f Makefile.one $(@)
 	@cd two && $(MAKE) -f Makefile.two $(@)
 
@@ -22,9 +24,17 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 one-target:
 	@cd one && $(MAKE) -f Makefile.one all
 
+.PHONY: one-target-depend
+one-target-depend:
+	@cd one && $(MAKE) -f Makefile.one depend
+
 .PHONY: two-target
 two-target: one-target
 	@cd two && $(MAKE) -f Makefile.two all
+
+.PHONY: two-target-depend
+two-target-depend:
+	@cd two && $(MAKE) -f Makefile.two depend
 
 project_name_list:
 	@echo one-target

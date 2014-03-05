@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -recurse
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -recurse
 #
 #----------------------------------------------------------------------------
 
 
 all: good-target not_ghs-target
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: good-target-depend not_ghs-target-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd good && $(MAKE) -f Makefile.good $(@)
 	@cd not_ghs && $(MAKE) -f Makefile.not_ghs $(@)
 
@@ -22,9 +24,17 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 good-target:
 	@cd good && $(MAKE) -f Makefile.good all
 
+.PHONY: good-target-depend
+good-target-depend:
+	@cd good && $(MAKE) -f Makefile.good depend
+
 .PHONY: not_ghs-target
 not_ghs-target:
 	@cd not_ghs && $(MAKE) -f Makefile.not_ghs all
+
+.PHONY: not_ghs-target-depend
+not_ghs-target-depend:
+	@cd not_ghs && $(MAKE) -f Makefile.not_ghs depend
 
 project_name_list:
 	@echo good-target

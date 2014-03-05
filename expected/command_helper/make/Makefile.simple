@@ -469,7 +469,7 @@ check-syntax:
 __prebuild__:
 	@mkdir -p classes 2> /dev/null || cat /dev/null > /dev/null
 
-__postbuild__: $(SHLIB).1.66530.5b $(SHLIB) $(LIB)
+__postbuild__: $(SHLIB).1.66530.5b $(SHLIB)
 	@"$(JAVA_HOME)/bin/jar" -cf ./simple.jar -C classes .
 
 #----------------------------------------------------------------------------

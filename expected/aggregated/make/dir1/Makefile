@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make aggregated.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make aggregated.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: foo dir4-target dir5-target
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: foo-depend dir4-target-depend dir5-target-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd dir2 && $(MAKE) -f Makefile.foo $(@)
 	@cd dir4 && $(MAKE) -f Makefile.dir4 $(@)
 	@cd dir5 && $(MAKE) -f Makefile.dir5 $(@)
@@ -23,13 +25,25 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 foo:
 	@cd dir2 && $(MAKE) -f Makefile.foo all
 
+.PHONY: foo-depend
+foo-depend:
+	@cd dir2 && $(MAKE) -f Makefile.foo depend
+
 .PHONY: dir4-target
 dir4-target:
 	@cd dir4 && $(MAKE) -f Makefile.dir4 all
 
+.PHONY: dir4-target-depend
+dir4-target-depend:
+	@cd dir4 && $(MAKE) -f Makefile.dir4 depend
+
 .PHONY: dir5-target
 dir5-target:
 	@cd dir5 && $(MAKE) -f Makefile.dir5 all
+
+.PHONY: dir5-target-depend
+dir5-target-depend:
+	@cd dir5 && $(MAKE) -f Makefile.dir5 depend
 
 project_name_list:
 	@echo foo

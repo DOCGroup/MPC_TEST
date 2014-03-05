@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make mixed_languages.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make mixed_languages.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: csharp
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: csharp-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.csharp $(@)
 
 .PHONY: csharp
 csharp:
 	@$(MAKE) -f Makefile.csharp all
+
+.PHONY: csharp-depend
+csharp-depend:
+	@$(MAKE) -f Makefile.csharp depend
 
 project_name_list:
 	@echo csharp

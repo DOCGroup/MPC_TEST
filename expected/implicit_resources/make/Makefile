@@ -7,14 +7,16 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make -value_template use_threads=1 implicit_resources.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make -value_template use_threads=1 implicit_resources.mwc
 #
 #----------------------------------------------------------------------------
 
 
 all: dir1-target dir3-target
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: dir1-target-depend dir3-target-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@cd dir1 && $(MAKE) -f Makefile.dir1 $(@)
 	@cd dir3 && $(MAKE) -f Makefile.dir3 $(@)
 
@@ -22,9 +24,17 @@ clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
 dir1-target:
 	@cd dir1 && $(MAKE) -f Makefile.dir1 all
 
+.PHONY: dir1-target-depend
+dir1-target-depend:
+	@cd dir1 && $(MAKE) -f Makefile.dir1 depend
+
 .PHONY: dir3-target
 dir3-target:
 	@cd dir3 && $(MAKE) -f Makefile.dir3 all
+
+.PHONY: dir3-target-depend
+dir3-target-depend:
+	@cd dir3 && $(MAKE) -f Makefile.dir3 depend
 
 project_name_list:
 	@echo dir1-target

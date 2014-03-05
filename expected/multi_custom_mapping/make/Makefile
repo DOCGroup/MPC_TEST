@@ -7,19 +7,25 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/mitza/1.5a/ACE_wrappers/bin/mwc.pl -include config -include /tao_builds/mitza/MPC_TEST/config -type make
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type make
 #
 #----------------------------------------------------------------------------
 
 
 all: mpc_test
 
-clean depend generated realclean check-syntax $(CUSTOM_TARGETS):
+depend: mpc_test-depend
+
+clean generated realclean check-syntax $(CUSTOM_TARGETS):
 	@$(MAKE) -f Makefile.mpc_test $(@)
 
 .PHONY: mpc_test
 mpc_test:
 	@$(MAKE) -f Makefile.mpc_test all
+
+.PHONY: mpc_test-depend
+mpc_test-depend:
+	@$(MAKE) -f Makefile.mpc_test depend
 
 project_name_list:
 	@echo mpc_test

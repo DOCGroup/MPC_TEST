@@ -7,7 +7,7 @@
 # this file will be lost the next time it is generated.
 #
 # MPC Command:
-# /tao_builds/chad/ocitao/ACE_wrappers/build/linux/bin/mwc.pl -include config -type nmake aggregated.mwc
+# /tmp/MPC/mwc.pl -include config -include /home/amitz/MPC_TEST/config -type nmake aggregated.mwc
 #
 #----------------------------------------------------------------------------
 
@@ -22,7 +22,9 @@ CUSTOM_TARGETS=_EMPTY_TARGET_
 
 all: foo dir4-target dir5-target
 
-clean depend generated realclean $(CUSTOM_TARGETS):
+depend: foo-depend dir4-target-depend dir5-target-depend
+
+clean generated realclean $(CUSTOM_TARGETS):
 	@cd dir2
 	@echo Directory: dir2
 	@echo Project: Makefile.foo.mak
@@ -46,6 +48,13 @@ foo:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
+foo-depend:
+	@cd dir2
+	@echo Directory: dir2
+	@echo Project: Makefile.foo.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.foo.mak CFG="$(CFG)" depend
+	@cd $(MAKEDIR)
+
 dir4-target:
 	@cd dir4
 	@echo Directory: dir4
@@ -53,11 +62,25 @@ dir4-target:
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir4.mak CFG="$(CFG)" all
 	@cd $(MAKEDIR)
 
+dir4-target-depend:
+	@cd dir4
+	@echo Directory: dir4
+	@echo Project: Makefile.dir4.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir4.mak CFG="$(CFG)" depend
+	@cd $(MAKEDIR)
+
 dir5-target:
 	@cd dir5
 	@echo Directory: dir5
 	@echo Project: Makefile.dir5.mak
 	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir5.mak CFG="$(CFG)" all
+	@cd $(MAKEDIR)
+
+dir5-target-depend:
+	@cd dir5
+	@echo Directory: dir5
+	@echo Project: Makefile.dir5.mak
+	$(MAKE) /$(MAKEFLAGS) /f Makefile.dir5.mak CFG="$(CFG)" depend
 	@cd $(MAKEDIR)
 
 project_name_list:
